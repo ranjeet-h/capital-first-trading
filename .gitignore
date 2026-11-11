@@ -3,3 +3,4 @@ mdbook/book/
 node_modules/
 mdbook/theme/dist/
 test-results/
+.e2e-book/
