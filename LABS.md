@@ -13,7 +13,7 @@ Parent plan: [PLAN.md](PLAN.md). Read its constraints (section 3) first; they ap
 - Each lab shows: inputs, the formula in words, step-by-step working with rupee figures, the result, and a "what this ignores" note.
 - Every lab has: a worked example preloaded, a Reset button, an Export (CSV/JSON) button, and a "Used in chapters" list.
 - Labs never call a broker or any network API at runtime.
-- Dependencies between labs: Lab 2 (costs) is used by Labs 1, 4, 5. Lab 1 (sizing) is used by Labs 4, 5. Lab 3 (journal) is the shared record format for Labs 4, 5. **Build order (decided 2026-11-11): Lab 3 journal MVP first, so logging can start on day one; then Labs 2 and 1 and wire them into the journal plan form; then Lab 4; then Lab 5.** Lab 3 therefore must work standalone with manual entry of shares, risk and costs, and gain auto-fill later without a schema change.
+- Dependencies between labs: Lab 2 (costs) is used by Labs 1, 4, 5. Lab 1 (sizing) is used by Labs 4, 5. Lab 3 (journal) is the shared record format for Labs 4, 5. **Build order (decided 2026-11-11): app shell and book first; Labs 2 and 1 (money core) and Tracks 0-2 content; then the Lab 3 journal MVP, started only after the owner approves pausing book work; then the remaining book tracks, Lab 4, and Lab 5.** Lab 3 should still keep manual entry of shares, risk and costs as a fallback beside the Lab 1/2 auto-fill, so the schema never depends on the other labs.
 
 ---
 
@@ -328,9 +328,10 @@ Missed week then run; symbol delisted or renamed; partial data for some symbols;
 
 ## Suggested order of work for the coding agent
 1. M0 scaffold, storage, backup, PWA.
-2. M1: journal schema, `core/stats`, Lab 3 MVP (standalone, manual cost entry).
-3. M2: `core/costs` + Lab 2 (golden tests against the official calculator first), then `core/sizing` + Lab 1, then journal auto-fill.
-4. Synthetic generator, adapters, indicators, backtest engine, Lab 4.
-5. Strategy spec finalised, `tools/forward-test`, Lab 5 (and the journal's forward-import).
+2. M1: `core/costs` + Lab 2 (golden tests against the official calculator first), then `core/sizing` + Lab 1.
+3. M2: Tracks 0-2 content (book).
+4. M3: journal schema, `core/stats`, Lab 3 MVP with auto-fill from Labs 1 and 2. **Ask the owner for approval before starting; do not divert from book work on your own.**
+5. Synthetic generator, adapters, indicators, backtest engine, Lab 4.
+6. Strategy spec finalised, `tools/forward-test`, Lab 5 (and the journal's forward-import).
 
 Each step ends with passing tests and an offline-verified build.
