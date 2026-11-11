@@ -1,0 +1,23 @@
+[book]
+title = "Capital-First Trading"
+authors = ["Ranjeet Harishchandre"]
+description = "An offline, interactive study book for learning Indian-market trading with capital protection first."
+language = "en"
+src = "src"
+
+[build]
+build-dir = "book"
+create-missing = false
+
+[output.html]
+no-section-label = true
+smart-punctuation = true
+additional-css = ["theme/components.css"]
+additional-js = ["theme/mermaid.min.js", "theme/mermaid-init.js", "theme/components.js"]
+
+[output.html.fold]
+enable = true
+level = 0
+
+[output.html.search]
+enable = true

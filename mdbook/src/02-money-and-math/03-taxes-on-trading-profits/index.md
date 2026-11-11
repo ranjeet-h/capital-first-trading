@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.3
 title: Taxes on trading profits (concepts)
 page_type: Concept
 prerequisites: [T2.2, T1.9]
 labs: []
 estimated_minutes: 20
----
+-->
 
 # Taxes on trading profits (concepts)
 

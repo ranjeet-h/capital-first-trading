@@ -1,0 +1,20 @@
+.cft-box { border: 1px solid var(--quote-border, #ccc); border-radius: 6px; padding: 12px 16px; margin: 16px 0; background: var(--quote-bg, rgba(127,127,127,.08)); }
+.cft-box-title { font-weight: 600; margin-bottom: 6px; }
+.cft-placeholder { border-style: dashed; }
+.cft-caption { margin: 4px 0; }
+.cft-params, .cft-note, .cft-hint { font-size: .85em; opacity: .75; }
+.cft-disclaimer { font-size: .85em; opacity: .8; }
+.cft-q { border-top: 1px solid var(--quote-border, #ccc); padding: 12px 0; }
+.cft-q:first-of-type { border-top: 0; }
+.cft-q-head { display: flex; gap: 8px; align-items: center; font-size: .8em; opacity: .8; }
+.cft-q-n { font-weight: 700; }
+.cft-q-type { text-transform: uppercase; letter-spacing: .04em; }
+.cft-q-prompt { margin: 6px 0; white-space: pre-wrap; }
+.cft-opt { display: block; margin: 4px 0; cursor: pointer; }
+.cft-opts li { margin: 2px 0; }
+.cft-num { padding: 6px 8px; width: 16em; max-width: 100%; }
+.cft-btn { margin-top: 8px; padding: 6px 14px; cursor: pointer; }
+.cft-feedback { margin-top: 8px; padding: 8px 12px; border-radius: 4px; }
+.cft-feedback div { margin-top: 4px; }
+.cft-ok { background: rgba(46,160,67,.18); }
+.cft-bad { background: rgba(218,54,51,.18); }

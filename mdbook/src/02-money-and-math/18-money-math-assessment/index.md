@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.18
 title: Money-math assessment
 page_type: Assessment
 prerequisites: [T2.1, T2.2, T2.3, T2.4, T2.5, T2.6, T2.7, T2.8, T2.9, T2.10, T2.11, T2.12, T2.13, T2.14, T2.15, T2.16, T2.17]
 labs: [Lab 1, Lab 2, Lab 3]
 estimated_minutes: 35
----
+-->
 
 # Money-math assessment
 

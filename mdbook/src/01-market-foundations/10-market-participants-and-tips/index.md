@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T1.10
 title: Market participants, where information comes from, and spotting misleading tips
 page_type: Concept
 prerequisites: [T1.2, T1.8]
 labs: []
 estimated_minutes: 15
----
+-->
 
 # Market participants, where information comes from, and spotting misleading tips
 

@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T1.8
 title: Indices (Nifty, Sensex) and what they measure
 page_type: Concept
 prerequisites: [T1.1, T1.4]
 labs: []
 estimated_minutes: 20
----
+-->
 
 # Indices (Nifty, Sensex) and what they measure
 

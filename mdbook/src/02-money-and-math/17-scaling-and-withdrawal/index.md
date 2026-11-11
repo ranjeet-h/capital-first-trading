@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.17
 title: Scaling and withdrawal policy
 page_type: Concept
 prerequisites: [T2.9, T2.15, T2.16]
 labs: [Lab 3]
 estimated_minutes: 20
----
+-->
 
 # Scaling and withdrawal policy
 

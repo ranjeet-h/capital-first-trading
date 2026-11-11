@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T1.6
 title: Trading sessions, pre-open and closing auctions, market timings and holidays
 page_type: Concept
 prerequisites: [T1.3, T1.4]
 labs: []
 estimated_minutes: 15
----
+-->
 
 # Trading sessions, pre-open and closing auctions, market timings and holidays
 

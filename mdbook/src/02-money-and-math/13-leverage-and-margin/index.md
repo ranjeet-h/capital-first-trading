@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.13
 title: Leverage and margin, theory only, and how they magnify loss
 page_type: Math/Calculator
 prerequisites: [T2.9, T2.4]
 labs: [Lab 1]
 estimated_minutes: 25
----
+-->
 
 # Leverage and margin: theory only, and how they magnify loss
 

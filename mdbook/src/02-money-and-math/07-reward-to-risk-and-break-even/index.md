@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.7
 title: Reward-to-risk, win rate and break-even
 page_type: Math/Calculator
 prerequisites: [T2.1, T2.4]
 labs: [Lab 1, Lab 3]
 estimated_minutes: 20
----
+-->
 
 # Reward-to-risk, win rate and break-even
 

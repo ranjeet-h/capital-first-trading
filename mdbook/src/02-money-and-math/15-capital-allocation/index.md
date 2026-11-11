@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.15
 title: Capital allocation, cut and stop rules
 page_type: Math/Calculator
 prerequisites: [T0.2, T2.11, T2.14]
 labs: [Lab 3]
 estimated_minutes: 30
----
+-->
 
 # Capital allocation: how much to allocate, what stays untouched, when to cut or stop
 

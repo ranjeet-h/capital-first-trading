@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.10
 title: Consecutive losses and losing streaks
 page_type: Math/Calculator
 prerequisites: [T2.9, T2.8]
 labs: [Lab 3]
 estimated_minutes: 30
----
+-->
 
 # Consecutive losses and losing streaks
 

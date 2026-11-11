@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.1
 title: Why money math comes before charts
 page_type: Concept
 prerequisites: [T0.1, T0.2]
 labs: [Lab 1, Lab 3]
 estimated_minutes: 20
----
+-->
 
 # Why money math comes before charts
 

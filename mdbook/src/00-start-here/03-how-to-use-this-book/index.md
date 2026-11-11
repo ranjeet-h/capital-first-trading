@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T0.3
 title: How to use this book
 page_type: Concept
 prerequisites: [T0.1, T0.2]
 labs: [Lab 3]
 estimated_minutes: 15
----
+-->
 
 # How to use this book
 

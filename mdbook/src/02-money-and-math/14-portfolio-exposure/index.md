@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.14
 title: Portfolio exposure and concentration
 page_type: Math/Calculator
 prerequisites: [T2.5, T2.11, T1.8]
 labs: [Lab 3, Lab 1]
 estimated_minutes: 25
----
+-->
 
 # Portfolio exposure and concentration
 

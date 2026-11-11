@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.2
 title: Costs on a trade
 page_type: Math/Calculator
 prerequisites: [T1.3, T2.1]
 labs: [Lab 2]
 estimated_minutes: 30
----
+-->
 
 # Costs on a trade
 

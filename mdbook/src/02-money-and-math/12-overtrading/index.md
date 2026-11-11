@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.12
 title: Overtrading and why daily profit targets encourage it
 page_type: Math/Calculator
 prerequisites: [T2.8, T2.11, T0.2]
 labs: [Lab 3]
 estimated_minutes: 25
----
+-->
 
 # Overtrading and why daily profit targets encourage it
 

@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T1.3
 title: Demat and trading accounts; how a buy becomes a holding; T+1 settlement and clearing
 page_type: Concept
 prerequisites: [T1.2]
 labs: []
 estimated_minutes: 25
----
+-->
 
 # Demat and trading accounts; how a buy becomes a holding; T+1 settlement and clearing
 

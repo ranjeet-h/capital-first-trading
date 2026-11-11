@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.11
 title: Risk limits per trade, day, week and month
 page_type: Math/Calculator
 prerequisites: [T2.5, T2.10]
 labs: [Lab 1, Lab 3]
 estimated_minutes: 30
----
+-->
 
 # Risk limits per trade, day, week and month
 

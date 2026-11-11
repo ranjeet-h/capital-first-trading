@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.16
 title: The Rs 2,000-3,000 reality check
 page_type: Math/Calculator
 prerequisites: [T2.2, T2.4, T2.5, T2.9, T2.10, T2.11, T2.12, T2.15]
 labs: [Lab 1, Lab 2]
 estimated_minutes: 30
----
+-->
 
 # The Rs 2,000-3,000 reality check
 

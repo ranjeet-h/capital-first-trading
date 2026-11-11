@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T0.1
 title: What trading is and is not
 page_type: Concept
 prerequisites: []
 labs: []
 estimated_minutes: 25
----
+-->
 
 # What trading is and is not
 

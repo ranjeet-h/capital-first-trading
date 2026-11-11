@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T1.2
 title: Exchanges, SEBI, brokers and participants
 page_type: Concept
 prerequisites: [T1.1]
 labs: []
 estimated_minutes: 25
----
+-->
 
 # Exchanges, SEBI, brokers and participants
 

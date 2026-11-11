@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T1.7
 title: Circuit limits, price bands and trading halts
 page_type: Concept
 prerequisites: [T1.4, T1.6]
 labs: []
 estimated_minutes: 20
----
+-->
 
 # Circuit limits, price bands and trading halts
 

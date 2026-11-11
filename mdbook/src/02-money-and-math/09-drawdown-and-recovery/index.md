@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.9
 title: Drawdown, recovery and compounding
 page_type: Math/Calculator
 prerequisites: [T2.8]
 labs: [Lab 3]
 estimated_minutes: 30
----
+-->
 
 # Drawdown, recovery and compounding
 

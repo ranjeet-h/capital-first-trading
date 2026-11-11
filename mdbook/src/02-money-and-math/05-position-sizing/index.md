@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.5
 title: Position sizing step by step, cash cap and concentration cap
 page_type: Math/Calculator
 prerequisites: [T2.4]
 labs: [Lab 1, Lab 3]
 estimated_minutes: 30
----
+-->
 
 # Position sizing step by step, cash cap and concentration cap
 

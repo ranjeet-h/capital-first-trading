@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.6
 title: Slippage, gaps and planned versus actual risk
 page_type: Concept
 prerequisites: [T2.4, T2.5, T1.7]
 labs: [Lab 1, Lab 3]
 estimated_minutes: 30
----
+-->
 
 # Slippage, gaps and planned versus actual risk
 

@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T1.9
 title: Corporate actions: dividends, splits, bonus, rights and their effect on prices and charts
 page_type: Concept
 prerequisites: [T1.1, T1.4]
 labs: []
 estimated_minutes: 20
----
+-->
 
 # Corporate actions: dividends, splits, bonus, rights and their effect on prices and charts
 

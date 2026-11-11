@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T1.5
 title: Order matching, bid-ask spread, market depth and liquidity
 page_type: Concept
 prerequisites: [T1.4]
 labs: []
 estimated_minutes: 20
----
+-->
 
 # Order matching, bid-ask spread, market depth and liquidity
 

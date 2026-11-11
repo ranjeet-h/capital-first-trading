@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.8
 title: Expectancy and profit factor
 page_type: Math/Calculator
 prerequisites: [T2.7]
 labs: [Lab 3, Lab 1]
 estimated_minutes: 30
----
+-->
 
 # Expectancy and profit factor
 

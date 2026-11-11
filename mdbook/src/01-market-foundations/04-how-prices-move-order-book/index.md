@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T1.4
 title: How prices move - supply and demand, the order book
 page_type: Concept
 prerequisites: [T1.2, T1.3]
 labs: []
 estimated_minutes: 25
----
+-->
 
 # How prices move: supply and demand, the order book
 

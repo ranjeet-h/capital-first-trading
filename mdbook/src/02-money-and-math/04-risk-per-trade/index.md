@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T2.4
 title: Risk per trade and stop-loss distance
 page_type: Math/Calculator
 prerequisites: [T2.1, T1.4]
 labs: [Lab 1]
 estimated_minutes: 30
----
+-->
 
 # Risk per trade and stop-loss distance
 

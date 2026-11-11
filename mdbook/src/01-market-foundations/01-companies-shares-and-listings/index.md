@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T1.1
 title: Companies, shares and why firms list
 page_type: Concept
 prerequisites: [T0.1]
 labs: []
 estimated_minutes: 25
----
+-->
 
 # Companies, shares and why firms list
 

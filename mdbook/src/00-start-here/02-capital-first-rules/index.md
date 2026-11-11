@@ -1,11 +1,11 @@
----
+<!-- meta
 id: T0.2
 title: The capital-first rules
 page_type: Concept
 prerequisites: [T0.1]
 labs: [Lab 3]
 estimated_minutes: 25
----
+-->
 
 # The capital-first rules
 
