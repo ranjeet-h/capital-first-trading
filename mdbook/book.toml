@@ -13,7 +13,7 @@ create-missing = false
 no-section-label = true
 smart-punctuation = true
 additional-css = ["theme/components.css"]
-additional-js = ["theme/mermaid.min.js", "theme/mermaid-init.js", "theme/components.js"]
+additional-js = ["theme/mermaid.min.js", "theme/mermaid-init.js", "theme/demos.js", "theme/components.js"]
 
 [output.html.fold]
 enable = true

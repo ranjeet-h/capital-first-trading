@@ -174,7 +174,15 @@
         var c = parseComponent(t);
         n.parentNode.insertBefore(host, n);
         if (c.name === "quiz-block") renderQuiz(c, host);
-        else host.appendChild(placeholder(c));
+        else {
+          var demo = window.CFT_DEMOS && window.CFT_DEMOS[c.name];
+          var pr = {};
+          c.params.forEach(function (x) { pr[x[0]] = x[1]; });
+          try { if (demo) demo(pr, host); else host.appendChild(placeholder(c)); }
+          catch (e) { host.appendChild(placeholder(c)); }
+          var cap = pr.caption;
+          if (demo && cap) host.appendChild(el("p", "cft-caption", cap));
+        }
       } else if (/^standing-disclaimer/.test(t)) {
         n.parentNode.insertBefore(host, n);
         var d = el("div", "cft-box cft-disclaimer",

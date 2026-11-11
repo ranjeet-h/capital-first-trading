@@ -19,3 +19,20 @@
 .cft-ok { background: rgba(46,160,67,.18); }
 .cft-bad { background: rgba(218,54,51,.18); }
 .cft-verify { font-size: .8em; padding: 0 6px; border-radius: 3px; background: rgba(230,160,0,.2); }
+.cft-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 8px 14px; margin-bottom: 10px; }
+.cft-field { display: flex; flex-direction: column; font-size: .85em; }
+.cft-field .cft-num { width: 100%; box-sizing: border-box; margin-top: 2px; }
+.cft-table { width: 100%; border-collapse: collapse; margin: 8px 0; }
+.cft-table td { padding: 4px 6px; border-bottom: 1px solid var(--quote-border, #ccc); }
+.cft-val { text-align: right; white-space: nowrap; }
+.cft-strong td { font-weight: 700; }
+.cft-bar-line { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: .85em; }
+.cft-bar-label { width: 7.5em; flex: none; }
+.cft-bar-track { flex: 1; height: 12px; background: rgba(127,127,127,.2); border-radius: 6px; overflow: hidden; }
+.cft-bar-fill { display: block; height: 100%; background: #4a90d9; }
+.cft-bar-hi { background: #e0883a; }
+.cft-bar-val { width: 8em; flex: none; text-align: right; }
+.cft-btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.cft-step { padding: 6px 10px; margin: 4px 0; border-left: 3px solid transparent; opacity: .55; }
+.cft-step-on { border-left-color: #e0883a; opacity: 1; }
+.cft-step-done { opacity: .9; }
