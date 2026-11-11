@@ -19,7 +19,7 @@ No-trade conditions are written in advance, as a list with rules. They are not d
 
 A no-trade decision can come from five groups of conditions.
 
-**Market conditions.** There is no setup under the rules. The market is too thin to trade at a sensible price. See *Order matching, spread and liquidity*. There is a circuit or event risk. See *Circuit limits and halts*. [VERIFY: event calendar sources]
+**Market conditions.** There is no setup under the rules. The market is too thin to trade at a sensible price. See *Order matching, spread and liquidity*. There is a circuit or event risk. See *Circuit limits and halts*. Check each event date on an official source. For example, NSE publishes its holiday list, and company results dates are posted on the NSE and BSE sites. (As of 11 Nov 2026. Dates change, so check the exchange sites.)
 
 **Account conditions.** The daily or weekly loss limit has been reached. A consecutive-loss rule has been reached. See *Risk limits* and *Consecutive losses and losing streaks*. The capital is below the minimum that the plan allows.
 
@@ -125,7 +125,7 @@ Mode: **paper**. Write it in your journal. If the journal is not ready, use pape
 - No-trade rules must be written before the session. Writing them during the day invites excuses.
 - A no-trade rule does not close a position you already hold. Open positions follow their exit rules.
 - Waiting does not remove all risk. A stop can still be hit, and a gap can still cause a loss.
-- The calendar of holidays and events must be checked from an official source. [VERIFY: NSE holiday list]
+- The calendar of holidays and events must be checked from an official source. NSE's 2026 list has 16 holidays that fall on weekdays. One of them, 15 Jan, was added after NSE's first list of 12 Dec 2025. (As of 11 Nov 2026, Zerodha's market holiday calendar. Check the NSE site for changes.)
 
 ## Remember
 
@@ -137,11 +137,9 @@ Mode: **paper**. Write it in your journal. If the journal is not ready, use pape
 
 ## Sources and verification
 
-- NSE India, holiday list page. [VERIFY: NSE holiday list]
+- NSE India, holiday list page for 2026 (read on 11 Nov 2026).
 - SEBI investor education material on trading risks.
-- [VERIFY: circuit price band rules]
-- [VERIFY: event calendar source for each event used in a rule]
-
-<!-- facts-needed: trading holidays and special sessions; circuit price band rules; event calendars used in no-trade rules, with the source for each event. -->
+- NSE Basic FAQs on the Secondary Market, for price bands (read on 11 Nov 2026). Most shares have a daily band of 2%, 5%, 10% or 20%. Shares with futures and options use a flexible 10% range.
+- For each event you use in a rule, write down the official page that gives its date.
 
 <!-- standing-disclaimer -->

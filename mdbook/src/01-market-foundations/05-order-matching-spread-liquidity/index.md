@@ -28,9 +28,20 @@ The spread is not a fee. Your broker does not set it. It is the market's own gap
 
 **Round trip.** A round trip means buying, then selling. If you buy at the ask and sell at the bid, you give up the whole spread. Round-trip spread cost = spread x quantity, before any charges.
 
-**Matching.** The exchange pairs buy and sell orders when their prices meet. Orders are matched first by price. Orders at the same price are matched by time of arrival. This is called price-time priority. The exact rule is [VERIFY: NSE and BSE matching rule].
+**Matching.** The exchange pairs buy and sell orders when their prices meet. Orders are matched first by price. Orders at the same price are matched by time of arrival. This is called price-time priority. Think of a queue at a ticket counter: the best price goes first, and at the same price the person who came first is served first. NSE uses this rule for limit orders in the main trading session. (As of 11 Nov 2026, NSE pre-open and trading pages. Rules change, so check the NSE site. BSE's matching rule is not checked here.)
 
-**Tick size.** The smallest allowed step in price. Its value is [VERIFY: NSE tick size]. The examples in this chapter use steps of Rs 0.50 and Rs 1.00 only to show the arithmetic.
+**Tick size.** The smallest allowed step in price. The step depends on the share price, as in the table below. The examples in this chapter use steps of Rs 0.50 and Rs 1.00 only to show the arithmetic. They are round numbers for practice, not the real steps for those prices.
+
+| Share price on NSE | Tick size |
+|---|---|
+| Below Rs 250 | Rs 0.01 |
+| Rs 250 to Rs 1,000 | Rs 0.05 |
+| Rs 1,000 to Rs 5,000 | Rs 0.10 |
+| Rs 5,000 to Rs 10,000 | Rs 0.50 |
+| Rs 10,000 to Rs 20,000 | Rs 1.00 |
+| Above Rs 20,000 | Rs 5.00 |
+
+(As of 11 Nov 2026, NSE circulars of 24 May 2024 and 13 Mar 2025, in force from 15 Apr 2025. NSE reviews the tick size each month using the last close of the month before. Rules change, so check the NSE site.)
 
 **Signs of low liquidity** in a displayed book:
 
@@ -100,7 +111,7 @@ Six questions on spread arithmetic, depth, liquidity and matching priority. Each
 
 ## Paper task
 
-**Mode: kite_demo.** Kite demo data is dummy data, so the numbers here are for practice only. [VERIFY: Kite demo depth view layout]
+**Mode: kite_demo.** Kite demo data is dummy data, so the numbers here are for practice only. Layouts change, so check your own Kite for the current layout.
 
 1. Open the Kite demo and pick one demo stock. Check your own Kite for the current layout.
 2. Note the best bid and best ask at three different times during the demo session.
@@ -133,12 +144,10 @@ Sources:
 - Zerodha Varsity, as reference only (link only, no text copied).
 - Zerodha support pages on order types.
 
-Facts to verify:
+**Facts checked on 11 Nov 2026:**
 
-- [VERIFY: matching rule and price-time priority, NSE and BSE]
-- [VERIFY: tick size, NSE tick size page]
-- [VERIFY: Kite demo depth view layout]
-
-<!-- facts-needed: matching priority rule (NSE, BSE); tick size (NSE); Kite demo depth view layout -->
+- Price-time priority comes from NSE's trading rules. BSE's rule was not checked for this chapter.
+- The tick size table comes from NSE circulars dated 24 May 2024 and 13 Mar 2025. ETFs are left out of the below-Rs-250 rule.
+- The Kite demo layout can change, so this chapter does not describe it.
 
 <!-- standing-disclaimer -->

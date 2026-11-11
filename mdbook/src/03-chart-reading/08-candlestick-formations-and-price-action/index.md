@@ -135,9 +135,6 @@ Sources:
 
 Facts to check:
 
-- Any base rate for a named formation, if a study is cited later. No base rate is stated here. [VERIFY: cited study and its exact result]
-
-<!-- facts-needed: base rates for named formations, only if a cited study is added; no figure is stated in this chapter -->
-<!-- OPEN: the spec leaves the choice of peer-reviewed studies open; no specific studies are named yet. -->
+- Any base rate for a named formation, if a study is cited later. No base rate is stated here, because no study has been checked for this book.
 
 <!-- standing-disclaimer -->

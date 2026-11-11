@@ -31,8 +31,6 @@ Points to keep in mind:
 
 ## See it
 
-<!-- OPEN: The spec asks for a static paired bar chart of profit and loss per trade for X and Y. No component name fits a static chart, so a table is used. The spot-the-mistake widget in Try it can reuse the same numbers. -->
-
 | | System X (hypothetical) | System Y (hypothetical) |
 |---|---|---|
 | Win rate | 90% | 40% |
@@ -115,8 +113,6 @@ Mode: **learning note**. Log it in Lab 3 (or on paper until the journal app is r
 3. Check that the expectancy shows minus Rs 130 per trade (minus 0.13R), and that the profit factor shows 0.675.
 4. Write one sentence. Explain why a 90% win rate can still give a negative expectancy.
 
-<!-- OPEN: The learning-note mode is in the *How to use this book* journal mode list but not in the Lab 3 mode list (paper, live, forward, backtest, kite_demo). Confirm before the journal app is built. -->
-
 ## Limits and common mistakes
 
 - Expectancy shown here is before costs. Net expectancy is lower. Check it with costs included.
@@ -139,6 +135,6 @@ Sources (names only):
 
 - Chapter *Metrics and their limits* (metrics and their limits), for further reading
 
-Items to verify: none for this chapter. All numbers are hypothetical.
+All numbers in this chapter are made up for practice.
 
 <!-- standing-disclaimer -->

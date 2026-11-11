@@ -15,9 +15,9 @@ A stock shows a price of Rs 250 on the screen. You plan to buy 100 shares at the
 
 ## The idea
 
-- **Market depth** is a view of the buy and sell prices waiting in the order book. Kite shows some of them. How many levels Kite shows is [VERIFY: Kite depth view].
+- **Market depth** is a view of the buy and sell prices waiting in the order book. On Kite it shows the best 5 bids and the best 5 offers by default. A "View 20 depth" option shows up to 20 on each side for NSE stocks.
 - **Best bid** is the highest price a buyer is waiting to pay.
-- **Best ask** is the lowest price a seller is waiting to take.
+- **Best ask** is the lowest price a seller is waiting to take. Kite calls this the **Offer**, not the ask.
 - **Spread** is the gap between them.
 
   Spread = best ask minus best bid.
@@ -27,17 +27,19 @@ A stock shows a price of Rs 250 on the screen. You plan to buy 100 shares at the
   Mid-price = (best bid plus best ask) divided by 2.
 
 - **Crossing the spread** means buying at the ask or selling at the bid. A market buy takes the ask. You pay about half the spread per share more than the mid-price.
-- Depth is a snapshot. Orders can be placed and cancelled at any time, so depth changes quickly. Some orders are hidden. An iceberg order shows only a small part of its full size. You cannot see the rest.
-- **Chart setup** means the timeframe, the chart type and any indicators you add. You learned about timeframes in *Timeframes and how the same price looks different*. Which options Kite offers is [VERIFY: Kite chart settings].
+- On Kite's depth view, each price shows the quantity waiting there (Qty) and the number of orders at that price (Orders). The view also shows the day's Open, High, Low and Previous Close, the Volume, the Avg. Price (the average price traded so far today), the last traded quantity and time, the circuit limits (the lowest and highest price the stock may trade at today) and, for F&O, the open interest (OI).
+- To open the depth view on the web, go to Marketwatch, hover over a row and click Market depth. You can also select the row and press D. Clicking a price in the depth view fills in an order at that price.
+- Depth is a snapshot. Orders can be placed and cancelled at any time, so depth changes quickly. Some orders are hidden. An iceberg order shows only a small part of its full size. You cannot see the rest. On Kite, an Iceberg is also an order type you can place yourself. Kite sends it in smaller legs, and each leg goes to the exchange only after the one before it fills.
+- **Chart setup** means the timeframe, the chart type and any indicators you add. You learned about timeframes in *Timeframes and how the same price looks different*. Kite offers two chart engines, ChartIQ (the default) and TradingView. You can change the default in your profile settings at kite.zerodha.com/profile. Indicators are called studies. Kite lists over 100 studies and over 30 drawing tools. You can also place orders from the chart (Trade from charts).
 - Depth matters less for end-of-day decisions. It shows one moment. Liquidity decides whether a planned size can be sold. See *Order matching, spread and liquidity*.
 
 ## See it
 
 <!-- component: order-book-sim | caption: Bids and asks update as orders arrive; the spread and the depth are shown. The data is made up. -->
 
-<!-- component: kite-illustration | view: depth-panel | platform: web | caption: Recreated depth panel and chart setup; check your own Kite for the current layout -->
+<!-- component: kite-flow | flow: read-market-depth,chart-basics | platform: web | caption: Click paths for opening market depth and setting up a chart. Practice in the Zerodha demo or with dummy data only. Screens and button names can change, so check Kite's help pages. -->
 
-Watch the bids and asks change as orders arrive. Find the spread in each moment. Then look at the depth panel in the Kite illustration. Note which settings you can change on the chart. Check the layout in your own Kite. [VERIFY: Kite chart settings]
+Watch the bids and asks change as orders arrive. Find the spread in each moment. Then look at the depth panel in the Kite illustration. Note which settings you can change on the chart. Check the layout in your own Kite.
 
 ## Worked example
 
@@ -110,7 +112,7 @@ Mode: kite demo. Watch the screens only. Do not place any order.
 
 1. Choose one symbol. Record its spread at three times on one trading day.
 2. Write the chart settings you used, such as the timeframe and any indicators.
-3. Check the session times first. [VERIFY: NSE market timings]
+3. Check the market session times on NSE's own website first.
 4. Write it in your journal. If the journal is not ready, use paper.
 
 ## Limits and common mistakes
@@ -119,6 +121,7 @@ Mode: kite demo. Watch the screens only. Do not place any order.
 - Depth is not a basis for end-of-day decisions. It shows one moment only.
 - Liquidity decides whether a planned size can be sold. A tight spread does not replace a check of liquidity.
 - The spread is not a fee from the broker. It is the gap between the best bid and the best ask. Its cost is paid when you cross it.
+- Colours can change. Zerodha's older guide used blue for bids and red for offers. Look at the colours in your own app.
 
 ## Remember
 
@@ -131,15 +134,15 @@ Mode: kite demo. Watch the screens only. Do not place any order.
 
 Sources:
 
-- NSE India, market depth and order book description [VERIFY: page name]
-- Zerodha support pages on market depth and charts [VERIFY: page titles]
+- NSE India, market depth and order book pages
+- Zerodha support pages on market depth, charts and iceberg orders. Check the current options there.
 
 Facts to check:
 
-- How many depth levels Kite displays. [VERIFY: Kite depth view]
-- Chart intervals and how much history Kite holds. [VERIFY: Kite chart help]
-- Available chart settings. [VERIFY: Kite chart settings]
-- Session times for the paper task. [VERIFY: NSE market timings]
+- How many depth levels Kite shows, and the "View 20 depth" option. Check Kite's market depth help.
+- Chart intervals and how much history Kite holds. Check Kite's chart help.
+- Available chart settings. Check the chart in your own Kite.
+- Session times for the paper task. Check NSE's website.
 
 <!-- facts-needed: depth levels displayed in Kite; chart intervals and history depth; available chart settings; NSE session times -->
 

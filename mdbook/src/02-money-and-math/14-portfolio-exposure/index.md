@@ -30,7 +30,7 @@ Other points:
 - **Diversification** reduces the risk from one company or one event. It does not remove risk that hits the whole market.
 - **Limits.** You set a maximum per position, a maximum per sector and a maximum total open risk. Lab 1 uses a 25% per-position cap as a starting value. You choose the sector limits.
 - **Adding to a losing position** to lower the average cost raises concentration in a failing idea. This is called averaging down. The book's capital-first rules ban it (*Position sizing step by step*). Check the limits before you add.
-- **Sector labels** come from your data. Check their source against the NSE sectoral index definitions [VERIFY: sector classification source].
+- **Sector labels** come from your data. Check their source against the NSE sectoral index definitions. NSE Indices sorts each company into four levels: macro-economic sector, sector, industry and basic industry. Other data providers may use different labels, so two lists can put the same company in different groups. (As of 11 Nov 2026, NSE Indices industry classification. Rules change, so check the NSE site.)
 
 ## See it
 
@@ -46,6 +46,8 @@ pie showData
 
 The chart shows that Sector X is the largest slice of capital. Sector X is 45% of capital, and cash is 40%. The table in the worked example also shows the open risk and the sector limit. A pie chart cannot show those.
 
+<!-- component: exposure-meter | capital: 50000 | caption: The worked example: three positions in a Rs 50,000 account. Press Add position D to see which limit it breaks. The limits are examples. -->
+
 ## Worked example
 
 **Hypothetical.** Capital Rs 50,000. Holdings:
@@ -59,19 +61,17 @@ The chart shows that Sector X is the largest slice of capital. Sector X is 45% o
 1. **Deployed:** 10,000 + 12,500 + 7,500 = Rs 30,000. As a share of capital: 30,000 / 50,000 = 60%.
 2. **Cash:** 50,000 - 30,000 = Rs 20,000, which is 40%.
 3. **Open risk:** 500 + 500 + 300 = Rs 1,300. As a share of capital: 1,300 / 50,000 = 2.6%.
-4. **Sector X:** 10,000 + 12,500 = Rs 22,500. As a share of capital: 22,500 / 50,000 = 45%.
+4. **Sector X:** 10,000 + 12,500 = Rs 22,500. As a share of capital: 22,500 / 50,000 = 45%. This is inside the example sector limit of 50%.
 
 **Adding a new position.** Position D is Rs 6,000 in Sector X, with a planned loss of Rs 300.
 
 5. Sector X becomes 22,500 + 6,000 = Rs 28,500. As a share of capital: 28,500 / 50,000 = 57%.
 6. Open risk becomes 1,300 + 300 = Rs 1,600. As a share of capital: 1,600 / 50,000 = 3.2%.
-7. The illustrative 40% sector limit is breached (57% is above 40%). **The new position is rejected.** The sector limit is the rule that causes the rejection.
+7. The example sector limit is 50% of capital. Before D, Sector X is at 45%, which is inside the limit. After D, it is 57%, which is above 50%, so the limit is breached. **The new position is rejected.** The sector limit is the rule that causes the rejection.
 
 ## Try it
 
-This chapter has no interactive demo. Use the worked example and the guided exercise below.
-
-<!-- OPEN: spec gives no interactive demo or component for *Portfolio exposure and concentration*; the See it content is a static pie chart and the worked example table. -->
+Work each exercise by hand first. Then use a demo to check your answer. The demo under *See it* opens on the three positions of the worked example, so it fits the guided exercise. The independent exercise has its own demo below it.
 
 ### Guided exercise
 
@@ -99,6 +99,8 @@ If all four are in one sector, a single sector move can hit all four stops at on
 
 </details>
 
+<!-- component: exposure-meter | capital: 50000 | caption: Independent exercise check: press Four equal positions, one sector, and read the open risk and the sector share. -->
+
 ## Quiz
 
 <!-- component: quiz-block | src: quiz.json -->
@@ -119,9 +121,9 @@ If the journal app is not ready, use paper.
 ## Limits and common mistakes
 
 - Exposure and open risk are not forecasts. Open risk assumes every stop fills at its stop price. Gaps and circuits can break that assumption (*Slippage, gaps and planned versus actual risk*).
-- Sector labels depend on the data source. Check the source before use [VERIFY: sector classification source].
+- Sector labels depend on the data source. Check the source before use.
 - Diversification does not remove market-wide risk. A broad fall can hit every sector.
-- The 40% sector limit is an example. You set every limit.
+- The 50% sector limit is an example. You set every limit.
 - Adding to a losing position to lower the average cost raises concentration. It is not a fix.
 
 ## Remember
@@ -138,10 +140,6 @@ Sources (names only):
 
 - NSE sectoral index methodology documents.
 
-Facts to verify before this chapter is final:
-
-- [VERIFY: sector classification source for your data, against the NSE sectoral index definitions]
-
-<!-- facts-needed: sector classification source for your data (NSE sectoral index definitions) -->
+The NSE Indices four-level industry classification was read on 11 Nov 2026 from the NSE Indices site.
 
 <!-- standing-disclaimer -->

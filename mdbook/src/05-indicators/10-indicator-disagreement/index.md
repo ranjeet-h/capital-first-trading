@@ -29,7 +29,7 @@ The short rule: write the tie-break rule first, then look at the data.
 
 ## See it
 
-<!-- component: indicator-playground | indicator: sma | period: 10 | compareTo: 20,50 | predict: on | sliders: period | caption: Price with a short and a longer average; a predict mode asks you to say which side the average sits on before the answer is shown -->
+<!-- component: indicator-playground | indicator: sma | period: 10 | compareTo: 20,50 | predict: on | sliders: period | bars: 90 | caption: Price with a short and a longer average; a predict mode asks you to say which side the average sits on before the answer is shown -->
 
 Move the period slider from 10 to 50. Watch how the average changes shape as the period grows. Use the predict mode before you reveal each answer. Write down your guess, then check it. Notice how often two averages with different periods give different answers on the same date.
 
@@ -59,6 +59,8 @@ Suppose the rule uses only the breakout test from *The fully specified swing str
 The 20-day and 50-day averages sit below the close. The 10-day average sits above it. The same date gives a different reading when only the period changes. That is why you fix the periods before you test.
 
 ## Try it
+
+<!-- component: indicator-disagree | caption: Five readings on one made-up chart. Guess how many lean up, then check. Find a day where they disagree -->
 
 ### Guided exercise
 
@@ -122,12 +124,7 @@ Mode: **paper**. This is a learning log only. Log it in your journal (or on pape
 ## Sources and verification
 
 - The sources listed in the earlier chapters of this track.
-- Peer-reviewed work on overfitting and data snooping in trading tests.
-
-<!-- facts-needed: default periods used by the Kite chart indicators (see the earlier chapters of this track). -->
-
-[VERIFY: Kite default indicator periods]
-
-<!-- OPEN: The spec's visual line asks for several parameter sliders and a predict-then-reveal mode. The placeholder keys above are the intended inputs. Check them when the playground is built. The spec's worked example says all three averages are below the close. The 10-day average at Rs 252 is above Rs 250, so the text states the correct reading. -->
+- Bailey, Borwein, Lopez de Prado and Zhu (2014), "Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance", Notices of the American Mathematical Society, 61(5), 458-471.
+- Zerodha's Kite charting manual does not list default indicator settings. Read each setting on your own screen.
 
 <!-- standing-disclaimer -->

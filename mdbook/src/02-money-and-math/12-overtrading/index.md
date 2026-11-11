@@ -43,8 +43,6 @@ Signs of overtrading in a journal:
 
 Your Rs 2,000-3,000 figure is tested in *The Rs 2,000-3,000 reality check*. It is not a goal for any strategy.
 
-<!-- OPEN: spec *Overtrading and why daily profit targets encourage it* says the Rs 2,000-3,000 figure is "a ceiling, not a target", while PLAN section 2 calls it a daily target. This draft refers only to the *The Rs 2,000-3,000 reality check* test. Reviewer to confirm wording. -->
-
 ## See it
 
 This is a static table. The target is fixed at Rs 2,000 a day. Each row shows how the number of trades rises as net expectancy falls.
@@ -59,6 +57,8 @@ This is a static table. The target is fixed at Rs 2,000 a day. Each row shows ho
 
 Read down the table. When net expectancy halves, the trade count doubles. The 200-trade row is where the worked example lands once costs are included.
 
+<!-- component: overtrading-drain | target: 2000 | expectancy: 50 | cost: 40 | caption: Target Rs 2,000 a day, Rs 50 average per trade, dummy cost Rs 40. Watch the trades needed jump from 40 to 200. This is not a target to chase. -->
+
 ## Worked example
 
 **Hypothetical.** For arithmetic only, not an estimate: R = Rs 500 (1% of Rs 50,000). Expectancy = 0.1 x 500 = Rs 50 per trade. Target = Rs 2,000 a day.
@@ -71,13 +71,11 @@ Read down the table. When net expectancy halves, the trade count doubles. The 20
 | 4. Trades needed after costs | 2,000 / 10 | 200 trades a day |
 | 5. Over 250 trading days (assumed) | 200 x 250 | 50,000 trades a year |
 
-The cost assumption turns a 40-trade day into a 200-trade day. The Rs 40 figure is a DUMMY value, used for arithmetic only. It is not a real broker fee or government charge.
+The cost assumption turns a 40-trade day into a 200-trade day. The Rs 40 figure is a DUMMY value, used for arithmetic only. It is a round number for practice, not a real broker fee or government charge. As of 11 Nov 2026, Zerodha lists zero brokerage on delivery trades. On intraday trades it lists 0.03% of the trade value or Rs 20 per order, whichever is lower, plus taxes and exchange fees. The full table is in *Costs on a trade*. Rules change, so check the Zerodha charges page.
 
 ## Try it
 
-This chapter has no interactive demo. Use the table in See it and the guided exercise below.
-
-<!-- OPEN: spec gives no interactive demo for *Overtrading and why daily profit targets encourage it*; the See it table is static. -->
+Work each exercise by hand first. Then use the demo under it to check your answer. Change the cost and see how the number of trades moves.
 
 ### Guided exercise
 
@@ -90,6 +88,8 @@ Hints:
 3. Check: the after-cost count should be larger than the before-cost count.
 
 **Answer:** Before costs, 1,000 / 25 = 40 trades. Net expectancy 25 - 15 = Rs 10. After costs, 1,000 / 10 = 100 trades.
+
+<!-- component: overtrading-drain | target: 1000 | expectancy: 25 | cost: 15 | caption: Guided exercise: target Rs 1,000, Rs 25 average per trade, dummy cost Rs 15. -->
 
 ### Independent exercise
 
@@ -106,6 +106,8 @@ Trades per day = 3,000 / 30 = 100.
 Trades per week = 100 x 5 = 500. Check: 500 / 5 = 100 per day.
 
 </details>
+
+<!-- component: overtrading-drain | target: 3000 | expectancy: 60 | cost: 30 | caption: Independent exercise check: target Rs 3,000, Rs 60 average per trade, dummy cost Rs 30. Try it by hand first. -->
 
 ## Quiz
 
@@ -146,6 +148,6 @@ Sources (names only):
 
 - *Discipline* (discipline) and *Loss aversion and revenge trading* (revenge trading), for the behaviour links.
 
-Facts to verify before this chapter is final: none. The costs in this chapter are DUMMY values, and their real counterparts are checked in *Costs on a trade*.
+The costs in this chapter are round numbers for practice. The real charges, with dates and sources, are in *Costs on a trade*.
 
 <!-- standing-disclaimer -->

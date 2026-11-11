@@ -37,11 +37,11 @@ Two labels describe the candle:
 - A **bullish** candle has a close above its open. The price finished higher than it started.
 - A **bearish** candle has a close below its open. The price finished lower than it started.
 
-Colours differ between charting tools. One tool may draw bullish candles in green. Another may use white. Read the legend, the small key on the chart, before you rely on colour. The rule is the comparison of close with open, not the colour. [VERIFY: Kite chart colour convention and default candle style]
+Colours differ between charting tools. One tool may draw bullish candles in green. Another may use white. Read the legend, the small key on the chart, before you rely on colour. The rule is the comparison of close with open, not the colour. Kite's default candles are green and red. Zerodha says a setting called "Colour bars based on previous close" can change how the colours are chosen, so read the legend on your own chart. (As of 11 Nov 2026, Zerodha support page on candle colours. Settings change, so check Kite.)
 
 A candle is built from many trades. Each trade is one tick. The candle keeps the first, highest, lowest and last tick of the period.
 
-The open of a daily candle comes from the regular trading session. It does not come from the pre-open phase. The session times are covered in *Trading sessions, timings and holidays*. [VERIFY: NSE market timings and the definition of open for the continuous session]
+The open of a daily candle on NSE comes from the pre-open phase. NSE sets the day's open price from the price found in pre-open, which runs from 9:00 am to 9:15 am. If no price is found there, the first trade of the normal market at 9:15 am is the open. The session times are covered in *Trading sessions, timings and holidays*. (As of 11 Nov 2026, NSE pre-open page. Rules change, so check the NSE site.) Daily candles on Kite use the exchange's end-of-day data, while minute candles are built from the live price feed, so the open on a minute chart can differ a little from the daily open.
 
 A candle does not show everything. It does not show the order of trades inside the period. It does not show how many shares were traded. It says nothing certain about the next candle.
 
@@ -143,9 +143,10 @@ Mode: **paper**. Pick one stock and a chart you are allowed to view. Write the r
 - NSE India, market data definitions
 - Kite chart help pages
 
-[VERIFY: Kite chart colour convention and default candle style]
-[VERIFY: NSE market timings and the definition of open for the continuous session]
+Facts checked on 11 Nov 2026:
 
-<!-- facts-needed: Kite chart colour convention and default candle style; NSE market timings and the definition of open for the continuous session. -->
+- Kite's default candle colours are green and red, and a setting can change them. This comes from Zerodha's support site.
+- NSE sets the day's open from the pre-open price, or from the first normal-market trade if pre-open finds none. This comes from NSE's pre-open page.
+- Daily candles use exchange end-of-day data, and minute and hourly candles use the live feed. This comes from Zerodha's support site.
 
 <!-- standing-disclaimer -->

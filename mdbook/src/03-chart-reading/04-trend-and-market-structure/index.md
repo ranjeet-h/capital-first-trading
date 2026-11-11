@@ -45,7 +45,7 @@ The swing points from the worked example, sorted by type:
 
 Read down each column. Each highs value is above the one before it. Each lows value is above the one before it. Those two facts describe an uptrend.
 
-<!-- OPEN: The spec gives an interactive pattern-identification exercise (marked as new) where the reader taps swing points and the tool labels them. That name is not in the allowed component list, so no placeholder is added here. Confirm the name, then add the placeholder under this heading. -->
+<!-- component: swing-labeler | n: 2 | caption: A made-up chart with the swings of this chapter (lows at Rs 200, Rs 215 and Rs 222, highs at Rs 230 and Rs 245). Tap the chart to mark swings and read the label, then change N and see the rule's swings move. -->
 
 ## Worked example
 

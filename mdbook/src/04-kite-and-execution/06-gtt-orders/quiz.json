@@ -95,7 +95,7 @@
     ],
     "answer": "c",
     "explanations": {
-      "a": "A GTT has a validity period. Check the period on your own screen, because the rules can change.",
+      "a": "A GTT does not last forever. It stays active for up to one year. Confirm the current period on Zerodha's support pages.",
       "b": "A GTT places its stored order after the trigger. The fill can differ from the trigger, especially in a gap.",
       "d": "Corporate actions can change share counts and prices. Check every GTT after one."
     },

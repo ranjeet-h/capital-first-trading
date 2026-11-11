@@ -26,7 +26,7 @@ To pass, you must do both of these in every scenario:
 
 You must also answer two multiple-choice questions on the rule set. Both must be correct.
 
-The pass mark is 10 of 10 scenarios. <!-- OPEN: PLAN.md says 10 of 10. The reading that each attempt draws ten fresh simulated days needs owner confirmation. -->
+The pass mark is 10 of 10 scenarios.
 
 Each attempt draws ten new simulated days. The earlier attempt does not carry over. There is no timer and no penalty for retaking.
 
@@ -47,6 +47,8 @@ This gate has no picture to explore. Use this table to see what each outcome mea
 | Raised size after a loss | Size rule broken. |
 
 One broken rule in one day fails the attempt.
+
+<!-- component: gate-check | gate: G4 | caption: Tick each criterion only when it is true for you. A gate checks what you learned. It is not permission to trade. -->
 
 ## Worked example
 

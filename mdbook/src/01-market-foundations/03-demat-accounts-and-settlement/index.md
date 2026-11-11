@@ -29,9 +29,9 @@ A hypothetical beginner buys 20 shares at Rs 250 in the morning. They see the or
 
 **Netting** combines many trades in one settlement cycle into one net figure for each share and for each cash amount. Buys and sells offset each other before money or shares move.
 
-**T+1** means settlement happens one working day after the trade date [VERIFY: current rule and effective date]. "T" is the trade day. "+1" means one working day later, not one calendar day.
+**T+1** means settlement happens one working day after the trade date. SEBI's T+1 cycle for all listed shares has been in force since 27 Jan 2023. (As of 11 Nov 2026, SEBI circular of 7 Sep 2021 and SEBI's master circular. Rules change, so check the SEBI site.) "T" is the trade day. "+1" means one working day later, not one calendar day.
 
-**Shares must be in the demat account before they can be sold for delivery** [VERIFY: rule on selling shares not yet credited].
+**Shares reach your demat account only after settlement.** If you buy on Monday, they are credited after settlement on Tuesday. Some brokers let you sell them on Tuesday before they arrive. This is called BTST, buy today and sell tomorrow. It carries a risk called short delivery. If the shares you sold do not arrive in time, the exchange can run an auction, and the penalty can be up to 20% of the value. Money from selling shares that have not yet reached your account also cannot be used the same day. (As of 11 Nov 2026, Zerodha support page on BTST. Broker rules differ and change, so check with your broker.)
 
 **Holding and position are different.** A delivery holding is settled shares sitting in your demat account. An intraday position is one you open and close on the same day. It is not a delivery holding. Intraday positions are covered in *Order book*.
 
@@ -43,13 +43,13 @@ A hypothetical beginner buys 20 shares at Rs 250 in the morning. They see the or
 flowchart LR
   A["Order placed (trading account)"] --> B["Execution: trade matched on exchange"]
   B --> C["Clearing: obligations calculated and netted"]
-  C --> D["Settlement at T+1 [VERIFY]"]
+  C --> D["Settlement at T+1"]
   D --> E["Shares credited to demat account"]
 ```
 
 Follow the arrows from left to right. The gap between execution and settlement is why a holding does not appear the moment an order fills.
 
-<!-- OPEN: spec gives a static Mermaid timeline for this chapter and no interactive demo. The T+1 step is marked [VERIFY] as the spec requires. -->
+<!-- component: settlement-timeline | qty: 20 | price: 250 | startDay: 0 | settleDays: 1 | caption: A buy of 20 shares at Rs 250 on a made-up Monday. Press Play to follow it, then tap a day to add a made-up holiday. -->
 
 ## Worked example
 
@@ -61,9 +61,9 @@ Follow the arrows from left to right. The gap between execution and settlement i
 | 2. Sell proceeds | 1 x 2,000 | Rs 2,000 |
 | 3. Net payable | 15,000 - 2,000 | Rs 13,000 |
 
-**Check:** 13,000 + 2,000 = 15,000, which equals the total buys. The netting rules, and who nets for which account, are [VERIFY: actual netting rules].
+**Check:** 13,000 + 2,000 = 15,000, which equals the total buys. The example is a round-number picture of the idea. In real settlement, NSE's FAQ says netting is done for each client in each share. It does not apply to stocks in the trade-for-trade segment or to auction trades, where each trade is settled in full. (As of 11 Nov 2026, NSE Basic FAQs on the Secondary Market. Rules change, so check the NSE site.)
 
-**Timeline example.** A buy executed on a hypothetical Monday settles on Tuesday, if Tuesday is a working day [VERIFY: holiday calendar]. If the next day is a holiday, the settlement moves to the next working day.
+**Timeline example.** A buy executed on a hypothetical Monday settles on Tuesday, if Tuesday is a working day. If the next day is a holiday, the settlement moves to the next working day. NSE publishes its holiday list each year. See *Trading sessions, timings and holidays*.
 
 ## Try it
 
@@ -76,7 +76,7 @@ Follow the arrows from left to right. The gap between execution and settlement i
 | Order placed | ______ | Trade day | ______ |
 | Trade matched | ______ | Trade day | ______ |
 | Obligation recorded | ______ | Trade day | ______ |
-| Settlement | ______ | Next working day, T+1 [VERIFY] | ______ |
+| Settlement | ______ | Next working day, T+1 | ______ |
 | Shares arrive | ______ | After settlement | ______ |
 
 **Hints:**
@@ -85,7 +85,7 @@ Follow the arrows from left to right. The gap between execution and settlement i
 2. Which institution matches the trade, and which records the obligation?
 3. Which day is the trade day, and which is the settlement day?
 
-**Answer:** Order placed: trading account, on the trade day. Trade matched: the exchange. Obligation recorded: the clearing corporation. Settlement: on the next working day, T+1 [VERIFY]. The Rs 5,000 leaves the linked bank account. The shares are credited to the demat account through the depository and the DP. Shares arrive in the demat account after settlement, not at the moment of the fill.
+**Answer:** Order placed: trading account, on the trade day. Trade matched: the exchange. Obligation recorded: the clearing corporation. Settlement: on the next working day, T+1. The Rs 5,000 leaves the linked bank account. The shares are credited to the demat account through the depository and the DP. Shares arrive in the demat account after settlement, not at the moment of the fill.
 
 ### Independent exercise
 
@@ -95,8 +95,8 @@ Follow the arrows from left to right. The gap between execution and settlement i
 
 Sources needed:
 
-- The current T+1 rule and its effective date. [VERIFY: SEBI circular; NSE clearing page]
-- The exchange's holiday list for the year. [VERIFY: NSE holiday list]
+- The current T+1 rule and its effective date. These are in the notes above.
+- The exchange's holiday list for the year, which NSE publishes on its site.
 - The trade date, and the weekend days between the trade and the candidate settlement date.
 
 You can count working days only after you have these three. You cannot fix the date from memory, because holidays are set each year.
@@ -116,11 +116,11 @@ Six questions check the holding timing, the meaning of T+1, the netting arithmet
 1. Open the Kite demo. Note the labels that show holdings and funds.
 2. Write each label in your own words, in your journal or on paper.
 3. Label the layout "check your own Kite for the current layout".
-4. The Kite demo uses dummy data for interface practice. Zerodha does not provide a paper-trading account. [VERIFY: wording on support.zerodha.com]
+4. The Kite demo uses dummy data for interface practice. Zerodha does not provide a paper-trading account. (As of 11 Nov 2026, Zerodha support page. Check it for any change.)
 
 ## Limits and common mistakes
 
-- Settlement risk is low in a learning exercise. It is real for live trades. Do not assume you can sell on the same day. Check the current rule first.
+- Settlement risk is low in a learning exercise. It is real for live trades. Do not assume you can sell on the same day. Check your broker's current rule first.
 - The dates and netting rules here explain a concept. The real rules are in the exchange and SEBI documents.
 - A holding in your demat account is not the same as cash in your account. The money is in the bank and the trading account.
 - The Kite demo's layout may change. Check your own Kite for the current layout.
@@ -130,8 +130,8 @@ Six questions check the holding timing, the meaning of T+1, the netting arithmet
 - Trading account holds orders and funds. Demat account holds shares. The bank account is linked.
 - A trade is executed, then cleared, then settled. The holding appears after settlement.
 - Netting reduces many trades to one net figure for each share and each cash amount. In the example, 15,000 of buys minus 2,000 of sells is a net Rs 13,000 payable.
-- T+1 means one working day after the trade date [VERIFY: current rule].
-- Shares must be credited before a delivery sale [VERIFY: rule].
+- T+1 means one working day after the trade date.
+- Shares arrive in your demat account after settlement. Selling them before they arrive (BTST) carries a short-delivery risk.
 
 ## Sources and verification
 
@@ -142,15 +142,13 @@ Six questions check the holding timing, the meaning of T+1, the netting arithmet
 - NSDL and CDSL websites.
 - Zerodha support pages on demat accounts.
 
-**Facts to verify:**
+**Facts checked on 11 Nov 2026:**
 
-- T+1 settlement rule and effective date. [VERIFY: SEBI circular; NSE clearing page]
-- Holiday calendar for settlement days. [VERIFY: NSE holiday list]
-- Rule on selling shares not yet credited. [VERIFY: SEBI or NSE rule]
-- Demat account opening and annual charges, if mentioned later (see *Costs on a trade*). [VERIFY: Zerodha charges page; CDSL/NSDL tariff]
-- Netting rules and who nets for which account. [VERIFY: clearing corporation rules]
-- Kite demo as dummy data, and no paper-trading account. [VERIFY: wording on support.zerodha.com]
-
-<!-- facts-needed: T+1 rule and effective date; NSE holiday list; rule on selling undelivered shares; netting rules; Zerodha charges page; CDSL/NSDL tariff; Kite demo wording on support.zerodha.com -->
+- T+1 has applied to all listed shares since 27 Jan 2023. SEBI's master circular on settlement sets the daily schedule (pay-in by 11:00 am, funds pay-out by 1:30 pm, shares pay-out by 3:30 pm). SEBI also began an optional same-day (T+0) settlement trial for a small set of shares on 28 Mar 2024. This chapter does not teach it.
+- Settlement falls on the next working day when the usual day is a holiday. The 2026 holiday list is in *Trading sessions, timings and holidays*.
+- BTST, short delivery and the auction penalty come from Zerodha's support page on BTST.
+- Netting rules come from NSE's Basic FAQs on the Secondary Market.
+- Demat account charges are not quoted in this chapter. See *Costs on a trade* and the Zerodha charges page.
+- The Kite demo and the lack of a paper-trading account come from Zerodha's support site.
 
 <!-- standing-disclaimer -->

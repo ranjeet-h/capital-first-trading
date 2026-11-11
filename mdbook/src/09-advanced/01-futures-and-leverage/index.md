@@ -24,16 +24,26 @@ These terms matter here:
 - **Margin** is the deposit you pay to hold the contract. It is smaller than the value of the contract.
 - **Leverage** means you control a large value with a small amount of money. Futures have leverage because the margin is small compared with the contract value.
 - **Expiry** is the last date of the contract.
-- **Daily settlement** means gains and losses move in and out of your account as prices change. They do not wait for expiry. [VERIFY: NSE clearing corporation daily settlement rules]
+- **Daily settlement** means gains and losses move in and out of your account as prices change. They do not wait for expiry. NSE Clearing, the body that guarantees and settles trades, marks each futures position to a daily settlement price. That price is based on the volume weighted average price of the contract over the last 30 minutes of the day. Gains and losses are then paid in or out of your broker's account, and the position is reset to that price. (As of 11 Nov 2026, NSE Clearing settlement mechanism page. Rules change, so check the NSE Clearing site.)
 - **Expected result** is the average result you would get over many similar bets.
 
 Three facts follow from these terms.
 
 1. **Leverage makes gains and losses bigger by the same factor.** It does not change the expected result of a bet. Leverage makes each swing bigger. The average result per rupee of exposure stays the same.
 2. **A small deposit does not mean a small risk.** The risk comes from the full contract value. The deposit only tells you how much you paid first.
-3. **Losses can be larger than the margin deposited.** If prices move against you, you may have to pay more money into the account. The margin rules and any extra payment are set by the exchange and your broker. [VERIFY: margin requirements and margin call rules]
+3. **Losses can be larger than the margin deposited.** If prices move against you, you may have to pay more money into the account. The margin rules and any extra payment are set by the exchange and your broker. NSE Clearing sets the starting margin from a risk model. For index and stock futures, it is worked out for a two-day price move, at a 99 percent confidence level. Your broker must collect the margin from you before you take the position, and may ask for more if your losses grow. (As of 11 Nov 2026, NSE Clearing margin page. Rules change, so check the NSE Clearing site.)
 
-Contract size, margin and expiry are set by the exchange. They change over time. Check them at the source before you rely on any number. [VERIFY: contract size, margin and expiry rules]
+Contract size, margin and expiry are set by the exchange. They change over time. Check them at the source before you rely on any number.
+
+**Real figures, for reference.** The Rs 10,00,000 contract and the 10 percent margin in this chapter are round numbers for practice. They are not real. The table below shows a few real rules. They are here only so you can see how real contracts are set. This is not an offer or advice to trade.
+
+| Item | What the official source says | Source and date |
+|---|---|---|
+| Index contract value | SEBI says a new index derivative contract must be worth at least Rs 15 lakh when it is introduced. At each review, the lot size is set so the value stays between Rs 15 lakh and Rs 20 lakh. | SEBI circular of 1 Oct 2024 |
+| Nifty 50 lot size | 65 units, changed from 75. It applies from the January 2026 contracts. NSE reviews lot sizes from time to time. | NSE circular of 3 Oct 2025 |
+| Expiry day | Nifty 50 contracts expire on a Tuesday. If that Tuesday is a holiday, they expire on the trading day before. | NSE contract specifications page, updated 11 Aug 2026, and NSE circular of 25 Jun 2025 |
+
+(As of 11 Nov 2026. Rules change, so check the NSE and SEBI sites.)
 
 ## See it
 
@@ -47,6 +57,8 @@ The table compares the same price move on cash and on a futures position.
 | Move as a share of the money you put in | 2% | 20% |
 
 Look at the last row. The same 2% move is ten times bigger against the money you put in. Try a 5% move with the same numbers. The futures move is Rs 50,000, which is half of the margin. The move grows with the contract value, not with the deposit.
+
+<!-- component: futures-payoff | contract: 1000000 | marginPct: 10 | move: -2 | caption: The chapter's numbers: a 2% price move is Rs 20,000 on the contract, which is 20% of the Rs 1,00,000 deposit, but only 2% on cash. Theory only. -->
 
 ## Worked example
 
@@ -110,7 +122,7 @@ Mode: **learning note**. This chapter has no practice. It asks for reflection on
 ## Limits and common mistakes
 
 - This chapter explains how futures work in theory. It does not teach how to trade them.
-- Margin, contract size and expiry rules change over time. Check them at the exchange before you rely on any number. [VERIFY: contract specifications, margin and expiry rules]
+- Margin, contract size and expiry rules change over time. Check them at the exchange before you rely on any number.
 - The Rs 10,00,000 contract and the Rs 1,00,000 margin are made up. Real contracts differ.
 - A futures position is not a shortcut to a daily target. See *The Rs 2,000-3,000 reality check*.
 - Knowing how leverage works does not tell you whether any trade will make money.
@@ -129,12 +141,8 @@ Mode: **learning note**. This chapter has no practice. It asks for reflection on
 - SEBI circulars on derivatives margin
 - Zerodha Varsity, futures material (reference only)
 
-Items to verify:
-
-- [VERIFY: contract specifications, lot sizes and expiry rules]
-- [VERIFY: margin requirements and margin call rules]
-- [VERIFY: daily settlement rules]
-
-<!-- facts-needed: contract specifications, lot sizes and expiry rules; margin requirements and margin call rules; daily settlement rules. -->
+- SEBI circular of 1 Oct 2024 on measures to strengthen the equity index derivatives framework
+- NSE circular of 3 Oct 2025 on the revision in market lots of index derivatives
+- NSE Clearing pages on settlement mechanism and margins
 
 <!-- standing-disclaimer -->

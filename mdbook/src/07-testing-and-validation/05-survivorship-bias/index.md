@@ -42,9 +42,7 @@ Free data sources often lack the price history of delisted companies. That is a 
 
 Look at the two columns on the right. The survivors-only test leaves out C and D. The full test keeps them. The result of the two tests differs by a lot.
 
-*The lab's interactive survivorship comparison is not shown here yet.*
-
-<!-- OPEN: The spec gives a lab-backtest survivorship comparison with survivors and the full universe side by side. The lab-backtest component is not in the allowed component list, so no placeholder is inserted. The table above stands in for it. Also confirm why D is excluded from the survivors-only group: the spec names only A and B as survivors and does not say why D is missing. This chapter gives D the reason "dropped out of today's list", which is hypothetical. -->
+<!-- component: survivorship-demo | caption: Remove the stocks that dropped away and watch the average jump from a loss to a gain. -->
 
 ## Worked example
 
@@ -93,7 +91,7 @@ Adding E narrows the gap but does not remove it. C and D are still missing from 
 
 ### Independent exercise
 
-**Task.** Name the data you would need for a point-in-time test of a strategy that trades only index members. For each item, say whether you could get it free. [VERIFY: free availability of each item]
+**Task.** Name the data you would need for a point-in-time test of a strategy that trades only index members. For each item, say whether you could get it free.
 
 <details><summary>Check your answer</summary>
 
@@ -103,7 +101,7 @@ You would need:
 - **Price history for companies that have left the index**, including companies that were delisted or merged. Without these, the test is still biased.
 - **Corporate action history** for each company, such as splits, bonus issues and mergers (*Corporate actions*). Without these, prices cannot be adjusted correctly (*Historical data*).
 
-Whether you can get each item free is [VERIFY: free availability of past index membership, delisted price history and corporate action records, from the chosen sources]. Many free sources do not have all three. If you cannot get them, say so in the test plan. Do not hide the gap.
+Whether you can get each item free depends on the source. Check each source's own help pages and terms. Many free sources do not have all three. If you cannot get them, say so in the test plan. Do not hide the gap.
 
 All figures are hypothetical.
 
@@ -141,9 +139,7 @@ Mode: **learning note**. Use Lab 4 to run the survivors-only test and the full-u
 
 ## Sources and verification
 
-- NSE Indices methodology and constituent pages. [VERIFY: index constituent history and methodology]
-- The help page of the chosen data source. [VERIFY: availability and terms of delisted-stock price history]
-
-<!-- facts-needed: availability and terms of delisted-stock price history from free sources; index constituent history and methodology on the NSE indices site. -->
+- NSE Indices methodology and constituent pages (niftyindices.com and nseindia.com), for how an index is chosen and changed.
+- The help page of the data source you choose, for what it says about delisted shares.
 
 <!-- standing-disclaimer -->

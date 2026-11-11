@@ -27,7 +27,7 @@ If the open is already beyond the stop, the fill is near the open, not at the st
 
 Two more points:
 
-- Circuit limits set how far a price may move in one session. A circuit limit can stop trading beyond a band, so an exit may not happen at all [VERIFY: NSE and SEBI circuit price band rules]. Circuit limits are covered in *Circuit limits and halts*.
+- Circuit limits set how far a price may move in one session. A circuit limit can stop trading beyond a band, so an exit may not happen at all. NSE sets daily bands of 2%, 5%, 10% or 20% for most stocks. Stocks with futures and options use a flexible 10% range. (As of 11 Nov 2026, NSE FAQs and SEBI's master circular.) Circuit limits are covered in *Circuit limits and halts*.
 - Size your position against a gap you can afford, not only against the stop distance. This is covered in *Slippage*.
 
 Gap percent = (open minus previous close) divided by previous close, times 100. A negative gap percent means the open was below the previous close.
@@ -103,7 +103,7 @@ Mode: **paper**. Log it in your journal, or on paper if the journal is not ready
 - A stop is a trigger, not insurance. It does not promise the fill price.
 - A gap through stop can make the loss several times the planned loss. The planned loss is not a limit.
 - Gap percent is not rupees. A 5 percent gap on Rs 400 is Rs 20 per share. Keep the two measures apart.
-- Circuit limits can prevent an exit beyond a price band. Check the current rules before you rely on any exit (*Circuit limits and halts*). [VERIFY: NSE and SEBI circuit price band rules]
+- Circuit limits can prevent an exit beyond a price band. Check the current rules before you rely on any exit (*Circuit limits and halts*).
 - Compare the planned loss with the largest gap you consider plausible. Keep that loss inside your risk budget (*Slippage*).
 
 ## Remember
@@ -120,10 +120,10 @@ Mode: **paper**. Log it in your journal, or on paper if the journal is not ready
 - SEBI circulars on price bands
 - Zerodha support, stop-order articles
 
-[VERIFY: NSE and SEBI circuit price band rules]
-[VERIFY: NSE market timings for the cash-market session open and close]
-[VERIFY: how Kite handles triggered stop orders across a gap]
+Facts checked on 11 Nov 2026:
 
-<!-- facts-needed: circuit price band rules and their effect on exits; cash-market session open and close times; how Kite handles triggered stop orders across a gap. -->
+- Band percentages come from NSE's Basic FAQs on the Secondary Market and SEBI's master circular on trading.
+- The cash market opens at 9:15 am after pre-open. It closes at 3:30 pm, or at 3:15 pm for stocks with futures and options. This comes from NSE circulars and Zerodha's market timings page.
+- Zerodha explains that a stop-loss market (SL-M) order becomes a market order when the trigger is hit, so it fills at whatever price is available. A stop-loss (SL) order becomes a limit order, so if the price jumps past your limit price after the trigger, it can stay unfilled. A stop-loss order lasts only for the trading day. This comes from Zerodha's support pages on stop-loss orders. Some order types are blocked for some products, so check Kite.
 
 <!-- standing-disclaimer -->

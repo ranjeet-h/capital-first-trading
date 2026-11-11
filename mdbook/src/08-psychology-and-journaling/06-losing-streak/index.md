@@ -118,9 +118,7 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 
 ## Sources and verification
 
-- Lab 4, experiment 7, and gate G4 in the book's plan.
-- General text on the gambler's fallacy. [VERIFY: name of the source to cite]
-
-<!-- facts-needed: name of a general source on the gambler's fallacy. -->
+- The losing-streak experiment in Lab 4.
+- Amos Tversky and Daniel Kahneman (1971), "Belief in the Law of Small Numbers", Psychological Bulletin, 76(2), 105-110. It is about the mistaken belief that short runs of chance events must even out.
 
 <!-- standing-disclaimer -->

@@ -43,9 +43,9 @@ Some points to keep in mind:
 
 ## See it
 
-<!-- OPEN: The spec's visual line asks for sr-drawing-exercise with a Fibonacci tool. That component is not on the allowed component list, so no placeholder is written here. Add it once the component is allowed. -->
-
 Picture each level as a horizontal line drawn across the chart, between the swing high and the swing low. Read the range first. Then find each line. Notice that the 61.8 percent line sits lower than the 50 percent line. The worked example below gives the exact prices for one swing.
+
+<!-- component: fib-tool | caption: A made-up chart with a swing low of Rs 200 and a swing high of Rs 260, as in the worked example. Pick other swing points and watch all five levels move. Then play the pullback. The levels describe, they do not predict. -->
 
 ## Worked example
 
@@ -127,13 +127,7 @@ Mode: **paper**. This is a learning log only. Log it in your journal (or on pape
 ## Sources and verification
 
 - Zerodha Varsity, Fibonacci module (reference only, original wording).
-- Academic reviews of technical trading rules.
-- Kite chart help pages, for the Fibonacci tool. [VERIFY: article title]
-
-<!-- facts-needed: whether Kite has a Fibonacci retracement tool and where it sits in the chart tools menu. -->
-
-[VERIFY: Kite Fibonacci tool availability]
-
-<!-- OPEN: Specific academic reviews of technical trading rules are not named in the spec. The sources list keeps the general name only. Add exact references once they are chosen. -->
+- This book names no study on Fibonacci levels. Researchers have reached mixed findings on technical trading rules in general, so treat any single claim with care.
+- Zerodha, Kite charting manual (kite.trade/docs/kite/charting). It says Kite has more than 30 drawing tools. Look in the tools menu on your own screen to see whether a Fibonacci tool is there.
 
 <!-- standing-disclaimer -->

@@ -46,6 +46,8 @@ This book does not assume you have an edge. Many ideas that look promising show 
 
 Press Step to move the simulator one bar at a time. At each bar, check three things. Is the entry rule met? Where is the stop? Has the exit rule triggered? The step log shows the answer for each bar in a row. Read the log from top to bottom, the same way the price moved.
 
+<!-- component: edge-explorer | caption: Change the win rate and the size of wins and losses, then watch 100 made-up trades build an average result. -->
+
 ## Worked example
 
 **Hypothetical.** Win rate 40 percent. Average win 2R. Average loss 1R. R = Rs 500. Assumed cost Rs 50 per trade.
@@ -58,7 +60,7 @@ Press Step to move the simulator one bar at a time. At each bar, check three thi
 | 4. In rupees | 0.20 x Rs 500 | Rs 100 per trade |
 | 5. After costs | Rs 100 - Rs 50 | Rs 50 per trade |
 
-The Rs 50 cost is an assumed figure for this example only. [VERIFY: costs on a trade] Taxes are not included here.
+The Rs 50 cost is a round number for practice, not the real charge. As of 11 Nov 2026, Zerodha lists zero brokerage on delivery trades, and 0.03% or Rs 20 per order (whichever is lower) on intraday trades, plus taxes and exchange fees. The full table is in *Costs on a trade*. Rules change, so check the Zerodha charges page. Taxes on gains are not included here.
 
 ## Try it
 
@@ -128,11 +130,8 @@ Mode: **paper**. Write it in your journal. If the journal is not ready, use pape
 ## Sources and verification
 
 - Zerodha Varsity, material on expectancy and trading systems (reference only).
-- Published research on backtesting and selection bias.
-- [VERIFY: costs on a trade, for the Rs 50 example]
-
-<!-- facts-needed: the actual cost per round trip (the Rs 50 figure is an assumed example only). -->
-
-<!-- OPEN: The peer-reviewed sources for backtesting and selection bias are not yet chosen. Names only are listed. -->
+- Bailey, Borwein, Lopez de Prado and Zhu (2014), "Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance", Notices of the American Mathematical Society, 61(5), 458-471. On trying many rules on the same past data.
+- Harvey, Liu and Zhu (2016), "... and the Cross-Section of Expected Returns", Review of Financial Studies, 29(1), 5-68. On how many tests make a lucky result likely.
+- Zerodha charges page, read on 11 Nov 2026, for the real charges next to the Rs 50 example.
 
 <!-- standing-disclaimer -->

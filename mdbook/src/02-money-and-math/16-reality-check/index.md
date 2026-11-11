@@ -13,9 +13,6 @@ estimated_minutes: 30
 
 A hypothetical trader with Rs 50,000 writes one number into her plan: Rs 2,000 a day. Over 250 trading days that is Rs 5,00,000. That is ten times her capital. Her plan does not explain how any strategy would make that every day. This chapter does the arithmetic she skipped. The result is not a strategy problem to solve. It is a number that shows the target does not fit this capital.
 
-<!-- OPEN: spec open question 7 asks whether the 50% annual-return row should appear at all. Kept as scale-only, per spec -->
-<!-- OPEN: spec lists Lab 4 (trade-order Monte Carlo for streak distribution) as a later lab. Not referenced in the text until that lab exists -->
-
 ## The idea
 
 Start with the target in rupees. Then ask what capital and what return it would need.
@@ -23,7 +20,7 @@ Start with the target in rupees. Then ask what capital and what return it would 
 **Terms**
 
 - **Daily target:** the profit you want in one trading day, in rupees.
-- **Trading days per year:** the number of market sessions in a year. This chapter uses 250 as an assumption for arithmetic. [VERIFY: trading days per year from the NSE holiday list and calendar]
+- **Trading days per year:** the number of market sessions in a year. This chapter uses 250 as a round number for the arithmetic. The real count is a little lower. In 2026 the NSE calendar has about 245 normal trading days, after weekends and market holidays. Using 245 instead of 250 changes the totals by about 2%, and the point of the chapter stays the same. (As of 11 Nov 2026, NSE holiday list for 2026. The count changes each year, so check the NSE site.)
 - **Annual return:** the yearly profit as a percentage of your capital.
 - **Required daily return:** the daily target as a percentage of your capital.
 
@@ -39,7 +36,7 @@ In symbols: g = T / C.
 
 **Risk and the number of trades.** At Rs 50,000 with 1% risk per trade, one R is Rs 500. A Rs 2,000 day is 4R before costs. That is four wins of 1R each, with no losing trade. Every losing trade takes away from that figure. The more trades a target needs, the more chances costs and mistakes have to add up (*Overtrading and why daily profit targets encourage it*).
 
-**Costs.** Every trade pays costs (*Costs on a trade*). This chapter uses the dummy cost model from *Costs on a trade*: a Rs 190 round trip on Rs 50,000. Dummy figures are for arithmetic only. They are not any broker's charges. Gross profit must cover costs before any of it counts toward the target.
+**Costs.** Every trade pays costs (*Costs on a trade*). This chapter uses the dummy cost model from *Costs on a trade*: a Rs 190 round trip on Rs 50,000. Dummy figures are for arithmetic only. They are round numbers for practice, not the real charges. As of 11 Nov 2026, Zerodha lists intraday brokerage as 0.03% of the trade value or Rs 20 per order, whichever is lower, plus STT, exchange fees, SEBI fee, stamp duty and GST. The table in *Costs on a trade* has every line. Rules change, so check the Zerodha charges page. Gross profit must cover costs before any of it counts toward the target.
 
 **Streaks.** Losing days come in runs (*Consecutive losses and losing streaks*). The worked example shows the capital lost over 5, 10 and 15 losing days. It assumes each losing day loses the risk percentage of the capital at that moment. So each loss is a smaller rupee amount than the one before.
 
@@ -57,7 +54,7 @@ Look at the capital lost after five losing days. Then change the streak to 10 an
 
 ## Worked example
 
-All figures are **hypothetical** and use the arithmetic of this chapter. The 250-day count is an assumption [VERIFY: trading days per year].
+All figures are **hypothetical** and use the arithmetic of this chapter. The 250-day count is a round number for practice. The 2026 NSE calendar has about 245 normal trading days.
 
 ### Step 1: capital needed for Rs 2,000 a day at 20% a year
 
@@ -174,7 +171,7 @@ Seven questions cover capital needed, required daily return, cost drag, streaks 
 ## Limits and common mistakes
 
 - It does not predict any day's result. The arithmetic assumes a steady return, and real trading does not give one.
-- The 250-day count and the dummy costs are assumptions. Replace them with checked values before you rely on any figure.
+- The 250-day count and the dummy costs are round numbers for practice. The 2026 NSE calendar has about 245 normal trading days, and the real charges are in *Costs on a trade*. Check both before you rely on any figure.
 - It does not show that any strategy can reach the target. It shows only what the target would need.
 - 20% a year is a yardstick for a very good year. It is not an expectation. The 50% row is for scale only.
 - The streak figures assume one fixed risk percentage and losses that do not cluster unusually. Real streaks can be longer or shorter.
@@ -189,16 +186,9 @@ Seven questions cover capital needed, required daily return, cost drag, streaks 
 
 ## Sources and verification
 
-**Sources (names only):**
+**Sources, read on 11 Nov 2026:**
 
-- NSE holiday calendar, for the trading-day count.
-- Zerodha charges page, cross-referenced from *Costs on a trade*. The dummy costs in this chapter are not Zerodha's charges.
-
-**To verify:**
-
-- Trading days per year. [VERIFY: trading days per year from the NSE holiday list and calendar]
-- Replace the dummy Rs 190 round trip with the checked cost model from *Costs on a trade* before publishing.
-
-<!-- facts-needed: trading days per year (NSE calendar); verified cost model from *Costs on a trade* to replace the dummy Rs 190 round trip -->
+- NSE holiday list and trading calendar for 2026, for the trading-day count (about 245 normal days).
+- Zerodha charges page, cross-referenced from *Costs on a trade*. The Rs 190 round trip cost in this chapter is a round number for practice, not Zerodha's real charge. The real charges are in the table in *Costs on a trade*.
 
 <!-- standing-disclaimer -->

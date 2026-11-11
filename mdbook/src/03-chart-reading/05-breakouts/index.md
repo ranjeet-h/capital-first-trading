@@ -107,7 +107,7 @@ Mode: **paper**. Log it in your journal, or on paper if the journal is not ready
 - A touch is not a breakout under a close-based rule. A trade above the top that closes inside the range has not broken out.
 - Volume is context, not proof. A high-volume false breakout is still a false breakout.
 - Chasing a move that has already moved far past the level adds risk. Your planned loss may grow far beyond the plan.
-- Circuit limits can stop trading beyond a price band, and that can affect a breakout (*Circuit limits and halts*). [VERIFY: NSE and SEBI circuit price band rules]
+- Circuit limits can stop trading beyond a price band, and that can affect a breakout (*Circuit limits and halts*). NSE sets daily bands of 2%, 5%, 10% or 20% for most stocks. Stocks with futures and options use a flexible 10% range instead. (As of 11 Nov 2026, NSE FAQs and SEBI's master circular. Check the NSE site for changes.)
 - Work out the planned loss before you enter. Share count multiplies the risk per share (*Position sizing step by step*).
 
 ## Remember
@@ -124,8 +124,8 @@ Mode: **paper**. Log it in your journal, or on paper if the journal is not ready
 - NSE India, circuit-limit pages
 - SEBI circulars on price bands
 
-[VERIFY: NSE and SEBI circuit price band rules]
+Facts checked on 11 Nov 2026:
 
-<!-- facts-needed: NSE and SEBI circuit price band rules and their effect on breakout trading. -->
+- Band percentages come from NSE's Basic FAQs on the Secondary Market. The flexible range for stocks with futures and options comes from SEBI's master circular on trading. The full detail is in *Circuit limits and halts*.
 
 <!-- standing-disclaimer -->

@@ -17,16 +17,19 @@ A stock rises sharply during the day. You add it to a list. You then set an aler
 
 - A **watchlist** is a list of symbols you keep in view. Its job is to hold your attention. Write your rules before you add a symbol. Useful rules include liquidity, sector and data availability. You met liquidity in *Order matching, spread and liquidity*.
 - A watchlist is not a list of recommendations. Being on it says nothing about whether a trade is right.
+- On the Kite web, your watchlist is called Marketwatch. You can keep up to 7 lists, numbered 1 to 7. Each list can hold up to 50 symbols. Kite saves your lists on its own.
+- To add a symbol on the web, press ~ (the tilde key) to open search. Type a name or code. Click Add next to the result you want. Hover over a row to see its buttons: Buy, Sell, Chart, Market depth, Delete and More. Look for the exact icons in your app. The More menu holds options such as Create GTT, Create alert and Add to basket.
 - **Symbol search** finds a stock by its code or name. Similar names and codes exist. Check the exchange and the symbol before you act.
-- The same company can have separate listings on NSE and BSE. Check which exchange your symbol belongs to. [VERIFY: symbol and code conventions]
-- An **alert** is a notification. It tells you that a price has reached a level you chose. Whether a Kite alert can ever place an order is [VERIFY: alert behaviour]. This book does not rely on an alert to trade. Treat an alert as a reminder to review.
+- The same company can have separate listings on NSE and BSE. Kite shows the exchange next to each row. Check which exchange your symbol belongs to.
+- An **alert** is a notification. It tells you that a price has reached a level you chose. A plain alert only notifies you. Kite also has **ATO (Alert Triggers Order)**. With ATO, an alert can place a basket of up to 20 orders on its own when it fires. This book does not use alerts to trade. Treat an alert as a reminder to review.
+- To set an alert on the web, hover over the row, click More, then Create alert. Enter a name, choose the property, the operator and the value, then click Create. On the phone app, open the stock and tap Set alert. Kite limits how many alerts and ATO alerts you can have, and an alert lasts 365 days.
 - Alerts create urgency. Use them as review prompts, not as triggers to act. Your stop and your size should be decided before any alert fires.
 
 ## See it
 
-<!-- component: kite-illustration | view: watchlist-and-alerts | platform: web | caption: Recreated watchlist, a search result with similar symbols, and an alert dialog; check your own Kite for the current layout -->
+<!-- component: kite-flow | flow: add-to-watchlist,create-an-alert-and-ato | platform: web | caption: Click paths for adding a symbol safely and for making an alert. Practice in the Zerodha demo or with dummy data only. Screens and button names can change, so check Kite's help pages. -->
 
-Look at the watchlist first. Then look at the search result. Find the exchange label next to each symbol. Then look at the alert dialog. Notice the words for the alert. Check the layout in your own Kite. [VERIFY: date of the last layout check]
+Look at the watchlist first. Then look at the search result. Find the exchange label next to each symbol. Then look at the alert dialog. Notice the words for the alert, and check whether an ATO option is switched on. Check the layout in your own Kite.
 
 ## Worked example
 
@@ -42,13 +45,13 @@ Check step 3: Rs 2,500 divided by 10 symbols is Rs 250 each.
 
 The watchlist itself costs nothing. Your attention is the real cost.
 
-<!-- OPEN: the spec gives Rs 25,000 for ten symbols at Rs 250 each. Ten times Rs 250 is Rs 2,500, so the worked example uses Rs 2,500. Confirm with the reviewer. --> Now suppose you set an alert at Rs 252. That alert is a prompt to review the chart. Your stop and your size must already be written down. They must not be chosen because the alert fired.
+Now suppose you set an alert at Rs 252. That alert is a prompt to review the chart. Your stop and your size must already be written down. They must not be chosen because the alert fired.
 
 ## Try it
 
 ### Guided exercise
 
-**Task.** In your demo, make a five-symbol watchlist. Write one rule for each symbol. Set one alert in the demo. Write down what you will do when it fires.
+**Task.** Build a five-symbol watchlist on paper. Write one rule for each symbol. In the Kite demo, find where the alert button sits. Then write one alert as a sentence on paper. Write down what you will do when it fires.
 
 Hints:
 
@@ -84,11 +87,11 @@ The quiz checks the difference between an alert and an order, what a watchlist i
 
 ## Paper task
 
-Mode: kite demo. You will set up a list and an alert in the demo only. Do not place any order.
+Mode: paper. The Kite demo is view-only. Use it only to find the alert button and read its labels. Write the list and each alert on paper.
 
-1. Write the rules for your watchlist.
+1. Write the rules for your watchlist on paper.
 2. Check the exchange for each symbol on the list.
-3. Record the purpose of the alert you set.
+3. Write each alert as a sentence on paper, with its purpose.
 4. Write the review steps you will take before any order.
 5. Record this as a learning note in Lab 3. Write it in your journal. If the journal is not ready, use paper.
 
@@ -96,28 +99,28 @@ Mode: kite demo. You will set up a list and an alert in the demo only. Do not pl
 
 - A watchlist is not a buy list. Being on it does not make a trade right.
 - A stock that rose most today is not a reason to act. Check your written rules first.
-- An alert is not an order. Seeing an alert does not change your plan.
+- A plain alert is not an order. Seeing it does not change your plan. But an alert with ATO switched on can place orders. Check the alert settings before you set one.
 - Alerts and lists can drive fear of missing out. A rising price on a list can feel urgent. Slow down and check your rules.
 
 ## Remember
 
 - A watchlist controls your attention. It is not a recommendation list.
 - Check the exchange and the symbol before you act.
-- An alert is a notification. Treat it as a reminder to review.
+- A plain alert is a notification. An ATO alert can also place orders. Either way, check your plan first.
 - Write your stop and size before any alert fires.
 
 ## Sources and verification
 
 Sources:
 
-- Zerodha support pages on watchlists and alerts [VERIFY: page titles]
+- Zerodha support pages on watchlists, alerts and ATO (Alert Triggers Order). Check the current limits there.
 - NSE and BSE symbol directories
 
 Facts to check:
 
-- Alert types, notification channels, and whether an alert can trigger an order. [VERIFY: Zerodha support]
-- Symbol and series conventions on the NSE and BSE symbol pages. [VERIFY: NSE and BSE symbol pages]
+- Alert types, notification channels, and the ATO rules, including limits on alerts and orders. Check Zerodha's alert pages.
+- Symbol and series conventions on the NSE and BSE symbol pages.
 
-<!-- facts-needed: alert types, notification channels and whether alerts can trigger orders; symbol and series conventions on NSE and BSE -->
+<!-- facts-needed: alert types, notification channels and ATO rules; symbol and series conventions on NSE and BSE -->
 
 <!-- standing-disclaimer -->

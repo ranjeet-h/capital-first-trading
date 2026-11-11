@@ -33,8 +33,6 @@ Other points:
 
 ## See it
 
-<!-- OPEN: The spec asks for a static bar chart of break-even win rate against R, with the costed line dashed. No component name fits a static chart, so a table is used. -->
-
 | Target (Rs) | Reward per share | R | Break-even win rate before costs |
 |---|---|---|---|
 | 260 | Rs 10 | 1 | 50.0% |
@@ -42,7 +40,9 @@ Other points:
 | 280 | Rs 30 | 3 | 25.0% |
 | 270, with dummy cost of Rs 2 per share | Rs 18 (after cost) | 1.5 (costed) | 40.0% |
 
-Read down the table. As R rises, the win rate needed to break even falls. The last row is the same Rs 270 target after a dummy cost of Rs 2 per share. The break-even rises from 33.3% to 40.0%. The cost is a dummy figure, used only for the arithmetic.
+Read down the table. As R rises, the win rate needed to break even falls. The last row is the same Rs 270 target after a dummy cost of Rs 2 per share. The break-even rises from 33.3% to 40.0%. The cost is a dummy figure, used only for the arithmetic. The Rs 2 figure is a round number for practice, not the real charge. For a real trade, the charges depend on the product and the price. As of 11 Nov 2026, Zerodha lists zero brokerage on delivery trades, and on intraday trades 0.03% of the trade value or Rs 20 per order, whichever is lower, plus taxes and exchange fees. The full table is in *Costs on a trade*. Rules and rates change, so check the Zerodha charges page.
+
+<!-- component: rr-breakeven | entry: 250 | stop: 240 | target: 270 | cost: 2 | caption: Entry Rs 250, stop Rs 240, target Rs 270, with a dummy cost of Rs 2 per share. Move the target and the cost and watch the break-even win rate change. -->
 
 ## Worked example
 
@@ -82,6 +82,8 @@ Hints:
 
 **Answer:** Risk Rs 20. Reward Rs 60. R = 3. Break-even = 1 / 4 = 25%.
 
+<!-- component: rr-breakeven | entry: 400 | stop: 380 | target: 460 | cost: 0 | winRate: 30 | caption: Guided exercise: entry Rs 400, stop Rs 380, target Rs 460. Check your hand sums against the table. -->
+
 ### Independent exercise
 
 Task: Entry Rs 150, stop Rs 144, target Rs 165. Work out R and the break-even win rate before costs. Then, with a DUMMY cost of Rs 0.50 per share, work out the break-even again.
@@ -93,6 +95,8 @@ Before costs: risk Rs 6, reward Rs 15, R = 2.5, break-even = 1 / 3.5 = 28.6%.
 With the Rs 0.50 dummy cost: risk Rs 6.5, reward Rs 14.5, break-even = 6.5 / (6.5 + 14.5) = 6.5 / 21 = 31.0%. The cost raised the break-even.
 
 </details>
+
+<!-- component: rr-breakeven | entry: 150 | stop: 144 | target: 165 | cost: 0.5 | winRate: 30 | caption: Independent exercise check: entry Rs 150, stop Rs 144, target Rs 165, with a dummy cost of Rs 0.50 per share. Try it by hand first. -->
 
 ## Quiz
 
@@ -108,8 +112,6 @@ Mode: **learning note**. Log it in Lab 3 (or on paper until the journal app is r
 2. For each plan, record planned R and the break-even win rate before costs.
 3. Add a DUMMY cost of Rs 0.50 per share. Work out the break-even again for each plan.
 4. Save each plan to the journal with its planned R field (Lab 1 save-to-journal), in learning-note mode.
-
-<!-- OPEN: The learning-note mode is in the *How to use this book* journal mode list but not in the Lab 3 mode list (paper, live, forward, backtest, kite_demo). Confirm before the journal app is built. -->
 
 ## Limits and common mistakes
 
@@ -133,6 +135,6 @@ Sources (names only):
 
 - Standard expectancy arithmetic, computed in this chapter. No external figure is used.
 
-Items to verify: none for this chapter. The costs are DUMMY values and must not be quoted as real charges.
+The costs here are round numbers for practice. Do not quote them as real charges. The real charges, with dates and sources, are in *Costs on a trade*.
 
 <!-- standing-disclaimer -->

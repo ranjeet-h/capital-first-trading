@@ -34,11 +34,9 @@ A **heat map** shows the result of every grid cell in one picture. The lab's ove
 | Combinations tried | 20 | Not tested again |
 | Chosen setting, result | Rs 12,000 profit on Rs 50,000 (24%) | Rs -3,000 on the same capital (-6%) |
 
-The chosen setting looks strong on the data used to choose it. The same setting looks weak on the data kept back. The table shows the collapse. The heat map in the lab shows all 20 cells, not only the chosen one.
+The chosen setting looks strong on the data used to choose it. The same setting looks weak on the data kept back. The table shows the collapse. The heat maps below show all 20 cells, not only the chosen one.
 
-*The lab's interactive heat map is not shown here yet.*
-
-<!-- OPEN: The spec gives a lab-backtest grid heat map with the chosen cell marked. The lab-backtest component is not in the allowed component list, so no placeholder is inserted. The table above stands in for it. Confirm the component name before the heat map is added. -->
+<!-- component: overfit-demo | caption: Try many settings on old data, pick the best one, then check it on new data. -->
 
 ## Worked example
 
@@ -125,9 +123,7 @@ Mode: **learning note**. Start a trial log in your journal learning note. Record
 
 ## Sources and verification
 
-- Bailey, Borwein, Lopez de Prado and Zhu, on backtest overfitting. [VERIFY: citation, year and title]
-- Harvey and Liu, on multiple testing in finance. [VERIFY: citation, year and title]
-
-<!-- facts-needed: citation for Bailey, Borwein, Lopez de Prado and Zhu on backtest overfitting; citation for Harvey and Liu on multiple testing in finance. -->
+- Bailey, Borwein, Lopez de Prado and Zhu (2014), "Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance", Notices of the American Mathematical Society, 61(5), 458-471.
+- Campbell R. Harvey and Yan Liu (2015), "Backtesting", The Journal of Portfolio Management, 42(1), 13-28.
 
 <!-- standing-disclaimer -->

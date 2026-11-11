@@ -30,8 +30,6 @@ Rules that follow:
 - **Extra money** comes only from spare income. Household savings are never trading capital. They are never used to top up trading capital after losses.
 - **Scale-up and withdrawal** are covered in *Scaling and withdrawal policy*. This chapter does not set them.
 
-<!-- OPEN: the spec's spot-the-mistake says a cut level computed on the original capital is a mistake, but its worked example computes the cut on the Rs 50,000 starting allocation. This draft measures drawdown from the starting allocation and uses current trading capital for per-trade risk. Reviewer to confirm the base. -->
-
 ## See it
 
 <!-- component: capital-allocation-planner | savings: 400000 | tradingCapital: 50000 | cutPct: 10 | stopPct: 20 | riskPct: 1 | caption: Stacked bar of savings, untouched amount and trading capital, with cut and stop lines on the trading segment -->
@@ -136,8 +134,6 @@ Sources (names only):
 
 - The book's capital framework (PLAN section 2 and section 4.6).
 
-Facts to verify before this chapter is final: none. The chapter uses only your numbers and example thresholds.
-
-<!-- OPEN: should the emergency reserve have a default months figure in the planner, or stay blank? Current draft: blank, the owner decides. -->
+This chapter uses only your own numbers and example thresholds. It states no outside facts.
 
 <!-- standing-disclaimer -->

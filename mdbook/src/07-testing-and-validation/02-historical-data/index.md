@@ -40,7 +40,7 @@ Before a test, check the file. The import checks used in Lab 4 are these:
 |---|---|---|
 | Sorted dates | Each date comes after the one before it | Fix the order against the source. Do not guess. |
 | Duplicate dates | Two rows for the same day | Find out why before you keep either row. |
-| Gaps | A trading day missing from the dates | Compare with the exchange holiday list [VERIFY: NSE holiday list]. Some gaps are holidays. |
+| Gaps | A trading day missing from the dates | Compare with the NSE trading holidays page. Some gaps are holidays. |
 | Zero or negative prices | A price of zero or below | Treat it as an error to check. |
 | OHLC consistency | The high must be at or above the open and close. The low must be at or below the open and close. | Check the row against the source. |
 | Jumps over 20% | A large move with no flag for a split | Ask the question: is there a flagged split? Do not delete the row on sight. |
@@ -48,7 +48,10 @@ Before a test, check the file. The import checks used in Lab 4 are these:
 
 Free data is not always complete or correct. The checks find some problems, not all of them.
 
-**Licence.** A data source sets its own terms. Many free sources allow personal use only. Read the terms at the source. Do not assume you may share, sell or publish a file. Yahoo Finance is one free source. Its file columns and its adjustment method are [VERIFY: Yahoo Finance CSV columns and adjustment method]. Its personal-use terms are [VERIFY: Yahoo Finance terms of use].
+**Licence.** A data source sets its own terms. Many free sources allow personal use only. Read the terms at the source. Do not assume you may share, sell or publish a file. Two real examples show why you must read the terms.
+
+- **Yahoo Finance.** Yahoo's terms of service say you may not collect its data with automated tools such as robots or scrapers without permission. They also say you may not reuse the service for any commercial purpose, and you may not copy, sell or hand out its content without written permission. The terms do not describe the file columns or the adjustment method. So open your own file and read its header. Files often carry a column for an adjusted close, but check yours. (As of 11 Nov 2026, Yahoo terms of service. Terms change, so read them at the source.)
+- **NSE.** NSE's data usage and sharing policy treats end-of-day and historical data as market data. NSE shares it through agreements and licences. So passing NSE data on to others needs NSE's permission. NSE stopped its old daily "bhavcopy" file on 8 July 2024 and replaced it with a new common bhavcopy format (NSE circular of 12 June 2024). Check the NSE site for the file layout and the terms for each file. (As of 11 Nov 2026, NSE data usage and sharing policy. Terms change, so read them at the source.)
 
 The bundled practice data in this book is made up. If you import real data, it stays on your own device. The source's terms still apply to that data.
 
@@ -64,6 +67,8 @@ The bundled practice data in this book is made up. If you import real data, it s
 | 6. Accept or exclude | You decide which rows to keep. |
 
 The import in Lab 4 follows these six steps. Read them in order. A row must pass the checks before it reaches a test.
+
+<!-- component: data-quality-check | caption: Look at a made-up price file and tick the rows you think are wrong, then compare with the seven checks. -->
 
 ## Worked example
 
@@ -150,9 +155,9 @@ Mode: **learning note**. Use Lab 4 to import the bundled practice file and write
 ## Limits and common mistakes
 
 - Free data can be incomplete or wrong. A file that passes the checks can still contain errors the checks cannot find.
-- More history does not always make a test better. Old prices may come from a time with different market rules [VERIFY: rule changes over the years for the chosen source].
+- More history does not always make a test better. Old prices may come from a time with different market rules. Read the source's notes on the years you use.
 - A clean price file is not full market data. It has no bid and ask prices and no order-by-order detail.
-- You may use the data for personal use only, under the source's terms. Do not share the files.
+- Use data only as the source's terms allow. Do not share, sell or publish the files.
 
 ## Remember
 
@@ -164,14 +169,9 @@ Mode: **learning note**. Use Lab 4 to import the bundled practice file and write
 
 ## Sources and verification
 
-- Yahoo Finance help and terms pages.
-- An NSE historical data or reports page, and its terms of use.
-
-[VERIFY: Yahoo Finance CSV columns and adjustment method]
-[VERIFY: Yahoo Finance terms of use and personal-use position]
-[VERIFY: NSE bhavcopy-style file layout and NSE terms for these files]
-[VERIFY: NSE holiday list]
-
-<!-- facts-needed: Yahoo Finance CSV columns and adjustment method; Yahoo Finance terms of use and personal-use position; NSE bhavcopy-style file layout and terms for these files; NSE holiday list used for gap checks. -->
+- Yahoo terms of service (legal.yahoo.com).
+- NSE Data Usage and Data Sharing Policy (nseindia.com).
+- NSE circular of 12 June 2024 on the new common bhavcopy.
+- NSE trading holidays page.
 
 <!-- standing-disclaimer -->

@@ -21,9 +21,13 @@ A reader sees Rs 250.00 on the screen and expects to pay Rs 250.00. The reader i
 - **Depth.** Depth is how many shares sit at each price. A thin book has few shares at each price. See *Market depth and charts in Kite*.
 - **Market order.** A market order buys or sells now at the prices available. It takes shares one price level at a time. Its average fill can be worse than the best ask.
 - **Limit order.** A limit order sets the highest price you will pay, or the lowest you will take. See *Order types*.
-- **Price-time priority.** At the same price, the earlier order is filled first. This works like a queue at a bus stop. The exact exchange rule is [VERIFY: NSE market microstructure and matching documents].
+- **Price-time priority.** At the same price, the earlier order is filled first. This works like a queue at a bus stop. NSE says it stores orders by price first, then by time. (As of 11 Nov 2026, NSE trading system page. Rules change, so check the NSE site.)
 - **Queue position.** A limit order waits in that line. A price that touches your limit does not always fill it. Orders ahead of you may take the shares first.
-- **Auctions.** In an auction, orders are collected first. Then one price is set from them. It works like a village auction where bids come in before one price is chosen. The pre-open session is run this way. Which sessions use an auction, and their times, are [VERIFY: NSE pre-open and closing session pages].
+- **Auctions.** In an auction, orders are collected first. Then one price is set from them. It works like a village auction where bids come in before one price is chosen. The pre-open session is run this way.
+
+NSE's pre-open session runs from 9:00 am to 9:15 am. In the first part, you can enter, change or cancel orders. In the middle part, orders are matched at one price and confirmed. The last few minutes are a buffer before the normal session. NSE sets that one price as the price with the most shares that can trade. If more than one price does that, it picks the one with the smallest leftover imbalance. If there is still a tie, it picks the price closest to the previous close. That price becomes the day's opening price. NSE has changed the exact minutes inside the pre-open session in the past, so read its current page for the split.
+
+NSE also runs a closing auction session for some shares. In the version NSE described in March 2026, the reference price is the volume weighted average price of trades from 3:00 pm to 3:15 pm. The auction runs after 3:15 pm, and the price can move up to 3 percent from that reference. NSE has announced more changes to the closing auction, so read the current NSE circulars for the exact times and the list of shares. (As of 11 Nov 2026, NSE pre-open page and NSE circular of 18 Mar 2026. Rules change, so check the NSE site.)
 
 A thin book makes all of this more important. Paper results that ignore these points can look better than real results.
 
@@ -97,17 +101,17 @@ The quiz checks average fill, auctions, queue position, one scenario and one spo
 Mode: **Kite demo, look only**. You view the screen and place no order.
 
 1. Open the Kite demo or the view you have access to. Do not place any order.
-2. Find the market depth view. Read the page for how it shows bids and asks. [VERIFY: current depth view on Kite. Do not describe fields you have not seen.]
+2. Find the market depth view. Read the page for how it shows bids and asks. Write only the fields you can see on your own screen.
 3. Write the fields it shows in your journal, or on paper until the journal app is ready.
 4. Write one sentence on what the depth view does not show about your own fill.
 
 ## Limits and common mistakes
 
 - The book in this chapter is made up. Real books change every second.
-- Auction times, pre-open rules and matching rules change. [VERIFY: NSE market timings, pre-open pages and microstructure documents]
+- Auction times, pre-open rules and matching rules change. Check the NSE market timings and pre-open pages.
 - A paper log does not show your place in the queue, or the real fill of a market order.
 - In a thin stock, slippage can be much larger than the Rs 50 in this example.
-- Circuit limits can affect auctions and trading on a given day. [VERIFY: NSE circuit limit page]
+- Circuit limits can affect auctions and trading on a given day. The limits differ by share and change over time. This book states none. See the NSE price band pages.
 
 ## Remember
 
@@ -122,13 +126,5 @@ Mode: **Kite demo, look only**. You view the screen and place no order.
 - NSE market timings and pre-open session pages
 - NSE market microstructure or matching documents
 - *Order book*, in the Kite chapter, for the order book reference
-
-Items to verify:
-
-- [VERIFY: pre-open and closing session times and mechanics]
-- [VERIFY: exchange matching rules and price-time priority]
-- [VERIFY: circuit limits as they affect auctions]
-
-<!-- facts-needed: pre-open and closing session times and mechanics; exchange matching rules and price-time priority; circuit limits as they affect auctions; current depth view on Kite. -->
 
 <!-- standing-disclaimer -->

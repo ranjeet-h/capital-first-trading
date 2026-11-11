@@ -34,9 +34,13 @@ The sizes are examples. You set every number.
 - **Reduce exposure.** A rule set in advance that lowers your risk after a drop in the account. For example, you halve your per-trade risk percentage once the month's drawdown (the fall from the account's high point) reaches a set level. It only ever moves risk down. You write it before trading.
 - **Two different figures.** Your Rs 2,000-3,000 figure is a daily profit goal. *The Rs 2,000-3,000 reality check* tests it against the arithmetic. It is not a loss limit. Do not use it as one.
 
-<!-- OPEN: spec objective 5 calls the owner's Rs 2,000-3,000 figure "a ceiling and not a per-day risk"; *Overtrading and why daily profit targets encourage it* calls it "a ceiling, not a target". This draft describes it as a daily profit goal tested in *The Rs 2,000-3,000 reality check*. Reviewer to confirm wording. -->
+A limit is a rule you set and follow yourself. Limits cannot stop a gap, where the price jumps past your stop (*Slippage, gaps and planned versus actual risk*). Brokers also have risk controls. They are different from the limits in this book.
 
-A limit is a rule you set and follow yourself. Limits cannot stop a gap, where the price jumps past your stop (*Slippage, gaps and planned versus actual risk*). Brokers also have risk controls. They are different from the limits in this book [VERIFY: broker risk controls and intraday auto square-off rules].
+- For intraday (MIS) positions, Zerodha closes open positions automatically at a set time. For shares it is 3:25 PM for most shares and 3:12 PM for shares in the closing auction session. For futures and options it is 3:26 PM. Zerodha charges Rs 50 plus 18% GST for each order it closes this way.
+- Zerodha's risk team can change these times, and can reduce or remove intraday leverage during the day.
+- Zerodha says you are responsible for closing your own intraday positions. It is not bound to do it for you.
+
+(As of 11 Nov 2026, Zerodha support page on auto square-off timings, and the Zerodha announcement of 26 Dec 2025 that moved the share time from 3:20 PM to 3:25 PM. Rules change, so check Zerodha support.)
 
 ## See it
 
@@ -124,7 +128,7 @@ Mode: **learning note** (Lab 3). No orders are placed.
 
 - Limits do not stop gaps. A stop can fill well below the stop price. So the loss can be bigger than planned (*Slippage, gaps and planned versus actual risk*).
 - The percentages are examples, not advice. You set every number before trading.
-- A broker's risk controls are not your limits, and the broker rules are [VERIFY: broker risk controls and intraday auto square-off rules].
+- A broker's risk controls are not your limits. The broker can close intraday positions at its set time (3:25 PM for most shares as of 11 Nov 2026) and can cut leverage. Check Zerodha support for the current rules.
 - Limits cannot fix a plan that does not work. They only cap the damage in each period.
 - A limit card works only if you follow the stop rule. The common mistake is trading again after the stop.
 
@@ -138,17 +142,12 @@ Mode: **learning note** (Lab 3). No orders are placed.
 
 ## Sources and verification
 
-Sources (names only):
+Sources, read on 11 Nov 2026:
 
-- Zerodha support pages on risk controls.
-- SEBI circulars on risk management.
-
-Facts to verify before this chapter is final:
-
-- [VERIFY: broker risk controls and intraday auto square-off rules]
+- Zerodha support: "Intraday auto square-off timings".
+- Zerodha Z-Connect: "Changes to the auto square-off timings for equity and F&O" (26 Dec 2025).
+- Zerodha support: "How much margin and leverage does Zerodha provide".
 
 <!-- facts-needed: broker risk controls and intraday auto square-off rules (Zerodha support pages; SEBI circulars) -->
-
-<!-- OPEN: default limit percentages are the owner's decision. The chapter uses illustrative placeholders only. -->
 
 <!-- standing-disclaimer -->

@@ -113,14 +113,14 @@ Mode: **paper**. Write the result in your journal. If the journal is not ready, 
 4. Write which timeframe your plan uses, and write it before you look at the charts.
 5. Note any day where the labels disagree. Keep that note for later use in your study.
 
-If you do this in the Kite demo, write the mode as `kite_demo`. Say that the demo is for interface practice only.
+If you do this in the Kite demo, write the mode as `kite_demo`. The Kite demo is for looking at screens only. Write any practice trade as `paper`.
 
 ## Limits and common mistakes
 
 - A longer timeframe does not remove risk. A daily candle can still open far below your stop after a gap (*Gaps and what they mean for stops*).
 - Changing the timeframe until a pattern appears gives false confidence. Choose the timeframe first.
 - A stop placed on a five-minute wick can be hit by normal noise. A daily plan would ignore that noise. The planned loss changes with the timeframe, so recheck the numbers.
-- Intervals and how far back the history goes depend on the platform. Check the current limits before you plan. [VERIFY: Kite chart intervals and history depth]
+- Intervals and how far back the history goes depend on the platform. Check the current limits before you plan. Zerodha says Kite keeps 5-second, 10-second, 15-second, 30-second and 45-second data for only the last two trading days. For equities, 1-minute and longer candles go back to 2015. Daily NSE data goes back to 2003 and BSE data to 2008. (As of 11 Nov 2026, Zerodha support page on historical data on Kite charts. Limits change, so check Kite.)
 
 ## Remember
 
@@ -136,9 +136,8 @@ If you do this in the Kite demo, write the mode as `kite_demo`. Say that the dem
 - Zerodha Varsity, timeframe module (reference only)
 - Zerodha support, intraday data pages
 
-[VERIFY: Kite chart intervals available and their history depth]
-[VERIFY: intraday data retention period]
+Facts checked on 11 Nov 2026:
 
-<!-- facts-needed: Kite chart intervals and history depth; intraday data retention period. -->
+- How far back each Kite candle length goes comes from Zerodha's support page on historical data on Kite charts. The list of every interval Kite offers is not copied here, so check the chart menu in Kite.
 
 <!-- standing-disclaimer -->

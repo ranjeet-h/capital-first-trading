@@ -17,17 +17,17 @@ On Friday evening a stock closes at Rs 400. You write a plan. You will buy on th
 
 A trading day is not one block of time. It has phases. Each phase handles orders in its own way.
 
-- **Pre-open:** orders are collected. An opening price is worked out before continuous trading starts. [VERIFY: exact phases, times and mechanics, NSE market timings]
+- **Pre-open:** orders are collected. An opening price is worked out before continuous trading starts. On NSE it runs from 9:00 am to 9:15 am. Orders are taken in the first minutes. Then the exchange matches them, and then trading moves to the normal market at 9:15 am. The price found in pre-open becomes the day's open price. If no price is found, the first trade in the normal market is the open. (As of 11 Nov 2026, NSE pre-open page and NSE circulars of 2026. Times change, so check the NSE site.)
 - **Continuous trading:** orders are matched as they arrive, as described in *Order matching, spread and liquidity*.
-- **Closing session:** a closing price is set near the end of the day. [VERIFY: closing price method, NSE closing session rules]
+- **Closing session:** a closing price is set near the end of the day. NSE began a Closing Auction Session on 3 Aug 2026, starting with stocks that have futures and options. It runs after the normal market closes at 3:15 pm for those stocks. A reference price is taken from the trades between 3:00 pm and 3:15 pm. Orders can then be placed within 3% of that reference price. The closing price is the price where the most shares can trade. Other stocks keep the older closing method, and their normal market runs until 3:30 pm. (As of 11 Nov 2026, NSE closing auction session page and NSE circulars. NSE may widen this to more stocks, so check the NSE site.)
 
-**Auctions.** In the pre-open and closing phases, many orders are matched at one price. Put simply, the exchange picks the price where the most shares can trade. [VERIFY: auction method]
+**Auctions.** In the pre-open and closing phases, many orders are matched at one price. Put simply, the exchange picks the price where the most shares can trade. Think of a village auction where the seller and buyers all agree on one price at the end. (As of 11 Nov 2026, NSE pre-open page.)
 
-**Market timings** are set by the exchange. They can differ on special sessions. This chapter does not state the times. [VERIFY: NSE market timings page]
+**Market timings** are set by the exchange. They can differ on special sessions. The table in the next section gives the timings in force on 11 Nov 2026. Check the NSE site before you rely on them, because they have changed this year.
 
-**Holidays.** The exchange publishes a holiday list every year. No trading happens on those days. [VERIFY: NSE holiday list]
+**Holidays.** The exchange publishes a holiday list every year. No trading happens on those days. NSE's 2026 list has 16 holidays that fall on weekdays. One of them, 15 Jan, was added after the first list came out. They are listed in the table below the timings. (As of 11 Nov 2026, NSE circular of 12 Dec 2025. Check the NSE site for any change.)
 
-**Special sessions.** The exchange may announce a special session on some days. [VERIFY: NSE circular]
+**Special sessions.** The exchange may announce a special session on some days. For example, a special Muhurat trading session was held on Sunday 8 Nov 2026 for Diwali. (As of 11 Nov 2026, NSE circular of 19 Oct 2026. Check the NSE site for new ones.)
 
 **Weekends** are non-trading days.
 
@@ -35,11 +35,11 @@ A trading day is not one block of time. It has phases. Each phase handles orders
 
 **Decisions after the close.** If you decide after the market closes, your order goes to the next session. That session can open at a different price from the close you used in your plan. This gap is covered in *Slippage, gaps and planned versus actual risk*.
 
-**Orders placed when the market is closed** follow the rules of your broker and the exchange. [VERIFY: order handling outside market hours]
+**Orders placed when the market is closed** follow the rules of your broker and the exchange. Some brokers let you queue an order for the next session and some do not. Check your broker's help pages for how it treats orders placed after the close.
 
 ## See it
 
-The first table shows one week with a holiday. The holiday is made up for practice. The second table shows the phases of one trading day. The times are placeholders until they are checked.
+The first table shows one week with a holiday. The holiday is made up for practice. The second table shows the phases of one trading day. The times come from NSE and were checked on 11 Nov 2026.
 
 | Day | Trading? | Note |
 |---|---|---|
@@ -53,11 +53,37 @@ The first table shows one week with a holiday. The holiday is made up for practi
 
 | Phase | What happens | Time |
 |---|---|---|
-| Pre-open | Orders collected; opening price worked out | [VERIFY: time] |
-| Continuous trading | Orders matched as they arrive | [VERIFY: time] |
-| Closing session | Closing price set | [VERIFY: time] |
+| Pre-open | Orders collected; opening price worked out | 9:00 am to 9:15 am |
+| Continuous trading | Orders matched as they arrive | 9:15 am to 3:30 pm for most stocks. 9:15 am to 3:15 pm for stocks with futures and options |
+| Closing session | Closing price set | 3:15 pm to 3:35 pm for stocks with futures and options, in the first phase |
+| Post-close | Trades at the closing price | 3:50 pm to 4:00 pm |
 
-<!-- OPEN: spec asks for a static day timeline. No static component is in the list, so tables are used here. Confirm. -->
+(As of 11 Nov 2026, NSE pre-open and closing auction pages and NSE circulars of 2026. Times change, so check the NSE site. The futures and options segment trades until 3:40 pm.)
+
+The 2026 trading holidays that fall on a weekday, from NSE's list of 12 Dec 2025:
+
+| Date | Day | Holiday |
+|---|---|---|
+| 15 Jan | Thursday | Maharashtra municipal elections (added after the first list; confirm on the NSE site) |
+| 26 Jan | Monday | Republic Day |
+| 3 Mar | Tuesday | Holi |
+| 26 Mar | Thursday | Shri Ram Navami |
+| 31 Mar | Tuesday | Mahavir Jayanti |
+| 3 Apr | Friday | Good Friday |
+| 14 Apr | Tuesday | Dr. Baba Saheb Ambedkar Jayanti |
+| 1 May | Friday | Maharashtra Day |
+| 28 May | Thursday | Bakri Id |
+| 26 Jun | Friday | Muharram |
+| 14 Sep | Monday | Ganesh Chaturthi |
+| 2 Oct | Friday | Mahatma Gandhi Jayanti |
+| 20 Oct | Tuesday | Dussehra |
+| 10 Nov | Tuesday | Diwali-Balipratipada |
+| 24 Nov | Tuesday | Guru Nanak Jayanti |
+| 25 Dec | Friday | Christmas |
+
+Some other holidays fall on a weekend, so they cost no trading day: Mahashivratri on Sunday 15 Feb, Id-Ul-Fitr on Saturday 21 Mar, Independence Day on Saturday 15 Aug and Diwali Laxmi Pujan on Sunday 8 Nov. (As of 11 Nov 2026, NSE circular of 12 Dec 2025. Dates can change, so check the NSE site.)
+
+<!-- component: session-clock | caption: The phases of a trading day. Widths are not to scale and no clock times are shown. Check the exchange for the real times. -->
 
 ## Worked example
 
@@ -77,7 +103,7 @@ If your plan uses the Rs 400 close, Tuesday's opening price may be well above or
 
 ## Try it
 
-<!-- OPEN: spec gives no interactive demo for this chapter. No component placeholder is inserted. -->
+<!-- component: next-session-finder | startDay: 4 | holidayAfter: 3 | caption: The chapter's made-up week: a plan after Friday's close, with Monday as a holiday. Tap days to try the exercise cases. -->
 
 ### Guided exercise
 
@@ -123,7 +149,7 @@ Five questions. They cover the order of phases, finding the next session, weeken
 
 ## Limits and common mistakes
 
-- Phases, times, holidays and special sessions can change. The times here are placeholders until you check them on official pages.
+- Phases, times, holidays and special sessions can change. The times here were checked on 11 Nov 2026. Check the NSE site again before you rely on them.
 - A holiday list from a previous year is not this year's list.
 - Knowing the next session does not tell you the price you will get in it.
 - Special sessions can change the normal timings.
@@ -145,13 +171,12 @@ Sources:
 - BSE timings page.
 - Zerodha support on market hours, for reference.
 
-Facts to verify:
-- [VERIFY: market phases and times, NSE market timings page]
-- [VERIFY: closing price method, NSE closing session rules]
-- [VERIFY: holiday list for the current year, NSE]
-- [VERIFY: special session dates, NSE circular]
-- [VERIFY: order handling outside market hours, broker and exchange rules]
+**Facts checked on 11 Nov 2026:**
 
-<!-- facts-needed: market phases and times; closing price method; current-year holiday list; special session dates; order handling outside market hours -->
+- Pre-open timings (9:00 to 9:15 am) and the rule that the pre-open price becomes the open come from NSE's pre-open page and NSE circulars of 2026. The new pre-open steps took effect on 7 Sep 2026.
+- The Closing Auction Session began on 3 Aug 2026 (first phase, stocks with derivatives). Its timings, 3% price band and reference price come from NSE's closing auction page and SEBI's circular of 16 Jan 2026.
+- Normal market close (3:30 pm, or 3:15 pm for stocks with derivatives), the post-close session (3:50 to 4:00 pm) and the derivatives close (3:40 pm) come from NSE and Zerodha's market timings page.
+- The 2026 holiday list and the Muhurat session come from NSE circulars of 12 Dec 2025 and 19 Oct 2026.
+- How brokers treat orders placed after the close was not checked. See your broker's help pages.
 
 <!-- standing-disclaimer -->

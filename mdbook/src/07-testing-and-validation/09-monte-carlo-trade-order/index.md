@@ -42,7 +42,7 @@ Use this table after a run. Fill it in from your own results. Read the 50th row 
 | 50th | | |
 | 95th | | |
 
-<!-- OPEN: The spec's visual for this chapter is a histogram with percentile markers from the backtest lab, experiment 7. That name is not on the allowed component list, so no placeholder is written. A blank table is shown instead. -->
+<!-- component: monte-carlo-shuffle | caption: Shuffle the order of the same trades many times and read the range of drawdowns and losing streaks. -->
 
 ## Worked example
 
@@ -126,9 +126,7 @@ Mode: **backtest**, which means the trades come from past data.
 
 ## Sources and verification
 
-- A standard reference on risk of ruin: [VERIFY: citation].
+- This book names no single reference on risk of ruin. Treat any figure from a simulation as one possible range, not a promise.
 - The backtest lab's notes on the Monte Carlo experiment.
-
-<!-- facts-needed: citation for a standard reference on risk of ruin. -->
 
 <!-- standing-disclaimer -->

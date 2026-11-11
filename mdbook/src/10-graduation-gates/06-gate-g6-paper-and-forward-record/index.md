@@ -21,8 +21,8 @@ This gate is a record, not a quiz. Nothing is drawn at random, and you cannot re
 
 The gate checks these points for the same period:
 
-1. **Trade count.** At least 30 trades in mode forward or paper. <!-- OPEN: The 30-trade count is a PLAN default. The owner must confirm it, because 30 trades is statistically thin. -->
-2. **Plan adherence.** At least 90% of those trades followed your plan. <!-- OPEN: The 90% threshold is a PLAN default. The owner must confirm it. -->
+1. **Trade count.** At least 30 trades in mode forward or paper. Thirty is a small sample, so treat it as a minimum, not as proof.
+2. **Plan adherence.** At least 90% of those trades followed your plan.
 3. **No limit breaches.** The journal's limit-breach log shows no breach for the same period.
 
 Only these rows count:
@@ -52,6 +52,8 @@ This gate has no picture to explore. Use this table to see how each row counts.
 | Manual paper row | Yes | Its own count |
 | Backtest row | No | Not counted |
 | Live row | No | Not counted |
+
+<!-- component: gate-check | gate: G6 | caption: Tick each criterion only when it is true for you. A gate checks what you learned. It is not permission to trade. -->
 
 ## Worked example
 

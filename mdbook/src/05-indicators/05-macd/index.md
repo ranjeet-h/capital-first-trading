@@ -35,7 +35,7 @@ Each crossover is a possible trade. Every trade has costs and needs a stop and a
 
 ## See it
 
-<!-- component: indicator-playground | caption: MACD pane with the histogram bars, showing the MACD line, the signal line and the sign changes of the histogram -->
+<!-- component: indicator-playground | indicator: macd | caption: MACD pane with the histogram bars, showing the MACD line, the signal line and the sign changes of the histogram -->
 
 Watch the histogram bars as they move above and below zero. Each sign change is a crossover. Then look at a sideways period. Count how many crossovers happen in a short stretch. The count shows why crossovers need a test before anyone relies on them.
 
@@ -55,7 +55,7 @@ Today the histogram is positive. Its sign changed, so there is a crossover. Reme
 
 ## Try it
 
-<!-- component: indicator-playground | caption: Interactive demo of the MACD pane and the histogram bars -->
+<!-- component: indicator-playground | indicator: macd | manual: on | ema12: 105 | ema26: 102 | signal: 2.4 | yesterdayMacd: 2.2 | yesterdaySignal: 2.3 | caption: The worked example. Type your own EMA values and see the MACD line, the histogram and whether the sign changed -->
 
 ### Guided exercise
 
@@ -119,12 +119,7 @@ Log it in your journal (or on paper until the journal app is ready).
 
 - Gerald Appel, the originator of MACD, as recorded in standard technical-analysis texts.
 - Zerodha Varsity, MACD module (reference only).
-- Kite chart help, for the MACD settings in Kite [VERIFY: page title].
-
-Facts to verify before this chapter is final:
-
-[VERIFY: Kite MACD parameters]
-
-<!-- facts-needed: Kite MACD parameters and the signal-line period as shown in Kite. -->
+- Zerodha, Kite charting manual (kite.trade/docs/kite/charting). It gives no default MACD setting, so read it on your own screen.
+- StockCharts ChartSchool, MACD page. It gives a 12-day EMA minus a 26-day EMA, with a 9-day EMA signal line, on closing prices. (As of 11 Nov 2026. This is a common convention, not an exchange rule.)
 
 <!-- standing-disclaimer -->

@@ -133,6 +133,4 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 - Lab 1 outputs and the reject panel, for the R and reject rules.
 - The fields of the trading plan used for gate G7, for the plan layout.
 
-<!-- facts-needed: none beyond the plan minimum of 1.5, which the book sets in Lab 1. -->
-
 <!-- standing-disclaimer -->

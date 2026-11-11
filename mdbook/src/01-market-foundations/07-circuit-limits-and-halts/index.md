@@ -15,11 +15,11 @@ You hold 100 shares bought at Rs 400. Your stop-loss is at Rs 380. Your planned 
 
 ## The idea
 
-A **price band**, often called a **circuit limit**, is the most a stock's price may move in one day. The move is measured from the previous close. The band depends on the stock's category. [VERIFY: band categories and percentages, NSE circuit limits page]
+A **price band**, often called a **circuit limit**, is the most a stock's price may move in one day. The move is measured from the previous close. The band depends on the stock's category. NSE uses bands of 2%, 5%, 10% and 20% in either direction. All other stocks that have no band set by the exchange get 20%. Stocks that have futures and options (F&O) have no fixed band. For them the exchange uses a 10% operating range that can be widened or narrowed during the day. (As of 11 Nov 2026, NSE Basic FAQs on the Secondary Market and SEBI's master circular on trading. Rules change, so check the NSE site.)
 
 - **Upper circuit:** the highest price allowed that day.
 - **Lower circuit:** the lowest price allowed that day.
-- **Reference point:** the band is measured from the previous close, not from today's open. [VERIFY: band reference, NSE rule]
+- **Reference point:** the band is measured from the previous close, not from today's open. NSE's FAQs state that the band is measured from the previous day's close.
 
 In plain words:
 
@@ -28,9 +28,25 @@ In plain words:
 
 **Locked circuit.** A stock reaches a band. All the orders are on one side. For example, there are only sellers at the lower band. No trade can happen beyond that price. The price stays locked there until buyers and sellers meet, or until the band changes.
 
-**Trading halts and index-level circuit breakers.** The exchange can halt trading in a stock. It can also halt trading across the market. This happens when an index moves past set levels. The levels and rules are [VERIFY: halt rules, NSE and SEBI circulars] [VERIFY: index circuit breaker levels].
+**Trading halts and index-level circuit breakers.** The exchange can halt trading in a stock. It can also halt trading across the market. This happens when an index moves past set levels. The levels and rules are below.
 
-**Bands can change.** The band for a stock can be revised over time. [VERIFY: band revision rule]
+Market-wide circuit breakers use the Nifty 50 or the Sensex, whichever moves past a level first. The levels are 10%, 15% and 20% from the previous close.
+
+| Fall of | When it happens | What happens |
+|---|---|---|
+| 10% | Before 1:00 pm | Trading stops for 45 minutes, then a 15-minute pre-open |
+| 10% | 1:00 pm to 2:30 pm | Trading stops for 15 minutes, then a 15-minute pre-open |
+| 10% | After 2:30 pm | No stop |
+| 15% | Before 1:00 pm | Trading stops for 1 hour 45 minutes, then a 15-minute pre-open |
+| 15% | 1:00 pm to 2:00 pm | Trading stops for 45 minutes, then a 15-minute pre-open |
+| 15% | After 2:00 pm | Trading stops for the rest of the day |
+| 20% | Any time | Trading stops for the rest of the day |
+
+(As of 11 Nov 2026, NSE circuit breaker page and SEBI circular of 28 Jun 2001 as amended in 2013. Rules change, so check the NSE site.)
+
+For stocks with futures and options, the 10% range is widened by steps if the price keeps pushing against it. SEBI's rule is 5% twice, then 3% twice, then 2%, with a cooling-off pause each time (15 minutes, then 30 minutes, then 60 minutes). (As of 11 Nov 2026, SEBI master circular on trading, Dec 2024.)
+
+**Bands can change.** The band for a stock can be revised over time. NSE's FAQs say bands are lowered under surveillance measures, and raised only in a review done every two months if the stock meets the criteria. Some stocks are also placed in a "trade-for-trade" segment, where every trade must end in delivery and the shares cannot be sold the same day. (As of 11 Nov 2026, NSE Basic FAQs on the Secondary Market and Zerodha support.)
 
 **A circuit limits the price, not the loss.** The band stops the price from moving further in one day. It does not stop your position from losing value. If the stock is locked, you may not be able to exit at all until trading resumes.
 
@@ -42,7 +58,7 @@ Watch the stop-loss line at Rs 380 and the lower band at Rs 360. The price can p
 
 ## Worked example
 
-This is a hypothetical example. The previous close is Rs 400. The band is a made-up 10%. The real band for any stock is [VERIFY: band percentage for its category].
+This is a hypothetical example. The previous close is Rs 400. The band is a made-up 10%. The 10% figure is a round number for practice. For most stocks the real band is 2%, 5%, 10% or 20%, as in the table in the section above. Stocks with futures and options use a flexible 10% range instead of a fixed band, so a lock like this one works differently for them.
 
 | Step | Calculation | Result |
 |---|---|---|
@@ -103,7 +119,7 @@ Five questions. They cover band arithmetic, what a circuit does and does not pre
 
 ## Limits and common mistakes
 
-- The band percentages in this chapter are made-up values. Real bands are [VERIFY: band categories and percentages].
+- The band percentages in the examples are round numbers for practice. Real bands are 2%, 5%, 10% and 20%, and stocks with futures and options use a flexible 10% range.
 - A band does not cap your loss. A locked position can stay open and lose value.
 - A stop-loss is a trigger, not a guaranteed exit price. Its fill depends on trading being possible.
 - Halts and circuit breakers have their own rules, and those rules change. Check the current circulars.
@@ -124,13 +140,11 @@ Sources:
 - BSE price band pages.
 - SEBI circulars on price bands and circuit breakers.
 
-Facts to verify:
-- [VERIFY: band categories and percentages, NSE circuit limits page]
-- [VERIFY: band reference (previous close), NSE rule]
-- [VERIFY: index-level circuit breaker levels and rules, NSE circular]
-- [VERIFY: trading halt rules, SEBI and NSE circulars]
-- [VERIFY: band revision rule]
+Facts checked on 11 Nov 2026:
+- Band percentages, the previous-close reference and the revision rule come from NSE's Basic FAQs on the Secondary Market.
+- The flexible range for stocks with futures and options comes from SEBI's master circular on trading (Dec 2024).
+- Market-wide circuit breaker levels and halt times come from NSE's circuit breaker page and SEBI's circular of 28 Jun 2001, as amended in 2013.
+- The trade-for-trade rule comes from Zerodha support and NSE's FAQs.
 
-<!-- facts-needed: band categories and percentages; band reference; index circuit breaker levels; halt rules; band revision rule -->
 
 <!-- standing-disclaimer -->

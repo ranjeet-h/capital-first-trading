@@ -32,7 +32,9 @@ The total starts at zero, or at any starting number you choose. The starting num
 3. Add these products for the whole session. Add the volumes too.
 4. VWAP = total of products divided by total volume.
 
-VWAP starts again at the start of each session. Some charts show VWAP on daily bars. That is a different measure. Check how Kite defines it. [VERIFY: Kite VWAP definition]
+VWAP starts again at the start of each session. Some charts show VWAP on daily bars. That is a different measure. Zerodha's charting manual does not give its own VWAP definition, so check the indicator on your screen before you rely on it.
+
+NSE also uses VWAP for other jobs. Its daily settlement price for futures is based on the VWAP of the last 30 minutes of the day. That is a different window from the whole-session VWAP above. (As of 11 Nov 2026, NSE Clearing settlement page. Check the NSE Clearing site.)
 
 Some points to keep in mind:
 
@@ -42,7 +44,9 @@ Some points to keep in mind:
 
 ## See it
 
-<!-- component: indicator-playground | indicator: obv | volumePane: on | closes: 100,103,101 | volumes: 10000,20000,5000 | vwap: off | caption: A volume pane under the price; the OBV line is drawn as a running total and a VWAP overlay can be turned on, which resets at each session start -->
+<!-- component: indicator-playground | indicator: obv | volumePane: on | closes: 100,103,101 | highs: 102,105,104 | lows: 98,99,102 | volumes: 10000,20000,5000 | vwap: off | caption: A volume pane under the price; the OBV line is drawn as a running total and a VWAP overlay can be turned on, which resets at each session start -->
+
+<!-- component: indicator-playground | indicator: vwap | session: 20 | caption: A longer made-up chart cut into sessions of 20 bars. VWAP starts again at each session start -->
 
 Look at the OBV line as you step through the days. It goes up on a day with a higher close and down on a day with a lower close. Turn VWAP on and watch it reset when a new session starts. Then compare the line with the price. Ask what the line adds, and what it leaves out.
 
@@ -70,6 +74,8 @@ VWAP = 35,58,333 / 35,000 = **Rs 101.67**.
 The rounded column adds to a number one unit higher than the full-precision total. That small gap comes from rounding. It does not change the answer.
 
 ## Try it
+
+<!-- component: indicator-playground | indicator: vwap | closes: 200,206 | highs: 201,207 | lows: 199,205 | volumes: 1000,3000 | edit: on | caption: The two bars of the guided exercise. Change the prices or volumes and see the VWAP -->
 
 ### Guided exercise
 
@@ -118,7 +124,7 @@ Mode: **paper**. This is a learning log only. Log it in your journal (or on pape
 1. For one stock, write the closes and volumes for 10 sessions from a chart you are allowed to view.
 2. Calculate the OBV for each day, starting from zero. Write each step.
 3. Record the relative volume (*Volume and what it adds*) for the same days.
-4. Only if Kite shows VWAP in the demo, note the time it resets. [VERIFY: Kite VWAP reset time]
+4. In the demo chart, look for VWAP in the indicator list; if it is there, note the time it resets, as your screen shows it.
 5. Write one sentence on what the OBV line did not show you.
 
 ## Limits and common mistakes
@@ -127,7 +133,7 @@ Mode: **paper**. This is a learning log only. Log it in your journal (or on pape
 - The starting value of OBV moves the line. It does not change the moves.
 - VWAP resets each session. Compare it only inside one session, and only with the same definition.
 - VWAP's predictive value is not established. The book uses it only in an optional intraday module, on paper.
-- Volume figures can differ between data sources and chart settings. [VERIFY: Kite volume display conventions]
+- Volume figures can differ between data sources and chart settings. Check what your chart counts.
 
 ## Remember
 
@@ -139,12 +145,7 @@ Mode: **paper**. This is a learning log only. Log it in your journal (or on pape
 ## Sources and verification
 
 - Zerodha Varsity, volume indicators module (reference only, original wording).
-- NSE India, market timings page, for session start and end.
-- Kite chart help pages, for OBV and VWAP. [VERIFY: article title]
-
-<!-- facts-needed: Kite definitions and availability of OBV and VWAP; Kite VWAP reset rule on intraday charts; NSE session start and end times. -->
-
-[VERIFY: Kite OBV and VWAP definitions and availability]
-[VERIFY: NSE session start and end times]
+- NSE India, market timings and trading system pages, for session start and end. NSE says shares without the closing auction trade continuously from 9:15 am to 3:30 pm, and the closing auction for some shares runs after 3:15 pm. (As of 11 Nov 2026. NSE has announced changes, so check the NSE site.)
+- Zerodha, Kite charting manual (kite.trade/docs/kite/charting), for the indicators Kite offers.
 
 <!-- standing-disclaimer -->

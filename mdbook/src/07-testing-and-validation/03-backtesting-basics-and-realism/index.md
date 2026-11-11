@@ -96,7 +96,7 @@ The stop fills at Rs 490.
 
 The open is Rs 495, which is above the stop. There is no gap through the stop at the open. The day's low is Rs 488, which is below the stop. So the low crosses the stop during the day. In this model, the fill is at the stop price, Rs 490.
 
-Real fills can be worse than this model. See the limits below. [VERIFY: how stop orders fill on Kite, and the circuit limit rule for the day]
+Real fills can be worse than this model. See the limits below. How a stop order fills depends on the market on that day and on the order type you use. Read Zerodha's support pages on order types, and the NSE price band pages, before you assume any fill price.
 
 All figures are hypothetical.
 
@@ -122,7 +122,7 @@ Mode: **learning note**. Use Lab 4 for a practice run. If the lab is not ready, 
 ## Limits and common mistakes
 
 - The realism contract is a minimum standard. It is not a promise that live fills will match the backtest.
-- The gap rule fills at the open. Real fills can be worse than the open, even when the low only crosses the stop. [VERIFY: how stop orders fill on Kite]
+- The gap rule fills at the open. Real fills can be worse than the open, even when the low only crosses the stop.
 - The costs in this chapter are not calculated here. A backtest that leaves them out shows a result too high for a real trader.
 - A backtest that follows every rule can still be wrong about the future. Look-ahead, survivorship and overfitting are covered in the next chapters (*Look-ahead bias*, *Survivorship bias*, *Overfitting and the number of things you tried*).
 
@@ -136,11 +136,7 @@ Mode: **learning note**. Use Lab 4 for a practice run. If the lab is not ready, 
 
 ## Sources and verification
 
-- NSE circuit limit and price band page. [VERIFY: circuit limit rule and how it affects gap fills]
-- Zerodha charges page, for the cost settings. The rates are not restated in this chapter. [VERIFY: current cost rates]
-
-<!-- facts-needed: circuit limit rule and its effect on gap fills; the cost rates used by the Lab 2 cost settings, which this chapter does not hard-code. -->
-
-<!-- OPEN: The spec gives a 20-bar toy fixture for the paper task. The lab's fixture is not described here, so the task asks the reader to make a made-up series instead. Confirm when Lab 4 is built. -->
+- NSE price band pages. Price bands can stop a share from trading beyond a set move in a day, which can change a fill. This book states no band.
+- Zerodha charges page (zerodha.com/charges), for the cost settings. The rates are not restated in this chapter, because they change.
 
 <!-- standing-disclaimer -->

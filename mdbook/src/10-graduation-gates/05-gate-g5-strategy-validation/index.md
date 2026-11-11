@@ -46,6 +46,8 @@ This gate has no picture to explore. Use this table to set out the two periods.
 
 Keep the two rows apart. Never blend them into one number.
 
+<!-- component: gate-check | gate: G5 | caption: Tick each criterion only when it is true for you. A gate checks what you learned. It is not permission to trade. -->
+
 ## Worked example
 
 **Hypothetical.** A made-up strategy on a made-up capital of Rs 50,000.

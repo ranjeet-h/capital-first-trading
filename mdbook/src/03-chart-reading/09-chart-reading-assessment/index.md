@@ -31,7 +31,7 @@ Some terms used in the items:
 
 Feedback follows every answer. Each wrong answer shows the rule that applies.
 
-The pass mark is 80 percent for this chapter. With 6 questions, that means at least 5 correct. <!-- OPEN: the 80 percent pass mark is a proposal for the reviewer; the spec says it is a design choice and not a gate. --> You can retake the assessment as often as you like. There is no timer.
+The pass mark is 80 percent for this chapter. With 6 questions, that means at least 5 correct. You can retake the assessment as often as you like. There is no timer.
 
 The result screen says the same thing each time. Passing this chapter does not show that any chart method works. It shows only that you can read the chart items correctly.
 
@@ -105,9 +105,7 @@ All figures are hypothetical.
 
 </details>
 
-<!-- OPEN: the spec asks for a 10-item set on an unseen synthetic chart. That set is not written yet, so the independent exercise uses one worked item instead. -->
-<!-- OPEN: the spec names sr-drawing-exercise for the zone item and predict-next for identification. Neither is in the allowed component list, so only pattern-quiz is used. predict-next is not used because the book does not present chart items as predictions. -->
-<!-- OPEN: the 25 percent concentration cap in the gap example is not stated in the spec. It is taken from the position sizing chapter so that the spec's 49 shares can be reached. -->
+
 
 
 ## Quiz

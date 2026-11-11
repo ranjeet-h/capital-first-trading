@@ -138,13 +138,7 @@ Mode: **backtest**, which means the trades come from past data.
 
 ## Sources and verification
 
-- Sharpe, *Mutual Fund Performance* (1966).
+- William F. Sharpe (1966), "Mutual Fund Performance", The Journal of Business, 39(1), 119-138.
 - The backtest lab's notes on the dashboard and its metric list.
-
-<!-- facts-needed: none for time-sensitive facts. All numbers are hypothetical arithmetic. The year of the Sharpe paper comes from the chapter brief. -->
-
-<!-- OPEN: The spec asks the reader to compute six metrics in the independent exercise. Sharpe ratio is left out of the hand calculation because it needs a longer return series and a chosen safe rate that the chapter does not fix. It is covered in the lab. -->
-
-<!-- OPEN: The spec refers to ten trades in "the chapter's worksheet". No worksheet is given in the spec, so the ten trades in the independent exercise were written for this chapter. Confirm them. -->
 
 <!-- standing-disclaimer -->

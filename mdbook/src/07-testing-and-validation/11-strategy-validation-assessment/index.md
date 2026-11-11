@@ -17,8 +17,8 @@ Two people read the same backtest. This is a hypothetical example. One writes: "
 
 A validation write-up ends in one of three verdicts:
 
-- **Inconclusive.** The sample is too small, or the results disagree. No decision follows from it.
-- **Not validated.** The result fails the written criteria.
+- **Inconclusive.** The sample is too small to read, so the written criteria cannot be judged. No decision follows from it.
+- **Not validated.** The sample is large enough, and the result fails the written criteria. A good result in another part of the test does not change this.
 - **Validated for further forward testing.** The result passes the written criteria. This means the rule is worth testing forward. It does not mean the rule is profitable. It does not mean the rule is ready for real money.
 
 Before you write a verdict, check the seven items below. For each item, write the file or screen where the evidence is stored. If you cannot show the evidence, mark the item as **not done**. Do not mark it as passed.
@@ -43,7 +43,9 @@ Writing a verdict is the skill. The verdict must follow from the checklist and t
 
 ## See it
 
-This assessment has no new visual. Use the quiz and the checklist below as your tools. The checklist is the structure to fill in.
+Use the verdict tool, the quiz and the checklist below. The checklist is the structure to fill in.
+
+<!-- component: validation-verdict | caption: Choose made-up results and tick the checklist to see which verdict the written rules give, and why. -->
 
 | # | Checklist item | Evidence (file or screen) | Status |
 |---|---|---|---|
@@ -142,12 +144,8 @@ Mode: **backtest**, which means the trades come from past data.
 
 ## Sources and verification
 
-- Pardo, *The Evaluation and Optimization of Trading Strategies* (edition: [VERIFY: edition]).
-- Bailey and colleagues, on backtest overfitting ([VERIFY: title and year]).
+- Robert Pardo, *The Evaluation and Optimization of Trading Strategies*, 2nd edition (Wiley, 2008).
+- Bailey, Borwein, Lopez de Prado and Zhu (2014), "Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance", Notices of the American Mathematical Society, 61(5), 458-471.
 - The backtest lab's acceptance criteria.
-
-<!-- facts-needed: edition of Pardo, The Evaluation and Optimization of Trading Strategies; title and year of the Bailey and colleagues paper on backtest overfitting. -->
-
-<!-- OPEN: The brief says the verdict "inconclusive" covers results that disagree. The independent exercise uses "not validated" for a positive in-sample and negative out-of-sample result, because the out-of-sample result fails the stated criteria. Confirm which verdict the criteria give in this case. -->
 
 <!-- standing-disclaimer -->

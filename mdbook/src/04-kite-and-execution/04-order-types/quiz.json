@@ -116,6 +116,7 @@
     "answer": "b",
     "explanations": {
       "a": "A sell limit at Rs 240 sits in the market now. It fills only at Rs 240 or higher, so it may never fill if the price falls further.",
+      "b": "A normal SL-M lasts one trading day only. To keep a stop for longer, use a GTT. A fast fall can still fill far from Rs 240.",
       "c": "A market order sells now, not when the price falls to Rs 240.",
       "d": "This is a buy order. It works on the wrong side of the trade for a holding you want to sell."
     },

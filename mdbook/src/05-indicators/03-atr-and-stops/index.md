@@ -45,7 +45,7 @@ Position size still comes from the rules in *Position sizing step by step*. ATR 
 
 <!-- component: position-size-viz | capital: 50000 | riskPct: 1 | entry: 250 | stop: 241.34 | caption: Three bars for the ATR example (raw risk limit 57, cash cap 200, concentration cap 50); the minimum is highlighted and the binding constraint is named -->
 
-<!-- component: lab-position-size -->
+<!-- component: lab-position-size | capital: 50000 | riskPct: 1 | entry: 250 | stop: 241.34 | maxPct: 25 | caption: A position size calculator with three limits. Change any number and see which limit decides -->
 
 The three bars show the three limits. The shortest bar sets the size. Here the concentration cap is the shortest bar. Change the stop and watch how the risk bar grows. Notice that the concentration bar does not move, because the entry price does not change.
 
@@ -81,6 +81,8 @@ Each TR is the largest value in its row. For example, Day 4 has TR 3, because hi
 Binding constraint: the **concentration cap**. The planned position is 50 x Rs 250 = Rs 12,500, which is 25 percent of capital. The planned loss is 50 x Rs 8.66 = Rs 433, which is less than the Rs 500 budget. The cap stopped the size before the budget was used up.
 
 ## Try it
+
+<!-- component: indicator-playground | indicator: atr | closes: 103,104,107,105,109 | highs: 104,106,108,107,110 | lows: 100,102,103,104,106 | period: 3 | mult: 2 | entry: 250 | edit: on | caption: The five bars of the worked example. Day 1 is only there to give day 2 a previous close. Change the highs, lows or closes and watch the true range and the ATR -->
 
 <!-- component: position-size-viz | capital: 50000 | riskPct: 1 | entry: 250 | stop: 241.34 | caption: Interactive demo of stop distance against shares, using the ATR example -->
 
@@ -128,7 +130,7 @@ Mode: **paper**. No account and no order is needed.
 1. Pick five stocks. For each one, copy a sample of 20 bars by hand from a chart or a printed table. Write the high, low and close for each bar.
 2. Work out the true range for each bar that has a previous close.
 3. Find the ATR for the first 14 bars by taking their simple average. Then apply Wilder smoothing to the bars that follow.
-4. Compare your ATR with the ATR shown by the platform. Note the platform setting and mark it [VERIFY: Kite ATR default].
+4. Compare your ATR with the ATR shown by the platform. Note the platform setting as shown on your screen. Zerodha's charting manual does not list a default ATR setting.
 
 Log it in your journal (or on paper until the journal app is ready).
 
@@ -152,14 +154,7 @@ Log it in your journal (or on paper until the journal app is ready).
 
 - J. Welles Wilder, *New Concepts in Technical Trading Systems* (1978). This is where ATR and Wilder smoothing come from.
 - Zerodha Varsity, volatility module (reference only).
-- Kite chart help, for the ATR settings in Kite [VERIFY: page title].
-
-Facts to verify before this chapter is final:
-
-[VERIFY: Kite ATR default period]
-
-<!-- facts-needed: Kite ATR default period and smoothing method; whether the platform uses Wilder smoothing. -->
-
-<!-- OPEN: The spec's independent exercise does not state capital or the concentration setting. The chapter assumes Rs 50,000 and 25 percent, which give the cash cap of 125 that the spec states. Confirm before publishing. -->
+- Zerodha, Kite charting manual (kite.trade/docs/kite/charting). It gives no default ATR setting, so read it on your own screen.
+- StockCharts ChartSchool, ATR page. It gives 14 periods and Wilder smoothing. The first true range is high minus low, and the first ATR is the average of 14 true ranges. (As of 11 Nov 2026. This is a common convention, not an exchange rule.)
 
 <!-- standing-disclaimer -->

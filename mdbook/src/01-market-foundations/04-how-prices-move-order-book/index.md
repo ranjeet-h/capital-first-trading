@@ -111,7 +111,7 @@ Six questions check the average price of a walk up the book, the last price, the
 1. Open the market depth view for one stock in the Kite demo.
 2. Note the best bid (the highest buy price waiting) and the best ask (the lowest sell price waiting).
 3. Write both in your own words.
-4. Label the layout "unverified": [VERIFY: Kite demo depth view]. The demo uses dummy data.
+4. Zerodha says the market depth view shows the best 5 buy prices and the best 5 sell prices. It also shows the open, high, low and close, the volume and the circuit limits. Layouts change, so write "check your own Kite for the current layout" next to your note. The demo uses dummy data. (As of 11 Nov 2026, Zerodha support page on market depth.)
 
 ## Limits and common mistakes
 
@@ -136,12 +136,10 @@ Six questions check the average price of a walk up the book, the last price, the
 - Zerodha Varsity, as a reference only (link only, no text copied).
 - Zerodha support pages on order types.
 
-**Facts to verify:**
+**Facts checked on 11 Nov 2026:**
 
-- Market depth levels shown in Kite. [VERIFY: Zerodha Kite help page]
-- Kite demo depth view layout. [VERIFY: Kite demo depth view]
-- Matching rules and price-time priority, if used later (see *Order matching, spread and liquidity*). [VERIFY: NSE market rules]
-
-<!-- facts-needed: Zerodha Kite help page (market depth levels); Kite demo depth view layout; NSE market rules for matching -->
+- Zerodha's standard market depth view shows the best 5 bids and offers. A separate 20-level depth view exists as another feature. (Zerodha support site.)
+- The exact layout of the Kite demo can change, so this chapter does not describe it. Check it on screen.
+- Orders at the same price are matched in the order they arrive. See *Order matching, spread and liquidity* for the rule and its source.
 
 <!-- standing-disclaimer -->

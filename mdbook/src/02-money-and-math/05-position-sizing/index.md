@@ -37,8 +37,8 @@ Then:
 Some points to keep in mind:
 
 - This track uses **whole shares** throughout.
-- Tick size is the smallest step a price can move. It can matter if a plan rounds prices. [VERIFY: NSE tick size page]
-- Lot size is the smallest number of shares you can trade at once. This book treats cash equity as whole shares. Confirm the current rule before you use it on real data. [VERIFY: current lot size rule for cash equity]
+- Tick size is the smallest step a price can move. It can matter if a plan rounds prices. On NSE cash shares the tick size depends on the share price. It is Re 0.01 for prices below Rs 250, Rs 0.05 from Rs 250 to Rs 1,000, and Rs 0.10 above Rs 1,000 up to Rs 5,000. It gets larger still for higher prices. NSE reviews the tick size of each share every month. (As of 11 Nov 2026, NSE circulars on tick size. Rules change, so check the NSE site.)
+- Lot size is the smallest number of shares you can trade at once. For shares traded in demat form on NSE, the market lot is one share. This book treats cash equity as whole shares. (As of 11 Nov 2026, NSE trading system page. Rules change, so check the NSE site.)
 - Lab 1 adds costs to show the true loss. The costs themselves are covered in *Costs on a trade*.
 
 The main lesson: **a tighter stop does not mean a larger position.** A tighter stop raises the raw share count. The cash and concentration caps can then cut it. The stop changes what the risk formula allows. The caps decide what you can actually hold.
@@ -155,14 +155,11 @@ Mode: **learning note**, or **paper** if you prefer. Log it in your journal (or 
 
 ## Sources and verification
 
-- NSE tick size page, for rounding prices in a plan.
+- NSE circulars on tick size for the cash market (revision of June 2024 and April 2025), read on 11 Nov 2026, for rounding prices in a plan.
+- NSE trading system page, for the market lot of one share.
 - The 25% limit is a setting in this book, not a market rule.
 
 <!-- facts-needed: tick size for cash equity; lot size rule for cash equity (the book assumes whole shares). -->
 
-[VERIFY: NSE tick size for cash equity]
-[VERIFY: current lot size rule for cash equity]
-
-<!-- OPEN: The spec's Lab 1 visual asks for three bars with the minimum highlighted. LABS.md describes a bar or ladder visual for the price levels and a sensitivity strip, but not three limit bars. Confirm before the placeholder is built. -->
 
 <!-- standing-disclaimer -->

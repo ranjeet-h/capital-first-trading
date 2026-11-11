@@ -91,7 +91,7 @@ The quiz checks recovery arithmetic, the daily limit and the signs of revenge tr
 
 Mode: **paper or learning note**. Log it in your journal (or on paper until the journal app is ready).
 
-1. For the next five trading sessions, look at every trade taken after a loss in the same session. Include practice trades.
+1. For the next five trading sessions, look at every trade taken after a loss in the same session. Include every paper trade. The Kite demo is for looking at screens only, so practice trades are paper trades.
 2. For each one, tag it as a rule break if the size went up, the gap was short, or the plan did not cover it.
 3. Write the total loss for the session, in rupees and as a percent of capital.
 4. Write the recovery needed after that loss, using the formula from this chapter.
@@ -115,9 +115,7 @@ Mode: **paper or learning note**. Log it in your journal (or on paper until the 
 
 ## Sources and verification
 
-- Kahneman and Tversky, prospect theory (1979). [VERIFY: exact title and journal]
+- Daniel Kahneman and Amos Tversky (1979), "Prospect Theory: An Analysis of Decision under Risk", Econometrica, 47(2), starting on page 263.
 - Your own daily limit, as written in your plan.
-
-<!-- facts-needed: exact citation for the prospect theory paper; wording of the loss aversion research summary. -->
 
 <!-- standing-disclaimer -->

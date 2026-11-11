@@ -1,7 +1,12 @@
 import json, re, sys, glob, os
 root = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'mdbook', 'src')
 H = ['## Hook','## The idea','## See it','## Worked example','## Try it','### Guided exercise','### Independent exercise','## Quiz','## Paper task','## Limits and common mistakes','## Remember','## Sources and verification']
-ALLOWED = set('order-flow-sim order-book-sim candle-builder sl-trigger-sim leverage-demo position-size-viz drawdown-compounding streak-sim indicator-playground pattern-quiz predict-next spot-the-mistake quiz-block exercise-block gate-check kite-illustration risk-limit-simulator capital-allocation-planner lab-position-size lab-costs lab-journal strategy-simulator'.split())
+ALLOWED = {'quiz-block', 'kite-flow', 'kite-illustration'}
+for _f in glob.glob(os.path.join(root, '..', 'theme', 'demos*.js')):
+    _t = open(_f).read()
+    ALLOWED |= set(re.findall(r'D\[["\']([a-z0-9-]+)["\']\]\s*=', _t))
+    ALLOWED |= set(re.findall(r'^\s*D\.([a-zA-Z0-9]+)\s*=', _t, re.M))
+ALLOWED |= set('order-flow-sim order-book-sim candle-builder sl-trigger-sim leverage-demo position-size-viz drawdown-compounding streak-sim indicator-playground pattern-quiz predict-next spot-the-mistake exercise-block gate-check lab-position-size lab-costs lab-journal capital-allocation-planner risk-limit-simulator strategy-simulator'.split())
 BANNED = re.compile(r'guaranteed|sure profit|easy money|good trade|risk-free', re.I)
 for d in sorted([x for x in glob.glob(root + '/*/*/')]):
     name = d[len(root)+1:]
@@ -15,7 +20,9 @@ for d in sorted([x for x in glob.glob(root + '/*/*/')]):
     if '<!-- standing-disclaimer -->' not in t: probs.append('no disclaimer marker')
     for m in re.findall(r'<!-- component: ([a-z-]+)', t):
         if m not in ALLOWED: probs.append('bad component ' + m)
-    for m in BANNED.finditer(t): probs.append('banned: ' + t[max(0,m.start()-40):m.end()+20].replace('\n',' '))
+    for m in BANNED.finditer(t):
+        if re.search(r"(not|cannot|never|no|nor|neither|n't)\s+(be\s+|a\s+|really\s+)?$", t[max(0,m.start()-14):m.start()].lower()): continue
+        probs.append('banned: ' + t[max(0,m.start()-40):m.end()+20].replace('\n',' '))
     words = len(t.split())
     nver = len(re.findall(r'\[VERIFY', t))
     nq = 0

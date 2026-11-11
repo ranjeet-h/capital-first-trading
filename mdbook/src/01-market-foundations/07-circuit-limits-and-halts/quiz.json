@@ -73,7 +73,7 @@
   "prompt": "What is the reference point from which a daily price band is measured?",
   "options": [
    {"id": "a", "text": "Today's opening price."},
-   {"id": "b", "text": "The previous close, as described in this chapter. The rule is [VERIFY: band reference, NSE rule]."},
+   {"id": "b", "text": "The previous close, as described in this chapter."},
    {"id": "c", "text": "The highest price of the previous week."}
   ],
   "answer": "b",

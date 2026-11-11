@@ -48,9 +48,9 @@ Read the list as a map of ways to lose money. For each rule, ask which loss path
 | No-trade days are valid | Pressure to trade without a clear reason |
 | No daily income target driving trades | Overtrading (*Overtrading and why daily profit targets encourage it*) |
 
-<!-- OPEN: the spec gives a static rule card for this chapter. No component in the placeholder list fits, so a Markdown table is used. -->
-
 Scan the right-hand column first. Each entry is a way an account can shrink. Then check each rule on the left against it.
+
+<!-- component: capital-first-rules | capital: 50000 | savings: 400000 | caption: Switch each rule on or off and play a made-up run. The luck is the same each time. Only the rules change. -->
 
 ## Worked example
 
@@ -141,12 +141,9 @@ Six questions check the rules on leverage, averaging down, no-trade days and hou
 - SEBI investor education pages on leverage and margin.
 - Zerodha support on margin.
 
-**Facts to verify:**
+**Facts checked on 11 Nov 2026:**
 
-- Margin and leverage rules for the cash segment, and the broker's margin policy (see *Leverage and margin*). [VERIFY: Zerodha margin page; SEBI margin framework circulars]
-
-<!-- OPEN: spec asks whether the book should suggest a default trading-capital ceiling. Current draft leaves the number to the owner and illustrates only. -->
-
-<!-- facts-needed: Zerodha margin page; SEBI margin framework circulars (cross-reference *Leverage and margin*) -->
+- This chapter quotes no margin or leverage figures. Margin rules differ by product and change over time, and each broker sets its own policy within SEBI's rules. Before you rely on any margin number, read the current margin pages on the Zerodha support site and SEBI's circulars on margin. *Leverage and margin* explains the idea in more detail.
+- The capital sums in this chapter are round numbers for practice. The book does not suggest how much money you should put into trading.
 
 <!-- standing-disclaimer -->

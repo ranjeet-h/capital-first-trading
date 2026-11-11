@@ -1,0 +1,462 @@
+[
+  {
+    "id": "zerodha_delivery_brokerage",
+    "value": "Zero",
+    "unit": "text",
+    "sourceUrl": "https://zerodha.com/charges/",
+    "sourceName": "Zerodha charges page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Equity delivery brokerage. Read from the Zerodha charges page."
+  },
+  {
+    "id": "zerodha_intraday_brokerage",
+    "value": "0.03% or Rs 20 per executed order, whichever is lower",
+    "unit": "text",
+    "sourceUrl": "https://zerodha.com/charges/",
+    "sourceName": "Zerodha charges page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Equity intraday brokerage."
+  },
+  {
+    "id": "stt_delivery",
+    "value": "0.1% on buy and on sell",
+    "unit": "percent",
+    "sourceUrl": "https://zerodha.com/charges/",
+    "sourceName": "Zerodha charges page and Zerodha support on STT",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "STT on equity delivery. STT rates are set by the government. Zerodha page is the source read; the Finance Act is the primary source and was not fetched."
+  },
+  {
+    "id": "stt_intraday_sell",
+    "value": "0.025% on the sell side only",
+    "unit": "percent",
+    "sourceUrl": "https://zerodha.com/charges/",
+    "sourceName": "Zerodha charges page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "STT on equity intraday."
+  },
+  {
+    "id": "stt_rounding",
+    "value": "STT is rounded to the nearest rupee",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/",
+    "sourceName": "Zerodha support, STT",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Zerodha says other statutory charges are levied at actuals and states no rounding rule for each line."
+  },
+  {
+    "id": "nse_txn_charge_cash",
+    "value": "0.00307% of value traded",
+    "unit": "percent",
+    "sourceUrl": "https://zerodha.com/charges/",
+    "sourceName": "Zerodha charges page (mirrors NSE circular NSE/FA/73061 of 27 Feb 2026, effective 1 Mar 2026)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "NSE circular body could not be fetched (nseindia.com timed out), so the circular reference is from secondary pages."
+  },
+  {
+    "id": "bse_txn_charge_cash",
+    "value": "0.00375% of value traded",
+    "unit": "percent",
+    "sourceUrl": "https://zerodha.com/charges/",
+    "sourceName": "Zerodha charges page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "BSE equity transaction charge as listed by Zerodha. BSE site not fetched."
+  },
+  {
+    "id": "sebi_turnover_fee",
+    "value": "Rs 10 per crore of value traded",
+    "unit": "rupees_per_crore",
+    "sourceUrl": "https://zerodha.com/charges/",
+    "sourceName": "Zerodha charges page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "UNCONFIRMED FROM SEBI: read on the Zerodha page only. The SEBI circular was not fetched. The chapter says to check SEBI's pages too."
+  },
+  {
+    "id": "stamp_duty_delivery",
+    "value": "0.015% on buy side",
+    "unit": "percent",
+    "sourceUrl": "https://zerodha.com/charges/",
+    "sourceName": "Zerodha charges page and SEBI FAQ on stamp duty (June 2020)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Uniform across states since 1 July 2020."
+  },
+  {
+    "id": "stamp_duty_intraday",
+    "value": "0.003% on buy side",
+    "unit": "percent",
+    "sourceUrl": "https://zerodha.com/charges/",
+    "sourceName": "Zerodha charges page and SEBI FAQ on stamp duty (June 2020)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Uniform across states since 1 July 2020."
+  },
+  {
+    "id": "gst_rate_and_base",
+    "value": "18% on brokerage + SEBI fee + transaction charge",
+    "unit": "percent",
+    "sourceUrl": "https://zerodha.com/charges/",
+    "sourceName": "Zerodha charges page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "GST base as stated by Zerodha."
+  },
+  {
+    "id": "dp_charge",
+    "value": "Rs 15.34 per scrip sold per day (Rs 3.50 depository + Rs 9.50 Zerodha + Rs 2.34 GST)",
+    "unit": "rupees",
+    "sourceUrl": "https://zerodha.com/charges/",
+    "sourceName": "Zerodha charges page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Charged once per scrip per day, whatever the quantity, when shares are sold from demat."
+  },
+  {
+    "id": "call_and_trade_charge",
+    "value": 50,
+    "unit": "rupees_per_order",
+    "sourceUrl": "https://zerodha.com/charges/",
+    "sourceName": "Zerodha charges page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Orders placed through a dealer."
+  },
+  {
+    "id": "auto_squareoff_charge",
+    "value": "Rs 50 + 18% GST per order squared off",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/",
+    "sourceName": "Zerodha support, auto square-off",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Applies when Zerodha closes an intraday position."
+  },
+  {
+    "id": "amc",
+    "value": "Free for the first year for new accounts; later amount depends on account type and holdings",
+    "unit": "text",
+    "sourceUrl": "https://zerodha.com/charges/",
+    "sourceName": "Zerodha charges page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Chapter tells reader to read the current amount on the charges page."
+  },
+  {
+    "id": "mis_auto_squareoff_times",
+    "value": "Equity: 3:12 PM (closing auction session stocks), 3:25 PM (others); F&O: 3:26 PM",
+    "unit": "text",
+    "sourceUrl": "https://zerodha.com/z-connect/updates/changes-to-the-auto-square-off-timings-for-equity-and-fo",
+    "sourceName": "Zerodha Z-Connect, 26 Dec 2025, and Zerodha support",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 30,
+    "notes": "Moved on 26 Dec 2025 (equity 3:20 to 3:25 PM; F&O 3:25 to 3:26 PM). Timings can change at Zerodha's risk team's discretion. The 3:12 PM figure is from docs/kite-ui-research.md (Zerodha support); the chapters mostly state 3:25 and 3:26."
+  },
+  {
+    "id": "mis_leverage_variable",
+    "value": "Intraday leverage varies by share and can be cut or removed during the day",
+    "unit": "text",
+    "sourceUrl": "https://zerodha.com/marketintel/bulletin/249809/latest-intraday-leverages-mis-bo-co",
+    "sourceName": "Zerodha bulletin on intraday leverage",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 30,
+    "notes": "The older Zerodha article says up to 5x (20% margin) for equity MIS. That figure is NOT stated in the book because the current page was not confirmed."
+  },
+  {
+    "id": "peak_margin_full_upfront_from_sep2021",
+    "value": "SEBI peak margin: 100% upfront margin required from 1 Sep 2021",
+    "unit": "date",
+    "sourceUrl": "https://www.sebi.gov.in/",
+    "sourceName": "SEBI circulars on peak margin, via secondary summaries",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "UNCONFIRMED FROM SEBI: confirmed only from public broker explainers. Chapter 13 says to read the SEBI circular too."
+  },
+  {
+    "id": "mtf_interest_per_day",
+    "value": "0.04% per day on the funded amount (Rs 40 per lakh per day, about 14.6% a year)",
+    "unit": "percent_per_day",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/margins/margin-trading-facility/articles/interest-calculation-for-mtf",
+    "sourceName": "Zerodha support, MTF interest",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 30,
+    "notes": "Interest starts T+1 and runs until sold."
+  },
+  {
+    "id": "tick_size_slabs",
+    "value": "Re 0.01 below Rs 250; Rs 0.05 for Rs 250-1,000; Rs 0.10 for Rs 1,000-5,000; larger above; reviewed monthly",
+    "unit": "text",
+    "sourceUrl": "https://www.nseindia.com/",
+    "sourceName": "NSE circulars on tick size (June 2024, April 2025)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "NSE site not fetched. Read via Zerodha and secondary pages of the NSE circulars. Needs a check against the NSE circular."
+  },
+  {
+    "id": "market_lot_cash_equity",
+    "value": 1,
+    "unit": "shares",
+    "sourceUrl": "https://www.nseindia.com/",
+    "sourceName": "NSE trading system",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Market lot for demat shares on NSE is 1 share."
+  },
+  {
+    "id": "sl_slm_behaviour",
+    "value": "SL needs trigger and limit price; SL-M needs trigger only and sends a market order; SL-M discontinued for options; both available for shares",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/",
+    "sourceName": "Zerodha support, order types",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Kite behaviour. The SL-M-blocked-on-BSE claim is NOT used because it was not confirmed."
+  },
+  {
+    "id": "circuit_band_rules",
+    "value": "Most shares 2%, 5%, 10% or 20% of previous close; F&O shares have a flexible 10% range; an order outside the band is rejected",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/",
+    "sourceName": "Zerodha support on circuit limits, NSE Basic FAQs on the Secondary Market, SEBI master circular on trading (Dec 2024)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Matches the foundations chapter on circuit limits."
+  },
+  {
+    "id": "mis_circuit_conversion",
+    "value": "If an intraday position cannot be closed because of a circuit, Zerodha says it turns into a delivery trade",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/",
+    "sourceName": "Zerodha support on circuits and intraday positions",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Zerodha may close positions but is not required to."
+  },
+  {
+    "id": "nse_trading_days_2026",
+    "value": 245,
+    "unit": "days",
+    "sourceUrl": "https://zerodha.com/marketintel/holiday-calendar/",
+    "sourceName": "Zerodha market holiday calendar (mirrors NSE circular CMTR71775)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "261 weekdays in 2026 minus 16 weekday holidays. NSE circular PDF not fetched. Muhurat session on Sun 8 Nov 2026 is not counted."
+  },
+  {
+    "id": "nse_2026_weekday_holidays",
+    "value": 16,
+    "unit": "days",
+    "sourceUrl": "https://zerodha.com/marketintel/holiday-calendar/",
+    "sourceName": "Zerodha market holiday calendar",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "15 Jan 2026 (Maharashtra municipal elections) was added after the 12 Dec 2025 NSE list. The foundations chapter on sessions and holidays lists 15 only, so it needs the 15 Jan row added."
+  },
+  {
+    "id": "nse_industry_classification_4tier",
+    "value": "Macro-economic sector, sector, industry, basic industry",
+    "unit": "text",
+    "sourceUrl": "https://www.niftyindices.com/",
+    "sourceName": "NSE Indices industry classification",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Used in the portfolio exposure chapter."
+  },
+  {
+    "id": "sebi_intraday_study_loss_makers_fy23",
+    "value": 71,
+    "unit": "percent",
+    "sourceUrl": "https://www.sebi.gov.in/reports-and-statistics/research.html",
+    "sourceName": "SEBI, Analysis of Intraday Trading by Individuals in Equity Cash Segment, July 2024",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "71% of individual intraday traders in the equity cash segment made net losses in FY23 (65% in FY21, 69% in FY22). Direct PDF link not recorded; find it under SEBI Reports and Statistics, Research, July 2024."
+  },
+  {
+    "id": "sebi_fo_study_loss_makers_fy26",
+    "value": 87.7,
+    "unit": "percent",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf",
+    "sourceName": "SEBI, Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26), Aug 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Share of loss-making individuals in FY26. About 93% of traders lost money after costs in the earlier SEBI study (FY22 to FY24)."
+  },
+  {
+    "id": "stcg_rate_listed_equity",
+    "value": 20,
+    "unit": "percent",
+    "sourceUrl": "https://incometaxindia.gov.in/",
+    "sourceName": "Income-tax Act 2025 (Act 30 of 2025), bill text as passed by Lok Sabha, and Income Tax Department help pages",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Short-term gain on listed equity where STT paid, held 12 months or less. Same as 1961 Act for transfers on or after 23 Jul 2024. Source read was the PRS copy of the bill text, not the final Gazette Act as amended by the Finance Act 2026. incometaxindia.gov.in returned 403."
+  },
+  {
+    "id": "ltcg_rate_and_exemption",
+    "value": "12.5%, no indexation, on long-term gains above Rs 1,25,000 a year",
+    "unit": "text",
+    "sourceUrl": "https://incometaxindia.gov.in/",
+    "sourceName": "Income-tax Act 2025 and Income Tax Department help pages",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Same caveat as stcg_rate_listed_equity."
+  },
+  {
+    "id": "equity_holding_period_months",
+    "value": 12,
+    "unit": "months",
+    "sourceUrl": "https://incometaxindia.gov.in/",
+    "sourceName": "Income-tax Act 2025",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Long-term if held more than 12 months for listed shares."
+  },
+  {
+    "id": "capital_loss_carry_forward_years",
+    "value": 8,
+    "unit": "years",
+    "sourceUrl": "https://www.incometax.gov.in/",
+    "sourceName": "Income Tax Department help pages on set-off and carry-forward of losses",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Capital losses can be set off only against capital gains."
+  },
+  {
+    "id": "business_loss_carry_forward_years",
+    "value": 8,
+    "unit": "years",
+    "sourceUrl": "https://www.incometax.gov.in/",
+    "sourceName": "Income Tax Department help pages on set-off and carry-forward of losses",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Non-speculative business loss, against business income only."
+  },
+  {
+    "id": "speculation_loss_carry_forward_years",
+    "value": 4,
+    "unit": "years",
+    "sourceUrl": "https://www.incometax.gov.in/",
+    "sourceName": "Income Tax Department help pages on set-off and carry-forward of losses",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Speculation loss, against speculation profit only."
+  },
+  {
+    "id": "tax_audit_thresholds",
+    "value": "Turnover over Rs 1 crore; Rs 10 crore if cash receipts and payments are each 5% or less",
+    "unit": "text",
+    "sourceUrl": "https://incometaxindia.gov.in/",
+    "sourceName": "Income-tax Act 2025",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Same caveat as stcg_rate_listed_equity. Presumptive-income provisions not covered in the book."
+  },
+  {
+    "id": "itr_forms",
+    "value": "Capital gains only: ITR-2; business income: ITR-3",
+    "unit": "text",
+    "sourceUrl": "https://www.incometax.gov.in/",
+    "sourceName": "Income Tax Department help pages on ITR forms",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Individual taxpayers."
+  },
+  {
+    "id": "dividend_tax_treatment",
+    "value": "Taxed as income from other sources; only interest up to 20% of the dividend can be deducted",
+    "unit": "text",
+    "sourceUrl": "https://incometaxindia.gov.in/",
+    "sourceName": "Income-tax Act 2025",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Dividend TDS rate and threshold deliberately NOT stated in the book (not confirmed)."
+  },
+  {
+    "id": "new_tax_regime_default",
+    "value": "New tax regime is the default; a person with business income who opts for the old regime must choose by the due date, and can switch back only once",
+    "unit": "text",
+    "sourceUrl": "https://incometaxindia.gov.in/",
+    "sourceName": "Income-tax Act 2025",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Same caveat as stcg_rate_listed_equity."
+  },
+  {
+    "id": "income_tax_act_2025_in_force",
+    "value": "Income-tax Act, 2025 in force from 1 Apr 2026; FY 2025-26 income stays under the 1961 Act",
+    "unit": "date",
+    "sourceUrl": "https://incometaxindia.gov.in/",
+    "sourceName": "Income-tax Act 2025",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Rates in the book are the same under both Acts."
+  },
+  {
+    "id": "zerodha_demo_wording",
+    "value": "Zerodha does not offer demo accounts for paper trading. You can access a demo version of Kite with dummy data at kite-demo.zerodha.com/dashboard.",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/trading-faqs/general/articles/does-zerodha-offer-demo-accounts-for-paper-trading",
+    "sourceName": "Zerodha support, Does Zerodha offer demo accounts for paper trading",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 30,
+    "notes": "Read directly on 2026-11-11. Whether the demo allows placing a trade is NOT confirmed, so the gate chapter does not say it does."
+  },
+  {
+    "id": "ref_kahneman_tversky_1979",
+    "value": "Kahneman and Tversky (1979), Prospect Theory: An Analysis of Decision under Risk, Econometrica 47(2), 263-291",
+    "unit": "text",
+    "sourceUrl": "https://doi.org/10.2307/1914185",
+    "sourceName": "Econometrica",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Bibliographic record from memory of the catalogue entry; not re-fetched."
+  },
+  {
+    "id": "ref_kahneman_2011",
+    "value": "Kahneman (2011), Thinking, Fast and Slow, Farrar, Straus and Giroux",
+    "unit": "text",
+    "sourceUrl": "https://us.macmillan.com/books/9780374533557/thinkingfastandslow",
+    "sourceName": "Farrar, Straus and Giroux",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Bibliographic record not re-fetched."
+  },
+  {
+    "id": "ref_tversky_kahneman_1971",
+    "value": "Tversky and Kahneman (1971), Belief in the law of small numbers, Psychological Bulletin 76(2), 105-110",
+    "unit": "text",
+    "sourceUrl": "https://doi.org/10.1037/h0031322",
+    "sourceName": "Psychological Bulletin",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Bibliographic record not re-fetched."
+  },
+  {
+    "id": "ref_bailey_2014_backtest_overfitting",
+    "value": "Bailey, Borwein, Lopez de Prado and Zhu (2014), Pseudo-Mathematics and Financial Charlatanism, Notices of the AMS 61(5), 458-471",
+    "unit": "text",
+    "sourceUrl": "https://www.ams.org/notices/201405/rnoti-p458.pdf",
+    "sourceName": "Notices of the American Mathematical Society",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Bibliographic record not re-fetched."
+  },
+  {
+    "id": "ref_harvey_liu_zhu_2016",
+    "value": "Harvey, Liu and Zhu (2016), ... and the Cross-Section of Expected Returns, Review of Financial Studies 29(1), 5-68",
+    "unit": "text",
+    "sourceUrl": "https://doi.org/10.1093/rfs/hhv059",
+    "sourceName": "Review of Financial Studies",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 365,
+    "notes": "Bibliographic record not re-fetched."
+  }
+]

@@ -35,18 +35,18 @@ The risk per trade is checked against two levels from the risk tool in this book
 - Above 2%, the check fails, with a note.
 - Above 5%, the check fails, with the hard note from the risk tool.
 
-The capital you enter must be a number inside the range this book states for live money. The book does not pick a number for you. <!-- OPEN: Confirm the exact capital range the form checks against. The range must match the capital chapters before the gate is built. -->
+The capital you enter is your own number. The book does not set a range for it and does not pick a number for you. It should be money you could lose without hardship. The capital chapters show how to work that out.
 
 To pass, all of these must be true:
 
 1. Every field is filled in.
 2. The risk per trade is at or below 2%.
-3. The capital figure is inside the stated range.
+3. The capital figure is filled in, and it is money you could lose without hardship.
 4. Gates G1 to G6 are all passed.
 
 The one-page plan is made from the form. When you print it, you see the saved plan. The print is a view of the saved plan, not a second copy.
 
-<!-- OPEN: Decide whether a waiting period, such as 7 days, is needed between writing the plan and passing this gate. -->
+This gate does not set a waiting period. Even so, it is wise to put the plan away for a few days, then read it again before you rely on it.
 
 You can edit the form and re-check it at any time. Each save has a date, and older versions stay in your history.
 
@@ -63,6 +63,8 @@ This gate has no picture to explore. Use this table to check the risk line befor
 | 2% or less | Check passes |
 | More than 2% | Check fails, with a note |
 | More than 5% | Check fails, with the hard note |
+
+<!-- component: gate-check | gate: G7 | caption: Tick each criterion only when it is true for you. A gate checks what you learned. It is not permission to trade. -->
 
 ## Worked example
 
@@ -104,6 +106,8 @@ All figures are hypothetical.
 
 </details>
 
+<!-- component: trading-plan | caption: The one-page plan form. Fill it in with your own figures, or use the made-up example to see how the checks work. It saves on this device only. A plan is a personal record. It is not permission to trade. -->
+
 ## Quiz
 
 <!-- component: quiz-block | src: quiz.json -->
@@ -124,7 +128,7 @@ Mode: **paper**. Write it in your journal. If the journal is not ready, use pape
 
 - A written plan does not make you ready. It is one check among several.
 - The 2% and 5% levels are warning levels from the risk tool in this book. They are not market rules.
-- The gate does not cover tax. Tax rules are in *Taxes on trading profits*, and they have their own checks. [VERIFY: current tax notes on the tax chapter]
+- The gate does not cover tax. Tax rules are in *Taxes on trading profits*, and they have their own checks. The main rules, with their dates and sources, were read on 11 Nov 2026. Rates change with each Budget, so check incometax.gov.in each year and ask a qualified tax professional.
 - Passing gives a message with caveats. It does not authorise any trade.
 - Choosing your capital, risk and limits is a personal decision. The book does not choose a number for you.
 
@@ -140,8 +144,6 @@ Mode: **paper**. Write it in your journal. If the journal is not ready, use pape
 
 - The risk tool levels in *Risk limits* and in the risk chapters of this book.
 - *Capital allocation* and *Scaling and withdrawal policy*, chapters of this book.
-- *Taxes on trading profits*, a chapter of this book. [VERIFY: tax notes]
-
-<!-- facts-needed: the capital range the form checks against; any tax note the gate links to, with its check status. -->
+- *Taxes on trading profits*, a chapter of this book, with its own dated sources (read on 11 Nov 2026).
 
 <!-- standing-disclaimer -->

@@ -96,7 +96,7 @@
     "type": "spot-the-mistake",
     "prompt": "A student says: Adj Close is the same across all data providers, so I can mix their files. Which part is wrong?",
     "options": [
-      {"id": "a", "text": "The claim that Adj Close is the same everywhere. Providers can use different adjustment methods [VERIFY: adjustment methods by source]."},
+      {"id": "a", "text": "The claim that Adj Close is the same everywhere. Providers can use different adjustment methods, so read the source's notes."},
       {"id": "b", "text": "The word mix, because files from one provider can never be used together."},
       {"id": "c", "text": "The column name, because Adj Close is not a real price column."},
       {"id": "d", "text": "Nothing is wrong. Adjusted prices are always identical."}

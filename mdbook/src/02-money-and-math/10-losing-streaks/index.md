@@ -110,8 +110,6 @@ Mode: **learning note**. Log it in Lab 3 (or on paper until the journal app is r
 3. Work out the capital after each of the seven losses. The seventh should be about Rs 46,603.
 4. Write one sentence on what the rule says to do after the streak ends. Note whether you would have kept to it.
 
-<!-- OPEN: The learning-note mode is in the *How to use this book* journal mode list but not in the Lab 3 mode list (paper, live, forward, backtest, kite_demo). Confirm before the journal app is built. -->
-
 ## Limits and common mistakes
 
 - The formula assumes each trade is independent. If results cluster in a real plan, the chance of a streak is higher than the formula gives.
@@ -135,6 +133,6 @@ Sources (names only):
 - Chapter *Monte Carlo of trade order* (independence and resampling tests)
 - Chapter *Living through a losing streak (streak-sim with feelings log)* (living through streaks)
 
-Items to verify: none for this chapter. All numbers are hypothetical.
+All numbers in this chapter are made up for practice.
 
 <!-- standing-disclaimer -->

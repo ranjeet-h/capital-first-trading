@@ -20,12 +20,15 @@ Hypothetical: your own money is Rs 50,000. A 10% fall in a Rs 50,000 holding cos
 - **Leverage ratio** = position value / own capital. A Rs 1,00,000 position with Rs 50,000 of your own money has a ratio of 2 (2x).
 - **Gains and losses are both multiplied by the ratio.** Measured as a percentage of your own capital, a price move of m percent changes your capital by ratio x m percent. A fall is a loss.
 - **Wipe-out move** = 1 / ratio, for a long position (you own the asset and gain when it rises). It is the price fall that takes the position value down to the borrowed amount. That uses up all your own money. This ignores costs and financing, which make the real position worse.
-- **Margin** is money or securities you deposit or borrow to support a position. The broker and the regulator set the rules. Check the rules for each product [VERIFY: current margin rules].
-- **Margin calls and forced sales.** When the position falls far enough, the broker can sell it to cover the shortfall. A forced sale happens at the price available at that time. That price is often the worst one.
-- **Financing costs.** Borrowed money usually has a cost [VERIFY: financing rates on margin funding].
-- **Intraday leverage** has auto square-off rules. The broker can close your positions at a set time [VERIFY: intraday auto square-off timing and rules].
+- **Margin** is money or securities you deposit or borrow to support a position. The broker and the regulator set the rules. Check the rules for each product.
 
-This book does not practise leverage. The leverage demo is theory only. F&O (futures and options) is covered as theory in *Futures and why they are leveraged*. Lab 1 flags any leverage above 1x as rejected for cash trades.
+  - Since 1 September 2021, SEBI's rules say a broker must collect the full margin up front for positions in the stock market. This is why the old very high intraday leverage is gone. (As of 11 Nov 2026, SEBI circulars as summarised by Zerodha and others. Rules change, so check the SEBI site.)
+  - Zerodha says its intraday leverage depends on the share. It can be cut or removed during the day. Shares you pledge as collateral are valued at less than their market price. (As of 11 Nov 2026, Zerodha support. Rules change, so check Zerodha support.)
+- **Margin calls and forced sales.** When the position falls far enough, the broker can sell it to cover the shortfall. A forced sale happens at the price available at that time. That price is often the worst one.
+- **Financing costs.** Borrowed money usually has a cost. For example, Zerodha's margin trading facility (MTF) charges interest of 0.04% a day on the amount it funds. That is about Rs 40 a day for every Rs 1 lakh funded, or roughly 14.6% a year. It runs every day you hold the position. (As of 11 Nov 2026, Zerodha support page on MTF interest. Rules change, so check Zerodha support.)
+- **Intraday leverage** has auto square-off rules. The broker can close your positions at a set time. At Zerodha, open intraday share positions are closed at about 3:25 PM, and futures and options at about 3:26 PM. Each order closed this way costs Rs 50 plus 18% GST. (As of 11 Nov 2026, Zerodha support. Rules change, so check Zerodha support.)
+
+This book does not practise leverage. The leverage demo is theory only. F&O (futures and options) is covered as theory in *Futures and why they are leveraged*.
 
 ## See it
 
@@ -104,7 +107,7 @@ The Kite demo has no practice path for leverage. Do not look for leverage featur
 
 ## Limits and common mistakes
 
-- This table leaves out financing costs, charges and margin rules. Those are [VERIFY: margin framework and collateral rules]. Check them with the broker and the regulator.
+- This table leaves out financing costs, charges and margin rules. Those matter in real life. Check them with the broker and the regulator.
 - The wipe-out formula is for a long position. It ignores costs. A gap can take the price past the wipe-out line (*Slippage, gaps and planned versus actual risk*).
 - Leverage does not improve a plan. It multiplies whatever the plan does, in both directions.
 - A stop does not protect you from margin calls or forced sales. The quiz explains why.
@@ -120,21 +123,11 @@ The Kite demo has no practice path for leverage. Do not look for leverage featur
 
 ## Sources and verification
 
-Sources (names only):
+Sources, read on 11 Nov 2026:
 
-- SEBI margin framework circulars.
-- Zerodha support pages on margin and MIS.
-- NSE margin pages.
-
-Facts to verify before this chapter is final:
-
-- [VERIFY: current margin rules and collateral rules]
-- [VERIFY: intraday auto square-off timing and rules]
-- [VERIFY: financing rates on margin funding]
-- F&O margin basics, for the theory chapter *Futures and why they are leveraged*.
-
-<!-- facts-needed: margin framework and collateral rules (SEBI circulars; Zerodha margin page); intraday auto square-off timing and rules (Zerodha support; NSE circulars); financing or interest rates on margin funding (Zerodha charges page); F&O margin basics for *Futures and why they are leveraged* -->
-
-<!-- OPEN: spec says Lab 1 "flags leverage above 1x as rejected for cash trades", but LABS.md Lab 1 has no leverage input and lists "no leverage" in its scope. Reviewer to confirm the reject rule before this line is kept. -->
+- SEBI circulars on peak margin and upfront margin (sebi.gov.in), as summarised in public broker guides. The 1 September 2021 date is from those summaries, so read the SEBI circular itself too.
+- Zerodha support: margin trading facility (MTF) interest and FAQs.
+- Zerodha support: intraday auto square-off timings and charges.
+- Zerodha bulletin on intraday (MIS) leverage, which says leverage can be reduced during the day.
 
 <!-- standing-disclaimer -->

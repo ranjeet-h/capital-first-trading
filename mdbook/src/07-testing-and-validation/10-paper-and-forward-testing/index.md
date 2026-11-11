@@ -33,9 +33,9 @@ A paper fill is an assumption. A real fill can differ in four ways:
 
 The forward-test script in Lab 5 is built to be honest. When data is missing or bad, it stops and reports. It does not skip the symbol and carry on. It is safe to run twice, because a second run does not add the same trades again. It places no orders and holds no login details for any broker.
 
-The Kite demo is for practice with the screens, using dummy data. It is not a forward test. [VERIFY: exact wording on support.zerodha.com about demo or paper trading accounts]
+The Kite demo is for practice with the screens, using dummy data. It is not a forward test. Zerodha's support page says: "No, Zerodha does not offer demo accounts for paper trading. However, you can access a demo version of Kite with dummy data." (As of 11 Nov 2026, Zerodha support. Check support.zerodha.com for changes.)
 
-The script uses a market close time and a holiday list. [VERIFY: NSE market timings page, for the close time and any safety margin the script uses] [VERIFY: NSE holiday list] The terms of the price data source also matter. [VERIFY: terms of the chosen data source]
+The script uses a market close time and a holiday list. NSE's normal session for shares runs from 9:15 am to 3:30 pm, but NSE has changed session times for some shares and has announced more changes, so read the NSE market timings page. Take the holiday list from the NSE trading holidays page. The terms of the price data source also matter (see *Historical data*).
 
 ## See it
 
@@ -96,14 +96,14 @@ Mode: **forward**, which means hypothetical paper data. No orders are placed.
 2. Check that each output row has a trade ID, mode, symbol, planned entry, fill price and shares.
 3. Import the output into the journal as mode forward (or copy the rows onto paper).
 4. Write one sentence on each of the four gaps. For each one, say whether it could make a real fill worse in this example.
-5. Do not place any orders. Real daily runs are optional. They need a data source whose terms you have checked [VERIFY: terms of the chosen data source].
+5. Do not place any orders. Real daily runs are optional. They need a data source whose terms you have checked.
 
 ## Limits and common mistakes
 
 - A forward test sends no real orders. It cannot show how real fills would have gone, so the four gaps remain.
 - A short forward test proves little. Thirty trades is a floor for a first look. It is not a verdict on the rule.
 - Paper profit is not live profit. A paper result does not show how you act when real money is at risk.
-- The Kite demo is not a forward test. It uses dummy data. [VERIFY: exact wording on support.zerodha.com]
+- The Kite demo is not a forward test. It uses dummy data. Zerodha says it offers no demo account for paper trading.
 - Paper trading does not prove you can do it with real money. It only shows how the rule ran on the days recorded.
 
 ## Remember
@@ -119,7 +119,5 @@ Mode: **forward**, which means hypothetical paper data. No orders are placed.
 - Zerodha support pages on the demo and virtual trading.
 - NSE market timings and holiday pages.
 - The Lab 5 notes on honesty.
-
-<!-- facts-needed: exact wording of Zerodha's support pages on demo and paper or virtual trading; market close time and any safety margin used by the script; holiday list used by the script; terms of the chosen data source. -->
 
 <!-- standing-disclaimer -->

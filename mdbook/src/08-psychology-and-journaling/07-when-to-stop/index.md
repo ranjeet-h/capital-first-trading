@@ -129,8 +129,4 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 - The gate G4 and gate G7 fields of the book's trading plan.
 - Lab 3, the limit-breach log.
 
-<!-- facts-needed: none. The 6% and 5% figures are illustrative settings for the reader to replace. -->
-
-<!-- OPEN: The 6% monthly limit and the 5% example limit are illustrative settings, not defaults. Confirm the illustrative wording is acceptable and that the owner sets the real limits. -->
-
 <!-- standing-disclaimer -->

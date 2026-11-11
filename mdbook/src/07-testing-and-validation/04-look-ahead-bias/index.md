@@ -37,9 +37,7 @@ The lab's peek switch shows the same rules twice. The peek run uses the leaking 
 
 Read the two rows that matter. The peek run is cheaper by Rs 30 for each trade. That small gap is the leak. The honest run is the result you could have traded.
 
-*The lab's interactive peek view is not shown here yet.*
-
-<!-- OPEN: The spec gives a lab-backtest peek toggle with two equity curves side by side. The lab-backtest component is not in the allowed component list, so no placeholder is inserted. A text table is used instead. Confirm the component name before the interactive view is added. -->
+<!-- component: lookahead-peek | caption: Turn the peek on and off and watch two made-up result lines pull apart, then find the line that leaks the future. -->
 
 ## Worked example
 
@@ -119,7 +117,7 @@ Mode: **learning note**. Use the peek switch in Lab 4 to run both versions of on
 
 - Removing look-ahead does not prove an edge. The honest run can still lose money.
 - The Rs 30 gap in the worked example is one made-up case. The size of the leak depends on the rule. The direction is the lesson.
-- Adjusted data can leak in ways a simple check cannot find. A rule that uses adjusted prices needs a check of when each adjustment was known [VERIFY: adjustment timing for the chosen data source].
+- Adjusted data can leak in ways a simple check cannot find. A rule that uses adjusted prices needs a check of when each adjustment was known. Read your data source's notes on how and when it changes past prices.
 - A peek run shows where the leak is. Do not record a peek result as the result of the rule.
 
 ## Remember
@@ -131,9 +129,7 @@ Mode: **learning note**. Use the peek switch in Lab 4 to run both versions of on
 
 ## Sources and verification
 
-- Bailey, Borwein, Lopez de Prado and Zhu, on backtest overfitting. [VERIFY: citation, year and title]
-- A standard text on backtesting. [VERIFY: title and edition]
-
-<!-- facts-needed: citation for Bailey, Borwein, Lopez de Prado and Zhu; title and edition of a standard backtesting text; adjustment timing for the chosen data source. -->
+- Bailey, Borwein, Lopez de Prado and Zhu (2014), "Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance", Notices of the American Mathematical Society, 61(5), 458-471.
+- Robert Pardo, *The Evaluation and Optimization of Trading Strategies*, 2nd edition (Wiley, 2008).
 
 <!-- standing-disclaimer -->

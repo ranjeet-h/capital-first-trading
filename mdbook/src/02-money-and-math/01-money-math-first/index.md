@@ -159,6 +159,4 @@ Mode: **learning note** (not a trading record). Write it in your journal.
 
 <!-- facts-needed: none for this chapter (all figures are hypothetical arithmetic). -->
 
-<!-- OPEN: The spec's Lab 3 paper task asks for a ten-trade table for both traders; the journal fields for this are not yet defined in LABS.md, so the paper version is written as a table. -->
-
 <!-- standing-disclaimer -->

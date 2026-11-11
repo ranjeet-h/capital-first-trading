@@ -15,9 +15,11 @@ A news line says, "FIIs bought Rs 600 crore today, so the market will rise." Thi
 
 ## The idea
 
-**FII** means foreign institutional investors. **DII** means domestic institutional investors. Both are groups in the published daily data. The definitions and categories are [VERIFY: NSE FII/DII activity page and SEBI definitions].
+**FII** means foreign institutional investors. **DII** means domestic institutional investors. Both are groups in the published daily data. The official depositories NSDL and CDSL publish foreign investor data under the name FII/FPI. FPI means foreign portfolio investor, which is the term used in current rules. The exact list of what NSE counts as DII is on the NSE FII/DII page, so read it there. (As of 11 Nov 2026, NSDL FPI reports page. Rules change, so check the NSDL and NSE sites.)
 
-A **crore** is ten million rupees, written Rs 1,00,00,000. Daily flow figures are often given in crore. [VERIFY: units and how revisions are handled]
+A **crore** is ten million rupees, written Rs 1,00,00,000. Daily flow figures are given in Rs crore.
+
+Some figures are provisional. NSDL says the stock exchanges prepare provisional foreign investor data from the trading members' reports for the trade day. The final figures come later, from the custodians' reports to the depositories. So a number you read on the day can change. NSE also marks its figures as provisional. (As of 11 Nov 2026, NSDL FPI reports page. Check the NSDL and NSE sites.)
 
 Four terms describe the figures.
 
@@ -31,7 +33,7 @@ Use the net figure only with its gross context. A net of Rs 600 crore can come f
 Three limits matter most.
 
 1. **The data is a total for a group.** It does not say which stock was bought or sold, or why.
-2. **The data appears after the session.** Any use must respect that timing. [VERIFY: daily publication time of the FII/DII figures]
+2. **The data appears after the session.** Any use must respect that timing. The exact time of day differs, so check the NSE page for when it updates.
 3. **Flow data is one input among many.** This book does not treat it as a trading signal.
 
 ## See it
@@ -48,6 +50,8 @@ The table shows the arithmetic for one hypothetical day.
 
 The net figure is 11.1% of the gross activity. A reader who sees only "FIIs net buyers Rs 600 crore" misses the size of the gross activity.
 
+<!-- component: flow-bars | buy: 3000 | sell: 2400 | caption: The chapter's made-up day: Rs 3,000 crore bought and Rs 2,400 crore sold, so net Rs 600 crore, gross Rs 5,400 crore, net 11.1% of gross. -->
+
 ## Worked example
 
 **Hypothetical day, in crore.** FII buy Rs 3,000 crore. FII sell Rs 2,400 crore.
@@ -59,6 +63,8 @@ The net figure is 11.1% of the gross activity. A reader who sees only "FIIs net 
 The day shows net buying. The same day also shows a large amount of selling. Both facts belong in the reading.
 
 ## Try it
+
+<!-- component: flow-bars | buy: 1800 | sell: 2100 | caption: The guided exercise: buy Rs 1,800 crore and sell Rs 2,100 crore. Check your net and gross. -->
 
 ### Guided exercise
 
@@ -110,8 +116,8 @@ Mode: **learning note**. This chapter has no practice. It asks for a record.
 
 ## Limits and common mistakes
 
-- Definitions, categories and publication time of the flow data can change. [VERIFY: NSE FII/DII activity page and SEBI definitions]
-- Whether values are in crore, and how revisions are handled, must be checked. [VERIFY: units and revisions]
+- Definitions, categories and publication time of the flow data can change. Read the NSE and NSDL pages.
+- Provisional figures can be revised later. Note whether the figure you read is provisional or final.
 - Flow data does not say which stock was bought or sold, or why.
 - Flow data is one input among many. This book does not use it as a trading signal.
 - Net buying does not mean the price will rise. Net selling does not mean it will fall.
@@ -127,14 +133,7 @@ Mode: **learning note**. This chapter has no practice. It asks for a record.
 ## Sources and verification
 
 - NSE FII/DII daily activity page
-- SEBI FII regulations pages [VERIFY: name the exact regulation before use]
-
-Items to verify:
-
-- [VERIFY: definition of the FII and DII categories]
-- [VERIFY: daily publication time of the figures]
-- [VERIFY: whether values are reported in crore and how revisions are handled]
-
-<!-- facts-needed: definition of FII and DII categories; daily publication time; units in crore; how revisions are handled; exact SEBI FII regulation names. -->
+- NSDL FPI reports page (fpi.nsdl.co.in)
+- SEBI pages on foreign portfolio investors
 
 <!-- standing-disclaimer -->

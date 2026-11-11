@@ -25,8 +25,8 @@ This gate has two parts. You must pass both.
 Some points to keep in mind:
 
 - This checklist is self-attested. You tick it yourself. The book cannot check your Kite demo.
-- Zerodha's demo uses dummy data and is for interface practice. [VERIFY: Zerodha support wording on the demo, check before quoting it]
-- Any Kite screen you see in this book is a recreated illustration. It is dated, and menus and names may change. [VERIFY: Kite menu and name check date]
+- Zerodha does not offer demo accounts for paper trading. It does offer a demo version of Kite that uses dummy data, at kite-demo.zerodha.com/dashboard. Use it to practise the screens, not to test a strategy. (As of 11 Nov 2026, Zerodha support. Check Zerodha support for changes.)
+- Any Kite screen you see in this book is a recreated illustration. It is dated, and menus and names may change. The Kite screens in this book were last checked against Zerodha's public pages on 11 Nov 2026.
 - The quiz is retakeable, like the other gates. You can re-tick the checklist at any time. Each change is logged with its date.
 - Nothing in this gate asks you to place an order. This book never places orders for you.
 
@@ -43,6 +43,8 @@ This gate has no picture to explore. Use this table to see what the checklist ne
 | A product type | Ticked after you can say what it does | Written, in your own words |
 
 An item with a tick but no reflection still fails.
+
+<!-- component: gate-check | gate: G3 | caption: Tick each criterion only when it is true for you. A gate checks what you learned. It is not permission to trade. -->
 
 ## Worked example
 
@@ -92,9 +94,9 @@ The quiz checks order types, product types, stop triggers and the rules of the c
 
 ## Paper task
 
-Mode: **kite_demo**, if Zerodha offers a demo you can use. Write your reflections in your journal. If the journal is not ready, use paper.
+Mode: **paper** for the reflections. Use `kite_demo` only to look at the screens. Write your reflections in your journal. If the journal is not ready, use paper.
 
-1. Open Zerodha's demo, if it is available to you. [VERIFY: Zerodha support wording on the demo]
+1. Open Zerodha's demo version of Kite (kite-demo.zerodha.com/dashboard) to look at the screens.
 2. Work through the checklist items one at a time.
 3. For each item, write a short reflection. Say what you did and what you noticed.
 4. Tick an item only after you have done it.
@@ -118,9 +120,7 @@ Mode: **kite_demo**, if Zerodha offers a demo you can use. Write your reflection
 
 ## Sources and verification
 
-- Zerodha support pages on the demo, by page name. [VERIFY: exact wording on support.zerodha.com before quoting]
+- Zerodha support, "Does Zerodha offer demo accounts for paper trading?" (read on 11 Nov 2026).
 - The Kite chapters of this book.
-
-<!-- facts-needed: Kite demo wording on Zerodha support pages. Kite screen references must be dated recreations. -->
 
 <!-- standing-disclaimer -->

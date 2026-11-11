@@ -29,7 +29,17 @@ Before you quote any study, ask these five method questions.
 
 **Survivorship** is a bias that counts only people who stayed in the sample. People who left are missing from the totals. A study can then look better than the full group. See *Survivorship bias*.
 
-**Quoting figures.** Quote a figure only from its source, with the study name, the date and the period. Never quote a figure from memory. [VERIFY: exact study title, publication date, period and headline figures]
+**Quoting figures.** Quote a figure only from its source, with the study name, the date and the period. Never quote a figure from memory.
+
+**What SEBI's own studies say.** SEBI, India's market regulator, has published three studies on individual traders in equity futures and options. Each is described below with its name, date, period and sample. The figures come from SEBI's own documents.
+
+| Study | Period and sample | What it reports |
+|---|---|---|
+| "Analysis of Profit and Loss of Individual Traders dealing in Equity F&O Segment", SEBI, January 2023 | Financial years 2019 and 2022, data from the top 10 brokers | In FY22, 89 percent of individual F&O traders had losses. The average loss was about Rs 1.1 lakh. |
+| "Analysis of Profits & Losses in the Equity Derivatives Segment (FY22-FY24)", SEBI, 23 September 2024 | Financial years 2022 to 2024, data from the top 15 brokers | In FY24, 91.1 percent of individual traders (about 73 lakh people) lost money, with an average net loss of Rs 1.20 lakh. Over the three years, 1.13 crore unique traders had a combined net loss of Rs 1.81 lakh crore, including costs. About 93 percent were loss-makers. Only 1 percent earned more than Rs 1 lakh after costs. |
+| "Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26)", SEBI, August 2026 | Financial years 2025 and 2026, data from the top 15 brokers, about 90 percent of the traders | The share of loss-makers was 90.9 percent in FY25 and 87.7 percent in FY26. Total net losses were Rs 91,685 crore in FY26. The average loss per person was Rs 1.17 lakh. Options made up 92 percent of the losses. |
+
+Read the table with the five method questions. The three studies use different brokers and different years, so do not join their numbers into one line. The studies describe groups. They do not say what will happen to you. (As of 11 Nov 2026, SEBI studies on its website. Check the SEBI site for newer studies.)
 
 ## See it
 
@@ -42,6 +52,8 @@ Use this checklist before you read any headline. Read the method section of the 
 | Are costs included? | Costs change the net result. |
 | How are gains and losses measured? | Different measures give different totals. |
 | Did people leave, and were the same people tracked? | People who left can be missing, which changes the picture. |
+
+<!-- component: sebi-study-bars | traders: 1000 | winnersPct: 40 | avgGain: 1000 | avgLoss: 2000 | caption: The chapter's made-up group: 400 winners and 600 losers. Look at the totals and the spread, not one percentage. -->
 
 ## Worked example
 
@@ -106,7 +118,7 @@ Mode: **learning note**. This chapter has no practice. It asks for reflection on
 
 ## Limits and common mistakes
 
-- This chapter quotes no SEBI figure. Check each figure at its source. [VERIFY: SEBI research and studies page, exact title, date, period, sample and headline figures]
+- The figures here are only a short summary. Read the SEBI documents themselves for the method and the full tables. A summary can leave out important details.
 - A study describes a group over a period. It does not forecast any one trader.
 - Even a sound study does not show that your own trades will match the group.
 - Headlines often drop the period, the sample or the costs. Check the method first.
@@ -122,13 +134,9 @@ Mode: **learning note**. This chapter has no practice. It asks for reflection on
 
 ## Sources and verification
 
-- SEBI research and studies publications [VERIFY: name the exact report before use]
-- The methodology section of the report
-
-Items to verify:
-
-- [VERIFY: exact title, publication date, period, sample and headline figures of each study]
-
-<!-- facts-needed: exact title, publication date, period, sample and headline figures of each SEBI study used; no figure may be stated in this book until verified. -->
+- SEBI, "Analysis of Profit and Loss of Individual Traders dealing in Equity F&O Segment", January 2023 (sebi.gov.in)
+- SEBI, "Analysis of Profits & Losses in the Equity Derivatives Segment (FY22-FY24)", 23 September 2024 (sebi.gov.in)
+- SEBI, "Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26)", August 2026 (sebi.gov.in)
+- The methodology section of each report
 
 <!-- standing-disclaimer -->

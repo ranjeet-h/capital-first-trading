@@ -100,8 +100,6 @@ Mode: **learning note**. Log it in Lab 3 (or on paper until the journal app is r
 3. Record the maximum drawdown in rupees and as a percentage, measured from the peak. Lab 3 shows the drawdown curve and the maximum drawdown.
 4. Compare your result with the 4% worked out in *Why money math comes before charts*. Note which peak the figure is measured from.
 
-<!-- OPEN: The learning-note mode is in the *How to use this book* journal mode list but not in the Lab 3 mode list (paper, live, forward, backtest, kite_demo). Confirm before the journal app is built. -->
-
 ## Limits and common mistakes
 
 - Drawdown depends on the order of the results. The same trades in a different order give a different path.
@@ -124,6 +122,6 @@ Sources (names only):
 
 - Standard drawdown arithmetic, computed in this chapter
 
-Items to verify: none for this chapter. All numbers are hypothetical.
+All numbers in this chapter are made up for practice.
 
 <!-- standing-disclaimer -->

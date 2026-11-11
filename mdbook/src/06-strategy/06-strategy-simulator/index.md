@@ -24,7 +24,7 @@ The simulator follows four realism rules:
 - **The decision is made at the close of day t.** The rules read the close of the bar that just ended.
 - **The fill is at the open of day t plus 1.** The trade is filled at the next day's opening price. You cannot trade at a price that has already passed. See *Look-ahead bias*.
 - **The trailing stop updates at the close and applies from the next bar.** A stop does not change in the middle of a bar.
-- **A gap through a stop fills near the open, not at the stop price.** If the bar opens below the stop, the exit is at the open. See *Gaps and what they mean for stops*. Circuit limits can also affect the fill. [VERIFY: circuit price band rules]
+- **A gap through a stop fills near the open, not at the stop price.** If the bar opens below the stop, the exit is at the open. See *Gaps and what they mean for stops*. Circuit limits can also affect the fill. NSE puts a daily price band of 2%, 5%, 10% or 20% on most shares, measured from the previous close. If a share is locked at its lower band, there may be no buyers, and an exit may not be possible. Shares with futures and options use a flexible 10% range instead. (As of 11 Nov 2026, NSE Basic FAQs on the Secondary Market and SEBI's master circular on trading. Rules change, so check the NSE site.)
 
 The step log is the main teaching tool. Each row is one bar. It shows the bar's prices, the result of each rule and the action taken. Reading the log is more useful than reading the final total.
 
@@ -68,6 +68,8 @@ Hints:
 - The bar trades down to Rs 246, which is below Rs 247. The exit is at the stop, **Rs 247**.
 - Actual loss: (257 - 247) x 48 = 10 x 48 = **Rs 480**. This equals the planned loss.
 
+<!-- component: strategy-simulator | mode: step | scenario: guided | caption: Change the day t plus 2 open and low yourself and see where the exit happens and what the loss is. -->
+
 ### Independent exercise
 
 **Task.** Make your own three-bar example with these inputs. Signal close Rs 200 on day t. The entry is the next day's open of Rs 202. ATR(14) is Rs 2.00. Capital is Rs 50,000. Risk is 1 percent of capital. The concentration cap is 25 percent. The following day opens at Rs 193. Write the step log. Find the shares, the planned loss, the exit price, the actual loss, and the ratio of actual loss to planned loss.
@@ -90,6 +92,8 @@ All figures are hypothetical and made up for learning.
 
 </details>
 
+<!-- component: strategy-simulator | mode: rules | scenario: practice | caption: See the share sizing and the gap exit for the independent exercise, then change the open to test your own numbers. -->
+
 ## Quiz
 
 <!-- component: quiz-block | src: quiz.json -->
@@ -110,9 +114,9 @@ Mode: **paper**. Write it in your journal. If the journal is not ready, use pape
 
 - A simulator result is a set of rules applied to data. It is not the strategy's performance.
 - Synthetic data does not show how real prices move. Real gaps and circuit limits can be harder.
-- The fill rules are assumptions. Real fills depend on the market at that moment. [VERIFY: circuit price band rules]
+- The fill rules are assumptions. Real fills depend on the market at that moment, and on price bands.
 - A simulator makes it simple to try many settings. Trying many settings can fit the past without showing an edge. See *Overfitting and the number of things you tried*.
-- Costs are not in the examples above. [VERIFY: costs on a trade]
+- Costs are not in the examples above. The real charges, with dates and sources, are in *Costs on a trade*. As of 11 Nov 2026, Zerodha lists zero brokerage on delivery trades. Rules change, so check the Zerodha charges page.
 
 ## Remember
 
@@ -126,11 +130,6 @@ Mode: **paper**. Write it in your journal. If the journal is not ready, use pape
 
 - The realism rules in *Backtesting basics and the realism contract*.
 - *Gaps and what they mean for stops*, for gap fills.
-- [VERIFY: circuit price band rules]
-- [VERIFY: costs on a trade]
-
-<!-- facts-needed: circuit price band rules and their effect on exit fills; costs per trade used in the simulator. -->
-
-<!-- OPEN: The three-bar fixture for the guided exercise was not supplied in the source. The guided exercise uses the figures from the worked example with one changed open. The independent exercise uses new made-up figures. Confirm both before the book is final. -->
+- NSE Basic FAQs on the Secondary Market (price bands) and Zerodha charges page, read on 11 Nov 2026.
 
 <!-- standing-disclaimer -->

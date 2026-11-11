@@ -37,7 +37,7 @@ A learner finishes three sections in one sitting. The learner feels confident an
 
 - **learning note:** a reflection or a note on a concept. Not a trade.
 - **paper:** a planned trade on paper, never sent to a broker.
-- **kite_demo:** a task done in the Kite demo, which uses dummy data.
+- **kite_demo:** a task done by looking at the Kite demo screens. The demo uses dummy data and cannot place orders.
 - **forward:** a paper trade, or a forward test, recorded as it happens.
 - **backtest:** a simulated result from the past.
 - **live:** a real trade with real money.
@@ -78,6 +78,8 @@ flowchart TD
 
 This map shows the Track 0 to Track 2 dependencies covered so far. Track 2 goes on past *Why money math comes before charts*. Read each arrow as "must be read before".
 
+<!-- component: study-loop | caption: Walk round the read, exercise, quiz and journal loop, then plan one short study session. -->
+
 ## Worked example
 
 **A 20-minute session:**
@@ -105,11 +107,11 @@ The first line sets the trading capital. The second line sets the risk budget fo
 
 **Hints:**
 
-1. The menu location is to be confirmed in the Lab 3 build.
+1. Look in the app's journal and backup settings. The journal tool is not built yet, so the exact place is not fixed.
 2. If Lab 3 is not ready, write the note on paper and keep it with your study materials.
 3. The default backup reminder is every 14 days.
 
-**Answer:** The learning note titled "What I expect to learn" exists. The backup reminder is set to the default of 14 days, or to a time you chose. One backup file is exported and copied outside the device. The menu location is [VERIFY: menu location, to be confirmed in the Lab 3 build].
+**Answer:** The learning note titled "What I expect to learn" exists. The backup reminder is set to the default of 14 days, or to a time you chose. One backup file is exported and copied outside the device. The place in the app depends on the journal tool once it is ready.
 
 ### Independent exercise
 
@@ -159,12 +161,10 @@ Six questions check the journal modes, the gates, the backup timing and the limi
 - MDN storage persistence page.
 - The book's own gate definitions.
 
-**Facts to verify:**
+**Facts checked on 11 Nov 2026:**
 
-- Whether iOS Safari deletes stored data for sites not added to the Home Screen. [VERIFY: Apple WebKit documentation]
-- Which browsers support asking for persistent storage. [VERIFY: MDN storage persistence page]
-- Lab 3 menu location for the backup reminder. [VERIFY: confirm in the Lab 3 build]
-
-<!-- facts-needed: Apple WebKit storage eviction for sites not added to Home Screen; MDN storage persistence support; Lab 3 backup menu location -->
+- Apple's Safari team (WebKit) says Safari deletes a website's saved data after seven days of Safari use without you visiting that site. A web app added to the Home Screen has its own day count, which resets each time you use it, and Apple does not expect its data to be deleted. This is why regular backups matter. (As of 11 Nov 2026, WebKit blog, "Full Third-Party Cookie Blocking and More". Browser rules change, so check webkit.org.)
+- Browsers can ask permission to keep a site's data safe from automatic clean-up. This is called persistent storage. Support differs between browsers and versions, so check the MDN page on "StorageManager: persist()" for the current list. (As of 11 Nov 2026, MDN Web Docs.)
+- The place in the app for the backup reminder is not fixed yet, because the journal tool is not built.
 
 <!-- standing-disclaimer -->

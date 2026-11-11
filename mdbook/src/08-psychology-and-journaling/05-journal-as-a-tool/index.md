@@ -39,7 +39,7 @@ Two rules keep the record honest:
 
 ## See it
 
-<!-- component: lab-journal | mode: paper | form: plan-and-execution | caption: Plan form, execution form and weekly review form for one hypothetical practice trade. The planned fields lock at entry. -->
+<!-- component: lab-journal | mode: paper | weekly: yes | form: plan-and-execution | caption: Plan form, execution form and weekly review form for one hypothetical practice trade. The planned fields lock at entry. -->
 
 Fill the plan form first. Then fill the execution form after the trade. Compare the two. The weekly review asks you to name one change.
 
@@ -126,7 +126,5 @@ Mode: **paper for practice entries, never live**. Log it in your journal (or on 
 ## Sources and verification
 
 - Lab 3, the record definition and features of the journal.
-
-<!-- facts-needed: none. The journal fields and modes follow the book's Lab 3 definition. -->
 
 <!-- standing-disclaimer -->

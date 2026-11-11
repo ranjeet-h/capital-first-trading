@@ -17,7 +17,7 @@ On a day when an index rises 1.6%, a friend says, "The market is up. My holdings
 
 An **index** is one number that sums up a group of stocks. Nifty and Sensex are two such indices. The number is a level, measured in points. It is not a price you can pay. You cannot buy one share of an index.
 
-**Weighting.** Each stock in the group has a weight. The weight is its share of the index. All the weights add up to 100%. The common method is based on market size, with an adjustment for shares that are free to trade. [VERIFY: index weighting methodology, NSE indices methodology document]
+**Weighting.** Each stock in the group has a weight. The weight is its share of the index. All the weights add up to 100%. The common method is based on market size, with an adjustment for shares that are free to trade. This is called the free-float market-capitalisation method. The Nifty 50 has 50 stocks. The Sensex has 30 stocks. Both use this method. The three-stock and five-stock examples below are made up to keep the arithmetic short. (As of 11 Nov 2026, NSE Indices methodology document, June 2026, and BSE Indices methodology, May 2026. Methods change, so check the NSE and BSE sites.)
 
 **Point change and percent change.**
 
@@ -30,9 +30,9 @@ An **index** is one number that sums up a group of stocks. Nifty and Sensex are 
 
 **Broad and sectoral indices** measure different groups. A broad index covers a wide set of stocks. A sectoral index covers one sector.
 
-**Index-linked products** are not covered in this track. They are covered later in the book. [VERIFY: product list if index-linked products are mentioned]
+**Index-linked products** are not covered in this track. They are covered later in the book.
 
-**Rebalancing.** The stocks in an index are reviewed on a schedule. [VERIFY: rebalancing schedule, NSE indices]
+**Rebalancing.** The stocks in an index are reviewed on a schedule. For the Nifty 50, NSE reviews the list twice a year, using six months of data that end in January and July. Changes take effect from the last trading day of March and September, with about four weeks of notice. NSE allows at most 5 changes in a calendar year. The Sensex is reviewed twice a year too. Its changes take effect on the Monday after the third Friday of June and December. (As of 11 Nov 2026, NSE Indices methodology document, June 2026, and BSE Indices methodology, May 2026. Check the NSE and BSE sites for the latest.)
 
 **What an index move tells you.** It describes the group of stocks. It does not tell you what one stock will do. It is not a trade signal by itself.
 
@@ -49,7 +49,7 @@ The table shows a three-stock index. It uses the weights and moves from the work
 
 Read the contribution column. Stock A moves the index most. It has the largest weight and the largest move. Stock B falls. The index still rises, because the fall in B is smaller than the rise in A.
 
-<!-- OPEN: spec asks for a static weighted bar chart. No static component is in the list, so a table is used here. Confirm. -->
+<!-- component: index-calculator | preset: chapter | level: 20000 | holding: 50000 | caption: The chapter's three-stock index: A +4%, B -2%, C +1% gives +1.6%. Change a price and watch the index. Try the five-stock example too. -->
 
 ## Worked example
 
@@ -72,8 +72,6 @@ This is a hypothetical weighted example, for illustration only. The weights and 
 A holding of Rs 50,000 in Stock B falls 2%. That is 50,000 x 0.02 = Rs 1,000. The index still rose 1.6%.
 
 ## Try it
-
-<!-- OPEN: spec gives no interactive demo for this chapter. No component placeholder is inserted. -->
 
 ### Guided exercise
 
@@ -138,11 +136,10 @@ Sources:
 - BSE index pages.
 - Zerodha Varsity, for reference only (link only, no text copied).
 
-Facts to verify:
-- [VERIFY: index constituents and weighting methodology, NSE indices methodology document]
-- [VERIFY: rebalancing schedule, NSE indices]
-- [VERIFY: product list, if index-linked products are mentioned]
+Facts checked on 11 Nov 2026:
+- The Nifty 50 has 50 stocks and uses the free-float market-capitalisation method. Its review schedule comes from NSE Indices' methodology document of June 2026.
+- The Sensex has 30 stocks, is drawn from the BSE 100, and is reviewed twice a year. This comes from BSE's Indices methodology of May 2026.
+- This chapter does not list index constituents or their weights, because they change. Check the NSE and BSE sites.
 
-<!-- facts-needed: index constituents and weighting methodology for the main indices; rebalancing schedule; index-linked product list -->
 
 <!-- standing-disclaimer -->

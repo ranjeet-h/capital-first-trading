@@ -19,8 +19,16 @@ Use `serve` (not a double-clicked HTML file): quizzes load `quiz.json` with `fet
 ## Layout
 
 - `mdbook/src/<track>/<NN-slug>/index.md` and `quiz.json`: chapters. `SUMMARY.md` is generated; do not edit it by hand.
-- `mdbook/theme/components.js` / `.css`: renders quizzes and labelled placeholders for `<!-- component: ... -->` comments.
+- `mdbook/theme/components.js` / `.css`: renders quizzes (with score and reset) and the `<!-- component: ... -->` demos.
+- `mdbook/theme/cft-lib.js`, `cft-anim.css`: shared helpers for the animated demos.
+- `mdbook/theme/demos*.js`: all interactive demos, split by topic (charts, indicators, Kite click paths, testing, F&O and markets, money and psychology).
 - `mdbook/theme/mermaid*.js`: diagrams.
-- `tools/check/`: chapter checker. `tools/build/`: SUMMARY generator.
+- `data/facts/*.json`: facts checked against official sources on 11 Nov 2026, each with a source link and a review window. Rules change, so recheck before relying on them.
+- `docs/kite-ui-research.md`: research notes on how Kite works, used for the Kite chapters.
+- `tools/check/`: `check_chapters.py` (structure), `smoke_demos.py` (opens every page in headless Chrome; run `make build` first).
 
-Chapters are drafts until each passes review (`Last content review` line) and every `[VERIFY]` is resolved.
+## Status
+
+- All 99 chapters (11 tracks) are written, each with a quiz and at least one interactive demo.
+- The book works offline: no outside links, fonts or scripts.
+- Still to build, after the book: the journal app, the labs, and the installable offline shell.

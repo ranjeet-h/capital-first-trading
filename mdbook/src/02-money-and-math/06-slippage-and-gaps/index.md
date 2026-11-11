@@ -33,7 +33,16 @@ In words: the actual loss is the entry price minus the exit fill price, times th
 
 Why this matters for swing trades. A swing trade is a trade held for days. A trade held overnight faces gap risk. News, global moves and company events can happen while the market is closed. Overnight gap risk is part of holding overnight. It is not a rare accident you can design out of the plan.
 
-Order types. Stop orders come in forms, such as SL and SL-M. They behave differently at the trigger. [VERIFY: how SL and SL-M orders trigger and fill on Kite (see *Order types*)]. Do not assume one behaves like the other.
+Order types. Stop orders come in two forms on Kite: SL and SL-M. They behave differently at the trigger (see *Order types*).
+
+- An **SL** (stoploss limit) order has a trigger price and a limit price. When the price reaches the trigger, a limit order goes to the exchange. It fills only at your limit price or better. If the price falls fast past your limit, the order can stay open and unfilled.
+- An **SL-M** (stoploss market) order has only a trigger price. When the price reaches the trigger, a market order goes to the exchange. It is very likely to fill, but at whatever price is available. That price can be worse than the trigger.
+- A stoploss order is valid only for the trading day. If it does not trigger, it ends at the close.
+- NSE has stopped the SL-M order type for options. For shares, both forms are available.
+
+(As of 11 Nov 2026, Zerodha support pages on stoploss orders. Rules change, so check Zerodha support.) Do not assume one form behaves like the other.
+
+Circuits. The exchange sets a daily price band for each share. Zerodha says the bands range from 2% to 20%, depending on the share. Shares that have futures and options have no fixed daily band. They have a moving 10% band instead. An order outside the band is rejected. If the price is stuck at the band, orders wait until the exchange moves the band. If you are in an intraday (MIS) position and cannot close it because of a circuit, Zerodha says the position turns into a delivery trade. Zerodha may close positions but is not required to. You may then have to pay for the shares, or face a penalty for not delivering them if you had sold. (As of 11 Nov 2026, Zerodha support pages on circuit limits. Rules change, so check Zerodha support and the NSE site.)
 
 The stress test. You cannot know the next opening price. You can choose a gap assumption. Decide how big a gap loss you can accept. Then size the position so the assumed gap stays inside that limit. The assumption is your choice. A different assumption gives a different size.
 
@@ -112,8 +121,6 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 4. Record the slippage fields (slippage_entry_inr and slippage_exit_inr) for each trade. Use zero where no slippage applies.
 5. Write the planned and actual loss side by side. Note which one your plan had described.
 
-<!-- OPEN: The spec asks for planned and actual loss fields. The Lab 3 spec has plan_risk_inr and net_pnl_inr but no separate actual-loss field, so this task uses the slippage fields only. The learning-note mode is also missing from the Lab 3 mode list (paper, live, forward, backtest, kite_demo) even though *How to use this book* lists it. -->
-
 ## Limits and common mistakes
 
 - A stop is an instruction. It does not fix the exit price. In a circuit it may not produce an exit at all.
@@ -132,18 +139,12 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 
 ## Sources and verification
 
-Sources (names only):
+Sources, read on 11 Nov 2026:
 
-- Zerodha support pages on stop-loss orders
-- NSE documentation on order types
-- NSE circuit limit pages
-- Chapter *Circuit limits and halts* (circuit limits and price bands)
-
-Items to verify before this chapter is final:
-
-- [VERIFY: how SL and SL-M orders trigger and fill on Kite]
-- [VERIFY: exchange rules for stop and trigger orders]
-- [VERIFY: circuit band rules that apply to an exit during a locked circuit]
+- Zerodha support: "What are stoploss orders and how to use them", "What is trigger price in stoploss orders".
+- Zerodha support: "What are circuit limits or price bands" and the page on what happens to intraday positions when a circuit is hit.
+- NSE pages on price bands and circuit breakers. Check them for the current band of any share.
+- Chapter *Circuit limits and halts* (circuit limits and price bands).
 
 <!-- facts-needed: SL and SL-M trigger and fill behaviour on Kite; exchange rules for stop and trigger orders; circuit rules for locked exits (cross-reference *Circuit limits and halts*) -->
 

@@ -27,8 +27,8 @@ The gate has three parts:
 
 The rules for each kind of answer are these:
 
-- Position-size answers must match exactly, in whole shares. <!-- OPEN: The tolerance rules for position size, rupee and cost items are proposals. The owner or reviewer must set them in the quiz data before the gate is built. -->
-- Rupee answers must be within Rs 1 of the worked solution. <!-- OPEN: proposed tolerance, see above. -->
+- Position-size answers must match exactly, in whole shares.
+- Rupee answers must be within Rs 1 of the worked solution.
 - Cost answers are checked within the tolerance stored with each question.
 
 The cost figures come from the book's facts list. Each figure shows the date it was checked. If a cost figure is out of date, the cost questions pause, and the gate says so.
@@ -51,6 +51,8 @@ This gate has no picture to explore. Use the table below to check your own sums 
 | Planned loss | Shares x risk per share |
 
 If any line does not match your working, go back to the step that differs.
+
+<!-- component: gate-check | gate: G2 | caption: Tick each criterion only when it is true for you. A gate checks what you learned. It is not permission to trade. -->
 
 ## Worked example
 

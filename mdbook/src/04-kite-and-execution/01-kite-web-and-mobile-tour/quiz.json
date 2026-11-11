@@ -23,7 +23,7 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "The demo is not a record of your ideas. Paper trading means keeping that record. Check Zerodha's exact wording. [VERIFY: exact wording on Zerodha support]",
+      "a": "The demo is not a record of your ideas. Paper trading means keeping that record. Zerodha says it does not offer demo accounts for paper trading. The demo is a version of Kite that uses dummy data.",
       "c": "Demo data is dummy data. Its prices are not real market prices.",
       "d": "The demo and a paper-trading account are different things. Do not treat the demo as a record of your decisions."
     },
@@ -36,14 +36,14 @@
     "type": "mcq",
     "prompt": "What is Console used for?",
     "options": [
-      {"id": "a", "text": "Placing orders in the demo"},
+      {"id": "a", "text": "Placing orders"},
       {"id": "b", "text": "Reports and statements, as a back-office area"},
       {"id": "c", "text": "Setting price alerts only"},
       {"id": "d", "text": "Showing live chart prices"}
     ],
     "answer": "b",
     "explanations": {
-      "a": "Orders are entered in the order window. Console is not the place to enter an order. Check Zerodha's Console help. [VERIFY: Console contents]",
+      "a": "Orders are entered in the order window. Console is not the place to enter an order. The Kite demo is view-only, so it cannot place orders either.",
       "c": "Alerts are a separate feature. Console is a back-office area for records and reports.",
       "d": "Live chart prices are shown on the chart, not in Console."
     },

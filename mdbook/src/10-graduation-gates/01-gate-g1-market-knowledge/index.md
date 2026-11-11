@@ -26,7 +26,7 @@ The gate has two parts. You must pass both.
 
 Some rules for the quiz:
 
-- Each set has at least 30 questions. This makes the 85% mark a fair measure. <!-- OPEN: The 30-item minimum is a proposal in the gate design. The owner must confirm it before the gate is built. -->
+- Each set has at least 30 questions. This makes the 85% mark a fair measure.
 - Every topic in the earlier chapters appears at least once in each set.
 - The order of the answer choices changes each time.
 - You can retake straight away after you read the explanations. Each retake has new questions. There is no timer and no penalty.
@@ -46,6 +46,8 @@ This gate has no picture to explore. The two parts work like this:
 | Own-words prompts | Write an answer and tick each point | Every point ticked and the text box not empty |
 
 Passing the quiz alone is not enough. Both parts must be complete.
+
+<!-- component: gate-check | gate: G1 | caption: Tick each criterion only when it is true for you. A gate checks what you learned. It is not permission to trade. -->
 
 ## Worked example
 

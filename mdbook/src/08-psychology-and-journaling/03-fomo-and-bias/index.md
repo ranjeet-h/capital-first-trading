@@ -27,7 +27,7 @@ The counter-habit is simple. Before you enter, write at least one reason the tra
 
 ## See it
 
-<!-- component: spot-the-mistake | caption: Hypothetical chart with a late entry at Rs 448, marked against the planned entry of Rs 400. Find the part of the journal note that breaks the plan. -->
+<!-- component: bias-lab | part: fomo | stop: 420 | caption: Hypothetical price that never returns to the planned entry of Rs 400, then jumps to Rs 448. Compare the planned trade with the late entry. -->
 
 Look at where the planned entry sits, and where the late entry sits. Read the stop for each. Ask whether the late entry is still the planned trade.
 
@@ -68,6 +68,8 @@ Hints:
 - Cash: 38 x 448 = **Rs 17,024**.
 - The trade is **not** the planned one. The entry, the stop and the cash all differ from the plan.
 
+<!-- component: bias-lab | part: fomo | stop: 435 | caption: Guided exercise: the same late entry at Rs 448, this time with a new stop at Rs 435. -->
+
 ### Independent exercise
 
 **Task.** Write three reasons the trade idea you hold could fail. Then write one rule that would stop you from entering.
@@ -85,6 +87,8 @@ A rule might read: "I do not enter if the price is above my planned entry." Each
 All figures in this chapter are hypothetical.
 
 </details>
+
+<!-- component: bias-lab | part: evidence | caption: Which notes would you read first? Then see how 100 made-up traders with no skill can still show a short run of wins. -->
 
 ## Quiz
 
@@ -120,9 +124,7 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 
 ## Sources and verification
 
-- Academic work on overconfidence and confirmation bias. [VERIFY: names of the studies or authors to cite]
+- This book names no study on overconfidence or confirmation bias. Researchers in psychology have written much on both, so search a library for current work.
 - The worked numbers in this chapter come from this book's own Lab 1 example of a tight stop and a cash cap.
-
-<!-- facts-needed: names of the academic references on overconfidence and confirmation bias. -->
 
 <!-- standing-disclaimer -->

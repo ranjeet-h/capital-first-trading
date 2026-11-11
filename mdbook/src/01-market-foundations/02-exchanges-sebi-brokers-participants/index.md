@@ -19,21 +19,21 @@ Many institutions sit between your order and the shares in your name. Each one h
 
 **SEBI** is the securities regulator. It makes the rules for brokers, exchanges and listed companies. It does not set stock prices.
 
-**Exchanges (NSE and BSE)** run the marketplace where orders are matched [VERIFY: current recognition status and roles]. A buy order is matched with a sell order there. The exchange does not hold your money.
+**Exchanges (NSE and BSE)** run the marketplace where orders are matched. They are the two main stock exchanges in India. SEBI keeps the official list of recognised exchanges on its website. A buy order is matched with a sell order there. The exchange does not hold your money.
 
-**The clearing corporation** works after a trade. It records what each side owes because of the trade. It is part of how settlement is guaranteed. Settlement is the final transfer of shares and money [VERIFY: clearing corporation names and role].
+**The clearing corporation** works after a trade. It records what each side owes because of the trade. It is part of how settlement is guaranteed. Settlement is the final transfer of shares and money. Think of a trusted middle person at a market who promises each side that the other will pay or deliver. NSE's clearing corporation is called NSE Clearing Limited. BSE's is called Indian Clearing Corporation Limited (ICCL).
 
-**Depositories** hold shares electronically [VERIFY: NSDL and CDSL roles]. Your shares are recorded in your name at a depository, not in a paper certificate kept in a drawer.
+**Depositories** hold shares electronically. India has two: NSDL and CDSL. They work like a bank for shares, keeping a record of who owns what. Your shares are recorded in your name at a depository, not in a paper certificate kept in a drawer.
 
 **The broker (trading member)** accepts your orders, gives you the trading platform, and passes your orders to the exchange. The broker is the firm you deal with day to day. It is not the exchange. It is not where your shares are held.
 
-**The depository participant (DP)** is the firm that keeps your demat account for you, on the depository's behalf [VERIFY]. The depository records the holding. The DP keeps the account. These are two different roles, even when one firm does both.
+**The depository participant (DP)** is the firm that keeps your demat account for you, on the depository's behalf. The depository records the holding. The DP keeps the account. These are two different roles, even when one firm does both.
 
 **Banks** hold the funds used for trading and settlement. Your trading account is linked to a bank account.
 
-**The grievance route** is the order for complaints. Start with the broker. Then go to the exchange. Then go to SEBI's complaint portal [VERIFY: SCORES process].
+**The grievance route** is the order for complaints. Start with the broker. Then go to the exchange. Then go to SEBI's complaint portal, which is called SCORES (scores.sebi.gov.in). SEBI's investor page says to approach the firm you have a complaint against first, and to use SCORES only if you are still not satisfied. The old SCORES site (scores.gov.in) was closed on 28 Mar 2024, so use the new one. SEBI's helpline numbers are 1800-266-7575 and 1800-22-7575. (As of 11 Nov 2026, SEBI investor site. Check it for the latest steps.)
 
-**One practical check.** Before you open an account with any broker, check its registration on the official lists [VERIFY: SEBI or exchange list of registered brokers].
+**One practical check.** Before you open an account with any broker, check its registration on the official lists. SEBI's investor site has a tool called "Check Registration Status of Market Intermediary", and SEBI also keeps a list of recognised intermediaries on its website. (As of 11 Nov 2026, SEBI investor site.)
 
 ## See it
 
@@ -63,8 +63,8 @@ Now follow the order. Note who holds the money at each step.
 | 1 | You | Place the buy order for 20 shares at Rs 250 | Your linked funds, Rs 5,000 needed |
 | 2 | Broker | Accepts the order and passes it to the exchange | Moved through the broker's process |
 | 3 | Exchange | Matches the order with a seller | The exchange does not hold your money |
-| 4 | Clearing corporation | Records the obligation from the trade | The clearing system moves funds [VERIFY: clearing names and role] |
-| 5 | Depository, through the DP | After settlement, the 20 shares are credited to your demat account | Settlement moves the shares and the money [VERIFY: T+1 timing, see *Demat accounts and settlement*] |
+| 4 | Clearing corporation | Records the obligation from the trade | The clearing system moves funds |
+| 5 | Depository, through the DP | After settlement, the 20 shares are credited to your demat account | Settlement moves the shares and the money, one working day after the trade (T+1, see *Demat accounts and settlement*) |
 
 The main point: no step asks the exchange to hold your money.
 
@@ -84,7 +84,7 @@ The main point: no step asks the exchange to hold your money.
 2. Follow the order: you, broker, exchange.
 3. Then follow the shares: clearing, then the depository.
 
-**Answer:** You place the sell order for 20 shares at Rs 250. The trade value is Rs 5,000. The broker accepts the order and passes it to the exchange. The exchange matches it with a buyer. The clearing corporation records the obligation. The depository, through the DP, moves the shares out of your demat account when the trade settles [VERIFY: settlement timing, see *Demat accounts and settlement*].
+**Answer:** You place the sell order for 20 shares at Rs 250. The trade value is Rs 5,000. The broker accepts the order and passes it to the exchange. The exchange matches it with a buyer. The clearing corporation records the obligation. The depository, through the DP, moves the shares out of your demat account when the trade settles, one working day after the trade (see *Demat accounts and settlement*).
 
 ### Independent exercise
 
@@ -138,13 +138,11 @@ Six questions check the broker-exchange difference, the clearing role, the griev
 - NSDL and CDSL websites.
 - Zerodha support pages on accounts, as a broker example and not as a recommendation.
 
-**Facts to verify:**
+**Facts checked on 11 Nov 2026:**
 
-- Clearing corporation names and roles. [VERIFY: NSE clearing page; NSDL; CDSL]
-- The SCORES complaint process. [VERIFY: SEBI SCORES page]
-- The current list of recognised exchanges. [VERIFY: SEBI]
-- The check on broker registration. [VERIFY: SEBI or exchange list of registered brokers]
-
-<!-- facts-needed: clearing corporation names and roles (NSE clearing page); NSDL and CDSL roles; SCORES complaint process; recognised exchanges list; broker registration list -->
+- The clearing corporations are NSE Clearing Limited and Indian Clearing Corporation Limited. The depositories are NSDL and CDSL.
+- The complaint route and the new SCORES address come from SEBI's investor pages.
+- The registration check tool comes from SEBI's investor support page.
+- The full list of recognised exchanges is kept by SEBI. This chapter does not copy it, so check the SEBI site.
 
 <!-- standing-disclaimer -->

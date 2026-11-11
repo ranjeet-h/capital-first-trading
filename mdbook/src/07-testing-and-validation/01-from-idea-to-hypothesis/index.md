@@ -59,6 +59,8 @@ flowchart TD
 
 Follow the arrows from top to bottom. The test plan must exist before the run. Each of the three results leads to a different next step. No box in this flow says trade.
 
+<!-- component: hypothesis-builder | caption: Turn a loose idea into a rule that can be wrong, lock the pass rule first, then see what the result allows you to say. -->
+
 ## Worked example
 
 **Hypothetical.** The idea is: stocks that make new highs keep going up. Here is one testable hypothesis written from that idea.
@@ -107,7 +109,7 @@ Add a stop and a size to each one, as in the worked example.
 A sample plan. All numbers are examples set for this exercise.
 
 - **Universe:** 30 listed stocks, chosen by a written rule before the test starts.
-- **Data source:** a named free source. [VERIFY: source name and its terms of use]
+- **Data source:** a named free source, whose terms you have read. Many free sources allow personal use only. See *Historical data*.
 - **Period:** 2016 to 2022.
 - **Split:** 2016 to 2019 for building the rule. 2020 to 2022 kept back for the final check. Nothing is chosen using 2020 to 2022.
 - **Entry:** buy at the next day's open, after a close above the highest close of the previous 20 days.
@@ -157,8 +159,6 @@ Log it in your journal (or on paper until the journal app is ready).
 
 ## Sources and verification
 
-- A general statistics text on hypothesis testing. [VERIFY: title and edition]
-
-<!-- facts-needed: title and edition of a general statistics text on hypothesis testing. -->
+- Robert Pardo, *The Evaluation and Optimization of Trading Strategies*, 2nd edition (Wiley, 2008), on how to test a trading idea.
 
 <!-- standing-disclaimer -->

@@ -17,15 +17,15 @@ A trader buys Rs 5,000 of a share. A few days later, the trader sells it at exac
 
 A trade has two **legs**: the buy and the sell. Each leg can carry several charges. Your total cost is the sum of all of them.
 
-The charge types you will meet on Indian equity trades are these. Only their names are used here. Their rates and bases are not stated in this chapter. They must come from an official source first.
+The charge types you will meet on Indian equity trades are these.
 
 - **Brokerage:** what the broker charges for carrying out the order.
-- **Securities transaction tax (STT):** a government tax on trades. [VERIFY: rate and which legs it applies to]
-- **Exchange transaction charge:** a fee the exchange charges on turnover. [VERIFY: NSE and BSE rates]
-- **SEBI fee:** the regulator's fee on turnover. [VERIFY: SEBI fees page]
-- **Stamp duty:** a state-level duty on the buy side. [VERIFY: rate by state law]
-- **GST:** a tax on some of the other charges, not on the whole trade. [VERIFY: GST base and rate]
-- **Depository (DP) charge:** a charge on sales from your demat account. [VERIFY: per scrip per day rule and components]
+- **Securities transaction tax (STT):** a government tax on trades. On delivery trades it is charged on both the buy and the sell. On intraday trades it is charged only on the sell.
+- **Exchange transaction charge:** a small fee the exchange charges on the value traded.
+- **SEBI fee:** the regulator's small fee on the value traded.
+- **Stamp duty:** a government duty on the buy side only. Since 1 July 2020 it is the same in every state.
+- **GST:** a tax on some of the other charges, not on the whole trade. It is charged on brokerage, SEBI fee and exchange transaction charge.
+- **Depository (DP) charge:** a charge when you sell shares from your demat account. It is charged once for each share name sold on a day, whatever the quantity.
 
 Charges fall into two groups:
 
@@ -47,11 +47,30 @@ Break-even move, in words: total cost divided by the position value. In symbols,
 - Fixed: Rs 20 per order, on each leg.
 - DP charge: Rs 50 per stock, on the sell leg only.
 
-These are labeled DUMMY. They are for arithmetic only. Do not quote them as Zerodha or government figures. Verified rates will replace them. The official calculator is the check for those rates.
+These are round numbers for practice. They are not the real charges. Do not quote them as Zerodha or government figures. The real charges are in the next table.
 
-Brokerage on delivery is not covered by the dummy model. Intraday costs are not worked out here. This chapter only notes their structure. Their figures come after they are verified.
+Brokerage on delivery is not in the practice model. Intraday costs are not worked out here.
 
-<!-- OPEN: Spec open question asks whether intraday costs belong in this chapter or only in Lab 2. Written here as structure only, numbers in Lab 2. -->
+### The real charges today
+
+The table below shows what Zerodha lists for equity trades on its charges page. The exchange, SEBI and government charges are set outside Zerodha.
+
+| Charge | Equity delivery | Equity intraday |
+|---|---|---|
+| Brokerage | Zero | 0.03% or Rs 20 per executed order, whichever is lower |
+| STT | 0.1% on buy and on sell | 0.025% on the sell side only |
+| NSE transaction charge | 0.00307% of the value traded | 0.00307% of the value traded |
+| BSE transaction charge | 0.00375% of the value traded | 0.00375% of the value traded |
+| SEBI fee | Rs 10 per crore | Rs 10 per crore |
+| Stamp duty (buy side only) | 0.015% | 0.003% |
+| GST | 18% on brokerage + SEBI fee + transaction charge | 18% on brokerage + SEBI fee + transaction charge |
+| DP charge | Rs 15.34 for each share name sold in a day (Rs 3.50 depository fee + Rs 9.50 Zerodha fee + Rs 2.34 GST), whatever the quantity | Not charged, because nothing is sold from the demat account |
+
+A few more Zerodha charges are worth knowing. Orders placed through a dealer (call and trade) cost Rs 50 per order. When an intraday position is closed for you by auto square-off, Rs 50 plus 18% GST is charged for each order closed. For new accounts, the yearly account fee (AMC) is free for the first year. After that, the amount depends on the account type and the value of your holdings, so read it on the charges page.
+
+(As of 11 Nov 2026, from the Zerodha charges page, the NSE circular of 27 Feb 2026 and the SEBI note on stamp duty of June 2020. Rules and rates change, so check the Zerodha charges page and brokerage calculator before you rely on any figure.)
+
+Zerodha's page says all statutory and regulatory charges are levied "at actuals". It does not state a rounding rule for every line. STT is rounded to the nearest rupee. The other lines may differ by a few paise from your own sum. The official brokerage calculator is the check.
 
 One more point. A zero on one line is not a zero cost. A broker may show zero brokerage. The other charges in the list above still apply. Add every component.
 
@@ -73,11 +92,9 @@ The point of the table is the shares. Fixed charges make up most of the cost on 
 
 Use the walkthrough to step through each leg. Change the trade value to see which lines move and which stay the same. The DUMMY label means the rates are not real.
 
-<!-- OPEN: The lab-costs "walkthrough mode with dummy rates" is in the spec's Visual line but not in LABS.md. Confirm the mode exists before this placeholder is built. -->
-
 ## Worked example
 
-**Hypothetical, DUMMY model.** The buy and sell prices are the same, so the price does not move.
+**Hypothetical, DUMMY model (round numbers for practice, not the real charges).** The buy and sell prices are the same, so the price does not move.
 
 **Round trip of Rs 5,000**
 
@@ -172,23 +189,13 @@ Mode: **learning note**. Write it in your journal.
 
 ## Sources and verification
 
-- Zerodha charges page and brokerage calculator (official). Reference only until the figures are verified.
-- NSE and BSE fee and circular pages (exchange transaction charges).
-- SEBI fees page (SEBI turnover fee).
-- Income Tax Department STT page.
-- GST portal (GST rate and base).
-- CDSL and NSDL tariff pages (DP charges).
-- Stamp duty: the relevant state stamp act or Indian Clearing Corporation documentation.
+- Zerodha charges page (zerodha.com/charges), read on 11 Nov 2026, and the Zerodha brokerage calculator.
+- Zerodha support pages on STT (STT rates and rounding), DP charges and auto square-off charges, read on 11 Nov 2026.
+- NSE circular NSE/FA/73061 of 27 Feb 2026, revision in transaction charges, in force from 1 Mar 2026.
+- SEBI note on stamp duty rates from 1 July 2020 (FAQ on the Indian Stamp Act, June 2020).
+- SEBI turnover fee: as listed on the Zerodha charges page. SEBI sets this fee, so check SEBI's own pages too.
 
 <!-- facts-needed: Zerodha equity delivery brokerage; STT rates and basis; NSE and BSE exchange transaction charge rates; SEBI turnover fee; stamp duty rates by state; GST rate and base; DP charge and per-scrip-per-day rule; rounding rules from the official calculator. -->
 
-[VERIFY: Zerodha equity delivery brokerage]
-[VERIFY: STT rates and which legs they apply to]
-[VERIFY: NSE and BSE exchange transaction charge rates]
-[VERIFY: SEBI turnover fee]
-[VERIFY: stamp duty rates by state]
-[VERIFY: GST rate and base]
-[VERIFY: DP charge and per-scrip-per-day rule]
-[VERIFY: rounding rules from the official calculator]
 
 <!-- standing-disclaimer -->

@@ -27,7 +27,7 @@ The label depends on how you hold something, not on what it is. The same share c
 
 **A price is a meeting point, not a final judgement.** A price is where one buyer and one seller agreed, at one moment. It is not a guarantee of what the company is worth. It is not a promise of where the price goes next.
 
-**Trading moves money from one person to another, before costs.** In one trade, one person's gain is another person's loss. The exchange sits in the middle and matches the buy and sell orders. After brokerage, taxes and other charges, an active trader usually starts behind. Later chapters put numbers on this. The SEBI study on individual traders is cross-referenced in *SEBI's F&O studies as a case study* [VERIFY: study title and figures].
+**Trading moves money from one person to another, before costs.** In one trade, one person's gain is another person's loss. The exchange sits in the middle and matches the buy and sell orders. After brokerage, taxes and other charges, an active trader usually starts behind. Later chapters put numbers on this. SEBI, the market regulator, studied individual traders in the equity derivatives (F&O) segment. Its paper is called "Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26)" and was published in August 2026. It found that 87.7% of individual traders in that segment lost money in FY26 (the year from April 2025 to March 2026). In FY25 the share was 90.9%. The study covers F&O trading only, not ordinary share buying. It looked at the top 15 brokers, which cover about 90% of individual traders. It also found that individual traders paid about Rs 25,000 crore a year in trading costs. This book looks at the study in more detail later. (As of 11 Nov 2026, SEBI Department of Economic and Policy Analysis. Reports get updated, so check the SEBI site for the latest.)
 
 **Never mix three kinds of result.**
 
@@ -48,9 +48,9 @@ A backtest that made money is still not a live record. This book keeps all three
 | Typical risk control | Spreading money and time | Written limits on each trade | Often none stated; may use borrowed money |
 | Typical mistake | Selling when prices fall; following a story everyone is excited about | Trading too often; putting too much into one trade; having no written rules | Borrowing to buy more; treating a guess as a plan |
 
-<!-- OPEN: the spec gives a static three-column card for this chapter. No component in the placeholder list fits a static card, so a Markdown table is used. -->
-
 Read down the Speculation column. Its risk-control row says that no limit is stated. That is not a method. Compare the "typical mistake" row with any habit you already have.
+
+<!-- component: trading-reality | capital: 50000 | caption: A made-up year of 100 beginners. Most end behind where they started. The aim of this book is to lose little while you learn. -->
 
 ## Worked example
 
@@ -140,13 +140,11 @@ Six questions check the three definitions, the break-even sum and the claims abo
 **Sources (names only):**
 
 - SEBI investor education pages.
-- SEBI study on F&O trading (cross-reference *SEBI's F&O studies as a case study*).
+- SEBI study, "Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26)", August 2026.
 - Zerodha Varsity, as a reference only (link only, no text copied).
 
-**Facts to verify:**
+**Facts checked on 11 Nov 2026:**
 
-- [VERIFY: SEBI study on individual traders, title and figures] (cross-referenced in *SEBI's F&O studies as a case study*). This chapter quotes no figures from it.
-
-<!-- facts-needed: SEBI study on individual traders (title and figures; cross-referenced in *SEBI's F&O studies as a case study*) -->
+- The SEBI study's title, date and figures (87.7% of individuals lost money in FY26, 90.9% in FY25, and about Rs 25,000 crore a year in costs) come from SEBI's own paper. The figures are for equity derivatives only. Check the SEBI site for newer reports.
 
 <!-- standing-disclaimer -->

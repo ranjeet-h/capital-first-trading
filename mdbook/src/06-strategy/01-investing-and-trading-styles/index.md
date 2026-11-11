@@ -63,6 +63,8 @@ Some points to keep in mind:
 
 The table describes common usage. It does not describe a rule for any style. Read each cell as a judgement with a reason, not as a fact.
 
+<!-- component: style-compare | caption: Slide the holding time and the watching time and see how many round trips, how much cost and how much screen time each style needs. -->
+
 ## Worked example
 
 **Dummy numbers. Not real charges.** Suppose a round trip costs Rs 50 in total. The position is Rs 12,500. This Rs 50 is a made-up number to show the arithmetic. It is not a Zerodha charge and it is not a rate to use.
@@ -140,7 +142,7 @@ Mode: **learning note**. Write it in your journal (or on paper until the journal
 - No style is shown as profitable. The table describes methods and fit, not results.
 - The line between trading and speculation is blurry. A label does not prove that a plan has an edge.
 - Investing is not risk-free. A business can lose value over many years.
-- Tax and charge treatment can differ by style. [VERIFY: tax treatment of intraday and delivery gains; see *Taxes on trading profits*] [VERIFY: Zerodha charges page]
+- Tax and charge treatment can differ by style. As of 11 Nov 2026, Zerodha lists zero brokerage on delivery trades, and 0.03% or Rs 20 per order (whichever is lower) on intraday trades. The law treats a trade that is not settled by delivery as speculative, with different loss rules from delivery gains. The details are in *Costs on a trade* and *Taxes on trading profits*. Rules change, so check the Zerodha charges page and incometax.gov.in, and ask a qualified tax professional.
 
 ## Remember
 
@@ -153,12 +155,7 @@ Mode: **learning note**. Write it in your journal (or on paper until the journal
 
 - SEBI investor education pages, for investor awareness material.
 - Zerodha Varsity, trading styles module (reference only, original wording).
-
-<!-- facts-needed: tax treatment of intraday and delivery gains, which is covered in the tax chapter; charges by product type. -->
-
-[VERIFY: tax treatment of intraday and delivery gains]
-[VERIFY: Zerodha charges by product type]
-
-<!-- OPEN: The spec's independent exercise says score against five owner criteria, but the spec's criteria list has seven items. The chapter uses all seven. Confirm the intended count. -->
+- Zerodha charges page, read on 11 Nov 2026, for brokerage by product.
+- *Taxes on trading profits*, for the tax rules, with their own sources.
 
 <!-- standing-disclaimer -->

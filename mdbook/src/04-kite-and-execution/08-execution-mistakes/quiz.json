@@ -61,7 +61,7 @@
     "prompt": "Which statement is wrong?",
     "options": [
       {"id": "a", "text": "A stop placed on the wrong side can leave a holding without a working stop."},
-      {"id": "b", "text": "A confirmation screen that looks normal proves that the quantity matches the plan."},
+      {"id": "b", "text": "Seeing no error message proves that the quantity matches the plan."},
       {"id": "c", "text": "Checking the quantity against your written plan catches many typing errors."},
       {"id": "d", "text": "An expired GTT can leave a holding without a working stop."}
     ],
@@ -103,13 +103,13 @@
       {"id": "a", "text": "Submit now and fix any problem later."},
       {"id": "b", "text": "Check side, product, quantity and price against the written plan."},
       {"id": "c", "text": "Add to the position to balance an error."},
-      {"id": "d", "text": "Skip the confirmation screen because it is only a formality."}
+      {"id": "d", "text": "Click Buy or Sell without reading the order window, because Kite will catch any error."}
     ],
     "answer": "b",
     "explanations": {
       "a": "A fix after submission can leave a larger exposure. Check first.",
       "c": "Adding to a position increases the exposure. It does not fix a mistake.",
-      "d": "The confirmation screen is a chance to catch an error. Read it before you confirm."
+      "d": "Kite does not check your plan. Read the order window before you click Buy or Sell. Kite's messages are not a safety net."
     },
     "concepts": ["checklist", "pre-submission"],
     "difficulty": 1,

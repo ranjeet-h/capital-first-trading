@@ -18,11 +18,11 @@ A headline says, "Foreign investors bought heavily today, so prices will rise." 
 Many kinds of people trade in the Indian market. Knowing who they are helps you read the data. It does not help you predict prices.
 
 - **Retail investors:** individuals trading their own money.
-- **Institutions:** funds, insurers and banks. They have research teams and different cost structures. [VERIFY: participant category definitions, SEBI or NSE]
-- **FII / FPI:** foreign investors. **DII:** domestic institutional investors. [VERIFY: definitions]
-- **Proprietary traders and market makers:** firms that trade their own money. Some firms also post buy and sell prices at the same time. [VERIFY: definitions]
+- **Institutions:** funds, insurers and banks. They have research teams and different cost structures.
+- **FII / FPI:** foreign investors. **DII:** domestic institutional investors. These are plain descriptions, not legal definitions. The legal terms are in SEBI's rules.
+- **Proprietary traders and market makers:** firms that trade their own money. Some firms also post buy and sell prices at the same time.
 
-**Net flow.** For a group of participants, net flow = buy value minus sell value. A positive figure is net buying. A negative figure is net selling. The exchange publishes FII and DII data every day. [VERIFY: FII/DII data source and publication timing, NSE FII/DII page]
+**Net flow.** For a group of participants, net flow = buy value minus sell value. A positive figure is net buying. A negative figure is net selling. NSE publishes FII and DII trading figures on its website, and the page offers downloads. The figures are provisional. NSE builds them from the trading codes that its members enter, and final foreign investor data comes later from the depository, NSDL. NSE's page gives the latest day's data, but this chapter does not state the exact hour it appears. (As of 11 Nov 2026, NSE FII/DII trading activity page. Check the NSE site.)
 
 **What a net flow tells you.** The total money one group moved on one day.
 
@@ -43,7 +43,7 @@ Start from primary sources. Use secondary sources for context. Treat unverified 
 - no registration details,
 - claims of insider information.
 
-**Advisers and research analysts** must be registered with SEBI. [VERIFY: registration categories and public lookup, SEBI intermediaries page] Being in a messaging group proves nothing about registration.
+**Advisers and research analysts** must be registered with SEBI. SEBI keeps public lists of registered Research Analysts and Investment Advisers on its website. SEBI's investor site also has a tool to check the registration status of any market intermediary, and a tool called SEBI Check to confirm that a payment ID or account belongs to a registered intermediary. SEBI has also told regulated firms not to work with people who give securities advice without registration, or who promise returns without permission. People who only teach investing are left out of that rule. (As of 11 Nov 2026, SEBI investor support page and SEBI circular of 29 Jan 2025, updated 8 May 2026. Rules change, so check the SEBI site.) Being in a messaging group proves nothing about registration.
 
 **The book does not recommend stocks. No source in this chapter is an endorsement.**
 
@@ -56,8 +56,6 @@ The table shows the three levels of the information ladder. Each level has a wri
 | Primary | Company filing, exchange announcement, SEBI order | Checking the facts | Check the date and the issuer |
 | Secondary | News article, analysis report | Context and cross-checking | Check the author's method and any conflicts |
 | Unverified | Tip, forwarded message, social media post | Nothing, until checked against a primary source | Guaranteed returns, urgency, or payment for signals |
-
-<!-- OPEN: spec asks for an information-source ladder with warning icons. A text table is used instead of icons. Confirm. -->
 
 ## Worked example
 
@@ -85,7 +83,7 @@ The book treats a promised 20% a month, with a guarantee, as a red flag. It is n
 
 ## Try it
 
-<!-- OPEN: spec gives no interactive demo for this chapter. No component placeholder is inserted. -->
+<!-- component: tips-checker | caption: Practice with made-up messages. Sort each one and tick the warning signs. Doing nothing is always an allowed result. -->
 
 ### Guided exercise
 
@@ -119,7 +117,7 @@ A sample checklist:
 
 1. Find the original source of the claim.
 2. Find the primary document (filing, exchange announcement or regulator order) that supports it.
-3. Check whether the person or firm is SEBI-registered, using the official lookup. [VERIFY: SEBI registered intermediaries list]
+3. Check whether the person or firm is SEBI-registered, using the official lookup on the SEBI website.
 4. Check for red flags: guaranteed returns, urgency, payment for signals, group pressure.
 5. Write down what would prove the claim wrong, and check for it.
 6. Decide. "Do nothing" is an allowed result. Do not act on a tip alone.
@@ -166,12 +164,10 @@ Sources:
 - NSE FII/DII page.
 - Exchange announcement pages.
 
-Facts to verify:
-- [VERIFY: FII/DII data source and publication timing, NSE FII/DII page]
-- [VERIFY: participant category definitions, SEBI or NSE]
-- [VERIFY: SEBI registration categories and public lookup, SEBI intermediaries page]
-- [VERIFY: current SEBI investor alerts on misleading tips, SEBI investor education]
-
-<!-- facts-needed: FII/DII data source and timing; participant category definitions; SEBI registration categories and lookup; current SEBI investor alerts on misleading tips -->
+Facts checked on 11 Nov 2026:
+- The FII/DII data source and its provisional nature come from NSE's FII/DII trading activity page. The time of day it is published can change, so check the NSE page.
+- The registration check tools and the SEBI helpline come from SEBI's investor support page. The rule on unregistered advice comes from SEBI's circular of 29 Jan 2025.
+- The participant descriptions are plain-English summaries and were not checked against SEBI's legal definitions.
+- Current SEBI investor alerts change often. Read them on SEBI's investor site.
 
 <!-- standing-disclaimer -->

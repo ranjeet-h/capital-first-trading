@@ -10,7 +10,7 @@
   ],
   "answer": ["b", "c", "a"],
   "explanations": {
-   "a": "Correct position: last. The closing session sets the closing price at the end of the day. Its exact method is [VERIFY: NSE closing session rules].",
+   "a": "Correct position: last. The closing session sets the closing price at the end of the day.",
    "b": "Correct position: first. Pre-open collects orders and works out the opening price before continuous trading starts.",
    "c": "Correct position: middle. Continuous trading matches orders as they arrive, between the pre-open and the closing session."
   },
@@ -43,7 +43,7 @@
   "answer": "b",
   "explanations": {
    "a": "Wrong. An open broker app does not mean the exchange is trading. The exchange matches orders only in its trading sessions.",
-   "c": "Wrong. The exchange announces special sessions for specific days [VERIFY: NSE circular]. A normal Saturday is not one of them.",
+   "c": "Wrong. The exchange announces special sessions for specific days. A normal Saturday is not one of them.",
    "d": "Wrong. Holidays remove trading days. They do not create trading on weekends."
   },
   "concepts": ["weekends", "market-hours"],
@@ -55,7 +55,7 @@
   "type": "spot-the-mistake",
   "prompt": "A reader says: 'The pre-open price is the closing price, so I can plan from it.' Which part of this statement is wrong?",
   "options": [
-   {"id": "a", "text": "'The pre-open price' is wrong. Pre-open is a different term from the price a stock opens at."},
+   {"id": "a", "text": "'The pre-open price' is wrong. Pre-open is a phase, not a price."},
    {"id": "b", "text": "'Is the closing price' is wrong. The pre-open price is set in the pre-open phase, and the closing price is set in the closing session. They are different phases."},
    {"id": "c", "text": "No part is wrong."}
   ],
@@ -80,7 +80,7 @@
   "answer": "b",
   "explanations": {
    "a": "Wrong. A stop is a trigger, and the fill can be at a worse price when the market gaps. The chapter on stop-loss orders explains this.",
-   "c": "Wrong. Whether a stop can be placed at a given time depends on broker and exchange rules [VERIFY: order handling outside market hours]. The main risk is the gap at the next open."
+   "c": "Wrong. Whether a stop can be placed at a given time depends on broker and exchange rules. The main risk is the gap at the next open."
   },
   "concepts": ["gap-risk", "stop-loss", "holidays"],
   "difficulty": 2,

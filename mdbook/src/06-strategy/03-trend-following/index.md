@@ -53,7 +53,7 @@ Use the trailing-stop view first. Watch the stop rise with each new high close, 
 | Expectancy in rupees | 0.40 x Rs 500 | Rs 200 per trade |
 | A run of 10 losses | 10 x Rs 500 | minus Rs 5,000 |
 
-These figures are before costs and taxes. [VERIFY: costs and taxes on these trades]
+These figures are before costs and taxes. Real charges and the rules on tax are in *Costs on a trade* and *Taxes on trading profits*. (As of 11 Nov 2026, Zerodha lists zero brokerage on delivery trades. Rules change, so check the Zerodha charges page.)
 
 The losing run is the hard part. The run of 10 losses costs Rs 5,000 with no winner in between. The plan must allow for it before it starts.
 
@@ -108,7 +108,7 @@ Mode: **paper**. Write it in your journal. If the journal is not ready, use pape
 - No profit cap does not mean no loss cap. Each trade still has a planned loss.
 - A low win rate is hard to live with. Plan for dry spells before they start.
 - Ten trades show almost nothing. A few dozen trades cannot show whether the method works either.
-- The figures here are before costs and taxes. [VERIFY: costs and taxes on these trades]
+- The figures here are before costs and taxes. See *Costs on a trade* and *Taxes on trading profits*.
 
 ## Remember
 
@@ -120,9 +120,6 @@ Mode: **paper**. Write it in your journal. If the journal is not ready, use pape
 ## Sources and verification
 
 - Zerodha Varsity, material on trend following (reference only).
-- Published research on trend-following performance.
-- [VERIFY: costs and taxes on these trades]
-
-<!-- facts-needed: costs and taxes on trades (see the Costs and Taxes chapters in this book). -->
+- *Costs on a trade* and *Taxes on trading profits*, each with its own dated sources (read on 11 Nov 2026).
 
 <!-- standing-disclaimer -->

@@ -30,7 +30,7 @@ A stock moves above a price level on a big day. The candle looks strong. Many tr
 
   Shares alone can hide the size of a trade. Rupees show it more clearly.
 - **Liquidity** means how easily you can buy or sell without moving the price much. You met this in *Order matching, spread and liquidity*. A low traded value can make it hard to sell a planned size. Selling is called exiting a trade.
-- **Delivery volume** is a different measure from traded volume. Check NSE's own definition before you use it. [VERIFY: NSE delivery data definition]
+- **Delivery volume** is a different measure from traded volume. It refers to shares that were taken as delivery, not bought and sold again the same day. NSE publishes a report called "Security-wise Delivery Positions", and NSE reads a higher share of delivered quantity as more buyers holding on to shares. Check NSE's own definition before you use it. (As of 11 Nov 2026, NSE reports page. Definitions can change, so check the NSE site.)
 - Volume can rise for reasons that have nothing to do with the trend. News, index changes and corporate actions can all add volume. See *Corporate actions*.
 
 ## See it
@@ -58,6 +58,8 @@ Check step 5 another way: 1,80,000 divided by 50 is 3,600. And 100 divided by 3,
 **What it shows.** The breakout day had 1.8 times the usual volume. Your planned 50 shares are a tiny part of that day. In this example, the stock is easy to trade. A thin stock can look very different.
 
 ## Try it
+
+<!-- component: indicator-playground | indicator: relative-volume | closes: 100,101,100,102 | volumes: 80000,120000,100000,200000 | lookback: 3 | plan: 0 | edit: on | caption: The four days of the guided exercise. Change the volumes and see the relative volume change -->
 
 ### Guided exercise
 
@@ -131,9 +133,9 @@ Sources:
 
 Facts to check:
 
-- The NSE definition of delivery data, and where delivery percentage is shown. [VERIFY: NSE market data page]
-- How Kite shows volume on charts. [VERIFY: Kite chart help]
+Facts checked on 11 Nov 2026:
 
-<!-- facts-needed: NSE definition and availability of delivery percentage data; Kite volume display conventions -->
+- NSE lists a "Security-wise Delivery Positions" report on its reports page and reads a higher deliverable share as buyers holding on to shares. Read the exact NSE definition on the NSE site before you rely on it.
+- How Kite draws volume on charts was not checked here. Look at the volume setting on your own chart.
 
 <!-- standing-disclaimer -->

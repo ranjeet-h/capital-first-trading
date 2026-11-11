@@ -57,6 +57,10 @@ The table is an original drawing for this book. It shows a call with strike Rs 5
 
 Read the buyer column from top to bottom. The buyer loses at most Rs 20 per share. The seller column is the mirror image.
 
+<!-- component: option-payoff | type: call | side: buy | strike: 500 | premium: 20 | price: 530 | caption: A call with strike Rs 500 and premium Rs 20 per share. Switch to seller, or to a put, and read the line. Theory only. -->
+
+<!-- component: option-time-value | strike: 500 | premium: 20 | price: 500 | caption: Time value fades as expiry gets closer. Delta and theta shown with simple sliders. Theory only. -->
+
 ## Worked example
 
 **Hypothetical. Call option, strike Rs 500, premium Rs 20 per share.** Results are at expiry and before costs.
@@ -119,8 +123,8 @@ Mode: **learning note**. This chapter has no practice. It asks for reflection on
 ## Limits and common mistakes
 
 - This chapter is theory. The book does not teach buying or selling options.
-- Strike intervals, expiry dates and contract rules change over time. [VERIFY: option contract specifications, expiry schedule and strike intervals, NSE derivatives pages]
-- Charges on options change over time. [VERIFY: charges and STT on options, broker charges page, SEBI and NSE circulars]
+- Strike intervals, expiry dates and contract rules change over time. NSE's contract page (updated 11 Aug 2026) says Nifty 50 index options expire on a Tuesday, with weekly and monthly expiries for Nifty 50 and monthly expiries for the other index contracts. The gap between strikes depends on the price of the underlying, so read it on the NSE page. (As of 11 Nov 2026, NSE contract specifications page. Rules change, so check the NSE site.)
+- Charges on options change over time. Zerodha's charges page lists a flat Rs 20 brokerage per executed options order, a securities transaction tax (STT) of 0.15 percent on the premium on the sell side, and NSE transaction charges of 0.03553 percent on the premium. GST, SEBI charges and stamp charges are added. These figures are for reading only, not advice. (As of 11 Nov 2026, Zerodha charges page. Rates change, so check zerodha.com/charges.)
 - The Rs 20 premium and the Rs 500 strike are made up. Real premiums differ.
 - The table leaves out costs. Costs reduce results on both sides.
 
@@ -136,14 +140,8 @@ Mode: **learning note**. This chapter has no practice. It asks for reflection on
 
 - NSE derivatives pages
 - Zerodha Varsity, options module (reference only)
-- A standard options textbook [VERIFY: name the textbook before use]
-
-Items to verify:
-
-- [VERIFY: option contract specifications, expiry schedule and strike intervals]
-- [VERIFY: STT and other charges on options]
-- [VERIFY: current F&O eligibility and participant rules]
-
-<!-- facts-needed: option contract specifications, expiry schedule and strike intervals; STT and other option charges; F&O eligibility and participant rules; name of the options textbook. -->
+- NSE derivatives contract specifications page
+- Zerodha charges page (zerodha.com/charges)
+- For who may trade F&O and what a broker must check, read the broker's rules and the SEBI and NSE circulars on the derivatives segment. This book states no eligibility rule.
 
 <!-- standing-disclaimer -->

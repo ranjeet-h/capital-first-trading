@@ -57,7 +57,7 @@
     "explanations": {
       "b": "Wrong. Among orders at the same price, the earlier arrival is matched first.",
       "c": "Wrong. Price-time priority does not split a fill evenly between orders at the same price.",
-      "d": "Wrong. The matching rule, not the seller, decides which resting order is matched first. The exact rule is [VERIFY: NSE and BSE matching rule]."
+      "d": "Wrong. The matching rule, not the seller, decides which resting order is matched first."
     },
     "concepts": ["price-time-priority", "matching"],
     "difficulty": 2,

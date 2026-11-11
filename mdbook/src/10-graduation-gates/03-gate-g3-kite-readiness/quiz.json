@@ -27,13 +27,13 @@
       {"id": "a", "text": "Yes. Any fall in price triggers a stop-loss."},
       {"id": "b", "text": "No. The price must reach or go below the trigger of Rs 480."},
       {"id": "c", "text": "Yes, because a stop-loss always triggers at the day's low."},
-      {"id": "d", "text": "No. Stop-loss orders never trigger in the demo."}
+      {"id": "d", "text": "No. A stop-loss only triggers after the market closes."}
     ],
     "answer": "b",
     "explanations": {
       "a": "A stop-loss needs the price to reach its trigger. A fall to Rs 485 is above Rs 480, so it does not trigger.",
       "c": "The trigger is the price you set. The day's low is not the rule.",
-      "d": "Nothing in this scenario blocks the stop. It does not trigger because the price has not reached Rs 480."
+      "d": "A stop-loss can trigger at any time while the market is open. This one does not trigger because the price has not reached Rs 480."
     },
     "concepts": ["stop-loss", "trigger"],
     "difficulty": 2,

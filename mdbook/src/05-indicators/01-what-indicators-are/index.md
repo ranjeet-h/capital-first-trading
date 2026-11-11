@@ -41,7 +41,7 @@ Here are three things an indicator cannot tell you:
 
 ## See it
 
-<!-- component: indicator-playground | caption: Change the window length of an average and watch the line lag or lead the price -->
+<!-- component: indicator-playground | indicator: sma | period: 10 | lag: on | caption: Change the window length of an average and watch the line lag behind the price. Press Play to watch the bars arrive one at a time -->
 
 Change the window length and watch the line. A longer window makes the line smoother and slower. A shorter window makes it follow the price more closely. Notice that the line always trails the price after a turn. Try the first turn in the chart, then the second.
 
@@ -59,7 +59,7 @@ The average of Rs 102.80 summarises the last five days. It does not predict day 
 
 ## Try it
 
-<!-- component: indicator-playground | caption: Interactive demo of the window length, with the line compared against the price -->
+<!-- component: indicator-playground | indicator: sma | closes: 100,102,104,103,105 | period: 5 | edit: on | caption: The five closes of the worked example. Change the closes or the window and see the average -->
 
 ### Guided exercise
 
@@ -96,7 +96,7 @@ Mode: **kite_demo**. Demo only. Do not place any order.
 
 1. Open the demo chart for one stock.
 2. List every indicator on the chart. Write its name and its parameter, such as the window length.
-3. Record the default parameter for each indicator. Note the default as shown in the demo, and mark it [VERIFY: Kite default parameters] until you confirm it in Kite's help.
+3. Record the default parameter for each indicator. Note the setting exactly as the demo shows it. Zerodha's charting manual does not list default settings, so read them on your own screen in the indicator settings.
 4. For each indicator, write one sentence on what it describes about the past.
 
 Log it in your journal (or on paper until the journal app is ready).
@@ -120,13 +120,8 @@ Log it in your journal (or on paper until the journal app is ready).
 ## Sources and verification
 
 - Zerodha Varsity, technical indicators overview (reference only).
-- Kite chart help [VERIFY: page title and the indicator list shown in Kite].
-- Standard technical-analysis texts [VERIFY: choose the texts to cite].
-
-Facts to verify before this chapter is final:
-
-[VERIFY: Kite indicator list and default parameters]
-
-<!-- facts-needed: Kite indicator list and default parameters from Kite chart help; the exact page title for the chart help. -->
+- Zerodha, Kite charting manual (kite.trade/docs/kite/charting). It says Kite has over 100 indicators, and that indicators apply to the closing price by default. (As of 11 Nov 2026. Check the manual for changes.)
+- J. Welles Wilder, *New Concepts in Technical Trading Systems* (1978), the original source of RSI and ATR.
+- StockCharts ChartSchool, a free reference on the standard indicator settings.
 
 <!-- standing-disclaimer -->

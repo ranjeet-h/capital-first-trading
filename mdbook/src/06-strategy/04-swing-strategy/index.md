@@ -74,7 +74,7 @@ Later, the highest close since entry is Rs 280. ATR(14) is Rs 5.00.
 | 11. Gross gain | (265 - 257) x 48 = 8 x 48 | Rs 384 |
 | 12. Gain in R | 384 / 480 | 0.8R |
 
-The gain is Rs 384, before costs and taxes. [VERIFY: cost and tax inputs for this example] The result is hypothetical.
+The gain is Rs 384, before costs and taxes. The result is hypothetical. The real charges, such as Zerodha's zero brokerage on delivery trades as of 11 Nov 2026, are in *Costs on a trade*, and the tax rules are in *Taxes on trading profits*. Rules change, so check the Zerodha charges page.
 
 ## Try it
 
@@ -132,8 +132,8 @@ Mode: **paper**. Write it in your journal. If the journal is not ready, use pape
 - This specification is not evidence of profit. A rule set that passes a backtest has not shown that it works live.
 - Forward testing and live trading are different. Prices, fills and emotions change when real money is at risk.
 - The filter values and the 55-bar and 50-day settings are choices. Changing them after you see results fits the past.
-- A gap can move the exit far from the stop. See *Gaps and what they mean for stops*. [VERIFY: circuit price band rules for gap exits]
-- Costs, taxes and holidays are not in the arithmetic above. [VERIFY: NSE holiday list] [VERIFY: cost and tax inputs]
+- A gap can move the exit far from the stop. See *Gaps and what they mean for stops*. NSE puts a daily price band of 2%, 5%, 10% or 20% on most shares, measured from the previous close. If a share is locked at its lower band, there may be no buyers, and you may not be able to exit at all. Shares with futures and options use a flexible 10% range instead. (As of 11 Nov 2026, NSE Basic FAQs on the Secondary Market and SEBI's master circular on trading. Rules change, so check the NSE site.)
+- Costs, taxes and holidays are not in the arithmetic above. The exchange holiday list for 2026 is on the NSE site (16 weekday holidays, as shown on Zerodha's market holiday calendar on 11 Nov 2026, which includes 15 Jan, added after NSE's first list of 12 Dec 2025). Bars are only for days the market is open, so check the list before you count days.
 
 ## Remember
 
@@ -147,12 +147,7 @@ Mode: **paper**. Write it in your journal. If the journal is not ready, use pape
 
 - Book chapters: *ATR and volatility, used for stops*, and *Position sizing step by step*.
 - The testing rules for realism, in *Backtesting basics and the realism contract*.
-- [VERIFY: cost and tax inputs for this example]
-- [VERIFY: circuit price band rules for gap exits]
-- [VERIFY: NSE holiday list]
-
-<!-- facts-needed: cost and tax inputs; circuit price band rules and their effect on exits; trading holiday list. Filter thresholds are design choices, not facts. -->
-
-<!-- OPEN: The rule set is shown as a table. The structured specification in the source notes is a proposal with a grammar still to be fixed. Confirm the book should show the table only. -->
+- *Costs on a trade* and *Taxes on trading profits*, each with its own dated sources (read on 11 Nov 2026).
+- NSE Basic FAQs on the Secondary Market (price bands) and NSE holiday list for 2026, read on 11 Nov 2026.
 
 <!-- standing-disclaimer -->

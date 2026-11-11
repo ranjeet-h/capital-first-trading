@@ -1,0 +1,492 @@
+[
+  {
+    "id": "sebi_fo_study_jan2023_loss_share_fy22",
+    "value": 89,
+    "unit": "percent of individual F&O traders with losses",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/jan-2023/1674645296493.pdf",
+    "sourceName": "SEBI study 'Analysis of Profit and Loss of Individual Traders dealing in Equity F&O Segment' (Jan 2023)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "FY22 data; top 10 brokers; study also covers FY19."
+  },
+  {
+    "id": "sebi_fo_study_jan2023_avg_loss_fy22",
+    "value": 110000,
+    "unit": "Rs per loss-making individual trader",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/jan-2023/1674645296493.pdf",
+    "sourceName": "SEBI study Jan 2023",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Reported as about Rs 1.1 lakh average loss, FY22."
+  },
+  {
+    "id": "sebi_fo_study_sep2024_fy24_loss_share",
+    "value": 91.1,
+    "unit": "percent of individual traders with net loss, FY24",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/sep-2024/1727085659479.pdf",
+    "sourceName": "SEBI study 'Analysis of Profits & Losses in the Equity Derivatives Segment (FY22-FY24)', 23 Sep 2024",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "About 73 lakh traders; top 15 brokers."
+  },
+  {
+    "id": "sebi_fo_study_sep2024_fy24_avg_loss",
+    "value": 120000,
+    "unit": "Rs average net loss per individual trader, FY24",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/sep-2024/1727085659479.pdf",
+    "sourceName": "SEBI study 23 Sep 2024",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Reported as Rs 1.20 lakh."
+  },
+  {
+    "id": "sebi_fo_study_sep2024_three_year_traders",
+    "value": 1.13,
+    "unit": "crore unique individual traders, FY22-FY24",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/sep-2024/1727085659479.pdf",
+    "sourceName": "SEBI study 23 Sep 2024",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Combined net loss Rs 1.81 lakh crore including costs."
+  },
+  {
+    "id": "sebi_fo_study_sep2024_three_year_net_loss",
+    "value": 1.81,
+    "unit": "lakh crore Rs combined net loss FY22-FY24",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/sep-2024/1727085659479.pdf",
+    "sourceName": "SEBI study 23 Sep 2024",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Including costs."
+  },
+  {
+    "id": "sebi_fo_study_sep2024_three_year_loss_share",
+    "value": 92.8,
+    "unit": "percent loss-makers FY22-FY24 (press release rounds to 93)",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/sep-2024/1727085659479.pdf",
+    "sourceName": "SEBI study 23 Sep 2024 and press release PR No. 22/2024",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Only 7.2 percent made a profit; only 1 percent earned over Rs 1 lakh after costs."
+  },
+  {
+    "id": "sebi_fo_study_aug2026_loss_share_fy25",
+    "value": 90.9,
+    "unit": "percent loss-makers FY25",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf",
+    "sourceName": "SEBI study 'Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26)', Aug 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Top 15 brokers, about 90 percent of the population; FY25 figure revised for broker sample change."
+  },
+  {
+    "id": "sebi_fo_study_aug2026_loss_share_fy26",
+    "value": 87.7,
+    "unit": "percent loss-makers FY26",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf",
+    "sourceName": "SEBI study Aug 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "sebi_fo_study_aug2026_net_loss_fy26",
+    "value": 91685,
+    "unit": "Rs crore aggregate net loss FY26",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf",
+    "sourceName": "SEBI study Aug 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Down 18 percent from revised Rs 1.12 lakh crore in FY25."
+  },
+  {
+    "id": "sebi_fo_study_aug2026_avg_loss_fy26",
+    "value": 117000,
+    "unit": "Rs average loss per person FY26",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf",
+    "sourceName": "SEBI study Aug 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Reported as Rs 1.17 lakh versus Rs 1.13 lakh the year before."
+  },
+  {
+    "id": "sebi_fo_study_aug2026_options_share_of_losses",
+    "value": 92,
+    "unit": "percent of losses from options",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf",
+    "sourceName": "SEBI study Aug 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "sebi_circular_2024_min_contract_value",
+    "value": "Rs 15 lakh at introduction; lot size set so value is Rs 15-20 lakh at review",
+    "unit": "text",
+    "sourceUrl": "https://www.sebi.gov.in/legal/circulars/oct-2024/measures-to-strengthen-equity-index-derivatives-framework-for-investor-protection-and-market-stability_87310.html",
+    "sourceName": "SEBI circular SEBI/HO/MRD/TPD-1/P/CIR/2024/132, 1 Oct 2024",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Applies to new contracts introduced after 20 Nov 2024. Page URL may differ; circular number is the key."
+  },
+  {
+    "id": "sebi_circular_2024_upfront_option_premium",
+    "value": "Option premium collected upfront from buyers, from 1 Feb 2025",
+    "unit": "text",
+    "sourceUrl": "https://www.sebi.gov.in/",
+    "sourceName": "SEBI circular 1 Oct 2024",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Also no calendar-spread benefit on expiry day from 1 Feb 2025; intraday position-limit monitoring from 1 Apr 2025."
+  },
+  {
+    "id": "nse_nifty50_lot_size",
+    "value": 65,
+    "unit": "units",
+    "sourceUrl": "https://nsearchives.nseindia.com/",
+    "sourceName": "NSE circular FAOP/70616, 3 Oct 2025 (Circular 176/2025)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Was 75. Bank Nifty 30 (was 35), Fin Nifty 60 (was 65), Midcap Select 120 (was 140), Nifty Next 50 25 unchanged. First expiries on new lots: 6 Jan 2026 weekly, 27 Jan 2026 monthly."
+  },
+  {
+    "id": "nse_index_derivatives_expiry_day",
+    "value": "Tuesday (previous trading day if holiday)",
+    "unit": "text",
+    "sourceUrl": "https://www.nseindia.com/products-services/equity-derivatives-contract-specifications",
+    "sourceName": "NSE contract specifications page (updated 11 Aug 2026) and circular FAOP/68747 of 25 Jun 2025",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Nifty 50 only has weekly expiries; other index contracts monthly."
+  },
+  {
+    "id": "nse_clearing_futures_daily_settlement",
+    "value": "Daily MTM at settlement price from last-30-minute VWAP of the contract",
+    "unit": "text",
+    "sourceUrl": "https://www.nseclearing.in/",
+    "sourceName": "NSE Clearing settlement mechanism page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "MTM pay-in/pay-out T+1 (members may opt T+0)."
+  },
+  {
+    "id": "nse_clearing_initial_margin_model",
+    "value": "SPAN, 99 percent VaR, 1-day horizon (2-day for futures)",
+    "unit": "text",
+    "sourceUrl": "https://www.nseclearing.in/",
+    "sourceName": "NSE Clearing margin page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Collected upfront from members, trading members and clients."
+  },
+  {
+    "id": "zerodha_option_charges",
+    "value": "Brokerage flat Rs 20 per executed order; STT 0.15 percent on sell side premium; NSE transaction charge 0.03553 percent of premium",
+    "unit": "text",
+    "sourceUrl": "https://zerodha.com/charges/",
+    "sourceName": "Zerodha charges page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "GST 18 percent on brokerage+SEBI+transaction; SEBI Rs 10 per crore; stamp 0.003 percent buy side."
+  },
+  {
+    "id": "sebi_retail_algo_circular_2025",
+    "value": "SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/0000013 dated 4 Feb 2025",
+    "unit": "text",
+    "sourceUrl": "https://www.sebi.gov.in/",
+    "sourceName": "SEBI circular on safer participation of retail investors in algorithmic trading",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Broker is principal, algo provider is agent; exchange-provided Algo-ID on all API orders; no open APIs; static IP, OAuth, 2FA; providers empanelled with exchanges; black-box providers register as Research Analyst; self-built retail algos for family only."
+  },
+  {
+    "id": "sebi_retail_algo_glide_path",
+    "value": "Go-live 1 Oct 2025; milestones 31 Oct 2025, 30 Nov 2025, mock session by 3 Jan 2026; no new retail API clients for non-compliant brokers from 5 Jan 2026",
+    "unit": "text",
+    "sourceUrl": "https://www.sebi.gov.in/",
+    "sourceName": "SEBI circular SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/132, 30 Sep 2025",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Original effective date 1 Aug 2025, moved by circular of 29 Jul 2025."
+  },
+  {
+    "id": "nse_retail_algo_ops_threshold",
+    "value": 10,
+    "unit": "orders per second per exchange (initial threshold)",
+    "sourceUrl": "https://nsearchives.nseindia.com/",
+    "sourceName": "NSE circular INVG/67858, 5 May 2025 (Circular 471/2025)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Above threshold the algo must be registered with an exchange algo ID; orders above limit rejected; static IP mandatory; mapped IP change at most once per calendar week."
+  },
+  {
+    "id": "kite_connect_personal_plan",
+    "value": "Free; orders, GTT, alerts, margins, portfolio; no live or historical data",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/general-kite/kite-api/articles/what-are-the-charges-for-kite-apis",
+    "sourceName": "Zerodha support: charges for Kite APIs",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "kite_connect_paid_plan",
+    "value": 500,
+    "unit": "Rs per month per app",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/general-kite/kite-api/articles/what-are-the-charges-for-kite-apis",
+    "sourceName": "Zerodha support: charges for Kite APIs",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Adds live WebSocket data and historical candles; historical data cannot be bought alone. From Oct 2026, paid users with Rs 2,000+ monthly brokerage get 500 Developer Credits."
+  },
+  {
+    "id": "kite_connect_sandbox",
+    "value": "No sandbox offered",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/general-kite/kite-api/articles/kite-connect-api-faqs",
+    "sourceName": "Zerodha support: Kite Connect FAQs",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "kite_api_static_ip",
+    "value": "Required for API order placement from 1 Apr 2026; change once per calendar week; up to 2 IPs; family may share",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/general-kite/kite-api/articles/static-ip",
+    "sourceName": "Zerodha support: static IP",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "WebSocket and orderbook/position APIs may use any IP."
+  },
+  {
+    "id": "zerodha_paper_trading",
+    "value": "Zerodha does not offer demo accounts for paper trading; a demo version of Kite with dummy data exists",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/trading-faqs/general/articles/does-zerodha-offer-demo-accounts-for-paper-trading",
+    "sourceName": "Zerodha support",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Demo at kite-demo.zerodha.com/dashboard."
+  },
+  {
+    "id": "nse_preopen_session",
+    "value": "9:00-9:15 am; equilibrium price = max executable volume, then min imbalance, then closest to previous close",
+    "unit": "text",
+    "sourceUrl": "https://www.nseindia.com/static/products-services/equity-market-pre-open",
+    "sourceName": "NSE pre-open session page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Sub-timings reportedly changed 7 Sep 2026 (entry 9:00-9:10, matching 9:10-9:12, buffer 9:12-9:15); verify on NSE page before stating."
+  },
+  {
+    "id": "nse_price_time_priority",
+    "value": "Orders stored in price-time priority",
+    "unit": "text",
+    "sourceUrl": "https://www.nseindia.com/",
+    "sourceName": "NSE trading system page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "nse_closing_auction_session",
+    "value": "CAS after 3:15 pm; reference price = VWAP of trades 3:00-3:15 pm; band +/-3 percent; limit and market orders only",
+    "unit": "text",
+    "sourceUrl": "https://www.nseindia.com/",
+    "sourceName": "NSE circular CMTR/73362, 18 Mar 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Further changes announced from 7 Dec 2026 were seen only in news summaries; not stated in the book."
+  },
+  {
+    "id": "nse_equity_continuous_session",
+    "value": "9:15 am to 3:30 pm (shares without closing auction)",
+    "unit": "text",
+    "sourceUrl": "https://www.nseindia.com/",
+    "sourceName": "NSE market timings / CAS page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Derivatives segment 9:15 am-3:40 pm per CAS page."
+  },
+  {
+    "id": "nse_index_closing_price_method",
+    "value": "Last half hour weighted average closing prices of constituents",
+    "unit": "text",
+    "sourceUrl": "https://www.niftyindices.com/",
+    "sourceName": "NSE Indices FAQ",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "nsdl_fpi_report_definitions",
+    "value": "Exchanges compile provisional FII/FPI data on day T; confirmed data from custodian reports; columns gross purchases, gross sales, net investment in Rs crore",
+    "unit": "text",
+    "sourceUrl": "https://www.fpi.nsdl.co.in/Reports/Latest.aspx",
+    "sourceName": "NSDL FPI reports page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Net = purchases minus sales. Publication time not confirmed."
+  },
+  {
+    "id": "kite_charting_manual",
+    "value": "Over 100 indicators, 15+ chart types, 30+ drawing tools; indicators apply to close by default; 11 moving-average types; intraday data from 2015",
+    "unit": "text",
+    "sourceUrl": "https://kite.trade/docs/kite/charting/",
+    "sourceName": "Zerodha Kite charting manual",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "No default indicator parameters listed."
+  },
+  {
+    "id": "indicator_rsi_convention",
+    "value": "14 periods, Wilder smoothing",
+    "unit": "text",
+    "sourceUrl": "https://chartschool.stockcharts.com/",
+    "sourceName": "StockCharts ChartSchool (common convention, not official)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Wilder (1978)."
+  },
+  {
+    "id": "indicator_atr_convention",
+    "value": "14 periods, Wilder smoothing",
+    "unit": "text",
+    "sourceUrl": "https://chartschool.stockcharts.com/",
+    "sourceName": "StockCharts ChartSchool (common convention)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "First TR = high - low; first ATR = average of 14 TRs."
+  },
+  {
+    "id": "indicator_macd_convention",
+    "value": "12-day EMA minus 26-day EMA; 9-day EMA signal; on close",
+    "unit": "text",
+    "sourceUrl": "https://chartschool.stockcharts.com/",
+    "sourceName": "StockCharts ChartSchool (common convention)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Gerald Appel."
+  },
+  {
+    "id": "indicator_bollinger_convention",
+    "value": "20-period SMA, 2 standard deviations",
+    "unit": "text",
+    "sourceUrl": "https://chartschool.stockcharts.com/",
+    "sourceName": "StockCharts ChartSchool (common convention)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "John Bollinger's site states population standard deviation."
+  },
+  {
+    "id": "bollinger_sd_population",
+    "value": "Population standard deviation",
+    "unit": "text",
+    "sourceUrl": "https://www.bollingerbands.com/",
+    "sourceName": "bollingerbands.com (John Bollinger)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "'We use the population calculation for standard deviation'."
+  },
+  {
+    "id": "yahoo_terms_data_use",
+    "value": "No automated collection without permission; no commercial reuse; no reproduction or distribution without written permission",
+    "unit": "text",
+    "sourceUrl": "https://legal.yahoo.com/us/en/yahoo/terms/otos/index.html",
+    "sourceName": "Yahoo terms of service",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "No CSV column or adjustment documentation opened."
+  },
+  {
+    "id": "nse_data_usage_policy",
+    "value": "End-of-day and historical data are 'Market Data'; shared via agreements and licences",
+    "unit": "text",
+    "sourceUrl": "https://nsearchives.nseindia.com/web/sites/default/files/inline-files/NSE_DataUsageandSharingPolicy.pdf",
+    "sourceName": "NSE Data Usage and Data Sharing Policy",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Website terms of use not opened."
+  },
+  {
+    "id": "nse_bhavcopy_change",
+    "value": "Old bhavcopy discontinued 8 Jul 2024; replaced by UDiFF common bhavcopy",
+    "unit": "text",
+    "sourceUrl": "https://www.nseindia.com/",
+    "sourceName": "NSE circular 62424, 12 Jun 2024",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "cite_bailey_2014_notices_ams",
+    "value": "Bailey, Borwein, Lopez de Prado, Zhu (2014), Notices of the AMS 61(5), 458-471",
+    "unit": "text",
+    "sourceUrl": "https://www.ams.org/notices/201405/rnoti-p458.pdf",
+    "sourceName": "AMS Notices",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "cite_harvey_liu_2015_backtesting",
+    "value": "Harvey and Liu (2015), 'Backtesting', Journal of Portfolio Management 42(1), 13-28",
+    "unit": "text",
+    "sourceUrl": "https://www.pm-research.com/content/iijpormgmt/42/1/13",
+    "sourceName": "Journal of Portfolio Management",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "cite_kahneman_tversky_1979",
+    "value": "Econometrica 47(2), 263-291",
+    "unit": "text",
+    "sourceUrl": "https://www.jstor.org/stable/1914185",
+    "sourceName": "Econometrica",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "End page differs by source; book gives the start page only."
+  },
+  {
+    "id": "cite_kahneman_2011",
+    "value": "Thinking, Fast and Slow, Farrar, Straus and Giroux, 2011, first edition",
+    "unit": "text",
+    "sourceUrl": "https://us.macmillan.com/books/9780374533557/thinkingfastandslow/",
+    "sourceName": "Macmillan",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "cite_pardo_2008",
+    "value": "Pardo, The Evaluation and Optimization of Trading Strategies, 2nd ed., Wiley, 2008, ISBN 978-0-470-12801-5",
+    "unit": "text",
+    "sourceUrl": "https://www.wiley.com/",
+    "sourceName": "Wiley",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "cite_sharpe_1966",
+    "value": "Sharpe (1966), 'Mutual Fund Performance', Journal of Business 39(1), 119-138",
+    "unit": "text",
+    "sourceUrl": "https://www.jstor.org/stable/2351741",
+    "sourceName": "JSTOR / Journal of Business",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "cite_tversky_kahneman_1971",
+    "value": "Tversky and Kahneman (1971), 'Belief in the Law of Small Numbers', Psychological Bulletin 76(2), 105-110",
+    "unit": "text",
+    "sourceUrl": "https://doi.org/10.1037/h0031322",
+    "sourceName": "Psychological Bulletin (DOI 10.1037/h0031322)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  }
+]

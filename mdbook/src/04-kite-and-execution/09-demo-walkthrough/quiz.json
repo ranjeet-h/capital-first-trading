@@ -50,18 +50,18 @@
   {
     "id": "T4.9-q5",
     "type": "scenario",
-    "prompt": "Hypothetical. A demo fill is Rs 1 away from the entry price in your plan. What should you do?",
+    "prompt": "Hypothetical. In a real order, the fill is Rs 1 away from the entry price in your plan. What should you do?",
     "options": [
-      {"id": "a", "text": "Ignore it, because it is only the demo."},
+      {"id": "a", "text": "Ignore it, because it is only a paper trade."},
       {"id": "b", "text": "Record the difference and the reason, then compare it with the plan."},
-      {"id": "c", "text": "Change the plan to match the demo fill, so the record looks right."},
+      {"id": "c", "text": "Change the plan to match the fill, so the record looks right."},
       {"id": "d", "text": "Count the result as proof that the plan works."}
     ],
     "answer": "b",
     "explanations": {
-      "a": "A difference between plan and fill is useful information. Ignoring it hides what the demo showed.",
+      "a": "A difference between plan and fill is useful information. Ignoring it hides what the fill showed.",
       "c": "Changing the plan after the fact removes the record of what you planned. Keep the plan as written.",
-      "d": "A demo result does not prove that a plan works. The demo uses dummy data."
+      "d": "A paper result does not prove that a plan works. A paper trade uses numbers you wrote yourself."
     },
     "concepts": ["plan-vs-execution", "journal"],
     "difficulty": 2,
@@ -72,15 +72,15 @@
     "type": "spot-the-mistake",
     "prompt": "Which statement is wrong?",
     "options": [
-      {"id": "a", "text": "Demo data is dummy data."},
-      {"id": "b", "text": "A demo result is evidence that the plan works for live money."},
-      {"id": "c", "text": "A demo trade should be labelled kite demo in the journal."},
-      {"id": "d", "text": "A demo fill can differ from the plan."}
+      {"id": "a", "text": "A paper trade uses numbers you wrote yourself."},
+      {"id": "b", "text": "A paper result is evidence that the plan works for live money."},
+      {"id": "c", "text": "A paper trade should be labelled paper in the journal."},
+      {"id": "d", "text": "A fill can differ from the plan."}
     ],
     "answer": "b",
     "explanations": {
-      "a": "This is correct. The demo uses dummy data, so its profit or loss is not real.",
-      "c": "This is correct. The label keeps demo records apart from live ones.",
+      "a": "This is correct. A paper trade uses numbers you wrote yourself, so its profit or loss is not real money.",
+      "c": "This is correct. The label keeps paper records apart from live ones.",
       "d": "This is correct. A fill can differ from the plan, and the difference should be recorded."
     },
     "concepts": ["demo-evidence", "labelling"],
@@ -90,18 +90,18 @@
   {
     "id": "T4.9-q7",
     "type": "mcq",
-    "prompt": "Which label is correct for a record made in the Kite demo?",
+    "prompt": "Which label is correct for a record of a trade you only wrote on paper?",
     "options": [
       {"id": "a", "text": "live trade"},
-      {"id": "b", "text": "kite demo"},
+      {"id": "b", "text": "paper"},
       {"id": "c", "text": "proven strategy"},
       {"id": "d", "text": "no label needed"}
     ],
     "answer": "b",
     "explanations": {
-      "a": "A demo trade is never a live trade. Labelling it live mixes demo and real results.",
-      "c": "One demo trade does not prove a strategy. The label should say kite demo.",
-      "d": "Every demo record needs a label, so that it is never mistaken for a live record."
+      "a": "A paper trade is never a live trade. Labelling it live mixes paper and real results.",
+      "c": "One paper trade does not prove a strategy. The label should say paper.",
+      "d": "Every paper record needs a label, so that it is never mistaken for a live record."
     },
     "concepts": ["labelling", "journal"],
     "difficulty": 1,

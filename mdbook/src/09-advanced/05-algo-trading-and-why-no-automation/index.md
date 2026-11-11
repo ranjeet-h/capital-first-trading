@@ -20,9 +20,21 @@ A reader thinks, "If a script can watch prices for me, it can place my orders wh
 - An **alert** tells you that a level was crossed. It places nothing.
 - An **order** sends an instruction to a broker to buy or sell. Sending an order is a separate step, and it is regulated.
 
-A **trading API** is a way for software to talk to a broker. Plans differ. Some plans may not include the market data you need. [VERIFY: Kite Connect plan contents, including orders, alerts and market data]
+A **trading API** is a way for software to talk to a broker. Plans differ. Some plans may not include the market data you need.
 
-The **SEBI retail algo framework** sets rules for brokers and for retail use of algorithms. It includes a way to identify algorithms, called Algo-ID. Current requirements and dates are not stated here. [VERIFY: SEBI and exchange circulars on retail algo trading and Algo-ID]
+Zerodha's Kite Connect is one example. Its Personal plan is free. It covers orders, GTT orders, alerts, margin checks and portfolio tools, but it gives no live data and no historical data. The paid Connect plan costs Rs 500 per month for each app, and it adds live data and historical candles. Zerodha says historical data cannot be bought alone, and it offers no test sandbox for Kite Connect. (As of 11 Nov 2026, Zerodha support pages on Kite API charges and FAQs. Plans and prices change, so check support.zerodha.com.)
+
+The **SEBI retail algo framework** sets rules for brokers and for retail use of algorithms. It includes a way to identify algorithms, called Algo-ID. Here is what the official papers say.
+
+- SEBI's circular of 4 February 2025 on safer participation of retail investors in algorithmic trading makes the broker responsible. The broker is the principal, and the algo provider is its agent.
+- Every order sent through an API carries an identifier given by the exchange. This is the Algo-ID.
+- Brokers may not leave APIs open. A client needs an API key tied to that client and a fixed internet address that the broker has approved. Login must use OAuth and two-step checks.
+- An exchange circular of 5 May 2025 sets a limit of 10 orders per second at first. Below that limit, a client's own algo needs no extra registration through the broker. A client who wants to go above it must register the algo and get an Algo-ID from the exchange. Orders above the limit are rejected.
+- Algo providers must be listed with the exchanges. A provider who sells ready-made "black box" algos must also register as a research analyst.
+- A later SEBI circular of 30 September 2025 set a phased start from 1 October 2025, with brokers' milestones up to 3 January 2026.
+- Zerodha says a fixed (static) internet address is needed to place orders through its API from 1 April 2026. It can be changed once a week, and family members may share one.
+
+(As of 11 Nov 2026, SEBI circulars of 4 Feb 2025 and 30 Sep 2025, NSE circular of 5 May 2025, and Zerodha support pages. Rules change, so check the SEBI and NSE sites.)
 
 Automation does not remove risk. It can repeat one mistake many times, quickly. A bug can send orders you did not intend. Costs and data limits add up too.
 
@@ -39,6 +51,8 @@ flowchart LR
     C -.->|not in this book| D[Order sent to a broker]
 ```
 
+<!-- component: algo-pipeline | mode: alert | caption: Follow one idea from a written rule to an alert. A person checks. Sending an order is not part of this book. -->
+
 ## Worked example
 
 **Hypothetical, no figures.** Two scripts watch the same written price level.
@@ -47,7 +61,7 @@ flowchart LR
 |---|---|---|
 | What it does when the level is crossed | Sends you a message | Sends an order to a broker |
 | Places an order | No | Yes |
-| Duties that apply | Your own checks | Broker and regulatory duties [VERIFY: current duties] |
+| Duties that apply | Your own checks | Broker and regulatory duties, as in the section above |
 
 The code length is not the difference. The order step is the difference. That step brings compliance and risk duties that an alert does not.
 
@@ -80,7 +94,7 @@ Hints:
 Examples of good questions:
 
 - Which rules apply to a script that sends orders, and who must meet them?
-- What does an Algo-ID require, and when is it needed? [VERIFY: current Algo-ID rules]
+- What does an Algo-ID require, and when is it needed? (The official circulars answer this. Read them, and do not rely on a summary.)
 - Which broker plans include the data I need, and what does each plan contain?
 
 A good question names the source to check. It does not assume an answer.
@@ -104,8 +118,8 @@ Mode: **learning note**. This chapter has no practice. It asks for reflection on
 
 ## Limits and common mistakes
 
-- SEBI, NSE and BSE circulars and their dates change. Check them at the source before you act. [VERIFY: SEBI, NSE and BSE algo circulars]
-- Kite Connect plan contents and charges change. [VERIFY: Zerodha Kite Connect plan pages]
+- SEBI, NSE and BSE circulars and their dates change. Check them at the source before you act.
+- Kite Connect plan contents and charges change. Check the Zerodha support pages.
 - This chapter gives no code and no setup steps for any API.
 - An alert script still needs your own checks. It can be wrong too.
 - Automation does not replace the capital rules. See *Risk limits*.
@@ -120,18 +134,10 @@ Mode: **learning note**. This chapter has no practice. It asks for reflection on
 
 ## Sources and verification
 
-- SEBI circulars on retail algo trading [VERIFY: name the exact circular and its date]
-- NSE and BSE algo circular pages
-- Zerodha Kite Connect developer pages
+- SEBI circular of 4 February 2025 on safer participation of retail investors in algorithmic trading
+- SEBI circular of 30 September 2025 on the phased start (glide path)
+- NSE circular of 5 May 2025 on implementation standards for retail algo trading
+- Zerodha support pages on Kite API charges, static IP and Kite Connect FAQs
 
-Items to verify:
-
-- [VERIFY: SEBI retail algo framework, circular references and effective dates]
-- [VERIFY: Algo-ID requirements]
-- [VERIFY: Kite Connect plan contents]
-
-<!-- facts-needed: circular references and effective dates of the SEBI retail algo framework; broker obligations; Algo-ID requirements; Kite Connect plan contents and whether market data is included on each plan. -->
-
-<!-- OPEN: The spec asks for five described scripts in the guided exercise but does not give them. The five scripts were written here. The spec's quiz focus has no numeric item, so the 360-order question was added. Confirm both. -->
 
 <!-- standing-disclaimer -->

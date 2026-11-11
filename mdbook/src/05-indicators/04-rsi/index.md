@@ -39,7 +39,7 @@ A rule such as "buy when RSI is below 30" is a hypothesis. It must be tested wit
 
 ## See it
 
-<!-- component: indicator-playground | caption: RSI pane with a toggle that shows or hides the reference levels at 70 and 30 -->
+<!-- component: indicator-playground | indicator: rsi | levels: on | caption: RSI pane with a toggle that shows or hides the reference levels at 70 and 30 -->
 
 Switch the reference levels on and off. Watch how RSI behaves during a strong rise. It can sit above 70 for many days. Then watch a sideways period. The reading moves up and down between the levels.
 
@@ -66,7 +66,7 @@ For a four-period example, each average is a simple average of the four changes.
 
 ## Try it
 
-<!-- component: indicator-playground | caption: Interactive demo of the RSI pane and its reference levels -->
+<!-- component: indicator-playground | indicator: rsi | closes: 100,102,103,100,102 | period: 4 | edit: on | caption: The worked example with a four-period RSI. Change the closes and see the steps -->
 
 ### Guided exercise
 
@@ -118,7 +118,7 @@ Log it in your journal (or on paper until the journal app is ready).
 - A reading below 30 does not tell you to buy. In a strong downtrend, it can stay below 30.
 - RSI measures momentum over a window. It does not measure whether the price is high or low in general.
 - A threshold rule needs a stop and a size rule. It does not replace them.
-- The chart may use a different period or a different smoothing method. Check the setting before you compare two charts [VERIFY: Kite RSI default period].
+- The chart may use a different period or a different smoothing method. Check the setting before you compare two charts. Wilder's original RSI uses 14 periods. A chart tool may show another number, so read the setting on your screen.
 
 ## Remember
 
@@ -132,12 +132,7 @@ Log it in your journal (or on paper until the journal app is ready).
 
 - J. Welles Wilder (1978), where RSI and Wilder smoothing come from.
 - Zerodha Varsity, RSI module (reference only).
-- Kite chart help, for the RSI settings in Kite [VERIFY: page title].
-
-Facts to verify before this chapter is final:
-
-[VERIFY: Kite RSI default period]
-
-<!-- facts-needed: Kite RSI default period and smoothing method. -->
+- Zerodha, Kite charting manual (kite.trade/docs/kite/charting). It gives no default RSI setting, so read it on your own screen.
+- StockCharts ChartSchool, RSI page. It gives 14 periods and Wilder smoothing (the earlier average times 13, plus the new value, divided by 14). (As of 11 Nov 2026. This is a common convention, not an exchange rule.)
 
 <!-- standing-disclaimer -->

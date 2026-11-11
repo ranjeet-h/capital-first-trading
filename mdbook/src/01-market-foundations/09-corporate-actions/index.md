@@ -19,10 +19,10 @@ A **corporate action** is an event that a company decides on. It changes the com
 
 - **Split:** each existing share becomes more shares. Each new share is worth less. The total value does not change at the moment of the split. A "1:2 split" means each share becomes two.
 - **Bonus issue:** the company gives existing holders free extra shares, in a stated ratio. A "1:1 bonus" gives one extra share for each share you hold. The total value does not change at the moment of the issue.
-- **Dividend:** cash paid for each share you hold. On the ex-date, the share price drops by about the dividend amount. [VERIFY: ex-date definition and rules, SEBI LODR and NSE corporate actions pages]
-- **Rights issue:** existing holders can buy new shares at a stated price. The rules for who can buy, and how, must be checked. [VERIFY: SEBI rights issue rules]
+- **Dividend:** cash paid for each share you hold. On the ex-date, the share price drops by about the dividend amount. (As of 11 Nov 2026, Zerodha support page on ex-date and record date. Rules change, so check the exchange site.)
+- **Rights issue:** existing holders can buy new shares at a stated price. The company's offer document says who can buy, how many shares, at what price and by what date. Read it for each rights issue, because the terms differ. This chapter does not teach the SEBI rights issue rules.
 
-**Key dates.** The company announces the action. It then sets a record date and an ex-date. The exact meaning of each date is [VERIFY: record date, ex-date and announcement definitions].
+**Key dates.** The company announces the action. It then sets a record date and an ex-date. The **record date** is the day the company checks its list of owners to see who gets the benefit. The exchange goes by the record date. Since settlement became T+1, the **ex-date** and the record date are the same day. To get the benefit you must buy at least one trading day before that day. Think of a cut-off day for a prize list: your name must already be on the list. For bonus issues announced on or after 1 Oct 2024, the bonus shares are credited one working day after the record date and begin trading the day after that. (As of 11 Nov 2026, NSE corporate actions FAQ updated 7 Jul 2026, Zerodha support, and SEBI circular of 16 Sep 2024. Rules change, so check the NSE site.)
 
 **Formulas in words.**
 
@@ -33,7 +33,7 @@ A **corporate action** is an event that a company decides on. It changes the com
 **Adjusted and unadjusted prices.**
 
 - An **unadjusted** chart shows the real trading price on each day. A split shows up as a sudden fall.
-- An **adjusted** chart fixes past prices for splits and bonuses. The line stays smooth. Dividend adjustment rules: [VERIFY: adjustment method].
+- An **adjusted** chart fixes past prices for splits and bonuses. The line stays smooth. Tools differ in how they adjust, and some do not adjust for dividends at all. Check the setting of your own charting tool. Zerodha says Kite charts show corporate actions from the ex-date.
 
 **Where announcements come from.** The company and the exchange publish corporate actions. Read the official filing. Do not rely on a forwarded summary.
 
@@ -51,7 +51,7 @@ The table shows the same holding before and after each event. The numbers are hy
 
 Look at the value column. Each row ends at the same total. This is before market movement and before tax. The number of shares and the price change. The value of the holding does not.
 
-<!-- OPEN: spec asks for a static before-and-after candle chart. Candle charts are not in the component list, so a table is used here. Confirm. -->
+<!-- component: corporate-action-demo | action: split | shares: 100 | price: 1000 | ratio: 2 | caption: The chapter's 1:2 split on 100 shares at Rs 1,000. Switch to bonus or dividend. The price changes, the value of your holding does not. -->
 
 ## Worked example
 
@@ -81,7 +81,7 @@ This is before market movement and before tax. Tax on dividends is covered in *T
 
 ## Try it
 
-<!-- OPEN: spec gives no interactive demo for this chapter. No component placeholder is inserted. -->
+<!-- component: corporate-action-demo | action: bonus | shares: 300 | price: 600 | ratio: 1 | caption: The guided exercise: 300 shares at Rs 600 with a 1:1 bonus. Check your own answer against the demo. -->
 
 ### Guided exercise
 
@@ -146,13 +146,10 @@ Sources:
 - BSE corporate actions page.
 - Company announcements on exchange filings.
 
-Facts to verify:
-- [VERIFY: record date, ex-date and announcement definitions, SEBI LODR and NSE]
-- [VERIFY: ex-date rules, NSE corporate actions page]
-- [VERIFY: rights issue rules, SEBI]
-- [VERIFY: adjustment method for historical prices]
-- [VERIFY: tax treatment of dividends, cross-reference *Taxes on trading profits*]
-
-<!-- facts-needed: record date, ex-date and announcement definitions; ex-date rules; rights issue rules; price adjustment method; dividend tax treatment (*Taxes on trading profits*) -->
+Facts checked on 11 Nov 2026:
+- The record date and ex-date are the same day under T+1. The exchange goes by the record date, which companies set under SEBI's listing rules (Regulation 42).
+- The bonus timing rule comes from SEBI circular CIR/CFD/PoD/2024/122 of 16 Sep 2024.
+- Rights issue terms and chart adjustment methods were not checked here. Read each company's offer document, and the help pages of your charting tool.
+- Tax on dividends is not covered here. See *Taxes on trading profits*.
 
 <!-- standing-disclaimer -->

@@ -38,6 +38,8 @@ The table shows the same holding with and without the hypothetical put. The put 
 
 Read down the hedged column. The loss stops getting worse below Rs 470. The hedge also costs Rs 1,200 in the flat case, where nothing else goes wrong.
 
+<!-- component: hedge-demo | shares: 100 | entry: 500 | strike: 470 | premium: 12 | price: 400 | caption: 100 shares bought at Rs 500, with a put at strike Rs 470 that cost Rs 12 a share (Rs 1,200). Theory only. -->
+
 ## Worked example
 
 **Hypothetical.** You hold 100 shares at Rs 500. The holding is worth Rs 50,000. You also buy a hypothetical put with strike Rs 470. The premium is Rs 12 per share. That is Rs 1,200 in total. Rs 1,200 is 2.4% of Rs 50,000.
@@ -102,7 +104,7 @@ Mode: **learning note**. This chapter has no practice. It asks for reflection on
 ## Limits and common mistakes
 
 - The example assumes the put matches the holding exactly. Real hedges may not match. That gap is basis risk.
-- Option premiums, charges and rules change over time. [VERIFY: option contract, premium and charge facts, NSE and broker pages]
+- Option premiums, charges and rules change over time. Lot sizes, expiry days and charges are on the NSE contract page and on the Zerodha charges page (zerodha.com/charges). This chapter uses made-up premiums only. (As of 11 Nov 2026. Rules change, so check the NSE site.)
 - A hedge can lose money in a flat market, because its cost is paid either way.
 - Hedging with derivatives is theory in this book. There is no practice path.
 - A hedge does not replace the risk-per-trade rule. See *Risk per trade and stop-loss distance*.
@@ -118,12 +120,7 @@ Mode: **learning note**. This chapter has no practice. It asks for reflection on
 ## Sources and verification
 
 - NSE derivatives pages
-- A standard risk management text [VERIFY: name the text before use]
-
-Items to verify:
-
-- [VERIFY: contract and charge facts, as in the chapter on futures and the chapter on options]
-
-<!-- facts-needed: contract and charge facts for options used as hedges; name of the risk management text. -->
+- Zerodha charges page (zerodha.com/charges)
+- The chapters on futures and on options in this track, for contract and charge facts
 
 <!-- standing-disclaimer -->

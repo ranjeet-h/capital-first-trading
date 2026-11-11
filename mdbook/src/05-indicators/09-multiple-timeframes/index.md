@@ -30,7 +30,7 @@ Some points to keep in mind:
 
 - Pick two timeframes before you test anything. Write them down.
 - Each extra timeframe adds settings. More settings make it easier to fit a rule to past data (*Overfitting and the number of things you tried*).
-- Holiday weeks have fewer daily candles. A weekly candle built from a short week covers fewer days. [VERIFY: NSE holiday list]
+- Holiday weeks have fewer daily candles. A weekly candle built from a short week covers fewer days. The days when the market is shut are on the NSE trading holidays page.
 - A filter that passes is not a forecast. It only says the rule allows a look.
 
 ## See it
@@ -122,7 +122,7 @@ Mode: **paper**. This is a learning log only. Log it in your journal (or on pape
 
 - Two timeframes do not make a trade safer. A stop and a position size are still needed.
 - Each added timeframe adds settings. More settings make overfitting easier.
-- A weekly candle needs its full set of days. A holiday week can give a candle built from fewer days. [VERIFY: NSE holiday list]
+- A weekly candle needs its full set of days. A holiday week can give a candle built from fewer days.
 - A filter that passes is not a forecast. The filter only allows a look at the trigger.
 
 ## Remember
@@ -135,14 +135,7 @@ Mode: **paper**. This is a learning log only. Log it in your journal (or on pape
 ## Sources and verification
 
 - Zerodha Varsity, multiple timeframe module (reference only, original wording).
-- Kite chart help pages, for available intervals. [VERIFY: article title]
-- NSE India, trading holiday list. [VERIFY: NSE holiday list]
-
-<!-- facts-needed: Kite interval availability on the chart; NSE holiday list for the weeks used in examples; treatment of shortened sessions. -->
-
-[VERIFY: NSE holiday list]
-[VERIFY: Kite chart interval availability]
-
-<!-- OPEN: The spec's visual line asks for a weekly and daily toggle on candle-builder. The base list shows timeframe settings only for 1-minute, 5-minute and daily, so the weekly setting in the placeholder may need checking when the component is built. -->
+- Zerodha, Kite charting manual (kite.trade/docs/kite/charting), for the chart intervals Kite offers. It says intraday data is available from 2015.
+- NSE India, trading holidays page.
 
 <!-- standing-disclaimer -->

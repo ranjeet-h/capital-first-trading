@@ -47,7 +47,7 @@ Crossovers are a popular use of moving averages. A crossover happens when a shor
 
 ## See it
 
-<!-- component: indicator-playground | caption: SMA and EMA drawn over the same made-up closes, with a switch for the starting value of the EMA -->
+<!-- component: indicator-playground | indicator: ema | compareTo: sma | period: 5 | caption: SMA and EMA drawn over the same made-up closes, with a switch for the starting value of the EMA -->
 
 Look at both lines on the same made-up prices. The EMA bends sooner after a turn in the price. Then switch the starting value of the EMA and see how the first few days change. The later values move closer together.
 
@@ -86,7 +86,7 @@ The EMA moved Rs 2.40 towards the new close. On the same close of Rs 110, the SM
 
 ## Try it
 
-<!-- component: indicator-playground | caption: Interactive demo of SMA and EMA lines and the starting value of the EMA -->
+<!-- component: indicator-playground | indicator: ema | compareTo: sma | closes: 100,102,104,103,105,110 | period: 5 | edit: on | caption: The worked example. Change the last close from 110 to 107 and compare the new SMA and EMA with the chapter -->
 
 ### Guided exercise
 
@@ -151,13 +151,7 @@ Log it in your journal (or on paper until the journal app is ready).
 ## Sources and verification
 
 - Zerodha Varsity, moving averages module (reference only).
-- Kite chart help, for the moving-average types shown in Kite [VERIFY: page title].
-- Standard technical-analysis texts [VERIFY: choose the texts to cite].
-
-Facts to verify before this chapter is final:
-
-[VERIFY: Kite default moving-average types]
-
-<!-- facts-needed: Kite default moving-average type and period; the Lab 4 chapter title for the cross-reference. -->
+- Zerodha, Kite charting manual (kite.trade/docs/kite/charting). It lists 11 moving-average types and says indicators apply to the closing price by default. It does not state default settings, so read the setting on your own screen. (As of 11 Nov 2026. Check the manual for changes.)
+- StockCharts ChartSchool, a free reference on moving averages.
 
 <!-- standing-disclaimer -->

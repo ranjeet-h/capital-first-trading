@@ -1,0 +1,608 @@
+[
+  {
+    "id": "sebi_fo_study_title",
+    "value": "Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26)",
+    "unit": "text",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf",
+    "sourceName": "SEBI DEPA study, Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26), Aug 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Authors Prasad Patankar and Dr. Prabhas Kumar Rath. Covers equity derivatives only, individuals include retail and HNI. Sample is top 15 brokers, about 90% of individual traders."
+  },
+  {
+    "id": "sebi_fo_study_loss_makers_fy26",
+    "value": 87.7,
+    "unit": "percent of individual traders",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf",
+    "sourceName": "SEBI DEPA study, Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26), Aug 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "FY25 figure was 90.9 percent."
+  },
+  {
+    "id": "sebi_fo_study_loss_makers_fy25",
+    "value": 90.9,
+    "unit": "percent of individual traders",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf",
+    "sourceName": "SEBI DEPA study, Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26), Aug 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "sebi_fo_study_aggregate_loss_fy26",
+    "value": 91685,
+    "unit": "Rs crore",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf",
+    "sourceName": "SEBI DEPA study, Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26), Aug 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "FY25 revised to Rs 1.12 lakh crore because broker sample grew from 13 to 15."
+  },
+  {
+    "id": "sebi_fo_study_avg_loss_fy26",
+    "value": 1.17,
+    "unit": "Rs lakh per person",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf",
+    "sourceName": "SEBI DEPA study, Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26), Aug 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "FY25 was Rs 1.13 lakh."
+  },
+  {
+    "id": "sebi_fo_study_transaction_costs",
+    "value": 25000,
+    "unit": "Rs crore per year (approx, FY25 and FY26)",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf",
+    "sourceName": "SEBI DEPA study, Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26), Aug 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "sebi_fo_study_options_share_of_losses",
+    "value": 92,
+    "unit": "percent of aggregate individual losses",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf",
+    "sourceName": "SEBI DEPA study, Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26), Aug 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "sebi_fo_study_loser_concentration",
+    "value": "About 23% of traders account for nearly 90% of losses",
+    "unit": "text",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/attachdocs/aug-2026/1787233506209.pdf",
+    "sourceName": "SEBI DEPA study, Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26), Aug 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "nse_pre_open_window",
+    "value": "09:00 to 09:15",
+    "unit": "IST",
+    "sourceUrl": "https://www.nseindia.com/static/products-services/equity-market-pre-open",
+    "sourceName": "NSE equity market pre-open page and NSE circulars NSE/CMTR/73362, 75479, 76170",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "New framework aligned with CAS in effect 7 Sep 2026. Order entry 9:00-9:05, limit-only 9:05-9:10 with random close 9:08-9:10, matching 9:10-9:12, transition 9:12-9:15."
+  },
+  {
+    "id": "nse_open_price_rule",
+    "value": "Pre-open equilibrium price is the day's open; if none, first normal-market trade",
+    "unit": "text",
+    "sourceUrl": "https://www.nseindia.com/static/products-services/equity-market-pre-open",
+    "sourceName": "NSE equity market pre-open page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "nse_normal_market_open",
+    "value": "09:15",
+    "unit": "IST",
+    "sourceUrl": "https://www.nseindia.com/static/products-services/equity-market-pre-open",
+    "sourceName": "NSE pre-open page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "nse_normal_market_close_non_fo",
+    "value": "15:30",
+    "unit": "IST",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/trading-faqs/market-sessions/articles/what-are-the-market-timings",
+    "sourceName": "Zerodha support, market timings; NSE circulars",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Source URL given is the best known page; recheck the exact link at next review."
+  },
+  {
+    "id": "nse_normal_market_close_fo_stocks",
+    "value": "15:15",
+    "unit": "IST",
+    "sourceUrl": "https://www.nseindia.com/static/products-services/closing-auction-session",
+    "sourceName": "NSE Closing Auction Session page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "For stocks in CAS phase 1 (stocks with derivatives)."
+  },
+  {
+    "id": "nse_cas_start_date",
+    "value": "2026-08-03",
+    "unit": "date",
+    "sourceUrl": "https://www.nseindia.com/static/products-services/closing-auction-session",
+    "sourceName": "NSE CAS page; SEBI circular HO/47/11/11(3)2025-MRD-POD2/I/2765/2026 dated 16 Jan 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Phase 1 for stocks with derivatives."
+  },
+  {
+    "id": "nse_cas_timings",
+    "value": "Reference price 15:15-15:20; order entry 15:20-15:25; limit-only 15:25-15:30 (random close in last 2 minutes); matching 15:30-15:35",
+    "unit": "IST",
+    "sourceUrl": "https://www.nseindia.com/static/products-services/closing-auction-session",
+    "sourceName": "NSE CAS page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "NSE page states 3:15 pm to 3:35 pm overall."
+  },
+  {
+    "id": "nse_cas_price_band",
+    "value": 3,
+    "unit": "percent either side of reference price",
+    "sourceUrl": "https://www.nseindia.com/static/products-services/closing-auction-session",
+    "sourceName": "NSE CAS page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Reference price is VWAP of trades 15:00-15:15."
+  },
+  {
+    "id": "nse_post_close_session",
+    "value": "15:50 to 16:00",
+    "unit": "IST",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/trading-faqs/market-sessions/articles/what-are-the-market-timings",
+    "sourceName": "Zerodha support, market timings",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "nse_derivatives_close",
+    "value": "15:40",
+    "unit": "IST",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/trading-faqs/market-sessions/articles/what-are-the-market-timings",
+    "sourceName": "Zerodha support, market timings",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Equity derivatives segment 9:15 am to 3:40 pm."
+  },
+  {
+    "id": "nse_holidays_2026_weekday",
+    "value": [
+      "26 Jan Republic Day",
+      "3 Mar Holi",
+      "26 Mar Shri Ram Navami",
+      "31 Mar Mahavir Jayanti",
+      "3 Apr Good Friday",
+      "14 Apr Ambedkar Jayanti",
+      "1 May Maharashtra Day",
+      "28 May Bakri Id",
+      "26 Jun Muharram",
+      "14 Sep Ganesh Chaturthi",
+      "2 Oct Gandhi Jayanti",
+      "20 Oct Dussehra",
+      "10 Nov Diwali-Balipratipada",
+      "24 Nov Guru Nanak Jayanti",
+      "25 Dec Christmas"
+    ],
+    "unit": "list of dates (2026)",
+    "sourceUrl": "https://nsearchives.nseindia.com/content/circulars/CMTR71775.pdf",
+    "sourceName": "NSE circular NSE/CMTR/71775 dated 12 Dec 2025 (circular ref 172/2025)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "15 weekday holidays."
+  },
+  {
+    "id": "nse_holidays_2026_weekend",
+    "value": [
+      "15 Feb Sun Mahashivratri",
+      "21 Mar Sat Id-Ul-Fitr",
+      "15 Aug Sat Independence Day",
+      "8 Nov Sun Diwali Laxmi Pujan"
+    ],
+    "unit": "list of dates (2026)",
+    "sourceUrl": "https://nsearchives.nseindia.com/content/circulars/CMTR71775.pdf",
+    "sourceName": "NSE circular NSE/CMTR/71775",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Fall on weekends."
+  },
+  {
+    "id": "nse_muhurat_2026",
+    "value": "Sunday 8 Nov 2026 special session",
+    "unit": "date",
+    "sourceUrl": "https://www.nseindia.com/resources/exchange-communication-circulars",
+    "sourceName": "NSE circular NSE/CMTR/76941 dated 19 Oct 2026",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Source URL given is the best known page; recheck the exact link at next review."
+  },
+  {
+    "id": "nse_price_bands",
+    "value": [
+      2,
+      5,
+      10,
+      20
+    ],
+    "unit": "percent either way",
+    "sourceUrl": "https://nsearchives.nseindia.com/web/sites/default/files/2023-02/Basic%20FAQs%20on%20Secondary%20Market.pdf",
+    "sourceName": "NSE Basic FAQs on Secondary Market, Q34",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "20 percent on all remaining scrips. No bands for stocks with derivatives; a 10 percent operating range applies."
+  },
+  {
+    "id": "nse_band_reference",
+    "value": "Previous day's close",
+    "unit": "text",
+    "sourceUrl": "https://nsearchives.nseindia.com/web/sites/default/files/2023-02/Basic%20FAQs%20on%20Secondary%20Market.pdf",
+    "sourceName": "NSE Basic FAQs on Secondary Market",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "nse_band_revision",
+    "value": "Lowered under surveillance; raised bi-monthly subject to criteria",
+    "unit": "text",
+    "sourceUrl": "https://nsearchives.nseindia.com/web/sites/default/files/2023-02/Basic%20FAQs%20on%20Secondary%20Market.pdf",
+    "sourceName": "NSE Basic FAQs on Secondary Market",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "sebi_dynamic_band_fo",
+    "value": {
+      "base_percent": 10,
+      "flex": "5% twice (15 min cooling, 5 min in last half hour), 3% twice (30 min), then 2% (60 min)"
+    },
+    "unit": "percent of previous close",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/commondocs/dec-2024/RE_Chapter%201%20-%20Trading%20-%20NEW_p.pdf",
+    "sourceName": "SEBI Master Circular, Chapter 1 Trading (Dec 2024), sections 2.1-2.5",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "market_wide_circuit_breaker_levels",
+    "value": [
+      10,
+      15,
+      20
+    ],
+    "unit": "percent move in Nifty 50 or Sensex",
+    "sourceUrl": "https://www.nseindia.com/products-services/equity-market-circuit-breakers",
+    "sourceName": "NSE circuit breakers page; SEBI circular 28 Jun 2001 as amended 3 Sep 2013",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "10%: 45 min halt before 1pm, 15 min 1-2:30pm, none after 2:30pm. 15%: 1h45 before 1pm, 45 min 1-2pm, rest of day after 2pm. 20%: rest of day. Plus 15 min pre-open on resume."
+  },
+  {
+    "id": "trade_for_trade_rule",
+    "value": "Compulsory delivery, no intraday, cannot sell same day; gross settlement",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/margins/margin-leverage-and-product-and-order-types/articles/what-is-trade-to-trade-t2t",
+    "sourceName": "Zerodha support; NSE Basic FAQs",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Zerodha article path to be rechecked at next review."
+  },
+  {
+    "id": "sebi_t1_effective_date",
+    "value": "2023-01-27",
+    "unit": "date",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/commondocs/dec-2024/RE_Chapter%203%20-%20Settlement%20FINAL_p.pdf",
+    "sourceName": "SEBI circular SEBI/HO/MRD2/DCAP/P/CIR/2021/628 dated 7 Sep 2021; SEBI master circular Ch. 3 (Dec 2024)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Fully effective date from a SEBI consultation paper."
+  },
+  {
+    "id": "sebi_t1_schedule",
+    "value": "Pay-in 11:00; funds pay-out 13:30; securities pay-out 15:30",
+    "unit": "IST",
+    "sourceUrl": "https://www.sebi.gov.in/sebi_data/commondocs/dec-2024/RE_Chapter%203%20-%20Settlement%20FINAL_p.pdf",
+    "sourceName": "SEBI master circular Ch. 3 (Dec 2024)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "sebi_t0_beta_start",
+    "value": "2024-03-28",
+    "unit": "date",
+    "sourceUrl": "https://www.sebi.gov.in/legal/circulars/mar-2024/introduction-of-beta-version-of-t-0-rolling-settlement-cycle-on-optional-basis-in-addition-to-the-existing-t-1-settlement-cycle-in-equity-cash-markets_82381.html",
+    "sourceName": "SEBI circular 21 Mar 2024",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Optional beta. URL path to be rechecked at next review."
+  },
+  {
+    "id": "zerodha_btst_short_delivery",
+    "value": "Shares can be sold before reaching demat; short delivery auction penalty up to 20 percent of value",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/",
+    "sourceName": "Zerodha support, BTST page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Exact article URL to be added at next review."
+  },
+  {
+    "id": "nse_netting_rule",
+    "value": "Netting per client per security; gross for trade-for-trade and auction trades",
+    "unit": "text",
+    "sourceUrl": "https://nsearchives.nseindia.com/web/sites/default/files/2023-02/Basic%20FAQs%20on%20Secondary%20Market.pdf",
+    "sourceName": "NSE Basic FAQs, Q18",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "nse_tick_size_slabs",
+    "value": [
+      {
+        "price_range": "below 250",
+        "tick": 0.01
+      },
+      {
+        "price_range": "250 to 1000",
+        "tick": 0.05
+      },
+      {
+        "price_range": "1000 to 5000",
+        "tick": 0.1
+      },
+      {
+        "price_range": "5000 to 10000",
+        "tick": 0.5
+      },
+      {
+        "price_range": "10000 to 20000",
+        "tick": 1.0
+      },
+      {
+        "price_range": "above 20000",
+        "tick": 5.0
+      }
+    ],
+    "unit": "Rs",
+    "sourceUrl": "https://nsearchives.nseindia.com/content/circulars/CMTR67133.pdf",
+    "sourceName": "NSE circulars NSE/CMTR/62174 (24 May 2024) and NSE/CMTR/67133 (13 Mar 2025)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "In force from 15 Apr 2025. Reviewed monthly from previous month's last close. ETFs excluded from below-250 rule. Source URL given is the best known page; recheck the exact link at next review."
+  },
+  {
+    "id": "nse_price_time_priority",
+    "value": "Price-time priority for limit orders",
+    "unit": "text",
+    "sourceUrl": "https://www.nseindia.com/static/products-services/equity-market-pre-open",
+    "sourceName": "NSE pre-open page and trading-system description",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Continuous market rule per NSE summary; BSE not checked."
+  },
+  {
+    "id": "nifty50_methodology",
+    "value": {
+      "stocks": 50,
+      "weighting": "free-float market capitalisation",
+      "review": "semi-annual, data to Jan and Jul",
+      "effective": "last trading day of Mar and Sep",
+      "notice_weeks": 4,
+      "max_changes_per_year": 5
+    },
+    "unit": "text",
+    "sourceUrl": "https://nsearchives.nseindia.com/content/indices/Method_NIFTY_Equity_Indices.pdf",
+    "sourceName": "NSE Indices, Method_NIFTY_Equity_Indices (June 2026)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Coverage percentage not quoted because NSE sources differ."
+  },
+  {
+    "id": "sensex_methodology",
+    "value": {
+      "stocks": 30,
+      "weighting": "free-float market capitalisation",
+      "universe": "BSE 100",
+      "rebalance": "semi-annual, effective Monday after third Friday of June and December"
+    },
+    "unit": "text",
+    "sourceUrl": "https://beta.bseindia.com/downloads1/BSE_Indices_Methodology.pdf",
+    "sourceName": "BSE Indices Methodology (May 2026)",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "ex_date_equals_record_date",
+    "value": "Same day under T+1; buy at least one trading day before",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/category/console/corporate-actions/ca-others/articles/what-does-ex-date-and-record-date-mean",
+    "sourceName": "Zerodha support",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "NSE FAQ on corporate actions (updated 7 Jul 2026): exchange considers only the record date."
+  },
+  {
+    "id": "sebi_bonus_timing_rule",
+    "value": "Allotment deemed T+1 after record date; trading from T+2 (bonus announced on or after 1 Oct 2024)",
+    "unit": "text",
+    "sourceUrl": "https://www.sebi.gov.in/",
+    "sourceName": "SEBI circular CIR/CFD/PoD/2024/122 dated 16 Sep 2024",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Exact URL to add at next review."
+  },
+  {
+    "id": "sebi_ipo_listing_timeline",
+    "value": "T+3 working days after issue close",
+    "unit": "days",
+    "sourceUrl": "https://www.sebi.gov.in/legal/circulars/aug-2023/reduction-of-timeline-for-listing-of-shares-in-public-issue-from-existing-t-6-days-to-t-3-days_75122.html",
+    "sourceName": "SEBI circular SEBI/HO/CFD/TPD1/CIR/P/2023/140 dated 9 Aug 2023",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Voluntary from 1 Sep 2023, mandatory from 1 Dec 2023."
+  },
+  {
+    "id": "nse_fii_dii_page",
+    "value": "Provisional data from members' trading codes; csv download",
+    "unit": "text",
+    "sourceUrl": "https://www.nseindia.com/reports/fii-dii",
+    "sourceName": "NSE FII/DII trading activity page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Publication hour not confirmed."
+  },
+  {
+    "id": "sebi_scores_address",
+    "value": "scores.sebi.gov.in (old scores.gov.in closed 28 Mar 2024)",
+    "unit": "text",
+    "sourceUrl": "https://scores.sebi.gov.in/",
+    "sourceName": "SEBI SCORES",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Approach the company or intermediary first. Helpline 1800-266-7575 / 1800-22-7575."
+  },
+  {
+    "id": "sebi_registration_check_tools",
+    "value": "Check Registration Status of Market Intermediary; SEBI Check",
+    "unit": "text",
+    "sourceUrl": "https://investor.sebi.gov.in/Investor-support.html",
+    "sourceName": "SEBI investor support page; SEBI Check portal https://siportal.sebi.gov.in/intermediary/sebi-check",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "sebi_unregistered_advice_circular",
+    "value": "SEBI/HO/MIRSD/MIRSD-PoD-1/P/CIR/2025/11 dated 29 Jan 2025 (updated 8 May 2026)",
+    "unit": "text",
+    "sourceUrl": "https://www.sebi.gov.in/",
+    "sourceName": "SEBI circular",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Regulated entities may not associate with unregistered advisers or those who claim returns without permission. Exact URL to add at next review."
+  },
+  {
+    "id": "clearing_corporations",
+    "value": [
+      "NSE Clearing Limited",
+      "Indian Clearing Corporation Limited"
+    ],
+    "unit": "names",
+    "sourceUrl": "https://investor.sebi.gov.in/securities-resolvedispute.html",
+    "sourceName": "SEBI investor site, NSDL and CDSL grievance material",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "depositories",
+    "value": [
+      "NSDL",
+      "CDSL"
+    ],
+    "unit": "names",
+    "sourceUrl": "https://investor.sebi.gov.in/securities-resolvedispute.html",
+    "sourceName": "SEBI investor site",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "webkit_storage_cap",
+    "value": "Safari deletes script-writable storage after 7 days of Safari use without interaction; Home Screen web apps count their own days",
+    "unit": "text",
+    "sourceUrl": "https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/",
+    "sourceName": "WebKit blog, Full Third-Party Cookie Blocking and More",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "mdn_storage_persist",
+    "value": "StorageManager.persist() asks for persistent storage; support varies",
+    "unit": "text",
+    "sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/persist",
+    "sourceName": "MDN Web Docs",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Compatibility table not readable offline; check MDN."
+  },
+  {
+    "id": "kite_chart_history",
+    "value": "1-minute and above equity data from 2015; daily NSE from 2003, BSE from 2008; seconds-level data last 2 trading days",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/charts-and-orders/charts/articles/historical-data-on-kite-charts",
+    "sourceName": "Zerodha support",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "kite_candle_colours",
+    "value": "Default green and red; setting 'Colour bars based on previous close' can change",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/",
+    "sourceName": "Zerodha support, candle colour article",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Daily candles use exchange bhavcopy; minute and hourly use live feed. Exact URL to add at next review."
+  },
+  {
+    "id": "kite_market_depth",
+    "value": "Best 5 bids and offers plus OHLC, volume, circuit limits",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/general-kite/kite-mw/articles/what-is-the-market-depth-screen-and-how-do-i-view-it",
+    "sourceName": "Zerodha support",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "20-depth is separate."
+  },
+  {
+    "id": "zerodha_no_paper_trading",
+    "value": "No paper-trading accounts; dummy-data demo at kite-demo.zerodha.com",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/trading-faqs/general/articles/does-zerodha-offer-demo-accounts-for-paper-trading",
+    "sourceName": "Zerodha support",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "zerodha_sl_vs_slm",
+    "value": "SL-M becomes market order at trigger; SL becomes limit order and may stay unfilled; stop-loss valid for the trading day",
+    "unit": "text",
+    "sourceUrl": "https://support.zerodha.com/category/trading-and-markets/charts-and-orders/order/articles/what-are-stop-loss-orders-and-how-to-use-them",
+    "sourceName": "Zerodha support",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": ""
+  },
+  {
+    "id": "nse_delivery_report",
+    "value": "Security-wise Delivery Positions report on NSE reports page; higher deliverable ratio read as buyers holding",
+    "unit": "text",
+    "sourceUrl": "https://www.nseindia.com/all-reports",
+    "sourceName": "NSE reports page",
+    "verifiedOn": "2026-11-11",
+    "reviewEveryDays": 90,
+    "notes": "Exact definition text not confirmed. Source URL given is the best known page; recheck the exact link at next review."
+  }
+]

@@ -48,7 +48,7 @@ A passed out-of-sample test is one more piece of evidence. It is not proof. Walk
 
 Read each row from left to right. The training years come first and the test year comes after them. The test year is never used to pick that row's settings. Look down the last column: the test years run from 2019 to 2025 with no gaps.
 
-<!-- OPEN: The spec's visual for this chapter is a walk-forward timeline named lab-backtest. That name is not on the allowed component list, so no placeholder is written. A static table of the worked example is shown instead. -->
+<!-- component: walk-forward-demo | caption: Roll the training and test years forward, then compare with one split and with a random shuffle. -->
 
 ## Worked example
 
@@ -138,11 +138,7 @@ Mode: **learning note**. If the backtest lab is not ready, do this task on paper
 
 ## Sources and verification
 
-- Pardo, *The Evaluation and Optimization of Trading Strategies* (edition: [VERIFY: edition]).
+- Robert Pardo, *The Evaluation and Optimization of Trading Strategies*, 2nd edition (Wiley, 2008).
 - The backtest lab's notes on split and walk-forward testing.
-
-<!-- facts-needed: edition of Pardo, The Evaluation and Optimization of Trading Strategies. -->
-
-<!-- OPEN: The spec says "Mode: none" for the paper task. It is written here as learning note, which is one of the three modes in the brief. Confirm. -->
 
 <!-- standing-disclaimer -->

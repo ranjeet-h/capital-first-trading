@@ -23,7 +23,7 @@ G3 has three parts. You must pass all three.
 
 - **Checklist.** You tick each item from the demo checklist in the nine Kite chapters before this one. You write one line of reflection for each item.
 - **Quiz.** You answer a set of questions about common execution mistakes. You need 90 percent or more correct.
-- **Demo trade statement.** For one demo trade, you state three things. These are the planned loss, the binding constraint and the stop order type, with how that stop behaves on a gap.
+- **Paper trade statement.** For one paper trade from the walkthrough chapter, you state three things. These are the planned loss, the binding constraint and the stop order type, with how that stop behaves on a gap.
 
 Some words in this chapter:
 
@@ -44,13 +44,15 @@ Your checklist ticks, reflections, quiz answers, times and gate status stay on y
 |---|---|---|
 | Checklist | Tick every demo item from the nine Kite chapters. Write one line for each. | Every item ticked, each with a reflection. You tick the items yourself. |
 | Quiz | Answer all the quiz questions. | 90 percent or more correct. With 8 questions, that means all 8. With 10 questions, it means 9. |
-| Demo trade statement | State the planned loss, the binding constraint and the stop order type with its gap behaviour. | All three stated correctly, for one demo trade. |
+| Paper trade statement | State the planned loss, the binding constraint and the stop order type with its gap behaviour. | All three stated correctly, for one paper trade. |
 
 Read the last column first. Each part has a clear pass rule. The checklist depends on your honesty, because the book cannot see what you did in the demo.
 
+<!-- component: gate-check | gate: G3 | statement: yes | caption: Tick each criterion only when it is true for you. This is a self-check, not a test the book can mark. -->
+
 ## Worked example
 
-**Hypothetical.** This example uses the demo trade from *A complete demo walkthrough*. Capital Rs 50,000. Risk 1 percent. Entry Rs 250. Stop trigger Rs 240.
+**Hypothetical.** This example uses the paper trade from *A complete demo walkthrough*. Capital Rs 50,000. Risk 1 percent. Entry Rs 250. Stop trigger Rs 240.
 
 | Step | Calculation | Result |
 |---|---|---|
@@ -65,7 +67,7 @@ For part 3 of G3, a full answer has three lines:
 
 - Planned loss: 50 x Rs 10 = **Rs 500**.
 - Binding constraint: the risk budget and the concentration cap tie at 50 shares. Say so.
-- Stop order: a stop-loss order with trigger Rs 240 and limit Rs 238. If the price gaps down below Rs 238, the order may not fill at all. The loss can then be bigger than Rs 500. [VERIFY: how the Kite demo handles stop-loss orders with a limit price]
+- Stop order: a GTT (Sell, Single) with trigger Rs 240 and limit Rs 238. A normal stop-loss order lasts one trading day only, and this holding is for weeks. If the price gaps down below Rs 238, the order may not fill at all. The loss can then be bigger than Rs 500.
 
 For the quiz, count the score this way. Ten questions with 9 correct is 9 divided by 10, which is 90 percent. That is a pass. Ten questions with 8 correct is 80 percent. That is not a pass, so you retake.
 
@@ -85,7 +87,7 @@ Hints:
 
 - Planned loss: Rs 500 (50 x Rs 10).
 - Binding constraint: the risk budget and the concentration cap tie at 50 shares.
-- Stop order: a stop-loss order with trigger Rs 240 and limit Rs 238. A gap below Rs 238 can leave the order unfilled, so the loss can be larger than Rs 500.
+- Stop order: a GTT (Sell, Single), trigger Rs 240, limit Rs 238. A gap below Rs 238 can leave the order unfilled, so the loss can be larger than Rs 500.
 
 ### Independent exercise
 
@@ -119,7 +121,7 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 1. Copy the nine Kite chapters into a list. Use their titles, from *Kite web and mobile tour* to *A complete demo walkthrough*.
 2. For each chapter, tick the item only if you did the demo step. Do not tick an item you skipped.
 3. Write one line of reflection under each tick.
-4. Write the three lines for one demo trade from *A complete demo walkthrough*. Include the planned loss, the binding constraint and the stop order type with its gap behaviour.
+4. Write the three lines for one paper trade from *A complete demo walkthrough*. Include the planned loss, the binding constraint and the stop order type with its gap behaviour.
 5. Take the quiz until you reach 90 percent. Write down each question you missed, and the rule it tested.
 
 ## Limits and common mistakes
@@ -132,27 +134,22 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 
 ## Remember
 
-- G3 has three parts: the checklist, the quiz at 90 percent or more, and the demo trade statement.
+- G3 has three parts: the checklist, the quiz at 90 percent or more, and the paper trade statement.
 - A stop order can fill far from its trigger after a gap.
 - Name the binding constraint every time. If two limits tie, say so.
 - A demo pass is not a live result. Do not treat it as one.
 
 ## Sources and verification
 
-- Zerodha support pages on orders, product types and GTT orders, as used in the nine Kite chapters [VERIFY: page titles].
-- Kite demo help pages [VERIFY: page titles and demo availability].
-- NSE India trading rules on price bands and order rejection [VERIFY: current circular].
+- Zerodha support pages on orders, product types and GTT orders, as used in the nine Kite chapters. Zerodha changes its rules, so confirm them on its support pages.
+- Kite demo help: the demo is at kite-demo.zerodha.com/dashboard. It is view-only.
+- NSE India trading rules on price bands and order rejection. Search the NSE website for the current circular.
 
-Facts to verify before this chapter is final:
+Facts to check before you use this chapter:
 
-[VERIFY: how the Kite demo handles stop-loss orders with a limit price]
-[VERIFY: Kite demo checklist items and their exact wording]
-[VERIFY: product and GTT names shown in the Kite demo]
+- The checklist items. These come from your own demo steps, not from Zerodha.
+- The product and GTT labels shown in the demo, if they differ from this book.
 
 <!-- facts-needed: Kite demo checklist wording; stop-loss order support and gap behaviour in the demo; quiz bank rules. -->
-
-<!-- OPEN: The spec gives no worked example, guided exercise or independent exercise for this assessment. The worked example reuses the demo trade numbers from A complete demo walkthrough, and the exercises reuse its independent figures. Confirm before the quiz-block is built. -->
-
-<!-- OPEN: The spec gives no visual or demo for this assessment. The See it table stands in for the visual. -->
 
 <!-- standing-disclaimer -->

@@ -13,16 +13,13 @@ estimated_minutes: 35
 
 A hypothetical trader has Rs 50,000, risks 1% per trade and plans to enter at Rs 400 with a stop at Rs 380. She divides her capital by the entry price and buys 125 shares. Her planned loss at the stop is 125 x 20 = Rs 2,500. That is 5% of her capital, five times the Rs 500 she set as the limit. This assessment checks whether the number of shares follows from the risk rule, not from the cash in the account.
 
-<!-- OPEN: spec open question 9 asks for the numeric tolerance for percentages (for example 0.05 percentage points) and the size of the randomised set. Both are owner decisions; this chapter does not fix them -->
-<!-- OPEN: the spec does not say who writes the ten-question mini-set. The paper task allows either the app's set or questions the reader writes -->
-
 ## The idea
 
 This assessment covers the money math in this part of the book. It is the check for gate G2. To pass, you must get the cost, position-size and expectancy questions right within the allowed margin, on a fresh set of questions. You must also complete the reality-check chapter (*The Rs 2,000-3,000 reality check*).
 
 **What it checks**
 
-- **Costs:** fixed charges (per order) versus proportional charges (a percentage of turnover). Fixed charges weigh more on small trades (*Costs on a trade*). Cost figures come from the checked facts file. [VERIFY: cost facts from the facts registry, cross-reference *Costs on a trade*]
+- **Costs:** fixed charges (per order) versus proportional charges (a percentage of turnover). Fixed charges weigh more on small trades (*Costs on a trade*). The practice questions use round numbers. The real charges, with dates and sources, are in the table in *Costs on a trade*.
 - **Position size:** the lowest of three limits, not the largest one.
 - **Break-even win rate:** the win rate at which wins pay for losses, before costs.
 - **Expectancy and profit factor:** the average result per trade, and the ratio of gains to losses.
@@ -105,7 +102,7 @@ Profit factor on the same record: 0.80R / 0.60R = 1.3.
 
 ### Question 3: daily-target capital
 
-Target Rs 2,000 a day, 250 trading days (an assumption [VERIFY: trading days per year]), 20% a year.
+Target Rs 2,000 a day, 250 trading days (a round number for practice; the 2026 NSE calendar has about 245 normal trading days), 20% a year.
 
 - Yearly target: 2,000 x 250 = Rs 5,00,000.
 - Capital: 5,00,000 / 0.20 = Rs 25,00,000.
@@ -185,15 +182,9 @@ Eight sample questions cover the areas above. The gate uses a fresh set of quest
 
 ## Sources and verification
 
-**Sources (names only):**
+**Sources, read on 11 Nov 2026:**
 
-
-**To verify:**
-
-- Cost facts used by cost questions. [VERIFY: cost facts from the facts registry, cross-reference *Costs on a trade*]
-- Trading days per year used in the daily-target question. [VERIFY: trading days per year from the NSE holiday list and calendar]
-
-<!-- facts-needed: cost facts for cost questions (cross *Costs on a trade*); trading days per year (NSE calendar) -->
-<!-- OPEN: required coverage includes profit factor. The eight sample questions do not include a profit-factor item; it is worked above. Add one when the set size is decided -->
+- *Costs on a trade*, for the real Zerodha charges that sit beside the practice numbers.
+- NSE holiday list and trading calendar for 2026, for the trading-day count (about 245 normal days).
 
 <!-- standing-disclaimer -->

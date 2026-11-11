@@ -29,7 +29,7 @@ Ownership % = (shares held / total shares outstanding) x 100
 
 **Secondary market.** Investors trade shares that already exist. The money goes to the seller, not to the company. Buying and selling on the exchange takes place in the secondary market.
 
-**IPO (initial public offer).** A company's first public offer of shares to the public. This chapter explains pricing and allotment (who gets the shares) only in general terms [VERIFY: SEBI ICDR regulations; book-building method].
+**IPO (initial public offer).** A company's first public offer of shares to the public. This chapter explains pricing and allotment (who gets the shares) only in general terms. In a book-building IPO, the company gives a price band, and investors bid inside that band. Think of an auction with a floor and a ceiling. Once the issue closes, the shares are allotted, and SEBI's rule since December 2023 is that they must start trading within 3 working days after the issue closes (called T+3). (As of 11 Nov 2026, SEBI circular of 9 Aug 2023. Rules change, so check the SEBI site.)
 
 **An IPO is not automatically profitable.** The listing-day price is the first price at which the shares trade on the exchange. It can be above or below the issue price, which is the price set for the offer.
 
@@ -50,6 +50,8 @@ flowchart LR
 ```
 
 Look at the company box. It appears only in the primary flow. In the secondary flow, money passes between buyer and seller. The company receives nothing.
+
+<!-- component: share-slices | totalShares: 1000000 | price: 200 | held: 1000 | buyShares: 100 | caption: The chapter's made-up company: 10,00,000 shares at Rs 200. Press Play to issue 5,00,000 new shares and watch your percentage fall. -->
 
 ## Worked example
 
@@ -131,11 +133,10 @@ Five questions check ownership sums, the money flow in each market, and the clai
 - SEBI investor education pages on IPOs.
 - NSE and BSE IPO education pages.
 
-**Facts to verify:**
+**Facts checked on 11 Nov 2026:**
 
-- IPO process, timelines, book-building and allotment rules. [VERIFY: SEBI ICDR regulations]
-- Any current IPO figures are out of scope for this chapter.
-
-<!-- facts-needed: SEBI ICDR regulations (IPO process, timelines, book-building, allotment) -->
+- The 3-working-day listing time after an IPO closes comes from a SEBI circular dated 9 Aug 2023. It became compulsory for issues opening on or after 1 Dec 2023.
+- The detailed IPO steps, price band limits and allotment rules are in SEBI's ICDR regulations. Read them on the SEBI site before you apply to any IPO.
+- Current IPO figures are out of scope for this chapter.
 
 <!-- standing-disclaimer -->

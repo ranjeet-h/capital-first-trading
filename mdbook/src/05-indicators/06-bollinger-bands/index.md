@@ -29,7 +29,7 @@ There are two ways to calculate SD:
 - **Population SD** divides the total of the squared differences by N.
 - **Sample SD** divides the same total by N minus 1.
 
-Tools can use either one. Check which one Kite uses before you compare numbers from two tools. [VERIFY: Kite Bollinger SD convention]
+Tools can use either one. John Bollinger's own site says it uses the population calculation. Zerodha's charting manual does not say which one Kite uses, so check before you compare numbers from two tools. (As of 11 Nov 2026, bollingerbands.com. This is a common convention, not an exchange rule.)
 
 Some points to keep in mind:
 
@@ -66,6 +66,8 @@ Keep the extra decimals while you work. Round only at the end.
 The sample version gives slightly wider bands here. The difference comes only from the divisor.
 
 ## Try it
+
+<!-- component: indicator-playground | indicator: bollinger | closes: 10,12,14 | period: 3 | k: 2 | sdMode: population | edit: on | caption: The closes of the guided exercise. Change them, the window or k, and see the bands -->
 
 ### Guided exercise
 
@@ -139,12 +141,7 @@ Mode: **paper**. This is a learning log, not a record of trades. Log it in your 
 
 - John Bollinger, *Bollinger on Bollinger Bands* (the originator's book).
 - Zerodha Varsity, Bollinger Bands module (reference only, original wording).
-- Kite chart help pages. [VERIFY: article title]
-
-<!-- facts-needed: Kite default period, k and SD convention for the Bollinger Bands indicator. -->
-
-[VERIFY: Kite Bollinger defaults and SD convention]
-
-<!-- OPEN: The spec's visual line names indicator-playground with a population and sample toggle. The component list gives no toggle for sdMode, so the placeholder keys above are the intended inputs and may need checking when the playground is built. -->
+- Zerodha, Kite charting manual (kite.trade/docs/kite/charting). It gives no default Bollinger setting, so read it on your own screen.
+- StockCharts ChartSchool, Bollinger Bands page. It gives a 20-period simple average, with bands 2 standard deviations away. (As of 11 Nov 2026. This is a common convention, not an exchange rule.)
 
 <!-- standing-disclaimer -->

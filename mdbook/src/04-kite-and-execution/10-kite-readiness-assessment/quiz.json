@@ -14,7 +14,7 @@
   {
     "id": "T4.10-q2",
     "type": "numeric",
-    "prompt": "Hypothetical. You hold 50 shares bought at Rs 250. The stop trigger is Rs 240. The price gaps down overnight and your stop fills at Rs 232. What is the loss in rupees?",
+    "prompt": "Hypothetical. You hold 50 shares bought at Rs 250. The stop trigger is Rs 240. The stop is a GTT market stop that stays live overnight. The price gaps down and the stop fills at Rs 232. What is the loss in rupees?",
     "answer": 900,
     "tolerance": 0,
     "unit": "Rs",
@@ -38,16 +38,16 @@
   {
     "id": "T4.10-q4",
     "type": "scenario",
-    "prompt": "Hypothetical. You want an exit order that always leaves your position once the trigger price is hit, even if the price falls fast. Which order type fits this goal best?",
+    "prompt": "Hypothetical. You want your exit to leave your position once the trigger price is hit, even if the price falls fast. Which statement is correct?",
     "options": [
-      {"id": "a", "text": "A stop order with a limit price, because the limit protects the exit price"},
-      {"id": "b", "text": "A stop order with no limit price, because it leaves at the next available price once triggered"},
-      {"id": "c", "text": "A limit buy order, because it exits at the trigger price"},
-      {"id": "d", "text": "A stop order with a limit price, because the limit makes the exit certain"}
+      {"id": "a", "text": "A stop with a limit price always leaves once it is triggered, because the limit protects the exit price."},
+      {"id": "b", "text": "No stop type guarantees an exit. An SL-M sells at the best price available once triggered, but the fill can be far from the trigger. Circuit limits and market protection can also get in the way."},
+      {"id": "c", "text": "A limit buy order exits a long position at the trigger price."},
+      {"id": "d", "text": "A stop with a limit price makes the exit certain."}
     ],
     "answer": "b",
     "explanations": {
-      "a": "A limit price protects the price you accept. If the price falls below that limit, the order may not fill. It does not make the exit certain.",
+      "a": "A limit price can stop the order from filling. If the price falls below the limit, the order may stay open. It does not make the exit certain.",
       "c": "A buy order adds shares. It does not exit a long position.",
       "d": "A limit price can stop the order filling. It does not make the exit certain."
     },
@@ -98,7 +98,7 @@
   {
     "id": "T4.10-q7",
     "type": "spot-the-mistake",
-    "prompt": "Spot the mistake: \"My demo trade filled at Rs 250, so my stop at Rs 240 will fill at Rs 240.\" Which part is wrong?",
+    "prompt": "Spot the mistake: \"My real order filled at Rs 250, so my stop at Rs 240 will fill at Rs 240.\" Which part is wrong?",
     "options": [
       {"id": "a", "text": "The entry of Rs 250"},
       {"id": "b", "text": "The claim that a stop at the trigger always fills at the trigger"},
@@ -129,7 +129,7 @@
     "explanations": {
       "a": "The price level is a plan choice. The quantity is the clear error here.",
       "c": "A GTT can hold a stop-type exit order. The problem in this example is the quantity.",
-      "d": "GTT orders have validity limits. Check the expiry date as well as the quantity [VERIFY: Kite GTT validity]."
+      "d": "A GTT does not last forever. It stays active for up to one year. Check the date as well as the quantity."
     },
     "concepts": ["gtt", "execution-mistakes"],
     "difficulty": 1,

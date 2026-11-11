@@ -17,7 +17,7 @@
     "prompt": "'My broker is the exchange, so my order is matched inside my broker's office.' Is that statement right?",
     "options": [
       {"id": "a", "text": "Yes. The broker matches orders for its clients."},
-      {"id": "b", "text": "No. The broker takes and passes on the order. Matching happens at the exchange, such as NSE or BSE [VERIFY: current roles]."},
+      {"id": "b", "text": "No. The broker takes and passes on the order. Matching happens at the exchange, such as NSE or BSE."},
       {"id": "c", "text": "Yes, but only for intraday orders."}
     ],
     "answer": "b",
@@ -70,7 +70,7 @@
   {
     "id": "T1.2-q5",
     "type": "order",
-    "prompt": "Put the three steps of the grievance route in order, starting with the first step to take. [VERIFY: SCORES process]",
+    "prompt": "Put the three steps of the grievance route in order, starting with the first step to take.",
     "options": [
       {"id": "a", "text": "SEBI complaint portal (SCORES)"},
       {"id": "b", "text": "The exchange"},
@@ -78,7 +78,7 @@
     ],
     "answer": ["c", "b", "a"],
     "explanations": {
-      "a": "SEBI's complaint portal is the last step in the route, after the broker and the exchange [VERIFY: SCORES process].",
+      "a": "SEBI's complaint portal is the last step in the route, after the broker and the exchange.",
       "b": "The exchange is the second step. Raise the matter with the broker first, then the exchange, then SEBI."
     },
     "concepts": ["grievance-route"],
@@ -91,7 +91,7 @@
     "prompt": "Who holds your shares electronically in a demat account?",
     "options": [
       {"id": "a", "text": "The broker's office"},
-      {"id": "b", "text": "A depository (NSDL or CDSL), through a depository participant [VERIFY: NSDL and CDSL roles]"},
+      {"id": "b", "text": "A depository (NSDL or CDSL), through a depository participant"},
       {"id": "c", "text": "The exchange's vault"},
       {"id": "d", "text": "Your bank"}
     ],

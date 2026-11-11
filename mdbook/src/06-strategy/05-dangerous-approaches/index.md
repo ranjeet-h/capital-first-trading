@@ -11,7 +11,7 @@ estimated_minutes: 30
 
 ## Hook
 
-A trader buys 100 shares at Rs 100. He aims to sell for Rs 0.10 more per share, a gain of Rs 10. He assumes a cost of Rs 50 for the round trip. Hypothetical example. The Rs 50 cost is larger than the Rs 10 gain, so the trade loses Rs 40 even when it works as planned. [VERIFY: costs on a trade] This chapter shows the arithmetic behind five approaches that feel quick or clever, and why each one is dangerous.
+A trader buys 100 shares at Rs 100. He aims to sell for Rs 0.10 more per share, a gain of Rs 10. He assumes a cost of Rs 50 for the round trip. Hypothetical example. The Rs 50 cost is larger than the Rs 10 gain, so the trade loses Rs 40 even when it works as planned. The Rs 50 is a round number for practice, not the real charge. The real charges are in *Costs on a trade*. This chapter shows the arithmetic behind five approaches that feel quick or clever, and why each one is dangerous.
 
 ## The idea
 
@@ -19,7 +19,7 @@ This chapter covers five approaches. The book treats them as failure modes to re
 
 **Scalping.** A scalper makes many trades, each aiming for a small gain. Every trade pays a cost. A fixed cost takes a large share of a small gain. The break-even move is the cost divided by the number of shares. It is the price move needed just to cover the cost.
 
-**Intraday trading.** Intraday trades open and close within the same day. Some products used for intraday trades use borrowed money, called margin. Borrowed money makes gains and losses larger. See *Leverage and margin*. Intraday trades are usually closed the same day. [VERIFY: intraday product rules] This book does not encourage intraday trading. Any later practice would be on paper only.
+**Intraday trading.** Intraday trades open and close within the same day. Some products used for intraday trades use borrowed money, called margin. Borrowed money makes gains and losses larger. See *Leverage and margin*. Intraday positions must be closed the same day. At Zerodha, open intraday share positions are closed for you at about 3:25 PM, and futures and options at about 3:26 PM, and each order closed this way costs Rs 50 plus 18% GST. Zerodha can also cut intraday leverage during the day. (As of 11 Nov 2026, Zerodha support. Rules change, so check Zerodha support.) SEBI's July 2024 study of individual intraday traders in the equity cash segment found that 71% of them lost money after costs in FY23. This book does not encourage intraday trading. Any later practice would be on paper only.
 
 **Averaging down.** Averaging down means buying more of a share that has fallen. The average price falls. But the money at risk on the same idea grows. A fall in price needs a larger gain to recover. The bigger the loss, the bigger the gain needed. See *Drawdown and recovery math*.
 
@@ -62,8 +62,6 @@ Start with the recovery view. Watch how the gain needed grows as the fall gets d
 | Comparison: one lot of 100 shares at Rs 60 | (60 - 100) x 100 | minus Rs 4,000 |
 
 The average price fell from Rs 100 to Rs 90. But the number of shares doubled, and the loss at Rs 60 is larger. Averaging down did not lower the risk. It raised it.
-
-<!-- OPEN: The source gave the comparison as minus Rs 2,000 for one lot, which is the loss at Rs 80. The chapter compares the same price, Rs 60, for one lot, which gives minus Rs 4,000. Confirm which comparison the book should show. -->
 
 **Hypothetical. Martingale.** Base risk Rs 500. Each loss doubles the next stake.
 
@@ -126,12 +124,12 @@ Mode: **paper**. Write it in your journal. If the journal is not ready, use pape
 
 ## Limits and common mistakes
 
-- The break-even figures use an assumed cost. Real costs need the verified figures. [VERIFY: costs on a trade]
+- The break-even figures use a round-number cost for practice. The real charges are in *Costs on a trade*.
 - Averaging down does not lower risk. It increases the money at risk on the same idea.
 - Option figures here are theory only. Premiums, decay and margin rules are not covered in this chapter. See *Options basics and Greeks*.
 - A stake that doubles can exceed your account before the losing run ends.
 - The prices in these examples are invented. They do not predict any real share.
-- [VERIFY: intraday and option charges, margins and rules]
+- Intraday and option charges, margins and rules change. Check the Zerodha charges page, Zerodha support and the NSE site before you rely on any figure.
 
 ## Remember
 
@@ -143,14 +141,9 @@ Mode: **paper**. Write it in your journal. If the journal is not ready, use pape
 
 ## Sources and verification
 
-- SEBI studies on intraday and F&O trading outcomes. Names only. No figures are stated in this chapter.
+- SEBI, "Analysis of Intraday Trading by Individuals in Equity Cash Segment" (July 2024). It reports that 71% of individual intraday traders in the equity cash segment made net losses in FY23.
+- SEBI study of individual traders in equity derivatives for FY25 and FY26 (August 2026). It reports that 87.7% of individuals lost money in FY26.
 - Zerodha Varsity, material on risk and position sizing (reference only).
-- [VERIFY: costs on a trade]
-- [VERIFY: intraday product rules]
-- [VERIFY: intraday and option charges, margins and rules]
-
-<!-- facts-needed: round-trip costs by product; intraday product rules; intraday and option charges; margin rules for intraday and options; SEBI F&O study figures (covered in the case-study chapter). -->
-
-<!-- OPEN: The source title for this chapter named scalping, option buying, averaging and martingale. The title here is shortened to fit the under 50 character rule. Confirm the title. -->
+- Zerodha charges page and Zerodha support on auto square-off (read on 11 Nov 2026).
 
 <!-- standing-disclaimer -->

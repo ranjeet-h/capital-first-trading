@@ -34,7 +34,7 @@ In symbols: drawdown = (H - E) / H, where H is the high-water mark and E is the 
 
 **Records.** Every capital change is logged in the journal, in the capital_at_plan field (Lab 3). A change that is not recorded cannot be reviewed.
 
-**Method.** Withdrawals also change the base used to measure drawdown. State the method before the first withdrawal. [VERIFY: your choice of withdrawal method]
+**Method.** Withdrawals also change the base used to measure drawdown. State the method before the first withdrawal. This chapter measures drawdown against the high-water mark using the actual account value after the withdrawal. So a withdrawal shows up as a lower account value. Some people lower the high-water mark by the amount withdrawn instead. Either way works, if you pick one, write it down, and do not change it after a bad month.
 
 ## See it
 
@@ -115,7 +115,7 @@ Five questions cover the withdrawal rule, withdrawals in a drawdown, the top-up 
 
 - The numbers are yours. The threshold in this chapter is an example, not a recommendation.
 - A withdrawal rule does not show that the account will grow. Every equity path here is hypothetical.
-- Tax on withdrawals and gains is not covered here. [VERIFY: tax on withdrawals or gains, see *Taxes on trading profits*]
+- Tax on withdrawals and gains is not covered here. Tax depends on your gains and your own situation, not on this chapter's rules. See *Taxes on trading profits* and ask a qualified tax professional.
 - A policy written after a good month is a judgement made in good conditions. Write the policy before any trade, not after a result.
 - Scale-up after losses is not allowed, whatever the recent result.
 
@@ -129,16 +129,9 @@ Five questions cover the withdrawal rule, withdrawals in a drawdown, the top-up 
 
 ## Sources and verification
 
-**Sources (names only):**
+**Sources:**
 
-- *Taxes on trading profits*, for tax treatment.
-
-**To verify:**
-
-- Your choice of withdrawal method. [VERIFY: your choice of withdrawal method]
-- Tax on withdrawals or gains. [VERIFY: tax on withdrawals or gains, see *Taxes on trading profits*]
-
-<!-- facts-needed: tax on withdrawals or gains (*Taxes on trading profits*); owner's withdrawal method -->
-<!-- OPEN: spec open question 8 asks how drawdown is measured after a withdrawal (adjusted base or raw equity). Reviewer decision. The text uses raw equity against the HWM -->
+- *Taxes on trading profits*, for tax treatment (read on 11 Nov 2026).
+- The withdrawal method and thresholds in this chapter are your own choices. This chapter states no outside facts about them.
 
 <!-- standing-disclaimer -->

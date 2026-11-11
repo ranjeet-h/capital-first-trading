@@ -45,6 +45,8 @@ flowchart LR
 
 Follow the arrows from a signal or an outcome. Notice the pause before any action. The rule check decides what happens next, not the feeling.
 
+<!-- component: fear-greed-curve | capital: 50000 | caption: A made-up day with six moments. Name the feeling, choose what you do, and compare with the day that follows the rule. -->
+
 ## Worked example
 
 **Hypothetical.** Capital Rs 50,000. One R is Rs 500, which is 1 percent of capital. The day ends with a loss of Rs 2,000.
@@ -133,13 +135,7 @@ Log it in your journal (or on paper until the journal app is ready). If the jour
 
 ## Sources and verification
 
-- Kahneman, *Thinking, Fast and Slow* (edition: [VERIFY: edition]).
+- Daniel Kahneman, *Thinking, Fast and Slow* (Farrar, Straus and Giroux, 2011, first edition).
 - The journal's emotion fields in Lab 3.
-
-<!-- facts-needed: edition of Kahneman, Thinking, Fast and Slow. -->
-
-<!-- OPEN: The spec refers to the journal's tag list, which is not given in the spec. The five sample tags in the independent exercise are written for this chapter. Confirm the tag list before the chapter is published. -->
-
-<!-- OPEN: The spec does not list the five scenario sentences for the guided exercise. They are written here. Confirm them. -->
 
 <!-- standing-disclaimer -->

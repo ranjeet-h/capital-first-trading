@@ -41,7 +41,7 @@ Three swing highs, each one rejected, clustered close together:
 
 The three highs sit between Rs 250.5 and Rs 252. That band is the zone. Look at the spread of the cluster, not at one price.
 
-<!-- OPEN: The spec gives an interactive zone-drawing exercise (sr-drawing-exercise, marked as new). That name is not in the allowed component list, so no placeholder is added here. Confirm the name, then add the placeholder under this heading. -->
+<!-- component: sr-zones | caption: A made-up chart with the three swing highs of this chapter (Rs 251, Rs 252 and Rs 250.5). Tap the chart twice to mark your own zone, then press Check. Press the chapter's zone button to see the Rs 249 to Rs 252 zone with its Rs 247 stop, 49 shares and Rs 245 planned loss. -->
 
 ## Worked example
 
