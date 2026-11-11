@@ -87,6 +87,7 @@ Each is a custom element with a documented attribute API, no global state, and t
 - `<pattern-quiz>`, `<predict-next>`, `<spot-the-mistake>`: assessment widgets.
 - `<quiz-block>`, `<exercise-block>`, `<gate-check>`: structured assessment, state saved locally.
 - `<kite-illustration>`: recreated Kite screens with annotations (see 4.5).
+- Added to cover the owner's brief: `<sr-drawing-exercise>` (draw support/resistance, get scored against reference levels), `<pattern-identification>` (spot formations on charts, with honest limits), `<strategy-simulator>` (step a rule set through synthetic data), `<risk-limit-simulator>` (daily/weekly/monthly limits and stop rules; used by gate G4), `<capital-allocation-planner>` (how much to allocate, what stays untouched, when to cut or stop), `<journal-widget>` (quick log from any chapter into the Lab 3 journal).
 - The five labs: `<lab-position-size>`, `<lab-costs>`, `<lab-journal>`, `<lab-backtest>`, `<lab-forward-import>`.
 
 Animation rules: respect `prefers-reduced-motion`; every animation has Play/Pause/Step/Reset and a text alternative; all run on touch devices; no animation is the only way to learn something.
@@ -98,6 +99,14 @@ Content lives as JSON files next to chapters (`mdbook/src/<track>/<chapter>/quiz
 - Kite demo uses dummy data and is for interface practice. Zerodha does not provide a paper-trading account. The book must say so (verify wording on support.zerodha.com before writing).
 - Practical Kite tasks are checklist exercises the owner does in their own demo; the book cannot verify them. Self-attested, with a short reflection field.
 - Kite Connect: the free Personal plan has no market data; market data needs the paid plan. Mention only in the advanced/automation chapter, with the SEBI Algo-ID requirement. The book does not use it.
+
+### 4.6 Authoring workflow (strict owner rule, 2026-11-11)
+- **All large-text writing (chapters, sections, long prose, curriculum documents) is done by Haiku 5.5** (`claude-haiku-5-5`). A stronger model plans: it decides each chapter's structure and required content, writes the brief, and reviews the output. Code, tests, small edits and plans are not delegated.
+- Each Haiku task gets one self-contained brief and writes one file. No "write the rest of the folder" tasks.
+- **Review gate before a chapter counts as written:** rupee arithmetic recomputed, every time-sensitive fact traced to `data/facts.json` or marked provisional, safety wording checked (no advice, no guaranteed returns, no unlabelled hypothetical results), required sections present, no copied third-party text.
+- Haiku must never invent Zerodha features, charges, tax rates or regulations. If unsure it writes `[VERIFY: <what>]` and the reviewer resolves it from an official source.
+- Chapter-level objectives, prerequisites and dependencies live in `curriculum/` (see `curriculum/README.md`). **The files in `curriculum/` are authoritative for chapter lists; they extend and supersede the draft list in 4.2.** Additions beyond 4.2: risk framework (overtrading, max trades, consecutive-loss rules, reducing exposure, portfolio exposure, slippage, gap risk, planned vs actual execution risk), capital framework (how much to allocate, what stays untouched, when to cut or stop), primary vs secondary markets, auctions and order flow, price alerts, reversal/momentum/price-action strategies, support-and-resistance drawing and chart-pattern simulators.
+- Tax calculator: deferred until tax rates are verified from an official source (default decision; owner can override).
 
 ## 5. Architecture
 
@@ -215,9 +224,9 @@ Each milestone ends with a working, deployable, offline-capable build and passes
 | M | Deliverable | Acceptance (summary) |
 |---|---|---|
 | M0 Foundation | Repo scaffold, mdBook + TS build, loader, service worker, manifest, storage layer, backup/export, CI, AGENTS.md, one sample chapter with one sample component. | Installs as PWA on Android Chrome, iOS Safari (Home Screen) and desktop; sample page works fully offline; CI green; backup round trip works. |
-| M1 Money core | `packages/core` costs, sizing, expectancy and stats with golden tests; facts registry v1 with verified Zerodha charges. **Lab 1 and Lab 2** shipped. | Lab 1 and 2 pass LABS.md acceptance; verification dates shown; stale-fact banner tested. |
-| M2 Tracks 0-2 content | Tracks 0, 1 and 2 chapters with animations, quizzes, reality-check module, streak simulator, gates G1-G2. | Every chapter has all pattern elements; all quizzes validate; gates G1-G2 functional. |
-| M3 Journal | **Lab 3** plus stats dashboard, CSV import/export, plan-adherence tracking, risk-limit alerts. | LABS.md acceptance; imports Lab 5 output. |
+| M1 **Journal first (Lab 3 MVP)** | Decided 2026-11-11: the journal is built before any other lab so the owner can log from day one (reading notes, Kite demo practice, paper trades, later forward and live). Scope: `journal_v1` schema, plan and execution forms (manual entry of costs and shares for now), `core/stats` with tests, dashboard with equity and drawdown curves and R histogram, filters by mode, weekly review form, JSON/CSV export and import, merge with `updated_at`/tombstones, Web Share, optional encryption, backup reminders. Works on phone and desktop, offline. | Lab 3 acceptance (LABS.md) except items that need Labs 1, 2 or 5; hand-computed fixtures match; export on device A and import on device B merges correctly; installable PWA. |
+| M2 Money core | `packages/core` costs and sizing with golden tests; facts registry v1 with verified Zerodha charges. **Lab 2 and Lab 1** shipped, then wired into the journal plan form (auto-fill shares, risk and costs). | Lab 1 and 2 pass LABS.md acceptance; verification dates shown; stale-fact banner tested; journal auto-fill works. |
+| M3 Tracks 0-2 content | Tracks 0, 1 and 2 chapters with animations, quizzes, reality-check module, streak simulator, gates G1-G2. Chapters include "log it in your journal" paper tasks. | Every chapter has all pattern elements; all quizzes validate; gates G1-G2 functional. |
 | M4 Tracks 3-5 content | Charts, Kite (illustrations), indicators; indicator playground; candle builder; gate G3. | As M2 for these tracks. |
 | M5 Backtester | Data adapters, synthetic generator, **Lab 4** with bias demos and walk-forward. Track 7 content. | LABS.md acceptance; reproducible seeded results. |
 | M6 Strategy and psychology | Track 6 (full trend-following spec shared by Lab 4 and Lab 5), Track 8, gates G4-G5. | Strategy spec JSON loads identically in backtester and script. |
@@ -225,7 +234,7 @@ Each milestone ends with a working, deployable, offline-capable build and passes
 | M8 Advanced theory | Track 9, gate G7, printable trading plan. | Content standards met; F&O framed as theory only. |
 | M9 Hardening | Accessibility audit, performance pass, offline soak test (7-day), content review of every fact, README, release. | All budgets met; zero open P1 issues. |
 
-Milestones M2 and M4 can run in parallel with code milestones if different agents own different folders.
+Having the journal does not unlock live trading; the gates in section 6 still decide that. Journal entries made before the gates are marked `paper`, `kite_demo` or a learning note, never `live`. Milestones M3 and M4 can run in parallel with code milestones if different agents own different folders.
 
 ## 10. Definition of done (any chapter or feature)
 1. Matches the page-type template and chapter pattern.
