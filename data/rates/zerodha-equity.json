@@ -1,0 +1,48 @@
+{
+  "id": "zerodha_equity_cash_v1",
+  "source": "https://zerodha.com/charges",
+  "verifiedOn": "2026-11-11",
+  "reviewEveryDays": 90,
+  "notes": "Read from zerodha.com/charges and from the calculator script https://zerodha.com/static/js/brokerage.js on 2026-11-11. NSE exchange charge is 0.00297% plus IPFT 0.0001% (together the 0.00307% shown on the charges page). Calculator rounds each charge to 2 decimals (JS toFixed), STT and stamp duty to whole rupees (Math.round), and leaves out the DP charge. Verified against 7 official-calculator screenshots. Rates per crore are rupees per Rs 1,00,00,000 of turnover.",
+  "brokerage": {
+    "cnc": {
+      "type": "zero"
+    },
+    "mis": {
+      "type": "lower_of",
+      "flatPaise": 2000,
+      "percentPerCrore": 3000
+    }
+  },
+  "sttPerCrore": {
+    "cnc": {
+      "buy": 10000,
+      "sell": 10000
+    },
+    "mis": {
+      "buy": 0,
+      "sell": 2500
+    }
+  },
+  "exchangePerCrore": {
+    "NSE": 297,
+    "BSE": 375
+  },
+  "sebiPerCrore": 10,
+  "stampPerCrore": {
+    "cnc": 1500,
+    "mis": 300
+  },
+  "gstPercent": 18,
+  "dpSellPaise": {
+    "cdsl": 350,
+    "broker": 950,
+    "gst": 234,
+    "total": 1534
+  },
+  "minPaisePerContractNote": 1,
+  "ipftPerCrore": {
+    "NSE": 10,
+    "BSE": 0
+  }
+}

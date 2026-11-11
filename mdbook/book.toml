@@ -12,8 +12,8 @@ create-missing = false
 [output.html]
 no-section-label = true
 smart-punctuation = true
-additional-css = ["theme/components.css", "theme/cft-anim.css"]
-additional-js = ["theme/mermaid.min.js", "theme/mermaid-init.js", "theme/cft-lib.js", "theme/demos.js", "theme/demos-charts.js", "theme/demos-indicators.js", "theme/demos-kite.js", "theme/demos-testing.js", "theme/demos-fo-market.js", "theme/demos-money-psych.js", "theme/components.js"]
+additional-css = ["theme/components.css", "theme/cft-anim.css", "theme/labs.css"]
+additional-js = ["theme/mermaid.min.js", "theme/mermaid-init.js", "theme/cft-lib.js", "theme/demos.js", "theme/demos-charts.js", "theme/demos-indicators.js", "theme/demos-kite.js", "theme/demos-testing.js", "theme/demos-fo-market.js", "theme/demos-money-psych.js", "theme/components.js", "theme/dist/labs.js"]
 
 [output.html.fold]
 enable = true

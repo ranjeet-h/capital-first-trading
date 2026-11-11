@@ -111,3 +111,6 @@
   - [Gate G5 strategy validation](10-graduation-gates/05-gate-g5-strategy-validation/index.md)
   - [Gate G6 paper and forward record](10-graduation-gates/06-gate-g6-paper-and-forward-record/index.md)
   - [Gate G7 live-readiness review and the one-page trading plan](10-graduation-gates/07-gate-g7-live-readiness-plan/index.md)
+- [Labs](labs/index.md)
+  - [Cost calculator](labs/cost-calculator.md)
+  - [Position size calculator](labs/position-size-calculator.md)

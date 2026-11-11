@@ -1,2 +1,5 @@
 mdbook/book/
 .DS_Store
+node_modules/
+mdbook/theme/dist/
+test-results/
