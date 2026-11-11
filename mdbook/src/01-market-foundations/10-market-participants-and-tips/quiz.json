@@ -1,0 +1,86 @@
+[
+ {
+  "id": "T1.10-q1",
+  "type": "numeric",
+  "prompt": "On a hypothetical day, foreign investors' buy value is Rs 2,600 crore and sell value is Rs 3,100 crore. What is the net flow in Rs crore? Use a minus sign for net selling.",
+  "answer": -500,
+  "tolerance": 0,
+  "unit": "Rs crore",
+  "solution": "Net flow = buy value - sell value = 2,600 - 3,100 = -500. The result is negative, so this is net selling of Rs 500 crore. The figure shows aggregate flow only, not which stocks were traded or why.",
+  "concepts": ["net-flow", "fii-dii"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.10-q2",
+  "type": "mcq",
+  "prompt": "A reader says: 'FII buying means the price will rise.' Which answer is correct?",
+  "options": [
+   {"id": "a", "text": "Yes. Foreign buying always pushes prices up."},
+   {"id": "b", "text": "No. A net flow is an aggregate figure. It does not show which stocks were bought, why, or what the price will do next."},
+   {"id": "c", "text": "Yes, if net buying is above Rs 1,000 crore."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. A net flow figure does not predict the price. Prices move on many orders from many participants.",
+   "c": "Wrong. The size of the net figure does not turn it into a price forecast."
+  },
+  "concepts": ["net-flow", "misconceptions"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.10-q3",
+  "type": "multi",
+  "prompt": "Select all that are signs of a misleading tip.",
+  "options": [
+   {"id": "a", "text": "A promised monthly return with no risk discussed."},
+   {"id": "b", "text": "A demand to join a paid group today or lose the chance."},
+   {"id": "c", "text": "A link to the company's filing, with its date."},
+   {"id": "d", "text": "A claim to have insider information."}
+  ],
+  "answer": ["a", "b", "d"],
+  "explanations": {
+   "c": "Not a warning sign on its own. A link to a primary filing with its date is something you can check, which is what a good source allows."
+  },
+  "concepts": ["red-flags", "tips"],
+  "difficulty": 2,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.10-q4",
+  "type": "spot-the-mistake",
+  "prompt": "A reader says: 'The adviser is in my messaging group, so he is registered with SEBI.' Which part of this statement is wrong?",
+  "options": [
+   {"id": "a", "text": "'The adviser is in my messaging group' is wrong. Membership in a group is not something a reader can check."},
+   {"id": "b", "text": "'So he is registered with SEBI' is wrong. Being in a group proves nothing about registration. Check the SEBI registered list."},
+   {"id": "c", "text": "No part is wrong."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. Being a member of a group is an observable fact. The error is the conclusion drawn from it.",
+   "c": "Wrong. Group membership is not evidence of registration. Registration must be checked on the official SEBI list."
+  },
+  "concepts": ["registration", "tips"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.10-q5",
+  "type": "scenario",
+  "prompt": "A message says: 'We earn 20% a month on a Rs 50,000 account, so you can make Rs 10,000 a month with us.' Which is the strongest red flag?",
+  "options": [
+   {"id": "a", "text": "The figure is written in rupees."},
+   {"id": "b", "text": "A monthly return is promised, with no verifiable source and no discussion of risk, and the reader is pushed to join."},
+   {"id": "c", "text": "The message mentions an account size."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. Writing an amount in rupees is normal. It is not a red flag on its own.",
+   "c": "Wrong. Mentioning an account size is not a red flag on its own. The red flags are the promised return, the lack of source and the pressure."
+  },
+  "concepts": ["red-flags", "tips"],
+  "difficulty": 2,
+  "reviewAfterDays": 3
+ }
+]

@@ -1,0 +1,167 @@
+[
+  {
+    "id": "T2.7-q1",
+    "type": "numeric",
+    "prompt": "A plan has R = 2 before costs. What is its break-even win rate, in percent?",
+    "answer": 33.3,
+    "tolerance": 0.1,
+    "unit": "%",
+    "solution": "Break-even W = 1 / (1 + R) = 1 / (1 + 2) = 1/3 = 33.3%. Check: at W = 0.333, the expected win is 0.333 x 2 = 0.666 and the expected loss is 0.667 x 1 = 0.667. The two sides match, so the break-even is about 33.3%.",
+    "concepts": [
+      "break-even",
+      "reward-to-risk"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.7-q2",
+    "type": "mcq",
+    "prompt": "A plan has R = 3 before costs. Which win rate is its break-even?",
+    "options": [
+      {
+        "id": "a",
+        "text": "75%"
+      },
+      {
+        "id": "b",
+        "text": "25%"
+      },
+      {
+        "id": "c",
+        "text": "33.3%"
+      },
+      {
+        "id": "d",
+        "text": "50%"
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "75% is R / (1 + R) = 3 / 4. That inverts the formula. Break-even is 1 / (1 + R).",
+      "c": "33.3% is the break-even for R = 2, not R = 3. This answer uses the wrong R.",
+      "d": "50% assumes wins and losses are the same size, which is R = 1."
+    },
+    "concepts": [
+      "break-even",
+      "reward-to-risk"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.7-q3",
+    "type": "mcq",
+    "prompt": "Which statement about costs and break-even is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Costs lower the break-even win rate, so they help the plan."
+      },
+      {
+        "id": "b",
+        "text": "Costs raise the break-even win rate, because each share's cost adds to the risk and takes from the reward."
+      },
+      {
+        "id": "c",
+        "text": "Costs do not change the break-even, because they are small compared with the target."
+      },
+      {
+        "id": "d",
+        "text": "Costs matter only on trades that win."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Costs are a loss on every trade. In the dummy example they raise the break-even from 33.3% to 40.0%.",
+      "c": "Costs are a fixed part of the trade arithmetic. Even a small cost moves the break-even, and the size of the move depends on the plan.",
+      "d": "Costs apply to every trade, winners and losers alike. They reduce the reward and add to the risk on every trade."
+    },
+    "concepts": [
+      "costs",
+      "break-even"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.7-q4",
+    "type": "scenario",
+    "prompt": "Your written rule: a plan must have R of at least 1.5. A plan has entry Rs 250, stop Rs 240 and target Rs 262. What does the rule say?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Accept. An R of 1.2 is close to 1.5."
+      },
+      {
+        "id": "b",
+        "text": "Reject. R is 1.2 (Rs 12 reward over Rs 10 risk), which is below the minimum of 1.5."
+      },
+      {
+        "id": "c",
+        "text": "Accept, because a high win rate makes up for a low R."
+      },
+      {
+        "id": "d",
+        "text": "Move the target to Rs 265 so that R looks like 1.5."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Close is not enough. The rule sets a minimum, and 1.2 is below it.",
+      "c": "A win rate does not change R. The rule is about the plan's reward-to-risk, set before the trade.",
+      "d": "Choosing a target to pass a rule defeats the rule. The target must be set by the plan's reason, not by the rule's threshold."
+    },
+    "concepts": [
+      "reward-to-risk",
+      "rules"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.7-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake. Statement: 'My plan wins 40% of trades (a), so it has no edge (b), because the break-even win rate for any plan is 50% (c).' Its target gives R = 2 before costs. Which part is wrong?",
+    "options": [
+      {
+        "id": "a",
+        "text": "My plan wins 40% of trades."
+      },
+      {
+        "id": "b",
+        "text": "So it has no edge."
+      },
+      {
+        "id": "c",
+        "text": "Because the break-even win rate for any plan is 50%."
+      }
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "This is a correct figure, with a win rate of 40% over the sample described.",
+      "b": "The conclusion does not follow from the stated numbers. With R = 2, break-even before costs is 33.3%, so 40% is above it before costs. Costs and sample size still need checking."
+    },
+    "concepts": [
+      "break-even",
+      "win-rate"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.7-q6",
+    "type": "numeric",
+    "prompt": "Entry Rs 150, stop Rs 144, target Rs 165. A DUMMY cost of Rs 0.50 per share is added. What is the costed break-even win rate, in percent?",
+    "answer": 31.0,
+    "tolerance": 0.1,
+    "unit": "%",
+    "solution": "Risk per share = 6 + 0.50 = Rs 6.5. Reward per share = 15 - 0.50 = Rs 14.5. Break-even = 6.5 / (6.5 + 14.5) = 6.5 / 21 = 0.3095, or 31.0%. Check: 0.30952 x 14.5 = 4.488 and 0.69048 x 6.5 = 4.488, so the two sides match.",
+    "concepts": [
+      "break-even",
+      "reward-to-risk"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

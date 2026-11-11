@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T2.14-q1",
+    "type": "numeric",
+    "prompt": "Capital is Rs 50,000. Three open positions have planned losses of Rs 400, Rs 250 and Rs 350. What is the open risk as a percentage of capital?",
+    "answer": 2,
+    "tolerance": 0,
+    "unit": "%",
+    "solution": "Step 1: open risk = 400 + 250 + 350 = Rs 1,000. Step 2: 1,000 / 50,000 = 0.02 = 2%. Check: 2% of 50,000 = 1,000.",
+    "concepts": ["open-risk"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.14-q2",
+    "type": "numeric",
+    "prompt": "Capital is Rs 50,000. Sector X holds two positions worth Rs 15,000 and Rs 9,000. What percentage of capital is Sector X?",
+    "answer": 48,
+    "tolerance": 0,
+    "unit": "%",
+    "solution": "Step 1: Sector X value = 15,000 + 9,000 = Rs 24,000. Step 2: 24,000 / 50,000 = 0.48 = 48%. Check: 50,000 x 48% = 24,000.",
+    "concepts": ["concentration", "sector-share"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.14-q3",
+    "type": "scenario",
+    "prompt": "A trader holds five stocks, all in one sector, and says: 'I have five stocks, so I am diversified.' Which reply is correct?",
+    "options": [
+      {"id": "a", "text": "Correct. Five different companies are always diversified."},
+      {"id": "b", "text": "Not as stated. If the five move together, the holdings act like one larger bet on that sector."},
+      {"id": "c", "text": "Correct, as long as no single stock is above 25% of capital."},
+      {"id": "d", "text": "Not as stated, but only because five is too few stocks."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Different company names do not mean different risks. A shared sector often moves them together.",
+      "c": "A single-stock cap is one limit. It does not remove the sector concentration.",
+      "d": "The number of stocks is not the issue. Five stocks in one sector are still one sector exposure."
+    },
+    "concepts": ["diversification", "correlation"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.14-q4",
+    "type": "mcq",
+    "prompt": "Which statement about exposure and risk is correct?",
+    "options": [
+      {"id": "a", "text": "Exposure and risk are the same number."},
+      {"id": "b", "text": "Exposure is the rupee value of positions. Open risk is the planned loss if every stop fills at its stop. They are different numbers."},
+      {"id": "c", "text": "Exposure is the planned loss at each stop."},
+      {"id": "d", "text": "Exposure is the risk left after diversification."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A Rs 25,000 position with a stop 2% below entry has large exposure but a small planned loss of Rs 500.",
+      "c": "That describes open risk, not exposure. Exposure is the value of the position.",
+      "d": "Diversification changes concentration. Exposure and open risk are defined by value and planned loss, not by how many names are held."
+    },
+    "concepts": ["exposure", "open-risk"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.14-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Sector X is at Rs 22,500 (45% of Rs 50,000). A new Rs 6,000 position is added in Sector X. The trader writes: 'The sector total stays at Rs 22,500 (45%), because I only added the new position to my list.' Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "Rs 6,000 is too small to matter for concentration."},
+      {"id": "b", "text": "The sector total stays at Rs 22,500. It must include the new Rs 6,000, which gives Rs 28,500, or 57% of Rs 50,000."},
+      {"id": "c", "text": "The 45% figure is the wrong share for Sector X."},
+      {"id": "d", "text": "Adding a position always lowers concentration."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The size of the new position is not the mistake. The mistake is leaving the sector total unchanged after adding to it.",
+      "c": "45% is correct for the holdings before the addition. The mistake is that the total was not updated.",
+      "d": "Adding a position in a sector raises that sector's share unless capital also changes."
+    },
+    "concepts": ["concentration", "sector-totals"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T2.14-q6",
+    "type": "mcq",
+    "prompt": "Which statement about correlation is correct?",
+    "options": [
+      {"id": "a", "text": "Stocks in the same sector move independently, so each one is a separate bet."},
+      {"id": "b", "text": "Stocks in the same sector often move together, so count them together when you measure concentration."},
+      {"id": "c", "text": "Correlation only matters when a portfolio holds derivatives."},
+      {"id": "d", "text": "Correlation means a stock's price is fixed relative to the index."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Shared sector drivers often move stocks together. That is why this chapter treats them as one larger bet.",
+      "c": "Correlation matters for any group of holdings, derivatives or not. Derivatives are covered in Track 9 only as theory.",
+      "d": "Correlation measures how closely two prices move together. It does not fix one price relative to an index."
+    },
+    "concepts": ["correlation", "concentration"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

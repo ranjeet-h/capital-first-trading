@@ -255,3 +255,6 @@ Having the journal does not unlock live trading; the gates in section 6 still de
 5. Confirm the forward-test script runs on your laptop (Node) and which data source you prefer by default (Yahoo via `yahoo-finance2` or NSE files).
 6. Verify current NSE terms for bhavcopy use before an NSE adapter is documented as supported.
 7. Tax rates and the owner's own tax status (delivery gains vs business income) must be verified with an official source or a tax professional before the tax chapter is written.
+8. **Learning-note entries (found during chapter drafting, 2026-11-11):** chapters ask the reader to log "learning notes", but the Lab 3 `mode` list is paper, live, forward, backtest, kite_demo. Proposed: add a non-trade entry type `note` (excluded from all trade statistics). Decide before M3.
+9. **Rs 2,000-3,000 wording:** the curriculum specs sometimes call it "a ceiling"; the book text calls it "your daily profit aspiration", never a target to chase. Confirm.
+10. **Chapter drafts need a review pass:** Tracks 0-2 drafts exist in `mdbook/src/` (31 chapters). Every `[VERIFY]` tag and `<!-- OPEN -->` comment must be resolved before release; dummy cost numbers in T2.2, T2.12 and T2.16 are replaced by Lab 2's verified figures.

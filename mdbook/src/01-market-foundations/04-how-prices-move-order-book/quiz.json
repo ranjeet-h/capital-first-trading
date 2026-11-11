@@ -1,0 +1,100 @@
+[
+  {
+    "id": "T1.4-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical ask side: 100 shares at Rs 250, 150 at Rs 251, 200 at Rs 252. A market buy of 250 shares fills 100 at Rs 250 and 150 at Rs 251. What is the total cost, in rupees?",
+    "answer": 62650,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "100 x 250 = 25,000. 150 x 251 = 37,650. Total = 25,000 + 37,650 = Rs 62,650. Check: 250 x 250 = 62,500 (the price-times-quantity mistake at the displayed price), and the difference of 150 is the extra Rs 1 on each of the 150 shares filled at Rs 251, which matches.",
+    "concepts": ["market-order", "order-book"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.4-q2",
+    "type": "numeric",
+    "prompt": "Using the same book, what is the average price, in rupees to two decimals, of the 250-share market buy?",
+    "answer": 250.6,
+    "tolerance": 0.01,
+    "unit": "Rs",
+    "solution": "Total cost = Rs 62,650 (see the previous question). Average = 62,650 / 250 = Rs 250.60. Check: 250 x 250.60 = 62,650, which matches. Common wrong answer: Rs 250.00, the first level only, which ignores the 150 shares filled at Rs 251.",
+    "concepts": ["average-fill-price"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.4-q3",
+    "type": "mcq",
+    "prompt": "'The last price is the fair price.' Is that statement right?",
+    "options": [
+      {"id": "a", "text": "Yes"},
+      {"id": "b", "text": "No. The last price is where the most recent match happened. No price is fair by itself; it is only what buyers and sellers agreed to at that moment."},
+      {"id": "c", "text": "Yes, because buyers and sellers agreed to it."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The last price is the most recent match, not a verdict on value. A fair price would need a separate measure that the book does not supply here.",
+      "c": "Agreement at one moment is not the same as fairness. Orders can move the price in either direction a moment later."
+    },
+    "concepts": ["price-formation", "misconceptions"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.4-q4",
+    "type": "mcq",
+    "prompt": "'A buy limit at Rs 250 means I pay exactly Rs 250.' Is that statement right?",
+    "options": [
+      {"id": "a", "text": "Yes"},
+      {"id": "b", "text": "No. A buy limit at Rs 250 is a maximum of Rs 250 per share. The order fills only at Rs 250 or lower, and it may not fill at all."},
+      {"id": "c", "text": "Yes, but only in a deep order book."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A limit order is a maximum for a buy. It can fill below the limit, and it may not fill at all if no seller is at or below the limit.",
+      "c": "Depth does not change what a limit means. The limit is still a maximum, and the order can still fail to fill."
+    },
+    "concepts": ["limit-order"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.4-q5",
+    "type": "scenario",
+    "prompt": "A thin stock has few sellers. You place a large market buy. What is most likely?",
+    "options": [
+      {"id": "a", "text": "The average fill will stay near the last price, whatever the size of the order."},
+      {"id": "b", "text": "The order can fill at prices above the last price, so the average cost can rise."},
+      {"id": "c", "text": "The price cannot change, because it is a market order."},
+      {"id": "d", "text": "The exchange fills everyone at the lowest price in the book."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "With few shares waiting at each level, a large order reaches higher prices. The average fill can drift far from the last price.",
+      "c": "A market order takes the book as it is, and each level it consumes can move the price. It does not freeze the price.",
+      "d": "Each level fills at its own price. The lowest price is used first, but higher levels are reached as the order grows."
+    },
+    "concepts": ["liquidity", "market-order"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.4-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Statement: 'The price went up, so buyers have more information.' Which part of this statement is the mistake?",
+    "options": [
+      {"id": "a", "text": "'The price went up'"},
+      {"id": "b", "text": "'so buyers have more information'"},
+      {"id": "c", "text": "'Price changes come from orders'"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A price rise is an observable fact about the last matched trades. It is not the error.",
+      "c": "This part is accurate. Price moves reflect order flow, which is the point of the chapter."
+    },
+    "concepts": ["price-formation", "misconceptions"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

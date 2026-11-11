@@ -1,0 +1,167 @@
+[
+  {
+    "id": "T2.8-q1",
+    "type": "numeric",
+    "prompt": "System X (hypothetical): 9 wins of Rs 300 and 1 loss of Rs 4,000 in 10 trades. What is the expectancy per trade, in rupees, before costs?",
+    "answer": -130,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Expectancy = 0.9 x 300 - 0.1 x 4,000 = 270 - 400 = minus Rs 130 per trade. Check: 10 trades give a net of 9 x 300 - 4,000 = 2,700 - 4,000 = minus Rs 1,300, and minus 1,300 / 10 = minus Rs 130.",
+    "concepts": [
+      "expectancy",
+      "win-rate"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.8-q2",
+    "type": "mcq",
+    "prompt": "A friend says: '9 wins out of 10 means the system is good.' Which response is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes. Nine wins out of ten shows the system works."
+      },
+      {
+        "id": "b",
+        "text": "Not from the win rate alone. The loss size matters: with nine wins of Rs 300 and one loss of Rs 4,000, the expectancy is minus Rs 130 per trade."
+      },
+      {
+        "id": "c",
+        "text": "Yes, because one loss is a small part of ten trades."
+      },
+      {
+        "id": "d",
+        "text": "No, a 90% win rate can never be positive."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Win rate is a frequency. The sign of the result depends on the size of wins and losses as well.",
+      "c": "Size, not count, decides the result. One loss of Rs 4,000 is larger than nine wins of Rs 300 combined.",
+      "d": "This is false. Expectancy depends on both sides, so a high win rate can be positive when the wins are large enough compared with the losses."
+    },
+    "concepts": [
+      "win-rate",
+      "expectancy"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.8-q3",
+    "type": "mcq",
+    "prompt": "A sample of ten trades has no losing trades. What is its profit factor?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Infinity, so it is the best possible result."
+      },
+      {
+        "id": "b",
+        "text": "Undefined. The gross loss is zero, so the ratio cannot be calculated, and the sample is too small or too clean to judge."
+      },
+      {
+        "id": "c",
+        "text": "1.0."
+      },
+      {
+        "id": "d",
+        "text": "0."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Dividing by zero does not give a useful score. No losses in a sample is a reason to collect more data, not a verdict.",
+      "c": "1.0 would mean gross profit equals gross loss. With zero losses there is nothing to divide by, so 1.0 is not produced.",
+      "d": "Zero would mean no gross profit. The sample has profit, but no loss to divide by."
+    },
+    "concepts": [
+      "profit-factor",
+      "sample-size"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.8-q4",
+    "type": "scenario",
+    "prompt": "A friend shows two systems. System X (hypothetical) has a 90% win rate and an expectancy of minus Rs 130 per trade. System Y (hypothetical) has a 40% win rate and an expectancy of plus Rs 200 per trade. Which has the higher expectancy?",
+    "options": [
+      {
+        "id": "a",
+        "text": "X, because it wins 90% of its trades."
+      },
+      {
+        "id": "b",
+        "text": "Y, because plus Rs 200 is higher than minus Rs 130."
+      },
+      {
+        "id": "c",
+        "text": "They are equal, because both have ten trades."
+      },
+      {
+        "id": "d",
+        "text": "Neither can be compared without knowing the win rates."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Win rate is not expectancy. X's expectancy is minus Rs 130, which is lower than Y's plus Rs 200.",
+      "c": "Equal trade counts do not make equal expectancy. The two expectancies given are different, and the higher one is plus Rs 200.",
+      "d": "The numbers needed are supplied. Expectancy is already given for each system, so they can be compared directly."
+    },
+    "concepts": [
+      "expectancy",
+      "comparison"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.8-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake. Statement: 'System X wins 9 of 10 trades (a), so its win rate is 90% (b), so it is profitable (c).' Which part is wrong?",
+    "options": [
+      {
+        "id": "a",
+        "text": "System X wins 9 of 10 trades."
+      },
+      {
+        "id": "b",
+        "text": "So its win rate is 90%."
+      },
+      {
+        "id": "c",
+        "text": "So it is profitable."
+      }
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "This is correct for the hypothetical sample: 9 wins and 1 loss in 10 trades.",
+      "b": "This is correct: 9 out of 10 is a 90% win rate. The win rate is a frequency and does not decide profitability."
+    },
+    "concepts": [
+      "win-rate",
+      "expectancy"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.8-q6",
+    "type": "numeric",
+    "prompt": "System W (hypothetical) has 75% wins of Rs 500 and 25% losses of Rs 2,000. Over 4 trades, what is the profit factor?",
+    "answer": 0.75,
+    "tolerance": 0.005,
+    "unit": "ratio",
+    "solution": "Over 4 trades, the expected split is 3 wins and 1 loss. Gross profit = 3 x 500 = Rs 1,500. Gross loss = 1 x 2,000 = Rs 2,000. Profit factor = 1,500 / 2,000 = 0.75. Check: 2,000 / 1,500 = 1.33, and 1 / 1.33 is about 0.75.",
+    "concepts": [
+      "expectancy",
+      "win-rate"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

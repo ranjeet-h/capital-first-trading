@@ -1,0 +1,104 @@
+[
+  {
+    "id": "T2.12-q1",
+    "type": "numeric",
+    "prompt": "The daily target is Rs 1,500. Net expectancy is Rs 15 per trade after costs. How many trades a day does the target need, on average?",
+    "answer": 100,
+    "tolerance": 0,
+    "unit": "trades",
+    "solution": "Step 1: trades needed = target / net expectancy = 1,500 / 15 = 100. Check: 100 x 15 = 1,500.",
+    "concepts": ["trades-needed", "expectancy"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.12-q2",
+    "type": "numeric",
+    "prompt": "Expectancy is Rs 80 per trade before costs. Costs are Rs 20 per trade. The daily target is Rs 2,400. How many trades a day does the target need, on average?",
+    "answer": 40,
+    "tolerance": 0,
+    "unit": "trades",
+    "solution": "Step 1: net expectancy = 80 - 20 = Rs 60. Step 2: trades = 2,400 / 60 = 40. Check: 40 x 60 = 2,400.",
+    "concepts": ["trades-needed", "costs"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.12-q3",
+    "type": "mcq",
+    "prompt": "A trader says: 'I am behind my daily target, so I will take more trades. The average will even out.' Which reply is correct?",
+    "options": [
+      {"id": "a", "text": "Yes. More trades spread the risk, so the average becomes safer."},
+      {"id": "b", "text": "No. Each trade has its own result and its own cost. More trades add costs and chances to break rules, and they do not make the average safer."},
+      {"id": "c", "text": "Yes, provided each extra trade is small."},
+      {"id": "d", "text": "No, but only because the target is too high."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Each trade is a separate result with its own cost. Spreading across more trades does not make a weak setup safer.",
+      "c": "Small size does not remove the cost on each trade, or the pressure to trade without a setup.",
+      "d": "The target is not the reason the reply is wrong. Extra trades add cost and noise at any target level."
+    },
+    "concepts": ["overtrading", "averaging-misconception"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.12-q4",
+    "type": "spot-the-mistake",
+    "prompt": "A trader says: 'I am Rs 800 short of my target, so I will take one more trade. My expectancy per trade is positive, so it is fine.' Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "Rs 800 is too small a gap to matter."},
+      {"id": "b", "text": "The reason for the trade. A trade taken to close a target gap is not a setup. The expectancy describes trades taken under the rules, so it does not cover a trade outside the checklist."},
+      {"id": "c", "text": "Positive expectancy means the trade will win."},
+      {"id": "d", "text": "Nothing. Positive expectancy justifies any trade."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The size of the gap does not decide whether a setup exists. The gap is the pressure this chapter warns about.",
+      "c": "Expectancy is an average over many trades. It does not predict the outcome of one trade.",
+      "d": "Expectancy describes the average of trades taken under the rules. A trade outside the checklist is not covered by that average."
+    },
+    "concepts": ["overtrading", "daily-target-pressure"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T2.12-q5",
+    "type": "multi",
+    "prompt": "Tuesday's journal shows 14 trades. The daily trade limit is 4. Six of the trades passed the checklist. One trade was placed to recover an earlier loss. Earlier in the week the journal also shows a no-trade day. Select every sign of overtrading.",
+    "options": [
+      {"id": "a", "text": "Trade count above the daily limit (14 against a limit of 4)"},
+      {"id": "b", "text": "Eight trades that did not pass the checklist"},
+      {"id": "c", "text": "A trade placed to recover an earlier loss"},
+      {"id": "d", "text": "A no-trade day recorded earlier in the week"}
+    ],
+    "answer": ["a", "b", "c"],
+    "explanations": {
+      "d": "A recorded no-trade day is a valid result. It is a sign of discipline, not of overtrading."
+    },
+    "concepts": ["overtrading-signs", "journal"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T2.12-q6",
+    "type": "scenario",
+    "prompt": "On a Wednesday no setup passes the checklist, so the trader takes no trades. The daily target is missed, and the trader feels the day failed. What is the correct reading?",
+    "options": [
+      {"id": "a", "text": "The day failed because the target was missed."},
+      {"id": "b", "text": "The day is a valid result: the checklist was applied and no setup existed."},
+      {"id": "c", "text": "A trade is needed to make up for the missed target."},
+      {"id": "d", "text": "The maximum trades rule should be raised so that the next day can reach the target."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A missed target is a feeling created by the target, not a rule break. The checklist was followed.",
+      "c": "Trading to make up a target is the pressure this chapter warns about. It is how overtrading starts.",
+      "d": "Raising the limit after a missed target adjusts the rule to the result. Limits are set in advance."
+    },
+    "concepts": ["no-trade-day", "daily-target-pressure"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

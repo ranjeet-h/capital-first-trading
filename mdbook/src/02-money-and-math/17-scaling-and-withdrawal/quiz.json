@@ -1,0 +1,94 @@
+[
+  {
+    "id": "T2.17-q1",
+    "type": "mcq",
+    "prompt": "Hypothetical: the rule is to withdraw only when equity is at a new high-water mark and above Rs 60,000 (starting capital Rs 50,000 plus Rs 10,000). After one good month, equity is Rs 55,000. Can the trader withdraw?",
+    "options": [
+      {"id": "a", "text": "Yes. One good month is enough."},
+      {"id": "b", "text": "No. Rs 55,000 is below Rs 60,000, so the threshold is not met."},
+      {"id": "c", "text": "Yes, if the trader takes only 5% of the gain."},
+      {"id": "d", "text": "Yes, because Rs 55,000 is a new high-water mark."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Wrong. One good month does not meet the threshold. The rule requires both a new high and a level above Rs 60,000.",
+      "c": "Wrong. A partial withdrawal still needs the threshold to be met first. Rs 55,000 is below Rs 60,000.",
+      "d": "Wrong. Rs 55,000 is a new high-water mark, but the rule also requires equity above Rs 60,000."
+    },
+    "concepts": ["withdrawal-threshold", "high-water-mark"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.17-q2",
+    "type": "scenario",
+    "prompt": "Hypothetical: equity is Rs 53,000 and the high-water mark is Rs 57,000. The trader wants to withdraw Rs 5,000 for a household bill. Which response fits the rules?",
+    "options": [
+      {"id": "a", "text": "Withdraw. It is the trader's money, so the account can take the loss."},
+      {"id": "b", "text": "Do not withdraw. Withdrawals during a drawdown are not allowed, because they lower the base the account must recover."},
+      {"id": "c", "text": "Withdraw if the bill is urgent, then top up the account later."},
+      {"id": "d", "text": "Withdraw, because a withdrawal under 10% of equity is always allowed."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Wrong. The account is in drawdown. A withdrawal makes the gap to the high-water mark harder to recover, and the threshold is not met.",
+      "c": "Wrong. An urgent need does not change the rule. A later top-up from household money breaks the rule that household money is never trading capital.",
+      "d": "Wrong. No percentage limit makes a withdrawal allowed in a drawdown. The threshold and the high-water condition both have to be met."
+    },
+    "concepts": ["drawdown", "withdrawal-policy"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.17-q3",
+    "type": "spot-the-mistake",
+    "prompt": "Statement: 'My account is 7% below its high-water mark, so I will add Rs 20,000 of household savings to get back to the peak faster.' Which part is the mistake?",
+    "options": [
+      {"id": "a", "text": "Being 7% below the high-water mark."},
+      {"id": "b", "text": "Adding household savings to a losing account. Household money is never trading capital."},
+      {"id": "c", "text": "Treating the high-water mark as a target to reach quickly."},
+      {"id": "d", "text": "Nothing. A top-up is fine when the account is recovering."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Wrong. Being below the high-water mark is a measured fact. Its size is what the drawdown rule reads.",
+      "c": "Wrong. The high-water mark is a reference point. Treating it as a target to reach quickly is a pressure to act, but the statement's clear error is the money source (see b).",
+      "d": "Wrong. A top-up from household money breaks the capital-first rules, whether or not the account is recovering (T2.15)."
+    },
+    "concepts": ["household-money", "capital-rules"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.17-q4",
+    "type": "numeric",
+    "prompt": "Hypothetical: the equity path is Rs 50,000, 54,000, 51,000, 57,000, 53,000. What is the drawdown from the high-water mark at the end, in percent?",
+    "answer": 7.0,
+    "tolerance": 0.05,
+    "unit": "%",
+    "solution": "The high-water mark is the highest value so far, 57,000. Drawdown = (57,000 - 53,000) / 57,000 = 4,000 / 57,000 = 0.0702, which is 7.0%. Check: 57,000 x 7.0% = 3,990, close to 4,000.",
+    "concepts": ["drawdown", "high-water-mark"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.17-q5",
+    "type": "mcq",
+    "prompt": "Hypothetical: the trader has lost 15% and wants to raise risk per trade from 1% to 2% to win the loss back faster. Is this allowed?",
+    "options": [
+      {"id": "a", "text": "Yes. Recovering faster is the purpose of the account."},
+      {"id": "b", "text": "No. Increasing size after losses is a capital-first rule break, and it speeds up the drawdown (T2.9)."},
+      {"id": "c", "text": "Yes, if the stop is tighter."},
+      {"id": "d", "text": "Yes, after one winning trade."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Wrong. Higher risk after a loss makes each further loss bigger. It does not make recovery more likely (T2.9).",
+      "c": "Wrong. A tighter stop does not offset a larger position. The risk per trade is still raised after losses.",
+      "d": "Wrong. One winning trade does not reset the rule. Scale-up follows gates and recorded results, not a single trade."
+    },
+    "concepts": ["scale-up", "risk-per-trade"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "T2.18-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical: capital Rs 50,000, risk 1% per trade, entry Rs 400, stop Rs 380, and a concentration cap of 25% of capital. How many whole shares? Apply all three limits and take the lowest.",
+    "answer": 25,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "Risk budget = 50,000 x 1% = Rs 500. Risk per share = 400 - 380 = Rs 20. Raw shares = 500 / 20 = 25. Cash cap = floor(50,000 / 400) = 125. Concentration cap = floor(50,000 x 0.25 / 400) = floor(31.25) = 31. Shares = lowest of 25, 125 and 31 = 25. Check: 25 x 20 = 500, the risk budget, and 25 x 400 = 10,000, within the 12,500 cap.",
+    "concepts": ["position-sizing", "risk-per-trade"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.18-q2",
+    "type": "scenario",
+    "prompt": "Dummy cost model only (not any broker's charges): proportional 0.1% of turnover per leg, and a fixed Rs 20 per order. Which trade has the larger fixed-charge share of its value?",
+    "options": [
+      {"id": "a", "text": "The Rs 5,000 trade, where Rs 20 is 0.4% of the value."},
+      {"id": "b", "text": "The Rs 50,000 trade, where Rs 20 is 4% of the value."},
+      {"id": "c", "text": "Both are equal, because the proportional rate is 0.1%."},
+      {"id": "d", "text": "The Rs 50,000 trade, because larger trades pay more fixed charges."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "Wrong. Rs 20 / Rs 50,000 is 0.04%, not 4%. The decimal place is wrong.",
+      "c": "Wrong. The proportional rate scales with value, but the fixed Rs 20 does not. The fixed charge therefore weighs more on the smaller trade.",
+      "d": "Wrong. The fixed charge is the same Rs 20 whatever the trade size. It is a larger share of the small trade."
+    },
+    "concepts": ["costs", "fixed-vs-proportional"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.18-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical: a plan wins 3R for each win and loses 1R for each loss (reward-to-risk R = 3). What win rate, in percent, breaks even before costs?",
+    "answer": 25,
+    "tolerance": 0.05,
+    "unit": "%",
+    "solution": "Break-even: W x 3 = (1 - W) x 1, so 4W = 1 and W = 0.25, which is 25%. Check: in 100 trades, 25 wins x 3R = 75R, and 75 losses x 1R = 75R. The two sides are equal.",
+    "concepts": ["break-even-win-rate", "expectancy"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.18-q4",
+    "type": "numeric",
+    "prompt": "Hypothetical record: win rate 40%, average win 2R, average loss 1R, and R = Rs 1,000. What is the expectancy per trade, in rupees?",
+    "answer": 200,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Win part = 0.40 x 2R = 0.80R. Loss part = 0.60 x 1R = 0.60R. Expectancy = 0.80R - 0.60R = 0.20R. In rupees: 0.20 x 1,000 = Rs 200 per trade. Check: 10 trades give 4 x 2,000 = 8,000 from wins and 6 x 1,000 = 6,000 from losses; net 2,000 / 10 = 200.",
+    "concepts": ["expectancy"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.18-q5",
+    "type": "numeric",
+    "prompt": "Hypothetical: an account falls 30%. What gain, in percent, returns it to its starting value?",
+    "answer": 42.9,
+    "tolerance": 0.05,
+    "unit": "%",
+    "solution": "Gain needed = loss / (1 - loss) = 0.30 / 0.70 = 0.4286, which is 42.9%, applied to the smaller account. Check: from 35,000 (30% below 50,000), a 42.9% gain gives 35,000 x 1.429 = about 50,000.",
+    "concepts": ["drawdown-recovery"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.18-q6",
+    "type": "numeric",
+    "prompt": "Hypothetical: a daily target of Rs 2,000, over 250 trading days (an assumed count), at a 20% annual return. How much capital is needed, in rupees?",
+    "answer": 2500000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Yearly target = 2,000 x 250 = 5,00,000. Capital = 5,00,000 / 0.20 = 25,00,000. Check: 25,00,000 x 0.20 = 5,00,000.",
+    "concepts": ["daily-target", "capital-needed"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.18-q7",
+    "type": "spot-the-mistake",
+    "prompt": "Statement: 'A Rs 50,000 account falls to Rs 35,000, a 30% loss. To recover, I need a 30% gain.' Which part is the mistake?",
+    "options": [
+      {"id": "a", "text": "The loss: 50,000 to 35,000 is a 30% fall from the starting value."},
+      {"id": "b", "text": "The recovery step: a 30% gain is taken on the smaller base. 30% of 35,000 is Rs 10,500, which reaches only Rs 45,500. The gain needed is 42.9%."},
+      {"id": "c", "text": "Nothing. Gains and losses of the same percentage are symmetric."},
+      {"id": "d", "text": "The starting value: Rs 50,000 is not the figure to recover to."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Wrong. That arithmetic is correct: 15,000 / 50,000 = 30%. The error is in the recovery step.",
+      "c": "Wrong. A loss and a gain of the same percentage are not symmetric, because the gain is taken on a smaller base.",
+      "d": "Wrong. Rs 50,000 is the starting value the account must return to. The error is the percentage used to get there."
+    },
+    "concepts": ["drawdown-recovery", "denominator"],
+    "difficulty": 3,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.18-q8",
+    "type": "spot-the-mistake",
+    "prompt": "Statement: 'The price fell from Rs 400 to Rs 360. I bought 100 more shares at Rs 360, so my average cost is now Rs 380, which makes my plan sound.' Which part is the mistake?",
+    "options": [
+      {"id": "a", "text": "The average cost: (100 x 400 + 100 x 360) / 200 = Rs 380. The arithmetic is right."},
+      {"id": "b", "text": "The conclusion: a lower average cost does not make the plan sound. Adding to a losing position raises exposure to an idea the price has already moved against."},
+      {"id": "c", "text": "The fall: 40 / 400 is a 10% fall."},
+      {"id": "d", "text": "Nothing. Buying more after a fall is a stop-loss in another form."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Wrong. The average cost is correctly computed. The error is what the statement concludes from it.",
+      "c": "Wrong. 40 / 400 is 10%, which is correct. The fall is not the mistake.",
+      "d": "Wrong. Adding to a losing position is averaging down. It increases exposure, and it is the opposite of a stop-loss (T2.14)."
+    },
+    "concepts": ["averaging-down", "exposure"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

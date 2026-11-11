@@ -1,0 +1,88 @@
+[
+  {
+    "id": "T1.1-q1",
+    "type": "numeric",
+    "prompt": "A holder owns 1,000 shares of a company with 10,00,000 shares outstanding. What percentage of the company does the holder own?",
+    "answer": 0.1,
+    "tolerance": 0.001,
+    "unit": "%",
+    "solution": "Ownership = 1,000 / 10,00,000 = 0.001 = 0.1%. Check: 0.1% of 10,00,000 = 1,000 shares, which matches. Common wrong answers: 1,000 / Rs 200 = 5 (divides by price, with no total); and a percentage computed with the wrong total share count.",
+    "concepts": ["ownership-percentage"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.1-q2",
+    "type": "scenario",
+    "prompt": "You buy 100 shares at Rs 200 from another investor, through the exchange. The trade is worth Rs 20,000. Who receives the Rs 20,000?",
+    "options": [
+      {"id": "a", "text": "The company"},
+      {"id": "b", "text": "The seller"},
+      {"id": "c", "text": "The exchange keeps it"},
+      {"id": "d", "text": "The company, passed on through the broker"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This is a secondary trade, which moves existing shares between investors. The company is not part of the trade and receives nothing.",
+      "c": "The exchange matches orders. It does not keep the buyer's money as payment for the shares.",
+      "d": "A broker passes orders on. In a secondary trade the company receives nothing, whichever route the order takes."
+    },
+    "concepts": ["primary-vs-secondary"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.1-q3",
+    "type": "mcq",
+    "prompt": "'An IPO is guaranteed to rise on listing day.' Is that statement right?",
+    "options": [
+      {"id": "a", "text": "Yes"},
+      {"id": "b", "text": "No. The listing-day price can be above or below the issue price. An IPO is not automatically profitable."},
+      {"id": "c", "text": "Yes, if the offer was heavily subscribed."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "No outcome is guaranteed. The listing price is set by trading after listing, and it can fall below the issue price.",
+      "c": "Heavy demand in the offer does not fix the price after listing. The listing-day price is set by trading after the shares start to trade."
+    },
+    "concepts": ["ipo", "misconceptions"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.1-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Statement: 'I bought shares in the stock market, so the company got my money.' Which part of this statement is the mistake?",
+    "options": [
+      {"id": "a", "text": "'I bought shares in the stock market'"},
+      {"id": "b", "text": "'so the company got my money'"},
+      {"id": "c", "text": "'shares are units of ownership'"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Buying shares on the exchange is a normal secondary trade. This part is accurate.",
+      "c": "A share is a unit of ownership. This part is accurate and is the basis of the whole chapter."
+    },
+    "concepts": ["primary-vs-secondary"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.1-q5",
+    "type": "mcq",
+    "prompt": "'New shares increase my ownership.' Is that statement right?",
+    "options": [
+      {"id": "a", "text": "Yes. More shares in the company means a bigger stake for me."},
+      {"id": "b", "text": "No. The total share count rises, so each existing share is a smaller fraction, unless I buy some of the new shares."},
+      {"id": "c", "text": "Yes, if the company's price stays the same."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The total number of shares rises, not just the holder's number. Each existing share becomes a smaller fraction of the company. This is dilution.",
+      "c": "The price does not change the fraction. The share count does, so the holder's percentage still falls."
+    },
+    "concepts": ["dilution"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

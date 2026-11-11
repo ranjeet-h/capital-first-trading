@@ -1,0 +1,86 @@
+[
+ {
+  "id": "T1.9-q1",
+  "type": "numeric",
+  "prompt": "You hold 100 shares at Rs 1,200, a total of Rs 1,20,000. The company splits each share into four (a 1:4 split). What is the approximate new price per share in rupees?",
+  "answer": 300,
+  "tolerance": 1,
+  "unit": "Rs",
+  "solution": "New shares = 100 x 4 = 400. Approximate new price = 1,200 / 4 = Rs 300. Check: 400 x 300 = Rs 1,20,000, the same value as before.",
+  "concepts": ["split", "price-adjustment"],
+  "difficulty": 2,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.9-q2",
+  "type": "mcq",
+  "prompt": "A reader says: 'A split increases my wealth, because I now own more shares.' Which answer is correct?",
+  "options": [
+   {"id": "a", "text": "Yes. More shares means more value."},
+   {"id": "b", "text": "No. The share count rises and the price falls in proportion, so the total value is unchanged at the moment of the split."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. A split changes the number of shares and the price together. The total value stays the same at that moment."
+  },
+  "concepts": ["split", "misconceptions"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.9-q3",
+  "type": "scenario",
+  "prompt": "A stock trades at Rs 1,000 and goes ex-dividend with a dividend of Rs 10 per share (dummy). You hold 100 shares. The next morning the screen shows about Rs 990. Before market movement and before tax, what is your total holding value?",
+  "options": [
+   {"id": "a", "text": "Rs 99,000, because the cash is not counted."},
+   {"id": "b", "text": "Rs 1,00,000, because 100 x 990 = Rs 99,000 plus Rs 1,000 of cash."},
+   {"id": "c", "text": "Rs 1,01,000, because the dividend is counted twice."},
+   {"id": "d", "text": "Rs 90,000, because the price fell by 10%."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. The Rs 1,000 cash is part of your total value. Leaving it out understates the value.",
+   "c": "Wrong. The dividend is paid once. The price fall already reflects it, so adding it again double-counts.",
+   "d": "Wrong. A Rs 10 change on a Rs 1,000 price is 1%, not 10%. The holding value is 100 x 990 plus the cash."
+  },
+  "concepts": ["dividend", "holding-value"],
+  "difficulty": 2,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.9-q4",
+  "type": "spot-the-mistake",
+  "prompt": "A reader says: 'The stock fell 50% on the split day, so something went wrong with the company.' Which part of this statement is wrong?",
+  "options": [
+   {"id": "a", "text": "'The stock fell 50%' is wrong. On an unadjusted chart the displayed price did fall by 50%."},
+   {"id": "b", "text": "'On the split day' is wrong. Splits show up on the day they take effect."},
+   {"id": "c", "text": "'So something went wrong with the company' is wrong. A split changes the share count and price, and the total value is unchanged."}
+  ],
+  "answer": "c",
+  "explanations": {
+   "a": "Wrong. The displayed price on an unadjusted chart did fall by 50%. That number is accurate, but it is not a loss in value.",
+   "b": "Wrong. A split takes effect on a specific day, and the chart shows the change on that day."
+  },
+  "concepts": ["unadjusted-chart", "split"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.9-q5",
+  "type": "mcq",
+  "prompt": "A reader says: 'A dividend always increases my total value.' Which answer is correct?",
+  "options": [
+   {"id": "a", "text": "Yes. Cash is added, and the share price does not change."},
+   {"id": "b", "text": "No. On the ex-date the price adjusts down by about the dividend amount, and market movement also changes the value of the shares."},
+   {"id": "c", "text": "Yes, because the share price always rises after a dividend."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. The share price does adjust on the ex-date. The cash and the price fall are two parts of the same value.",
+   "c": "Wrong. The price does not always rise after a dividend. The market moves for many reasons, and the ex-date adjustment comes first."
+  },
+  "concepts": ["dividend", "misconceptions"],
+  "difficulty": 2,
+  "reviewAfterDays": 3
+ }
+]

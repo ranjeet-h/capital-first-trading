@@ -873,7 +873,7 @@ Status: DRAFT for reviewer. Written 2026-11-11 by Haiku 5.5 from the curriculum 
 - **Worked example (rupees):**
   - Win rate 60%: probability of a loss = 0.4. Probability of 5 losses starting at a given trade = 0.4^5 = 0.01024, about 1.0%. For 3 losses: 0.4^3 = 0.064, about 6.4%.
   - Win rate 40%: probability of a loss = 0.6. For 5 losses: 0.6^5 = 0.07776, about 7.8%.
-  - Capital lost at 1% risk on Rs 50,000 (each loss is 1% of current capital): 5 losses = 50,000 x (1 - 0.99^5) = Rs 2,451 (approx); 10 losses = Rs 4,781 (approx); 15 losses = Rs 6,997 (approx).
+  - Capital lost at 1% risk on Rs 50,000 (each loss is 1% of current capital): 5 losses = 50,000 x (1 - 0.99^5) = Rs 2,450 (approx); 10 losses = Rs 4,781 (approx); 15 losses = Rs 6,997 (approx).
   - Capital lost at 2% risk: 5 losses = Rs 4,804; 10 losses = Rs 9,146; 15 losses = Rs 13,072 (approx).
   - Rs 10,000 at 1%: 5 losses about Rs 490; 10 about Rs 956; 15 about Rs 1,399.
 - **Visual / animation / simulator:** streak-sim at 40% and 60% win rates: a grid of simulated trades showing streak lengths, with a text summary of the longest streak.
@@ -1112,7 +1112,7 @@ Status: DRAFT for reviewer. Written 2026-11-11 by Haiku 5.5 from the curriculum 
   - At 10% a year: Rs 2,000 a day needs Rs 50 lakh; Rs 3,000 needs Rs 75 lakh. At 50% a year (scale only): Rs 10 lakh and Rs 15 lakh.
   - Required daily return: Rs 10,000 capital: 20% and 30% a day. Rs 50,000: 4% and 6%. Rs 10 lakh: 0.2% and 0.3%.
   - Compounding check: 4% a day for 250 days multiplies capital by about 18,000 (1.04^250, approximately). Show why this is not a sustainable path.
-  - Streaks at 1% risk: Rs 10,000 -> about Rs 490, 956, 1,399 for 5, 10, 15 losses. Rs 50,000 -> about Rs 2,451, 4,781, 6,997. At 2% risk: Rs 10,000 -> about Rs 961, 1,829, 2,614. Rs 50,000 -> about Rs 4,804, 9,146, 13,072.
+  - Streaks at 1% risk: Rs 10,000 -> about Rs 490, 956, 1,399 for 5, 10, 15 losses. Rs 50,000 -> about Rs 2,450, 4,781, 6,997. At 2% risk: Rs 10,000 -> about Rs 961, 1,829, 2,614. Rs 50,000 -> about Rs 4,804, 9,146, 13,072.
   - Cost drag: with the dummy Rs 190 round trip on Rs 50,000, four round trips a day cost Rs 760 (dummy). Gross must exceed the target by that amount.
 - **Visual / animation / simulator:** Static capital-needed chart (target vs capital) and a streak table using streak-sim values. A lab-style calculator is optional, but every figure must be computed by tested code.
 - **Guided exercise:** Compute capital needed for Rs 1,500 a day at 20% over 250 days. Answer: 3,75,000 / 0.20 = Rs 18,75,000. Hints: multiply first, then divide by the return.

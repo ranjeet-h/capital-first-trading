@@ -1,0 +1,89 @@
+[
+ {
+  "id": "T1.6-q1",
+  "type": "order",
+  "prompt": "Put the phases of one trading day in the order described in this chapter. Exact times are not part of this question.",
+  "options": [
+   {"id": "a", "text": "Closing session"},
+   {"id": "b", "text": "Pre-open (orders collected, opening price worked out)"},
+   {"id": "c", "text": "Continuous trading"}
+  ],
+  "answer": ["b", "c", "a"],
+  "explanations": {
+   "a": "Correct position: last. The closing session sets the closing price at the end of the day. Its exact method is [VERIFY: NSE closing session rules].",
+   "b": "Correct position: first. Pre-open collects orders and works out the opening price before continuous trading starts.",
+   "c": "Correct position: middle. Continuous trading matches orders as they arrive, between the pre-open and the closing session."
+  },
+  "concepts": ["trading-phases"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.6-q2",
+  "type": "numeric",
+  "prompt": "Your plan is written on Friday after the close. Monday is a dummy holiday, so the next session is Tuesday. How many calendar days are there from Friday to Tuesday?",
+  "answer": 4,
+  "tolerance": 0,
+  "unit": "days",
+  "solution": "Count the days after Friday: Saturday (1), Sunday (2), Monday (3), Tuesday (4). Answer: 4 calendar days. Only Tuesday is a trading session in that span, because Saturday and Sunday are weekends and Monday is a holiday.",
+  "concepts": ["next-session", "calendar"],
+  "difficulty": 2,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.6-q3",
+  "type": "mcq",
+  "prompt": "A reader says: 'I can trade on Saturday, because I have a free day and my broker app is open.' Which statement is correct?",
+  "options": [
+   {"id": "a", "text": "Yes. If the broker app is open, the exchange matches orders on Saturday."},
+   {"id": "b", "text": "No. Weekends are non-trading days. An order placed then is handled under the broker and exchange rules and waits for a trading session."},
+   {"id": "c", "text": "Yes, Saturday is always a special session."},
+   {"id": "d", "text": "Only when a holiday falls on a Saturday."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. An open broker app does not mean the exchange is trading. The exchange matches orders only in its trading sessions.",
+   "c": "Wrong. Special sessions are announced by the exchange for specific days [VERIFY: NSE circular]. A normal Saturday is not one of them.",
+   "d": "Wrong. Holidays remove trading days. They do not create trading on weekends."
+  },
+  "concepts": ["weekends", "market-hours"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.6-q4",
+  "type": "spot-the-mistake",
+  "prompt": "A reader says: 'The pre-open price is the closing price, so I can plan from it.' Which part of this statement is wrong?",
+  "options": [
+   {"id": "a", "text": "'The pre-open price' is wrong. Pre-open is a different term from the price a stock opens at."},
+   {"id": "b", "text": "'Is the closing price' is wrong. The pre-open price is set in the pre-open phase, and the closing price is set in the closing session. They are different phases."},
+   {"id": "c", "text": "No part is wrong."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. Pre-open is the phase where orders are collected and an opening price is worked out. The term is correct.",
+   "c": "Wrong. The pre-open price and the closing price come from different phases of the day, so they are not the same thing."
+  },
+  "concepts": ["trading-phases", "auctions"],
+  "difficulty": 2,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.6-q5",
+  "type": "scenario",
+  "prompt": "A swing trader places a stop-loss based on Friday's close, before a long weekend that includes a dummy Monday holiday. Which risk is the main one to plan for?",
+  "options": [
+   {"id": "a", "text": "No risk. A stop always fills at the stop price, even if the price gaps."},
+   {"id": "b", "text": "Gap risk. The next session can open far from the stop price, so the fill can be worse than planned."},
+   {"id": "c", "text": "The stop cannot be placed before a holiday, so the trader has no protection."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. A stop is a trigger, and the fill can be at a worse price when the market gaps. This is covered in T2.6.",
+   "c": "Wrong. Whether a stop can be placed at a given time depends on broker and exchange rules [VERIFY: order handling outside market hours]. The main risk is the gap at the next open."
+  },
+  "concepts": ["gap-risk", "stop-loss", "holidays"],
+  "difficulty": 2,
+  "reviewAfterDays": 3
+ }
+]

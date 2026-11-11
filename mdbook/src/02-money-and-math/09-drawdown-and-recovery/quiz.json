@@ -1,0 +1,166 @@
+[
+  {
+    "id": "T2.9-q1",
+    "type": "numeric",
+    "prompt": "An account loses 50%. What gain, in percent, from the trough brings it back to the peak?",
+    "answer": 100,
+    "tolerance": 0,
+    "unit": "%",
+    "solution": "Recovery gain = d / (1 - d) = 0.5 / 0.5 = 1 = 100%. Check: Rs 50,000 falls 50% to Rs 25,000; Rs 25,000 x 2 = Rs 50,000, so a 100% gain is needed.",
+    "concepts": [
+      "asymmetry",
+      "recovery"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.9-q2",
+    "type": "mcq",
+    "prompt": "Rs 50,000 gains 10%, then loses 10%. Which statement is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The two moves cancel, so the account is back at Rs 50,000."
+      },
+      {
+        "id": "b",
+        "text": "The account ends at Rs 49,500, a net loss of 1%, because the loss applies to the larger balance of Rs 55,000."
+      },
+      {
+        "id": "c",
+        "text": "The two moves cancel, but only if the gain comes first."
+      },
+      {
+        "id": "d",
+        "text": "The account ends at Rs 50,500, a net gain of 1%."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Equal percentages do not cancel. The loss is taken from the larger balance after the gain, so the account ends below Rs 50,000.",
+      "c": "The order does not change the result here. Gain then loss, or loss then gain, both end at Rs 49,500 for a 10% move in each direction.",
+      "d": "The loss is 10% of Rs 55,000, which is Rs 5,500, not a gain. The end balance is Rs 49,500."
+    },
+    "concepts": [
+      "compounding",
+      "asymmetry"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.9-q3",
+    "type": "mcq",
+    "prompt": "Which statement about risk of ruin is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It means losing everything on one trade."
+      },
+      {
+        "id": "b",
+        "text": "It is the probability, over many trades, that equity falls to a level from which the plan cannot continue."
+      },
+      {
+        "id": "c",
+        "text": "It applies only when risk per trade is above 1%."
+      },
+      {
+        "id": "d",
+        "text": "It is zero if every trade has a stop."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Risk of ruin is not a single trade. It builds up across many trades, through a sequence of losses and streaks.",
+      "c": "There is no 1% threshold. A smaller risk per trade lowers the probability for the same sequence, but the concept applies at any size.",
+      "d": "A stop limits the loss on one trade, not the sequence of trades. Gaps (T2.6) and streaks (T2.10) still matter."
+    },
+    "concepts": [
+      "risk-of-ruin"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.9-q4",
+    "type": "scenario",
+    "prompt": "An account of Rs 50,000 (hypothetical) falls 30% to Rs 35,000. What gain from Rs 35,000 brings it back to Rs 50,000?",
+    "options": [
+      {
+        "id": "a",
+        "text": "30%"
+      },
+      {
+        "id": "b",
+        "text": "42.9%"
+      },
+      {
+        "id": "c",
+        "text": "35%"
+      },
+      {
+        "id": "d",
+        "text": "50%"
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A 30% gain on Rs 35,000 is Rs 10,500, which gives Rs 45,500. That is short of Rs 50,000.",
+      "c": "A 35% gain is Rs 12,250, which gives Rs 47,250. That is still short of Rs 50,000.",
+      "d": "A 50% gain is Rs 17,500, which gives Rs 52,500. That overshoots Rs 50,000."
+    },
+    "concepts": [
+      "recovery",
+      "asymmetry"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.9-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake. Statement: 'My Rs 50,000 account lost 30% and is now Rs 35,000 (a). A 30% gain brings it back to Rs 50,000 (b).' Which sentence is wrong?",
+    "options": [
+      {
+        "id": "a",
+        "text": "My Rs 50,000 account lost 30% and is now Rs 35,000."
+      },
+      {
+        "id": "b",
+        "text": "A 30% gain brings it back to Rs 50,000."
+      },
+      {
+        "id": "c",
+        "text": "Neither sentence contains a mistake."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This is correct. 30% of Rs 50,000 is Rs 15,000, and Rs 50,000 minus Rs 15,000 is Rs 35,000.",
+      "c": "This is wrong. The second sentence fails: 30% of Rs 35,000 is Rs 10,500, which gives Rs 45,500, not Rs 50,000."
+    },
+    "concepts": [
+      "recovery",
+      "asymmetry"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.9-q6",
+    "type": "numeric",
+    "prompt": "Rs 50,000 gains 10%, then loses 10%. What is the final amount in rupees?",
+    "answer": 49500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "After the gain: 50,000 x 1.10 = Rs 55,000. After the loss: 55,000 x 0.90 = Rs 49,500. Check: 10% of 55,000 is Rs 5,500, and 55,000 - 5,500 = Rs 49,500.",
+    "concepts": [
+      "asymmetry",
+      "recovery"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

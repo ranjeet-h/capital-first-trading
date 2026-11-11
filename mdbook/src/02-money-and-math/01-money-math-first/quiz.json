@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T2.1-q1",
+    "type": "scenario",
+    "prompt": "Two hypothetical traders each take the same ten trades with a 50% win rate. Trader X risks Rs 500 per trade and Trader Y risks Rs 5,000 per trade. Which trader has the larger worst drawdown?",
+    "options": [
+      {"id": "a", "text": "Trader X, because smaller trades lose more often"},
+      {"id": "b", "text": "Trader Y, because the same results are worth ten times as many rupees"},
+      {"id": "c", "text": "Both, because the win rate is the same"},
+      {"id": "d", "text": "Neither, because drawdown depends only on the final result"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Trade frequency is set by the sequence, not by R. Both traders take the same wins and losses, so R alone decides the size of each swing.",
+      "c": "The win rate is the same, but the rupee size of each result is not. Same frequency with a bigger R gives a bigger drawdown.",
+      "d": "Drawdown is the fall from the highest point reached on the way, so the path matters, not only the final result."
+    },
+    "concepts": ["r-multiple", "drawdown", "position-sizing"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.1-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Trader A starts with Rs 50,000 and risks R = Rs 500 per trade. The sequence is four losses, five wins (each +2R), then one loss. What is Trader A's final equity?",
+    "answer": 52500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Start 50,000. Four losses: 4 x 500 = 2,000, giving 48,000. Five wins: 5 x (2 x 500) = 5 x 1,000 = 5,000, giving 53,000. One loss: 500, giving 52,500. Check: net +2,500 = 5% of 50,000.",
+    "concepts": ["equity-path", "r-multiple"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.1-q3",
+    "type": "mcq",
+    "prompt": "Is this statement supported by the numbers in this chapter? \"A 50% win rate with 2R wins is profitable.\"",
+    "options": [
+      {"id": "a", "text": "Yes, because each win is twice the size of each loss"},
+      {"id": "b", "text": "No, not from these numbers alone: costs, the number of trades and the order of results all still matter, and the example is hypothetical"},
+      {"id": "c", "text": "Yes, in every sequence of ten trades"},
+      {"id": "d", "text": "Only if R is Rs 500 or less"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A 2R win against a 1R loss is only part of the picture. Costs, sample size and the order of results also matter, which is why the chapter uses a hypothetical sequence and does not generalise.",
+      "c": "Ten trades is far too short to show anything, and a different order of the same results gives a different path (see the reversed-order example).",
+      "d": "R does not decide whether a result is profitable. It decides the size of the swings. The statement is not established by the size of R."
+    },
+    "concepts": ["win-rate", "expectancy", "sequence-risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T2.1-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"I have a 60% win rate, so I am profitable.\" Which part of this reasoning is wrong?",
+    "options": [
+      {"id": "a", "text": "The 60% win rate is calculated correctly"},
+      {"id": "b", "text": "It ignores the size of the wins and losses, and the costs"},
+      {"id": "c", "text": "60% is too low to be profitable"},
+      {"id": "d", "text": "Profit needs a win rate of 100%"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The arithmetic of the win rate may be correct. The mistake is what the claim concludes from it.",
+      "c": "No win rate on its own sets a threshold for profit. The result depends on size and costs as well.",
+      "d": "A win rate below 100% can be profitable or unprofitable. Frequency alone does not decide it."
+    },
+    "concepts": ["win-rate", "position-sizing", "costs"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.1-q5",
+    "type": "mcq",
+    "prompt": "Hypothetical. Trader A risks Rs 500 per trade and Trader B risks Rs 5,000 per trade. Both take the first four trades as losses. What is each trader's equity after those four trades?",
+    "options": [
+      {"id": "a", "text": "Trader A 48,000 and Trader B 40,000"},
+      {"id": "b", "text": "Trader A 48,000 and Trader B 30,000"},
+      {"id": "c", "text": "Trader A 46,000 and Trader B 30,000"},
+      {"id": "d", "text": "Trader A 49,000 and Trader B 35,000"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Rs 40,000 is Trader B's balance after two losses, not four. Four losses of Rs 5,000 take Rs 20,000 off Rs 50,000.",
+      "c": "Rs 46,000 is four losses of Rs 1,000, which is Trader C's R in the independent exercise, not Trader A's.",
+      "d": "Rs 49,000 is Trader A's balance after one loss, and Rs 35,000 is Trader B's balance after three losses."
+    },
+    "concepts": ["equity-path", "r-multiple"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.1-q6",
+    "type": "numeric",
+    "prompt": "Hypothetical. Trader B starts with Rs 50,000 and risks R = Rs 5,000. Trader B's lowest equity is Rs 30,000 after four losses. What is the worst drawdown as a percentage of the starting Rs 50,000?",
+    "answer": 40,
+    "tolerance": 0,
+    "unit": "%",
+    "solution": "Fall from the high point: 50,000 - 30,000 = 20,000. Percentage: 20,000 / 50,000 = 0.40 = 40%.",
+    "concepts": ["drawdown"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  }
+]

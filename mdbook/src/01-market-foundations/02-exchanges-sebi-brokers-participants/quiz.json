@@ -1,0 +1,108 @@
+[
+  {
+    "id": "T1.2-q1",
+    "type": "numeric",
+    "prompt": "You buy 20 shares at Rs 250 each. What is the trade value, in rupees?",
+    "answer": 5000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Trade value = shares x price = 20 x 250 = Rs 5,000. Check: 250 x 20 = 250 x 2 x 10 = 500 x 10 = 5,000, which matches. This is the value of the trade only; charges are added separately (T2.2).",
+    "concepts": ["trade-value"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.2-q2",
+    "type": "mcq",
+    "prompt": "'My broker is the exchange, so my order is matched inside my broker's office.' Is that statement right?",
+    "options": [
+      {"id": "a", "text": "Yes. The broker matches orders for its clients."},
+      {"id": "b", "text": "No. The broker takes and passes on the order. Matching happens at the exchange, such as NSE or BSE [VERIFY: current roles]."},
+      {"id": "c", "text": "Yes, but only for intraday orders."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A broker accepts orders and passes them to the exchange. Matching is done at the exchange, not in the broker's office.",
+      "c": "No order type changes this split. The broker routes the order, and the exchange matches it."
+    },
+    "concepts": ["broker-vs-exchange"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.2-q3",
+    "type": "scenario",
+    "prompt": "A trade has been executed on the exchange. Which institution stands between the buyer and seller after the trade, and records the obligation so that settlement can happen?",
+    "options": [
+      {"id": "a", "text": "The broker you used"},
+      {"id": "b", "text": "The clearing corporation"},
+      {"id": "c", "text": "The depository"},
+      {"id": "d", "text": "SEBI, once a day"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The broker passes the order on and provides the platform. It does not stand between the buyer and seller after the trade in this description.",
+      "c": "The depository holds shares electronically. It is not the party that records the trade obligation.",
+      "d": "SEBI is the regulator. It sets rules; it does not clear individual trades."
+    },
+    "concepts": ["clearing-corporation"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.2-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Statement: 'SEBI sets stock prices every day.' Which part of this statement is the mistake?",
+    "options": [
+      {"id": "a", "text": "'SEBI'"},
+      {"id": "b", "text": "'sets stock prices'"},
+      {"id": "c", "text": "'every day'"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "SEBI is the securities regulator. The error is not who it is but what the statement says it does.",
+      "c": "Prices do change every trading session. The timing is not the error. The error is who sets the price: prices come from order matching at the exchange."
+    },
+    "concepts": ["sebi-role", "price-formation"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.2-q5",
+    "type": "order",
+    "prompt": "Put the three steps of the grievance route in order, starting with the first step to take. [VERIFY: SCORES process]",
+    "options": [
+      {"id": "a", "text": "SEBI complaint portal (SCORES)"},
+      {"id": "b", "text": "The exchange"},
+      {"id": "c", "text": "The broker"}
+    ],
+    "answer": ["c", "b", "a"],
+    "explanations": {
+      "a": "SEBI's complaint portal is the last step in the route, after the broker and the exchange [VERIFY: SCORES process].",
+      "b": "The exchange is the second step. Raise the matter with the broker first, then the exchange, then SEBI."
+    },
+    "concepts": ["grievance-route"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.2-q6",
+    "type": "mcq",
+    "prompt": "Who holds your shares electronically in a demat account?",
+    "options": [
+      {"id": "a", "text": "The broker's office"},
+      {"id": "b", "text": "A depository (NSDL or CDSL), through a depository participant [VERIFY: NSDL and CDSL roles]"},
+      {"id": "c", "text": "The exchange's vault"},
+      {"id": "d", "text": "Your bank"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A broker takes your orders. The shares are held at the depository, reached through the DP. Thinking of the broker as the holder is a common mistake.",
+      "c": "The exchange runs matching. It does not hold the shares.",
+      "d": "Banks hold funds, not shares. The bank account is linked to the trading account, but the shares are held at the depository."
+    },
+    "concepts": ["depository", "dp"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

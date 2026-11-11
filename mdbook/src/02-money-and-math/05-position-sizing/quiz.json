@@ -1,0 +1,118 @@
+[
+  {
+    "id": "T2.5-q1",
+    "type": "scenario",
+    "prompt": "Hypothetical. Capital Rs 10,000, risk 1%, entry Rs 250, stop Rs 248, concentration cap 25%. The three limits are 50 (raw risk), 40 (cash cap) and 10 (concentration cap). Which constraint is binding?",
+    "options": [
+      {"id": "a", "text": "The risk budget, because it gives the largest number"},
+      {"id": "b", "text": "The cash cap, because it is the account's real limit"},
+      {"id": "c", "text": "The concentration cap, because it gives the smallest number"},
+      {"id": "d", "text": "All three tie, because they all use the same capital"}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "The binding limit is the smallest of the three, not the largest. The risk budget gives 50 shares, which is more than the other limits allow.",
+      "b": "The cash cap gives 40 shares, which is also above the minimum of 10. The concentration cap is smaller.",
+      "d": "The three limits differ: 50, 40 and 10. They use the same capital, but they divide it in different ways."
+    },
+    "concepts": ["binding-constraint", "concentration-cap"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.5-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital Rs 10,000, risk 1%, entry Rs 250, stop Rs 248, concentration cap 25%. How many whole shares does the plan allow?",
+    "answer": 10,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "Risk budget 100; risk per share 2; raw = 50. Cash cap = floor(10,000 / 250) = 40. Concentration cap = floor(2,500 / 250) = 10. Shares = minimum of 50, 40, 10 = 10.",
+    "concepts": ["position-sizing", "binding-constraint"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.5-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. Using the same plan (10 shares, entry Rs 250, stop Rs 248), what is the planned loss at the stop in rupees?",
+    "answer": 20,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Planned loss = shares x risk per share = 10 x (250 - 248) = 10 x 2 = Rs 20. As a share of capital: 20 / 10,000 = 0.2%.",
+    "concepts": ["planned-loss", "position-sizing"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.5-q4",
+    "type": "mcq",
+    "prompt": "Hypothetical. Capital Rs 10,000. The raw risk calculation says 50 shares at Rs 250 are allowed. Can the account buy them?",
+    "options": [
+      {"id": "a", "text": "Yes, because the risk budget allows 50 shares"},
+      {"id": "b", "text": "No: 50 x 250 = Rs 12,500, which is more than the Rs 10,000 account, so the cash cap must be applied"},
+      {"id": "c", "text": "Yes, with Rs 2,500 left over"},
+      {"id": "d", "text": "Yes, because a tighter stop means the trade needs less cash"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The risk budget measures the planned loss, not the cash needed to buy. The cash cap must be checked as well.",
+      "c": "The arithmetic is 50 x 250 = Rs 12,500, which leaves a shortfall of Rs 2,500, not a surplus.",
+      "d": "The stop does not change the cash needed. The purchase costs entry price x shares, whatever the stop is."
+    },
+    "concepts": ["cash-cap", "cash-only-no-leverage"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.5-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"Shares = risk budget / entry price.\" Which part of this formula is wrong?",
+    "options": [
+      {"id": "a", "text": "The word \"Shares\" as the result"},
+      {"id": "b", "text": "The risk budget as the numerator"},
+      {"id": "c", "text": "Dividing by the entry price instead of the risk per share"},
+      {"id": "d", "text": "Nothing; the formula is correct"}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "The result is the number of shares, which is correct. The error is in the divisor.",
+      "b": "The risk budget is the correct numerator. It is the rupees the trader accepts losing.",
+      "d": "The formula is not correct. Dividing by the entry gives a number with no link to the planned loss; the divisor must be the risk per share, entry minus stop."
+    },
+    "concepts": ["risk-per-share", "position-sizing"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T2.5-q6",
+    "type": "numeric",
+    "prompt": "Hypothetical. The raw risk calculation gives 31.25 shares. How many whole shares may the plan use?",
+    "answer": 31,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "Shares are whole. Round down: floor(31.25) = 31. Rounding up to 32 would make the planned loss larger than the risk budget.",
+    "concepts": ["rounding-down", "risk-budget"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.5-q7",
+    "type": "scenario",
+    "prompt": "A small-account trader says, \"My stop is tighter this time, so my position must be bigger.\" Which response is most accurate?",
+    "options": [
+      {"id": "a", "text": "Correct, a tighter stop always gives a bigger position"},
+      {"id": "b", "text": "Partly: a tighter stop raises the raw risk figure, but the cash and concentration caps may cut the position, so the final size is the smallest of the three limits"},
+      {"id": "c", "text": "Incorrect, a tighter stop always gives a smaller position"},
+      {"id": "d", "text": "Correct only when the capital is above Rs 1,00,000"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A tighter stop raises the raw figure, but it does not make the position bigger than the caps allow. The position is the minimum of the limits.",
+      "c": "A tighter stop gives a larger raw figure. It is the caps, not the stop, that can make the final size smaller.",
+      "d": "The capital level does not change the logic. The minimum of the three limits decides the size at any capital level."
+    },
+    "concepts": ["tight-stop", "binding-constraint"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  }
+]

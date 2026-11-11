@@ -1,0 +1,110 @@
+[
+  {
+    "id": "T2.16-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical: a daily target of Rs 2,000, over 250 trading days (an assumed count), at a 20% annual return. How much capital is needed, in rupees?",
+    "answer": 2500000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Yearly target = 2,000 x 250 = 5,00,000. Capital = 5,00,000 / 0.20 = 25,00,000. Check: 25,00,000 x 0.20 = 5,00,000.",
+    "concepts": ["capital-needed", "reality-check"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.16-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical: capital Rs 10,000 and a daily target of Rs 2,000. What daily return, in percent, does the target require?",
+    "answer": 20,
+    "tolerance": 0.05,
+    "unit": "%",
+    "solution": "Required daily return = 2,000 / 10,000 = 0.20, which is 20%. Check: 10,000 x 20% = 2,000.",
+    "concepts": ["required-daily-return"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.16-q3",
+    "type": "numeric",
+    "prompt": "Dummy cost model only (not any broker's charge): a round trip on Rs 50,000 costs Rs 190. Four round trips in one day cost how much in total, in rupees?",
+    "answer": 760,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Cost drag = 4 x 190 = 760. Check: 760 / 4 = 190. Gross profit must exceed the target by this amount before any net profit counts.",
+    "concepts": ["cost-drag", "costs"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.16-q4",
+    "type": "numeric",
+    "prompt": "Hypothetical: capital Rs 10,000 with 1% risk on each losing day, where each loss is 1% of the capital at that moment. What is the total capital lost over five losing days, to the nearest rupee?",
+    "answer": 490,
+    "tolerance": 1,
+    "unit": "Rs",
+    "solution": "Day 1: 1% of 10,000 = 100, capital 9,900. Day 2: 1% of 9,900 = 99, capital 9,801. Day 3: 1% of 9,801 = 98.01, capital 9,702.99. Day 4: 1% of 9,702.99 = 97.03, capital 9,605.96. Day 5: 1% of 9,605.96 = 96.06, capital 9,509.90. Total lost = 10,000 - 9,509.90 = 490.10, about Rs 490. Check: 1 - 0.99^5 = 0.0490, and 0.0490 x 10,000 = 490.",
+    "concepts": ["losing-streaks", "risk-per-trade"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.16-q5",
+    "type": "scenario",
+    "prompt": "Hypothetical: a trader with Rs 50,000, in the early stage of the plan, wants to add leverage so that the account can reach Rs 3,000 a day. Which response fits the rules?",
+    "options": [
+      {"id": "a", "text": "Use leverage. Bigger positions reach the target sooner."},
+      {"id": "b", "text": "Reject it. Leverage multiplies losses as well as gains, and the early stages allow no leverage."},
+      {"id": "c", "text": "Use leverage only on days when the target looks reachable."},
+      {"id": "d", "text": "Use leverage but set a stop, which makes it safe."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Wrong. Bigger positions make losses bigger too, and the early stages allow no leverage (T2.13). A larger position does not make the target realistic.",
+      "c": "Wrong. Choosing the days by how reachable the target looks is still leverage, and no reading of a day tells you what the next day will do.",
+      "d": "Wrong. A stop limits the loss on one trade, but it does not remove the leverage, which the early stages do not allow (T2.13)."
+    },
+    "concepts": ["leverage", "daily-target"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.16-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Statement: 'I made Rs 2,000 on two days, so the Rs 2,000-a-day target is achievable.' Which part is the mistake?",
+    "options": [
+      {"id": "a", "text": "The record: I made Rs 2,000 on two days."},
+      {"id": "b", "text": "The conclusion: two days cannot show a repeatable daily rate, so achievability does not follow."},
+      {"id": "c", "text": "The target: Rs 2,000 a day is a number you chose, not a result."},
+      {"id": "d", "text": "Nothing. Two good days are enough evidence of a repeatable rate."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Wrong. The record may be an accurate account of those two days. The mistake is the conclusion drawn from it.",
+      "c": "Wrong. A target is an input you choose. The error in this statement is the conclusion drawn from two days.",
+      "d": "Wrong. Two days are a very small sample, and daily results vary. Two good days say nothing about the next day."
+    },
+    "concepts": ["sample-size", "variability"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.16-q7",
+    "type": "mcq",
+    "prompt": "Statement: 'Small capital can reach the target if I trade well.' Which response is correct?",
+    "options": [
+      {"id": "a", "text": "Yes. With enough skill, a Rs 10,000 account can reach Rs 2,000 a day."},
+      {"id": "b", "text": "No. At Rs 10,000 the target needs a 20% return every day, and at Rs 50,000 a 4% return every day. Daily results vary, so no amount of skill is shown by this arithmetic."},
+      {"id": "c", "text": "Yes, as long as the stop is tight enough."},
+      {"id": "d", "text": "No, because Rs 2,000 a day is too small a target for the capital."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Wrong. Skill is not shown by this arithmetic. At Rs 10,000 the target needs a 20% return every day (T2.16 Step 3).",
+      "c": "Wrong. A tight stop changes the size of one loss. It does not change the daily return the target requires.",
+      "d": "Wrong. The target is large compared with the capital, not small. At Rs 10,000 it needs a 20% return every day."
+    },
+    "concepts": ["reality-check", "required-daily-return"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

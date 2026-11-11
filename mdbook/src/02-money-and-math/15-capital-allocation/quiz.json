@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T2.15-q1",
+    "type": "numeric",
+    "prompt": "Total savings are Rs 8,00,000 and trading capital is Rs 40,000. What share of savings is trading capital, in percent?",
+    "answer": 5,
+    "tolerance": 0,
+    "unit": "%",
+    "solution": "Step 1: 40,000 / 8,00,000 = 0.05. Step 2: 0.05 = 5%. Check: 8,00,000 x 5% = 40,000.",
+    "concepts": ["allocation", "trading-share"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.15-q2",
+    "type": "numeric",
+    "prompt": "Trading capital is Rs 25,000 and the drawdown reaches 10%. After the drawdown, how many rupees are risked per trade at 1% of the current trading capital?",
+    "answer": 225,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Step 1: drawdown = 10% x 25,000 = Rs 2,500. Step 2: current trading capital = 25,000 - 2,500 = Rs 22,500. Step 3: 1% x 22,500 = Rs 225. Check: 22,500 / 100 = 225.",
+    "concepts": ["drawdown", "per-trade-risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.15-q3",
+    "type": "scenario",
+    "prompt": "Trading capital is Rs 30,000 and has fallen to Rs 24,000 after losses. Household savings are Rs 6,000 short for a school fee. The trader moves Rs 6,000 from savings into trading to restore the Rs 30,000 level. What does the rule say?",
+    "options": [
+      {"id": "a", "text": "Allowed, if the school fee is paid back from income later."},
+      {"id": "b", "text": "Not allowed. Trading capital is never topped up from household money, and the school fee is an obligation."},
+      {"id": "c", "text": "Allowed, because trading capital is meant to be Rs 30,000."},
+      {"id": "d", "text": "Allowed, but only after the next winning trade."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A repayment plan does not change the rule. Household money is never trading capital, and the obligation comes first.",
+      "c": "Restoring a level is not a reason to use household money. Additional money comes only from spare income.",
+      "d": "A win does not change where the money came from. Household money stays out of trading."
+    },
+    "concepts": ["top-up-rule", "household-money"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.15-q4",
+    "type": "mcq",
+    "prompt": "Someone proposes: 'Put all your savings into trading to grow faster.' Which reply is correct?",
+    "options": [
+      {"id": "a", "text": "Yes. Faster growth needs all the capital."},
+      {"id": "b", "text": "No. Savings include household obligations and an emergency reserve, which are never trading capital. The trading amount is set in rupees before trading."},
+      {"id": "c", "text": "Yes, if the trader is confident."},
+      {"id": "d", "text": "No, but only because the savings figure is too small."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Faster growth is not the test. If all savings are at risk, the household cannot absorb a loss.",
+      "c": "Confidence is not a rule. Trading capital is set before trading, as an amount the household can afford to lose.",
+      "d": "The size of savings does not change the rule. The question is which part can be lost without harming the household."
+    },
+    "concepts": ["allocation", "household-money"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.15-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Trading capital has fallen to Rs 45,000 after the cut. The trader writes: 'Per-trade risk is still 1% of my original Rs 50,000, so it is Rs 500 per trade.' Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "1% is too high a risk for any account."},
+      {"id": "b", "text": "The base should be the current allocated trading capital. 1% of Rs 45,000 is Rs 450, not Rs 500."},
+      {"id": "c", "text": "Rs 500 is the correct figure after a drawdown."},
+      {"id": "d", "text": "The Rs 45,000 should be ignored until the next month."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The 1% figure is the illustrative setting. The mistake is the base, not the percentage.",
+      "c": "Rs 500 is 1% of the starting allocation. After the cut, the current trading capital is the base.",
+      "d": "The current allocation is what the rule uses. Ignoring it leaves the risk too high for the capital that is actually allocated."
+    },
+    "concepts": ["per-trade-risk", "base-of-percentage"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T2.15-q6",
+    "type": "scenario",
+    "prompt": "The stop review is set at a 20% drawdown on the Rs 50,000 allocation, which is Rs 10,000. Trading capital is now Rs 40,000. The trader says: 'I will keep trading and pause only after I win back Rs 5,000, so I can see whether the plan recovers.' What does the rule say?",
+    "options": [
+      {"id": "a", "text": "Keep trading. Pausing after a recovery is the rule."},
+      {"id": "b", "text": "Pause at the stop threshold for review. Recovery is not the trigger, and trading on to see a recovery is what the stop rule prevents."},
+      {"id": "c", "text": "Pause only if a second losing trade happens."},
+      {"id": "d", "text": "Move money from savings into trading to speed up the recovery."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The stop is set at the threshold, not after a recovery. Trading on to see a recovery is the behaviour the rule prevents.",
+      "c": "The trigger is the drawdown threshold, not a count of losing trades.",
+      "d": "Household money is never trading capital, and it is never used to speed up a recovery (PLAN section 2)."
+    },
+    "concepts": ["stop-rule", "timing"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  }
+]

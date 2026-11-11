@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T0.3-q1",
+    "type": "mcq",
+    "prompt": "You write a note while reading a concept chapter about why market prices move. Which journal mode does this entry belong to?",
+    "options": [
+      {"id": "a", "text": "live"},
+      {"id": "b", "text": "learning note"},
+      {"id": "c", "text": "backtest"},
+      {"id": "d", "text": "forward"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Live is for real trades with real money. A reading note is not a trade, and entries before the gates are never marked live.",
+      "c": "Backtest is a simulated past result. A reading note is not a simulation.",
+      "d": "Forward is a paper or forward-test trade recorded as it happens. A reading note is not a trade."
+    },
+    "concepts": ["journal-modes"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T0.3-q2",
+    "type": "numeric",
+    "prompt": "Your hypothetical trading capital is Rs 50,000 and your risk budget is 1% per trade. What is the risk budget in rupees?",
+    "answer": 500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "1% of 50,000 = 0.01 x 50,000 = Rs 500. Check: 500 / 50,000 = 0.01 = 1%, which matches.",
+    "concepts": ["risk-budget", "percent-of-capital"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T0.3-q3",
+    "type": "spot-the-mistake",
+    "prompt": "Statement: 'Passing G2 means I can start trading real money.' Which part of this statement is the mistake?",
+    "options": [
+      {"id": "a", "text": "'Passing G2'"},
+      {"id": "b", "text": "'means I can start trading real money'"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "G2 is a real gate that tests money mathematics. Passing it is an accurate description of a result. The error is what the result is taken to mean."
+    },
+    "concepts": ["gates", "educational-competence"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T0.3-q4",
+    "type": "mcq",
+    "prompt": "'The book can place orders for me.' Is that statement right?",
+    "options": [
+      {"id": "a", "text": "Yes, if I connect my broker account."},
+      {"id": "b", "text": "No. The book works offline and has no broker connection. It never places orders."},
+      {"id": "c", "text": "Yes, through the Kite demo."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The book has no broker connection and stores no credentials. Connecting a broker account is not a feature of this book.",
+      "c": "The Kite demo uses dummy data for interface practice. The book does not place orders there or anywhere else."
+    },
+    "concepts": ["offline-use", "no-live-orders"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T0.3-q5",
+    "type": "mcq",
+    "prompt": "'I need a backup only once a year.' Is that statement right?",
+    "options": [
+      {"id": "a", "text": "Yes, once a year is enough for a learning journal."},
+      {"id": "b", "text": "No. The default reminder is every 14 days, and after every 10 new trades. Keep a copy outside the device."},
+      {"id": "c", "text": "Yes, if the journal is only on paper."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The default reminder is every 14 days, not once a year. A journal lost to a device problem cannot be recovered without a backup.",
+      "c": "A paper journal also benefits from a copy kept outside the device. The default reminder timing applies to the app's backups."
+    },
+    "concepts": ["backups"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T0.3-q6",
+    "type": "scenario",
+    "prompt": "You attempt gate G3 and do not pass it. Which statement describes the retake rule correctly?",
+    "options": [
+      {"id": "a", "text": "You must wait a fixed period before you can retake it."},
+      {"id": "b", "text": "You may retake it with no timer. Failing does not lock you out, and you can use the time to review the chapters."},
+      {"id": "c", "text": "You cannot retake a gate, so the failed attempt is final."},
+      {"id": "d", "text": "A failed gate means you must start trading real money to qualify."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Gates have no timer. A waiting period would press you toward a deadline, and the book says there is none.",
+      "c": "Gates can be retaken. The retake rule is part of the design.",
+      "d": "Gates test educational competence. No gate requires real trading, and passing one never decides the real-money question."
+    },
+    "concepts": ["gates", "retake-rules"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]
