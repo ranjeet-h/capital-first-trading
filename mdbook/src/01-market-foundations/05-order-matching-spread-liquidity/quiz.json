@@ -1,102 +1,102 @@
 [
- {
-  "id": "T1.5-q1",
-  "type": "numeric",
-  "prompt": "Best bid is Rs 245 and best ask is Rs 255 (dummy). Using the midpoint as the reference price, what is the spread as a percentage of the reference price?",
-  "answer": 4.0,
-  "tolerance": 0.05,
-  "unit": "%",
-  "solution": "Spread = 255 - 245 = Rs 10. Reference price = (255 + 245) / 2 = Rs 250. Spread percent = 10 / 250 = 0.04 = 4.0%. Check: 250 x 4% = 10.",
-  "concepts": ["spread", "liquidity"],
-  "difficulty": 1,
-  "reviewAfterDays": 3
- },
- {
-  "id": "T1.5-q2",
-  "type": "numeric",
-  "prompt": "Best bid is Rs 300 and best ask is Rs 302 (dummy). You buy 60 shares at the ask and sell all 60 at the bid straight away, with no price change and no charges. What is the loss in rupees?",
-  "answer": 120,
-  "tolerance": 0,
-  "unit": "Rs",
-  "solution": "Spread = 302 - 300 = Rs 2. Round-trip cost = 60 x 2 = Rs 120. Check: buy 60 x 302 = Rs 18,120; sell 60 x 300 = Rs 18,000; difference Rs 120.",
-  "concepts": ["spread", "round-trip-cost"],
-  "difficulty": 2,
-  "reviewAfterDays": 3
- },
- {
-  "id": "T1.5-q3",
-  "type": "mcq",
-  "prompt": "A stock has a deep order book. Which statement is correct?",
-  "options": [
-   {"id": "a", "text": "A market order of any size fills at the last traded price."},
-   {"id": "b", "text": "A large market order can still move the price. Depth reduces price impact but does not remove it."},
-   {"id": "c", "text": "Depth means the spread is zero."},
-   {"id": "d", "text": "A deep book means the broker charges less."}
-  ],
-  "answer": "b",
-  "explanations": {
-   "a": "Wrong. A large market order uses up the best levels and fills further away from the last traded price (see T1.4).",
-   "c": "Wrong. Depth is the quantity waiting at each price. The spread is the gap between the best bid and best ask, and it can be non-zero in a deep book.",
-   "d": "Wrong. Broker charges are a separate matter (see T2.2). The depth of the order book does not set them."
+  {
+    "id": "T1.5-q1",
+    "type": "numeric",
+    "prompt": "Best bid is Rs 245 and best ask is Rs 255 (dummy). Using the midpoint as the reference price, what is the spread as a percentage of the reference price?",
+    "answer": 4.0,
+    "tolerance": 0.05,
+    "unit": "%",
+    "solution": "Spread = 255 - 245 = Rs 10. Reference price = (255 + 245) / 2 = Rs 250. Spread percent = 10 / 250 = 0.04 = 4.0%. Check: 250 x 4% = 10.",
+    "concepts": ["spread", "liquidity"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
   },
-  "concepts": ["depth", "liquidity", "slippage"],
-  "difficulty": 2,
-  "reviewAfterDays": 3
- },
- {
-  "id": "T1.5-q4",
-  "type": "scenario",
-  "prompt": "Two buy orders are resting at Rs 250. Order A was placed first for 100 shares. Order B was placed later for 100 shares. A seller arrives with 100 shares to sell at Rs 250. Under the price-time priority described in this chapter, which order fills?",
-  "options": [
-   {"id": "a", "text": "Order A, because it arrived first at the same price."},
-   {"id": "b", "text": "Order B, because it arrived later and so is more recent."},
-   {"id": "c", "text": "Both orders fill 50 shares each, always."},
-   {"id": "d", "text": "The seller chooses which order fills."}
-  ],
-  "answer": "a",
-  "explanations": {
-   "b": "Wrong. Among orders at the same price, the earlier arrival is matched first.",
-   "c": "Wrong. Price-time priority does not split a fill evenly between orders at the same price.",
-   "d": "Wrong. The matching rule, not the seller, decides which resting order is matched first. The exact rule is [VERIFY: NSE and BSE matching rule]."
+  {
+    "id": "T1.5-q2",
+    "type": "numeric",
+    "prompt": "Best bid is Rs 300 and best ask is Rs 302 (dummy). You buy 60 shares at the ask and sell all 60 at the bid straight away, with no price change and no charges. What is the loss in rupees?",
+    "answer": 120,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Spread = 302 - 300 = Rs 2. Round-trip cost = 60 x 2 = Rs 120. Check: buy 60 x 302 = Rs 18,120; sell 60 x 300 = Rs 18,000; difference Rs 120.",
+    "concepts": ["spread", "round-trip-cost"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
   },
-  "concepts": ["price-time-priority", "matching"],
-  "difficulty": 2,
-  "reviewAfterDays": 3
- },
- {
-  "id": "T1.5-q5",
-  "type": "multi",
-  "prompt": "Select all that are signs of low liquidity in a displayed order book.",
-  "options": [
-   {"id": "a", "text": "A wide gap between the best bid and the best ask."},
-   {"id": "b", "text": "A narrow gap between the best bid and the best ask, with many shares at each level."},
-   {"id": "c", "text": "Very few shares waiting at each price level."},
-   {"id": "d", "text": "Large jumps between one price level and the next."}
-  ],
-  "answer": ["a", "c", "d"],
-  "explanations": {
-   "b": "Wrong. A narrow spread with many shares at each level points to deeper liquidity, not thin liquidity."
+  {
+    "id": "T1.5-q3",
+    "type": "mcq",
+    "prompt": "A stock has a deep order book. Which statement is correct?",
+    "options": [
+      {"id": "a", "text": "A market order of any size fills at the last traded price."},
+      {"id": "b", "text": "A large market order can still move the price. Depth reduces price impact but does not remove it."},
+      {"id": "c", "text": "Depth means the spread is zero."},
+      {"id": "d", "text": "A deep book means the broker charges less."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Wrong. A large market order uses up the best prices and fills further away from the last traded price.",
+      "c": "Wrong. Depth is the quantity waiting at each price. The spread is the gap between the best bid and best ask, and it can be non-zero in a deep book.",
+      "d": "Wrong. Broker charges are a separate matter. The depth of the order book does not set them."
+    },
+    "concepts": ["depth", "liquidity", "slippage"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
   },
-  "concepts": ["liquidity", "depth"],
-  "difficulty": 1,
-  "reviewAfterDays": 3
- },
- {
-  "id": "T1.5-q6",
-  "type": "spot-the-mistake",
-  "prompt": "A reader says: 'The spread is a fee my broker charges on every trade, and it is added on top of the price.' Which part of this statement is wrong?",
-  "options": [
-   {"id": "a", "text": "The whole statement is correct."},
-   {"id": "b", "text": "'A fee my broker charges' is wrong. The spread is the gap between the best bid and best ask in the market. Brokerage is a separate charge (see T2.2)."},
-   {"id": "c", "text": "'On every trade' is wrong. The spread is a rounding difference that appears only in the display."}
-  ],
-  "answer": "b",
-  "explanations": {
-   "a": "Wrong. The spread is not a broker fee. It is a price gap set by buy and sell orders in the market.",
-   "c": "Wrong. The spread is not a rounding difference. It is the real gap between the best buy and best sell prices, and a round trip pays it."
+  {
+    "id": "T1.5-q4",
+    "type": "scenario",
+    "prompt": "Two buy orders are resting at Rs 250. Order A was placed first for 100 shares. Order B was placed later for 100 shares. A seller arrives with 100 shares to sell at Rs 250. Under the price-time priority described in this chapter, which order fills?",
+    "options": [
+      {"id": "a", "text": "Order A, because it arrived first at the same price."},
+      {"id": "b", "text": "Order B, because it arrived later and so is more recent."},
+      {"id": "c", "text": "Both orders fill 50 shares each, always."},
+      {"id": "d", "text": "The seller chooses which order fills."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "Wrong. Among orders at the same price, the earlier arrival is matched first.",
+      "c": "Wrong. Price-time priority does not split a fill evenly between orders at the same price.",
+      "d": "Wrong. The matching rule, not the seller, decides which resting order is matched first. The exact rule is [VERIFY: NSE and BSE matching rule]."
+    },
+    "concepts": ["price-time-priority", "matching"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
   },
-  "concepts": ["spread", "brokerage"],
-  "difficulty": 1,
-  "reviewAfterDays": 3
- }
+  {
+    "id": "T1.5-q5",
+    "type": "multi",
+    "prompt": "Select all that are signs of low liquidity in a displayed order book.",
+    "options": [
+      {"id": "a", "text": "A wide gap between the best bid and the best ask."},
+      {"id": "b", "text": "A narrow gap between the best bid and the best ask, with many shares at each level."},
+      {"id": "c", "text": "Very few shares waiting at each price level."},
+      {"id": "d", "text": "Large jumps between one price level and the next."}
+    ],
+    "answer": ["a", "c", "d"],
+    "explanations": {
+      "b": "Wrong. A narrow spread with many shares at each level points to deeper liquidity, not thin liquidity."
+    },
+    "concepts": ["liquidity", "depth"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.5-q6",
+    "type": "spot-the-mistake",
+    "prompt": "A reader says: 'The spread is a fee my broker charges on every trade, and it is added on top of the price.' Which part of this statement is wrong?",
+    "options": [
+      {"id": "a", "text": "The whole statement is correct."},
+      {"id": "b", "text": "'A fee my broker charges' is wrong. The spread is the gap between the best bid and best ask in the market. Brokerage is a separate charge."},
+      {"id": "c", "text": "'On every trade' is wrong. The spread is a rounding difference that appears only in the display."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Wrong. The spread is not a broker fee. It is a price gap set by buy and sell orders in the market.",
+      "c": "Wrong. The spread is not a rounding difference. It is the real gap between the best buy and best sell prices, and a round trip pays it."
+    },
+    "concepts": ["spread", "brokerage"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
 ]

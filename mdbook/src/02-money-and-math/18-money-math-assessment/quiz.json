@@ -2,7 +2,7 @@
   {
     "id": "T2.18-q1",
     "type": "numeric",
-    "prompt": "Hypothetical: capital Rs 50,000, risk 1% per trade, entry Rs 400, stop Rs 380, and a concentration cap of 25% of capital. How many whole shares? Apply all three limits and take the lowest.",
+    "prompt": "Hypothetical: capital Rs 50,000, risk 1% per trade, entry Rs 400, stop Rs 380, and a concentration cap of 25% of capital. How many whole shares? Use all three limits and take the lowest.",
     "answer": 25,
     "tolerance": 0,
     "unit": "shares",
@@ -14,7 +14,7 @@
   {
     "id": "T2.18-q2",
     "type": "scenario",
-    "prompt": "Dummy cost model only (not any broker's charges): proportional 0.1% of turnover per leg, and a fixed Rs 20 per order. Which trade has the larger fixed-charge share of its value?",
+    "prompt": "Dummy cost model only (not any broker's charges): a proportional charge of 0.1% of turnover per leg, and a fixed Rs 20 per order. Which trade has the larger fixed-charge share of its value?",
     "options": [
       {"id": "a", "text": "The Rs 5,000 trade, where Rs 20 is 0.4% of the value."},
       {"id": "b", "text": "The Rs 50,000 trade, where Rs 20 is 4% of the value."},
@@ -113,7 +113,7 @@
     "explanations": {
       "a": "Wrong. The average cost is correctly computed. The error is what the statement concludes from it.",
       "c": "Wrong. 40 / 400 is 10%, which is correct. The fall is not the mistake.",
-      "d": "Wrong. Adding to a losing position is averaging down. It increases exposure, and it is the opposite of a stop-loss (T2.14)."
+      "d": "Wrong. Adding to a losing position is averaging down. It increases exposure, and it is the opposite of a stop-loss (see *Portfolio exposure and concentration*)."
     },
     "concepts": ["averaging-down", "exposure"],
     "difficulty": 2,

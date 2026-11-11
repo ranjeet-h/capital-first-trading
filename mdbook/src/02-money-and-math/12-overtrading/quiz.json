@@ -2,7 +2,7 @@
   {
     "id": "T2.12-q1",
     "type": "numeric",
-    "prompt": "The daily target is Rs 1,500. Net expectancy is Rs 15 per trade after costs. How many trades a day does the target need, on average?",
+    "prompt": "Your daily target is Rs 1,500. Net expectancy is Rs 15 per trade after costs. On average, how many trades a day does the target need?",
     "answer": 100,
     "tolerance": 0,
     "unit": "trades",
@@ -14,7 +14,7 @@
   {
     "id": "T2.12-q2",
     "type": "numeric",
-    "prompt": "Expectancy is Rs 80 per trade before costs. Costs are Rs 20 per trade. The daily target is Rs 2,400. How many trades a day does the target need, on average?",
+    "prompt": "Expectancy is Rs 80 per trade before costs. Costs are Rs 20 per trade. Your daily target is Rs 2,400. On average, how many trades a day does the target need?",
     "answer": 40,
     "tolerance": 0,
     "unit": "trades",
@@ -49,7 +49,7 @@
     "prompt": "A trader says: 'I am Rs 800 short of my target, so I will take one more trade. My expectancy per trade is positive, so it is fine.' Which part is wrong?",
     "options": [
       {"id": "a", "text": "Rs 800 is too small a gap to matter."},
-      {"id": "b", "text": "The reason for the trade. A trade taken to close a target gap is not a setup. The expectancy describes trades taken under the rules, so it does not cover a trade outside the checklist."},
+      {"id": "b", "text": "The reason for the trade. A trade taken to close a target gap is not a setup. Expectancy describes trades taken under the rules, so it does not cover a trade outside the checklist."},
       {"id": "c", "text": "Positive expectancy means the trade will win."},
       {"id": "d", "text": "Nothing. Positive expectancy justifies any trade."}
     ],
@@ -75,7 +75,7 @@
     ],
     "answer": ["a", "b", "c"],
     "explanations": {
-      "d": "A recorded no-trade day is a valid result. It is a sign of discipline, not of overtrading."
+      "d": "A recorded no-trade day is a valid result. It shows discipline, not overtrading."
     },
     "concepts": ["overtrading-signs", "journal"],
     "difficulty": 2,
@@ -93,8 +93,8 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "A missed target is a feeling created by the target, not a rule break. The checklist was followed.",
-      "c": "Trading to make up a target is the pressure this chapter warns about. It is how overtrading starts.",
+      "a": "A missed target is a feeling created by the target. It is not a rule break. The checklist was followed.",
+      "c": "Trading to make up a missed target is the pressure this chapter warns about. It is how overtrading starts.",
       "d": "Raising the limit after a missed target adjusts the rule to the result. Limits are set in advance."
     },
     "concepts": ["no-trade-day", "daily-target-pressure"],

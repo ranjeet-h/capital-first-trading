@@ -2,11 +2,11 @@
   {
     "id": "T2.4-q1",
     "type": "numeric",
-    "prompt": "Hypothetical. Capital Rs 50,000, risk 1%, entry Rs 300, stop Rs 285. How many whole shares does the risk budget allow (rounded down)?",
+    "prompt": "Hypothetical. Capital Rs 50,000, risk 1%, entry Rs 300, stop Rs 285. How many whole shares does the risk budget allow? Round down.",
     "answer": 33,
     "tolerance": 0,
     "unit": "shares",
-    "solution": "Risk budget = 1% of 50,000 = 500. Risk per share = 300 - 285 = 15. Raw shares = 500 / 15 = 33.33. Rounded down: 33 shares. Check: 33 x 15 = 495, which is within the 500 budget; 34 x 15 = 510 would exceed it.",
+    "solution": "Risk budget = 1% of Rs 50,000 = Rs 500. Risk per share = 300 - 285 = Rs 15. Raw shares = 500 / 15 = 33.33. Rounded down: 33 shares. Check: 33 x 15 = 495, which is within the Rs 500 budget. 34 x 15 = 510 is over it.",
     "concepts": ["risk-budget", "rounding-down"],
     "difficulty": 2,
     "reviewAfterDays": 3
@@ -14,18 +14,18 @@
   {
     "id": "T2.4-q2",
     "type": "scenario",
-    "prompt": "Hypothetical. A plan for a long trade has entry Rs 250 and stop Rs 255, and the trader describes the stop as \"above entry, which is a breakout level\". Which response is correct?",
+    "prompt": "Hypothetical. A plan for a long trade has entry Rs 250 and stop Rs 255. The trader calls the stop \"above entry, which is a breakout level\". Which response is correct?",
     "options": [
       {"id": "a", "text": "Accept it, because a stop above the entry is a breakout"},
-      {"id": "b", "text": "Reject or correct the plan: for a long trade the stop must be below the entry, so risk per share is not positive"},
+      {"id": "b", "text": "Reject or correct the plan. For a long trade the stop must be below the entry, so the risk per share is not positive"},
       {"id": "c", "text": "Accept it and treat the stop as a trailing stop"},
       {"id": "d", "text": "Ignore the stop and buy the position as planned"}
     ],
     "answer": "b",
     "explanations": {
-      "a": "A breakout is a reason to consider a trade, not a reason to put a stop above the entry for a long. The stop must mark the price at which the long idea is wrong, and that price is below the entry.",
-      "c": "A trailing stop still sits below the entry for a long. A stop above the entry gives a negative risk per share and cannot be used in this arithmetic.",
-      "d": "A plan without a valid stop has no planned loss. Ignoring the stop removes the risk control entirely."
+      "a": "A breakout is a reason to consider a trade. It is not a reason to put a stop above the entry for a long. The stop marks the price where the long idea is wrong. That price is below the entry.",
+      "c": "A trailing stop still sits below the entry for a long. A stop above the entry gives a negative risk per share, so it cannot be used in this arithmetic.",
+      "d": "A plan without a valid stop has no planned loss. Ignoring the stop removes the risk control."
     },
     "concepts": ["stop-placement", "risk-per-share"],
     "difficulty": 1,
@@ -43,8 +43,8 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "The division shows the opposite. Shares = risk budget / risk per share. A bigger risk per share gives a smaller result.",
-      "c": "The direction of the price does not change the division. Only the risk per share and the budget matter in the sizing step.",
+      "a": "The division shows the opposite. Shares = risk budget / risk per share. A bigger risk per share gives a smaller answer.",
+      "c": "The direction of the price does not change the division. Only the risk per share and the budget matter in this step.",
       "d": "The number of shares does depend on the stop, through the risk per share. A different stop gives a different share count."
     },
     "concepts": ["stop-distance", "position-sizing"],
@@ -65,7 +65,7 @@
     "explanations": {
       "a": "The entry price is a fact of the plan. The mistake is the later change to the stop.",
       "c": "The original stop of Rs 240 is the planned exit. The error is moving it after entry, not choosing it.",
-      "d": "A stop can be moved, but moving it further away to avoid a loss increases the loss beyond the planned amount, which the plan forbids."
+      "d": "A stop can be moved. But moving it further away to avoid a loss makes the loss bigger than planned. The plan forbids that."
     },
     "concepts": ["stop-discipline", "planned-vs-unplanned-loss"],
     "difficulty": 2,
@@ -77,15 +77,15 @@
     "prompt": "Hypothetical. Capital Rs 50,000 and risk 1%. A trader says, \"1% risk means my position is 1% of my capital.\" Which response is correct?",
     "options": [
       {"id": "a", "text": "Yes, the position is always 1% of capital"},
-      {"id": "b", "text": "No: 1% is the risk budget, and the position depends on the risk per share; in the standard example the position is 25% of capital"},
+      {"id": "b", "text": "No. 1% is the risk budget. The position depends on the risk per share. In the standard example the position is 25% of capital"},
       {"id": "c", "text": "No, the position is always 99% of capital"},
       {"id": "d", "text": "Yes, if the stop is 1% below entry"}
     ],
     "answer": "b",
     "explanations": {
-      "a": "The risk budget (Rs 500) is 1% of capital. The position is shares x entry price, which depends on the stop distance and is 25% in the standard example.",
-      "c": "No fixed share of capital applies. The position value depends on the entry, the stop and the caps.",
-      "d": "A stop 1% below entry does not make the position 1% of capital. For a Rs 250 entry, a 1% stop distance is Rs 2.50, and the share count and position depend on that risk per share, not on a simple 1% of capital rule."
+      "a": "The risk budget (Rs 500) is 1% of capital. The position is shares x entry price. That depends on the stop distance. In the standard example it is 25% of capital.",
+      "c": "No fixed share of capital applies. The position value depends on the entry, the stop and the limits.",
+      "d": "A stop 1% below entry does not make the position 1% of capital. For a Rs 250 entry, a 1% stop distance is Rs 2.50. The share count and position depend on that risk per share, not on a simple 1% of capital rule."
     },
     "concepts": ["risk-vs-position", "position-sizing"],
     "difficulty": 2,
@@ -98,7 +98,7 @@
     "answer": 4.0,
     "tolerance": 0,
     "unit": "%",
-    "solution": "Risk per share = 250 - 240 = 10. Stop distance = risk per share / entry = 10 / 250 = 0.04 = 4.0%.",
+    "solution": "Risk per share = 250 - 240 = Rs 10. Stop distance = risk per share / entry = 10 / 250 = 0.04 = 4.0%.",
     "concepts": ["stop-distance"],
     "difficulty": 1,
     "reviewAfterDays": 3

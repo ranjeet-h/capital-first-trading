@@ -12,9 +12,10 @@ This is an education book. It does not recommend any stock, strategy or broker a
 
 More tracks (chart reading, Kite demo, indicators, strategy, testing, psychology, graduation gates) are still being written.
 
-## About this preview build
+## How to use this book
 
-- Chapters are **drafts**. Each ends with `Last content review: not yet done`, and `[VERIFY: ...]` marks facts (charges, taxes, rules, timings) that must be checked against a primary source before you rely on them.
-- Quizzes on each chapter page are live: answer them and press **Check**.
-- Boxes labelled **Interactive component** are placeholders for simulators and labs that are built in later milestones.
-- All numbers in worked examples are hypothetical and for practice only.
+- Read in order. Each chapter is short. Do the "Try it" exercises and the quiz before you move on.
+- Demos on the page are for practice. Change the numbers and see what happens.
+- All money examples are made up and for learning only.
+- A small yellow **check** tag means a fact (a charge, tax rate or rule) can change. Confirm it on the official source before you rely on it.
+- This book is still a draft. Some tools, such as the trade journal, are still being built.

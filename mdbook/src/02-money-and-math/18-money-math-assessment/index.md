@@ -18,48 +18,48 @@ A hypothetical trader has Rs 50,000, risks 1% per trade and plans to enter at Rs
 
 ## The idea
 
-This assessment covers the money math of Track 2. It is the check for gate G2 (PLAN.md section 6). Passing it requires the cost, position-size and expectancy questions to be correct within tolerance on a fresh randomised set, and the reality-check module (*The Rs 2,000-3,000 reality check*) to be complete.
+This assessment covers the money math in this part of the book. It is the check for gate G2. To pass, you must get the cost, position-size and expectancy questions right within the allowed margin, on a fresh set of questions. You must also complete the reality-check chapter (*The Rs 2,000-3,000 reality check*).
 
 **What it checks**
 
-- **Costs:** fixed charges (per order) versus proportional charges (a percentage of turnover). Fixed charges weigh more on small trades (*Costs on a trade*). Cost figures come from the verified facts file. [VERIFY: cost facts from the facts registry, cross-reference *Costs on a trade*]
+- **Costs:** fixed charges (per order) versus proportional charges (a percentage of turnover). Fixed charges weigh more on small trades (*Costs on a trade*). Cost figures come from the checked facts file. [VERIFY: cost facts from the facts registry, cross-reference *Costs on a trade*]
 - **Position size:** the lowest of three limits, not the largest one.
 - **Break-even win rate:** the win rate at which wins pay for losses, before costs.
 - **Expectancy and profit factor:** the average result per trade, and the ratio of gains to losses.
 - **Drawdown recovery:** the gain needed to return to a starting value after a loss.
 - **Daily-target capital:** the capital a daily target needs (*The Rs 2,000-3,000 reality check*).
 
-**Position size.** Three formulas, then the lowest result wins:
+**Position size.** Work out three limits, then take the lowest:
 
 - Risk budget = capital x risk percentage.
 - Risk per share = entry - stop.
 - Raw shares = risk budget / risk per share, rounded down.
 - Cash cap = floor(capital / entry).
-- Concentration cap = floor(capital x maximum position percentage / entry). The Lab 1 default is 25%.
+- Concentration cap = floor(capital x maximum position percentage / entry). The Lab 1 starting value is 25%.
 - Shares = the lowest of raw shares, cash cap and concentration cap.
 
 **Break-even win rate.** Before costs, with a reward of R times the risk (R is the reward-to-risk ratio), break-even win rate = 1 / (1 + R). Equivalently, win rate x R = (1 - win rate) x 1.
 
-**Expectancy.** Per trade, in R: (win rate x average win in R) - (loss rate x average loss in R). In rupees, multiply the R result by the rupee value of one R. Expectancy describes an average over many trades. It is not a forecast of the next one.
+**Expectancy.** Per trade, in R: (win rate x average win in R) - (loss rate x average loss in R). In rupees, multiply the R result by the rupee value of one R. Expectancy describes an average over many trades. It is not a forecast of the next trade.
 
 **Profit factor.** Total gross wins divided by total gross losses. A value above 1 means the wins outweighed the losses in the record. It says nothing about how many trades the figure is based on.
 
 **Drawdown recovery.** A loss of L (as a fraction of the value before it) needs a gain of L / (1 - L) on the smaller base. A 30% loss needs 0.3 / 0.7 = 42.9%, not 30%.
 
-**Question types.** Numeric (with tolerance), multiple choice, scenario, spot-the-mistake and order of steps.
+**Question types.** Number answers (with a small allowed margin), multiple choice, scenario, spot-the-mistake and order of steps.
 
-**Randomisation.** The gate uses a seeded generator with validity constraints. For example, a long's stop must be below its entry, capital stays in a sensible range, and quantities are whole shares. Each numeric answer is computed by the tested calculation, never typed by hand. The sample set in this chapter is fixed.
+**Fresh sets.** The gate uses a new set of questions each time, made by a computer with checks. For example, a long's stop must be below its entry, capital stays in a sensible range, and quantities are whole shares. Each number answer is worked out by a tested calculation. The sample set in this chapter is fixed.
 
-**Tolerance.** Rupee answers are exact to the paisa for integer arithmetic. Percentages are accepted within a stated precision, which is still an open decision.
+**Margin for percentages.** Rupee answers must be exact to the paisa (one hundredth of a rupee). Percentages are accepted within a small margin.
 
-**Cost questions and stale facts.** Cost questions depend on the verified facts file. If a cost fact is stale, the assessment shows a warning and does not count those questions.
+**Cost questions and out-of-date facts.** Cost questions depend on the checked facts file. If a cost fact is out of date, the assessment shows a warning and does not count those questions.
 
-**Retakes.** You may retake the assessment at any time. Each retake gets a new randomised set. There is no timer, and your attempt history is kept.
+**Retakes.** You may retake the assessment at any time. Each retake gets a new set of questions. There is no timer, and your attempt history is kept.
 
 **Common wrong answers to watch for**
 
 - Sizing with capital instead of risk per share.
-- Ignoring the lower of the caps.
+- Ignoring the lowest of the caps.
 - Forgetting the loss on a fixed charge.
 - Treating expectancy as what the next trade will do.
 
@@ -84,7 +84,7 @@ Capital Rs 50,000. Risk 1%. Entry Rs 400. Stop Rs 380.
 | Raw shares | 500 / 20, rounded down | 25 |
 | Cash cap | floor(50,000 / 400) | 125 |
 | Concentration cap (25% of capital) | floor(50,000 x 0.25 / 400) = floor(31.25) | 31 |
-| Shares | lowest of 25, 125 and 31 | **25** (the risk budget binds) |
+| Shares | lowest of 25, 125 and 31 | **25** (the risk budget sets the size) |
 
 Check: 25 x 20 = Rs 500, which is the risk budget. And 25 x 400 = Rs 10,000, which is within the Rs 12,500 concentration limit.
 
@@ -116,7 +116,7 @@ Check: 25,00,000 x 0.20 = 5,00,000.
 
 <!-- component: position-size-viz | capital: 50000 | riskPct: 1 | entry: 400 | stop: 380 | caption: Shares against stop distance at Rs 50,000 and 1% risk; check which limit binds -->
 
-Move the stop to Rs 390 and then to Rs 370. At Rs 390 the risk budget allows 50 shares, but the concentration cap of 31 binds. At Rs 370 the risk budget allows 16 shares and binds. Note that the cash and concentration caps depend on entry price and capital, not on the stop.
+Move the stop to Rs 390 and then to Rs 370. At Rs 390 the risk budget allows 50 shares, but the concentration cap of 31 is lower, so 31 is the size. At Rs 370 the risk budget allows 16 shares, which is the lowest, so 16 is the size. Note that the cash and concentration caps depend on entry price and capital, not on the stop.
 
 ### Guided exercise
 
@@ -136,7 +136,7 @@ Hints:
 
 ### Independent exercise
 
-**Task:** Answer a ten-question mini-set on paper with no hints. Then enter your answers in the app. Record your score and the concepts you missed in the learning log.
+**Task:** Answer a ten-question set on paper with no hints. Then enter your answers in the app. Record your score and the concepts you missed in the learning log.
 
 <details><summary>Check your answer</summary>
 
@@ -155,24 +155,24 @@ Missed questions are scheduled for review after the reviewAfterDays value.
 
 <!-- component: quiz-block | src: quiz.json -->
 
-Eight sample questions cover the areas above. The gate uses a fresh randomised set, not this one.
+Eight sample questions cover the areas above. The gate uses a fresh set of questions, not this one.
 
 ## Paper task
 
-**Mode:** learning note. Log it in your journal (or on paper until the journal app is ready).
+**Mode:** learning note. Write it in your journal. If the journal app is not ready, use paper.
 
-1. Use ten questions covering the areas above. Either use the app's set once it is built, or write ten yourself.
+1. Use ten questions covering the areas above. Use the app's set once it is ready, or write ten yourself.
 2. Answer all ten on paper, with no notes and no hints.
 3. Check each answer against the working in this chapter.
-4. Enter your answers in the app once it is built.
+4. Enter your answers in the app once it is ready.
 5. Record your score and the missed concepts in the learning log, with the date.
 
 ## Limits and common mistakes
 
 - Passing G2 unlocks no live trading. The gate screen says so.
-- Numeric success does not show that a strategy works. The expectancy in this chapter is a worked example, not a forecast.
-- Cost answers are only as good as the verified cost facts. If a fact is stale, those questions are not counted.
-- A pass on a small set is a small sample. The gate's randomised set is also a sample.
+- Number success does not show that a strategy works. The expectancy in this chapter is a worked example, not a forecast.
+- Cost answers are only as good as the checked cost facts. If a fact is out of date, those questions are not counted.
+- A pass on a small set is a small sample. The gate's set of questions is also a sample.
 - Money-math skill does not replace the risk rules. They apply before every trade.
 
 ## Remember
@@ -187,8 +187,6 @@ Eight sample questions cover the areas above. The gate uses a fresh randomised s
 
 **Sources (names only):**
 
-- PLAN.md section 6 (G2 pass criteria) and section 4.4 (quiz format).
-- LABS.md: Lab 1 (position size), Lab 2 (costs) and Lab 3 (journal and statistics) specifications.
 
 **To verify:**
 

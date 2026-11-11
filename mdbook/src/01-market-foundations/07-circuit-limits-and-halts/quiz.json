@@ -2,7 +2,7 @@
  {
   "id": "T1.7-q1",
   "type": "numeric",
-  "prompt": "Previous close is Rs 300 and the dummy band is 15%. What is the upper band in rupees?",
+  "prompt": "The previous close is Rs 300 and the made-up band is 15%. What is the upper band in rupees?",
   "answer": 345,
   "tolerance": 0,
   "unit": "Rs",
@@ -22,7 +22,7 @@
   ],
   "answer": "b",
   "explanations": {
-   "a": "Wrong. The band limits how far the price can move in one day. It does not cap what you lose, and a locked stock can keep you from exiting at any price beyond the band.",
+   "a": "Wrong. The band limits how far the price can move in one day. It does not cap what you lose. A locked stock can keep you from exiting at any price beyond the band.",
    "c": "Wrong. A stop-loss is a trigger that depends on trading being possible. If the circuit is locked, the stop may not fill."
   },
   "concepts": ["locked-circuit", "risk"],
@@ -32,7 +32,7 @@
  {
   "id": "T1.7-q3",
   "type": "scenario",
-  "prompt": "You hold 100 shares bought at Rs 400, with a stop-loss at Rs 380. The previous close was Rs 400 and the dummy band is 10%. The stock opens at the lower band of Rs 360 with only sellers. Which statement is correct?",
+  "prompt": "You hold 100 shares bought at Rs 400, with a stop-loss at Rs 380. The previous close was Rs 400 and the made-up band is 10%. The stock opens at the lower band of Rs 360 with only sellers. Which statement is correct?",
   "options": [
    {"id": "a", "text": "The stop fills at Rs 380, because the trigger was reached."},
    {"id": "b", "text": "The stop may not fill at Rs 380, because there are no buyers at the locked price. The loss can be larger than planned."},
@@ -42,7 +42,7 @@
   "answer": "b",
   "explanations": {
    "a": "Wrong. A trigger is not a fill. No trade happens at Rs 380 while the circuit is locked with no buyers.",
-   "c": "Wrong. A fill at Rs 360 would be a loss of Rs 4,000 on 100 shares, which is 2 times the planned Rs 2,000.",
+   "c": "Wrong. A fill at Rs 360 would be a loss of Rs 4,000 on 100 shares. That is 2 times the planned Rs 2,000.",
    "d": "Wrong. Nothing in this chapter says the exchange closes a position. A locked position stays open until it can trade."
   },
   "concepts": ["stop-loss", "locked-circuit", "gap-risk"],

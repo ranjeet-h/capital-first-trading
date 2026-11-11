@@ -38,7 +38,7 @@
   {
     "id": "T2.16-q4",
     "type": "numeric",
-    "prompt": "Hypothetical: capital Rs 10,000 with 1% risk on each losing day, where each loss is 1% of the capital at that moment. What is the total capital lost over five losing days, to the nearest rupee?",
+    "prompt": "Hypothetical: capital Rs 10,000 with 1% risk on each losing day. Each loss is 1% of the capital at that moment. What is the total capital lost over five losing days, to the nearest rupee?",
     "answer": 490,
     "tolerance": 1,
     "unit": "Rs",
@@ -50,7 +50,7 @@
   {
     "id": "T2.16-q5",
     "type": "scenario",
-    "prompt": "Hypothetical: a trader with Rs 50,000, in the early stage of the plan, wants to add leverage so that the account can reach Rs 3,000 a day. Which response fits the rules?",
+    "prompt": "Hypothetical: a trader with Rs 50,000, early in the plan, wants to add leverage so the account can reach Rs 3,000 a day. Which response fits the rules?",
     "options": [
       {"id": "a", "text": "Use leverage. Bigger positions reach the target sooner."},
       {"id": "b", "text": "Reject it. Leverage multiplies losses as well as gains, and the early stages allow no leverage."},
@@ -59,9 +59,9 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "Wrong. Bigger positions make losses bigger too, and the early stages allow no leverage (T2.13). A larger position does not make the target realistic.",
+      "a": "Wrong. Bigger positions make losses bigger too. The early stages allow no leverage (see *Leverage and margin*). A larger position does not make the target realistic.",
       "c": "Wrong. Choosing the days by how reachable the target looks is still leverage, and no reading of a day tells you what the next day will do.",
-      "d": "Wrong. A stop limits the loss on one trade, but it does not remove the leverage, which the early stages do not allow (T2.13)."
+      "d": "Wrong. A stop limits the loss on one trade. It does not remove the leverage, which the early stages do not allow (see *Leverage and margin*)."
     },
     "concepts": ["leverage", "daily-target"],
     "difficulty": 2,
@@ -99,7 +99,7 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "Wrong. Skill is not shown by this arithmetic. At Rs 10,000 the target needs a 20% return every day (T2.16 Step 3).",
+      "a": "Wrong. Skill is not shown by this arithmetic. At Rs 10,000 the target needs a 20% return every day (see Step 3 in the worked example).",
       "c": "Wrong. A tight stop changes the size of one loss. It does not change the daily return the target requires.",
       "d": "Wrong. The target is large compared with the capital, not small. At Rs 10,000 it needs a 20% return every day."
     },

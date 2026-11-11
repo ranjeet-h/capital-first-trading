@@ -2,7 +2,7 @@
   {
     "id": "T2.5-q1",
     "type": "scenario",
-    "prompt": "Hypothetical. Capital Rs 10,000, risk 1%, entry Rs 250, stop Rs 248, concentration cap 25%. The three limits are 50 (raw risk), 40 (cash cap) and 10 (concentration cap). Which constraint is binding?",
+    "prompt": "Hypothetical. Capital Rs 10,000, risk 1%, entry Rs 250, stop Rs 248, concentration cap 25%. The three limits are 50 (raw risk), 40 (cash cap) and 10 (concentration cap). Which limit is the binding constraint?",
     "options": [
       {"id": "a", "text": "The risk budget, because it gives the largest number"},
       {"id": "b", "text": "The cash cap, because it is the account's real limit"},
@@ -11,8 +11,8 @@
     ],
     "answer": "c",
     "explanations": {
-      "a": "The binding limit is the smallest of the three, not the largest. The risk budget gives 50 shares, which is more than the other limits allow.",
-      "b": "The cash cap gives 40 shares, which is also above the minimum of 10. The concentration cap is smaller.",
+      "a": "The binding limit is the smallest of the three, not the largest. The risk limit gives 50 shares, which is more than the other limits allow.",
+      "b": "The cash cap gives 40 shares. That is above the smallest limit, which is 10.",
       "d": "The three limits differ: 50, 40 and 10. They use the same capital, but they divide it in different ways."
     },
     "concepts": ["binding-constraint", "concentration-cap"],
@@ -26,7 +26,7 @@
     "answer": 10,
     "tolerance": 0,
     "unit": "shares",
-    "solution": "Risk budget 100; risk per share 2; raw = 50. Cash cap = floor(10,000 / 250) = 40. Concentration cap = floor(2,500 / 250) = 10. Shares = minimum of 50, 40, 10 = 10.",
+    "solution": "Risk budget = Rs 100. Risk per share = Rs 2. Raw shares = 50. Cash cap = floor(10,000 / 250) = 40. Concentration cap = floor(2,500 / 250) = 10. Shares = the minimum of 50, 40 and 10 = 10.",
     "concepts": ["position-sizing", "binding-constraint"],
     "difficulty": 2,
     "reviewAfterDays": 3
@@ -56,7 +56,7 @@
     "answer": "b",
     "explanations": {
       "a": "The risk budget measures the planned loss, not the cash needed to buy. The cash cap must be checked as well.",
-      "c": "The arithmetic is 50 x 250 = Rs 12,500, which leaves a shortfall of Rs 2,500, not a surplus.",
+      "c": "The arithmetic is 50 x 250 = Rs 12,500. That is Rs 2,500 more than the account, not Rs 2,500 left over.",
       "d": "The stop does not change the cash needed. The purchase costs entry price x shares, whatever the stop is."
     },
     "concepts": ["cash-cap", "cash-only-no-leverage"],
@@ -76,8 +76,8 @@
     "answer": "c",
     "explanations": {
       "a": "The result is the number of shares, which is correct. The error is in the divisor.",
-      "b": "The risk budget is the correct numerator. It is the rupees the trader accepts losing.",
-      "d": "The formula is not correct. Dividing by the entry gives a number with no link to the planned loss; the divisor must be the risk per share, entry minus stop."
+      "b": "The risk budget is the correct top number. It is the rupees the trader accepts losing.",
+      "d": "The formula is not correct. Dividing by the entry gives a number with no link to the planned loss. The divisor must be the risk per share, which is entry minus stop."
     },
     "concepts": ["risk-per-share", "position-sizing"],
     "difficulty": 2,
@@ -101,15 +101,15 @@
     "prompt": "A small-account trader says, \"My stop is tighter this time, so my position must be bigger.\" Which response is most accurate?",
     "options": [
       {"id": "a", "text": "Correct, a tighter stop always gives a bigger position"},
-      {"id": "b", "text": "Partly: a tighter stop raises the raw risk figure, but the cash and concentration caps may cut the position, so the final size is the smallest of the three limits"},
+      {"id": "b", "text": "Partly. A tighter stop raises the raw risk figure. But the cash and concentration caps may cut the position. So the final size is the smallest of the three limits"},
       {"id": "c", "text": "Incorrect, a tighter stop always gives a smaller position"},
       {"id": "d", "text": "Correct only when the capital is above Rs 1,00,000"}
     ],
     "answer": "b",
     "explanations": {
-      "a": "A tighter stop raises the raw figure, but it does not make the position bigger than the caps allow. The position is the minimum of the limits.",
+      "a": "A tighter stop raises the raw figure. But it does not make the position bigger than the caps allow. The position is the smallest of the limits.",
       "c": "A tighter stop gives a larger raw figure. It is the caps, not the stop, that can make the final size smaller.",
-      "d": "The capital level does not change the logic. The minimum of the three limits decides the size at any capital level."
+      "d": "The capital level does not change the logic. The smallest of the three limits decides the size at any capital level."
     },
     "concepts": ["tight-stop", "binding-constraint"],
     "difficulty": 2,

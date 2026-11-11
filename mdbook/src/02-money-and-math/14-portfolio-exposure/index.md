@@ -11,26 +11,26 @@ estimated_minutes: 25
 
 ## Hook
 
-Hypothetical: a trader holds five stocks and says, "I am diversified." Three of the five are in the same sector. A bad week for that sector moves all three in the same direction, on the same day. The account feels like five separate bets. In practice it behaved like one larger bet.
+Hypothetical: a trader holds five stocks and says, "I am diversified." Three of the five are in the same sector. A bad week for that sector moves all three in the same direction, on the same day. The account feels like five separate bets. In practice, it behaved like one large bet.
 
 ## The idea
 
-Four terms, each defined once:
+Four terms to know:
 
-- **Exposure** is the rupee value of your positions, usually written as a percentage of capital. Exposure is not risk. A position can be large and still carry a small planned loss.
-- **Open risk** is the planned loss if every stop fills at its stop price:
-  - Open risk = sum over positions of (entry - stop) x shares.
-  - This is the planned loss, not a maximum loss. Gaps and circuits can make the real loss larger (*Slippage, gaps and planned versus actual risk*).
-- **Concentration** is how much of capital sits in one stock, one sector or one theme.
+- **Exposure** is the rupee value of your positions. It is often written as a percentage of capital. Exposure is not risk. A position can be large and still carry a small planned loss.
+- **Open risk** is the planned loss if every stop fills at its stop price.
+  - Open risk = add up (entry - stop) x shares for each position.
+  - This is the planned loss, not the maximum loss. Gaps and circuits (daily price limits set by the exchange) can make the real loss bigger (*Slippage, gaps and planned versus actual risk*).
+- **Concentration** is how much of your capital sits in one stock, one sector or one theme.
 - **Correlation** means positions that tend to move together. Stocks in the same sector often do. Five stocks that move together are closer to one bet than to five bets.
 
 Other points:
 
 - **Cash** = capital - deployed value. Deployed value is the total of the position values.
-- **Diversification** reduces the risk from one company or one event. It does not remove risk that affects the whole market.
-- **Limits.** You set a maximum per position, a maximum per sector and a maximum total open risk. Lab 1 uses a 25% per-position cap as a design default. Sector limits are your choice.
-- **Adding to a losing position** to lower the average cost raises concentration in a failing idea. This is averaging down, and it is banned by the capital-first rules (*Position sizing step by step*). Check the limits before adding.
-- **Sector labels** come from your data. Their source must be checked against the NSE sectoral index definitions [VERIFY: sector classification source].
+- **Diversification** reduces the risk from one company or one event. It does not remove risk that hits the whole market.
+- **Limits.** You set a maximum per position, a maximum per sector and a maximum total open risk. Lab 1 uses a 25% per-position cap as a starting value. You choose the sector limits.
+- **Adding to a losing position** to lower the average cost raises concentration in a failing idea. This is called averaging down. The book's capital-first rules ban it (*Position sizing step by step*). Check the limits before you add.
+- **Sector labels** come from your data. Check their source against the NSE sectoral index definitions [VERIFY: sector classification source].
 
 ## See it
 
@@ -44,7 +44,7 @@ pie showData
     "Cash" : 20000
 ```
 
-The chart shows that Sector X is the largest slice of capital. Sector X is 45% of capital, and the cash is 40%. The table in the worked example carries the open risk and the sector limit, which a pie chart cannot show.
+The chart shows that Sector X is the largest slice of capital. Sector X is 45% of capital, and cash is 40%. The table in the worked example also shows the open risk and the sector limit. A pie chart cannot show those.
 
 ## Worked example
 
@@ -65,17 +65,17 @@ The chart shows that Sector X is the largest slice of capital. Sector X is 45% o
 
 5. Sector X becomes 22,500 + 6,000 = Rs 28,500. As a share of capital: 28,500 / 50,000 = 57%.
 6. Open risk becomes 1,300 + 300 = Rs 1,600. As a share of capital: 1,600 / 50,000 = 3.2%.
-7. The illustrative 40% sector limit is breached (57% is above 40%). **The new position is rejected.** The rule that causes the rejection is the sector limit.
+7. The illustrative 40% sector limit is breached (57% is above 40%). **The new position is rejected.** The sector limit is the rule that causes the rejection.
 
 ## Try it
 
-This chapter has no interactive demo in the spec. Use the worked example and the guided exercise below.
+This chapter has no interactive demo. Use the worked example and the guided exercise below.
 
 <!-- OPEN: spec gives no interactive demo or component for *Portfolio exposure and concentration*; the See it content is a static pie chart and the worked example table. -->
 
 ### Guided exercise
 
-**Task.** Using the holdings in the worked example, compute the deployed percentage, the open risk percentage and the Sector Y share.
+**Task.** Using the holdings in the worked example, work out the deployed percentage, the open risk percentage and the Sector Y share.
 
 Hints:
 
@@ -87,7 +87,7 @@ Hints:
 
 ### Independent exercise
 
-**Task.** Four positions, each at 25% of capital, and each with a planned loss of 1% of capital. Compute the total open risk and the deployed percentage. Then say why this is a concentration problem if all four are in one sector.
+**Task.** Four positions, each at 25% of capital, and each with a planned loss of 1% of capital. Work out the total open risk and the deployed percentage. Then explain why this is a concentration problem if all four are in one sector.
 
 <details><summary>Check your answer</summary>
 
@@ -95,7 +95,7 @@ Each position is 25% of capital, so deployed = 4 x 25% = 100%. Cash = 0.
 
 Each planned loss is 1% of capital, so open risk = 4 x 1% = 4%.
 
-If all four are in one sector, a single sector move can hit all four stops at once. The four positions are closer to one large bet on that sector than to four separate bets, so the sector share (100% of capital) is the concentration problem.
+If all four are in one sector, a single sector move can hit all four stops at once. The four positions are closer to one large bet on that sector than to four separate bets. So the sector share (100% of capital) is the concentration problem.
 
 </details>
 
@@ -109,35 +109,34 @@ Six questions cover open risk, sector share, the difference between exposure and
 
 Mode: **learning note** (or paper). No orders are placed.
 
-1. Write a weekly portfolio snapshot in your journal, using hypothetical holdings only.
-2. For each position, record the value, the sector, the percentage of capital and the planned loss at the stop.
-3. Add the totals: deployed, cash, open risk, and each sector's share.
-4. Compare each total with your own limits, and write one line on whether any limit is breached.
+1. Write a weekly portfolio snapshot in your journal. Use made-up holdings only.
+2. For each position, note the value, the sector, the percentage of capital and the planned loss at the stop.
+3. Add up the totals: deployed, cash, open risk and each sector's share.
+4. Compare each total with your own limits. Write one line on whether any limit is breached.
 
-Log it in your journal (or on paper until the journal app is ready).
+If the journal app is not ready, use paper.
 
 ## Limits and common mistakes
 
-- Exposure and open risk are not forecasts. Open risk assumes every stop fills at its stop, which gaps and circuits can break (*Slippage, gaps and planned versus actual risk*).
-- Sector labels depend on the data source. The source must be verified before use [VERIFY: sector classification source].
+- Exposure and open risk are not forecasts. Open risk assumes every stop fills at its stop price. Gaps and circuits can break that assumption (*Slippage, gaps and planned versus actual risk*).
+- Sector labels depend on the data source. Check the source before use [VERIFY: sector classification source].
 - Diversification does not remove market-wide risk. A broad fall can hit every sector.
-- The 40% sector limit is illustrative. You set every limit.
+- The 40% sector limit is an example. You set every limit.
 - Adding to a losing position to lower the average cost raises concentration. It is not a fix.
 
 ## Remember
 
 - Exposure is value. Open risk is the planned loss. They are different numbers.
-- Open risk = sum of (entry - stop) x shares across positions.
-- Positions in one sector often move together and count as one larger bet.
-- Update sector totals every time a position is added.
-- Check every limit before adding a position, not after.
+- Open risk = total of (entry - stop) x shares across positions.
+- Positions in one sector often move together. Count them as one larger bet.
+- Update sector totals every time you add a position.
+- Check every limit before you add a position, not after.
 
 ## Sources and verification
 
 Sources (names only):
 
 - NSE sectoral index methodology documents.
-- The book's Lab 1 and Lab 3 specifications (LABS.md).
 
 Facts to verify before this chapter is final:
 

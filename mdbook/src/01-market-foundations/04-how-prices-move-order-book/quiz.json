@@ -6,7 +6,7 @@
     "answer": 62650,
     "tolerance": 0,
     "unit": "Rs",
-    "solution": "100 x 250 = 25,000. 150 x 251 = 37,650. Total = 25,000 + 37,650 = Rs 62,650. Check: 250 x 250 = 62,500 (the price-times-quantity mistake at the displayed price), and the difference of 150 is the extra Rs 1 on each of the 150 shares filled at Rs 251, which matches.",
+    "solution": "100 x 250 = 25,000. 150 x 251 = 37,650. Total = 25,000 + 37,650 = Rs 62,650. Check: 250 x 250 = 62,500. That is the mistake of using the displayed price for every share. The difference of 150 is the extra Rs 1 on each of the 150 shares filled at Rs 251.",
     "concepts": ["market-order", "order-book"],
     "difficulty": 2,
     "reviewAfterDays": 3
@@ -18,7 +18,7 @@
     "answer": 250.6,
     "tolerance": 0.01,
     "unit": "Rs",
-    "solution": "Total cost = Rs 62,650 (see the previous question). Average = 62,650 / 250 = Rs 250.60. Check: 250 x 250.60 = 62,650, which matches. Common wrong answer: Rs 250.00, the first level only, which ignores the 150 shares filled at Rs 251.",
+    "solution": "Total cost = Rs 62,650 (see the previous question). Average = 62,650 / 250 = Rs 250.60. Check: 250 x 250.60 = 62,650, which matches. Common wrong answer: Rs 250.00, the first price only, which ignores the 150 shares filled at Rs 251.",
     "concepts": ["average-fill-price"],
     "difficulty": 2,
     "reviewAfterDays": 3
@@ -71,9 +71,9 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "With few shares waiting at each level, a large order reaches higher prices. The average fill can drift far from the last price.",
-      "c": "A market order takes the book as it is, and each level it consumes can move the price. It does not freeze the price.",
-      "d": "Each level fills at its own price. The lowest price is used first, but higher levels are reached as the order grows."
+      "a": "With few shares waiting at each price, a large order reaches higher prices. The average fill can drift far from the last price.",
+      "c": "A market order takes the book as it is, and each price it uses can move the price. It does not freeze the price.",
+      "d": "Each level fills at its own price. The lowest price is used first, but higher prices are reached as the order grows."
     },
     "concepts": ["liquidity", "market-order"],
     "difficulty": 2,
@@ -90,7 +90,7 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "A price rise is an observable fact about the last matched trades. It is not the error.",
+      "a": "A price rise is a fact about the last matched trades. It is not the error.",
       "c": "This part is accurate. Price moves reflect order flow, which is the point of the chapter."
     },
     "concepts": ["price-formation", "misconceptions"],

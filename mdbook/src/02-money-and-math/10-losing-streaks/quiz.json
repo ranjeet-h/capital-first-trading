@@ -103,8 +103,8 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "Increasing size after losses is not allowed. It breaks the capital-first rules and is a martingale-style method (T6.5).",
-      "c": "The rule says five. Changing the threshold after the fact is a judgement made during a loss, which the rule was written to prevent.",
+      "a": "Increasing size after losses is not allowed. It breaks the capital-first rules. It is a martingale-style method, which is covered in *Why scalping, option buying and martingale are dangerous*.",
+      "c": "The rule says five. Changing the number after the fact is a judgement made during a loss. The rule was written to prevent that.",
       "d": "A rule written before a streak is there for the streak. Dropping it during a loss is the failure the rule is meant to stop."
     },
     "concepts": [

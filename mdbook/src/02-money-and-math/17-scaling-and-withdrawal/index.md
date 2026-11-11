@@ -11,22 +11,22 @@ estimated_minutes: 20
 
 ## Hook
 
-A hypothetical account starts at Rs 50,000 and climbs to Rs 57,000. The trader feels like taking money out now. Later the account falls to Rs 53,000, and the trader considers topping it up from household savings to get back faster. Both ideas feel reasonable on the day. The second breaks the rule that household money never becomes trading capital, and this chapter shows why the first needs a written rule before any withdrawal is made.
+A hypothetical account starts at Rs 50,000 and climbs to Rs 57,000. The trader feels like taking money out now. Later the account falls to Rs 53,000. The trader thinks about topping it up from household savings to get back faster. Both ideas feel reasonable on the day. The second breaks the rule that household money never becomes trading capital. This chapter explains why the first needs a written rule before any withdrawal is made.
 
 ## The idea
 
-Two rules come first. Reinvest profits before taking any out. Never withdraw while the account is in a drawdown.
+Two rules come first. Reinvest profits before you take any money out. Never withdraw while the account is in a drawdown.
 
-**Terms, defined once**
+**Terms**
 
 - **High-water mark (HWM):** the highest equity the account has reached so far. It only moves up.
 - **Drawdown from the HWM:** how far equity sits below the HWM, as a share of the HWM.
 
-In symbols: drawdown = (H - E) / H, where H is the high-water mark and E the current equity.
+In symbols: drawdown = (H - E) / H, where H is the high-water mark and E is the current equity.
 
-- **Withdrawal threshold:** a rule with numbers you set in advance. The example in this chapter is: withdraw only when equity is at a new HWM and above starting capital plus Rs 10,000. The numbers are illustrative. You choose the real ones. A threshold may also require a stated period of positive results (for example, a set number of months).
+- **Withdrawal threshold:** a rule with numbers you set in advance. The example in this chapter is: withdraw only when equity is at a new HWM and above starting capital plus Rs 10,000. The numbers are examples. You choose the real ones. A threshold may also need a stated period of positive results (for example, a set number of months).
 
-**Why no withdrawal in a drawdown.** A withdrawal lowers the base the account must recover from. The gap to the HWM does not shrink. It grows in percentage terms. From Rs 53,000, with an HWM of Rs 57,000, the account needs a gain of 4,000 / 53,000 = 7.5% to return to the peak. If Rs 5,000 is withdrawn first, the account is at Rs 48,000, and the gain needed becomes 9,000 / 48,000 = 18.8%.
+**Why no withdrawal in a drawdown.** A withdrawal lowers the base the account must recover from. The gap to the HWM does not shrink. In percentage terms, it grows. From Rs 53,000, with an HWM of Rs 57,000, the account needs a gain of 4,000 / 53,000 = 7.5% to return to the peak. If Rs 5,000 is withdrawn first, the account is at Rs 48,000. Then the gain needed becomes 9,000 / 48,000 = 18.8%.
 
 **Scale-up.** Trading capital may increase only after gates G6 and G7 are passed, and only with a recorded result behind it. Never increase risk after losses. Scale-up that comes from a losing run is a rule break, not a plan.
 
@@ -34,7 +34,7 @@ In symbols: drawdown = (H - E) / H, where H is the high-water mark and E the cur
 
 **Records.** Every capital change is logged in the journal, in the capital_at_plan field (Lab 3). A change that is not recorded cannot be reviewed.
 
-**Method.** Withdrawals also change the base used to measure drawdown. The method must be stated before the first withdrawal. [VERIFY: your choice of withdrawal method]
+**Method.** Withdrawals also change the base used to measure drawdown. State the method before the first withdrawal. [VERIFY: your choice of withdrawal method]
 
 ## See it
 
@@ -69,7 +69,7 @@ Add a Rs 5,000 withdrawal at Rs 53,000 and compare the gain needed to get back t
 
 ### Guided exercise
 
-**Task:** For the equity path Rs 50,000, 54,000, 51,000, 57,000, 53,000, compute the high-water mark after each step and the drawdown at the end.
+**Task:** For the equity path Rs 50,000, 54,000, 51,000, 57,000, 53,000, work out the high-water mark after each step and the drawdown at the end.
 
 Hints:
 
@@ -103,26 +103,26 @@ Five questions cover the withdrawal rule, withdrawals in a drawdown, the top-up 
 
 ## Paper task
 
-**Mode:** learning note. Log it in your journal (or on paper until the journal app is ready).
+**Mode:** learning note. Write it in your journal. If the journal app is not ready, use paper.
 
 1. Write your withdrawal policy on one page: threshold above starting capital, positive-period length and maximum withdrawal percentage.
 2. Write the scale-up condition next to it: gates G6 and G7 and a recorded result. Add the scale-down triggers from *Capital allocation*.
 3. Test the policy on the path Rs 50,000, 62,000, 58,000, 66,000. Note the first step on which a withdrawal is allowed.
-4. Add a line stating that every capital change will be logged in the journal, in the capital_at_plan field.
-5. Record the page with today's date. Do not record a live account.
+4. Add a line saying every capital change will be logged in the journal, in the capital_at_plan field.
+5. Date the page with today's date. Do not record a live account.
 
 ## Limits and common mistakes
 
 - The numbers are yours. The threshold in this chapter is an example, not a recommendation.
-- A withdrawal rule does not show the account will grow. Every equity path here is hypothetical.
+- A withdrawal rule does not show that the account will grow. Every equity path here is hypothetical.
 - Tax on withdrawals and gains is not covered here. [VERIFY: tax on withdrawals or gains, see *Taxes on trading profits*]
 - A policy written after a good month is a judgement made in good conditions. Write the policy before any trade, not after a result.
 - Scale-up after losses is not allowed, whatever the recent result.
 
 ## Remember
 
-- High-water mark only moves up. Drawdown = (HWM - current equity) / HWM.
-- Never withdraw during a drawdown. A withdrawal enlarges the gain needed to recover.
+- The high-water mark only moves up. Drawdown = (HWM - current equity) / HWM.
+- Never withdraw during a drawdown. A withdrawal makes the gain needed to recover bigger.
 - A withdrawal needs both the threshold and the high-water condition to be met.
 - Scale up only after G6 and G7 and a recorded result. Scale down with the *Capital allocation* cut and stop rules.
 - Record every capital change in the journal.
@@ -131,8 +131,6 @@ Five questions cover the withdrawal rule, withdrawals in a drawdown, the top-up 
 
 **Sources (names only):**
 
-- PLAN.md section 2 (withdrawals and reinvestment) and section 6 (gate G7).
-- Lab 3 specification (LABS.md): the journal record and capital_at_plan field.
 - *Taxes on trading profits*, for tax treatment.
 
 **To verify:**

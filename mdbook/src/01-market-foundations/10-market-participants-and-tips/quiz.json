@@ -2,11 +2,11 @@
  {
   "id": "T1.10-q1",
   "type": "numeric",
-  "prompt": "On a hypothetical day, foreign investors' buy value is Rs 2,600 crore and sell value is Rs 3,100 crore. What is the net flow in Rs crore? Use a minus sign for net selling.",
+  "prompt": "On a made-up day, foreign investors' buy value is Rs 2,600 crore and sell value is Rs 3,100 crore. What is the net flow in Rs crore? Use a minus sign for net selling.",
   "answer": -500,
   "tolerance": 0,
   "unit": "Rs crore",
-  "solution": "Net flow = buy value - sell value = 2,600 - 3,100 = -500. The result is negative, so this is net selling of Rs 500 crore. The figure shows aggregate flow only, not which stocks were traded or why.",
+  "solution": "Net flow = buy value - sell value = 2,600 - 3,100 = -500. The result is negative, so this is net selling of Rs 500 crore. The figure shows total flow only, not which stocks were traded or why.",
   "concepts": ["net-flow", "fii-dii"],
   "difficulty": 1,
   "reviewAfterDays": 3
@@ -17,7 +17,7 @@
   "prompt": "A reader says: 'FII buying means the price will rise.' Which answer is correct?",
   "options": [
    {"id": "a", "text": "Yes. Foreign buying always pushes prices up."},
-   {"id": "b", "text": "No. A net flow is an aggregate figure. It does not show which stocks were bought, why, or what the price will do next."},
+   {"id": "b", "text": "No. A net flow is a total figure. It does not show which stocks were bought, why, or what the price will do next."},
    {"id": "c", "text": "Yes, if net buying is above Rs 1,000 crore."}
   ],
   "answer": "b",
@@ -71,13 +71,13 @@
   "prompt": "A message says: 'We earn 20% a month on a Rs 50,000 account, so you can make Rs 10,000 a month with us.' Which is the strongest red flag?",
   "options": [
    {"id": "a", "text": "The figure is written in rupees."},
-   {"id": "b", "text": "A monthly return is promised, with no verifiable source and no discussion of risk, and the reader is pushed to join."},
+   {"id": "b", "text": "A monthly return is promised, with no checkable source and no talk about risk, and the reader is pushed to join."},
    {"id": "c", "text": "The message mentions an account size."}
   ],
   "answer": "b",
   "explanations": {
    "a": "Wrong. Writing an amount in rupees is normal. It is not a red flag on its own.",
-   "c": "Wrong. Mentioning an account size is not a red flag on its own. The red flags are the promised return, the lack of source and the pressure."
+   "c": "Wrong. Mentioning an account size is not a red flag on its own. The red flags are the promised return, the lack of a source and the pressure."
   },
   "concepts": ["red-flags", "tips"],
   "difficulty": 2,

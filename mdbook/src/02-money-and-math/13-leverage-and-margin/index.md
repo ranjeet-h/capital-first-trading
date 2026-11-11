@@ -11,27 +11,27 @@ estimated_minutes: 25
 
 ## Hook
 
-Hypothetical: own capital is Rs 50,000. A 10% fall in a Rs 50,000 holding costs Rs 5,000, which is 10% of the own money. A 10% fall in a Rs 1,00,000 position, half of it borrowed, costs Rs 10,000, which is 20% of the own money. The borrowed Rs 50,000 is still owed. The price moved by the same amount in both cases. Only the size of the bet changed.
+Hypothetical: your own money is Rs 50,000. A 10% fall in a Rs 50,000 holding costs Rs 5,000. That is 10% of your own money. Now take a Rs 1,00,000 position, where half is borrowed. A 10% fall costs Rs 10,000. That is 20% of your own money. The borrowed Rs 50,000 is still owed. The price moved by the same amount in both cases. Only the size of the position changed.
 
 ## The idea
 
-**Leverage** means controlling a position that is larger than your own money, using borrowed funds or margin.
+**Leverage** means controlling a position that is bigger than your own money. You do this with borrowed money or margin.
 
-- **Leverage ratio** = position value / own capital. A Rs 1,00,000 position with Rs 50,000 of own money has a ratio of 2 (2x).
-- **Gains and losses are both multiplied by the ratio**, measured as a percentage of own capital. A price move of m percent changes own capital by ratio x m percent. A fall is a loss.
-- **Wipe-out move** = 1 / ratio, for a long position. It is the price fall that takes the position value down to the borrowed amount, which uses up all the own money. This ignores costs and financing, which make the real position worse.
-- **Margin** is funds or securities deposited or borrowed to support a position. Its rules are set by the broker and the regulator, and must be checked for each product [VERIFY: current margin rules].
-- **Margin calls and forced sales.** When the position falls far enough, the broker can sell it to cover the shortfall. A forced sale happens at the price available then, which is often the worst one.
-- **Financing costs.** Borrowed funds usually carry a cost [VERIFY: financing rates on margin funding].
-- **Intraday leverage** has auto square-off rules, meaning positions can be closed by the broker at a set time [VERIFY: intraday auto square-off timing and rules].
+- **Leverage ratio** = position value / own capital. A Rs 1,00,000 position with Rs 50,000 of your own money has a ratio of 2 (2x).
+- **Gains and losses are both multiplied by the ratio.** Measured as a percentage of your own capital, a price move of m percent changes your capital by ratio x m percent. A fall is a loss.
+- **Wipe-out move** = 1 / ratio, for a long position (you own the asset and gain when it rises). It is the price fall that takes the position value down to the borrowed amount. That uses up all your own money. This ignores costs and financing, which make the real position worse.
+- **Margin** is money or securities you deposit or borrow to support a position. The broker and the regulator set the rules. Check the rules for each product [VERIFY: current margin rules].
+- **Margin calls and forced sales.** When the position falls far enough, the broker can sell it to cover the shortfall. A forced sale happens at the price available at that time. That price is often the worst one.
+- **Financing costs.** Borrowed money usually has a cost [VERIFY: financing rates on margin funding].
+- **Intraday leverage** has auto square-off rules. The broker can close your positions at a set time [VERIFY: intraday auto square-off timing and rules].
 
-This book does not practise leverage. The leverage demo is theory only, and the book has no practice path for it. F&O is covered as theory in *Futures and why they are leveraged*. Lab 1 flags any leverage above 1x as rejected for cash trades.
+This book does not practise leverage. The leverage demo is theory only. F&O (futures and options) is covered as theory in *Futures and why they are leveraged*. Lab 1 flags any leverage above 1x as rejected for cash trades.
 
 ## See it
 
 <!-- component: leverage-demo | mode: theory | ownCapital: 50000 | leverage: 2 | priceMovePct: -10 | caption: Theory only: gain or loss on own capital, with the wipe-out line; no trading controls -->
 
-Set the ratio to 1x, then to 4x, and keep the same 10% price fall. The loss on own capital grows from 10% to 40%. The wipe-out line marks the price fall that uses up all the own money. The sliders change only the arithmetic. There are no trading controls.
+Set the ratio to 1x, then to 4x, and keep the same 10% price fall. The loss on your own capital grows from 10% to 40%. The wipe-out line marks the price fall that uses up all your own money. The sliders change only the arithmetic. There are no trading controls.
 
 ## Worked example
 
@@ -44,36 +44,36 @@ Set the ratio to 1x, then to 4x, and keep the same 10% price fall. The loss on o
 | 3x | 1,50,000 | 15,000 | 30% | 33.3% |
 | 4x | 2,00,000 | 20,000 | 40% | 25% |
 
-Each row shows the same step: position value x 10% = loss, then loss / Rs 50,000 = percent of own capital.
+Each row uses the same steps. Position value x 10% = loss. Then loss / Rs 50,000 = percent of own capital.
 
-**2x, step by step (hypothetical; this is an arithmetic example, not an offer or any broker's product).**
+**2x, step by step (hypothetical; this is only arithmetic, not an offer or a product).**
 
 1. Own money Rs 50,000. Borrowed Rs 50,000. Position Rs 1,00,000.
 2. Price rises 10%: gain = 1,00,000 x 10% = Rs 10,000, which is 10,000 / 50,000 = 20% of own money.
 3. Price falls 10%: loss = Rs 10,000, which is 20% of own money.
-4. Wipe-out: 1 / 2 = 50%. Price falls 50%: position value = 50,000. That equals the borrowed Rs 50,000, so the own money is gone.
+4. Wipe-out: 1 / 2 = 50%. Price falls 50%: position value = 50,000. That equals the borrowed Rs 50,000, so your own money is gone.
 
 ## Try it
 
-Demo with the guided exercise inputs (theory mode):
+Use the demo with the guided exercise inputs (theory mode):
 
 <!-- component: leverage-demo | mode: theory | ownCapital: 20000 | leverage: 3 | priceMovePct: -15 | caption: Guided exercise inputs; check each answer by hand -->
 
 ### Guided exercise
 
-**Task.** Own capital Rs 20,000. Position Rs 60,000 (3x). The price falls 15%. Compute the loss in rupees and as a percentage of own capital.
+**Task.** Own capital Rs 20,000. Position Rs 60,000 (3x). The price falls 15%. Work out the loss in rupees and as a percentage of own capital.
 
 Hints:
 
 1. Find the loss on the position first: position value x fall.
-2. Divide that loss by own capital.
+2. Divide that loss by your own capital.
 3. Check: a 3x position with a 15% fall should give 3 x 15% = 45% of own capital.
 
 **Answer:** Loss on the position = 60,000 x 15% = Rs 9,000. As a share of own capital, 9,000 / 20,000 = 45%.
 
 ### Independent exercise
 
-**Task.** Own capital Rs 25,000 at 4x leverage. Compute the price fall that wipes out the own capital, and the loss at a 10% fall.
+**Task.** Own capital Rs 25,000 at 4x leverage. Work out the price fall that wipes out the own capital, and the loss at a 10% fall.
 
 <details><summary>Check your answer</summary>
 
@@ -89,26 +89,26 @@ Loss at a 10% fall = 1,00,000 x 10% = Rs 10,000. As a share of own capital, 10,0
 
 <!-- component: quiz-block | src: quiz.json -->
 
-Six questions cover the leverage ratio, the magnified loss, the wipe-out move, margin, and the limits of a stop.
+Six questions cover the leverage ratio, the bigger loss, the wipe-out move, margin and the limits of a stop.
 
 ## Paper task
 
 Mode: **learning note**. No orders are placed, and the Kite demo is not used for this task.
 
-1. Draw a table with four rows (1x, 2x, 3x, 4x) and the columns position value, loss on a 10% fall, and loss as a percentage of own capital.
+1. Draw a table with four rows (1x, 2x, 3x, 4x). Add columns for position value, loss on a 10% fall, and loss as a percentage of own capital.
 2. Use own capital of Rs 50,000 and a 10% fall in every row.
-3. Add a column for the wipe-out move (1 / ratio) and check each row against the worked example.
-4. Log it in your journal (or on paper until the journal app is ready).
+3. Add a column for the wipe-out move (1 / ratio). Check each row against the worked example.
+4. Write it in your journal. If the journal app is not ready, use paper.
 
 The Kite demo has no practice path for leverage. Do not look for leverage features in it.
 
 ## Limits and common mistakes
 
-- This table leaves out financing costs, charges and margin rules. Those are [VERIFY: margin framework and collateral rules] and must be checked with the broker and the regulator.
-- The wipe-out formula is for a long position and ignores costs. A gap can take the price past the wipe-out line (*Slippage, gaps and planned versus actual risk*).
+- This table leaves out financing costs, charges and margin rules. Those are [VERIFY: margin framework and collateral rules]. Check them with the broker and the regulator.
+- The wipe-out formula is for a long position. It ignores costs. A gap can take the price past the wipe-out line (*Slippage, gaps and planned versus actual risk*).
 - Leverage does not improve a plan. It multiplies whatever the plan does, in both directions.
-- A stop does not protect against margin calls or forced sales. The quiz explains why.
-- The 2x example is an arithmetic illustration. It is not an offer and not a product.
+- A stop does not protect you from margin calls or forced sales. The quiz explains why.
+- The 2x example is arithmetic only. It is not an offer and not a product.
 
 ## Remember
 
@@ -116,7 +116,7 @@ The Kite demo has no practice path for leverage. Do not look for leverage featur
 - Gains and losses are both multiplied by the ratio.
 - Wipe-out move = 1 / ratio, for a long position, ignoring costs.
 - Margin can bring financing costs and forced sales at a bad price.
-- The book does not practise leverage, and leverage is not a route to a target.
+- The book does not teach leverage in practice. Leverage is not a route to a target.
 
 ## Sources and verification
 

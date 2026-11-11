@@ -30,7 +30,7 @@
  {
   "id": "T1.9-q3",
   "type": "scenario",
-  "prompt": "A stock trades at Rs 1,000 and goes ex-dividend with a dividend of Rs 10 per share (dummy). You hold 100 shares. The next morning the screen shows about Rs 990. Before market movement and before tax, what is your total holding value?",
+  "prompt": "A stock trades at Rs 1,000 and goes ex-dividend with a dividend of Rs 10 per share (made up). You hold 100 shares. The next morning the screen shows about Rs 990. Before market movement and before tax, what is your total holding value?",
   "options": [
    {"id": "a", "text": "Rs 99,000, because the cash is not counted."},
    {"id": "b", "text": "Rs 1,00,000, because 100 x 990 = Rs 99,000 plus Rs 1,000 of cash."},
@@ -40,7 +40,7 @@
   "answer": "b",
   "explanations": {
    "a": "Wrong. The Rs 1,000 cash is part of your total value. Leaving it out understates the value.",
-   "c": "Wrong. The dividend is paid once. The price fall already reflects it, so adding it again double-counts.",
+   "c": "Wrong. The dividend is paid once. The price fall already reflects it, so adding it again counts it twice.",
    "d": "Wrong. A Rs 10 change on a Rs 1,000 price is 1%, not 10%. The holding value is 100 x 990 plus the cash."
   },
   "concepts": ["dividend", "holding-value"],

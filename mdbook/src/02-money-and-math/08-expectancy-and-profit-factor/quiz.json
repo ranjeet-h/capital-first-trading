@@ -6,7 +6,7 @@
     "answer": -130,
     "tolerance": 0,
     "unit": "Rs",
-    "solution": "Expectancy = 0.9 x 300 - 0.1 x 4,000 = 270 - 400 = minus Rs 130 per trade. Check: 10 trades give a net of 9 x 300 - 4,000 = 2,700 - 4,000 = minus Rs 1,300, and minus 1,300 / 10 = minus Rs 130.",
+    "solution": "Expectancy = 0.9 x 300 - 0.1 x 4,000 = 270 - 400 = minus Rs 130 per trade. Check: 10 trades give a net of 9 x 300 - 4,000 = 2,700 - 4,000 = minus Rs 1,300. Minus 1,300 / 10 = minus Rs 130.",
     "concepts": [
       "expectancy",
       "win-rate"
@@ -40,7 +40,7 @@
     "explanations": {
       "a": "Win rate is a frequency. The sign of the result depends on the size of wins and losses as well.",
       "c": "Size, not count, decides the result. One loss of Rs 4,000 is larger than nine wins of Rs 300 combined.",
-      "d": "This is false. Expectancy depends on both sides, so a high win rate can be positive when the wins are large enough compared with the losses."
+      "d": "This is false. Expectancy depends on both sides. A high win rate can be positive when the wins are large enough compared with the losses."
     },
     "concepts": [
       "win-rate",
@@ -110,7 +110,7 @@
     "explanations": {
       "a": "Win rate is not expectancy. X's expectancy is minus Rs 130, which is lower than Y's plus Rs 200.",
       "c": "Equal trade counts do not make equal expectancy. The two expectancies given are different, and the higher one is plus Rs 200.",
-      "d": "The numbers needed are supplied. Expectancy is already given for each system, so they can be compared directly."
+      "d": "The numbers needed are given. Expectancy is already stated for each system, so they can be compared directly."
     },
     "concepts": [
       "expectancy",

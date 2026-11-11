@@ -2,7 +2,7 @@
  {
   "id": "T1.8-q1",
   "type": "numeric",
-  "prompt": "An index moves from 15,000 to 15,450 (dummy). What is the percent change?",
+  "prompt": "An index moves from 15,000 to 15,450 (made up). What is the percent change?",
   "answer": 3.0,
   "tolerance": 0.05,
   "unit": "%",
@@ -39,7 +39,7 @@
   ],
   "answer": "b",
   "explanations": {
-   "a": "Wrong. Weight is only half the story. Contribution is weight multiplied by move, and Stock X moved only 1%.",
+   "a": "Wrong. Weight is only half the story. Contribution is weight times move, and Stock X moved only 1%.",
    "c": "Wrong. Contributions are not averaged this way. Stock Y contributes 0.5 and Stock X contributes 0.3, so they are not equal.",
    "d": "Wrong. Weight is exactly what sets how much each stock's move counts in the index."
   },
@@ -58,8 +58,8 @@
   ],
   "answer": "a",
   "explanations": {
-   "b": "Wrong. The index level is not a price in rupees, and an index cannot be bought like a share. Index-linked products are covered only in Track 9.",
-   "c": "Wrong. The value of the level is not the problem. An index level is a number of points, not a price."
+   "b": "Wrong. The index level is not a price in rupees, and an index cannot be bought like a share. Index-linked products are covered later in the book.",
+   "c": "Wrong. The size of the level is not the problem. An index level is a number of points, not a price."
   },
   "concepts": ["index-level", "misconceptions"],
   "difficulty": 1,
@@ -76,7 +76,7 @@
   ],
   "answer": "b",
   "explanations": {
-   "a": "Wrong. An index describes a basket. It does not say what any one stock will do, and it is not permission to trade.",
+   "a": "Wrong. An index describes a group of stocks. It does not say what any one stock will do, and it is not permission to trade.",
    "c": "Wrong. Breadth is also context. It does not turn an index move into a trade signal by itself."
   },
   "concepts": ["index-as-context", "misconceptions"],

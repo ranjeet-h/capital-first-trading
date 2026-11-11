@@ -11,7 +11,7 @@ estimated_minutes: 30
 
 ## Hook
 
-A hypothetical trader with Rs 50,000 writes one number into her plan: Rs 2,000 a day. Over 250 trading days that is Rs 5,00,000, which is ten times her capital. Her plan does not say how any strategy would produce that every day. This chapter does the arithmetic she skipped. The result is not a strategy problem to solve. It is a number that shows the target does not fit this capital.
+A hypothetical trader with Rs 50,000 writes one number into her plan: Rs 2,000 a day. Over 250 trading days that is Rs 5,00,000. That is ten times her capital. Her plan does not explain how any strategy would make that every day. This chapter does the arithmetic she skipped. The result is not a strategy problem to solve. It is a number that shows the target does not fit this capital.
 
 <!-- OPEN: spec open question 7 asks whether the 50% annual-return row should appear at all. Kept as scale-only, per spec -->
 <!-- OPEN: spec lists Lab 4 (trade-order Monte Carlo for streak distribution) as a later lab. Not referenced in the text until that lab exists -->
@@ -20,40 +20,40 @@ A hypothetical trader with Rs 50,000 writes one number into her plan: Rs 2,000 a
 
 Start with the target in rupees. Then ask what capital and what return it would need.
 
-**Terms, defined once**
+**Terms**
 
 - **Daily target:** the profit you want in one trading day, in rupees.
-- **Trading days per year:** the number of sessions in a year. This chapter uses 250 as an assumption for arithmetic. [VERIFY: trading days per year from the NSE holiday list and calendar]
-- **Annual return:** the yearly profit as a percentage of the capital.
-- **Required daily return:** the daily target as a percentage of the capital.
+- **Trading days per year:** the number of market sessions in a year. This chapter uses 250 as an assumption for arithmetic. [VERIFY: trading days per year from the NSE holiday list and calendar]
+- **Annual return:** the yearly profit as a percentage of your capital.
+- **Required daily return:** the daily target as a percentage of your capital.
 
 **Capital needed.** Daily target times trading days per year, divided by the annual return.
 
-In symbols: C = (T x D) / r, where T is the daily target, D the number of trading days, r the annual return written as a decimal, and C the capital.
+In symbols: C = (T x D) / r, where T is the daily target, D is the number of trading days, r is the annual return as a decimal, and C is the capital.
 
 **Required daily return.** Daily target divided by capital.
 
 In symbols: g = T / C.
 
-**Sensitivity.** The annual return is the number you cannot control, so the table shows three values: 10%, 20% and 50%. You call 20% a year very good. That is a reference point, not a forecast. The 50% row is shown only to show the scale of the problem. It is not an expectation.
+**Sensitivity.** You cannot control the annual return. So the table shows three values: 10%, 20% and 50%. You can treat 20% a year as a very good result. That is a reference point, not a forecast. The 50% row shows only the scale of the problem. It is not an expectation.
 
-**Risk and the number of trades.** At Rs 50,000 with 1% risk per trade, one R is Rs 500. A Rs 2,000 day is 4R before costs. That is four 1R wins with no losing trade. Every losing trade takes away from that figure. The more trades a target needs, the more room costs and mistakes have to add up (*Overtrading and why daily profit targets encourage it*).
+**Risk and the number of trades.** At Rs 50,000 with 1% risk per trade, one R is Rs 500. A Rs 2,000 day is 4R before costs. That is four wins of 1R each, with no losing trade. Every losing trade takes away from that figure. The more trades a target needs, the more chances costs and mistakes have to add up (*Overtrading and why daily profit targets encourage it*).
 
 **Costs.** Every trade pays costs (*Costs on a trade*). This chapter uses the dummy cost model from *Costs on a trade*: a Rs 190 round trip on Rs 50,000. Dummy figures are for arithmetic only. They are not any broker's charges. Gross profit must cover costs before any of it counts toward the target.
 
-**Streaks.** Losing days come in runs (*Consecutive losses and losing streaks*). The worked example shows the capital lost over 5, 10 and 15 losing days. It assumes each losing day loses the risk percentage of the capital at that moment, so each loss is a smaller rupee amount than the one before.
+**Streaks.** Losing days come in runs (*Consecutive losses and losing streaks*). The worked example shows the capital lost over 5, 10 and 15 losing days. It assumes each losing day loses the risk percentage of the capital at that moment. So each loss is a smaller rupee amount than the one before.
 
 **Consistency.** A daily target assumes a steady daily return. Real results vary from one day to the next. A few good days say nothing about the next day. Consistent daily returns cannot be guaranteed.
 
-**Compounding check.** 1.04 raised to the power 250 is about 18,000. Put another way, Rs 1 would become about Rs 18,000 if it earned 4% on every one of 250 days. No responsible plan can assume that, and this is why the 4% a day figure is shown here only to make the scale visible.
+**Compounding check.** 1.04 raised to the power 250 is about 18,000. Put another way, Rs 1 would grow to about Rs 18,000 if it earned 4% on each of 250 days. No responsible plan can assume that. The 4% a day figure is shown here only to make the scale visible.
 
-**Conclusion.** At Rs 10,000 to Rs 50,000, a target of Rs 2,000 to Rs 3,000 a day is unrealistic. This book does not reverse-engineer a strategy to make it look possible. The target must never drive a trade decision.
+**Conclusion.** At Rs 10,000 to Rs 50,000, a target of Rs 2,000 to Rs 3,000 a day is unrealistic. This book does not work backwards from a target to invent a strategy that makes it look possible. The target must never drive a trade decision.
 
 ## See it
 
 <!-- component: streak-sim | capital: 10000 | riskPct: 1 | losingDays: 5 | caption: Losing-day streak at Rs 10,000 and 1% risk; read the capital lost after 5, 10 and 15 losing days -->
 
-Look at the capital lost after five losing days, then change the streak to 10 and 15. The loss grows a little more slowly than a straight line, because each loss is 1% of a smaller balance. Then change the risk to 2% and compare the same streak lengths.
+Look at the capital lost after five losing days. Then change the streak to 10 and 15. The loss grows a little more slowly than a straight line, because each loss is 1% of a smaller balance. Then change the risk to 2% and compare the same streak lengths.
 
 ## Worked example
 
@@ -114,7 +114,7 @@ Capital lost, rounded:
 
 ### Step 5: cost drag on the target
 
-Dummy round trip: Rs 190 on Rs 50,000 (*Costs on a trade* dummy model).
+Dummy round trip: Rs 190 on Rs 50,000 (from the dummy model in *Costs on a trade*).
 
 - Four round trips a day: 4 x Rs 190 = Rs 760 (dummy).
 - To keep Rs 2,000 after these dummy costs, gross profit must be Rs 2,760 (2,000 + 760).
@@ -131,7 +131,7 @@ Change the capital and the risk. Check that your readings match the table in Ste
 
 ### Guided exercise
 
-**Task:** Compute the capital needed for a daily target of Rs 1,500 at 20% a year over 250 trading days.
+**Task:** Work out the capital needed for a daily target of Rs 1,500 at 20% a year over 250 trading days.
 
 Hints:
 
@@ -143,7 +143,7 @@ Hints:
 
 ### Independent exercise
 
-**Task:** Your capital is Rs 50,000. Compute (a) the required daily return for a target of Rs 2,500 a day, and (b) the capital needed for Rs 2,500 a day at 15% a year over 250 trading days.
+**Task:** Your capital is Rs 50,000. Work out (a) the required daily return for a target of Rs 2,500 a day, and (b) the capital needed for Rs 2,500 a day at 15% a year over 250 trading days.
 
 <details><summary>Check your answer</summary>
 
@@ -163,26 +163,26 @@ Seven questions cover capital needed, required daily return, cost drag, streaks 
 
 ## Paper task
 
-**Mode:** learning note. No trades and no live account. Log it in your journal (or on paper until the journal app is ready).
+**Mode:** learning note. No trades and no live account. Write it in your journal. If the journal app is not ready, use paper.
 
-1. Write your daily target in rupees. Use a hypothetical or blank figure for your capital.
-2. Compute the capital needed at a 20% annual return over 250 days, or over your own verified trading-day count.
-3. Compute the required daily return: target divided by capital.
-4. Using your own cut rule from *Capital allocation*, count how many losing days at your chosen risk you could absorb before the cut triggers.
-5. Record the three results in one note with today's date.
+1. Write your daily target in rupees. Use a made-up or blank figure for your capital.
+2. Work out the capital needed at a 20% annual return over 250 days, or over your own checked trading-day count.
+3. Work out the required daily return: target divided by capital.
+4. Using your own cut rule from *Capital allocation*, count how many losing days at your chosen risk you could take before the cut applies.
+5. Record the three results in one note, with today's date.
 
 ## Limits and common mistakes
 
-- It does not predict any day's result. The arithmetic assumes a steady return, and real trading does not produce one.
-- The 250-day count and the dummy costs are assumptions. Replace them with verified values before relying on any figure.
-- It does not show that any strategy can reach the target. It shows only what the target would require.
-- 20% a year is your yardstick for a very good year. It is not an expectation. The 50% row is for scale only.
+- It does not predict any day's result. The arithmetic assumes a steady return, and real trading does not give one.
+- The 250-day count and the dummy costs are assumptions. Replace them with checked values before you rely on any figure.
+- It does not show that any strategy can reach the target. It shows only what the target would need.
+- 20% a year is a yardstick for a very good year. It is not an expectation. The 50% row is for scale only.
 - The streak figures assume one fixed risk percentage and losses that do not cluster unusually. Real streaks can be longer or shorter.
 
 ## Remember
 
 - Capital needed = daily target x trading days / annual return.
-- At Rs 10,000, Rs 2,000 a day needs 20% a day. At Rs 50,000, it needs 4% a day.
+- At Rs 10,000, Rs 2,000 a day needs a 20% return each day. At Rs 50,000, it needs 4% a day.
 - Costs are added on top of the target. Losing streaks take capital away from the base that must work.
 - A few good days say nothing about the next one. Consistent daily returns cannot be guaranteed.
 - The target must never drive a trade. At this capital it is unrealistic.
@@ -193,12 +193,11 @@ Seven questions cover capital needed, required daily return, cost drag, streaks 
 
 - NSE holiday calendar, for the trading-day count.
 - Zerodha charges page, cross-referenced from *Costs on a trade*. The dummy costs in this chapter are not Zerodha's charges.
-- The book's Lab 1 and Lab 2 specifications (LABS.md).
 
 **To verify:**
 
 - Trading days per year. [VERIFY: trading days per year from the NSE holiday list and calendar]
-- Replace the dummy Rs 190 round trip with the verified cost model from *Costs on a trade* before publication.
+- Replace the dummy Rs 190 round trip with the checked cost model from *Costs on a trade* before publishing.
 
 <!-- facts-needed: trading days per year (NSE calendar); verified cost model from *Costs on a trade* to replace the dummy Rs 190 round trip -->
 

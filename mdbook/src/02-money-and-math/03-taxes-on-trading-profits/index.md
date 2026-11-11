@@ -11,30 +11,30 @@ estimated_minutes: 20
 
 ## Hook
 
-A trader makes Rs 10,000 gross in a year, pays Rs 300 in trading costs, and assumes the remaining Rs 9,700 is the profit. Months later a tax notice arrives for an amount that is not in the trader's plan at all. The mistake was not the arithmetic. It was assuming that tax is simply a percentage of trading turnover, without checking how the activity is classified. This chapter gives the concepts, not the rates.
+A trader makes Rs 10,000 gross in a year. The trader pays Rs 300 in trading costs. The trader assumes the remaining Rs 9,700 is the profit. Months later, a tax notice arrives. It is for an amount that is not in the trader's plan at all. The mistake was not the arithmetic. The mistake was assuming that tax is simply a percentage of trading turnover. The trader did not check how the activity is classified. This chapter explains the ideas, not the rates.
 
 ## The idea
 
-Tax is a separate layer from trading costs. Costs (*Costs on a trade*) are paid to brokers, exchanges and government on each trade. Tax is calculated on your net gains for the year, under rules that depend on what kind of activity it is.
+Tax is a separate layer from trading costs. Costs (*Costs on a trade*) are paid to brokers, exchanges and the government on each trade. Tax is worked out on your net gains for the year. The rules depend on what kind of activity it is.
 
 Three ideas matter at the concept level:
 
-- **Classification.** The same stock can be taxed differently depending on whether you hold it as an investment, trade it as a business, or do something else. The classification depends on facts such as how long you hold, how often you trade and your intent. [VERIFY: classification rules under the Income Tax Act and CBDT circulars]
-- **Holding period.** For investments, how long you hold a share can decide whether a gain is treated as short-term or long-term. The thresholds and the rates differ. [VERIFY: holding-period thresholds and rates in the current Finance Act]
-- **Loss set-off.** Some losses can offset some gains, and some can be carried forward to later years. Which losses, against which gains, and for how long, depends on the rules. [VERIFY: loss set-off and carry-forward rules]
+- **Classification.** The same stock can be taxed in different ways. It depends on whether you hold it as an investment, trade it as a business, or do something else. The classification depends on facts. Those facts include how long you hold, how often you trade, and what you intend. [VERIFY: classification rules under the Income Tax Act and CBDT circulars]
+- **Holding period.** For investments, how long you hold a share can decide whether a gain is short-term or long-term. The cut-off periods and the rates are different. [VERIFY: holding-period thresholds and rates in the current Finance Act]
+- **Loss set-off.** Some losses can cancel out some gains. Some losses can be carried forward to later years. Which losses, against which gains, and for how long, depends on the rules. [VERIFY: loss set-off and carry-forward rules]
 
-Other points to know exist, and each one needs a check from an official source:
+Other points exist too. Each one needs a check from an official source:
 
 - Business income and speculative income are treated differently from capital gains. [VERIFY: business and speculative income treatment]
-- Frequent trading can bring a tax audit obligation above a turnover threshold. [VERIFY: tax audit turnover thresholds]
-- Dividends are taxed under their own rules, which connect to the corporate actions in *Corporate actions*. [VERIFY: dividend taxation]
-- The tax regime you choose, and the changes to it over time, matter. [VERIFY: tax regime choice and recent changes]
+- Frequent trading can bring a tax audit duty, once turnover passes a set level. [VERIFY: tax audit turnover thresholds]
+- Dividends are taxed under their own rules. These connect to the corporate actions in *Corporate actions*. [VERIFY: dividend taxation]
+- The tax regime you choose matters. Changes to it over time also matter. [VERIFY: tax regime choice and recent changes]
 
-**What the book does and does not do.** The book does not compute tax now. A tax calculator is deferred until the rates and rules are verified from the official source. Until then, the chapter stays conceptual.
+**What the book does and does not do.** This book does not calculate tax yet. A tax calculator will come only after the rates and rules are checked against official sources. Until then, this chapter stays at the level of ideas.
 
-**The formula, in words first.** Net result = gross gain - trading costs - tax. Tax = rate x taxable base. The taxable base depends on the classification, and whether costs can be deducted from it is itself a [VERIFY] point.
+**The formula, in words first.** Net result = gross gain - trading costs - tax. Tax = rate x taxable base. The taxable base depends on the classification. Whether costs can be deducted from it is a point that must still be checked. [VERIFY]
 
-In symbols, with G the gross gain, C the trading costs, B the taxable base and t a tax rate you have not verified:
+In symbols, G is the gross gain, C is the trading costs, B is the taxable base, and t is a tax rate that has not been verified.
 
 - If costs can be deducted, B = G - C.
 - Tax = t x B.
@@ -42,11 +42,11 @@ In symbols, with G the gross gain, C the trading costs, B the taxable base and t
 
 The symbol t is a placeholder. This chapter does not give a value for it.
 
-**Classification questions.** Before a tax figure means anything, you need answers to questions such as: How long did I hold this? How many trades did I make in the year? Was I investing, or running trading as a business? These are questions for a qualified tax professional. Writing them down in your journal is useful, because the journal becomes the record you will need.
+**Questions about classification.** Before a tax figure means anything, you need answers. For example: How long did I hold this? How many trades did I make in the year? Was I investing, or running trading as a business? A qualified tax professional should answer these questions with you. Writing your answers in your journal helps. The journal becomes the record you will need.
 
 ## See it
 
-The decision tree below shows the kinds of questions that decide classification. It does not give a result. Each branch ends in a question for a professional, and each branch has a [VERIFY] note because the rules must be checked.
+The decision tree below shows the kinds of questions that decide classification. It does not give a result. Each branch ends in a question for a professional. Each branch has a [VERIFY] note, because the rules must be checked.
 
 ```mermaid
 flowchart TD
@@ -66,7 +66,7 @@ Read the tree from the top. The branches show which facts you would need to brin
 
 ## Worked example
 
-**Hypothetical, symbolic.** Gross gain Rs 10,000. Trading costs Rs 300. Assume costs are deductible from the taxable base (a working assumption to be verified).
+**Hypothetical, symbolic.** The gross gain is Rs 10,000. Trading costs are Rs 300. Assume costs can be deducted from the taxable base. This is a working assumption that must still be verified.
 
 | Step | Expression | Value |
 |---|---|---|
@@ -76,19 +76,19 @@ Read the tree from the top. The branches show which facts you would need to brin
 | Tax | t x B | t x 9,700 |
 | Net result | G - C - t x B | 10,000 - 300 - t x 9,700 = 9,700 - 9,700t |
 
-**DUMMY illustration, for algebra only.** If t were 20%, tax would be 0.20 x 9,700 = Rs 1,940, and the net would be 9,700 - 1,940 = Rs 7,760. The 20% is not a rate. It is a number to show that the algebra works. Do not use it as a tax figure.
+**DUMMY illustration, for algebra only.** If t were 20%, tax would be 0.20 x 9,700 = Rs 1,940. The net would be 9,700 - 1,940 = Rs 7,760. The 20% is not a rate. It only shows that the algebra works. Do not use it as a tax figure.
 
 ## Try it
 
 ### Guided exercise
 
-**Task.** A hypothetical year has a gross gain of Rs 4,000 and trading costs of Rs 200. Write the net expression using the placeholder rate t. Keep t as a symbol. Do not put a number in it.
+**Task.** A made-up year has a gross gain of Rs 4,000 and trading costs of Rs 200. Write the net expression using the placeholder rate t. Keep t as a symbol. Do not put a number in it.
 
 Hints:
 
-1. Find the taxable base first: gross gain minus costs.
+1. Find the taxable base first. It is the gross gain minus the costs.
 2. Tax is t multiplied by the taxable base.
-3. Net is gross gain minus costs minus tax.
+3. Net is the gross gain minus the costs minus the tax.
 
 **Answer:** Taxable base = 4,000 - 200 = 3,800. Tax = t x 3,800. Net = 4,000 - 200 - t x 3,800 = 3,800 - 3,800t, which is 3,800 x (1 - t).
 
@@ -100,11 +100,11 @@ Hints:
 
 <details><summary>Check your answer</summary>
 
-There is no single correct list. Examples of good questions:
+There is no single correct list. Here are examples of good questions:
 
 1. How does my holding period change the treatment of my gains?
 2. At what level of trading activity does my activity count as a business, and does that change my treatment?
-3. Which of my losses can offset which of my gains, and can any be carried forward, and for how long?
+3. Which of my losses can cancel which of my gains? Can any be carried forward, and for how long?
 4. Do my trading costs reduce my taxable base, and which costs?
 5. Do I need to meet a tax audit requirement, and at what turnover?
 
@@ -114,11 +114,11 @@ There is no single correct list. Examples of good questions:
 
 <!-- component: quiz-block | src: quiz.json -->
 
-The quiz checks the concepts: tax is not a flat percentage of turnover, holding period and classification matter, and loss set-off has rules.
+The quiz checks the main ideas. Tax is not a flat percentage of turnover. Holding period and classification matter. Loss set-off has rules.
 
 ## Paper task
 
-Mode: **learning note**. Log it in your journal (or on paper until the journal app is ready).
+Mode: **learning note**. Write it in your journal.
 
 1. For each trade you log, add a classification note column with three entries: holding period, intent, and how often you trade.
 2. Do not calculate any tax figure. The column is a record for later, and a professional can use it.
@@ -126,9 +126,9 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 
 ## Limits and common mistakes
 
-- It does not tell you what tax you will pay. The rates and rules are not stated here and must be verified.
-- It is not tax advice. The book does not give tax advice. Consult a qualified professional.
-- It does not say that gains and losses are treated the same way across activities. They can differ, and the differences are the reason to get advice.
+- It does not tell you what tax you will pay. The rates and rules are not stated here, and they must be verified.
+- This is not tax advice. The book does not give tax advice. Talk to a qualified professional.
+- Gains and losses are not always treated the same way across activities. The differences are the reason to get advice.
 - It does not show that a tax bill is small or large for any plan. A tax bill can be larger than expected in a year with losses, depending on the rules.
 
 ## Remember
@@ -145,7 +145,7 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 - CBDT circulars.
 - The current Finance Act.
 - SEBI and NSE tax-information pages, where relevant.
-- Zerodha Varsity tax section, as a reference only (link, no text copied).
+- Zerodha Varsity tax section, for reference only (link only, no text copied).
 
 <!-- facts-needed: classification rules for trading income; short-term and long-term capital gains rates and holding-period thresholds; business and speculative income treatment; loss set-off and carry-forward rules; tax audit turnover thresholds; tax regime choice and changes; dividend taxation. -->
 

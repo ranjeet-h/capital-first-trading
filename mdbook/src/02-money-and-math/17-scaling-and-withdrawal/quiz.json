@@ -52,8 +52,8 @@
     "answer": "b",
     "explanations": {
       "a": "Wrong. Being below the high-water mark is a measured fact. Its size is what the drawdown rule reads.",
-      "c": "Wrong. The high-water mark is a reference point. Treating it as a target to reach quickly is a pressure to act, but the statement's clear error is the money source (see b).",
-      "d": "Wrong. A top-up from household money breaks the capital-first rules, whether or not the account is recovering (T2.15)."
+      "c": "Wrong. The high-water mark is a reference point. Wanting to reach it quickly is pressure to act. But the clear error here is the money source (see b).",
+      "d": "Wrong. A top-up from household money breaks the capital-first rules, whether or not the account is recovering (see *Capital allocation*)."
     },
     "concepts": ["household-money", "capital-rules"],
     "difficulty": 2,
@@ -77,13 +77,13 @@
     "prompt": "Hypothetical: the trader has lost 15% and wants to raise risk per trade from 1% to 2% to win the loss back faster. Is this allowed?",
     "options": [
       {"id": "a", "text": "Yes. Recovering faster is the purpose of the account."},
-      {"id": "b", "text": "No. Increasing size after losses is a capital-first rule break, and it speeds up the drawdown (T2.9)."},
+      {"id": "b", "text": "No. Increasing size after losses is a capital-first rule break, and it speeds up the drawdown."},
       {"id": "c", "text": "Yes, if the stop is tighter."},
       {"id": "d", "text": "Yes, after one winning trade."}
     ],
     "answer": "b",
     "explanations": {
-      "a": "Wrong. Higher risk after a loss makes each further loss bigger. It does not make recovery more likely (T2.9).",
+      "a": "Wrong. Higher risk after a loss makes each further loss bigger. It does not make recovery more likely.",
       "c": "Wrong. A tighter stop does not offset a larger position. The risk per trade is still raised after losses.",
       "d": "Wrong. One winning trade does not reset the rule. Scale-up follows gates and recorded results, not a single trade."
     },

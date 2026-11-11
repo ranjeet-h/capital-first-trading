@@ -2,7 +2,7 @@
   {
     "id": "T0.1-q1",
     "type": "scenario",
-    "prompt": "A hypothetical acquaintance says: 'I buy shares today, borrow money to buy more, and sell within an hour to catch the next move.' Which label fits best?",
+    "prompt": "A hypothetical friend says: 'I buy shares today. I borrow money to buy more. I sell within an hour to catch the next move.' Which label fits best?",
     "options": [
       {"id": "a", "text": "Investing"},
       {"id": "b", "text": "Trading with written rules"},
@@ -11,9 +11,9 @@
     ],
     "answer": "c",
     "explanations": {
-      "a": "Investing means holding a business for years, with the return coming from earnings and growth. A one-hour horizon does not fit that.",
-      "b": "Trading follows written rules and per-trade limits. The description gives no rules, and borrowing to add size with no stated limit is the opposite of that.",
-      "d": "A savings plan is a fixed, regular habit of setting money aside. Nothing in the description is saving."
+      "a": "Investing means holding a business for years, with the return coming from earnings and growth. A one-hour time frame does not fit that.",
+      "b": "Trading follows written rules and limits on each trade. The description gives no rules. Borrowing to buy more, with no stated limit, is the opposite of that.",
+      "d": "A savings plan is a regular habit of setting money aside. Nothing in the description is saving."
     },
     "concepts": ["investing-trading-speculation"],
     "difficulty": 1,
@@ -22,11 +22,11 @@
   {
     "id": "T0.1-q2",
     "type": "numeric",
-    "prompt": "A hypothetical plan risks Rs 3,000 to make Rs 500 per trade. Ignoring costs, what win rate, in percent to one decimal place, is needed just to break even?",
+    "prompt": "A hypothetical plan risks Rs 3,000 to make Rs 500 per trade. Leave out costs. What win rate, in percent to one decimal place, do you need just to break even?",
     "answer": 85.7,
     "tolerance": 0.1,
     "unit": "%",
-    "solution": "Let W be the win rate. Break-even: W x 500 = (1 - W) x 3,000. So 500W = 3,000 - 3,000W, which gives 3,500W = 3,000. W = 3,000 / 3,500 = 6/7 = 0.857..., so 85.7%. Check: 6/7 x 500 = Rs 428.57 and 1/7 x 3,000 = Rs 428.57, which match. Common wrong answers: 50% (treats the two outcomes as symmetric), 14.3% (inverts the ratio, 500 / 3,500), and 85% (rounded without working).",
+    "solution": "Let W be the win rate. Break-even: W x 500 = (1 - W) x 3,000. So 500W = 3,000 - 3,000W, which gives 3,500W = 3,000. W = 3,000 / 3,500 = 6/7 = 0.857..., so 85.7%. Check: 6/7 x 500 = Rs 428.57 and 1/7 x 3,000 = Rs 428.57. They are equal. Common wrong answers: 50% (treats the two outcomes as equal), 14.3% (flips the ratio to 500 / 3,500), and 85% (rounded without working).",
     "concepts": ["break-even-win-rate", "expectancy"],
     "difficulty": 2,
     "reviewAfterDays": 3
@@ -42,8 +42,8 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "Frequent wins do not add up to profit if each loss is bigger than each win. For example, a hypothetical plan that wins 60% of trades for Rs 500 and loses 40% of trades for Rs 3,000 averages 0.6 x 500 - 0.4 x 3,000 = 300 - 1,200 = minus Rs 900 per trade. Size matters (see T2.8).",
-      "c": "Never taking a loss is not a plan. Every trade has a loss path, and the book treats that as the core problem."
+      "a": "Frequent wins do not add up to profit if each loss is bigger than each win. For example, a hypothetical plan that wins 60% of trades for Rs 500 and loses 40% of trades for Rs 3,000 averages 0.6 x 500 - 0.4 x 3,000 = 300 - 1,200 = minus Rs 900 per trade. Size matters. Later chapters cover position size.",
+      "c": "Never taking a loss is not a plan. Every trade can lose money. This book treats that as the main problem."
     },
     "concepts": ["win-rate-vs-size", "expectancy"],
     "difficulty": 1,
@@ -60,8 +60,8 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "A backtest is a simulation of the past, and reporting what it produced is fine if it is labelled as backtested. The first half is not the error.",
-      "c": "Backtests are useful for testing an idea. The mistake is moving from a simulated result straight to a live expectation, without the costs, fills and behaviour that live trading adds."
+      "a": "A backtest is a test of the past. Reporting what it made is fine if you label it as backtested. The first half is not the error.",
+      "c": "Backtests are useful for testing an idea. The mistake is moving from a simulated result straight to a live expectation. Live trading adds costs, real order prices and real behaviour. The simulation does not have these."
     },
     "concepts": ["theoretical-backtested-live"],
     "difficulty": 2,
@@ -73,13 +73,13 @@
     "prompt": "A friend promises you steady monthly income from trading. Which response treats the claim correctly?",
     "options": [
       {"id": "a", "text": "Steady monthly income is possible, so invest once you have seen the friend's returns."},
-      {"id": "b", "text": "The claim is unsupported. Ask what record exists, and whether it is theoretical, backtested or live. Steady income cannot be promised by anyone."},
+      {"id": "b", "text": "The claim has no proof yet. Ask what record exists. Ask if it is theoretical, backtested or live. No one can promise steady income."},
       {"id": "c", "text": "Ignore it, because only losses are worth studying."}
     ],
     "answer": "b",
     "explanations": {
-      "a": "Steady income is a promise, and the book does not treat it as possible. A friend's returns, without a clear record and its type, are not evidence.",
-      "c": "The claim deserves a question, not dismissal. Asking what the evidence is, is part of learning to judge claims."
+      "a": "No one can promise steady income, so the book does not treat this as possible. A friend's returns are not proof, unless there is a clear record and you know what type of record it is.",
+      "c": "The claim deserves a question, not a dismissal. Asking for proof is part of learning to judge claims."
     },
     "concepts": ["unsupported-claims", "theoretical-backtested-live"],
     "difficulty": 1,
@@ -88,18 +88,18 @@
   {
     "id": "T0.1-q6",
     "type": "multi",
-    "prompt": "Which THREE of these are ways an active trader commonly loses money? (Select all that apply.)",
+    "prompt": "Which THREE of these are common ways an active trader loses money? (Select all that apply.)",
     "options": [
       {"id": "a", "text": "Costs: brokerage, taxes and other charges on every trade"},
       {"id": "b", "text": "A written per-trade loss limit"},
-      {"id": "c", "text": "Oversized positions"},
+      {"id": "c", "text": "Putting too much money into one trade"},
       {"id": "d", "text": "Emotional decisions"},
-      {"id": "e", "text": "Holding a diversified set of companies for decades"}
+      {"id": "e", "text": "Holding a mix of companies for decades"}
     ],
     "answer": ["a", "c", "d"],
     "explanations": {
       "b": "A written per-trade limit is a loss control. It is the opposite of a loss path.",
-      "e": "Long diversified holding is an investing approach. It is not one of the three active-trading loss paths this chapter names."
+      "e": "Holding many companies for a long time is an investing approach. It is not one of the three trading loss paths in this chapter."
     },
     "concepts": ["loss-mechanisms", "costs"],
     "difficulty": 1,

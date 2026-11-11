@@ -6,7 +6,7 @@
     "answer": 0.1,
     "tolerance": 0.001,
     "unit": "%",
-    "solution": "Ownership = 1,000 / 10,00,000 = 0.001 = 0.1%. Check: 0.1% of 10,00,000 = 1,000 shares, which matches. Common wrong answers: 1,000 / Rs 200 = 5 (divides by price, with no total); and a percentage computed with the wrong total share count.",
+    "solution": "Ownership = 1,000 / 10,00,000 = 0.001 = 0.1%. Check: 0.1% of 10,00,000 = 1,000 shares, which matches. Common wrong answers: 1,000 / Rs 200 = 5 (divides by the price, not the total shares); and a percentage worked out with the wrong total share count.",
     "concepts": ["ownership-percentage"],
     "difficulty": 1,
     "reviewAfterDays": 3
@@ -43,7 +43,7 @@
     "answer": "b",
     "explanations": {
       "a": "No outcome is guaranteed. The listing price is set by trading after listing, and it can fall below the issue price.",
-      "c": "Heavy demand in the offer does not fix the price after listing. The listing-day price is set by trading after the shares start to trade."
+      "c": "Heavy demand in the offer does not fix the price after listing. Trading sets the listing-day price."
     },
     "concepts": ["ipo", "misconceptions"],
     "difficulty": 1,

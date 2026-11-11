@@ -11,9 +11,9 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "Tax is not a percentage of turnover. Trading costs are proportional to turnover, but tax is calculated on the net gain under the applicable rules.",
-      "c": "The value of a buy order is not the taxable base. Gains, not purchases, are what tax is calculated on, under the applicable rules.",
-      "d": "Holding period is one of the classification factors that can change the treatment of a gain. Its thresholds must be verified."
+      "a": "Tax is not a percentage of turnover. Trading costs are proportional to turnover, but tax is worked out on the net gain under the applicable rules.",
+      "c": "The value of a buy order is not the taxable base. Gains, not purchases, are what tax is worked out on, under the applicable rules.",
+      "d": "Holding period is one of the classification factors that can change the treatment of a gain. Its cut-off periods must be verified."
     },
     "concepts": ["tax-basics", "classification", "misconceptions"],
     "difficulty": 1,
@@ -25,14 +25,14 @@
     "prompt": "Hypothetical. A trader has two gains of the same amount. One comes from a share held for a few days, and the other from a share held for two years. What is the most accurate statement?",
     "options": [
       {"id": "a", "text": "Both gains are taxed identically, because both are gains"},
-      {"id": "b", "text": "They may be treated differently, because the holding period is a classification factor; the thresholds and rates must be verified"},
+      {"id": "b", "text": "They may be treated differently, because the holding period is a classification factor. The thresholds and rates must be verified."},
       {"id": "c", "text": "Both gains are tax-free if the amount is small"},
       {"id": "d", "text": "Only the broker decides the treatment of each gain"}
     ],
     "answer": "b",
     "explanations": {
-      "a": "Identical amounts can be treated differently when holding periods differ. Assuming they are the same is the mistake this chapter warns about.",
-      "c": "No such rule is stated in this book, and a tax-free status for small amounts must come from the current official rules, not from memory or from a blog.",
+      "a": "Equal amounts can be treated differently when holding periods differ. Assuming they are the same is the mistake this chapter warns about.",
+      "c": "No such rule is stated in this book. A tax-free status for small amounts must come from the current official rules, not from memory or from a blog.",
       "d": "The broker does not decide tax treatment. The rules do, and a professional can help apply them to your facts."
     },
     "concepts": ["holding-period", "classification"],
@@ -47,12 +47,12 @@
       {"id": "a", "text": "\"Delivery and intraday gains\""},
       {"id": "b", "text": "\"are always taxed the same way\""},
       {"id": "c", "text": "\"so I can ignore the type of activity\""},
-      {"id": "d", "text": "Nothing; the statement is correct"}
+      {"id": "d", "text": "Nothing. The statement is correct."}
     ],
     "answer": "b",
     "explanations": {
       "a": "Naming the two kinds of trade is not the error. The error is the claim about how they are taxed.",
-      "c": "The conclusion follows from the wrong premise. The activity type is exactly what the classification questions examine.",
+      "c": "The conclusion follows from the wrong claim. The activity type is exactly what the classification questions examine.",
       "d": "The statement is not correct. Classification and rates can differ, and the rules must be checked from an official source."
     },
     "concepts": ["classification", "misconceptions"],
@@ -77,15 +77,15 @@
     "prompt": "A trader made a loss in one year and a gain in the next. The trader says, \"Losses are never usable, so last year's loss is wasted.\" What is the best response?",
     "options": [
       {"id": "a", "text": "Agree, because losses are never usable"},
-      {"id": "b", "text": "Disagree in general terms, but do not assume a particular offset: which losses can offset which gains, and for how long they can be carried, depends on rules to be verified with a professional"},
+      {"id": "b", "text": "Disagree in general terms, but do not assume a particular offset. Which losses can cancel which gains, and for how long they can be carried, depends on rules to be checked with a professional."},
       {"id": "c", "text": "Agree, but only for losses in the first year"},
       {"id": "d", "text": "Ask the broker to refund the loss"}
     ],
     "answer": "b",
     "explanations": {
-      "a": "The claim is too strong. Loss set-off rules exist, but their details must be verified, so it is wrong to assume losses are never usable.",
+      "a": "The claim is too strong. Loss set-off rules exist, but their details must be verified. It is wrong to assume losses are never usable.",
       "c": "No timing rule like this is stated in this book. Any rule on which years losses can be used must come from the current official rules.",
-      "d": "A loss is not refunded by a broker. Its treatment is a tax question governed by the rules."
+      "d": "A broker does not refund a loss. Its treatment is a tax question, governed by the rules."
     },
     "concepts": ["loss-set-off", "misconceptions"],
     "difficulty": 2,

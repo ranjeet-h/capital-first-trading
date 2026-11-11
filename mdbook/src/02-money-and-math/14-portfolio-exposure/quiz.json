@@ -2,7 +2,7 @@
   {
     "id": "T2.14-q1",
     "type": "numeric",
-    "prompt": "Capital is Rs 50,000. Three open positions have planned losses of Rs 400, Rs 250 and Rs 350. What is the open risk as a percentage of capital?",
+    "prompt": "Your capital is Rs 50,000. Three open positions have planned losses of Rs 400, Rs 250 and Rs 350. What is the open risk as a percentage of capital?",
     "answer": 2,
     "tolerance": 0,
     "unit": "%",
@@ -14,7 +14,7 @@
   {
     "id": "T2.14-q2",
     "type": "numeric",
-    "prompt": "Capital is Rs 50,000. Sector X holds two positions worth Rs 15,000 and Rs 9,000. What percentage of capital is Sector X?",
+    "prompt": "Your capital is Rs 50,000. Sector X holds two positions worth Rs 15,000 and Rs 9,000. What percentage of capital is in Sector X?",
     "answer": 48,
     "tolerance": 0,
     "unit": "%",
@@ -26,7 +26,7 @@
   {
     "id": "T2.14-q3",
     "type": "scenario",
-    "prompt": "A trader holds five stocks, all in one sector, and says: 'I have five stocks, so I am diversified.' Which reply is correct?",
+    "prompt": "A trader holds five stocks, all in one sector. The trader says: 'I have five stocks, so I am diversified.' Which reply is correct?",
     "options": [
       {"id": "a", "text": "Correct. Five different companies are always diversified."},
       {"id": "b", "text": "Not as stated. If the five move together, the holdings act like one larger bet on that sector."},
@@ -96,7 +96,7 @@
     "answer": "b",
     "explanations": {
       "a": "Shared sector drivers often move stocks together. That is why this chapter treats them as one larger bet.",
-      "c": "Correlation matters for any group of holdings, derivatives or not. Derivatives are covered in Track 9 only as theory.",
+      "c": "Correlation matters for any group of holdings, derivatives or not. Derivatives are covered only in theory later in the book.",
       "d": "Correlation measures how closely two prices move together. It does not fix one price relative to an index."
     },
     "concepts": ["correlation", "concentration"],

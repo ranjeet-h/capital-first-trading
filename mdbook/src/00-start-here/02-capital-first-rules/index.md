@@ -11,46 +11,46 @@ estimated_minutes: 25
 
 ## Hook
 
-A hypothetical household has Rs 4,00,000 in savings. The trader plans to trade after two bad weeks and thinks, "I can earn it back." Within a month, the trading money is gone, and the trader starts moving money from the emergency fund to win it back. Every step in that story broke a rule that could have been written down in advance.
+A hypothetical household has Rs 4,00,000 in savings. After two bad weeks of trading, the trader thinks, "I can earn it back." Within a month, the trading money is gone. The trader then moves money from the emergency fund to win it back. Each step broke a rule. Every one of those rules could have been written down in advance.
 
 ## The idea
 
-Capital-first means one thing: protect the money you can least afford to lose before you think about what you might gain. The rules below are short on purpose. Each one prevents a specific loss path.
+Capital-first means one thing. Protect the money you can least afford to lose. Do this before you think about what you might gain. The rules below are short. Each one blocks one specific way of losing money. This book calls that a loss path.
 
-**Household money is separate.** Emergency funds and obligations are never trading capital. They are not a source for trading losses, and they are not a source for topping up a losing account.
+**Household money is separate.** Emergency funds and bills you must pay are never trading money. Do not use them to cover trading losses. Do not use them to top up a losing account.
 
-**Trading capital is money you can afford to lose entirely.** You set the amount before any trade. The number is your decision. The book illustrates amounts but does not set one for you.
+**Trading capital is money you can afford to lose entirely.** You set the amount before your first trade. The number is your choice. This book shows example amounts, but it does not set one for you.
 
-**No leverage or borrowed money** in the learning stage or the early live stage. Leverage means controlling a larger position than your own money pays for. It magnifies losses as well as gains (*Leverage and margin*).
+**No leverage or borrowed money** in the learning stage or the early live stage. Leverage means controlling a bigger position than your own money pays for. It makes losses bigger, just as it makes gains bigger (*Leverage and margin*).
 
-**No F&O as a starting activity.** F&O (futures and options) is theory only in Track 9. It is not a path for a beginner in this book.
+**No F&O as a starting activity.** F&O means futures and options. In this book, F&O is covered as theory only, in Track 9. It is not a starting path for a beginner.
 
-**Never average down.** Averaging down means buying more of a position that has fallen, to lower your average cost. It increases your exposure to an idea that is already failing (*Portfolio exposure and concentration*).
+**Never average down.** Averaging down means buying more of something that has fallen, so your average cost goes down. It puts more money into an idea that is already failing (*Portfolio exposure and concentration*).
 
-**Never increase size after losses.** Increasing size after a loss makes the drawdown deeper and faster (*Drawdown, recovery and compounding*).
+**Never increase size after losses.** Putting more money in after a loss makes the fall from your peak deeper and faster (*Drawdown, recovery and compounding*).
 
 **No-trade days are a valid result.** Not trading is a decision. It is not a failure.
 
-**No daily income target drives trades.** A target like "I must earn this much today" pushes you to trade when there is no setup, which is overtrading (*Overtrading and why daily profit targets encourage it*).
+**No daily income target drives trades.** A goal like "I must earn this much today" pushes you to trade when there is no clear reason to trade. That is overtrading (*Overtrading and why daily profit targets encourage it*).
 
-Read the list as a loss map. Each row answers "which loss path does this block?" If you cannot name the path, the rule is not yet understood.
+Read the list as a map of ways to lose money. For each rule, ask which loss path it blocks. If you cannot name the path, you do not understand the rule yet.
 
 ## See it
 
 | Rule | Loss mechanism it prevents |
 |---|---|
-| Household money is separate | Emergency funds and obligations used to fund losses |
-| Trading capital is set before any trade, and is money you can lose entirely | A number chosen after a loss; trading money that cannot be lost |
-| No leverage or borrowed money | Losses magnified beyond the money you put in (*Leverage and margin*) |
-| No F&O as a starting activity | Leveraged exposure before the basics are proven |
-| Never average down | Adding exposure to a failing idea (*Portfolio exposure and concentration*) |
-| Never increase size after losses | Accelerating drawdown (*Drawdown, recovery and compounding*) |
-| No-trade days are valid | Pressure to trade without a setup |
+| Household money is separate | Emergency money used to pay for losses |
+| Trading capital is set before any trade and is money you can afford to lose | A number picked after a loss; trading with money you cannot afford to lose |
+| No leverage or borrowed money | Losses bigger than the money you put in (*Leverage and margin*) |
+| No F&O as a starting activity | Bets with leverage before the basics are learned |
+| Never average down | Adding money to a failing idea (*Portfolio exposure and concentration*) |
+| Never increase size after losses | A faster fall after losses (*Drawdown, recovery and compounding*) |
+| No-trade days are valid | Pressure to trade without a clear reason |
 | No daily income target driving trades | Overtrading (*Overtrading and why daily profit targets encourage it*) |
 
 <!-- OPEN: the spec gives a static rule card for this chapter. No component in the placeholder list fits, so a Markdown table is used. -->
 
-Scan the right-hand column first. Each entry is a way an account shrinks. Then check each left-hand rule against it. This card is static; there is nothing to change.
+Scan the right-hand column first. Each entry is a way an account can shrink. Then check each rule on the left against it.
 
 ## Worked example
 
@@ -62,7 +62,7 @@ Scan the right-hand column first. Each entry is a way an account shrinks. Then c
 |---|---|---|
 | 1 | Trading capital as a share of savings | 50,000 / 4,00,000 = 0.125 |
 | 2 | As a percentage | 12.5% |
-| 3 | Untouched savings | 4,00,000 - 50,000 = Rs 3,50,000 |
+| 3 | Savings left untouched | 4,00,000 - 50,000 = Rs 3,50,000 |
 | 4 | The trading account falls 30% | 30% of 50,000 = 0.30 x 50,000 = Rs 15,000 |
 | 5 | Trading account after the fall | 50,000 - 15,000 = Rs 35,000 |
 | 6 | Total savings after the loss | 35,000 + 3,50,000 = Rs 3,85,000 |
@@ -70,13 +70,13 @@ Scan the right-hand column first. Each entry is a way an account shrinks. Then c
 
 **Check:** 4,00,000 - 15,000 = 3,85,000, which matches step 6.
 
-The loss of Rs 15,000 is painful, but it is 3.75% of total savings, and the Rs 3,50,000 untouched is still there. The rule to apply before you start is this question: **could the household absorb this loss without harm?** If the honest answer is no, the trading capital is too large, whatever the number is.
+The loss of Rs 15,000 hurts. But it is 3.75% of total savings. The Rs 3,50,000 you did not use is still there. Before you start, ask this question: **could the household absorb this loss without harm?** If the honest answer is no, the trading capital is too large. This is true whatever the amount is.
 
 ## Try it
 
 ### Guided exercise
 
-**Task:** A friend asks to borrow Rs 2 lakh for "a sure intraday trade." Using the rules above, list which rules are broken and say what you would reply.
+**Task:** A friend asks to borrow Rs 2 lakh for "a sure intraday trade" (a trade bought and sold on the same day). Using the rules above, list the rules that are broken. Then say what you would reply.
 
 **Hints:**
 
@@ -87,21 +87,21 @@ The loss of Rs 15,000 is painful, but it is 3.75% of total savings, and the Rs 3
 
 **Answer:** Rules broken:
 
-- Borrowed money: the trade would be funded by a loan, which the rules rule out at this stage.
-- Leverage: borrowed money used to take a bigger position than your own capital.
-- The claim of certainty: no trade is sure, and the word itself is a warning sign.
-- Intraday trading is paper-only, and only as an optional later module. It is not a live starting activity.
-- If it loses, the Rs 2 lakh is still owed, and the loss is added to that debt.
+- Borrowed money. The trade would be paid for with a loan. The rules do not allow that at this stage.
+- Leverage. The borrowed money would buy a bigger position than your own capital.
+- A claim of certainty. No trade is sure. The word "sure" is a warning sign.
+- Intraday trading. In this book it is paper-only, and it is an optional later module. It is not a starting activity with real money.
+- If the trade loses, you still owe Rs 2 lakh. The loss is added to that debt.
 
 Reply: "No. I do not borrow to trade, and no trade is sure. If I ever start, it will be with money I set aside from my own savings, and I will write the rule down first."
 
 ### Independent exercise
 
-**Task:** Write three capital-first rules of your own. Attach a number to each. Use no hints.
+**Task:** Write three capital-first rules of your own. Give each one a number. Use no hints.
 
 <details><summary>Check your answer</summary>
 
-Check that each rule has a number and names a loss path it blocks. A format that works: "Trading capital is at most [your number] of my savings, set before my first trade." The book does not supply your number; that is your decision. A rule with no number cannot be checked, and a rule that cannot be checked will be bent after a loss.
+Check that each rule has a number. Check that it names the loss path it blocks. Here is one format that works: "Trading capital is at most [your number] of my savings, set before my first trade." This book does not give you the number. You choose it. A rule with no number cannot be checked. A rule that cannot be checked will be bent after a loss.
 
 </details>
 
@@ -109,30 +109,30 @@ Check that each rule has a number and names a loss path it blocks. A format that
 
 <!-- component: quiz-block | src: quiz.json -->
 
-Six questions check the rules: leverage, averaging down, no-trade days, household money, and the capital arithmetic.
+Six questions check the rules on leverage, averaging down, no-trade days and household money. They also check the capital sums.
 
 ## Paper task
 
-**Mode:** learning note, in Lab 3. Log it in your journal, or on paper until the journal app is ready.
+**Mode:** learning note, in Lab 3. Write it in your journal, or on paper if the journal app is not ready yet.
 
-1. Write the capital statement in three lines: total savings, trading capital set by you, and the untouched amount.
-2. Use hypothetical or blank figures. Do not use your real savings.
+1. Write your capital statement in three lines. Include total savings, the trading capital you set, and the amount left untouched.
+2. Use made-up or blank figures. Do not use your real savings.
 3. Do not record a live account.
 
 ## Limits and common mistakes
 
-- It does not set a trading-capital number for you. That decision belongs to you, and it is made before the first trade.
-- The rules reduce some loss paths. They do not guarantee that any trade works.
-- A rule written after a loss is a judgement made in the worst moment. Write the rules in advance.
-- The worked example is hypothetical. Real households vary, and the test is always whether the loss can be absorbed.
+- This book does not set a trading-capital number for you. That choice is yours. You make it before your first trade.
+- The rules block some loss paths. They do not promise that any trade will work.
+- A rule written after a loss is made in the worst moment. Write your rules in advance.
+- The worked example is hypothetical. Real households differ. The test is always the same: can the loss be absorbed?
 
 ## Remember
 
 - Household money and emergency funds are never trading capital.
-- Trading capital is set before any trade, and must be money you can afford to lose entirely.
-- Leverage, borrowed money, averaging down and sizing up after losses each open a specific loss path.
+- Set trading capital before any trade. It must be money you can afford to lose.
+- Leverage, borrowed money, averaging down and adding size after losses each open a loss path.
 - A no-trade day is a valid result.
-- Trading capital of Rs 50,000 out of Rs 4,00,000 is 12.5% (hypothetical); a 30% fall costs Rs 15,000, or 3.75% of savings.
+- Rs 50,000 of trading capital out of Rs 4,00,000 is 12.5% (hypothetical). A 30% fall costs Rs 15,000, or 3.75% of savings.
 
 ## Sources and verification
 
@@ -143,7 +143,7 @@ Six questions check the rules: leverage, averaging down, no-trade days, househol
 
 **Facts to verify:**
 
-- Margin and leverage rules for the cash segment, and the broker's margin policy (cross-reference *Leverage and margin*). [VERIFY: Zerodha margin page; SEBI margin framework circulars]
+- Margin and leverage rules for the cash segment, and the broker's margin policy (see *Leverage and margin*). [VERIFY: Zerodha margin page; SEBI margin framework circulars]
 
 <!-- OPEN: spec asks whether the book should suggest a default trading-capital ceiling. Current draft leaves the number to the owner and illustrates only. -->
 

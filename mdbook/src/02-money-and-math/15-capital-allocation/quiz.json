@@ -36,7 +36,7 @@
     "answer": "b",
     "explanations": {
       "a": "A repayment plan does not change the rule. Household money is never trading capital, and the obligation comes first.",
-      "c": "Restoring a level is not a reason to use household money. Additional money comes only from spare income.",
+      "c": "Restoring a level is not a reason to use household money. Extra money comes only from spare income.",
       "d": "A win does not change where the money came from. Household money stays out of trading."
     },
     "concepts": ["top-up-rule", "household-money"],
@@ -49,7 +49,7 @@
     "prompt": "Someone proposes: 'Put all your savings into trading to grow faster.' Which reply is correct?",
     "options": [
       {"id": "a", "text": "Yes. Faster growth needs all the capital."},
-      {"id": "b", "text": "No. Savings include household obligations and an emergency reserve, which are never trading capital. The trading amount is set in rupees before trading."},
+      {"id": "b", "text": "No. Savings include household needs and an emergency reserve, which are never trading capital. The trading amount is set in rupees before trading."},
       {"id": "c", "text": "Yes, if the trader is confident."},
       {"id": "d", "text": "No, but only because the savings figure is too small."}
     ],
@@ -75,7 +75,7 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "The 1% figure is the illustrative setting. The mistake is the base, not the percentage.",
+      "a": "The 1% figure is an example setting. The mistake is the base, not the percentage.",
       "c": "Rs 500 is 1% of the starting allocation. After the cut, the current trading capital is the base.",
       "d": "The current allocation is what the rule uses. Ignoring it leaves the risk too high for the capital that is actually allocated."
     },
@@ -97,7 +97,7 @@
     "explanations": {
       "a": "The stop is set at the threshold, not after a recovery. Trading on to see a recovery is the behaviour the rule prevents.",
       "c": "The trigger is the drawdown threshold, not a count of losing trades.",
-      "d": "Household money is never trading capital, and it is never used to speed up a recovery (PLAN section 2)."
+      "d": "Household money is never trading capital, and it is never used to speed up a recovery."
     },
     "concepts": ["stop-rule", "timing"],
     "difficulty": 2,

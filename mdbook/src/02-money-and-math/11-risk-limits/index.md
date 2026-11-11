@@ -11,38 +11,38 @@ estimated_minutes: 30
 
 ## Hook
 
-Hypothetical: an account of Rs 50,000 plans to risk Rs 500 per trade. The first trade of the morning loses Rs 500, exactly as planned. The trader feels the day must be won back, takes a second trade that is bigger than planned, and loses Rs 1,500. The day ends at minus Rs 2,000, four times the Rs 500 planned for one trade. Nothing had set a limit for the day, so nothing stopped the second trade.
+Hypothetical: an account has Rs 50,000. You plan to risk Rs 500 on each trade. The first trade of the morning loses Rs 500, as planned. You feel you must win the money back. So you take a second trade that is bigger than planned, and it loses Rs 1,500. The day ends at minus Rs 2,000. That is four times the Rs 500 you planned for one trade. No limit was set for the day, so nothing stopped the second trade.
 
 ## The idea
 
-Per-trade risk (*Risk per trade and stop-loss distance* and *Position sizing step by step*) controls one trade. A **limit** controls a period. It is the most rupees you allow yourself to lose over a set time, written down before trading starts.
+Per-trade risk controls one trade. See *Risk per trade and stop-loss distance* and *Position sizing step by step*. A **limit** controls a period. It is the most rupees you allow yourself to lose over a set time. You write it down before trading starts.
 
-| Limit | What it caps | Illustrative size |
+| Limit | What it caps | Example size |
 |---|---|---|
 | Per trade | Planned loss on one trade | 1% of capital |
-| Daily | All losses in one session | 2% of capital |
+| Daily | All losses in one day | 2% of capital |
 | Weekly | All losses in one week | 4% of capital |
 | Monthly | All losses in one month | 8% of capital |
 | Max trades per day | Number of trades | 2 |
 
-The sizes are illustrations. You set every number.
+The sizes are examples. You set every number.
 
-- **Base.** Each percentage needs a stated base: starting capital, or current equity. Write the base on the limit card. A limit that moves with results is a rule that changes with results.
+- **Base.** Each percentage needs a stated base. The base is your starting capital or your current equity (what the account is worth now). Write the base on the limit card. A limit that moves with your results is not a fixed rule.
 - **Rupee limit** = base x limit percentage.
 - **Remaining limit** = rupee limit minus the losses already used in that period.
-- **Stop rule.** When a limit is reached, the rule says what to do. A daily limit reached means no more trades that day. A weekly limit reached means no more trades that week. No revenge trades and no recovery attempts. A limit that the next trade can lift is not a limit.
-- **Reduce exposure.** A pre-set rule that lowers risk after a drawdown, for example halving the per-trade risk percentage once the month's drawdown reaches a set level. It only ever moves risk down, and it is written before trading.
-- **Two different figures.** Your Rs 2,000-3,000 figure is a daily profit goal that *The Rs 2,000-3,000 reality check* tests against the arithmetic. It is not a loss limit. Do not use it as one.
+- **Stop rule.** When a limit is reached, the rule says what to do. If the daily limit is reached, you make no more trades that day. If the weekly limit is reached, you make no more trades that week. No revenge trades, which are trades made to win back a loss. No recovery attempts. A limit that the next trade can lift is not a limit.
+- **Reduce exposure.** A rule set in advance that lowers your risk after a drop in the account. For example, you halve your per-trade risk percentage once the month's drawdown (the fall from the account's high point) reaches a set level. It only ever moves risk down. You write it before trading.
+- **Two different figures.** Your Rs 2,000-3,000 figure is a daily profit goal. *The Rs 2,000-3,000 reality check* tests it against the arithmetic. It is not a loss limit. Do not use it as one.
 
 <!-- OPEN: spec objective 5 calls the owner's Rs 2,000-3,000 figure "a ceiling and not a per-day risk"; *Overtrading and why daily profit targets encourage it* calls it "a ceiling, not a target". This draft describes it as a daily profit goal tested in *The Rs 2,000-3,000 reality check*. Reviewer to confirm wording. -->
 
-Limits are a rule-based control. They cannot stop a gap that opens beyond a stop (*Slippage, gaps and planned versus actual risk*). Brokers also have risk controls, which differ from the limits in this book [VERIFY: broker risk controls and intraday auto square-off rules].
+A limit is a rule you set and follow yourself. Limits cannot stop a gap, where the price jumps past your stop (*Slippage, gaps and planned versus actual risk*). Brokers also have risk controls. They are different from the limits in this book [VERIFY: broker risk controls and intraday auto square-off rules].
 
 ## See it
 
 <!-- component: risk-limit-simulator | capital: 50000 | perTradePct: 1 | dailyPct: 2 | weeklyPct: 4 | monthlyPct: 8 | maxTradesPerDay: 2 | caption: Ladder of limits for an illustrative Rs 50,000 account; each loss fills the ladder until the first breach shows a stop state -->
 
-Read the ladder from the smallest limit upward: per trade, then daily, weekly and monthly. Each loss fills a rung. The first rung that fills decides the next action, and the stop state shows that no more trades are allowed. Compare how quickly the daily rung fills with how quickly the per-trade rung fills.
+Read the ladder from the smallest limit upward: per trade, then daily, weekly and monthly. Each loss fills one step. The first step that fills decides your next action. The stop state shows that no more trades are allowed. Compare how fast the daily step fills with how fast the per-trade step fills.
 
 ## Worked example
 
@@ -68,28 +68,28 @@ Read the ladder from the smallest limit upward: per trade, then daily, weekly an
 **Reduce exposure**
 
 5. The month's drawdown reaches 10%: 10% x 50,000 = Rs 5,000.
-6. The pre-set rule halves per-trade risk to 0.5%. On the starting-capital base: 0.5% x 50,000 = Rs 250.
+6. The rule set in advance halves per-trade risk to 0.5%. On the starting-capital base: 0.5% x 50,000 = Rs 250.
 7. On a current-equity base: equity is 50,000 - 5,000 = Rs 45,000, and 0.5% x 45,000 = Rs 225.
 
-Steps 6 and 7 use the same rule and give different answers. That is why the base must be written down.
+Steps 6 and 7 use the same rule but give different answers. That is why you must write the base down.
 
 ## Try it
 
-Simulator with the guided exercise inputs:
+Use the simulator with the guided exercise inputs:
 
 <!-- component: risk-limit-simulator | capital: 30000 | perTradePct: 1 | dailyPct: 2 | weeklyPct: 4 | monthlyPct: 8 | lossPerTrade: 300 | caption: Guided exercise inputs; use the ladder to check each answer by hand -->
 
 ### Guided exercise
 
-**Task.** Capital Rs 30,000 with per-trade 1%, daily 2%, weekly 4% and monthly 8%. Compute each limit in rupees. Then two losses of Rs 300 happen on the same day. What is left of the daily limit?
+**Task.** Capital is Rs 30,000. Per-trade 1%, daily 2%, weekly 4% and monthly 8%. Work out each limit in rupees. Then two losses of Rs 300 happen on the same day. How much of the daily limit is left?
 
 Hints:
 
-1. Multiply capital by each percentage. Convert the percentage to a decimal first (1% = 0.01).
-2. Add the day's losses before you subtract them from the daily limit.
+1. Multiply capital by each percentage. First change the percentage to a decimal (1% = 0.01).
+2. Add the day's losses first. Then take them away from the daily limit.
 3. Check that the per-trade limit is smaller than the daily limit.
 
-**Answer:** Per trade Rs 300; daily Rs 600; weekly Rs 1,200; monthly Rs 2,400. Two losses of Rs 300 use Rs 600, so the remaining daily limit is 600 - 600 = Rs 0. The daily stop applies.
+**Answer:** Per trade Rs 300; daily Rs 600; weekly Rs 1,200; monthly Rs 2,400. Two losses of Rs 300 use Rs 600, so the daily limit left is 600 - 600 = Rs 0. The daily stop applies.
 
 ### Independent exercise
 
@@ -109,38 +109,37 @@ For reference: the weekly limit is Rs 1,200 and the monthly limit is Rs 2,000.
 
 <!-- component: quiz-block | src: quiz.json -->
 
-Six questions cover limit arithmetic, the stop rule, the reduce-exposure rule and the base. Each wrong answer has an explanation.
+Six questions check limit math, the stop rule, the reduce-exposure rule and the base. Each wrong answer has an explanation.
 
 ## Paper task
 
 Mode: **learning note** (Lab 3). No orders are placed.
 
-1. Write a one-page limit card: capital, base, per-trade, daily, weekly and monthly limits, max trades per day, and the stop rule.
-2. Compute each rupee limit from your hypothetical capital. Show each multiplication.
-3. Log it in your journal (or on paper until the journal app is ready). Keep a "remaining daily limit" line for five hypothetical days.
-4. For each day, record the losses used and the remaining amount. Mark any day on which a limit would have stopped trading.
+1. Write a one-page limit card. Include capital, base, per-trade, daily, weekly and monthly limits, max trades per day, and the stop rule.
+2. Work out each rupee limit from your made-up capital. Show each multiplication.
+3. Write it in your journal. If you do not have the journal app yet, use paper. Keep a "remaining daily limit" line for five made-up days.
+4. For each day, note the losses used and the amount left. Mark any day on which a limit would have stopped trading.
 
 ## Limits and common mistakes
 
-- Limits do not stop gaps. A stop at a limit can fill well below the stop price, so the realised loss can be larger than the plan (*Slippage, gaps and planned versus actual risk*).
-- The percentages are illustrations, not recommendations. You set every number before trading.
+- Limits do not stop gaps. A stop can fill well below the stop price. So the loss can be bigger than planned (*Slippage, gaps and planned versus actual risk*).
+- The percentages are examples, not advice. You set every number before trading.
 - A broker's risk controls are not your limits, and the broker rules are [VERIFY: broker risk controls and intraday auto square-off rules].
-- Limits do not fix a plan that has no edge. They only cap the damage in each period.
-- A limit card works only if the stop rule is followed. The common failure is trading again after the stop.
+- Limits cannot fix a plan that does not work. They only cap the damage in each period.
+- A limit card works only if you follow the stop rule. The common mistake is trading again after the stop.
 
 ## Remember
 
-- A limit caps losses over a period, in rupees, and is set before trading.
+- A limit caps your losses over a period. It is set in rupees before trading.
 - Write the base (starting or current capital) on the card.
-- When a limit is reached, the stop rule applies: no more trades in that period.
-- Reduce exposure is a pre-set rule that lowers risk after a drawdown. It never raises risk.
-- Limits cannot prevent a gap loss larger than the planned amount.
+- When a limit is reached, the stop rule applies. No more trades in that period.
+- Reduce exposure is a rule set in advance. It lowers risk after a drawdown. It never raises risk.
+- Limits cannot stop a gap loss that is bigger than the planned amount.
 
 ## Sources and verification
 
 Sources (names only):
 
-- The book's Lab 1 and Lab 3 specifications (LABS.md).
 - Zerodha support pages on risk controls.
 - SEBI circulars on risk management.
 

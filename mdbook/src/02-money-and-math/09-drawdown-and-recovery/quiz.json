@@ -6,7 +6,7 @@
     "answer": 100,
     "tolerance": 0,
     "unit": "%",
-    "solution": "Recovery gain = d / (1 - d) = 0.5 / 0.5 = 1 = 100%. Check: Rs 50,000 falls 50% to Rs 25,000; Rs 25,000 x 2 = Rs 50,000, so a 100% gain is needed.",
+    "solution": "Recovery gain = d / (1 - d) = 0.5 / 0.5 = 1 = 100%. Check: Rs 50,000 falls 50% to Rs 25,000. Rs 25,000 x 2 = Rs 50,000, so a 100% gain is needed.",
     "concepts": [
       "asymmetry",
       "recovery"
@@ -75,7 +75,7 @@
     "explanations": {
       "a": "Risk of ruin is not a single trade. It builds up across many trades, through a sequence of losses and streaks.",
       "c": "There is no 1% threshold. A smaller risk per trade lowers the probability for the same sequence, but the concept applies at any size.",
-      "d": "A stop limits the loss on one trade, not the sequence of trades. Gaps (T2.6) and streaks (T2.10) still matter."
+      "d": "A stop limits the loss on one trade, not the sequence of trades. Gaps (*Slippage, gaps and planned versus actual risk*) and losing streaks (*Consecutive losses and losing streaks*) still matter."
     },
     "concepts": [
       "risk-of-ruin"

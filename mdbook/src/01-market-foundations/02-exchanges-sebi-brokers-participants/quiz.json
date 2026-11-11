@@ -6,7 +6,7 @@
     "answer": 5000,
     "tolerance": 0,
     "unit": "Rs",
-    "solution": "Trade value = shares x price = 20 x 250 = Rs 5,000. Check: 250 x 20 = 250 x 2 x 10 = 500 x 10 = 5,000, which matches. This is the value of the trade only; charges are added separately (T2.2).",
+    "solution": "Trade value = shares x price = 20 x 250 = Rs 5,000. Check: 250 x 20 = 250 x 2 x 10 = 500 x 10 = 5,000, which matches. This is the value of the trade only. Charges are added separately.",
     "concepts": ["trade-value"],
     "difficulty": 1,
     "reviewAfterDays": 3
@@ -32,7 +32,7 @@
   {
     "id": "T1.2-q3",
     "type": "scenario",
-    "prompt": "A trade has been executed on the exchange. Which institution stands between the buyer and seller after the trade, and records the obligation so that settlement can happen?",
+    "prompt": "After a trade is done on the exchange, which institution stands between the buyer and seller? It records the obligation so that settlement can happen.",
     "options": [
       {"id": "a", "text": "The broker you used"},
       {"id": "b", "text": "The clearing corporation"},

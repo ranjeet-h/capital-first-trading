@@ -11,73 +11,73 @@ estimated_minutes: 25
 
 ## Hook
 
-A hypothetical beginner, Asha, has read a few articles about making money from the market. Her plan is to risk Rs 3,000 on an idea and aim to make Rs 500 when it works. Before she places anything, she needs one number: how often she must be right just to break even. Most beginners never work this out, and it is the first question this book asks.
+Asha is a hypothetical beginner. She has read a few articles about making money from the market. Her plan is to risk Rs 3,000 on one idea. She aims to make Rs 500 when it works. Before she buys or sells anything, she needs one number. That number is how often she must be right just to break even. Most beginners never work this out. This book asks this question first.
 
 ## The idea
 
-**A share is a piece of a company.** Buying a share does not buy a ticket with a price on it. It buys a fraction of the business. If a company has 1,000 shares in total and you hold 10, you own 1 percent of it, with a claim on its profits and assets in that proportion.
+**A share is a piece of a company.** Buying a share does not buy a ticket with a price on it. It buys a part of the business. If a company has 1,000 shares in total and you hold 10, you own 1 percent of it. You get that same share of its profits and assets.
 
-Three words are often mixed up. Each one describes a process and a time horizon, not a type of asset.
+People often mix up three words. Each one describes how you hold money and how long you plan to hold it. None of them names a type of asset.
 
-- **Investing** means holding a business for years. The return comes from earnings, dividends and growth in the company's value. Risk is managed through diversification and time.
-- **Trading** means buying and selling over days to months, under written rules. The return comes from price moves between entry and exit. Risk is managed with per-trade limits.
-- **Speculation** means betting on a short price move where the outcome is highly uncertain, often with borrowed money.
+- **Investing** means holding a business for years. Your return comes from its profits, its dividends and the growth in its value. You manage risk by spreading money across many companies, which is called diversification, and by waiting.
+- **Trading** means buying and selling over days to months, and following written rules. Your return comes from price moves between when you buy and when you sell. You manage risk with limits on each trade.
+- **Speculation** means betting on a short price move. The result is highly uncertain. People often borrow money to do it.
 
-The label depends on how you hold the position, not on the instrument. The same share can be held as an investment by one person and speculated on by another.
+The label depends on how you hold something, not on what it is. The same share can be an investment for one person and a speculation for another.
 
-**A price is a meeting point, not a verdict.** A traded price is where one buyer's expectation and one seller's expectation met at one moment. It is not a guarantee of what the company is worth, and it is not a promise of where the price goes next.
+**A price is a meeting point, not a final judgement.** A price is where one buyer and one seller agreed, at one moment. It is not a guarantee of what the company is worth. It is not a promise of where the price goes next.
 
-**Trading is a transfer before costs.** In any single trade, one participant's gain is another's loss, and the exchange sits in the middle to match orders. After brokerage, taxes and other charges, a typical active trader starts behind. Later chapters put numbers on this. The SEBI study on individual traders is cross-referenced in *SEBI's F&O studies as a case study* [VERIFY: study title and figures].
+**Trading moves money from one person to another, before costs.** In one trade, one person's gain is another person's loss. The exchange sits in the middle and matches the buy and sell orders. After brokerage, taxes and other charges, an active trader usually starts behind. Later chapters put numbers on this. The SEBI study on individual traders is cross-referenced in *SEBI's F&O studies as a case study* [VERIFY: study title and figures].
 
-**Three kinds of result must never be mixed.**
+**Never mix three kinds of result.**
 
 - Theoretical: a calculation written down before anything happens.
-- Backtested: a simulation run on past prices.
-- Live: real money, with real fills and real emotions.
+- Backtested: a test run on old price data.
+- Live: real money, with orders that really get done, and real feelings.
 
-A backtest that made money is still not a live record. The three labels stay on every number in this book.
+A backtest that made money is still not a live record. This book keeps all three labels on every number.
 
-**This book promises no income.** Learning to think clearly about trading is not the same as being profitable at it.
+**This book promises no income.** Learning to think clearly about trading is not the same as making money from it.
 
 ## See it
 
 | | Investing | Trading | Speculation |
 |---|---|---|---|
 | Time horizon | Years | Days to months | Very short; the bet is on a near move |
-| Where the return comes from | Earnings, dividends, growth in value | Price moves between entry and exit | A short, uncertain price move |
-| Typical risk control | Diversification and time | Written per-trade limits | Often none stated; may use borrowed money |
-| Typical mistake | Selling in a fall; chasing a hyped story | Overtrading; oversized positions; no written rules | Borrowing to size up; treating a guess as a plan |
+| Where the return comes from | Earnings, dividends, growth in value | Price moves between buying and selling | A short, uncertain price move |
+| Typical risk control | Spreading money and time | Written limits on each trade | Often none stated; may use borrowed money |
+| Typical mistake | Selling when prices fall; following a story everyone is excited about | Trading too often; putting too much into one trade; having no written rules | Borrowing to buy more; treating a guess as a plan |
 
 <!-- OPEN: the spec gives a static three-column card for this chapter. No component in the placeholder list fits a static card, so a Markdown table is used. -->
 
-Read down the Speculation column and notice that its risk-control row describes the absence of a stated limit, not a method. Compare the "typical mistake" row with any habit you already have. This card is static; there is nothing to change.
+Read down the Speculation column. Its risk-control row says that no limit is stated. That is not a method. Compare the "typical mistake" row with any habit you already have.
 
 ## Worked example
 
-**Hypothetical plan:** risk Rs 3,000 to make Rs 500 per trade. Let W be the win rate, the fraction of trades that win. Break-even means the average gain equals the average loss.
+**Hypothetical plan:** risk Rs 3,000 to make Rs 500 per trade. Let W be the win rate. This is the share of trades that win, written as a fraction. Break-even means the average gain equals the average loss.
 
 Average gain per trade = W x 500
 Average loss per trade = (1 - W) x 3,000
 
-Set them equal and solve:
+Set them equal. Then solve for W:
 
 | Step | Working | Result |
 |---|---|---|
 | 1 | Set average gain equal to average loss | 500 x W = 3,000 x (1 - W) |
-| 2 | Expand the right side | 500W = 3,000 - 3,000W |
+| 2 | Multiply out the right side | 500W = 3,000 - 3,000W |
 | 3 | Add 3,000W to both sides | 3,500W = 3,000 |
 | 4 | Divide both sides by 3,500 | W = 3,000 / 3,500 = 6/7 |
-| 5 | Convert to a percentage | 6/7 = 0.857..., so 85.7% |
+| 5 | Turn it into a percentage | 6/7 = 0.857..., so 85.7% |
 
-**Check:** at W = 6/7, the average gain is 6/7 x 500 = Rs 428.57, and the average loss is 1/7 x 3,000 = Rs 428.57. The two match.
+**Check:** when W = 6/7, the average gain is 6/7 x 500 = Rs 428.57. The average loss is 1/7 x 3,000 = Rs 428.57. The two are equal.
 
-So the hypothetical trader must win about 86 of every 100 trades just to break even, before any costs. Costs push the required win rate higher (see *Costs on a trade*).
+So the trader must win about 86 of every 100 trades to break even. This is before any costs. Costs push the needed win rate higher. See *Costs on a trade*.
 
 ## Try it
 
 ### Guided exercise
 
-**Task:** Classify four hypothetical plans as investing, trading or speculation.
+**Task:** Sort four hypothetical plans into investing, trading or speculation.
 
 (a) Hold a company for 5 years and reinvest the dividends.
 (b) Buy before results are announced and sell the next day.
@@ -90,15 +90,20 @@ So the hypothetical trader must win about 86 of every 100 trades just to break e
 2. Ask "where does the return come from?"
 3. Ask "what limits the loss?"
 
-**Answer:** (a) Investing: a 5-year horizon, with the return from dividends and growth in the business's value. (b) Speculation: a one-day bet on an uncertain result, with no written limit described. If the plan had written per-trade rules, it would be trading; the description does not give any. (c) Speculation: borrowed money, and no stated limit on the loss. (d) Investing: a 10-year horizon, with regular purchases and the return from the business over time.
+**Answer:**
+
+- (a) Investing. The horizon is 5 years. The return comes from dividends and growth in the business's value.
+- (b) Speculation. It is a one-day bet on an uncertain result. No written limit is described. If the plan had written per-trade rules, it would be trading. The description gives no rules.
+- (c) Speculation. The plan uses borrowed money. It has no stated limit on the loss.
+- (d) Investing. The horizon is 10 years. The plan buys regularly and earns the return from the business over time.
 
 ### Independent exercise
 
-**Task:** Write one paragraph describing an activity you intend to do with money in the markets. Classify it as investing, trading or speculation. Use no hints.
+**Task:** Write one paragraph about something you plan to do with money in the markets. Sort it as investing, trading or speculation. Use no hints.
 
 <details><summary>Check your answer</summary>
 
-There is no single correct answer. Check your paragraph for three things: the time horizon, the source of the return, and what limits the loss. If any of the three is missing, your classification is not yet justified. If you have no plan yet, writing "no plan yet" is an honest result.
+There is no single correct answer. Check your paragraph for three things. Look for the time horizon. Look for the source of the return. Look for what limits the loss. If one is missing, your label is not yet backed up. If you have no plan yet, writing "no plan yet" is an honest answer.
 
 </details>
 
@@ -106,28 +111,28 @@ There is no single correct answer. Check your paragraph for three things: the ti
 
 <!-- component: quiz-block | src: quiz.json -->
 
-Six questions check the three definitions, the break-even arithmetic and the claims about income.
+Six questions check the three definitions, the break-even sum and the claims about income.
 
 ## Paper task
 
-**Mode:** learning note. Log it in your journal, or on paper until the journal app is ready. No trades.
+**Mode:** learning note. Write it in a journal, or on paper. No trades.
 
-1. Write one paragraph on why you want to learn trading.
-2. Write what evidence would make you stop. For example: "a loss larger than the trading capital I set myself in advance".
-3. Do not record any live account or any real trade.
+1. Write one paragraph about why you want to learn trading.
+2. Write what would make you stop. For example: "a loss bigger than the money I set aside for trading before I started".
+3. Do not record any live account or real trade.
 
 ## Limits and common mistakes
 
-- The break-even win rate is before costs. The real figure is higher (*Costs on a trade*).
+- The break-even win rate leaves out costs. With costs, the real figure is higher. See *Costs on a trade*.
 - A calculation is not a result. A backtest is not a live record.
-- Knowing the definitions is learning competence. It is not profitability.
+- Knowing the definitions shows you are learning. It does not show you make a profit.
 
 ## Remember
 
-- Investing, trading and speculation are defined by time horizon, source of return and loss control, not by the instrument.
-- A price is where expectations met at one moment. It is not a guarantee.
-- For a Rs 3,000 risk to make Rs 500, the break-even win rate is 6/7, or 85.7%, before costs.
-- Keep theoretical, backtested and live results apart at all times.
+- Investing, trading and speculation differ by time frame, source of return and loss control. They do not differ by what you buy.
+- A price is where buyers and sellers agreed at one moment. It is not a guarantee.
+- If you risk Rs 3,000 to make Rs 500, the break-even win rate is 6/7, or 85.7%. This is before costs.
+- Keep theoretical, backtested and live results apart. Always.
 - This book promises no income.
 
 ## Sources and verification
@@ -136,11 +141,11 @@ Six questions check the three definitions, the break-even arithmetic and the cla
 
 - SEBI investor education pages.
 - SEBI study on F&O trading (cross-reference *SEBI's F&O studies as a case study*).
-- Zerodha Varsity, as a reference only (link, no text copied).
+- Zerodha Varsity, as a reference only (link only, no text copied).
 
 **Facts to verify:**
 
-- [VERIFY: SEBI study on individual traders, title and figures] (cross-referenced in *SEBI's F&O studies as a case study*; no figures are quoted in this chapter).
+- [VERIFY: SEBI study on individual traders, title and figures] (cross-referenced in *SEBI's F&O studies as a case study*). This chapter quotes no figures from it.
 
 <!-- facts-needed: SEBI study on individual traders (title and figures; cross-referenced in *SEBI's F&O studies as a case study*) -->
 

@@ -17,13 +17,13 @@
     "prompt": "'Borrowing doubles my gain, so it is safe if I am careful.' Is that statement right?",
     "options": [
       {"id": "a", "text": "Yes. If I am careful, borrowing is safe."},
-      {"id": "b", "text": "No. Borrowing magnifies gains and losses together. Care does not remove the loss path."},
+      {"id": "b", "text": "No. Borrowing makes gains and losses bigger together. Care does not remove the loss path."},
       {"id": "c", "text": "Yes, because a doubled gain covers a doubled loss."}
     ],
     "answer": "b",
     "explanations": {
-      "a": "Care does not change the arithmetic. Losses are doubled too, along with gains (see T2.13).",
-      "c": "A doubled gain and a doubled loss do not offset each other. They move in the same direction as the position, not against it (see T2.13)."
+      "a": "Care does not change the arithmetic. Losses double too, along with gains.",
+      "c": "A doubled gain and a doubled loss do not cancel out. Both move in the same direction as the position, not against it."
     },
     "concepts": ["leverage", "loss-mechanisms"],
     "difficulty": 1,
@@ -35,13 +35,13 @@
     "prompt": "'The price fell, so buying more lowers my average cost and is a good idea.' Is that statement right?",
     "options": [
       {"id": "a", "text": "Yes. A lower average cost means a better position."},
-      {"id": "b", "text": "No. Buying more into a falling position increases exposure to the same idea, which is now losing. A lower average cost is not a fix."},
+      {"id": "b", "text": "No. Buying more of a falling position puts more money into the same idea, which is now losing. A lower average cost is not a fix."},
       {"id": "c", "text": "Yes, but only with borrowed money."}
     ],
     "answer": "b",
     "explanations": {
-      "a": "A lower average cost is arithmetic. Exposure to the failing idea also rises, and the idea has not changed. That is the averaging-down trap (see T2.14).",
-      "c": "Borrowing makes the trap worse, and it does not make averaging down correct (see T2.13)."
+      "a": "A lower average cost is only arithmetic. Your money in the failing idea also rises, and the idea has not changed. That is the averaging-down trap.",
+      "c": "Borrowing makes the trap worse. It does not make averaging down correct."
     },
     "concepts": ["averaging-down", "exposure"],
     "difficulty": 2,
@@ -53,12 +53,12 @@
     "prompt": "'I earned nothing today, so I failed.' Which response applies the rules correctly?",
     "options": [
       {"id": "a", "text": "Yes. A day without a trade is a failure."},
-      {"id": "b", "text": "No. A no-trade day is a valid result when no planned setup appeared. Not trading is a decision."},
+      {"id": "b", "text": "No. A no-trade day is valid when your plan showed no good trade. Not trading is a decision."},
       {"id": "c", "text": "Yes, unless I lost money today."}
     ],
     "answer": "b",
     "explanations": {
-      "a": "The rules say the opposite. Not trading is a decision, not a failure. Measuring the day by money earned pushes toward trades that have no setup.",
+      "a": "The rules say the opposite. Not trading is a decision, not a failure. Judging the day by money earned pushes you toward trades with no clear reason.",
       "c": "Losing money is not the test either. A day can be a valid no-trade day with no result at all."
     },
     "concepts": ["no-trade-day", "overtrading"],
@@ -77,7 +77,7 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "Owning the money is not the test. Emergency funds are household money, and they are never trading capital, whoever owns them.",
+      "a": "Owning the money is not the test. Emergency funds are household money. They are never trading capital, whoever owns them.",
       "c": "No F&O is not involved in this scenario. The problem is the source of the money.",
       "d": "A no-trade day is a valid result. This scenario is about where the money came from, not about whether you traded."
     },
@@ -95,7 +95,7 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "The first half is the conclusion. It is wrong, but only because of the reason given in the second half. The reason is the faulty step: total savings include money the household cannot lose, and trading capital is only money you can afford to lose entirely."
+      "a": "The first half is the conclusion. It is wrong because of the reason in the second half. That reason is the faulty step. Total savings include money the household cannot afford to lose. Trading capital is only money you can afford to lose."
     },
     "concepts": ["trading-capital", "household-money"],
     "difficulty": 2,

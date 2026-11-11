@@ -11,26 +11,26 @@ estimated_minutes: 30
 
 ## Hook
 
-A trader buys Rs 5,000 of a share and sells it a few days later at exactly the same price. Nothing moved, so the trader expects to break even. The statement shows a loss. The difference is costs: several small charges on the buy, and more on the sell. This chapter shows how those charges add up, using a dummy model with round numbers, so you can check every line by hand.
+A trader buys Rs 5,000 of a share. A few days later, the trader sells it at exactly the same price. Nothing moved, so the trader expects to break even. But the statement shows a loss. The difference is costs. There are several small charges on the buy, and more on the sell. This chapter shows how those charges add up. It uses a DUMMY model with round numbers, so you can check every line by hand.
 
 ## The idea
 
 A trade has two **legs**: the buy and the sell. Each leg can carry several charges. Your total cost is the sum of all of them.
 
-The charge types you will meet on Indian equity trades are these. Only their names are used here. Their rates and bases are not stated in this chapter, because they must come from an official source first.
+The charge types you will meet on Indian equity trades are these. Only their names are used here. Their rates and bases are not stated in this chapter. They must come from an official source first.
 
-- **Brokerage:** what the broker charges for executing the order.
+- **Brokerage:** what the broker charges for carrying out the order.
 - **Securities transaction tax (STT):** a government tax on trades. [VERIFY: rate and which legs it applies to]
-- **Exchange transaction charge:** a fee levied by the exchange on turnover. [VERIFY: NSE and BSE rates]
-- **SEBI fee:** the regulator's turnover fee. [VERIFY: SEBI fees page]
+- **Exchange transaction charge:** a fee the exchange charges on turnover. [VERIFY: NSE and BSE rates]
+- **SEBI fee:** the regulator's fee on turnover. [VERIFY: SEBI fees page]
 - **Stamp duty:** a state-level duty on the buy side. [VERIFY: rate by state law]
 - **GST:** a tax on some of the other charges, not on the whole trade. [VERIFY: GST base and rate]
 - **Depository (DP) charge:** a charge on sales from your demat account. [VERIFY: per scrip per day rule and components]
 
 Charges fall into two groups:
 
-- **Proportional** charges scale with turnover. Turnover is price x quantity for one leg. Double the trade, double the charge.
-- **Fixed** charges do not scale. A fixed amount per order, or per stock per day, is the same for a small trade and a large one.
+- **Proportional** charges grow with turnover. Turnover is price x quantity for one leg. Double the trade, and the charge doubles.
+- **Fixed** charges do not grow with turnover. A fixed amount per order, or per stock per day, is the same for a small trade and a large one.
 
 This is why costs weigh more on small trades. Fixed charges take a bigger share of a small position.
 
@@ -39,25 +39,25 @@ Two formulas:
 - Turnover of a leg = price x quantity.
 - Total cost = sum of all charges on both legs.
 
-Break-even move, in words: total cost divided by the position value. In symbols, with C the total cost and V the position value, the break-even move is about C / V. It is approximate, because the exit price changes the proportional charges. Use it as a rule of thumb, not as an exact figure.
+Break-even move, in words: total cost divided by the position value. In symbols, with C for the total cost and V for the position value, the break-even move is about C / V. It is only approximate. The exit price changes the proportional charges. Use it as a rule of thumb, not as an exact figure.
 
-**Dummy model.** The arithmetic below uses this model, which is not any broker's, exchange's or government's rate:
+**DUMMY model.** The arithmetic below uses this model. It is not any broker's, exchange's or government's rate.
 
 - Proportional: 0.1% of turnover on each leg.
 - Fixed: Rs 20 per order, on each leg.
 - DP charge: Rs 50 per stock, on the sell leg only.
 
-Labelled DUMMY, for arithmetic only. Do not quote these as Zerodha or statutory figures. Lab 2 replaces them with verified rates from the facts registry, and the official calculator is the check for those.
+These are labeled DUMMY. They are for arithmetic only. Do not quote them as Zerodha or government figures. Verified rates will replace them. The official calculator is the check for those rates.
 
-Brokerage on delivery is not covered by the dummy model. Intraday costs are not worked here. Their structure is noted in this chapter and their figures belong to Lab 2 after verification.
+Brokerage on delivery is not covered by the dummy model. Intraday costs are not worked out here. This chapter only notes their structure. Their figures come after they are verified.
 
 <!-- OPEN: Spec open question asks whether intraday costs belong in this chapter or only in Lab 2. Written here as structure only, numbers in Lab 2. -->
 
-Finally, a zero on one line is not a zero cost. A broker showing zero brokerage still leaves the other charges in the list above. Always add every component.
+One more point. A zero on one line is not a zero cost. A broker may show zero brokerage. The other charges in the list above still apply. Add every component.
 
 ## See it
 
-The stacked table below splits the dummy cost of two round trips into proportional, fixed and DP parts. Read down the columns.
+The table below splits the dummy cost of two round trips into proportional, fixed and DP parts. Read down the columns.
 
 | Component (DUMMY) | Rs 5,000 round trip | Rs 50,000 round trip |
 |---|---|---|
@@ -67,11 +67,11 @@ The stacked table below splits the dummy cost of two round trips into proportion
 | **Total** | **100** | **190** |
 | Share that is fixed (order + DP) | 90 of 100 = 90% | 90 of 190 = 47.4% |
 
-The point of the table is the shares: fixed charges dominate the small trade and matter much less on the large trade.
+The point of the table is the shares. Fixed charges make up most of the cost on the small trade. They matter much less on the large trade.
 
 <!-- component: lab-costs | mode: walkthrough | rates: dummy | tradeValue: 5000 | product: delivery | caption: Walk through each cost line for a Rs 5,000 round trip with DUMMY rates labelled; then change the trade value and watch the fixed share fall -->
 
-Use the walkthrough to step through each leg. Change the trade value and see which lines move and which stay the same. Note the DUMMY label: the rates are not real.
+Use the walkthrough to step through each leg. Change the trade value to see which lines move and which stay the same. The DUMMY label means the rates are not real.
 
 <!-- OPEN: The lab-costs "walkthrough mode with dummy rates" is in the spec's Visual line but not in LABS.md. Confirm the mode exists before this placeholder is built. -->
 
@@ -106,7 +106,7 @@ Total cost as a share of the position: 100 / 5,000 = 0.02 = **2.0%**. The break-
 
 Total cost as a share of the position: 190 / 50,000 = 0.0038 = **0.38%**.
 
-**The DP charge in both cases.** It is Rs 50 each time. As a share of the trade: 50 / 5,000 = 1.0% for the small trade, and 50 / 50,000 = 0.1% for the large one. The same rupee charge is ten times the percentage on the small trade.
+**The DP charge in both cases.** It is Rs 50 each time. As a share of the trade, it is 50 / 5,000 = 1.0% for the small trade. It is 50 / 50,000 = 0.1% for the large one. The same rupee charge is ten times the percentage on the small trade.
 
 ## Try it
 
@@ -114,19 +114,19 @@ Total cost as a share of the position: 190 / 50,000 = 0.0038 = **0.38%**.
 
 ### Guided exercise
 
-**Task.** Using the DUMMY model, compute the total round-trip cost for a Rs 10,000 round trip (buy and sell at the same price). Give the total in rupees and as a percentage of Rs 10,000.
+**Task.** Using the DUMMY model, compute the total round-trip cost for a Rs 10,000 round trip. The buy and sell prices are the same. Give the total in rupees and as a percentage of Rs 10,000.
 
 Hints:
 
-1. Compute the buy leg first: proportional on Rs 10,000, then add the fixed Rs 20.
-2. Compute the sell leg: proportional, plus the fixed Rs 20, plus the Rs 50 DP charge.
+1. Compute the buy leg first. Find the proportional charge on Rs 10,000, then add the fixed Rs 20.
+2. Compute the sell leg. Add the proportional charge, the fixed Rs 20 and the Rs 50 DP charge.
 3. Add the two legs, then divide by Rs 10,000.
 
 **Answer:** Buy leg: 10 + 20 = Rs 30. Sell leg: 10 + 20 + 50 = Rs 80. Total: Rs 110, which is 110 / 10,000 = 1.1%.
 
 ### Independent exercise
 
-**Task.** Buy 100 shares at Rs 200 (Rs 20,000) and later sell all 100 at Rs 210 (Rs 21,000). Using the DUMMY model, compute the total cost, the gross profit before costs and the net profit after costs.
+**Task.** Buy 100 shares at Rs 200 (Rs 20,000). Later, sell all 100 at Rs 210 (Rs 21,000). Using the DUMMY model, compute the total cost, the gross profit before costs and the net profit after costs.
 
 <details><summary>Check your answer</summary>
 
@@ -144,35 +144,35 @@ This is DUMMY arithmetic. It is not an estimate of any real trade.
 
 <!-- component: quiz-block | src: quiz.json -->
 
-The quiz checks the arithmetic of the dummy model, the difference between fixed and proportional charges, and why you verify a rate before you use it.
+The quiz checks the arithmetic of the dummy model. It checks the difference between fixed and proportional charges, and why you must verify a rate before you use it.
 
 ## Paper task
 
-Mode: **learning note**. Log it in your journal (or on paper until the journal app is ready).
+Mode: **learning note**. Write it in your journal.
 
-1. Open the official Zerodha charges page and the official brokerage calculator. Note the access date.
-2. For one Rs 5,000 delivery trade and one Rs 50,000 delivery trade, record each component line and the total the calculator gives.
+1. Open the official Zerodha charges page and the official brokerage calculator. Write down the date you looked.
+2. For one Rs 5,000 delivery trade and one Rs 50,000 delivery trade, write each component line and the total the calculator gives.
 3. Write the list of component names in your own words, next to the source link.
-4. Do not copy these figures into the book or any calculation yet. Lab 2 will verify them. Mark the note as a learning note, with no trade placed.
+4. Do not copy these figures into the book or into any calculation yet. Mark the note as a learning note, with no trade placed.
 
 ## Limits and common mistakes
 
-- It does not tell you any real charge. Every rate here is DUMMY, and the official sources are the only place for current rates.
+- It does not tell you any real charge. Every rate here is DUMMY. The official sources are the only place for current rates.
 - It does not include tax. Tax on gains is a separate question (*Taxes on trading profits*).
 - It does not include slippage, the difference between the expected and the actual fill price (*Slippage, gaps and planned versus actual risk*). A real trade can cost more than the table shows.
-- It does not say that a small trade is a bad idea. It says that fixed charges weigh more on small trades, and that you must include them in every plan.
+- It does not say that a small trade is a bad idea. It says that fixed charges weigh more on small trades. It also says you must include them in every plan.
 
 ## Remember
 
 - Costs are the sum of every charge on both legs, not just brokerage.
-- Proportional charges scale with turnover. Fixed charges do not.
+- Proportional charges grow with turnover. Fixed charges do not.
 - On a Rs 5,000 round trip in the dummy model, the total is Rs 100, or 2.0%. On Rs 50,000, it is Rs 190, or 0.38%.
 - A zero on one line is not a zero cost.
 - Verify every rate from the official source, with a date, before you use it.
 
 ## Sources and verification
 
-- Zerodha charges page and brokerage calculator (official). Reference only until Lab 2 verifies the figures.
+- Zerodha charges page and brokerage calculator (official). Reference only until the figures are verified.
 - NSE and BSE fee and circular pages (exchange transaction charges).
 - SEBI fees page (SEBI turnover fee).
 - Income Tax Department STT page.

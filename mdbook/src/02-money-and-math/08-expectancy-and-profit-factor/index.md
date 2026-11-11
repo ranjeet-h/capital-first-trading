@@ -11,23 +11,23 @@ estimated_minutes: 30
 
 ## Hook
 
-Nine wins out of ten sounds like a strong record. In this hypothetical system, the nine wins are Rs 300 each and the one loss is Rs 4,000. Over the ten trades the wins add up to Rs 2,700, the loss takes away Rs 4,000, and the net result is minus Rs 1,300. The win rate was 90%, and the account still went down.
+Nine wins out of ten sounds like a strong record. In this hypothetical system, each of the nine wins is Rs 300. The one loss is Rs 4,000. Over the ten trades, the wins add up to Rs 2,700. The loss takes away Rs 4,000. The net result is minus Rs 1,300. The win rate was 90%, and the account still went down.
 
 ## The idea
 
-A trade result has two parts: how often you win (the **win rate**) and how big the wins and losses are (the **average win** and **average loss**). You need both.
+A trade result has two parts. One is how often you win (the **win rate**). The other is how big the wins and losses are (the **average win** and **average loss**). You need both.
 
-- **Expectancy per trade** is what one trade is worth on average. In words: the win rate times the average win, minus the loss rate times the average loss. In symbols: E = W x avgWin - (1 - W) x avgLoss, where W is the win rate and 1 - W is the loss rate.
+- **Expectancy per trade** is what one trade is worth on average. In words: the win rate times the average win, minus the loss rate times the average loss. In symbols: E = W x avgWin - (1 - W) x avgLoss. Here W is the win rate, and 1 - W is the loss rate.
 - **In R**, measure wins and losses in units of R (the planned risk per trade): E_R = W x avgWinR - (1 - W) x avgLossR.
 - **Gross profit** is the total of the winning trades. **Gross loss** is the total of the losing trades, as a positive number.
-- **Profit factor** = gross profit / gross loss. Above 1 means gross profit exceeds gross loss in that sample. With no losing trades it is undefined, because the divisor is zero.
+- **Profit factor** = gross profit / gross loss. Above 1 means gross profit is bigger than gross loss in that sample. With no losing trades it cannot be worked out, because the divisor is zero.
 
 Points to keep in mind:
 
 - Expectancy is an average over many trades. It is not a prediction of the next trade.
 - Costs must be included to get net expectancy. The examples below are before costs.
-- A few trades can produce any average. Confidence is taught in *Metrics and their limits*. Lab 3 shows a "too few trades to conclude anything" note below 30 trades.
-- Win rate is a frequency, not a result. Expectancy is the number that combines frequency and size.
+- A few trades can produce any average. How sure you can be is taught in *Metrics and their limits*. Lab 3 shows a "too few trades to conclude anything" note below 30 trades.
+- Win rate is a frequency, not a result. Expectancy combines frequency and size.
 
 ## See it
 
@@ -41,7 +41,7 @@ Points to keep in mind:
 | Expectancy per trade | minus Rs 130 (minus 0.13R) | plus Rs 200 (plus 0.2R) |
 | Profit factor over 10 trades | 0.675 | 1.33 |
 
-The table shows X with the frequent, small wins and one large loss, and Y with fewer, larger wins. Y has the higher expectancy even though it wins less often.
+The table shows X with frequent, small wins and one large loss. Y has fewer, larger wins. Y has the higher expectancy, even though it wins less often.
 
 ## Worked example
 
@@ -78,7 +78,7 @@ Y has the higher expectancy despite the lower win rate. Neither example is evide
 
 ### Guided exercise
 
-Task: System Z (hypothetical): 60% wins of Rs 1,000 and 40% losses of Rs 800. Over 10 trades, compute the expectancy per trade and the profit factor.
+Task: System Z (hypothetical): 60% wins of Rs 1,000 and 40% losses of Rs 800. Over 10 trades, work out the expectancy per trade and the profit factor.
 
 Hints:
 
@@ -86,11 +86,11 @@ Hints:
 2. Over 10 trades, count 6 wins and 4 losses.
 3. Profit factor = gross profit / gross loss over those 10 trades.
 
-**Answer:** Expectancy = 600 - 320 = plus Rs 280 per trade. Over 10 trades: gross profit = 6 x 1,000 = Rs 6,000; gross loss = 4 x 800 = Rs 3,200; profit factor = 6,000 / 3,200 = 1.875.
+**Answer:** Expectancy = 600 - 320 = plus Rs 280 per trade. Over 10 trades: gross profit = 6 x 1,000 = Rs 6,000. Gross loss = 4 x 800 = Rs 3,200. Profit factor = 6,000 / 3,200 = 1.875.
 
 ### Independent exercise
 
-Task: System W (hypothetical): 75% wins of Rs 500 and 25% losses of Rs 2,000. Compute the expectancy per trade and the profit factor on 4 trades.
+Task: System W (hypothetical): 75% wins of Rs 500 and 25% losses of Rs 2,000. Work out the expectancy per trade and the profit factor on 4 trades.
 
 <details><summary>Check your answer</summary>
 
@@ -104,7 +104,7 @@ On 4 trades, the expected split is 3 wins and 1 loss. Gross profit = 3 x 500 = R
 
 <!-- component: quiz-block | src: quiz.json -->
 
-Six questions cover expectancy arithmetic, the profit factor with no losses, the comparison of two systems and the trap of judging on win rate alone.
+Six questions cover expectancy arithmetic, the profit factor with no losses, the comparison of two systems, and the trap of judging on win rate alone.
 
 ## Paper task
 
@@ -113,31 +113,30 @@ Mode: **learning note**. Log it in Lab 3 (or on paper until the journal app is r
 1. Enter ten hypothetical rows for System X: nine rows at Rs 300 and one row at minus Rs 4,000.
 2. Open the Lab 3 statistics view.
 3. Check that the expectancy shows minus Rs 130 per trade (minus 0.13R), and that the profit factor shows 0.675.
-4. Write one sentence on why the win rate of 90% does not match the sign of the expectancy.
+4. Write one sentence. Explain why a 90% win rate can still give a negative expectancy.
 
 <!-- OPEN: The learning-note mode is in the *How to use this book* journal mode list but not in the Lab 3 mode list (paper, live, forward, backtest, kite_demo). Confirm before the journal app is built. -->
 
 ## Limits and common mistakes
 
-- Expectancy shown here is before costs. Net expectancy is lower, and must be checked with costs included.
-- A handful of trades is noise. The G6 floor of 30 trades is a minimum for a gate, not a verdict on any system (PLAN section 6).
+- Expectancy shown here is before costs. Net expectancy is lower. Check it with costs included.
+- A handful of trades is noise. The minimum of 30 trades (gate G6, PLAN section 6) is a floor for a check. It is not a verdict on any system.
 - One large loss can dominate a sample. Check the largest loss before you trust an average.
 - These systems are invented for arithmetic. Neither example says anything about a real strategy.
-- A high win rate is not evidence of a good system on its own. Use expectancy and profit factor, and state the sample size.
+- A high win rate is not proof of a good system on its own. Use expectancy and profit factor, and state the sample size.
 
 ## Remember
 
 - Expectancy = win rate x average win - loss rate x average loss.
-- Profit factor = gross profit / gross loss; it is undefined with no losses.
+- Profit factor = gross profit / gross loss. It cannot be worked out with no losses.
 - Expectancy is an average over many trades, not a prediction.
-- Include costs before reading any result.
+- Include costs before you read any result.
 - Win rate is a frequency. Judge a system on expectancy, with its sample size.
 
 ## Sources and verification
 
 Sources (names only):
 
-- The book's Lab 3 specification (statistics and dashboard)
 - Chapter *Metrics and their limits* (metrics and their limits), for further reading
 
 Items to verify: none for this chapter. All numbers are hypothetical.

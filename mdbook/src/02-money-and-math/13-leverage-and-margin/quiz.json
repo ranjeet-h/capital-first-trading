@@ -2,7 +2,7 @@
   {
     "id": "T2.13-q1",
     "type": "numeric",
-    "prompt": "Own capital is Rs 40,000 and the leverage ratio is 5x. What price fall wipes out the own capital? Answer in percent.",
+    "prompt": "Your own capital is Rs 40,000 and the leverage ratio is 5x. What price fall wipes out your own capital? Answer in percent.",
     "answer": 20,
     "tolerance": 0,
     "unit": "%",
@@ -14,7 +14,7 @@
   {
     "id": "T2.13-q2",
     "type": "numeric",
-    "prompt": "Own capital is Rs 30,000 and the position is Rs 90,000 (3x). The price rises 5%. What is the gain on the position in rupees, ignoring financing costs and charges?",
+    "prompt": "Your own capital is Rs 30,000 and the position is Rs 90,000 (3x). The price rises 5%. What is the gain on the position in rupees, ignoring financing costs and charges?",
     "answer": 4500,
     "tolerance": 0,
     "unit": "Rs",
@@ -36,7 +36,7 @@
     "answer": "b",
     "explanations": {
       "a": "The borrowed amount does not change with the price. The position does, in both directions, so the loss is magnified too.",
-      "c": "How fast a price falls does not change the multiplication. A fast gap can make the loss larger than the plan assumed (T2.6).",
+      "c": "How fast a price falls does not change the multiplication. A fast gap can make the loss bigger than the plan assumed (see *Slippage, gaps and planned versus actual risk*).",
       "d": "Leverage magnifies in the same way for any holding period. Intraday rules add their own limits, but they do not remove the magnification."
     },
     "concepts": ["leverage-misconception", "magnification"],
@@ -56,7 +56,7 @@
     "answer": "b",
     "explanations": {
       "a": "10% is the fall in the stock. The loss on own capital is that fall multiplied by the 2x ratio.",
-      "c": "This halves the move, which reverses the effect of leverage instead of applying it.",
+      "c": "This is half the move. It ignores the 2x multiplication.",
       "d": "50% is the wipe-out move at 2x (1 / 2). It is not the loss at a 10% fall."
     },
     "concepts": ["leverage-scenario", "percentage-of-own-capital"],
@@ -89,15 +89,15 @@
     "prompt": "A trader writes: 'I use a stop 5% below my entry, so a margin call cannot happen to me.' Which part is wrong?",
     "options": [
       {"id": "a", "text": "5% below entry is too wide to be a stop."},
-      {"id": "b", "text": "'Cannot happen.' A stop is an instruction, not a promise. A gap can open below the stop, so the loss can exceed the plan, and the stop does not rule out a margin call."},
+      {"id": "b", "text": "'Cannot happen.' A stop is an instruction, not a promise. A gap can open below the stop. So the loss can be bigger than planned, and the stop does not rule out a margin call."},
       {"id": "c", "text": "'Entry.' Stops should be measured from the current market price, not from entry."},
       {"id": "d", "text": "Nothing is wrong. A stop removes margin risk."}
     ],
     "answer": "b",
     "explanations": {
       "a": "The width is your choice and is not the mistake here. The claim that a stop removes margin risk is wrong at any width.",
-      "c": "In this book stops are measured from the planned entry (T2.4). The mistake is the claim about margin calls.",
-      "d": "A stop is an instruction that fills at the first available price. It is not protection against a gap (T2.6)."
+      "c": "In this book, stops are measured from the planned entry price. The mistake is the claim about margin calls.",
+      "d": "A stop is an instruction that fills at the first available price. It is not protection against a gap (see *Slippage, gaps and planned versus actual risk*)."
     },
     "concepts": ["stop-limits", "margin-call", "gap-risk"],
     "difficulty": 2,

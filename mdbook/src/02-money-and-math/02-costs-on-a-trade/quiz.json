@@ -29,7 +29,7 @@
     "prompt": "A broker shows zero brokerage on a delivery order. A trader concludes, \"Zero brokerage means the trade is free.\" Is the conclusion right?",
     "options": [
       {"id": "a", "text": "Yes, because brokerage is the only cost that applies"},
-      {"id": "b", "text": "No, because other cost components can still apply, and brokerage is only one line in the list"},
+      {"id": "b", "text": "No. Other cost components can still apply. Brokerage is only one line in the list."},
       {"id": "c", "text": "Yes, if the trade is small enough"},
       {"id": "d", "text": "No, because zero brokerage is itself a sign of a fraud"}
     ],
@@ -94,7 +94,7 @@
     "answer": "a",
     "explanations": {
       "b": "0.38% is the cost of trade Y, the larger trade. Trade X has the higher percentage because fixed charges are spread over less value.",
-      "c": "The rates are the same, but the fixed charges do not scale with value, so the percentages differ.",
+      "c": "The rates are the same, but the fixed charges do not grow with value, so the percentages differ.",
       "d": "Trade Y costs more rupees (Rs 190 against Rs 100), but a larger total does not mean a larger share of the position."
     },
     "concepts": ["fixed-vs-proportional", "break-even"],

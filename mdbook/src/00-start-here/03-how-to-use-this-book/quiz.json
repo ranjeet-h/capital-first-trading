@@ -12,7 +12,7 @@
     "answer": "b",
     "explanations": {
       "a": "Live is for real trades with real money. A reading note is not a trade, and entries before the gates are never marked live.",
-      "c": "Backtest is a simulated past result. A reading note is not a simulation.",
+      "c": "Backtest is a simulated result from the past. A reading note is not a simulation.",
       "d": "Forward is a paper or forward-test trade recorded as it happens. A reading note is not a trade."
     },
     "concepts": ["journal-modes"],
@@ -41,7 +41,7 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "G2 is a real gate that tests money mathematics. Passing it is an accurate description of a result. The error is what the result is taken to mean."
+      "a": "G2 is a real gate. It tests money sums. Passing it is an accurate description of a result. The error is what the result is taken to mean."
     },
     "concepts": ["gates", "educational-competence"],
     "difficulty": 2,
@@ -95,9 +95,9 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "Gates have no timer. A waiting period would press you toward a deadline, and the book says there is none.",
+      "a": "Gates have no timer. A waiting period would push you toward a deadline. The book has no deadline.",
       "c": "Gates can be retaken. The retake rule is part of the design.",
-      "d": "Gates test educational competence. No gate requires real trading, and passing one never decides the real-money question."
+      "d": "Gates test what you have learned. No gate requires real trading. Passing one never decides the real-money question."
     },
     "concepts": ["gates", "retake-rules"],
     "difficulty": 1,

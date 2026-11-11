@@ -11,7 +11,7 @@ estimated_minutes: 30
 
 ## Hook
 
-A trader with Rs 10,000 sets a tight stop, Rs 2 below an entry of Rs 250. The risk budget formula says 50 shares. Fifty shares at Rs 250 cost Rs 12,500, which is more than the whole account. The tight stop did not make the position bigger. It made the risk formula ask for a size the account cannot buy. This chapter shows how to find the real size, step by step, and which limit decides it.
+Imagine you have Rs 10,000. You set a tight stop, Rs 2 below an entry of Rs 250. The risk formula says you can buy 50 shares. But 50 shares at Rs 250 cost Rs 12,500. That is more than your whole account. The tight stop did not make the position bigger. It made the risk formula ask for a size your account cannot buy. This chapter shows how to find the real size, step by step. It also shows which limit decides it.
 
 ## The idea
 
@@ -26,28 +26,28 @@ The five steps:
 - **Step 1, risk budget.** Risk budget = capital x risk %.
 - **Step 2, risk per share.** Risk per share = entry - stop, for a long trade.
 - **Step 3, raw shares.** Raw shares = floor(risk budget / risk per share). "Floor" means round down to a whole number.
-- **Step 4, cash cap.** Cash cap = floor(capital / entry). A long delivery trade needs the cash to buy the shares, and this track uses no leverage, so the cash you hold limits the size.
-- **Step 5, concentration cap.** Concentration cap = floor(capital x max position % / entry). The 25% default is a design setting in Lab 1, which you can change. It is not a market rule.
+- **Step 4, cash cap.** Cash cap = floor(capital / entry). A long delivery trade means you pay for the shares and keep them. You need the cash to buy them. This track uses no leverage, which means no borrowed money. So the cash you hold limits the size.
+- **Step 5, concentration cap.** Concentration cap = floor(capital x max position % / entry). This cap limits how much of your capital one position can use. The 25% figure is a setting in Lab 1. You can change it. It is not a market rule.
 
 Then:
 
 - **Shares = the minimum of the three limits** (raw shares, cash cap, concentration cap).
-- **Binding constraint** = the limit that produced the minimum. Name it. If two limits tie, say so.
+- **Binding constraint** is the limit that gives the smallest number. That limit sets your size. Name it. If two limits tie, say so.
 
 Some points to keep in mind:
 
 - This track uses **whole shares** throughout.
-- Tick size, the smallest price step, can matter if a plan rounds prices. [VERIFY: NSE tick size page]
-- Lot size for cash equity is treated as whole shares in this book. Confirm the current rule before using it on real data. [VERIFY: current lot size rule for cash equity]
-- Costs are added in Lab 1 to show the true loss. The costs themselves are covered in *Costs on a trade*.
+- Tick size is the smallest step a price can move. It can matter if a plan rounds prices. [VERIFY: NSE tick size page]
+- Lot size is the smallest number of shares you can trade at once. This book treats cash equity as whole shares. Confirm the current rule before you use it on real data. [VERIFY: current lot size rule for cash equity]
+- Lab 1 adds costs to show the true loss. The costs themselves are covered in *Costs on a trade*.
 
-The main lesson: **a tighter stop does not mean a larger position.** A tighter stop raises the raw share count. The cash and concentration caps can then cut it. The stop changes what the risk formula allows, and the caps decide what you can actually hold.
+The main lesson: **a tighter stop does not mean a larger position.** A tighter stop raises the raw share count. The cash and concentration caps can then cut it. The stop changes what the risk formula allows. The caps decide what you can actually hold.
 
 ## See it
 
 <!-- component: position-size-viz | capital: 50000 | riskPct: 1 | entry: 250 | stop: 240 | caption: Three bars for Example A (raw risk limit 50, cash cap 200, concentration cap 50); the minimum is highlighted and the binding constraint is named -->
 
-The three bars show the three limits. The shortest bar is the answer. For Example A, the raw risk limit and the concentration cap tie at 50 shares, and the cash cap is far above them. Change the stop to Rs 248 and look at how the risk bar grows while the concentration bar stays put.
+The three bars show the three limits. The shortest bar is the answer. For Example A, the risk limit and the concentration cap tie at 50 shares. The cash cap is far above them. Change the stop to Rs 248 and look at how the risk bar grows. The concentration bar stays put.
 
 ## Worked example
 
@@ -62,7 +62,7 @@ The three bars show the three limits. The shortest bar is the answer. For Exampl
 | 5. Concentration cap | floor(50,000 x 25% / 250) = floor(12,500 / 250) | 50 |
 | **Shares** | minimum of 50, 200, 50 | **50** |
 
-Binding constraint: the risk budget, and the concentration cap ties with it at 50 shares. Position value: 50 x 250 = Rs 12,500, which is 25% of capital. Planned loss: 50 x 10 = Rs 500.
+Binding constraint: the risk limit. The concentration cap ties with it at 50 shares. Position value: 50 x 250 = Rs 12,500, which is 25% of capital. Planned loss: 50 x 10 = Rs 500.
 
 **Hypothetical. Example B.** Capital Rs 10,000. Entry Rs 250. Stop Rs 248.
 
@@ -75,19 +75,19 @@ Binding constraint: the risk budget, and the concentration cap ties with it at 5
 | 5. Concentration cap | floor(10,000 x 25% / 250) = floor(2,500 / 250) | 10 |
 | **Shares** | minimum of 50, 40, 10 | **10** |
 
-Binding constraint: **concentration cap**. The raw figure of 50 shares would cost 50 x 250 = Rs 12,500, which is more than the Rs 10,000 account. The cash cap of 40 shares would be Rs 10,000, which is the whole account. Neither is allowed by the concentration rule. Position value: 10 x 250 = Rs 2,500 (25%). Planned loss: 10 x 2 = Rs 20, which is 0.2% of capital. The risk budget of Rs 100 was not used, because the cap bound first.
+Binding constraint: **concentration cap**. The raw figure of 50 shares would cost 50 x 250 = Rs 12,500. That is more than the Rs 10,000 account. The cash cap of 40 shares would cost Rs 10,000. That is the whole account. Neither of these fits the 25% limit. Position value: 10 x 250 = Rs 2,500 (25%). Planned loss: 10 x 2 = Rs 20, which is 0.2% of capital. The risk budget of Rs 100 was not fully used. The concentration cap was the smaller limit.
 
-**Lesson.** A tight stop gave a larger raw figure, not a larger position. The caps reduced it. If your plan's position exceeds the cash you have, reject the plan. It is not a plan you can carry out.
+**Lesson.** A tight stop gave a larger raw figure, not a larger position. The caps reduced it. If your plan's position costs more than the cash you have, reject the plan. You cannot carry it out.
 
 ## Try it
 
 ### Guided exercise
 
-**Task.** Capital Rs 50,000. Risk 1%. Entry Rs 400. Stop Rs 380. Compute the risk budget, risk per share, the raw shares, the cash cap, the concentration cap, the shares, the binding constraint, the position value and the planned loss.
+**Task.** Capital Rs 50,000. Risk 1%. Entry Rs 400. Stop Rs 380. Work out the risk budget, risk per share, the raw shares, the cash cap, the concentration cap, the shares, the binding constraint, the position value and the planned loss.
 
 Hints:
 
-1. Compute all three limits before you take the minimum.
+1. Work out all three limits before you take the minimum.
 2. Round down each limit. Do not round up any of them.
 3. The concentration cap uses 25% of capital in this example.
 
@@ -105,7 +105,7 @@ Hints:
 
 ### Independent exercise
 
-**Task.** Capital Rs 25,000. Risk 1%. Entry Rs 200. Stop Rs 190. Compute the three limits, the shares, the binding constraint, the position value and the planned loss.
+**Task.** Capital Rs 25,000. Risk 1%. Entry Rs 200. Stop Rs 190. Work out the three limits, the shares, the binding constraint, the position value and the planned loss.
 
 <details><summary>Check your answer</summary>
 
@@ -133,17 +133,17 @@ The quiz checks which limit binds, rounding down, and why a tight stop can give 
 
 Mode: **learning note**, or **paper** if you prefer. Log it in your journal (or on paper until the journal app is ready).
 
-1. Write three hypothetical setups, each with capital, risk %, entry and stop.
-2. For each setup, write the five steps as separate lines, with the three limits and the minimum.
+1. Write three hypothetical setups. Each one has capital, risk %, entry and stop.
+2. For each setup, write the five steps as separate lines. Include the three limits and the minimum.
 3. Record the planned shares, the binding constraint and the planned loss.
 4. Mark each entry as hypothetical. Do not record a live account.
 
 ## Limits and common mistakes
 
 - It does not tell you which entry or stop to choose. Those come from the trade idea, which is outside this chapter.
-- It does not include costs. The true loss in Lab 1 adds costs (*Costs on a trade*), and this chapter's arithmetic does not.
-- It does not make a position safe. Caps reduce size. They do not reduce the risk of the idea, and gaps can still produce losses above the plan (*Slippage, gaps and planned versus actual risk*).
-- It does not allow adding shares to a losing position to lower the average price. That is averaging down, which this track forbids.
+- It does not include costs. Lab 1 adds costs to show the true loss (*Costs on a trade*). The arithmetic in this chapter does not add them.
+- It does not make a position safe. Caps reduce size. They do not reduce the risk of the idea. A gap (a jump in price with no trading in between) can still cause a loss bigger than the plan (*Slippage, gaps and planned versus actual risk*).
+- It does not allow you to buy more of a losing share to lower your average price. This is called averaging down. This track forbids it.
 
 ## Remember
 
@@ -155,10 +155,8 @@ Mode: **learning note**, or **paper** if you prefer. Log it in your journal (or 
 
 ## Sources and verification
 
-- Lab 1 specification (LABS.md).
-- Lab 3 plan form (LABS.md), for recording the planned fields.
 - NSE tick size page, for rounding prices in a plan.
-- The 25% concentration cap is a design setting of the book, not a market rule.
+- The 25% limit is a setting in this book, not a market rule.
 
 <!-- facts-needed: tick size for cash equity; lot size rule for cash equity (the book assumes whole shares). -->
 

@@ -11,29 +11,29 @@ estimated_minutes: 25
 
 ## Hook
 
-A hypothetical trader hears that a company is "about to list" and buys shares at its first public offer, thinking the company will receive the money from the next trade. A week later, they buy more on the exchange from another investor, believing the company is funded again. Both beliefs mix up two different markets, and the difference decides where the money goes.
+A hypothetical trader hears that a company is "about to list." They buy shares at its first public offer. They think the company gets the money from that purchase. A week later, they buy more on the exchange from another investor. They believe the company is funded again. Both beliefs mix up two different markets. The difference decides where the money goes.
 
 ## The idea
 
-**A share is a unit of ownership.** A company with a fixed number of shares outstanding is divided into equal parts. Each part gives its holder a proportional claim on the business.
+**A share is a unit of ownership.** A company has a fixed number of shares, and they are all equal parts. Each part gives its holder a share of the business, in proportion to the number held.
 
-**Ownership percentage** is the number of shares you hold divided by the total shares outstanding. In words: your share of the company is your shares, divided by all the shares. In symbols:
+**Ownership percentage** is the shares you hold, divided by the total number of shares. In symbols:
 
 Ownership % = (shares held / total shares outstanding) x 100
 
-**Value of a holding** is the number of shares multiplied by the price per share. In symbols: holding value = shares x price.
+**Value of a holding** is the number of shares times the price of one share. In symbols: holding value = shares x price.
 
-**Why companies raise money through shares.** A company can raise money from new shareholders instead of borrowing it. Existing owners also gain a route to sell part of their stake. These are general reasons; the specific reasons for a given company are in its own filings.
+**Why companies sell shares.** A company can raise money from new shareholders instead of borrowing it. Existing owners can also sell part of their stake. These are general reasons. Each company's own filings give its specific reasons.
 
 **Primary market.** The company issues new shares. The money goes to the company.
 
-**Secondary market.** Investors trade shares that already exist. The money goes to the seller, not to the company. Everyday buying and selling on the exchange is in the secondary market.
+**Secondary market.** Investors trade shares that already exist. The money goes to the seller, not to the company. Buying and selling on the exchange takes place in the secondary market.
 
-**IPO (initial public offer).** A company's first public offer of shares. The price-setting method and the allotment process are described here only at concept level [VERIFY: SEBI ICDR regulations; book-building method].
+**IPO (initial public offer).** A company's first public offer of shares to the public. This chapter explains pricing and allotment (who gets the shares) only in general terms [VERIFY: SEBI ICDR regulations; book-building method].
 
-**An IPO is not automatically profitable.** The listing-day price, the first price at which the shares trade on the exchange, can be above or below the issue price.
+**An IPO is not automatically profitable.** The listing-day price is the first price at which the shares trade on the exchange. It can be above or below the issue price, which is the price set for the offer.
 
-**Dilution.** When new shares are issued, the total number of shares rises. Each existing share is then a smaller fraction of the company, so an existing holder's percentage falls, unless they buy some of the new shares.
+**Dilution.** When new shares are issued, the total number of shares rises. Each existing share is then a smaller part of the company. So an existing holder's percentage falls, unless they buy some of the new shares.
 
 ## See it
 
@@ -49,7 +49,7 @@ flowchart LR
   end
 ```
 
-Look at the company box. It appears only in the primary flow. In the secondary flow, the money passes between buyer and seller, and the company receives nothing. Change nothing here; the diagram is static.
+Look at the company box. It appears only in the primary flow. In the secondary flow, money passes between buyer and seller. The company receives nothing.
 
 ## Worked example
 
@@ -65,13 +65,13 @@ Look at the company box. It appears only in the primary flow. In the secondary f
 
 **Check on step 5:** 1,000 / 15,00,000 = 1 / 1,500 = 0.000667, which is 0.0667%.
 
-The holder's ownership fell from 0.1% to 0.0667% because the share count rose. Their 1,000 shares are unchanged. Whether their value falls depends on the price after the new issue, which the arithmetic above does not decide.
+The holder's ownership fell from 0.1% to 0.0667%, because the share count rose. The holder still has 1,000 shares. Whether their value falls depends on the price after the new issue. The arithmetic above does not decide that.
 
 ## Try it
 
 ### Guided exercise
 
-**Task:** A holder owns 250 shares in a company with 20,00,000 shares outstanding. The share price is Rs 150. Compute the holder's ownership percentage and the value of the holding.
+**Task:** A holder owns 250 shares in a company with 20,00,000 shares in total. The share price is Rs 150. Work out the holder's ownership percentage and the value of the holding.
 
 **Hints:**
 
@@ -83,13 +83,13 @@ The holder's ownership fell from 0.1% to 0.0667% because the share count rose. T
 
 ### Independent exercise
 
-**Task:** The company in the worked example issues 10,00,000 new shares. Compute the holder's new ownership percentage. Explain why the holder's value is not automatically lower. Use no hints.
+**Task:** The company in the worked example issues 10,00,000 new shares. Work out the holder's new ownership percentage. Explain why the holder's value is not automatically lower. Use no hints.
 
 <details><summary>Check your answer</summary>
 
 New total = 10,00,000 + 10,00,000 = 20,00,000 shares. Holder's ownership = 1,000 / 20,00,000 = 0.005%.
 
-The holder's value is shares x price. The number of shares they hold did not change. If the price stayed at Rs 200, their holding would still be worth Rs 2,00,000. The price is set by trading, and the new money raised may change the company's prospects, so the price could move either way. The percentage falls for certain; the value does not fall automatically.
+The holder's value is shares x price. The holder still has 1,000 shares. If the price stayed at Rs 200, the holding would still be worth Rs 2,00,000. Trading sets the price. The new money may change the company's prospects, so the price could move either way. The percentage falls for certain. The value does not fall automatically.
 
 </details>
 
@@ -97,23 +97,23 @@ The holder's value is shares x price. The number of shares they hold did not cha
 
 <!-- component: quiz-block | src: quiz.json -->
 
-Five questions check ownership arithmetic, the money flow in each market, and the claims about IPOs and dilution.
+Five questions check ownership sums, the money flow in each market, and the claims about IPOs and dilution.
 
 ## Paper task
 
-**Mode:** learning note. Log it in your journal, or on paper until the journal app is ready. No purchase.
+**Mode:** learning note. Write it in your journal, or on paper. No purchase.
 
-1. Find a public offer document for any past IPO, on the exchange or SEBI website.
-2. Locate the "objects of the issue" section.
+1. Find the public offer document for any past IPO. You can find it on the exchange or SEBI website.
+2. Find the section called "objects of the issue." It says what the money is for.
 3. Write, in your own words, what the company said it would use the money for.
 4. Record the source, the date you accessed it, and the company name. Do not buy anything.
 
 ## Limits and common mistakes
 
-- It does not tell you whether any IPO is worth buying. An IPO gets no exemption from the capital-first rules.
-- An IPO hype story and allotment excitement are common causes of impulsive buying.
-- Listing-day price can be above or below the issue price. Neither is predicted here.
-- The percentage and value arithmetic is a snapshot. The price moves, and so does the value.
+- This chapter does not tell you whether any IPO is worth buying. An IPO does not get an exemption from the capital-first rules.
+- Hype about an IPO, and excitement about getting shares, often lead to rash buying.
+- The listing-day price can be above or below the issue price. This chapter does not predict either.
+- The percentage and value sums are a snapshot. The price moves, so the value moves too.
 
 ## Remember
 

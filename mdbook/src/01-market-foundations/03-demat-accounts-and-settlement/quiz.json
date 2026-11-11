@@ -11,7 +11,7 @@
     "answer": "b",
     "explanations": {
       "a": "Execution is not settlement. The trade is matched, then cleared, then settled, and the shares are credited after that.",
-      "c": "Intraday positions are not delivery holdings. Delivery holdings appear after settlement, for any trade type (intraday positions are covered in T4.7)."
+      "c": "Intraday positions are not delivery holdings. Delivery holdings appear after settlement. Intraday positions are covered later in this book."
     },
     "concepts": ["settlement", "holding-vs-position"],
     "difficulty": 1,
@@ -44,7 +44,7 @@
     "answer": 13000,
     "tolerance": 0,
     "unit": "Rs",
-    "solution": "Gross buys = 3 x 5,000 = 15,000. Sell proceeds = 2,000. Net payable = 15,000 - 2,000 = Rs 13,000. Check: 13,000 + 2,000 = 15,000, which matches the gross buys. This is a concept illustration; the actual netting rules are [VERIFY: clearing corporation rules]. Common wrong answers: 17,000 (adds the sell instead of subtracting it) and 15,000 (ignores the sell).",
+    "solution": "Total buys = 3 x 5,000 = 15,000. Sell proceeds = 2,000. Net payable = 15,000 - 2,000 = Rs 13,000. Check: 13,000 + 2,000 = 15,000, which equals the total buys. This is a concept illustration. The actual netting rules are [VERIFY: clearing corporation rules]. Common wrong answers: 17,000 (adds the sell instead of subtracting it) and 15,000 (ignores the sell).",
     "concepts": ["netting"],
     "difficulty": 2,
     "reviewAfterDays": 3
@@ -79,7 +79,7 @@
     ],
     "answer": "a",
     "explanations": {
-      "b": "A delivery sale depends on the shares being in your account, and the same-day assumption is a common mistake. Verify the rule first.",
+      "b": "A delivery sale depends on the shares being in your account. Assuming you can sell at once is a common mistake. Check the rule first.",
       "c": "Closing time is not the constraint. The constraint is whether the shares are credited for delivery.",
       "d": "The broker passes on your order. The rule about crediting shares is set by the market rules, not by the broker's choice."
     },

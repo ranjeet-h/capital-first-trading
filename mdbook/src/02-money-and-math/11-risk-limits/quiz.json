@@ -2,7 +2,7 @@
   {
     "id": "T2.11-q1",
     "type": "numeric",
-    "prompt": "Capital is Rs 80,000 and the daily loss limit is 2.5% of capital. What is the daily loss limit in rupees?",
+    "prompt": "Your capital is Rs 80,000. Your daily loss limit is 2.5% of capital. What is the daily loss limit in rupees?",
     "answer": 2000,
     "tolerance": 0,
     "unit": "Rs",
@@ -14,7 +14,7 @@
   {
     "id": "T2.11-q2",
     "type": "numeric",
-    "prompt": "The daily loss limit is Rs 1,000. Today you have lost Rs 500 on one trade and Rs 300 on another. How many rupees of the daily limit remain?",
+    "prompt": "Your daily loss limit is Rs 1,000. Today you lost Rs 500 on one trade and Rs 300 on another. How many rupees of the daily limit are left?",
     "answer": 200,
     "tolerance": 0,
     "unit": "Rs",
@@ -26,7 +26,7 @@
   {
     "id": "T2.11-q3",
     "type": "scenario",
-    "prompt": "Your daily loss limit is Rs 1,000 and your per-trade limit is Rs 500. Trade 1 loses Rs 500 and trade 2 loses Rs 500. A third trade is now planned. What does the rule say?",
+    "prompt": "Your daily loss limit is Rs 1,000. Your per-trade limit is Rs 500. Trade 1 loses Rs 500. Trade 2 loses Rs 500. You now plan a third trade. What does the rule say?",
     "options": [
       {"id": "a", "text": "It is allowed, because each loss was within the Rs 500 per-trade limit."},
       {"id": "b", "text": "It is not allowed, because the daily limit of Rs 1,000 is used up."},
@@ -35,9 +35,9 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "The per-trade limit checks one trade at a time. The daily limit checks the total loss for the day, and that total is now Rs 1,000.",
+      "a": "The per-trade limit checks one trade at a time. The daily limit checks the total loss for the day. That total is now Rs 1,000.",
       "c": "Size does not change the daily total. A smaller third trade still adds to losses, and the limit is already reached.",
-      "d": "The weekly limit is a separate ceiling. The daily limit is reached first, and it stops trading for the day whatever the weekly figure is."
+      "d": "The weekly limit is a separate cap. The daily limit is reached first. It stops trading for the day, whatever the weekly figure is."
     },
     "concepts": ["stop-rules", "daily-loss-limit"],
     "difficulty": 2,
@@ -46,7 +46,7 @@
   {
     "id": "T2.11-q4",
     "type": "mcq",
-    "prompt": "A trader hits the daily loss limit at 11:00 and thinks: 'One more small trade should win back today's loss, so the rule does not really apply.' What is the correct response?",
+    "prompt": "A trader reaches the daily loss limit at 11:00. The trader thinks: 'One more small trade should win back today's loss, so the rule does not really apply.' What is the right response?",
     "options": [
       {"id": "a", "text": "Take one small trade, since small trades cannot break the limit."},
       {"id": "b", "text": "Stop for the rest of the day. The limit exists so that recovery attempts cannot happen."},
@@ -56,8 +56,8 @@
     "answer": "b",
     "explanations": {
       "a": "A small trade still adds to the day's losses and to the trade count. It is the recovery attempt the rule forbids.",
-      "c": "Cutting the size does not change the rule. Any trade after the limit is reached is a rule break.",
-      "d": "Changing the limit after a loss adjusts the rule to the result. Limits are set before trading and are not adjusted after a loss."
+      "c": "Cutting the size does not change the rule. Any trade after the limit is reached breaks the rule.",
+      "d": "Changing the limit after a loss adjusts the rule to the result. Limits are set before trading, not changed after a loss."
     },
     "concepts": ["stop-rules", "revenge-trading"],
     "difficulty": 1,
@@ -75,9 +75,9 @@
     ],
     "answer": "b",
     "explanations": {
-      "a": "A written, pre-set rule is followed as written. Ignoring it is a rule break.",
-      "c": "Increasing size after losses is the opposite of the rule and is a path to larger drawdowns (T2.10).",
-      "d": "A rule that is skipped for convenience is not a rule. Reduce-exposure rules apply whatever the calendar shows."
+      "a": "A written rule set in advance is followed as written. Ignoring it is a rule break.",
+      "c": "Increasing size after losses is the opposite of the rule. It leads to bigger drawdowns.",
+      "d": "A rule that you skip for convenience is not a rule. Reduce-exposure rules apply whatever the date is."
     },
     "concepts": ["reduce-exposure", "drawdown"],
     "difficulty": 2,
@@ -86,18 +86,18 @@
   {
     "id": "T2.11-q6",
     "type": "spot-the-mistake",
-    "prompt": "A trader writes: 'My daily loss limit is 2% of my balance, worked out each morning from whatever my balance is, so it moves with my results.' Which part is wrong?",
+    "prompt": "A trader writes: 'My daily loss limit is 2% of my balance, worked out each morning from whatever my balance is. So it moves with my results.' Which part is wrong?",
     "options": [
       {"id": "a", "text": "The 2% figure is too high for a Rs 50,000 account."},
-      {"id": "b", "text": "The base is not fixed in advance. A limit that moves with the day's results changes the rule according to the outcome, so the base must be written down before trading."},
+      {"id": "b", "text": "The base is not fixed in advance. A limit that moves with the day's results changes the rule according to the outcome. So the base must be written down before trading."},
       {"id": "c", "text": "A daily limit should be given in percent only, never in rupees."},
       {"id": "d", "text": "Nothing is wrong. A balance-based limit is always correct."}
     ],
     "answer": "b",
     "explanations": {
-      "a": "The percentage is an illustrative figure that you set. The percentage is not the flaw here.",
+      "a": "The percentage is an example figure that you set. The percentage is not the mistake here.",
       "c": "Rupee and percentage limits are both used. What matters is that the base is written down and fixed in advance.",
-      "d": "A balance-based limit can be used only if its base is stated and fixed by rule before trading starts."
+      "d": "A balance-based limit can be used only if its base is stated and fixed by the rule before trading starts."
     },
     "concepts": ["risk-limits", "base-of-percentage"],
     "difficulty": 2,

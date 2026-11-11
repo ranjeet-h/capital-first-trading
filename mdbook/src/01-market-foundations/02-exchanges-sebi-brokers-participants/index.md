@@ -11,27 +11,27 @@ estimated_minutes: 25
 
 ## Hook
 
-A hypothetical beginner believes their broker is the exchange, and that their order is matched inside the broker's office. When a trade goes wrong, they cannot say who to ask, or in what order. Knowing which institution does which job turns a confusing situation into a list of steps.
+A hypothetical beginner believes their broker is the exchange. They think their order is matched inside the broker's office. When a trade goes wrong, they cannot say who to ask, or in what order. Knowing which institution does which job turns a confusing situation into a list of steps.
 
 ## The idea
 
-Many institutions sit between your order and the shares in your name. Each has one job. Define each role once and keep the roles separate.
+Many institutions sit between your order and the shares in your name. Each one has one job. This chapter defines each role once. Keep the roles separate in your mind.
 
-**SEBI** is the securities regulator. It sets rules for brokers, exchanges and listed companies. It does not set stock prices.
+**SEBI** is the securities regulator. It makes the rules for brokers, exchanges and listed companies. It does not set stock prices.
 
-**Exchanges (NSE and BSE)** run the marketplace where orders are matched [VERIFY: current recognition status and roles]. A buy order is matched with a sell order at the exchange. The exchange does not hold your money.
+**Exchanges (NSE and BSE)** run the marketplace where orders are matched [VERIFY: current recognition status and roles]. A buy order is matched with a sell order there. The exchange does not hold your money.
 
-**The clearing corporation** sits after a trade. It records the obligations that each trade creates and is part of how settlement is guaranteed [VERIFY: clearing corporation names and role].
+**The clearing corporation** works after a trade. It records what each side owes because of the trade. It is part of how settlement is guaranteed. Settlement is the final transfer of shares and money [VERIFY: clearing corporation names and role].
 
-**Depositories** hold shares electronically [VERIFY: NSDL and CDSL roles]. Your shares are recorded in your name at a depository, not in a paper certificate in a drawer.
+**Depositories** hold shares electronically [VERIFY: NSDL and CDSL roles]. Your shares are recorded in your name at a depository, not in a paper certificate kept in a drawer.
 
-**The broker (trading member)** accepts your orders, provides the trading platform, and passes your orders to the exchange. The broker is the firm you deal with day to day. It is not the exchange, and it is not where your shares are held.
+**The broker (trading member)** accepts your orders, gives you the trading platform, and passes your orders to the exchange. The broker is the firm you deal with day to day. It is not the exchange. It is not where your shares are held.
 
-**The depository participant (DP)** is the intermediary that maintains your demat account on the depository's behalf [VERIFY]. The depository records the holding; the DP keeps the account. The two roles are different even when one firm performs both.
+**The depository participant (DP)** is the firm that keeps your demat account for you, on the depository's behalf [VERIFY]. The depository records the holding. The DP keeps the account. These are two different roles, even when one firm does both.
 
 **Banks** hold the funds used for trading and settlement. Your trading account is linked to a bank account.
 
-**The grievance route** runs in order: start with the broker, then the exchange, then SEBI's complaint portal [VERIFY: SCORES process].
+**The grievance route** is the order for complaints. Start with the broker. Then go to the exchange. Then go to SEBI's complaint portal [VERIFY: SCORES process].
 
 **One practical check.** Before you open an account with any broker, check its registration on the official lists [VERIFY: SEBI or exchange list of registered brokers].
 
@@ -46,7 +46,7 @@ flowchart LR
   Depository --> You
 ```
 
-Follow the arrows: the order goes from you to the broker, then to the exchange, then to clearing. The shares come back to you through the depository. Notice that the broker and the exchange are two separate boxes. This diagram is the static fallback for the order-flow simulator below.
+Follow the arrows. The order goes from you to the broker, then to the exchange, then to clearing. The shares come back to you through the depository. Notice that the broker and the exchange are two separate boxes.
 
 ## Worked example
 
@@ -56,7 +56,7 @@ Follow the arrows: the order goes from you to the broker, then to the exchange, 
 |---|---|---|
 | 1. Trade value | 20 x Rs 250 | Rs 5,000 |
 
-Now trace the order, and mark who holds the money at each step.
+Now follow the order. Note who holds the money at each step.
 
 | Step | Institution | What happens | Who holds the money at this step |
 |---|---|---|---|
@@ -66,7 +66,7 @@ Now trace the order, and mark who holds the money at each step.
 | 4 | Clearing corporation | Records the obligation from the trade | The clearing system moves funds [VERIFY: clearing names and role] |
 | 5 | Depository, through the DP | After settlement, the 20 shares are credited to your demat account | Settlement moves the shares and the money [VERIFY: T+1 timing, see *Demat accounts and settlement*] |
 
-The point of the table is that no step asks the exchange to hold your money.
+The main point: no step asks the exchange to hold your money.
 
 ## Try it
 
@@ -84,7 +84,7 @@ The point of the table is that no step asks the exchange to hold your money.
 2. Follow the order: you, broker, exchange.
 3. Then follow the shares: clearing, then the depository.
 
-**Answer:** You place the sell order for 20 shares at Rs 250, a trade value of Rs 5,000. Broker accepts it and passes it to the exchange. Exchange matches it with a buyer. Clearing corporation records the obligation. Depository, through the DP, moves the shares out of your demat account when the trade settles [VERIFY: settlement timing, see *Demat accounts and settlement*].
+**Answer:** You place the sell order for 20 shares at Rs 250. The trade value is Rs 5,000. The broker accepts the order and passes it to the exchange. The exchange matches it with a buyer. The clearing corporation records the obligation. The depository, through the DP, moves the shares out of your demat account when the trade settles [VERIFY: settlement timing, see *Demat accounts and settlement*].
 
 ### Independent exercise
 
@@ -106,7 +106,7 @@ Six questions check the broker-exchange difference, the clearing role, the griev
 
 ## Paper task
 
-**Mode:** learning note. Log it in your journal, or on paper until the journal app is ready.
+**Mode:** learning note. Write it in your journal, or on paper.
 
 1. List each institution in this chapter: SEBI, NSE, BSE, the clearing corporation, NSDL, CDSL, the broker, the DP and the bank.
 2. Write its role in your own words, one line each.

@@ -21,11 +21,11 @@
  {
   "id": "T1.6-q2",
   "type": "numeric",
-  "prompt": "Your plan is written on Friday after the close. Monday is a dummy holiday, so the next session is Tuesday. How many calendar days are there from Friday to Tuesday?",
+  "prompt": "Your plan is written on Friday after the close. Monday is a made-up holiday, so the next session is Tuesday. How many calendar days are there from Friday to Tuesday?",
   "answer": 4,
   "tolerance": 0,
   "unit": "days",
-  "solution": "Count the days after Friday: Saturday (1), Sunday (2), Monday (3), Tuesday (4). Answer: 4 calendar days. Only Tuesday is a trading session in that span, because Saturday and Sunday are weekends and Monday is a holiday.",
+  "solution": "Count the days after Friday: Saturday (1), Sunday (2), Monday (3), Tuesday (4). Answer: 4 calendar days. Only Tuesday is a trading day in that span, because Saturday and Sunday are weekends and Monday is a holiday.",
   "concepts": ["next-session", "calendar"],
   "difficulty": 2,
   "reviewAfterDays": 3
@@ -43,7 +43,7 @@
   "answer": "b",
   "explanations": {
    "a": "Wrong. An open broker app does not mean the exchange is trading. The exchange matches orders only in its trading sessions.",
-   "c": "Wrong. Special sessions are announced by the exchange for specific days [VERIFY: NSE circular]. A normal Saturday is not one of them.",
+   "c": "Wrong. The exchange announces special sessions for specific days [VERIFY: NSE circular]. A normal Saturday is not one of them.",
    "d": "Wrong. Holidays remove trading days. They do not create trading on weekends."
   },
   "concepts": ["weekends", "market-hours"],
@@ -71,7 +71,7 @@
  {
   "id": "T1.6-q5",
   "type": "scenario",
-  "prompt": "A swing trader places a stop-loss based on Friday's close, before a long weekend that includes a dummy Monday holiday. Which risk is the main one to plan for?",
+  "prompt": "A swing trader places a stop-loss based on Friday's close, before a long weekend that includes a made-up Monday holiday. Which risk is the main one to plan for?",
   "options": [
    {"id": "a", "text": "No risk. A stop always fills at the stop price, even if the price gaps."},
    {"id": "b", "text": "Gap risk. The next session can open far from the stop price, so the fill can be worse than planned."},
@@ -79,7 +79,7 @@
   ],
   "answer": "b",
   "explanations": {
-   "a": "Wrong. A stop is a trigger, and the fill can be at a worse price when the market gaps. This is covered in T2.6.",
+   "a": "Wrong. A stop is a trigger, and the fill can be at a worse price when the market gaps. The chapter on stop-loss orders explains this.",
    "c": "Wrong. Whether a stop can be placed at a given time depends on broker and exchange rules [VERIFY: order handling outside market hours]. The main risk is the gap at the next open."
   },
   "concepts": ["gap-risk", "stop-loss", "holidays"],
