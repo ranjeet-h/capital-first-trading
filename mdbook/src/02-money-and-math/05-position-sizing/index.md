@@ -1,13 +1,13 @@
 <!-- meta
 id: T2.5
-title: Position sizing step by step, cash cap and concentration cap
+title: Position sizing step by step
 page_type: Math/Calculator
 prerequisites: [T2.4]
 labs: [Lab 1, Lab 3]
 estimated_minutes: 30
 -->
 
-# Position sizing step by step, cash cap and concentration cap
+# Position sizing step by step
 
 ## Hook
 
@@ -39,7 +39,7 @@ Some points to keep in mind:
 - This track uses **whole shares** throughout.
 - Tick size, the smallest price step, can matter if a plan rounds prices. [VERIFY: NSE tick size page]
 - Lot size for cash equity is treated as whole shares in this book. Confirm the current rule before using it on real data. [VERIFY: current lot size rule for cash equity]
-- Costs are added in Lab 1 to show the true loss. The costs themselves are covered in T2.2.
+- Costs are added in Lab 1 to show the true loss. The costs themselves are covered in *Costs on a trade*.
 
 The main lesson: **a tighter stop does not mean a larger position.** A tighter stop raises the raw share count. The cash and concentration caps can then cut it. The stop changes what the risk formula allows, and the caps decide what you can actually hold.
 
@@ -138,11 +138,11 @@ Mode: **learning note**, or **paper** if you prefer. Log it in your journal (or 
 3. Record the planned shares, the binding constraint and the planned loss.
 4. Mark each entry as hypothetical. Do not record a live account.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - It does not tell you which entry or stop to choose. Those come from the trade idea, which is outside this chapter.
-- It does not include costs. The true loss in Lab 1 adds costs (T2.2), and this chapter's arithmetic does not.
-- It does not make a position safe. Caps reduce size. They do not reduce the risk of the idea, and gaps can still produce losses above the plan (T2.6).
+- It does not include costs. The true loss in Lab 1 adds costs (*Costs on a trade*), and this chapter's arithmetic does not.
+- It does not make a position safe. Caps reduce size. They do not reduce the risk of the idea, and gaps can still produce losses above the plan (*Slippage, gaps and planned versus actual risk*).
 - It does not allow adding shares to a losing position to lower the average price. That is averaging down, which this track forbids.
 
 ## Remember
@@ -164,8 +164,6 @@ Mode: **learning note**, or **paper** if you prefer. Log it in your journal (or 
 
 [VERIFY: NSE tick size for cash equity]
 [VERIFY: current lot size rule for cash equity]
-
-Last content review: not yet done
 
 <!-- OPEN: The spec's Lab 1 visual asks for three bars with the minimum highlighted. LABS.md describes a bar or ladder visual for the price levels and a sensitivity strip, but not three limit bars. Confirm before the placeholder is built. -->
 

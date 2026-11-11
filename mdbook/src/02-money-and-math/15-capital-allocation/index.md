@@ -1,13 +1,13 @@
 <!-- meta
 id: T2.15
-title: Capital allocation, cut and stop rules
+title: Capital allocation
 page_type: Math/Calculator
 prerequisites: [T0.2, T2.11, T2.14]
 labs: [Lab 3]
 estimated_minutes: 30
 -->
 
-# Capital allocation: how much to allocate, what stays untouched, when to cut or stop
+# Capital allocation
 
 ## Hook
 
@@ -25,10 +25,10 @@ Rules that follow:
 
 - **Set in rupees.** Trading capital is a rupee amount set before trading. It is not a percentage of growing savings.
 - **Cut rule.** A drawdown threshold, for example 10% of trading capital, that reduces the risk percentage or the allocation.
-- **Stop rule.** A deeper threshold, for example 20%, that pauses trading for review. The pause happens when the threshold is reached, not after a recovery. The stop rule links to T8.7.
+- **Stop rule.** A deeper threshold, for example 20%, that pauses trading for review. The pause happens when the threshold is reached, not after a recovery. The stop rule links to *When to stop trading altogether (suspension conditions)*.
 - **State the base.** The worked examples measure drawdown from the starting allocation of Rs 50,000. Per-trade risk uses the current trading capital.
 - **Additional money** comes only from spare income. Household savings are never trading capital, and they are never used to top up trading capital after losses (PLAN section 2).
-- **Scale-up and withdrawal** are covered in T2.17. This chapter does not set them.
+- **Scale-up and withdrawal** are covered in *Scaling and withdrawal policy*. This chapter does not set them.
 
 <!-- OPEN: the spec's spot-the-mistake says a cut level computed on the original capital is a mistake, but its worked example computes the cut on the Rs 50,000 starting allocation. This draft measures drawdown from the starting allocation and uses current trading capital for per-trade risk. Reviewer to confirm the base. -->
 
@@ -114,12 +114,12 @@ Mode: **learning note** (Lab 3). Planned fields only.
 
 Log it in your journal (or on paper until the journal app is ready).
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - The numbers are your decisions. The book does not recommend an amount, a reserve or a threshold.
 - The 10% and 20% thresholds are illustrations.
 - A fixed trading amount does not make any plan profitable. It only limits how much can be lost.
-- The sheet does not cover scale-up or withdrawal. Those rules are in T2.17.
+- The sheet does not cover scale-up or withdrawal. Those rules are in *Scaling and withdrawal policy*.
 - This is not personal financial advice. Household planning may need a qualified professional.
 
 ## Remember
@@ -138,8 +138,6 @@ Sources (names only):
 - The book's Lab 3 specification (LABS.md).
 
 Facts to verify before this chapter is final: none. The chapter uses only your numbers and illustrative thresholds.
-
-Last content review: not yet done
 
 <!-- OPEN: should the emergency reserve have a default months figure in the planner, or stay blank? Current draft: blank, the owner decides. -->
 

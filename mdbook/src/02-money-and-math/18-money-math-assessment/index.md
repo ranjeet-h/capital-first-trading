@@ -18,16 +18,16 @@ A hypothetical trader has Rs 50,000, risks 1% per trade and plans to enter at Rs
 
 ## The idea
 
-This assessment covers the money math of Track 2. It is the check for gate G2 (PLAN.md section 6). Passing it requires the cost, position-size and expectancy questions to be correct within tolerance on a fresh randomised set, and the reality-check module (T2.16) to be complete.
+This assessment covers the money math of Track 2. It is the check for gate G2 (PLAN.md section 6). Passing it requires the cost, position-size and expectancy questions to be correct within tolerance on a fresh randomised set, and the reality-check module (*The Rs 2,000-3,000 reality check*) to be complete.
 
 **What it checks**
 
-- **Costs:** fixed charges (per order) versus proportional charges (a percentage of turnover). Fixed charges weigh more on small trades (T2.2). Cost figures come from the verified facts file. [VERIFY: cost facts from the facts registry, cross-reference T2.2]
+- **Costs:** fixed charges (per order) versus proportional charges (a percentage of turnover). Fixed charges weigh more on small trades (*Costs on a trade*). Cost figures come from the verified facts file. [VERIFY: cost facts from the facts registry, cross-reference *Costs on a trade*]
 - **Position size:** the lowest of three limits, not the largest one.
 - **Break-even win rate:** the win rate at which wins pay for losses, before costs.
 - **Expectancy and profit factor:** the average result per trade, and the ratio of gains to losses.
 - **Drawdown recovery:** the gain needed to return to a starting value after a loss.
-- **Daily-target capital:** the capital a daily target needs (T2.16).
+- **Daily-target capital:** the capital a daily target needs (*The Rs 2,000-3,000 reality check*).
 
 **Position size.** Three formulas, then the lowest result wins:
 
@@ -167,7 +167,7 @@ Eight sample questions cover the areas above. The gate uses a fresh randomised s
 4. Enter your answers in the app once it is built.
 5. Record your score and the missed concepts in the learning log, with the date.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - Passing G2 unlocks no live trading. The gate screen says so.
 - Numeric success does not show that a strategy works. The expectancy in this chapter is a worked example, not a forecast.
@@ -192,12 +192,10 @@ Eight sample questions cover the areas above. The gate uses a fresh randomised s
 
 **To verify:**
 
-- Cost facts used by cost questions. [VERIFY: cost facts from the facts registry, cross-reference T2.2]
+- Cost facts used by cost questions. [VERIFY: cost facts from the facts registry, cross-reference *Costs on a trade*]
 - Trading days per year used in the daily-target question. [VERIFY: trading days per year from the NSE holiday list and calendar]
 
-<!-- facts-needed: cost facts for cost questions (cross T2.2); trading days per year (NSE calendar) -->
+<!-- facts-needed: cost facts for cost questions (cross *Costs on a trade*); trading days per year (NSE calendar) -->
 <!-- OPEN: required coverage includes profit factor. The eight sample questions do not include a profit-factor item; it is worked above. Add one when the set size is decided -->
-
-Last content review: not yet done
 
 <!-- standing-disclaimer -->

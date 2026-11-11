@@ -1,13 +1,13 @@
 <!-- meta
 id: T2.11
-title: Risk limits per trade, day, week and month
+title: Risk limits
 page_type: Math/Calculator
 prerequisites: [T2.5, T2.10]
 labs: [Lab 1, Lab 3]
 estimated_minutes: 30
 -->
 
-# Risk limits per trade, day, week and month
+# Risk limits
 
 ## Hook
 
@@ -15,7 +15,7 @@ Hypothetical: an account of Rs 50,000 plans to risk Rs 500 per trade. The first 
 
 ## The idea
 
-Per-trade risk (T2.4 and T2.5) controls one trade. A **limit** controls a period. It is the most rupees you allow yourself to lose over a set time, written down before trading starts.
+Per-trade risk (*Risk per trade and stop-loss distance* and *Position sizing step by step*) controls one trade. A **limit** controls a period. It is the most rupees you allow yourself to lose over a set time, written down before trading starts.
 
 | Limit | What it caps | Illustrative size |
 |---|---|---|
@@ -32,11 +32,11 @@ The sizes are illustrations. You set every number.
 - **Remaining limit** = rupee limit minus the losses already used in that period.
 - **Stop rule.** When a limit is reached, the rule says what to do. A daily limit reached means no more trades that day. A weekly limit reached means no more trades that week. No revenge trades and no recovery attempts. A limit that the next trade can lift is not a limit.
 - **Reduce exposure.** A pre-set rule that lowers risk after a drawdown, for example halving the per-trade risk percentage once the month's drawdown reaches a set level. It only ever moves risk down, and it is written before trading.
-- **Two different figures.** Your Rs 2,000-3,000 figure is a daily profit goal that T2.16 tests against the arithmetic. It is not a loss limit. Do not use it as one.
+- **Two different figures.** Your Rs 2,000-3,000 figure is a daily profit goal that *The Rs 2,000-3,000 reality check* tests against the arithmetic. It is not a loss limit. Do not use it as one.
 
-<!-- OPEN: spec objective 5 calls the owner's Rs 2,000-3,000 figure "a ceiling and not a per-day risk"; T2.12 calls it "a ceiling, not a target". This draft describes it as a daily profit goal tested in T2.16. Reviewer to confirm wording. -->
+<!-- OPEN: spec objective 5 calls the owner's Rs 2,000-3,000 figure "a ceiling and not a per-day risk"; *Overtrading and why daily profit targets encourage it* calls it "a ceiling, not a target". This draft describes it as a daily profit goal tested in *The Rs 2,000-3,000 reality check*. Reviewer to confirm wording. -->
 
-Limits are a rule-based control. They cannot stop a gap that opens beyond a stop (T2.6). Brokers also have risk controls, which differ from the limits in this book [VERIFY: broker risk controls and intraday auto square-off rules].
+Limits are a rule-based control. They cannot stop a gap that opens beyond a stop (*Slippage, gaps and planned versus actual risk*). Brokers also have risk controls, which differ from the limits in this book [VERIFY: broker risk controls and intraday auto square-off rules].
 
 ## See it
 
@@ -120,9 +120,9 @@ Mode: **learning note** (Lab 3). No orders are placed.
 3. Log it in your journal (or on paper until the journal app is ready). Keep a "remaining daily limit" line for five hypothetical days.
 4. For each day, record the losses used and the remaining amount. Mark any day on which a limit would have stopped trading.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
-- Limits do not stop gaps. A stop at a limit can fill well below the stop price, so the realised loss can be larger than the plan (T2.6).
+- Limits do not stop gaps. A stop at a limit can fill well below the stop price, so the realised loss can be larger than the plan (*Slippage, gaps and planned versus actual risk*).
 - The percentages are illustrations, not recommendations. You set every number before trading.
 - A broker's risk controls are not your limits, and the broker rules are [VERIFY: broker risk controls and intraday auto square-off rules].
 - Limits do not fix a plan that has no edge. They only cap the damage in each period.
@@ -151,7 +151,5 @@ Facts to verify before this chapter is final:
 <!-- facts-needed: broker risk controls and intraday auto square-off rules (Zerodha support pages; SEBI circulars) -->
 
 <!-- OPEN: default limit percentages are the owner's decision. The chapter uses illustrative placeholders only. -->
-
-Last content review: not yet done
 
 <!-- standing-disclaimer -->

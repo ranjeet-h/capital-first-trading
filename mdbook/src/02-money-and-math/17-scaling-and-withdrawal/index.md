@@ -30,7 +30,7 @@ In symbols: drawdown = (H - E) / H, where H is the high-water mark and E the cur
 
 **Scale-up.** Trading capital may increase only after gates G6 and G7 are passed, and only with a recorded result behind it. Never increase risk after losses. Scale-up that comes from a losing run is a rule break, not a plan.
 
-**Scale-down.** The cut and stop rules from T2.15 reduce the trading capital or pause trading. Scale-down follows the rules, not feelings about the last week.
+**Scale-down.** The cut and stop rules from *Capital allocation* reduce the trading capital or pause trading. Scale-down follows the rules, not feelings about the last week.
 
 **Records.** Every capital change is logged in the journal, in the capital_at_plan field (Lab 3). A change that is not recorded cannot be reviewed.
 
@@ -106,16 +106,16 @@ Five questions cover the withdrawal rule, withdrawals in a drawdown, the top-up 
 **Mode:** learning note. Log it in your journal (or on paper until the journal app is ready).
 
 1. Write your withdrawal policy on one page: threshold above starting capital, positive-period length and maximum withdrawal percentage.
-2. Write the scale-up condition next to it: gates G6 and G7 and a recorded result. Add the scale-down triggers from T2.15.
+2. Write the scale-up condition next to it: gates G6 and G7 and a recorded result. Add the scale-down triggers from *Capital allocation*.
 3. Test the policy on the path Rs 50,000, 62,000, 58,000, 66,000. Note the first step on which a withdrawal is allowed.
 4. Add a line stating that every capital change will be logged in the journal, in the capital_at_plan field.
 5. Record the page with today's date. Do not record a live account.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - The numbers are yours. The threshold in this chapter is an example, not a recommendation.
 - A withdrawal rule does not show the account will grow. Every equity path here is hypothetical.
-- Tax on withdrawals and gains is not covered here. [VERIFY: tax on withdrawals or gains, see T2.3]
+- Tax on withdrawals and gains is not covered here. [VERIFY: tax on withdrawals or gains, see *Taxes on trading profits*]
 - A policy written after a good month is a judgement made in good conditions. Write the policy before any trade, not after a result.
 - Scale-up after losses is not allowed, whatever the recent result.
 
@@ -124,7 +124,7 @@ Five questions cover the withdrawal rule, withdrawals in a drawdown, the top-up 
 - High-water mark only moves up. Drawdown = (HWM - current equity) / HWM.
 - Never withdraw during a drawdown. A withdrawal enlarges the gain needed to recover.
 - A withdrawal needs both the threshold and the high-water condition to be met.
-- Scale up only after G6 and G7 and a recorded result. Scale down with the T2.15 cut and stop rules.
+- Scale up only after G6 and G7 and a recorded result. Scale down with the *Capital allocation* cut and stop rules.
 - Record every capital change in the journal.
 
 ## Sources and verification
@@ -133,16 +133,14 @@ Five questions cover the withdrawal rule, withdrawals in a drawdown, the top-up 
 
 - PLAN.md section 2 (withdrawals and reinvestment) and section 6 (gate G7).
 - Lab 3 specification (LABS.md): the journal record and capital_at_plan field.
-- T2.3, for tax treatment.
+- *Taxes on trading profits*, for tax treatment.
 
 **To verify:**
 
 - Your choice of withdrawal method. [VERIFY: your choice of withdrawal method]
-- Tax on withdrawals or gains. [VERIFY: tax on withdrawals or gains, see T2.3]
+- Tax on withdrawals or gains. [VERIFY: tax on withdrawals or gains, see *Taxes on trading profits*]
 
-<!-- facts-needed: tax on withdrawals or gains (T2.3); owner's withdrawal method -->
+<!-- facts-needed: tax on withdrawals or gains (*Taxes on trading profits*); owner's withdrawal method -->
 <!-- OPEN: spec open question 8 asks how drawdown is measured after a withdrawal (adjusted base or raw equity). Reviewer decision. The text uses raw equity against the HWM -->
-
-Last content review: not yet done
 
 <!-- standing-disclaimer -->

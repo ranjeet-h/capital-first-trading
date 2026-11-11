@@ -21,17 +21,17 @@ Capital-first means one thing: protect the money you can least afford to lose be
 
 **Trading capital is money you can afford to lose entirely.** You set the amount before any trade. The number is your decision. The book illustrates amounts but does not set one for you.
 
-**No leverage or borrowed money** in the learning stage or the early live stage. Leverage means controlling a larger position than your own money pays for. It magnifies losses as well as gains (T2.13).
+**No leverage or borrowed money** in the learning stage or the early live stage. Leverage means controlling a larger position than your own money pays for. It magnifies losses as well as gains (*Leverage and margin*).
 
 **No F&O as a starting activity.** F&O (futures and options) is theory only in Track 9. It is not a path for a beginner in this book.
 
-**Never average down.** Averaging down means buying more of a position that has fallen, to lower your average cost. It increases your exposure to an idea that is already failing (T2.14).
+**Never average down.** Averaging down means buying more of a position that has fallen, to lower your average cost. It increases your exposure to an idea that is already failing (*Portfolio exposure and concentration*).
 
-**Never increase size after losses.** Increasing size after a loss makes the drawdown deeper and faster (T2.9).
+**Never increase size after losses.** Increasing size after a loss makes the drawdown deeper and faster (*Drawdown, recovery and compounding*).
 
 **No-trade days are a valid result.** Not trading is a decision. It is not a failure.
 
-**No daily income target drives trades.** A target like "I must earn this much today" pushes you to trade when there is no setup, which is overtrading (T2.12).
+**No daily income target drives trades.** A target like "I must earn this much today" pushes you to trade when there is no setup, which is overtrading (*Overtrading and why daily profit targets encourage it*).
 
 Read the list as a loss map. Each row answers "which loss path does this block?" If you cannot name the path, the rule is not yet understood.
 
@@ -41,12 +41,12 @@ Read the list as a loss map. Each row answers "which loss path does this block?"
 |---|---|
 | Household money is separate | Emergency funds and obligations used to fund losses |
 | Trading capital is set before any trade, and is money you can lose entirely | A number chosen after a loss; trading money that cannot be lost |
-| No leverage or borrowed money | Losses magnified beyond the money you put in (T2.13) |
+| No leverage or borrowed money | Losses magnified beyond the money you put in (*Leverage and margin*) |
 | No F&O as a starting activity | Leveraged exposure before the basics are proven |
-| Never average down | Adding exposure to a failing idea (T2.14) |
-| Never increase size after losses | Accelerating drawdown (T2.9) |
+| Never average down | Adding exposure to a failing idea (*Portfolio exposure and concentration*) |
+| Never increase size after losses | Accelerating drawdown (*Drawdown, recovery and compounding*) |
 | No-trade days are valid | Pressure to trade without a setup |
-| No daily income target driving trades | Overtrading (T2.12) |
+| No daily income target driving trades | Overtrading (*Overtrading and why daily profit targets encourage it*) |
 
 <!-- OPEN: the spec gives a static rule card for this chapter. No component in the placeholder list fits, so a Markdown table is used. -->
 
@@ -73,8 +73,6 @@ Scan the right-hand column first. Each entry is a way an account shrinks. Then c
 The loss of Rs 15,000 is painful, but it is 3.75% of total savings, and the Rs 3,50,000 untouched is still there. The rule to apply before you start is this question: **could the household absorb this loss without harm?** If the honest answer is no, the trading capital is too large, whatever the number is.
 
 ## Try it
-
-No interactive demo is specified for this chapter. <!-- OPEN: spec gives no interactive demo for T0.2; none placed. -->
 
 ### Guided exercise
 
@@ -121,7 +119,7 @@ Six questions check the rules: leverage, averaging down, no-trade days, househol
 2. Use hypothetical or blank figures. Do not use your real savings.
 3. Do not record a live account.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - It does not set a trading-capital number for you. That decision belongs to you, and it is made before the first trade.
 - The rules reduce some loss paths. They do not guarantee that any trade works.
@@ -145,12 +143,10 @@ Six questions check the rules: leverage, averaging down, no-trade days, househol
 
 **Facts to verify:**
 
-- Margin and leverage rules for the cash segment, and the broker's margin policy (cross-reference T2.13). [VERIFY: Zerodha margin page; SEBI margin framework circulars]
-
-Last content review: not yet done
+- Margin and leverage rules for the cash segment, and the broker's margin policy (cross-reference *Leverage and margin*). [VERIFY: Zerodha margin page; SEBI margin framework circulars]
 
 <!-- OPEN: spec asks whether the book should suggest a default trading-capital ceiling. Current draft leaves the number to the owner and illustrates only. -->
 
-<!-- facts-needed: Zerodha margin page; SEBI margin framework circulars (cross-reference T2.13) -->
+<!-- facts-needed: Zerodha margin page; SEBI margin framework circulars (cross-reference *Leverage and margin*) -->
 
 <!-- standing-disclaimer -->

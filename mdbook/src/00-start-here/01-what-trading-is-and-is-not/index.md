@@ -27,7 +27,7 @@ The label depends on how you hold the position, not on the instrument. The same 
 
 **A price is a meeting point, not a verdict.** A traded price is where one buyer's expectation and one seller's expectation met at one moment. It is not a guarantee of what the company is worth, and it is not a promise of where the price goes next.
 
-**Trading is a transfer before costs.** In any single trade, one participant's gain is another's loss, and the exchange sits in the middle to match orders. After brokerage, taxes and other charges, a typical active trader starts behind. Later chapters put numbers on this. The SEBI study on individual traders is cross-referenced in T9.4 [VERIFY: study title and figures].
+**Trading is a transfer before costs.** In any single trade, one participant's gain is another's loss, and the exchange sits in the middle to match orders. After brokerage, taxes and other charges, a typical active trader starts behind. Later chapters put numbers on this. The SEBI study on individual traders is cross-referenced in *SEBI's F&O studies as a case study* [VERIFY: study title and figures].
 
 **Three kinds of result must never be mixed.**
 
@@ -71,11 +71,9 @@ Set them equal and solve:
 
 **Check:** at W = 6/7, the average gain is 6/7 x 500 = Rs 428.57, and the average loss is 1/7 x 3,000 = Rs 428.57. The two match.
 
-So the hypothetical trader must win about 86 of every 100 trades just to break even, before any costs. Costs push the required win rate higher (see T2.2).
+So the hypothetical trader must win about 86 of every 100 trades just to break even, before any costs. Costs push the required win rate higher (see *Costs on a trade*).
 
 ## Try it
-
-No interactive demo is specified for this chapter. <!-- OPEN: spec gives no interactive demo for T0.1; none placed. -->
 
 ### Guided exercise
 
@@ -118,10 +116,9 @@ Six questions check the three definitions, the break-even arithmetic and the cla
 2. Write what evidence would make you stop. For example: "a loss larger than the trading capital I set myself in advance".
 3. Do not record any live account or any real trade.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
-- It does not tell you which investments or trades will work. No chapter does.
-- The break-even win rate is before costs. The real figure is higher (T2.2).
+- The break-even win rate is before costs. The real figure is higher (*Costs on a trade*).
 - A calculation is not a result. A backtest is not a live record.
 - Knowing the definitions is learning competence. It is not profitability.
 
@@ -138,15 +135,13 @@ Six questions check the three definitions, the break-even arithmetic and the cla
 **Sources (names only):**
 
 - SEBI investor education pages.
-- SEBI study on F&O trading (cross-reference T9.4).
+- SEBI study on F&O trading (cross-reference *SEBI's F&O studies as a case study*).
 - Zerodha Varsity, as a reference only (link, no text copied).
 
 **Facts to verify:**
 
-- [VERIFY: SEBI study on individual traders, title and figures] (cross-referenced in T9.4; no figures are quoted in this chapter).
+- [VERIFY: SEBI study on individual traders, title and figures] (cross-referenced in *SEBI's F&O studies as a case study*; no figures are quoted in this chapter).
 
-Last content review: not yet done
-
-<!-- facts-needed: SEBI study on individual traders (title and figures; cross-referenced in T9.4) -->
+<!-- facts-needed: SEBI study on individual traders (title and figures; cross-referenced in *SEBI's F&O studies as a case study*) -->
 
 <!-- standing-disclaimer -->

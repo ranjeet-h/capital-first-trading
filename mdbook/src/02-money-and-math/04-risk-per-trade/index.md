@@ -17,7 +17,7 @@ A trader with Rs 50,000 decides in advance to risk Rs 500 on a trade. Two plans 
 
 Start with the rule that comes first: **the risk per trade is set before the trade, as a rupee amount derived from your capital.**
 
-- **Capital** is the trading capital you have set aside (T0.2).
+- **Capital** is the trading capital you have set aside (*The capital-first rules*).
 - **Risk percentage** is the share of that capital you accept losing on one trade. A common planning figure is 1%, which is a design default in this book, not a fact.
 - **Risk budget** is capital x risk percentage, in rupees.
 
@@ -82,7 +82,7 @@ Move the stop closer to the entry and watch the share count rise. Move it furthe
 | Position value before cap | 100 x 250 | Rs 25,000 |
 | Position as % of capital | 25,000 / 50,000 | 50% |
 
-A 50% position is above the default 25% concentration cap used in Lab 1. With the cap, the largest allowed position is 12,500 / 250 = 50 shares, and the planned loss becomes 50 x 5 = Rs 250, not Rs 500. The cap, not the risk budget, sets the size here. T2.5 works through this in full.
+A 50% position is above the default 25% concentration cap used in Lab 1. With the cap, the largest allowed position is 12,500 / 250 = 50 shares, and the planned loss becomes 50 x 5 = Rs 250, not Rs 500. The cap, not the risk budget, sets the size here. *Position sizing step by step* works through this in full.
 
 **Plan 3: stop at Rs 230 (wider)**
 
@@ -151,10 +151,10 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 3. Record the shares and the planned loss for each stop distance in a learning-note entry.
 4. Mark the entry as hypothetical. No order is placed.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - It does not tell you where a good stop is. The stop must come from the reason for the trade. This chapter only does the arithmetic.
-- It does not show that a 1% planned risk is a 1% maximum loss. A gap or a circuit can take the loss beyond the plan (T2.6).
+- It does not show that a 1% planned risk is a 1% maximum loss. A gap or a circuit can take the loss beyond the plan (*Slippage, gaps and planned versus actual risk*).
 - It does not make a tight stop safer. A very tight stop is hit by ordinary price noise and can repeat a small loss many times.
 - It does not change the rule that the risk percentage is never raised after losses.
 
@@ -173,7 +173,5 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 - The 1% risk and 25% concentration cap are design defaults of the book, not facts.
 
 <!-- facts-needed: none for this chapter (the 1% and 25% defaults are design settings; no market rule is stated). -->
-
-Last content review: not yet done
 
 <!-- standing-disclaimer -->

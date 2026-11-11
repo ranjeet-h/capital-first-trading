@@ -1,9 +1,9 @@
 import json, re, sys, glob, os
 root = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'mdbook', 'src')
-H = ['## Hook','## The idea','## See it','## Worked example','## Try it','### Guided exercise','### Independent exercise','## Quiz','## Paper task','## What this does NOT tell you','## Remember','## Sources and verification']
+H = ['## Hook','## The idea','## See it','## Worked example','## Try it','### Guided exercise','### Independent exercise','## Quiz','## Paper task','## Limits and common mistakes','## Remember','## Sources and verification']
 ALLOWED = set('order-flow-sim order-book-sim candle-builder sl-trigger-sim leverage-demo position-size-viz drawdown-compounding streak-sim indicator-playground pattern-quiz predict-next spot-the-mistake quiz-block exercise-block gate-check kite-illustration risk-limit-simulator capital-allocation-planner lab-position-size lab-costs lab-journal strategy-simulator'.split())
 BANNED = re.compile(r'guaranteed|sure profit|easy money|good trade|risk-free', re.I)
-for d in sorted(glob.glob(root + '/*/*/')):
+for d in sorted([x for x in glob.glob(root + '/*/*/')]):
     name = d[len(root)+1:]
     probs = []
     ip = d + 'index.md'; qp = d + 'quiz.json'

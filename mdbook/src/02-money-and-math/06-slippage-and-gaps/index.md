@@ -26,14 +26,14 @@ Terms, defined once:
 - **Trigger**: the price at which a stop becomes active.
 - **Fill**: the price at which an order is actually executed.
 - **Gap**: the price opens, or jumps, past a level with no trading in between. A stop triggers at the first price available, which can be far from the stop.
-- **Slippage**: the difference between the price you expected and the price you got. It comes from the bid-ask spread, thin depth and the order type (T1.5).
-- **Circuit**: an exchange price band (T1.7). A stock locked at a circuit may have no trades on the exit side, so the exit can be blocked altogether.
+- **Slippage**: the difference between the price you expected and the price you got. It comes from the bid-ask spread, thin depth and the order type (*Order matching, spread and liquidity*).
+- **Circuit**: an exchange price band (*Circuit limits and halts*). A stock locked at a circuit may have no trades on the exit side, so the exit can be blocked altogether.
 
 In words: the actual loss is the entry price minus the exit fill price, times the shares. In symbols: loss = (entry - fill) x shares. Divide by the planned risk in rupees to express it in R, where 1R is the planned loss.
 
 Why this matters for swing trades. An end-of-day swing trade holds through the night. News, global moves and corporate events can happen while the market is closed. Overnight gap risk is part of holding overnight; it is not a rare accident you can design out of the plan.
 
-Order types. Stop orders come in forms (for example SL and SL-M) that behave differently at the trigger. [VERIFY: how SL and SL-M orders trigger and fill on Kite (see T4.4)]. Do not assume one behaves like the other.
+Order types. Stop orders come in forms (for example SL and SL-M) that behave differently at the trigger. [VERIFY: how SL and SL-M orders trigger and fill on Kite (see *Order types*)]. Do not assume one behaves like the other.
 
 The stress test. You cannot know the next opening price. What you can do is choose a gap assumption, decide how large a gap loss you can accept, and size the position so that the assumed gap stays inside that limit. The assumption is your choice, and a different assumption gives a different size.
 
@@ -112,9 +112,9 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 4. Record the slippage fields (slippage_entry_inr and slippage_exit_inr) for each trade, using zero where no slippage applies.
 5. Write the planned and actual loss side by side and note which one your plan had described.
 
-<!-- OPEN: The spec asks for planned and actual loss fields. The Lab 3 spec has plan_risk_inr and net_pnl_inr but no separate actual-loss field, so this task uses the slippage fields only. The learning-note mode is also missing from the Lab 3 mode list (paper, live, forward, backtest, kite_demo) even though T0.3 lists it. -->
+<!-- OPEN: The spec asks for planned and actual loss fields. The Lab 3 spec has plan_risk_inr and net_pnl_inr but no separate actual-loss field, so this task uses the slippage fields only. The learning-note mode is also missing from the Lab 3 mode list (paper, live, forward, backtest, kite_demo) even though *How to use this book* lists it. -->
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - A stop is an instruction. It does not fix the exit price, and in a circuit it may not produce an exit at all.
 - Planned risk is the plan, not a ceiling on what you can lose.
@@ -137,7 +137,7 @@ Sources (names only):
 - Zerodha support pages on stop-loss orders
 - NSE documentation on order types
 - NSE circuit limit pages
-- Chapter T1.7 (circuit limits and price bands)
+- Chapter *Circuit limits and halts* (circuit limits and price bands)
 
 Items to verify before this chapter is final:
 
@@ -145,8 +145,6 @@ Items to verify before this chapter is final:
 - [VERIFY: exchange rules for stop and trigger orders]
 - [VERIFY: circuit band rules that apply to an exit during a locked circuit]
 
-<!-- facts-needed: SL and SL-M trigger and fill behaviour on Kite; exchange rules for stop and trigger orders; circuit rules for locked exits (cross-reference T1.7) -->
-
-Last content review: not yet done
+<!-- facts-needed: SL and SL-M trigger and fill behaviour on Kite; exchange rules for stop and trigger orders; circuit rules for locked exits (cross-reference *Circuit limits and halts*) -->
 
 <!-- standing-disclaimer -->

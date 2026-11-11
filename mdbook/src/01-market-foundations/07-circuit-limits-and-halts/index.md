@@ -1,13 +1,13 @@
 <!-- meta
 id: T1.7
-title: Circuit limits, price bands and trading halts
+title: Circuit limits and halts
 page_type: Concept
 prerequisites: [T1.4, T1.6]
 labs: []
 estimated_minutes: 20
 -->
 
-# Circuit limits, price bands and trading halts
+# Circuit limits and halts
 
 ## Hook
 
@@ -98,10 +98,10 @@ Five questions on band arithmetic, what a circuit does and does not prevent, sto
 1. Write a hypothetical holding: 100 shares, previous close Rs 400, stop-loss at Rs 380, dummy band of 10%.
 2. Write what your plan says if the stock locks at the lower band on day one.
 3. Write what your plan says if it is still locked on day two.
-4. Write the largest loss you would accept on this holding, and check it against your trading capital (see T0.2 and T2.2).
+4. Write the largest loss you would accept on this holding, and check it against your trading capital (see *The capital-first rules* and *Costs on a trade*).
 5. Log it in your journal, or on paper until the journal app is ready.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - The band percentages in this chapter are dummy values. Real bands are [VERIFY: band categories and percentages].
 - A band does not cap your loss. A locked position can stay open and lose value.
@@ -115,7 +115,7 @@ Five questions on band arithmetic, what a circuit does and does not prevent, sto
 - Upper band = previous close x (1 + band). Lower band = previous close x (1 - band).
 - A locked circuit can stop any trade beyond the band, including your exit.
 - A circuit limits the price move. It does not limit your loss.
-- Position size must allow for locked days (T2.6).
+- Position size must allow for locked days (*Slippage, gaps and planned versus actual risk*).
 
 ## Sources and verification
 
@@ -130,8 +130,6 @@ Facts to verify:
 - [VERIFY: index-level circuit breaker levels and rules, NSE circular]
 - [VERIFY: trading halt rules, SEBI and NSE circulars]
 - [VERIFY: band revision rule]
-
-Last content review: not yet done
 
 <!-- facts-needed: band categories and percentages; band reference; index circuit breaker levels; halt rules; band revision rule -->
 

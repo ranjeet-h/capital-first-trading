@@ -1,13 +1,13 @@
 <!-- meta
 id: T1.8
-title: Indices (Nifty, Sensex) and what they measure
+title: Indices: Nifty and Sensex
 page_type: Concept
 prerequisites: [T1.1, T1.4]
 labs: []
 estimated_minutes: 20
 -->
 
-# Indices (Nifty, Sensex) and what they measure
+# Indices: Nifty and Sensex
 
 ## Hook
 
@@ -115,7 +115,7 @@ Five questions on point and percent change, weights, what an index does and does
 4. Compute each day's point change and percent change.
 5. Write no conclusions. Log it in your journal, or on paper until the journal app is ready.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - An index move describes a basket. It does not describe your stock.
 - A rising index does not mean every stock rose. Breadth and weights matter.
@@ -142,8 +142,6 @@ Facts to verify:
 - [VERIFY: index constituents and weighting methodology, NSE indices methodology document]
 - [VERIFY: rebalancing schedule, NSE indices]
 - [VERIFY: product list, if index-linked products are mentioned]
-
-Last content review: not yet done
 
 <!-- facts-needed: index constituents and weighting methodology for the main indices; rebalancing schedule; index-linked product list -->
 

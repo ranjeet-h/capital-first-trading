@@ -138,12 +138,12 @@ Mode: **learning note** (not a trading record). Log it in your journal (or on pa
 3. Write down the worst drawdown for each trader as a percentage.
 4. Add one line: "Same win rate, different size, different drawdown." Mark the note as hypothetical.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - It does not tell you that any trading approach is profitable. The sequence is made up and has only ten trades.
-- It does not show that a 50% win rate is good or bad. Win rate alone never settles the result (see T2.8 for expectancy).
-- It ignores costs. Real trades pay costs (T2.2), and those change every line of the table.
-- It does not show that a particular R is safe. Real losing streaks can be longer than four trades (T2.10).
+- It does not show that a 50% win rate is good or bad. Win rate alone never settles the result (see *Expectancy and profit factor* for expectancy).
+- It ignores costs. Real trades pay costs (*Costs on a trade*), and those change every line of the table.
+- It does not show that a particular R is safe. Real losing streaks can be longer than four trades (*Consecutive losses and losing streaks*).
 
 ## Remember
 
@@ -155,12 +155,10 @@ Mode: **learning note** (not a trading record). Log it in your journal (or on pa
 
 ## Sources and verification
 
-- The book's own worked examples (Chapter T2.1 in the curriculum specification).
+- The book's own worked examples (Chapter *Why money math comes before charts* in the curriculum specification).
 - Zerodha Varsity, position sizing concepts, as a reference only (link, no text copied).
 
 <!-- facts-needed: none for this chapter (all figures are hypothetical arithmetic). -->
-
-Last content review: not yet done
 
 <!-- OPEN: The spec's Lab 3 paper task asks for a ten-trade table for both traders; the journal fields for this are not yet defined in LABS.md, so the paper version is written as a table. -->
 

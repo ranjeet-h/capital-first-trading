@@ -1,13 +1,13 @@
 <!-- meta
 id: T1.4
-title: How prices move - supply and demand, the order book
+title: How prices move: the order book
 page_type: Concept
 prerequisites: [T1.2, T1.3]
 labs: []
 estimated_minutes: 25
 -->
 
-# How prices move: supply and demand, the order book
+# How prices move: the order book
 
 ## Hook
 
@@ -113,7 +113,7 @@ Six questions check the walked-up average price, the last price, the limit order
 3. Write both in your own words.
 4. Label the layout "unverified": [VERIFY: Kite demo depth view]. The demo uses dummy data.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - The book does not tell you where any price will go. It explains how a price is formed, not what it will do.
 - A displayed price is not the fill price for a large order. The average can be higher.
@@ -140,9 +140,7 @@ Six questions check the walked-up average price, the last price, the limit order
 
 - Market depth levels shown in Kite. [VERIFY: Zerodha Kite help page]
 - Kite demo depth view layout. [VERIFY: Kite demo depth view]
-- Matching rules and price-time priority, if used later (cross-reference T1.5). [VERIFY: NSE market rules]
-
-Last content review: not yet done
+- Matching rules and price-time priority, if used later (cross-reference *Order matching, spread and liquidity*). [VERIFY: NSE market rules]
 
 <!-- facts-needed: Zerodha Kite help page (market depth levels); Kite demo depth view layout; NSE market rules for matching -->
 

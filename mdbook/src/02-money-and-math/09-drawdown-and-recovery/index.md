@@ -23,7 +23,7 @@ A hypothetical Rs 50,000 account falls 50%, to Rs 25,000. A 50% gain on Rs 25,00
 
 **Compounding.** Each percentage move applies to the balance at that time. Equal up and down percentages do not cancel. Rs 50,000 gains 10% to Rs 55,000, then loses 10% of Rs 55,000 (Rs 5,500) to Rs 49,500. The net result is minus 1%, and the order of the moves does not change this.
 
-**Risk of ruin** is the probability, over many trades, that equity falls to a level from which the plan cannot continue. It is not a single bad trade. It depends on the edge, the risk per trade and the streaks (T2.10). The book computes it by simulation in Lab 4, not with a shortcut here. For the same sequence of outcomes, a smaller risk per trade lowers the chance of a deep drawdown.
+**Risk of ruin** is the probability, over many trades, that equity falls to a level from which the plan cannot continue. It is not a single bad trade. It depends on the edge, the risk per trade and the streaks (*Consecutive losses and losing streaks*). The book computes it by simulation in Lab 4, not with a shortcut here. For the same sequence of outcomes, a smaller risk per trade lowers the chance of a deep drawdown.
 
 ## See it
 
@@ -95,19 +95,19 @@ Six questions cover recovery arithmetic, compounding, the meaning of risk of rui
 
 Mode: **learning note**. Log it in Lab 3 (or on paper until the journal app is ready).
 
-1. Take the ten-row hypothetical table for Trader A from T2.1.
+1. Take the ten-row hypothetical table for Trader A from *Why money math comes before charts*.
 2. Enter it in Lab 3 as hypothetical rows, or work it on paper with the balance after each trade.
 3. Record the maximum drawdown in rupees and as a percentage, measured from the peak. Lab 3 shows the drawdown curve and the maximum drawdown.
-4. Compare your result with the 4% worked out in T2.1, and note from which peak the figure is measured.
+4. Compare your result with the 4% worked out in *Why money math comes before charts*, and note from which peak the figure is measured.
 
-<!-- OPEN: The learning-note mode is in the T0.3 journal mode list but not in the Lab 3 mode list (paper, live, forward, backtest, kite_demo). Confirm before the journal app is built. -->
+<!-- OPEN: The learning-note mode is in the *How to use this book* journal mode list but not in the Lab 3 mode list (paper, live, forward, backtest, kite_demo). Confirm before the journal app is built. -->
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - Drawdown depends on the order of the results. The same trades in a different order give a different path.
 - Recovery arithmetic does not say how long a recovery will take, or whether it will happen.
 - Risk of ruin is not computed here. Lab 4 estimates it by simulation.
-- A drawdown limit is a rule you set before trading. Withdrawals during a drawdown are not allowed (T2.17).
+- A drawdown limit is a rule you set before trading. Withdrawals during a drawdown are not allowed (*Scaling and withdrawal policy*).
 - The examples are hypothetical. They are not a forecast of any account.
 
 ## Remember
@@ -127,7 +127,5 @@ Sources (names only):
 - Standard drawdown arithmetic, computed in this chapter
 
 Items to verify: none for this chapter. All numbers are hypothetical.
-
-Last content review: not yet done
 
 <!-- standing-disclaimer -->

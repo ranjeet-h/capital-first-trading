@@ -39,7 +39,7 @@
       box.appendChild(el("div", "cft-params",
         "Planned inputs: " + rest.map(function (p) { return p[0] + " = " + p[1]; }).join(", ")));
     }
-    box.appendChild(el("div", "cft-note", "Not built yet. It arrives in a later milestone."));
+    box.appendChild(el("div", "cft-note", "Interactive demo coming soon."));
     return box;
   }
 
@@ -165,6 +165,7 @@
   }
 
   function init() {
+    markVerify();
     var root = document.querySelector("main") || document.body;
     commentNodes(root).forEach(function (n) {
       var t = n.nodeValue.trim();
@@ -177,9 +178,29 @@
       } else if (/^standing-disclaimer/.test(t)) {
         n.parentNode.insertBefore(host, n);
         var d = el("div", "cft-box cft-disclaimer",
-          "Education only. Not investment advice. Standing disclaimer wording is pending owner approval.");
+          "Education only. This is not investment advice.");
         host.appendChild(d);
       }
+    });
+  }
+
+  function markVerify() {
+    var root = document.querySelector("main") || document.body;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var nodes = [];
+    while (w.nextNode()) if (/\[VERIFY:/.test(w.currentNode.nodeValue)) nodes.push(w.currentNode);
+    nodes.forEach(function (n) {
+      var frag = document.createDocumentFragment();
+      var parts = n.nodeValue.split(/(\[VERIFY:[^\]]*\])/);
+      parts.forEach(function (p) {
+        var m = p.match(/^\[VERIFY:\s*([^\]]*)\]$/);
+        if (m) {
+          var s = el("span", "cft-verify", "check: " + m[1]);
+          s.title = "Confirm this against the official source before relying on it";
+          frag.appendChild(s);
+        } else if (p) frag.appendChild(document.createTextNode(p));
+      });
+      n.parentNode.replaceChild(frag, n);
     });
   }
 

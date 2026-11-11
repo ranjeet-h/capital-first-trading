@@ -1,13 +1,13 @@
 <!-- meta
 id: T2.13
-title: Leverage and margin, theory only, and how they magnify loss
+title: Leverage and margin
 page_type: Math/Calculator
 prerequisites: [T2.9, T2.4]
 labs: [Lab 1]
 estimated_minutes: 25
 -->
 
-# Leverage and margin: theory only, and how they magnify loss
+# Leverage and margin
 
 ## Hook
 
@@ -25,7 +25,7 @@ Hypothetical: own capital is Rs 50,000. A 10% fall in a Rs 50,000 holding costs 
 - **Financing costs.** Borrowed funds usually carry a cost [VERIFY: financing rates on margin funding].
 - **Intraday leverage** has auto square-off rules, meaning positions can be closed by the broker at a set time [VERIFY: intraday auto square-off timing and rules].
 
-This book does not practise leverage. The leverage demo is theory only, and the book has no practice path for it. F&O is covered as theory in T9.1. Lab 1 flags any leverage above 1x as rejected for cash trades.
+This book does not practise leverage. The leverage demo is theory only, and the book has no practice path for it. F&O is covered as theory in *Futures and why they are leveraged*. Lab 1 flags any leverage above 1x as rejected for cash trades.
 
 ## See it
 
@@ -102,10 +102,10 @@ Mode: **learning note**. No orders are placed, and the Kite demo is not used for
 
 The Kite demo has no practice path for leverage. Do not look for leverage features in it.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - This table leaves out financing costs, charges and margin rules. Those are [VERIFY: margin framework and collateral rules] and must be checked with the broker and the regulator.
-- The wipe-out formula is for a long position and ignores costs. A gap can take the price past the wipe-out line (T2.6).
+- The wipe-out formula is for a long position and ignores costs. A gap can take the price past the wipe-out line (*Slippage, gaps and planned versus actual risk*).
 - Leverage does not improve a plan. It multiplies whatever the plan does, in both directions.
 - A stop does not protect against margin calls or forced sales. The quiz explains why.
 - The 2x example is an arithmetic illustration. It is not an offer and not a product.
@@ -131,12 +131,10 @@ Facts to verify before this chapter is final:
 - [VERIFY: current margin rules and collateral rules]
 - [VERIFY: intraday auto square-off timing and rules]
 - [VERIFY: financing rates on margin funding]
-- F&O margin basics, for the theory chapter T9.1.
+- F&O margin basics, for the theory chapter *Futures and why they are leveraged*.
 
-<!-- facts-needed: margin framework and collateral rules (SEBI circulars; Zerodha margin page); intraday auto square-off timing and rules (Zerodha support; NSE circulars); financing or interest rates on margin funding (Zerodha charges page); F&O margin basics for T9.1 -->
+<!-- facts-needed: margin framework and collateral rules (SEBI circulars; Zerodha margin page); intraday auto square-off timing and rules (Zerodha support; NSE circulars); financing or interest rates on margin funding (Zerodha charges page); F&O margin basics for *Futures and why they are leveraged* -->
 
 <!-- OPEN: spec says Lab 1 "flags leverage above 1x as rejected for cash trades", but LABS.md Lab 1 has no leverage input and lists "no leverage" in its scope. Reviewer to confirm the reject rule before this line is kept. -->
-
-Last content review: not yet done
 
 <!-- standing-disclaimer -->

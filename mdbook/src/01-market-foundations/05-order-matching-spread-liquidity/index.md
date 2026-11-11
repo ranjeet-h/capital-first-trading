@@ -1,13 +1,13 @@
 <!-- meta
 id: T1.5
-title: Order matching, bid-ask spread, market depth and liquidity
+title: Order matching, spread and liquidity
 page_type: Concept
 prerequisites: [T1.4]
 labs: []
 estimated_minutes: 20
 -->
 
-# Order matching, bid-ask spread, market depth and liquidity
+# Order matching, spread and liquidity
 
 ## Hook
 
@@ -105,12 +105,12 @@ Six questions on spread arithmetic, depth, liquidity and matching priority. Each
 4. Log the three readings in your journal, or on paper until the journal app is ready. Mark them "kite_demo" and "dummy data".
 5. Do not place any order.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - A spread is the cost at one moment, for one size. A larger order can fill at prices further from the best price.
 - A deep book now does not promise the same depth later, or when you need to exit.
 - The spread says nothing about whether a price is right or wrong.
-- Spread cost is before brokerage, taxes and other charges. Those are covered in T2.2.
+- Spread cost is before brokerage, taxes and other charges. Those are covered in *Costs on a trade*.
 - Matching rules and tick sizes are not stated as facts here. Use the official values once they are verified.
 
 ## Remember
@@ -133,8 +133,6 @@ Facts to verify:
 - [VERIFY: matching rule and price-time priority, NSE and BSE]
 - [VERIFY: tick size, NSE tick size page]
 - [VERIFY: Kite demo depth view layout]
-
-Last content review: not yet done
 
 <!-- facts-needed: matching priority rule (NSE, BSE); tick size (NSE); Kite demo depth view layout -->
 

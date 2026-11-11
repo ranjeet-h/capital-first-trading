@@ -1,13 +1,13 @@
 <!-- meta
 id: T1.6
-title: Trading sessions, pre-open and closing auctions, market timings and holidays
+title: Trading sessions, timings and holidays
 page_type: Concept
 prerequisites: [T1.3, T1.4]
 labs: []
 estimated_minutes: 15
 -->
 
-# Trading sessions, pre-open and closing auctions, market timings and holidays
+# Trading sessions, timings and holidays
 
 ## Hook
 
@@ -18,7 +18,7 @@ On Friday evening a stock closes at Rs 400. You write a plan: buy on the next se
 A trading day is not one continuous block. It has phases, and each phase handles orders in a different way.
 
 - **Pre-open:** orders are collected, and an opening price is worked out before continuous trading starts. [VERIFY: exact phases, times and mechanics, NSE market timings]
-- **Continuous trading:** orders are matched as they arrive, as described in T1.5.
+- **Continuous trading:** orders are matched as they arrive, as described in *Order matching, spread and liquidity*.
 - **Closing session:** a closing price is set near the end of the day. [VERIFY: closing price method, NSE closing session rules]
 
 **Auctions.** In the pre-open and closing phases, many orders are matched at one price. In plain words, the exchange picks the price at which the most shares can trade. [VERIFY: auction method]
@@ -33,7 +33,7 @@ A trading day is not one continuous block. It has phases, and each phase handles
 
 **How to find the next session.** Start from the day after your reference point. Skip weekends. Skip exchange holidays. The first day left is the next session.
 
-**End-of-day decisions.** If you decide after the close, the order is placed at the next session. The next session can open at a different price from the close you planned around. That gap is covered in T2.6.
+**End-of-day decisions.** If you decide after the close, the order is placed at the next session. The next session can open at a different price from the close you planned around. That gap is covered in *Slippage, gaps and planned versus actual risk*.
 
 **Orders placed when the market is closed** are handled under the rules of your broker and the exchange. [VERIFY: order handling outside market hours]
 
@@ -121,13 +121,13 @@ Five questions on phase order, next-session arithmetic, weekends, the pre-open a
 3. Using that list, write the next 10 trading dates from today, skipping weekends and listed holidays.
 4. Add one line saying what you checked and where.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - Phases, times, holidays and special sessions change. The times in this chapter are placeholders until they are checked against official pages.
 - A holiday list from a previous year is not this year's list.
 - Knowing the next session does not tell you the price you will get in it.
 - Special sessions can change the normal timings.
-- A stop or plan built on one close can meet a very different opening price after a weekend or holiday. This is gap risk (T2.6).
+- A stop or plan built on one close can meet a very different opening price after a weekend or holiday. This is gap risk (*Slippage, gaps and planned versus actual risk*).
 
 ## Remember
 
@@ -151,8 +151,6 @@ Facts to verify:
 - [VERIFY: holiday list for the current year, NSE]
 - [VERIFY: special session dates, NSE circular]
 - [VERIFY: order handling outside market hours, broker and exchange rules]
-
-Last content review: not yet done
 
 <!-- facts-needed: market phases and times; closing price method; current-year holiday list; special session dates; order handling outside market hours -->
 

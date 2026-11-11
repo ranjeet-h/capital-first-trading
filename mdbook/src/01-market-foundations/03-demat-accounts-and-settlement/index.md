@@ -1,13 +1,13 @@
 <!-- meta
 id: T1.3
-title: Demat and trading accounts; how a buy becomes a holding; T+1 settlement and clearing
+title: Demat accounts and settlement
 page_type: Concept
 prerequisites: [T1.2]
 labs: []
 estimated_minutes: 25
 -->
 
-# Demat and trading accounts; how a buy becomes a holding; T+1 settlement and clearing
+# Demat accounts and settlement
 
 ## Hook
 
@@ -33,7 +33,7 @@ A hypothetical beginner buys 20 shares at Rs 250 in the morning, sees the order 
 
 **Shares must be in the demat account before they can be sold for delivery** [VERIFY: rule on selling shares not yet credited].
 
-**Holding and position are different.** A delivery holding is settled shares sitting in your demat account. An intraday position is not a delivery holding. Intraday positions are covered in T4.7.
+**Holding and position are different.** A delivery holding is settled shares sitting in your demat account. An intraday position is not a delivery holding. Intraday positions are covered in *Order book*.
 
 **The timeline is not instant.** The execution, clearing and settlement stages happen at different times. The holding appears after settlement, not at the moment of the fill.
 
@@ -66,8 +66,6 @@ Follow the arrows from left to right. The gap between execution and settlement i
 **Timeline example.** A buy executed on a hypothetical Monday settles on Tuesday, if Tuesday is a working day [VERIFY: holiday calendar]. If the next day is a holiday, the settlement moves to the next working day.
 
 ## Try it
-
-No interactive demo is specified for this chapter. <!-- OPEN: spec gives a static timeline and no interactive demo; none placed. -->
 
 ### Guided exercise
 
@@ -120,7 +118,7 @@ Six questions check the holding timing, the meaning of T+1, the netting arithmet
 3. Label the layout "check your own Kite for the current layout".
 4. The Kite demo uses dummy data for interface practice. Zerodha does not provide a paper-trading account. [VERIFY: wording on support.zerodha.com before this is printed in the book].
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - Settlement risk is low for a learning exercise but real for live trades. Do not assume a sale is possible the same day without verifying the current rule.
 - The dates and the netting rules here are a concept. The real rules are in the exchange and SEBI documents.
@@ -149,11 +147,9 @@ Six questions check the holding timing, the meaning of T+1, the netting arithmet
 - T+1 settlement rule and effective date. [VERIFY: SEBI circular; NSE clearing page]
 - Holiday calendar for settlement days. [VERIFY: NSE holiday list]
 - Rule on selling shares not yet credited. [VERIFY: SEBI or NSE rule]
-- Demat account opening and annual charges, if mentioned later (cross-reference T2.2). [VERIFY: Zerodha charges page; CDSL/NSDL tariff]
+- Demat account opening and annual charges, if mentioned later (cross-reference *Costs on a trade*). [VERIFY: Zerodha charges page; CDSL/NSDL tariff]
 - Netting rules and who nets for which account. [VERIFY: clearing corporation rules]
 - Kite demo as dummy data, and no paper-trading account. [VERIFY: wording on support.zerodha.com]
-
-Last content review: not yet done
 
 <!-- facts-needed: T+1 rule and effective date; NSE holiday list; rule on selling undelivered shares; netting rules; Zerodha charges page; CDSL/NSDL tariff; Kite demo wording on support.zerodha.com -->
 

@@ -1,13 +1,13 @@
 <!-- meta
 id: T1.9
-title: Corporate actions: dividends, splits, bonus, rights and their effect on prices and charts
+title: Corporate actions
 page_type: Concept
 prerequisites: [T1.1, T1.4]
 labs: []
 estimated_minutes: 20
 -->
 
-# Corporate actions: dividends, splits, bonus, rights and their effect on prices and charts
+# Corporate actions
 
 ## Hook
 
@@ -75,7 +75,7 @@ Hypothetical, using round figures.
 | Value of shares | 100 x 990 | Rs 99,000 |
 | Total value | 99,000 + 1,000 | Rs 1,00,000 |
 
-This is before market movement and before tax. Tax treatment of dividends is covered in T2.3.
+This is before market movement and before tax. Tax treatment of dividends is covered in *Taxes on trading profits*.
 
 **Unadjusted chart.** The price drops from Rs 1,000 to Rs 500 on the split day. The fall on the chart is (500 - 1,000) / 1,000 = -50%. That is a change in the share count and price, not a loss.
 
@@ -122,13 +122,13 @@ Five questions on split arithmetic, dividend value, unadjusted charts and whethe
 4. Write no trading decision based on the announcement.
 5. Log it in your journal, or on paper until the journal app is ready.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - A split or bonus does not change the value of your holding at the moment it happens.
 - A dividend does not always increase your total value. The price adjusts on the ex-date, and the market moves on top of that.
 - A drop on an ex-date or split is not a sell signal, and an announcement alone is not a trading reason.
 - Dates, ratios and rights rules must be checked against the official filing.
-- Tax on dividends is covered in T2.3, not here.
+- Tax on dividends is covered in *Taxes on trading profits*, not here.
 
 ## Remember
 
@@ -151,10 +151,8 @@ Facts to verify:
 - [VERIFY: ex-date rules, NSE corporate actions page]
 - [VERIFY: rights issue rules, SEBI]
 - [VERIFY: adjustment method for historical prices]
-- [VERIFY: tax treatment of dividends, cross-reference T2.3]
+- [VERIFY: tax treatment of dividends, cross-reference *Taxes on trading profits*]
 
-Last content review: not yet done
-
-<!-- facts-needed: record date, ex-date and announcement definitions; ex-date rules; rights issue rules; price adjustment method; dividend tax treatment (T2.3) -->
+<!-- facts-needed: record date, ex-date and announcement definitions; ex-date rules; rights issue rules; price adjustment method; dividend tax treatment (*Taxes on trading profits*) -->
 
 <!-- standing-disclaimer -->

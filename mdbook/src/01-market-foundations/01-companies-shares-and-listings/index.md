@@ -1,13 +1,13 @@
 <!-- meta
 id: T1.1
-title: Companies, shares and why firms list
+title: Companies, shares and listings
 page_type: Concept
 prerequisites: [T0.1]
 labs: []
 estimated_minutes: 25
 -->
 
-# Companies, shares and why firms list
+# Companies, shares and listings
 
 ## Hook
 
@@ -69,8 +69,6 @@ The holder's ownership fell from 0.1% to 0.0667% because the share count rose. T
 
 ## Try it
 
-No interactive demo is specified for this chapter. <!-- OPEN: spec gives a static Mermaid money-flow diagram with no interactive demo; none placed. -->
-
 ### Guided exercise
 
 **Task:** A holder owns 250 shares in a company with 20,00,000 shares outstanding. The share price is Rs 150. Compute the holder's ownership percentage and the value of the holding.
@@ -110,7 +108,7 @@ Five questions check ownership arithmetic, the money flow in each market, and th
 3. Write, in your own words, what the company said it would use the money for.
 4. Record the source, the date you accessed it, and the company name. Do not buy anything.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - It does not tell you whether any IPO is worth buying. An IPO gets no exemption from the capital-first rules.
 - An IPO hype story and allotment excitement are common causes of impulsive buying.
@@ -137,8 +135,6 @@ Five questions check ownership arithmetic, the money flow in each market, and th
 
 - IPO process, timelines, book-building and allotment rules. [VERIFY: SEBI ICDR regulations]
 - Any current IPO figures are out of scope for this chapter.
-
-Last content review: not yet done
 
 <!-- facts-needed: SEBI ICDR regulations (IPO process, timelines, book-building, allotment) -->
 

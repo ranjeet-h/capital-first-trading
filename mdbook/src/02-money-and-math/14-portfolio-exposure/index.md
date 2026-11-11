@@ -20,7 +20,7 @@ Four terms, each defined once:
 - **Exposure** is the rupee value of your positions, usually written as a percentage of capital. Exposure is not risk. A position can be large and still carry a small planned loss.
 - **Open risk** is the planned loss if every stop fills at its stop price:
   - Open risk = sum over positions of (entry - stop) x shares.
-  - This is the planned loss, not a maximum loss. Gaps and circuits can make the real loss larger (T2.6).
+  - This is the planned loss, not a maximum loss. Gaps and circuits can make the real loss larger (*Slippage, gaps and planned versus actual risk*).
 - **Concentration** is how much of capital sits in one stock, one sector or one theme.
 - **Correlation** means positions that tend to move together. Stocks in the same sector often do. Five stocks that move together are closer to one bet than to five bets.
 
@@ -29,7 +29,7 @@ Other points:
 - **Cash** = capital - deployed value. Deployed value is the total of the position values.
 - **Diversification** reduces the risk from one company or one event. It does not remove risk that affects the whole market.
 - **Limits.** You set a maximum per position, a maximum per sector and a maximum total open risk. Lab 1 uses a 25% per-position cap as a design default. Sector limits are your choice.
-- **Adding to a losing position** to lower the average cost raises concentration in a failing idea. This is averaging down, and it is banned by the capital-first rules (T2.5). Check the limits before adding.
+- **Adding to a losing position** to lower the average cost raises concentration in a failing idea. This is averaging down, and it is banned by the capital-first rules (*Position sizing step by step*). Check the limits before adding.
 - **Sector labels** come from your data. Their source must be checked against the NSE sectoral index definitions [VERIFY: sector classification source].
 
 ## See it
@@ -71,7 +71,7 @@ The chart shows that Sector X is the largest slice of capital. Sector X is 45% o
 
 This chapter has no interactive demo in the spec. Use the worked example and the guided exercise below.
 
-<!-- OPEN: spec gives no interactive demo or component for T2.14; the See it content is a static pie chart and the worked example table. -->
+<!-- OPEN: spec gives no interactive demo or component for *Portfolio exposure and concentration*; the See it content is a static pie chart and the worked example table. -->
 
 ### Guided exercise
 
@@ -116,9 +116,9 @@ Mode: **learning note** (or paper). No orders are placed.
 
 Log it in your journal (or on paper until the journal app is ready).
 
-## What this does NOT tell you
+## Limits and common mistakes
 
-- Exposure and open risk are not forecasts. Open risk assumes every stop fills at its stop, which gaps and circuits can break (T2.6).
+- Exposure and open risk are not forecasts. Open risk assumes every stop fills at its stop, which gaps and circuits can break (*Slippage, gaps and planned versus actual risk*).
 - Sector labels depend on the data source. The source must be verified before use [VERIFY: sector classification source].
 - Diversification does not remove market-wide risk. A broad fall can hit every sector.
 - The 40% sector limit is illustrative. You set every limit.
@@ -144,7 +144,5 @@ Facts to verify before this chapter is final:
 - [VERIFY: sector classification source for your data, against the NSE sectoral index definitions]
 
 <!-- facts-needed: sector classification source for your data (NSE sectoral index definitions) -->
-
-Last content review: not yet done
 
 <!-- standing-disclaimer -->

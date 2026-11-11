@@ -66,17 +66,17 @@ Follow the arrows from left to right. Each chapter is one pass through this loop
 
 ```mermaid
 flowchart TD
-  T01[T0.1 What trading is] --> T02[T0.2 Capital-first rules]
-  T02 --> T03[T0.3 How to use this book]
-  T01 --> T11[T1.1 Companies and shares]
-  T11 --> T12[T1.2 Exchanges and participants]
-  T12 --> T13[T1.3 Demat and settlement]
-  T13 --> T14[T1.4 Prices and the order book]
-  T02 --> T21[T2.1 Money math first]
+  T01[*What trading is and is not* What trading is] --> T02[*The capital-first rules* Capital-first rules]
+  T02 --> T03[*How to use this book* How to use this book]
+  T01 --> T11[*Companies, shares and listings* Companies and shares]
+  T11 --> T12[*Exchanges, SEBI and brokers* Exchanges and participants]
+  T12 --> T13[*Demat accounts and settlement* Demat and settlement]
+  T13 --> T14[*How prices move: the order book* Prices and the order book]
+  T02 --> T21[*Why money math comes before charts* Money math first]
   T14 --> T21
 ```
 
-This map shows the Tracks 0 to 2 dependencies that are covered so far. Track 2 continues beyond T2.1. Read the arrows as "must be read before".
+This map shows the Tracks 0 to 2 dependencies that are covered so far. Track 2 continues beyond *Why money math comes before charts*. Read the arrows as "must be read before".
 
 ## Worked example
 
@@ -99,8 +99,6 @@ The first line sets the trading capital. The second sets the risk budget for one
 
 ## Try it
 
-No interactive demo is specified for this chapter. <!-- OPEN: spec gives a static flow diagram and dependency map, with no interactive demo; none placed. -->
-
 ### Guided exercise
 
 **Task:** Create a learning-note entry titled "What I expect to learn". Set the backup reminder. Export one backup file and store a copy outside the device.
@@ -119,7 +117,7 @@ No interactive demo is specified for this chapter. <!-- OPEN: spec gives a stati
 
 <details><summary>Check your answer</summary>
 
-There is no single correct schedule. Check that your plan respects the arrows: T0.1 before T0.2 and T0.3, T1.1 before T1.2, and so on. Check that the plan allows for quizzes and paper tasks, not only reading. The schedule sets no deadline to start trading, and the book sets none.
+There is no single correct schedule. Check that your plan respects the arrows: *What trading is and is not* before *The capital-first rules* and *How to use this book*, *Companies, shares and listings* before *Exchanges, SEBI and brokers*, and so on. Check that the plan allows for quizzes and paper tasks, not only reading. The schedule sets no deadline to start trading, and the book sets none.
 
 </details>
 
@@ -138,7 +136,7 @@ Six questions check the journal modes, the gates, the backup timing and the limi
 3. Export the first backup and store a copy outside the device.
 4. Note the date of your next backup reminder.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - A learning record is not a trading record. Do not label a learning note as a trade.
 - Passing a gate is educational competence. It is not proof of profit, and it is not permission to trade real money.
@@ -166,8 +164,6 @@ Six questions check the journal modes, the gates, the backup timing and the limi
 - iOS Safari storage eviction for sites not added to the Home Screen. [VERIFY: Apple WebKit documentation]
 - Browser support for persistent storage requests. [VERIFY: MDN storage persistence page]
 - Lab 3 menu location for the backup reminder. [VERIFY: confirm in the Lab 3 build]
-
-Last content review: not yet done
 
 <!-- facts-needed: Apple WebKit storage eviction for sites not added to Home Screen; MDN storage persistence support; Lab 3 backup menu location -->
 

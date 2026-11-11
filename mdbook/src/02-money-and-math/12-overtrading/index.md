@@ -32,7 +32,7 @@ Three consequences follow:
 2. **Costs multiply the count.** Each rupee of cost removed from the average cuts the number of trades needed.
 3. **No positive net expectancy means no count works.** If E_net is zero or negative, no number of trades reaches the target on average. More trades only add more of a negative average.
 
-A daily target also works as pressure. It makes a no-trade day feel like a loss, which pushes a trader to take trades when no setup exists. More trades mean more exposure to noise, more costs, and more chances to break a rule. Costs are covered in T2.2.
+A daily target also works as pressure. It makes a no-trade day feel like a loss, which pushes a trader to take trades when no setup exists. More trades mean more exposure to noise, more costs, and more chances to break a rule. Costs are covered in *Costs on a trade*.
 
 Signs of overtrading in a journal:
 
@@ -41,9 +41,9 @@ Signs of overtrading in a journal:
 - Size increased on a later trade.
 - A trade placed to recover an earlier loss.
 
-Your Rs 2,000-3,000 figure is tested in T2.16. It is not a goal for any strategy.
+Your Rs 2,000-3,000 figure is tested in *The Rs 2,000-3,000 reality check*. It is not a goal for any strategy.
 
-<!-- OPEN: spec T2.12 says the Rs 2,000-3,000 figure is "a ceiling, not a target", while PLAN section 2 calls it a daily target. This draft refers only to the T2.16 test. Reviewer to confirm wording. -->
+<!-- OPEN: spec *Overtrading and why daily profit targets encourage it* says the Rs 2,000-3,000 figure is "a ceiling, not a target", while PLAN section 2 calls it a daily target. This draft refers only to the *The Rs 2,000-3,000 reality check* test. Reviewer to confirm wording. -->
 
 ## See it
 
@@ -77,7 +77,7 @@ The cost assumption turns a 40-trade day into a 200-trade day. The Rs 40 figure 
 
 This chapter has no interactive demo in the spec. Use the table in See it and the guided exercise below.
 
-<!-- OPEN: spec gives no interactive demo for T2.12; the See it table is static. -->
+<!-- OPEN: spec gives no interactive demo for *Overtrading and why daily profit targets encourage it*; the See it table is static. -->
 
 ### Guided exercise
 
@@ -124,10 +124,10 @@ Mode: **learning note** (Lab 3). No orders are placed.
 
 Log it in your journal (or on paper until the journal app is ready).
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - Expectancy is an average over past or assumed trades. It does not forecast any single day.
-- The costs here are DUMMY values. Real costs come from the verified rates in T2.2 and Lab 2.
+- The costs here are DUMMY values. Real costs come from the verified rates in *Costs on a trade* and Lab 2.
 - A lower trade count does not promise a profit. It reduces the exposure to costs and rule breaks.
 - The maximum trades per day is your choice. This chapter does not set one.
 - A no-trade day is a valid result. It is not proof of skill either.
@@ -145,10 +145,8 @@ Log it in your journal (or on paper until the journal app is ready).
 Sources (names only):
 
 - The book's Lab 3 specification (LABS.md).
-- T8.4 (discipline) and T8.2 (revenge trading), for the behavioural links.
+- *Discipline* (discipline) and *Loss aversion and revenge trading* (revenge trading), for the behavioural links.
 
-Facts to verify before this chapter is final: none. The costs in this chapter are DUMMY values, and their real counterparts are verified in T2.2.
-
-Last content review: not yet done
+Facts to verify before this chapter is final: none. The costs in this chapter are DUMMY values, and their real counterparts are verified in *Costs on a trade*.
 
 <!-- standing-disclaimer -->

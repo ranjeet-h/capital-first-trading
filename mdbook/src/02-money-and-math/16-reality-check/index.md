@@ -37,11 +37,11 @@ In symbols: g = T / C.
 
 **Sensitivity.** The annual return is the number you cannot control, so the table shows three values: 10%, 20% and 50%. You call 20% a year very good. That is a reference point, not a forecast. The 50% row is shown only to show the scale of the problem. It is not an expectation.
 
-**Risk and the number of trades.** At Rs 50,000 with 1% risk per trade, one R is Rs 500. A Rs 2,000 day is 4R before costs. That is four 1R wins with no losing trade. Every losing trade takes away from that figure. The more trades a target needs, the more room costs and mistakes have to add up (T2.12).
+**Risk and the number of trades.** At Rs 50,000 with 1% risk per trade, one R is Rs 500. A Rs 2,000 day is 4R before costs. That is four 1R wins with no losing trade. Every losing trade takes away from that figure. The more trades a target needs, the more room costs and mistakes have to add up (*Overtrading and why daily profit targets encourage it*).
 
-**Costs.** Every trade pays costs (T2.2). This chapter uses the dummy cost model from T2.2: a Rs 190 round trip on Rs 50,000. Dummy figures are for arithmetic only. They are not any broker's charges. Gross profit must cover costs before any of it counts toward the target.
+**Costs.** Every trade pays costs (*Costs on a trade*). This chapter uses the dummy cost model from *Costs on a trade*: a Rs 190 round trip on Rs 50,000. Dummy figures are for arithmetic only. They are not any broker's charges. Gross profit must cover costs before any of it counts toward the target.
 
-**Streaks.** Losing days come in runs (T2.10). The worked example shows the capital lost over 5, 10 and 15 losing days. It assumes each losing day loses the risk percentage of the capital at that moment, so each loss is a smaller rupee amount than the one before.
+**Streaks.** Losing days come in runs (*Consecutive losses and losing streaks*). The worked example shows the capital lost over 5, 10 and 15 losing days. It assumes each losing day loses the risk percentage of the capital at that moment, so each loss is a smaller rupee amount than the one before.
 
 **Consistency.** A daily target assumes a steady daily return. Real results vary from one day to the next. A few good days say nothing about the next day. Consistent daily returns cannot be guaranteed.
 
@@ -114,7 +114,7 @@ Capital lost, rounded:
 
 ### Step 5: cost drag on the target
 
-Dummy round trip: Rs 190 on Rs 50,000 (T2.2 dummy model).
+Dummy round trip: Rs 190 on Rs 50,000 (*Costs on a trade* dummy model).
 
 - Four round trips a day: 4 x Rs 190 = Rs 760 (dummy).
 - To keep Rs 2,000 after these dummy costs, gross profit must be Rs 2,760 (2,000 + 760).
@@ -168,10 +168,10 @@ Seven questions cover capital needed, required daily return, cost drag, streaks 
 1. Write your daily target in rupees. Use a hypothetical or blank figure for your capital.
 2. Compute the capital needed at a 20% annual return over 250 days, or over your own verified trading-day count.
 3. Compute the required daily return: target divided by capital.
-4. Using your own cut rule from T2.15, count how many losing days at your chosen risk you could absorb before the cut triggers.
+4. Using your own cut rule from *Capital allocation*, count how many losing days at your chosen risk you could absorb before the cut triggers.
 5. Record the three results in one note with today's date.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - It does not predict any day's result. The arithmetic assumes a steady return, and real trading does not produce one.
 - The 250-day count and the dummy costs are assumptions. Replace them with verified values before relying on any figure.
@@ -192,16 +192,14 @@ Seven questions cover capital needed, required daily return, cost drag, streaks 
 **Sources (names only):**
 
 - NSE holiday calendar, for the trading-day count.
-- Zerodha charges page, cross-referenced from T2.2. The dummy costs in this chapter are not Zerodha's charges.
+- Zerodha charges page, cross-referenced from *Costs on a trade*. The dummy costs in this chapter are not Zerodha's charges.
 - The book's Lab 1 and Lab 2 specifications (LABS.md).
 
 **To verify:**
 
 - Trading days per year. [VERIFY: trading days per year from the NSE holiday list and calendar]
-- Replace the dummy Rs 190 round trip with the verified cost model from T2.2 before publication.
+- Replace the dummy Rs 190 round trip with the verified cost model from *Costs on a trade* before publication.
 
-<!-- facts-needed: trading days per year (NSE calendar); verified cost model from T2.2 to replace the dummy Rs 190 round trip -->
-
-Last content review: not yet done
+<!-- facts-needed: trading days per year (NSE calendar); verified cost model from *Costs on a trade* to replace the dummy Rs 190 round trip -->
 
 <!-- standing-disclaimer -->

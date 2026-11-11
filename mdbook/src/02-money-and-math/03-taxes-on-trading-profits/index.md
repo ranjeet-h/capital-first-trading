@@ -1,13 +1,13 @@
 <!-- meta
 id: T2.3
-title: Taxes on trading profits (concepts)
+title: Taxes on trading profits
 page_type: Concept
 prerequisites: [T2.2, T1.9]
 labs: []
 estimated_minutes: 20
 -->
 
-# Taxes on trading profits (concepts)
+# Taxes on trading profits
 
 ## Hook
 
@@ -15,7 +15,7 @@ A trader makes Rs 10,000 gross in a year, pays Rs 300 in trading costs, and assu
 
 ## The idea
 
-Tax is a separate layer from trading costs. Costs (T2.2) are paid to brokers, exchanges and government on each trade. Tax is calculated on your net gains for the year, under rules that depend on what kind of activity it is.
+Tax is a separate layer from trading costs. Costs (*Costs on a trade*) are paid to brokers, exchanges and government on each trade. Tax is calculated on your net gains for the year, under rules that depend on what kind of activity it is.
 
 Three ideas matter at the concept level:
 
@@ -27,7 +27,7 @@ Other points to know exist, and each one needs a check from an official source:
 
 - Business income and speculative income are treated differently from capital gains. [VERIFY: business and speculative income treatment]
 - Frequent trading can bring a tax audit obligation above a turnover threshold. [VERIFY: tax audit turnover thresholds]
-- Dividends are taxed under their own rules, which connect to the corporate actions in T1.9. [VERIFY: dividend taxation]
+- Dividends are taxed under their own rules, which connect to the corporate actions in *Corporate actions*. [VERIFY: dividend taxation]
 - The tax regime you choose, and the changes to it over time, matter. [VERIFY: tax regime choice and recent changes]
 
 **What the book does and does not do.** The book does not compute tax now. A tax calculator is deferred until the rates and rules are verified from the official source. Until then, the chapter stays conceptual.
@@ -124,7 +124,7 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 2. Do not calculate any tax figure. The column is a record for later, and a professional can use it.
 3. Mark the entries as learning notes, not live records.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - It does not tell you what tax you will pay. The rates and rules are not stated here and must be verified.
 - It is not tax advice. The book does not give tax advice. Consult a qualified professional.
@@ -156,8 +156,6 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 [VERIFY: tax audit turnover thresholds]
 [VERIFY: tax regime choice and recent changes]
 [VERIFY: dividend taxation]
-
-Last content review: not yet done
 
 <!-- OPEN: The owner's own tax status (PLAN section 11, item 7) must be resolved before this chapter is final. The chapter stays conceptual until then. -->
 

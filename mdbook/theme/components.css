@@ -18,3 +18,4 @@
 .cft-feedback div { margin-top: 4px; }
 .cft-ok { background: rgba(46,160,67,.18); }
 .cft-bad { background: rgba(218,54,51,.18); }
+.cft-verify { font-size: .8em; padding: 0 6px; border-radius: 3px; background: rgba(230,160,0,.2); }

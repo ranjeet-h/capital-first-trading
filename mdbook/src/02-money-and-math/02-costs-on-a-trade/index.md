@@ -155,11 +155,11 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 3. Write the list of component names in your own words, next to the source link.
 4. Do not copy these figures into the book or any calculation yet. Lab 2 will verify them. Mark the note as a learning note, with no trade placed.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - It does not tell you any real charge. Every rate here is DUMMY, and the official sources are the only place for current rates.
-- It does not include tax. Tax on gains is a separate question (T2.3).
-- It does not include slippage, the difference between the expected and the actual fill price (T2.6). A real trade can cost more than the table shows.
+- It does not include tax. Tax on gains is a separate question (*Taxes on trading profits*).
+- It does not include slippage, the difference between the expected and the actual fill price (*Slippage, gaps and planned versus actual risk*). A real trade can cost more than the table shows.
 - It does not say that a small trade is a bad idea. It says that fixed charges weigh more on small trades, and that you must include them in every plan.
 
 ## Remember
@@ -190,7 +190,5 @@ Mode: **learning note**. Log it in your journal (or on paper until the journal a
 [VERIFY: GST rate and base]
 [VERIFY: DP charge and per-scrip-per-day rule]
 [VERIFY: rounding rules from the official calculator]
-
-Last content review: not yet done
 
 <!-- standing-disclaimer -->

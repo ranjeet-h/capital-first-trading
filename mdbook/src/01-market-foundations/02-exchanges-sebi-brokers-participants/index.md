@@ -1,13 +1,13 @@
 <!-- meta
 id: T1.2
-title: Exchanges, SEBI, brokers and participants
+title: Exchanges, SEBI and brokers
 page_type: Concept
 prerequisites: [T1.1]
 labs: []
 estimated_minutes: 25
 -->
 
-# Exchanges, SEBI, brokers and participants
+# Exchanges, SEBI and brokers
 
 ## Hook
 
@@ -64,7 +64,7 @@ Now trace the order, and mark who holds the money at each step.
 | 2 | Broker | Accepts the order and passes it to the exchange | Moved through the broker's process |
 | 3 | Exchange | Matches the order with a seller | The exchange does not hold your money |
 | 4 | Clearing corporation | Records the obligation from the trade | The clearing system moves funds [VERIFY: clearing names and role] |
-| 5 | Depository, through the DP | After settlement, the 20 shares are credited to your demat account | Settlement moves the shares and the money [VERIFY: T+1 timing, see T1.3] |
+| 5 | Depository, through the DP | After settlement, the 20 shares are credited to your demat account | Settlement moves the shares and the money [VERIFY: T+1 timing, see *Demat accounts and settlement*] |
 
 The point of the table is that no step asks the exchange to hold your money.
 
@@ -84,7 +84,7 @@ The point of the table is that no step asks the exchange to hold your money.
 2. Follow the order: you, broker, exchange.
 3. Then follow the shares: clearing, then the depository.
 
-**Answer:** You place the sell order for 20 shares at Rs 250, a trade value of Rs 5,000. Broker accepts it and passes it to the exchange. Exchange matches it with a buyer. Clearing corporation records the obligation. Depository, through the DP, moves the shares out of your demat account when the trade settles [VERIFY: settlement timing, see T1.3].
+**Answer:** You place the sell order for 20 shares at Rs 250, a trade value of Rs 5,000. Broker accepts it and passes it to the exchange. Exchange matches it with a buyer. Clearing corporation records the obligation. Depository, through the DP, moves the shares out of your demat account when the trade settles [VERIFY: settlement timing, see *Demat accounts and settlement*].
 
 ### Independent exercise
 
@@ -113,7 +113,7 @@ Six questions check the broker-exchange difference, the clearing role, the griev
 3. Add a link to the official page that describes it.
 4. Check each role against the SEBI, NSE and BSE pages before you rely on it.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - It does not recommend any broker. Zerodha appears as a broker example only, not as a recommendation.
 - Registration checks are your responsibility. Check the official list before you open an account.
@@ -144,8 +144,6 @@ Six questions check the broker-exchange difference, the clearing role, the griev
 - The SCORES complaint process. [VERIFY: SEBI SCORES page]
 - The current list of recognised exchanges. [VERIFY: SEBI]
 - The check on broker registration. [VERIFY: SEBI or exchange list of registered brokers]
-
-Last content review: not yet done
 
 <!-- facts-needed: clearing corporation names and roles (NSE clearing page); NSDL and CDSL roles; SCORES complaint process; recognised exchanges list; broker registration list -->
 

@@ -26,7 +26,7 @@ Points to keep in mind:
 
 - Expectancy is an average over many trades. It is not a prediction of the next trade.
 - Costs must be included to get net expectancy. The examples below are before costs.
-- A few trades can produce any average. Confidence is taught in T7.8. Lab 3 shows a "too few trades to conclude anything" note below 30 trades.
+- A few trades can produce any average. Confidence is taught in *Metrics and their limits*. Lab 3 shows a "too few trades to conclude anything" note below 30 trades.
 - Win rate is a frequency, not a result. Expectancy is the number that combines frequency and size.
 
 ## See it
@@ -115,9 +115,9 @@ Mode: **learning note**. Log it in Lab 3 (or on paper until the journal app is r
 3. Check that the expectancy shows minus Rs 130 per trade (minus 0.13R), and that the profit factor shows 0.675.
 4. Write one sentence on why the win rate of 90% does not match the sign of the expectancy.
 
-<!-- OPEN: The learning-note mode is in the T0.3 journal mode list but not in the Lab 3 mode list (paper, live, forward, backtest, kite_demo). Confirm before the journal app is built. -->
+<!-- OPEN: The learning-note mode is in the *How to use this book* journal mode list but not in the Lab 3 mode list (paper, live, forward, backtest, kite_demo). Confirm before the journal app is built. -->
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - Expectancy shown here is before costs. Net expectancy is lower, and must be checked with costs included.
 - A handful of trades is noise. The G6 floor of 30 trades is a minimum for a gate, not a verdict on any system (PLAN section 6).
@@ -138,10 +138,8 @@ Mode: **learning note**. Log it in Lab 3 (or on paper until the journal app is r
 Sources (names only):
 
 - The book's Lab 3 specification (statistics and dashboard)
-- Chapter T7.8 (metrics and their limits), for further reading
+- Chapter *Metrics and their limits* (metrics and their limits), for further reading
 
 Items to verify: none for this chapter. All numbers are hypothetical.
-
-Last content review: not yet done
 
 <!-- standing-disclaimer -->

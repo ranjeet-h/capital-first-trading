@@ -19,13 +19,13 @@ Start with one trade. Let p be the win rate. The chance of a loss on one trade i
 
 **Streak probability.** If each trade is independent of the others, the chance of k losses in a row starting at a given trade is (1 - p) raised to the power k. In words: multiply the loss chance by itself k times.
 
-**Independence is an assumption.** The formula assumes each trade's result does not depend on the previous one. Real markets may cluster, with losses coming together. Lab 4 (a Monte Carlo of trade order) and T7.9 test this assumption. Do not treat the formula as settled for a real plan.
+**Independence is an assumption.** The formula assumes each trade's result does not depend on the previous one. Real markets may cluster, with losses coming together. Lab 4 (a Monte Carlo of trade order) and *Monte Carlo of trade order* test this assumption. Do not treat the formula as settled for a real plan.
 
 **Across many trades, streaks appear.** The chance of a streak starting at one particular trade is small. The chance that a streak of that length appears somewhere in a long sequence is much larger, because there are many starting points.
 
 **Fixed risk and shrinking losses.** If each trade risks a fixed percentage of current capital, each loss is a smaller rupee amount as capital falls. Capital after k losses is capital x (1 - risk)^k, so the total lost is capital minus that figure.
 
-**Streak rules are your choice.** Examples: pause after N losses, reduce risk after N losses, or review the plan. Write the rule before a streak starts. The rule that matters most is that you never increase size after losses. Doubling after losses, to recover faster, is a martingale-style method. It is dangerous and is covered in T6.5.
+**Streak rules are your choice.** Examples: pause after N losses, reduce risk after N losses, or review the plan. Write the rule before a streak starts. The rule that matters most is that you never increase size after losses. Doubling after losses, to recover faster, is a martingale-style method. It is dangerous and is covered in *Why scalping, option buying and martingale are dangerous*.
 
 Why streaks feel abnormal: a low win rate or a long run of losses is common in the arithmetic, but it feels like a broken system. A streak alone is not evidence that a system has stopped working.
 
@@ -111,14 +111,14 @@ Mode: **learning note**. Log it in Lab 3 (or on paper until the journal app is r
 3. Work out the capital after each of the seven losses. The seventh should be about Rs 46,603.
 4. Write one sentence on what the rule says to do after the streak ends, and note whether you would have kept to it.
 
-<!-- OPEN: The learning-note mode is in the T0.3 journal mode list but not in the Lab 3 mode list (paper, live, forward, backtest, kite_demo). Confirm before the journal app is built. -->
+<!-- OPEN: The learning-note mode is in the *How to use this book* journal mode list but not in the Lab 3 mode list (paper, live, forward, backtest, kite_demo). Confirm before the journal app is built. -->
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - The formula assumes each trade is independent. If results cluster in a real plan, the chance of a streak is higher than the formula gives.
 - The figures describe a starting point. They do not predict when the next streak will start.
 - A streak is not, on its own, evidence that a system is broken. Equally, a streak is not evidence that it still works.
-- The Monte Carlo test in Lab 4 comes later, and T7.9 covers the independence test.
+- The Monte Carlo test in Lab 4 comes later, and *Monte Carlo of trade order* covers the independence test.
 - Doubling size after losses is not a recovery method in this book. It breaks the capital-first rules.
 
 ## Remember
@@ -135,11 +135,9 @@ Sources (names only):
 
 - The book's Lab 4 specification (trade-order Monte Carlo, later)
 - The book's Lab 3 specification (streak statistics)
-- Chapter T7.9 (independence and resampling tests)
-- Chapter T8.6 (living through streaks)
+- Chapter *Monte Carlo of trade order* (independence and resampling tests)
+- Chapter *Living through a losing streak (streak-sim with feelings log)* (living through streaks)
 
 Items to verify: none for this chapter. All numbers are hypothetical.
-
-Last content review: not yet done
 
 <!-- standing-disclaimer -->

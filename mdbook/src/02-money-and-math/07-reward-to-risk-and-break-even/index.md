@@ -29,7 +29,7 @@ Other points:
 
 - Win rate and R trade off in most approaches. A higher target is often reached less often. Neither number decides the result alone.
 - A target is a plan, not a forecast. Many approaches do not use a fixed target at all; those are covered in Track 6.
-- Break-even here is before costs, before slippage and before gaps (T2.6). Those are separate losses.
+- Break-even here is before costs, before slippage and before gaps (*Slippage, gaps and planned versus actual risk*). Those are separate losses.
 
 ## See it
 
@@ -109,13 +109,13 @@ Mode: **learning note**. Log it in Lab 3 (or on paper until the journal app is r
 3. Add a DUMMY cost of Rs 0.50 per share and recompute the break-even for each plan.
 4. Save each plan to the journal with its planned R field (Lab 1 save-to-journal), in learning-note mode.
 
-<!-- OPEN: The learning-note mode is in the T0.3 journal mode list but not in the Lab 3 mode list (paper, live, forward, backtest, kite_demo). Confirm before the journal app is built. -->
+<!-- OPEN: The learning-note mode is in the *How to use this book* journal mode list but not in the Lab 3 mode list (paper, live, forward, backtest, kite_demo). Confirm before the journal app is built. -->
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - R is a plan. It is not a forecast, and target prices are not reached reliably.
 - Do not choose a target to make R look good. The rule is set before the trade.
-- Break-even before costs ignores slippage, fills and gaps (T2.6). Real break-evens are higher.
+- Break-even before costs ignores slippage, fills and gaps (*Slippage, gaps and planned versus actual risk*). Real break-evens are higher.
 - A higher R is not automatically better. It can come with a lower chance of reaching the target.
 - The costs in this chapter are DUMMY figures. They are not Zerodha or statutory rates.
 
@@ -135,7 +135,5 @@ Sources (names only):
 - Standard expectancy arithmetic, computed in this chapter; no external figure is used
 
 Items to verify: none for this chapter. The costs are DUMMY values and must not be quoted as real charges.
-
-Last content review: not yet done
 
 <!-- standing-disclaimer -->

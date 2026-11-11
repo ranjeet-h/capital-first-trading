@@ -1,13 +1,13 @@
 <!-- meta
 id: T1.10
-title: Market participants, where information comes from, and spotting misleading tips
+title: Market participants and misleading tips
 page_type: Concept
 prerequisites: [T1.2, T1.8]
 labs: []
 estimated_minutes: 15
 -->
 
-# Market participants, where information comes from, and spotting misleading tips
+# Market participants and misleading tips
 
 ## Hook
 
@@ -142,7 +142,7 @@ Five questions on net flow arithmetic, what a net flow does and does not show, r
 4. Take no action on any tip, group or signal service.
 5. Log it in your journal, or on paper until the journal app is ready.
 
-## What this does NOT tell you
+## Limits and common mistakes
 
 - A net flow figure shows total money moved. It does not show which stocks, why, or what happens next.
 - A registration check is not an endorsement of the adviser's views.
@@ -171,8 +171,6 @@ Facts to verify:
 - [VERIFY: participant category definitions, SEBI or NSE]
 - [VERIFY: SEBI registration categories and public lookup, SEBI intermediaries page]
 - [VERIFY: current SEBI investor alerts on misleading tips, SEBI investor education]
-
-Last content review: not yet done
 
 <!-- facts-needed: FII/DII data source and timing; participant category definitions; SEBI registration categories and lookup; current SEBI investor alerts on misleading tips -->
 
