@@ -1,0 +1,114 @@
+[
+  {
+    "id": "T7.1-q1",
+    "type": "mcq",
+    "prompt": "Which idea can be tested as it is written?",
+    "options": [
+      {"id": "a", "text": "Stocks with a good feeling are the best ones to hold."},
+      {"id": "b", "text": "Stocks that close above their 55-day high have a higher average result after costs than other stocks over the test period. The idea is dropped if the average result after costs is not above zero."},
+      {"id": "c", "text": "Strong markets are good for trading."},
+      {"id": "d", "text": "This idea has a name, so it is testable."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A feeling has no number. No result could prove it wrong, so it cannot be tested as written.",
+      "c": "Strong and good have no measurable meaning here. The idea needs an entry, an exit and a number that defines a pass.",
+      "d": "A name does not make an idea testable. The idea needs a rule that a result could contradict."
+    },
+    "concepts": ["falsifiability", "hypothesis"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.1-q2",
+    "type": "mcq",
+    "prompt": "After a test shows a small loss, you change the pass rule so the idea now passes. What have you done?",
+    "options": [
+      {"id": "a", "text": "Normal refinement, because you learned something from the result."},
+      {"id": "b", "text": "Created a different, untested idea, because the rule changed after the results were seen."},
+      {"id": "c", "text": "Run a fair test, because the change was small."},
+      {"id": "d", "text": "Proved that the original idea works."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Learning from a result is good, but the rule must not move to fit that result. The change makes the test unfair.",
+      "c": "A small change to a rule after results is still a change after results. The first test already said not supported.",
+      "d": "Moving the pass rule proves nothing about the original idea. The first result stands."
+    },
+    "concepts": ["pass-rule", "falsifiability"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.1-q3",
+    "type": "mcq",
+    "prompt": "A backtest on old prices shows a profit. What does this result show?",
+    "options": [
+      {"id": "a", "text": "The idea works."},
+      {"id": "b", "text": "The idea passed one test under its rules, which is weak evidence."},
+      {"id": "c", "text": "The idea will make money with real money."},
+      {"id": "d", "text": "The rule can be traded safely with Rs 50,000."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "One test under one set of rules does not prove that an idea works.",
+      "c": "Old prices cannot show what will happen with real money. Real trading adds costs, slippage and changing markets.",
+      "d": "A test result does not make any rule safe. Safety comes from limits on loss, not from one test."
+    },
+    "concepts": ["hypothesis-testing", "weak-evidence"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.1-q4",
+    "type": "scenario",
+    "prompt": "A teammate shows you a chart and says, this pattern always works. What should you do first?",
+    "options": [
+      {"id": "a", "text": "Trade a small position to see what happens."},
+      {"id": "b", "text": "Write the hypothesis, the entry, the exit and the pass rule before any test."},
+      {"id": "c", "text": "Post the chart as a proven setup for the group."},
+      {"id": "d", "text": "Ask for more charts before deciding anything."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Trading to see what happens uses real money before the idea is tested. That is not a test plan.",
+      "c": "A chart shown with a claim is not proof. Calling it proven is wrong until it has a written test.",
+      "d": "More charts add more ideas to test. They do not make this idea testable."
+    },
+    "concepts": ["test-plan", "hypothesis"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.1-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Here is a plan: Buy at the next open after a close above the 55-day high. Exit when the trade feels extended. Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The entry, because it uses a close."},
+      {"id": "b", "text": "The exit, because feels extended is a feeling with no rule."},
+      {"id": "c", "text": "The 55-day high, because it cannot be measured."},
+      {"id": "d", "text": "Nothing is wrong, the plan is complete."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The entry is measurable. A close and a next open can be checked on past data.",
+      "c": "The 55-day high can be measured from the price data, so it is not the problem.",
+      "d": "The plan still has no stop, no sizing and no pass rule. Its exit cannot be checked either."
+    },
+    "concepts": ["exit-rule", "test-plan"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.1-q6",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital is Rs 50,000 and the risk per trade is 1%. How many rupees can one trade risk?",
+    "answer": 500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Risk budget = 1% x Rs 50,000 = 0.01 x 50,000 = Rs 500. Check: Rs 50,000 divided by 100 is Rs 500.",
+    "concepts": ["risk-per-trade"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

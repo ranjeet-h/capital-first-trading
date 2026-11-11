@@ -1,0 +1,126 @@
+[
+  {
+    "id": "T9.7-q1",
+    "type": "mcq",
+    "prompt": "Which statement about net and gross flow figures is correct?",
+    "options": [
+      {"id": "a", "text": "A large net figure always means a large market move."},
+      {"id": "b", "text": "Net is buy minus sell. Gross is buy plus sell. A net figure needs its gross figure for context."},
+      {"id": "c", "text": "Net and gross are the same number, shown two ways."},
+      {"id": "d", "text": "Only the gross figure matters."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A net figure shows the direction of flow, not the size of any market move.",
+      "c": "They are different numbers. Net subtracts sell from buy. Gross adds them.",
+      "d": "Gross shows total activity, but net shows the direction. Both are needed."
+    },
+    "concepts": ["net-vs-gross"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.7-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. FII buy is Rs 1,800 crore and FII sell is Rs 2,100 crore. What is the net, in Rs crore?",
+    "answer": -300,
+    "tolerance": 0,
+    "unit": "Rs crore",
+    "solution": "Net = buy - sell = 1,800 - 2,100 = minus Rs 300 crore. A negative net means net selling. Checked again: 2,100 - 1,800 = 300.",
+    "concepts": ["net", "net-selling"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.7-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. Same day as the previous question. What is the gross turnover, in Rs crore?",
+    "answer": 3900,
+    "tolerance": 0,
+    "unit": "Rs crore",
+    "solution": "Gross turnover = buy + sell = 1,800 + 2,100 = Rs 3,900 crore. Checked again: 3,900 = 2 x 1,950, and the average of 1,800 and 2,100 is 1,950.",
+    "concepts": ["gross-turnover"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.7-q4",
+    "type": "mcq",
+    "prompt": "A published figure shows net buying by FIIs for the day. What does it tell you?",
+    "options": [
+      {"id": "a", "text": "Which stocks to buy."},
+      {"id": "b", "text": "The total net buying in that category for the day, not which stocks or why."},
+      {"id": "c", "text": "The reason the institutions bought."},
+      {"id": "d", "text": "The price target for the next week."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "An aggregate figure does not name any stock. It cannot tell you what to buy.",
+      "c": "The figure gives a total. It does not give reasons for the trades.",
+      "d": "A flow figure does not set any price target. It describes past activity."
+    },
+    "concepts": ["aggregate-flow", "stock-specific"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.7-q5",
+    "type": "scenario",
+    "prompt": "Hypothetical. A day shows FII net selling, but the market index rises. What is the best reading?",
+    "options": [
+      {"id": "a", "text": "The data is wrong, since prices must follow net selling."},
+      {"id": "b", "text": "The flow figure is one input. It does not settle the price move, and both can happen on the same day."},
+      {"id": "c", "text": "The index will fall the next day."},
+      {"id": "d", "text": "The net selling was really a hidden buy."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A flow figure is one total. Prices also move for many other reasons, so the data is not wrong.",
+      "c": "A flow figure does not forecast the next day. The data cannot show that.",
+      "d": "The data does not show hidden trades. Treating it as a hidden buy is a guess."
+    },
+    "concepts": ["scenario", "flow-limits"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.7-q6",
+    "type": "mcq",
+    "prompt": "Which statement about the timing of flow data is correct?",
+    "options": [
+      {"id": "a", "text": "Today's figure can guide an order placed earlier in today's session."},
+      {"id": "b", "text": "The figure appears after the session, so it cannot have guided trades made during that session."},
+      {"id": "c", "text": "Timing does not matter for flow data."},
+      {"id": "d", "text": "The figure is published before the session starts."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The figure appears after the session. It cannot guide trades made earlier in that session.",
+      "c": "Timing matters a great deal. A figure used before it is published is a figure the reader did not have.",
+      "d": "The figure appears after the session, not before it. Check the publication time at the source."
+    },
+    "concepts": ["timing", "publication"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.7-q7",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"FII buying proves the trend.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "FII buying: this describes a published figure, and it is correct."},
+      {"id": "b", "text": "proves the trend"},
+      {"id": "c", "text": "the trend: this word describes the direction of prices and is not the error here."},
+      {"id": "d", "text": "Nothing. The statement is correct."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A published net buying figure is a real figure. The error is in the claim drawn from it.",
+      "c": "The trend is the direction of prices over time. The word is not the error here.",
+      "d": "The statement is wrong. One day of net buying does not prove a trend. The figure is one input among many."
+    },
+    "concepts": ["flow-limits", "trend"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

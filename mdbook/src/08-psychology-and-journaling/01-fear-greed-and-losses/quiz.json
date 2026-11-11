@@ -1,0 +1,114 @@
+[
+  {
+    "id": "T8.1-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital is Rs 50,000 and one R is Rs 500. The day ends with a loss of Rs 2,000. How many R is the loss?",
+    "answer": 4,
+    "tolerance": 0,
+    "unit": "R",
+    "solution": "Loss in R = 2,000 / 500 = 4R. As a share of capital: 2,000 / 50,000 = 4 percent.",
+    "concepts": ["loss-in-r", "numeric"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.1-q2",
+    "type": "mcq",
+    "prompt": "Why is it useful to record a loss in R?",
+    "options": [
+      {"id": "a", "text": "A loss in R is simpler, because the rupee figure alone is enough."},
+      {"id": "b", "text": "It shows the loss as the planned cost of your method, so each stopped trade is read the same way."},
+      {"id": "c", "text": "It removes the need to write the loss down at all."},
+      {"id": "d", "text": "It is the same as the win rate."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A rupee figure alone does not show the planned risk. R shows the loss against the plan.",
+      "c": "A loss should always be recorded. R is a way of reading it, not a way of skipping it.",
+      "d": "Win rate counts winning trades. R measures the size of a loss against the planned risk."
+    },
+    "concepts": ["loss-in-r"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.1-q3",
+    "type": "mcq",
+    "prompt": "Which of these is a decision point where a feeling can override a rule?",
+    "options": [
+      {"id": "a", "text": "Only the moment you enter a trade."},
+      {"id": "b", "text": "Only when you are losing money."},
+      {"id": "c", "text": "After a win, when price moves without you, or when your plan says no trade."},
+      {"id": "d", "text": "Never, once you have written a plan."}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "Feelings also appear after wins, while you watch prices, and on no-trade days.",
+      "b": "Feelings also appear after a win. A win can tempt you to add size.",
+      "d": "A written plan helps, but feelings still arise. The rule check is what protects the plan."
+    },
+    "concepts": ["decision-points"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.1-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. You lost Rs 2,000 today. You now feel you must trade again to get it back. What is the best step?",
+    "options": [
+      {"id": "a", "text": "Trade again at once, because the loss was the market's fault."},
+      {"id": "b", "text": "Pause, check the written rule for after a loss, and do not trade to get the money back. Record the urge in your journal."},
+      {"id": "c", "text": "Double the size of the next trade to recover faster."},
+      {"id": "d", "text": "Stop reading the plan and trust your gut."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Blaming the market does not change the rule. Trading to win back a loss is a rule break.",
+      "c": "Doubling the size after a loss breaks the rule that your plan should not allow a larger size after a loss.",
+      "d": "A gut feeling is the feeling the plan is designed to check. Trust the written rule instead."
+    },
+    "concepts": ["revenge-urge", "scenario"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.1-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Statement: 'I am not emotional, so the plan does not need a check.' Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "'I am not emotional', because every trader is always emotional"},
+      {"id": "b", "text": "'so the plan does not need a check', because feelings can arise without warning and can override a rule"},
+      {"id": "c", "text": "'the plan', because plans never need checks"},
+      {"id": "d", "text": "Nothing is wrong"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This is a belief about today, not a fact. Feelings can still arise without warning, so the first part is not the main error.",
+      "c": "Plans need checks because feelings can override them.",
+      "d": "The second part is the mistake. The check protects the plan on days when the trader feels calm too."
+    },
+    "concepts": ["overconfidence", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.1-q6",
+    "type": "mcq",
+    "prompt": "Which is the right way to use an emotion tag?",
+    "options": [
+      {"id": "a", "text": "Use it to judge yourself as a trader."},
+      {"id": "b", "text": "Tag your feeling before and after a trade, so you can see a pattern in your journal."},
+      {"id": "c", "text": "Use it to decide the size of your next trade."},
+      {"id": "d", "text": "Tag only on the days you lose money."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A tag is a record for learning. It is not a score of your worth as a trader.",
+      "c": "The size of a trade comes from the written plan, not from a feeling.",
+      "d": "Feelings also appear after wins and on no-trade days. Tag those too."
+    },
+    "concepts": ["journaling", "emotion-tags"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

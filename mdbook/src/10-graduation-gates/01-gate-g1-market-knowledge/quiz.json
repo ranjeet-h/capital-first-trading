@@ -1,0 +1,102 @@
+[
+  {
+    "id": "T10.1-q1",
+    "type": "mcq",
+    "prompt": "Which statement best describes a share?",
+    "options": [
+      {"id": "a", "text": "A loan to a company that must be repaid on a fixed date"},
+      {"id": "b", "text": "A part-ownership of a company"},
+      {"id": "c", "text": "A fixed deposit kept with a bank"},
+      {"id": "d", "text": "A promise of a fixed monthly income"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "That describes a loan, such as a bond or a debt instrument. A share is not a loan.",
+      "c": "A fixed deposit is money kept with a bank. A share is part-ownership of a company.",
+      "d": "A share does not promise a fixed income. Its value and any dividends can change."
+    },
+    "concepts": ["share", "listings"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.1-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. A set has 30 questions and the pass mark is 85%. What is the fewest number of correct answers that passes the quiz part?",
+    "answer": 26,
+    "tolerance": 0,
+    "unit": "questions",
+    "solution": "85% of 30 = 0.85 x 30 = 25.5. You cannot get half a question right, so round up to 26. Check: 26 / 30 = 86.7%, which passes. 25 / 30 = 83.3%, which does not.",
+    "concepts": ["quiz-threshold"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.1-q3",
+    "type": "scenario",
+    "prompt": "You score 100% on the quiz. One own-words prompt has a point you did not tick. Does the gate count you as complete?",
+    "options": [
+      {"id": "a", "text": "Yes. A perfect quiz score is enough."},
+      {"id": "b", "text": "No. Every prompt needs every required point ticked, and its text box must not be empty."},
+      {"id": "c", "text": "Yes, as long as you have typed at least one word in that prompt."},
+      {"id": "d", "text": "No, but only if the quiz score is below 85%."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The quiz is one part of the gate. The own-words prompts must also be complete.",
+      "c": "Typing a word is not enough. Every required point must be ticked.",
+      "d": "The quiz score does not change the own-words rule. A prompt with a missing point is not complete at any score."
+    },
+    "concepts": ["own-words-prompts"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.1-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"I passed Gate G1, so I can decide to trade with my savings now.\" Which part of this statement is wrong?",
+    "options": [
+      {"id": "a", "text": "\"I passed Gate G1\". It is not possible to pass the gate."},
+      {"id": "b", "text": "\"so I can decide to trade with my savings now\". Passing measures educational competence only and does not say you should trade."},
+      {"id": "c", "text": "Nothing. The statement is correct."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "You can pass the gate by reaching 85% on the quiz and completing the own-words prompts. The first part of the statement can be true.",
+      "c": "The statement is not correct. A pass shows understanding of the basics. It is not permission to trade with savings."
+    },
+    "concepts": ["gate-purpose", "real-money-is-separate"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T10.1-q5",
+    "type": "numeric",
+    "prompt": "Hypothetical. A share has a bid of Rs 100 and an ask of Rs 101. What is the spread in rupees?",
+    "answer": 1,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Spread = ask - bid = 101 - 100 = Rs 1. The prices are hypothetical.",
+    "concepts": ["spread", "order-book"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.1-q6",
+    "type": "multi",
+    "prompt": "Which statements about the order book are correct? Choose all that apply.",
+    "options": [
+      {"id": "a", "text": "Buy orders sit on the bid side."},
+      {"id": "b", "text": "The ask is the price a seller is asking."},
+      {"id": "c", "text": "The order book guarantees that the price will rise."},
+      {"id": "d", "text": "The spread is the gap between the bid and the ask."}
+    ],
+    "answer": ["a", "b", "d"],
+    "explanations": {
+      "c": "The order book shows the orders waiting right now. It does not guarantee any future price move."
+    },
+    "concepts": ["order-book", "spread"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  }
+]

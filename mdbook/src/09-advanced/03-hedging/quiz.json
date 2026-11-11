@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T9.3-q1",
+    "type": "mcq",
+    "prompt": "Which statement about a hedge is correct?",
+    "options": [
+      {"id": "a", "text": "A hedge is free protection."},
+      {"id": "b", "text": "A hedge has a cost, such as a premium or a gain you give up, and that cost reduces returns in good periods too."},
+      {"id": "c", "text": "A hedge removes all risk from the position."},
+      {"id": "d", "text": "A hedge means you can make the position bigger."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Every hedge has a cost. It is paid whether or not the protection is used.",
+      "c": "A hedge changes the shape of the loss. It does not remove the risk.",
+      "d": "Hedging is not a reason to size up. The position still needs its own limit."
+    },
+    "concepts": ["hedge-cost"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.3-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. You hold 100 shares at Rs 500. A put has strike Rs 470 and a premium of Rs 12 per share. The price falls to Rs 400. What is the hedged total loss, in rupees?",
+    "answer": 4200,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Loss on shares = 100 x (500 - 400) = Rs 10,000. Put payout = 100 x (470 - 400) = Rs 7,000. Net loss on shares = Rs 3,000. Add the premium, 100 x Rs 12 = Rs 1,200. Total = Rs 4,200. Checked again: Rs 4,200 / Rs 50,000 = 8.4%.",
+    "concepts": ["hedge-math", "hedge-cost"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.3-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. Same holding of Rs 50,000 and the same put with a premium of Rs 1,200. The premium is what percent of the holding? Give one decimal place.",
+    "answer": 2.4,
+    "tolerance": 0.05,
+    "unit": "%",
+    "solution": "Rs 1,200 / Rs 50,000 = 0.024 = 2.4%. Checked again: 2.4% of Rs 50,000 = Rs 1,200.",
+    "concepts": ["hedge-cost", "small-accounts"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.3-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. A hedged holding stays flat for a month. The share ends at Rs 500, the same as the start. The put expires with no value. What is the result?",
+    "options": [
+      {"id": "a", "text": "A profit equal to the premium."},
+      {"id": "b", "text": "A loss of Rs 1,200, the premium paid, before any other costs."},
+      {"id": "c", "text": "No change at all, because a hedge never costs anything in a flat market."},
+      {"id": "d", "text": "A loss of Rs 10,000."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The premium is paid, not received, by the buyer of a put. Nothing comes back in a flat market.",
+      "c": "The premium is paid whatever the price does. A hedge costs money in a flat market.",
+      "d": "Rs 10,000 is the loss on the shares if the price fell to Rs 400. That is not this flat case."
+    },
+    "concepts": ["scenario", "hedge-cost"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.3-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"I hedged, so the position has no risk.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "I hedged: this describes an action."},
+      {"id": "b", "text": "the position has no risk"},
+      {"id": "c", "text": "Hedging means taking a second position that offsets part of the first."},
+      {"id": "d", "text": "Nothing. The statement is correct."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This describes an action you took. It is not the mistake.",
+      "c": "This is the correct meaning of a hedge. It is not the mistake.",
+      "d": "The statement is wrong. A hedge reduces some risk, but basis risk, the cost and any loss after the hedge remain."
+    },
+    "concepts": ["hedge", "basis-risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.3-q6",
+    "type": "mcq",
+    "prompt": "Which statement describes basis risk?",
+    "options": [
+      {"id": "a", "text": "The hedge always moves exactly with the position it protects."},
+      {"id": "b", "text": "The hedge may not move exactly with the position it protects, so some risk can remain."},
+      {"id": "c", "text": "The hedge costs nothing when the price is flat."},
+      {"id": "d", "text": "Basis risk is the premium paid for a hedge."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A hedge can differ from the position it protects. That gap is the basis risk.",
+      "c": "The premium is paid whatever the price does. A flat price does not remove the cost.",
+      "d": "The premium is the cost of the hedge. Basis risk is the gap in how the two positions move."
+    },
+    "concepts": ["basis-risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

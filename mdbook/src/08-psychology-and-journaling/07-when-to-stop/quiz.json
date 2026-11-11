@@ -1,0 +1,126 @@
+[
+  {
+    "id": "T8.7-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital Rs 40,000. Your monthly loss limit is 5%. How many rupees is the limit?",
+    "answer": 2000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "5% of Rs 40,000 = 0.05 x 40,000 = Rs 2,000. Check: 40,000 / 20 = 2,000.",
+    "concepts": ["loss-limit", "trigger-levels"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.7-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital was Rs 50,000 and has fallen by Rs 5,000 from the peak, so the capital now is Rs 45,000. Your written cut sets risk at 0.5% of current capital. What is the risk per trade, in rupees?",
+    "answer": 225,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Current capital = 50,000 - 5,000 = 45,000. Risk = 0.5% x 45,000 = 0.005 x 45,000 = Rs 225. Check: 45,000 / 200 = 225.",
+    "concepts": ["exposure-cut"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.7-q3",
+    "type": "mcq",
+    "prompt": "Hypothetical. Someone says: \"A limit only applies after I have decided it does.\" Which response is correct?",
+    "options": [
+      {"id": "a", "text": "Correct. I decide on the day whether it applies"},
+      {"id": "b", "text": "Wrong. The limits are written in the plan before trading, so they apply without a new decision"},
+      {"id": "c", "text": "A limit is only a suggestion when the setup looks strong"},
+      {"id": "d", "text": "A limit applies only in months when I am losing"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A limit that waits for a new decision can be dropped on a bad day. That is why it is written in advance.",
+      "c": "A setup that looks strong does not switch off a limit. The limit applies to every setup.",
+      "d": "The limit applies in every month. Its purpose is to stop a bad run from growing."
+    },
+    "concepts": ["trigger-levels", "loss-limit"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.7-q4",
+    "type": "mcq",
+    "prompt": "Hypothetical. You say: \"I should increase my size to recover before a cut.\" Which response is correct?",
+    "options": [
+      {"id": "a", "text": "Correct, because a bigger size gets back faster"},
+      {"id": "b", "text": "Wrong. A written cut in size reduces the damage while you review"},
+      {"id": "c", "text": "Correct, after two losses"},
+      {"id": "d", "text": "Correct, but only in strong markets"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A bigger size makes each loss larger. It does not get back faster in any reliable way.",
+      "c": "Two losses do not change the rule. A bigger size after losses breaks the plan.",
+      "d": "Market conditions do not change the rule. The cut is a written step, and size does not grow after a loss."
+    },
+    "concepts": ["exposure-cut"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.7-q5",
+    "type": "mcq",
+    "prompt": "Hypothetical. You say: \"I can restart the next morning if I feel calm.\" Which response is correct?",
+    "options": [
+      {"id": "a", "text": "Correct, because feeling calm is enough"},
+      {"id": "b", "text": "Wrong. Restart needs a written review and the waiting period set in the plan"},
+      {"id": "c", "text": "Correct, after any win"},
+      {"id": "d", "text": "Correct, because the limit is just a guide"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Feeling calm can change in an hour. The restart rule needs a review and a fixed waiting period.",
+      "c": "A win does not prove the cause is fixed. The restart still needs the written review.",
+      "d": "A limit is a rule, not a guide. It applies until the restart conditions are met."
+    },
+    "concepts": ["restart"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.7-q6",
+    "type": "scenario",
+    "prompt": "Hypothetical. On the last trading day of the month, your losses reach your monthly limit of Rs 3,000 at the close. What fits the plan?",
+    "options": [
+      {"id": "a", "text": "The limit does not count, because the month ends today"},
+      {"id": "b", "text": "The limit counts. Record the breach and follow the suspension rule until the review"},
+      {"id": "c", "text": "Trade on the first day of next month as if nothing happened"},
+      {"id": "d", "text": "Trade more on the last day to end the month even"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The limit applies to the losses in the month, including the last day. A breach on the last day still counts.",
+      "c": "The suspension rule still applies. Starting the next month without a review skips the restart conditions.",
+      "d": "Trading more after a limit breach breaks the rule. It can make the loss much bigger."
+    },
+    "concepts": ["loss-limit", "suspension"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.7-q7",
+    "type": "spot-the-mistake",
+    "prompt": "Hypothetical plan line: \"Stop when things feel bad.\" Which part of this line is the mistake?",
+    "options": [
+      {"id": "a", "text": "Having a stop at all"},
+      {"id": "b", "text": "\"Feel bad\" is a feeling, not a yes or no test that the plan can check"},
+      {"id": "c", "text": "Stopping"},
+      {"id": "d", "text": "Nothing is wrong with the line"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A stop is part of the method. The mistake is the test used to trigger it.",
+      "c": "Stopping is the right action in the right case. The mistake is that the trigger cannot be checked.",
+      "d": "The line fails because the trigger is a feeling. It cannot be checked before the moment you need it."
+    },
+    "concepts": ["suspension-triggers"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

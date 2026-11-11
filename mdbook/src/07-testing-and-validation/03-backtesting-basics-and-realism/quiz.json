@@ -1,0 +1,126 @@
+[
+  {
+    "id": "T7.3-q1",
+    "type": "mcq",
+    "prompt": "A signal appears at today's close. Which fill is realistic for a backtest?",
+    "options": [
+      {"id": "a", "text": "Today's close, the price that made the signal."},
+      {"id": "b", "text": "Tomorrow's open, which is the first price you could act on."},
+      {"id": "c", "text": "Today's high, the best price of the day."},
+      {"id": "d", "text": "Any price between today's low and today's high."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "You see the close only after the market shuts. A fill at that same close is not possible in real trading. This is a same-bar fill, which is invalid.",
+      "c": "The day's high was reached before the decision was made, so filling at it is also not possible.",
+      "d": "Any price inside today's range was also reached before the close. The fill must come after the signal."
+    },
+    "concepts": ["same-bar-fill", "timing-rule"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.3-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital is Rs 50,000, the risk is 1%, the next open is Rs 504 and the stop is Rs 492. How many whole shares does the plan allow after all three limits?",
+    "answer": 24,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "Risk budget = Rs 500. Risk per share = 504 - 492 = Rs 12. Raw shares = floor(500 / 12) = 41. Cash cap = floor(50,000 / 504) = 99. Concentration cap = floor(12,500 / 504) = 24. Shares = the minimum of 41, 99 and 24 = 24.",
+    "concepts": ["position-sizing", "binding-constraint"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.3-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. The plan buys 24 shares at Rs 504. The stop is Rs 490, and the day opens at Rs 480. The stop fills at the open. What is the loss in rupees before costs?",
+    "answer": 576,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Loss = 24 x (504 - 480) = 24 x 24 = Rs 576. Check: 24 x 504 = 12,096 and 24 x 480 = 11,520. 12,096 - 11,520 = 576.",
+    "concepts": ["gap-through-stop", "planned-loss"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.3-q4",
+    "type": "mcq",
+    "prompt": "Which statement about costs in a backtest is correct?",
+    "options": [
+      {"id": "a", "text": "Costs only matter for live trading, so a backtest can leave them out."},
+      {"id": "b", "text": "Costs enter each fill, so the net P&L is the result after costs."},
+      {"id": "c", "text": "Costs can be left out whenever the result looks good."},
+      {"id": "d", "text": "Costs are the same for every stock, so they can be ignored in a test."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A backtest that leaves out costs shows a result that is too high. Costs matter in the test as well as in live trading.",
+      "c": "A good-looking result is the reason to check costs, not to skip them.",
+      "d": "Costs can differ by trade and by product type. They must pass through each fill."
+    },
+    "concepts": ["costs", "net-pnl"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.3-q5",
+    "type": "mcq",
+    "prompt": "Two runs use the same data, the same settings and the same seed. What should happen?",
+    "options": [
+      {"id": "a", "text": "The results should differ, because the runs are separate."},
+      {"id": "b", "text": "The results should match exactly."},
+      {"id": "c", "text": "The results are random, so no run can be checked."},
+      {"id": "d", "text": "Only the first run counts, and the second run is ignored."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A backtest with the same inputs should repeat its result. Differences point to a hidden input or a bug.",
+      "c": "Random steps are fixed by the seed, so the run can be checked. This is why the seed is saved.",
+      "d": "Both runs should match. Ignoring one run hides a check that the result is repeatable."
+    },
+    "concepts": ["determinism", "seed"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.3-q6",
+    "type": "scenario",
+    "prompt": "Hypothetical. A stop is at Rs 490. The market opens at Rs 480 on the next day. Which statement is right?",
+    "options": [
+      {"id": "a", "text": "The stop fills at Rs 490, because that is the stop price."},
+      {"id": "b", "text": "The fill is at the open, Rs 480, because the open is already below the stop."},
+      {"id": "c", "text": "The fill is at the close of the same day."},
+      {"id": "d", "text": "The trade is cancelled, because the price gapped."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A stop does not always fill at its own price. If the open is already below the stop, the fill is at the open.",
+      "c": "The fill follows the open of the next day in this contract, not a close.",
+      "d": "A gap does not cancel the trade in this model. The trade fills at the open, and the loss is larger than planned."
+    },
+    "concepts": ["gap-through-stop", "stop-fill"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.3-q7",
+    "type": "spot-the-mistake",
+    "prompt": "Here is a backtest rule: Enter at today's open when today's high is above yesterday's high. Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "Entering at today's open, which is always a realistic fill."},
+      {"id": "b", "text": "Using today's high to trigger an entry at today's open, because the high is not known at the open."},
+      {"id": "c", "text": "Comparing with yesterday's high."},
+      {"id": "d", "text": "Nothing is wrong, because the high is in the data."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The open is a real price, but the decision uses a value that is not known yet. The fill is not the only problem.",
+      "c": "Yesterday's high was known before today. Comparing with it does not look ahead.",
+      "d": "Being in the data does not make a value known at the time of the decision. The high forms during the day."
+    },
+    "concepts": ["timing-rule", "look-ahead"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

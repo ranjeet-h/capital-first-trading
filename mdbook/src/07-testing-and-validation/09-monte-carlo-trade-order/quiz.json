@@ -1,0 +1,114 @@
+[
+  {
+    "id": "T7.9-q1",
+    "type": "mcq",
+    "prompt": "The same ten trades are put in a new order. What stays the same, and what can change?",
+    "options": [
+      {"id": "a", "text": "The expectancy stays the same. The drawdown and the losing streaks can change."},
+      {"id": "b", "text": "Shuffling removes the edge, so the expectancy falls."},
+      {"id": "c", "text": "Everything changes, including the total result."},
+      {"id": "d", "text": "Only the win rate changes."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "Shuffling does not change the trades or their total. The expectancy stays the same.",
+      "c": "The total is the sum of the same trades, so it does not change with the order.",
+      "d": "The win rate counts the wins, and the order does not change how many there are."
+    },
+    "concepts": ["reordering", "path-risk"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.9-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. A system has a loss probability of 0.65 on each trade. What is the chance, in percent, of three losses in a row starting at a given trade? Give the answer to one decimal place.",
+    "answer": 27.5,
+    "tolerance": 0.1,
+    "unit": "%",
+    "solution": "0.65 x 0.65 x 0.65 = 0.274625. As a percentage, that is 27.46 percent, which is about 27.5 percent to one decimal place.",
+    "concepts": ["loss-probability", "numeric"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.9-q3",
+    "type": "mcq",
+    "prompt": "A Monte Carlo run gives a 95th-percentile maximum drawdown of Rs 9,000. What does that mean?",
+    "options": [
+      {"id": "a", "text": "Rs 9,000 is the worst drawdown that can happen."},
+      {"id": "b", "text": "In 95 runs out of every 100, the drawdown was Rs 9,000 or less."},
+      {"id": "c", "text": "The average drawdown is Rs 9,000."},
+      {"id": "d", "text": "The drawdown will be Rs 9,000 in 95 of the next 100 trades."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The 95th percentile is not the worst case. The worst run can be worse than it.",
+      "c": "The average is a different figure. The 95th percentile is a point on the spread of results.",
+      "d": "Simulated runs are not forecasts of your next trades."
+    },
+    "concepts": ["percentiles"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.9-q4",
+    "type": "mcq",
+    "prompt": "Why is a shuffle-based run not fully realistic?",
+    "options": [
+      {"id": "a", "text": "Shuffled results are realistic because they are random."},
+      {"id": "b", "text": "It assumes each trade is independent. Real losses often cluster, so the streaks can be understated."},
+      {"id": "c", "text": "It uses too many runs to be useful."},
+      {"id": "d", "text": "It cannot show results as percentages."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Random order is a tool for testing. It does not make each path a real path.",
+      "c": "More runs help the spread of results. The run count is not the flaw.",
+      "d": "Percentages are the usual way to read the results. They are not the limit."
+    },
+    "concepts": ["independence", "assumptions"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.9-q5",
+    "type": "scenario",
+    "prompt": "Hypothetical. A Monte Carlo 95th-percentile drawdown is Rs 9,000. A friend says: 'So the rule will never lose more than Rs 9,000.' What is the best reply?",
+    "options": [
+      {"id": "a", "text": "That is right, so the rule is safe at Rs 9,000."},
+      {"id": "b", "text": "No. The figure is a range from past trades under assumptions. It does not set a limit on future losses."},
+      {"id": "c", "text": "Yes, as long as the run used 1,000 shuffles."},
+      {"id": "d", "text": "No, because drawdown should only be given as a percentage."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A percentile is not a limit. Some runs were worse, and the future may differ from the past trades.",
+      "c": "The number of shuffles does not turn a range into a promise. The assumptions still apply.",
+      "d": "The unit is not the problem. The figure is a range, not a limit."
+    },
+    "concepts": ["percentiles", "scenario"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.9-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Statement: 'Monte Carlo shows the maximum drawdown I will suffer.' Which part of the statement is wrong?",
+    "options": [
+      {"id": "a", "text": "The words 'Monte Carlo', because the method is a name for repeated random runs"},
+      {"id": "b", "text": "The word 'shows', because Monte Carlo does not show any results"},
+      {"id": "c", "text": "The words 'the maximum drawdown I will suffer', because they turn a range of simulated paths into a forecast of your future"},
+      {"id": "d", "text": "Nothing. The statement is correct."}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "The name is fine. Monte Carlo is the name for the method of repeated random runs.",
+      "b": "Monte Carlo does show results. Those results are a range of simulated paths, not nothing.",
+      "d": "A simulation is not a forecast. The statement treats it as one, so it is wrong."
+    },
+    "concepts": ["forecast-vs-range", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

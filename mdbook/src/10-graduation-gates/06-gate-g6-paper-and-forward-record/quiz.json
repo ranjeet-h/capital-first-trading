@@ -1,0 +1,104 @@
+[
+  {
+    "id": "T10.6-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. You have 30 trades in one period. The plan threshold is 90%. How many of those trades must have followed the plan?",
+    "answer": 27,
+    "tolerance": 0,
+    "unit": "trades",
+    "solution": "90% of 30 = 0.90 x 30 = 27. Check: 27 / 30 = 90.0%, which meets the threshold. 26 / 30 = 86.7%, which does not.",
+    "concepts": ["plan-adherence", "thresholds"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.6-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. In one period, 26 of 30 trades followed the plan. What is the plan adherence, as a percentage to one decimal place?",
+    "answer": 86.7,
+    "tolerance": 0.1,
+    "unit": "%",
+    "solution": "Plan adherence = 26 / 30 = 0.8667 = 86.7%. Below the 90% threshold.",
+    "concepts": ["plan-adherence"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.6-q3",
+    "type": "scenario",
+    "prompt": "In one period you have 30 trades and 27 followed the plan. But the limit-breach log shows one breach in the same period. Does the gate pass for that period?",
+    "options": [
+      {"id": "a", "text": "Yes. The 90% adherence is met, so the breach does not count."},
+      {"id": "b", "text": "No. A breach in the same period means the gate is not passed for that period."},
+      {"id": "c", "text": "Yes. Breaches are not counted in this gate."},
+      {"id": "d", "text": "No, because 30 trades is not enough."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Adherence and breaches are both checked. A breach in the same period stops the gate from passing.",
+      "c": "Breaches are checked. The journal's limit-breach log is part of this gate.",
+      "d": "Thirty trades meets the count. The problem is the breach, not the count."
+    },
+    "concepts": ["limit-breach", "thresholds"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.6-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"I can delete the trades that broke my plan, so my record looks better.\" Which part of this statement is wrong?",
+    "options": [
+      {"id": "a", "text": "\"I can delete the trades that broke my plan\". This is wrong. Entries cannot be deleted to improve the count."},
+      {"id": "b", "text": "\"Record each trade\". This is correct practice."},
+      {"id": "c", "text": "\"Keep the limit-breach log\". This is correct practice."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "This is correct. Each trade should have its own line in the record.",
+      "c": "This is correct. The limit-breach log is part of the gate, and it should be kept."
+    },
+    "concepts": ["record-integrity", "tombstones"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.6-q5",
+    "type": "mcq",
+    "prompt": "Which rows count toward this gate?",
+    "options": [
+      {"id": "a", "text": "Backtest rows."},
+      {"id": "b", "text": "Live broker rows."},
+      {"id": "c", "text": "Forward-script rows and manual paper rows, counted separately."},
+      {"id": "d", "text": "Rows from a friend's journal."}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "Backtest rows are not counted in this gate.",
+      "b": "Live rows are not counted in this gate.",
+      "d": "Only your own forward-script and manual paper rows count."
+    },
+    "concepts": ["record-types"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.6-q6",
+    "type": "mcq",
+    "prompt": "What does a record of 30 trades show?",
+    "options": [
+      {"id": "a", "text": "That a strategy works."},
+      {"id": "b", "text": "That you kept a record and followed a plan for those trades. It does not show that a strategy works."},
+      {"id": "c", "text": "That you will make a profit."},
+      {"id": "d", "text": "Nothing at all."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A record of 30 trades does not show that a strategy works. The gate says so on its screen.",
+      "c": "A record does not predict profit. It shows what was logged and how closely the plan was followed.",
+      "d": "A record does show something: that trades were logged and how many followed the plan. It just does not prove a strategy works."
+    },
+    "concepts": ["record-meaning", "validation"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  }
+]

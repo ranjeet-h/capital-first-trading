@@ -1,0 +1,114 @@
+[
+  {
+    "id": "T7.10-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. A paper fill is Rs 806 for 12 shares. A real fill would have been Rs 808 for the same 12 shares. What is the rupee effect of the worse fill?",
+    "answer": 24,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Paper value: 12 x 806 = 9,672. Real value: 12 x 808 = 9,696. Difference = 9,696 - 9,672 = 24. Check: 12 x (808 - 806) = 12 x 2 = 24.",
+    "concepts": ["fill-price", "numeric"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.10-q2",
+    "type": "mcq",
+    "prompt": "A paper trade shows a profit of Rs 1,200. Which statement is correct?",
+    "options": [
+      {"id": "a", "text": "A paper profit is the same as a live profit."},
+      {"id": "b", "text": "It is a hypothetical result. Real fills, costs and your own behaviour could make a live result different."},
+      {"id": "c", "text": "It is a live result, because the script recorded it."},
+      {"id": "d", "text": "It proves the rule works with real money."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A paper profit assumes fills that may not happen in real trading. It is not the same as a live profit.",
+      "c": "The script records hypothetical trades. Recording a trade does not make it live.",
+      "d": "A paper result does not show how the rule works with real money. Real money adds delays, costs and emotion."
+    },
+    "concepts": ["hypothetical-vs-live"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.10-q3",
+    "type": "mcq",
+    "prompt": "The script finds a missing price for one symbol on a trading day. What should it do?",
+    "options": [
+      {"id": "a", "text": "Skip that symbol and carry on with the rest."},
+      {"id": "b", "text": "Stop, report the bad data, and record no fill for that symbol."},
+      {"id": "c", "text": "Use yesterday's price and record it as today's."},
+      {"id": "d", "text": "Fill the trade at zero rupees."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Skipping hides the gap. The result then looks complete when it is not.",
+      "c": "Using an old price and labelling it as new is a guess. The record would be false.",
+      "d": "A zero fill is not a real price. It would give a false result."
+    },
+    "concepts": ["fail-closed", "data-quality"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.10-q4",
+    "type": "mcq",
+    "prompt": "Which is the role of the Kite demo in this book?",
+    "options": [
+      {"id": "a", "text": "It is a forward test."},
+      {"id": "b", "text": "It is for practice with the screens, using dummy data. It is not a forward test."},
+      {"id": "c", "text": "It is a live account with small money."},
+      {"id": "d", "text": "It is a backtest of past prices."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The demo uses dummy data for interface practice. It does not follow fixed rules through live prices.",
+      "c": "The book never asks you to place a real order. The demo is not a live account.",
+      "d": "A backtest uses past data and rules applied after the fact. The demo is for practice with the screens."
+    },
+    "concepts": ["kite-demo", "forward-test"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.10-q5",
+    "type": "scenario",
+    "prompt": "Hypothetical. The script's data is missing on a market holiday, but the script records a fill for that day. What is the main error?",
+    "options": [
+      {"id": "a", "text": "The script should record fills on holidays, because prices exist."},
+      {"id": "b", "text": "The holiday list was not checked, so the script recorded a fill when the market was closed. It should stop and use the verified holiday list."},
+      {"id": "c", "text": "The fill should be recorded as live."},
+      {"id": "d", "text": "Nothing is wrong, because a missing price is harmless."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A market holiday has no trading session. A fill on that day is a false record.",
+      "c": "Changing the mode to live makes the error worse. No real orders were sent.",
+      "d": "A missing price is a warning sign. The script must stop rather than record a fill."
+    },
+    "concepts": ["holidays", "fail-closed", "scenario"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.10-q6",
+    "type": "spot-the-mistake",
+    "prompt": "A forward log has this row: 'Week 1. Mode: live. Trades recorded on paper. No orders sent.' Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "'Week 1', because the log should not have a week label"},
+      {"id": "b", "text": "'Mode: live', because a paper test must be labelled forward, not live"},
+      {"id": "c", "text": "'No orders sent', because it should say orders were sent"},
+      {"id": "d", "text": "'Trades recorded on paper', because paper trades cannot be recorded"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A week label is useful and is not the error.",
+      "c": "No orders should be sent in a forward test. That part of the row is correct.",
+      "d": "Paper trades are recorded as hypothetical fills. That part of the row is correct."
+    },
+    "concepts": ["mode-labels", "spot-the-mistake"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

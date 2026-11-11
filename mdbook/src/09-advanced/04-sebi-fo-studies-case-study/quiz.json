@@ -1,0 +1,126 @@
+[
+  {
+    "id": "T9.4-q1",
+    "type": "mcq",
+    "prompt": "A study finds that 60 percent of a group lost money. Which conclusion is correct?",
+    "options": [
+      {"id": "a", "text": "Any one trader has a negative expected value."},
+      {"id": "b", "text": "The percentage alone does not give the expected value. The size of the wins and losses is also needed."},
+      {"id": "c", "text": "The group's average result must be negative."},
+      {"id": "d", "text": "The study shows what will happen to me."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A group's share of losers does not prove the expected value for any one trader.",
+      "c": "The number of losers alone does not set the group average. The size of wins also counts.",
+      "d": "A study describes a group over a period. It does not forecast one person."
+    },
+    "concepts": ["expected-value", "percentage-vs-value"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.4-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. A group has 400 winners with total gains of Rs 4,00,000 and 600 losers with total losses of Rs 12,00,000. What is the group's net result, in rupees?",
+    "answer": -800000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Net = total gains - total losses = Rs 4,00,000 - Rs 12,00,000 = minus Rs 8,00,000. Checked again: 1,000 traders x minus Rs 800 each = minus Rs 8,00,000.",
+    "concepts": ["group-net", "expected-value"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.4-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. In the same group, what is the average loss per loser, in rupees?",
+    "answer": 2000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Average loss per loser = Rs 12,00,000 / 600 = Rs 2,000. Checked again: 600 x Rs 2,000 = Rs 12,00,000.",
+    "concepts": ["averages", "expected-value"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.4-q4",
+    "type": "mcq",
+    "prompt": "Which statement about a study's method is correct?",
+    "options": [
+      {"id": "a", "text": "A study's conclusion does not depend on its sample."},
+      {"id": "b", "text": "A study that follows only the people who stayed in the market can give a skewed picture."},
+      {"id": "c", "text": "Costs do not matter when a study measures gains and losses."},
+      {"id": "d", "text": "A headline figure is enough, without its period."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The sample decides who the result describes. A different sample can give a different conclusion.",
+      "c": "Costs change the net result. A study that leaves them out gives a different picture.",
+      "d": "A figure without its period cannot be read in context. Always check the period."
+    },
+    "concepts": ["method", "survivorship"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.4-q5",
+    "type": "scenario",
+    "prompt": "A post says, \"Traders lost money in most cases.\" It gives no period, no sample and no source date. What is the best response?",
+    "options": [
+      {"id": "a", "text": "Repeat it, since a clear claim is worth sharing."},
+      {"id": "b", "text": "Treat it as unclear, and look for the study, its date, its period and its method before quoting it."},
+      {"id": "c", "text": "Assume it applies to you, since most people lose."},
+      {"id": "d", "text": "Use it to decide which trades to take."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A claim with no period, sample or source cannot be checked. Repeating it spreads an unclear figure.",
+      "c": "A group figure does not tell you what will happen to one person.",
+      "d": "A headline is not a basis for any trade. This book does not use study headlines as trading signals."
+    },
+    "concepts": ["scenario", "quoting-figures"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.4-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"The study proves F&O can never be profitable.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The study: a study is a fine source to name, if quoted with its date and method."},
+      {"id": "b", "text": "F&O: this means futures and options, which is a fair word to use."},
+      {"id": "c", "text": "proves ... can never be profitable: a study of a group over a period cannot prove what can never happen to any one trader."},
+      {"id": "d", "text": "Nothing. The statement is correct."}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "A study is a valid source when it is quoted with its date and method. The word study is correct.",
+      "b": "F&O means futures and options. The words are fine. The overreach is in the claim that profit can never happen.",
+      "d": "The claim goes beyond what any study of a group can show."
+    },
+    "concepts": ["overclaiming", "method"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.4-q7",
+    "type": "mcq",
+    "prompt": "Which is the right way to use a SEBI figure in your notes?",
+    "options": [
+      {"id": "a", "text": "Quote it from memory, since you remember the headline."},
+      {"id": "b", "text": "Copy the figure from the source, with the study name, the date and the period."},
+      {"id": "c", "text": "Round it, so it is easier to remember."},
+      {"id": "d", "text": "Use a figure from a friend's post, since it is the same figure."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Memory can be wrong, and a figure without its source cannot be checked.",
+      "c": "Rounding changes the figure. A changed figure is no longer the source's figure.",
+      "d": "A post is not a source. Check the study itself."
+    },
+    "concepts": ["quoting-figures"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

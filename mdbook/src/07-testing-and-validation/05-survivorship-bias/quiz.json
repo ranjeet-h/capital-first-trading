@@ -1,0 +1,114 @@
+[
+  {
+    "id": "T7.5-q1",
+    "type": "mcq",
+    "prompt": "What is survivorship bias?",
+    "options": [
+      {"id": "a", "text": "A bias that only affects mutual funds."},
+      {"id": "b", "text": "A test that includes only companies still listed today, so the companies that failed are missing."},
+      {"id": "c", "text": "A rule that waits for confirmation before it trades."},
+      {"id": "d", "text": "A test that trades only the largest companies."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Survivorship bias can affect any test of companies, including stock tests. It is not limited to mutual funds.",
+      "c": "Waiting for confirmation is a rule choice. It is not a data bias.",
+      "d": "Trading the largest companies is a universe choice. It is not the same as dropping companies that failed."
+    },
+    "concepts": ["survivorship-bias", "definition"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.5-q2",
+    "type": "mcq",
+    "prompt": "Survivorship bias usually makes a test result:",
+    "options": [
+      {"id": "a", "text": "Look worse than it really was."},
+      {"id": "b", "text": "Look better than a trader could really have got."},
+      {"id": "c", "text": "Stay exactly the same as before."},
+      {"id": "d", "text": "Depend only on how many years the test covers."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Missing the companies that failed removes the losses from the test. The direction is toward a better look.",
+      "c": "Removing the companies that failed changes the result. The bias does not leave it unchanged.",
+      "d": "The number of years matters for other reasons. Survivorship bias comes from which companies are in the list."
+    },
+    "concepts": ["survivorship-bias", "direction-of-bias"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.5-q3",
+    "type": "scenario",
+    "prompt": "Hypothetical. You test a rule on today's index members, going back to 2015. What is the main problem?",
+    "options": [
+      {"id": "a", "text": "The test is too short."},
+      {"id": "b", "text": "Companies that left the index or were delisted before today are missing, so the universe is biased."},
+      {"id": "c", "text": "There is no problem, because the index is large."},
+      {"id": "d", "text": "The test should use a smaller index."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The length of the test is not the main issue here. The list of companies is the issue.",
+      "c": "The size of the index does not fix the bias. The companies missing from today's list are still missing.",
+      "d": "A smaller index has the same problem. The fix is a point-in-time universe for each past date."
+    },
+    "concepts": ["point-in-time-universe", "survivorship-bias"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.5-q4",
+    "type": "spot-the-mistake",
+    "prompt": "I used the 50 most liquid stocks today, so my test is representative. Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The list comes from today, so stocks that were traded in the past but have since gone are missing."},
+      {"id": "b", "text": "Liquid stocks cannot be tested at all."},
+      {"id": "c", "text": "Fifty stocks is too few to test."},
+      {"id": "d", "text": "Nothing is wrong, because a large list is always representative."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "Liquid stocks can be tested. The problem is the list, not the liquidity.",
+      "c": "The number of stocks is not the issue. A list of 500 companies from today would have the same problem.",
+      "d": "Size does not make a list representative of the past. The list is built from today, so it leaves out the companies that have gone."
+    },
+    "concepts": ["survivorship-bias", "universe-choice"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.5-q5",
+    "type": "numeric",
+    "prompt": "Hypothetical. Four stocks return +50%, +20%, -100% and -40% over the same period. What is the average return of all four, in percent?",
+    "answer": -17.5,
+    "tolerance": 0.1,
+    "unit": "%",
+    "solution": "Average = (50 + 20 - 100 - 40) / 4 = -70 / 4 = -17.5%. Check: 50 + 20 = 70, and 100 + 40 = 140, so the total is -70, and -70 / 4 = -17.5.",
+    "concepts": ["survivorship-bias", "averages"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.5-q6",
+    "type": "mcq",
+    "prompt": "Which universe must a test on past dates use?",
+    "options": [
+      {"id": "a", "text": "Any universe, as long as it is large."},
+      {"id": "b", "text": "The stocks that existed and could be traded on each past date."},
+      {"id": "c", "text": "Today's largest stocks."},
+      {"id": "d", "text": "Only the stocks that have a full history on the source."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Size does not fix the bias. A large list of today's companies still leaves out the companies that have gone.",
+      "c": "Today's largest stocks are a survivors-only list. The companies that failed are not in it.",
+      "d": "Keeping only the stocks with a full history removes the companies that stopped trading. That is survivorship bias again."
+    },
+    "concepts": ["point-in-time-universe", "universe-choice"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

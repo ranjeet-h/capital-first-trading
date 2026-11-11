@@ -13,8 +13,10 @@ This is an education book. It does not recommend any stock, strategy or broker a
 5. **Track 4: Kite and execution** - a safe tour of Kite using dummy data only.
 6. **Track 5: Indicators** - moving averages, ATR, RSI, MACD and more, and why they can disagree.
 7. **Track 6: Strategy** - trading styles, edge, a simple swing plan, and when not to trade.
-
-The tracks on testing, psychology and the graduation gates are still being written.
+8. **Track 7: Testing and validation** - how to test an idea on past and paper data, and the traps that fool you.
+9. **Track 8: Psychology and journaling** - fear, greed, discipline, losing streaks, and when to stop.
+10. **Track 9: Advanced (theory only)** - futures, options, hedging and market data, to understand and not to trade.
+11. **Track 10: Graduation gates** - seven checks of what you have learned. Passing a gate never tells you to trade.
 
 ## How to use this book
 
@@ -22,4 +24,4 @@ The tracks on testing, psychology and the graduation gates are still being writt
 - Demos on the page are for practice. Change the numbers and see what happens.
 - All money examples are made up and for learning only.
 - A small yellow **check** tag means a fact (a charge, tax rate or rule) can change. Confirm it on the official source before you rely on it.
-- This book is still a draft. Some tools, such as the trade journal, are still being built.
+- Some tools, such as the trade journal, the backtester and the forward-test tool, are still being built. Until then, do the paper tasks on paper.

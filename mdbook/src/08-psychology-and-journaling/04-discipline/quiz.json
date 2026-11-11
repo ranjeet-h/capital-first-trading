@@ -1,0 +1,114 @@
+[
+  {
+    "id": "T8.4-q1",
+    "type": "mcq",
+    "prompt": "Which of these is a valid pre-trade checklist item?",
+    "options": [
+      {"id": "a", "text": "I can judge the setup at the moment"},
+      {"id": "b", "text": "Is the stop price written in my plan before entry? Yes or no."},
+      {"id": "c", "text": "The setup looks strong"},
+      {"id": "d", "text": "I feel confident about this trade"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Judging at the moment is the habit a checklist replaces. The item must be checkable before entry, as a yes or no.",
+      "c": "\"Looks strong\" is a feeling, not a yes or no test with evidence.",
+      "d": "A feeling of confidence cannot be checked. It is not a checklist item."
+    },
+    "concepts": ["checklist"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.4-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Entry Rs 250, stop Rs 240, target Rs 275. What is the break-even win rate before costs, in percent? Give one decimal place.",
+    "answer": 28.6,
+    "tolerance": 0.1,
+    "unit": "%",
+    "solution": "Reward = 275 - 250 = 25. Risk = 250 - 240 = 10. R = 25 / 10 = 2.5. Break-even = 1 / (1 + 2.5) = 1 / 3.5 = 0.2857, which is 28.6%.",
+    "concepts": ["reward-to-risk", "break-even"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.4-q3",
+    "type": "mcq",
+    "prompt": "Hypothetical. A setup has R = 1, so the break-even win rate before costs is 50%. Someone says: \"A 1:1 setup with a 60% win rate is always good.\" Which correction is right?",
+    "options": [
+      {"id": "a", "text": "Yes, always, because 60% is more than 50%"},
+      {"id": "b", "text": "No. 60% is above the 50% break-even before costs, but a few trades do not prove it, and costs are not yet included"},
+      {"id": "c", "text": "No, because 1:1 setups never work"},
+      {"id": "d", "text": "Yes, because costs do not matter"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Being above break-even before costs does not make a setup always good. The result depends on costs and on how many trades show it.",
+      "c": "The arithmetic does not say that. A 1:1 setup needs 50% before costs, and it can still lose if the win rate is lower.",
+      "d": "Costs reduce what you keep. They matter a great deal for small trades."
+    },
+    "concepts": ["break-even", "reward-to-risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.4-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. A setup passes four checklist items and fails two. Your plan says any failed item means no trade. What should you do?",
+    "options": [
+      {"id": "a", "text": "Trade it, because four of six is most of the list"},
+      {"id": "b", "text": "Do not trade it, because the plan says a failed item means no trade"},
+      {"id": "c", "text": "Trade a smaller size to test the setup"},
+      {"id": "d", "text": "Change the checklist so the setup passes"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The plan rule is about failed items, not the share that passed. The plan says no trade.",
+      "c": "A smaller size is still a trade. The plan says a failed item means no trade.",
+      "d": "Changing the checklist to fit the setup defeats the plan. Plan changes belong in a new version, made before the next setup."
+    },
+    "concepts": ["checklist", "no-trade"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.4-q5",
+    "type": "mcq",
+    "prompt": "Hypothetical. You did not trade today, and you think: \"Not trading means I am behind.\" Which response is correct?",
+    "options": [
+      {"id": "a", "text": "Correct, because every day needs a trade"},
+      {"id": "b", "text": "Wrong. No trade is a valid outcome of the plan"},
+      {"id": "c", "text": "Correct, because I am missing gains"},
+      {"id": "d", "text": "Correct only for beginners"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "No plan requires a trade every day. A day with no trade can be the right result.",
+      "c": "Missing a trade is not a loss to the plan. The plan allows no-trade days.",
+      "d": "No-trade days are part of the plan for every level of trader."
+    },
+    "concepts": ["no-trade"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.4-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Hypothetical plan line: \"Trade when it looks strong.\" Which part of this line is the mistake?",
+    "options": [
+      {"id": "a", "text": "Writing a plan at all"},
+      {"id": "b", "text": "\"Looks strong\" is a feeling, not a yes or no test the plan can check"},
+      {"id": "c", "text": "Trading at all"},
+      {"id": "d", "text": "Nothing is wrong, because the line is short"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A plan is the right tool. The mistake is in the test the plan uses to decide.",
+      "c": "Trading is allowed. The mistake is the test for entering, which cannot be checked.",
+      "d": "Short is fine. The line fails because it cannot be checked before entry."
+    },
+    "concepts": ["checklist", "plan"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T9.2-q1",
+    "type": "mcq",
+    "prompt": "Hypothetical. You buy a call for Rs 20 per share. At expiry the price is far below the strike. Which statement about your loss is correct?",
+    "options": [
+      {"id": "a", "text": "An option buyer can lose more than the premium."},
+      {"id": "b", "text": "Your loss is capped at the premium, Rs 20 per share, before costs."},
+      {"id": "c", "text": "Your loss grows as the price falls further below the strike."},
+      {"id": "d", "text": "Your loss is the full strike price of Rs 500."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The buyer's loss is capped at the premium. The seller is the side whose loss can grow large.",
+      "c": "Below the strike a call has no intrinsic value, so the loss stays at the premium.",
+      "d": "The strike is the price in the contract, not the amount you lose. The loss is the premium."
+    },
+    "concepts": ["option-buyer-loss", "premium"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.2-q2",
+    "type": "mcq",
+    "prompt": "Which statement about theta is correct?",
+    "options": [
+      {"id": "a", "text": "Time decay helps option buyers, because the premium gets closer to its value."},
+      {"id": "b", "text": "Theta measures how much the premium loses as time passes, other things equal. Time decay works against buyers."},
+      {"id": "c", "text": "Theta measures how much the premium moves for a small move in the share price."},
+      {"id": "d", "text": "Theta only applies to put options."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Time decay reduces the time value of the premium. That works against the buyer.",
+      "c": "This describes delta. Theta measures the loss from time passing.",
+      "d": "Theta applies to calls and puts alike."
+    },
+    "concepts": ["theta", "time-value"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.2-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. A call has strike Rs 500 and premium Rs 25 per share. The share is at Rs 510 today, before expiry. How much of the premium is time value, in rupees per share?",
+    "answer": 15,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Intrinsic value = 510 - 500 = Rs 10. Time value = premium minus intrinsic value = 25 - 10 = Rs 15. Checked again: 10 + 15 = 25.",
+    "concepts": ["intrinsic-value", "time-value"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.2-q4",
+    "type": "numeric",
+    "prompt": "Hypothetical. A call has strike Rs 500 and premium Rs 20 per share. Before costs, at what share price at expiry does the buyer break even?",
+    "answer": 520,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Break-even = strike + premium = 500 + 20 = Rs 520. Checked again: at Rs 520 the intrinsic value is Rs 20, which equals the premium, so the profit is zero.",
+    "concepts": ["break-even", "premium"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.2-q5",
+    "type": "scenario",
+    "prompt": "Hypothetical. You buy a call with strike Rs 500 and premium Rs 20. At expiry the share is at Rs 490. What is the result?",
+    "options": [
+      {"id": "a", "text": "You lose the Rs 20 premium, because the option expires with no value."},
+      {"id": "b", "text": "You keep the option and sell it later at a profit."},
+      {"id": "c", "text": "You lose Rs 10, the gap between the strike and the price."},
+      {"id": "d", "text": "You gain Rs 10, because the price is below the strike."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "At expiry the option has no value. There is no later sale at a profit.",
+      "c": "The gap is not the loss. The buyer's loss is the premium paid.",
+      "d": "A call gains only when the price is above the strike, not below it."
+    },
+    "concepts": ["scenario", "expiry"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.2-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"Buying options is a low-risk way to trade, because the premium is paid in advance.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "Buying options is a way to take a position on a share's price."},
+      {"id": "b", "text": "is a low-risk way to trade"},
+      {"id": "c", "text": "the premium is paid in advance"},
+      {"id": "d", "text": "Nothing. The statement is correct."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This describes what buying an option does. It is a correct description.",
+      "c": "The buyer pays the premium first. This is how options work, so it is not the mistake.",
+      "d": "The statement is wrong. Cheap does not mean low risk, and the buyer can lose the whole premium."
+    },
+    "concepts": ["option-buyer-loss", "risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

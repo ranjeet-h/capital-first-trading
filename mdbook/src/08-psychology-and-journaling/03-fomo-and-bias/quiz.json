@@ -1,0 +1,114 @@
+[
+  {
+    "id": "T8.3-q1",
+    "type": "mcq",
+    "prompt": "Hypothetical. Which statement about chasing a big move is correct?",
+    "options": [
+      {"id": "a", "text": "Chasing a strong move is disciplined momentum, even when the planned price is gone"},
+      {"id": "b", "text": "Buying after a big move, when the planned price is gone, is a sign of FOMO"},
+      {"id": "c", "text": "FOMO only happens to beginners"},
+      {"id": "d", "text": "A strong move means the planned price no longer matters"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Chasing a move after the planned price is gone is FOMO. It is not discipline, because the trade is no longer the planned one.",
+      "c": "Experienced traders can feel FOMO too. It is a human pull, not a sign of inexperience.",
+      "d": "The planned price still matters. A strong move creates a new trade, which needs its own checks."
+    },
+    "concepts": ["fomo", "late-entry"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.3-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. You buy 17 shares at Rs 448 each. How much cash does the trade use, in rupees?",
+    "answer": 7616,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Cash = 17 x 448 = 7,616. Check: 17 x 400 = 6,800, and 17 x 48 = 816. 6,800 + 816 = 7,616.",
+    "concepts": ["late-entry", "cash-cap"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.3-q3",
+    "type": "mcq",
+    "prompt": "Hypothetical. The planned entry was Rs 400 with a stop at Rs 390. A late entry is at Rs 448 with a stop at Rs 420. The risk budget is Rs 500 in both cases. Which statement is correct?",
+    "options": [
+      {"id": "a", "text": "The same Rs 500 of risk always buys 50 shares"},
+      {"id": "b", "text": "The wider stop gives 17 shares, so the late trade is the same plan"},
+      {"id": "c", "text": "The wider stop gives 17 shares, but the late trade is not the planned trade"},
+      {"id": "d", "text": "The late trade is safer, because it uses less cash"}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "The shares depend on the risk per share. A wider stop means fewer shares for the same rupee risk.",
+      "b": "The share count changes, but the entry, the stop and the reason for the trade are all different. It is a new trade.",
+      "d": "Less cash does not make the trade safer. The late entry still needs its own checks."
+    },
+    "concepts": ["late-entry", "risk-per-share"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.3-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. You have won four trades in a row. You plan to double your size, because the method seems to work now. Which response fits the chapter?",
+    "options": [
+      {"id": "a", "text": "Double the size, because four wins show skill"},
+      {"id": "b", "text": "Keep the planned size and log the run, because four wins are a short sample"},
+      {"id": "c", "text": "Trade more often so the streak lasts longer"},
+      {"id": "d", "text": "Skip the journal, because the results are good"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Four wins are a small sample. Doubling size on that basis is overconfidence.",
+      "c": "More trades do not make a win streak more likely to last. Trading more often is an overtrading habit.",
+      "d": "The journal is most useful when results look good. It shows whether the plan was followed."
+    },
+    "concepts": ["overconfidence", "sample-size"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.3-q5",
+    "type": "mcq",
+    "prompt": "Hypothetical. You read only the news that supports your trade idea and ignore the rest. What is this?",
+    "options": [
+      {"id": "a", "text": "Research, because I am gathering information"},
+      {"id": "b", "text": "Confirmation bias, because I look only for evidence that agrees with the idea"},
+      {"id": "c", "text": "A good way to check the plan"},
+      {"id": "d", "text": "Harmless, if I also read the chart"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Research includes evidence that disagrees. Reading only one side is not research.",
+      "c": "A plan check looks for reasons the idea could fail. Reading only supportive news does the opposite.",
+      "d": "Reading the chart does not remove the bias from reading only one side of the news."
+    },
+    "concepts": ["confirmation-bias"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.3-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Hypothetical journal note: \"Entered at market, will fix stop later.\" Which part of this note is the mistake?",
+    "options": [
+      {"id": "a", "text": "Entering at the market price is always wrong"},
+      {"id": "b", "text": "The stop is left for later, so the risk is not set before the trade starts"},
+      {"id": "c", "text": "Writing a journal note at all"},
+      {"id": "d", "text": "Nothing is wrong, because fixing a stop later is normal"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The entry type alone is not the error here. The error is that the risk is not set before the trade.",
+      "c": "Writing the note is the right habit. The mistake is what the note records.",
+      "d": "A stop set after the trade is not a planned stop. The risk is open until it is set."
+    },
+    "concepts": ["stop-loss", "journal"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]
