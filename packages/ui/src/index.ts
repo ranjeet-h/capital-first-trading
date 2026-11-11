@@ -3,3 +3,6 @@ import { LabPositionSize } from "./sizing-lab";
 
 if (!customElements.get("lab-costs")) customElements.define("lab-costs", LabCosts);
 if (!customElements.get("lab-position-size")) customElements.define("lab-position-size", LabPositionSize);
+
+import { LabJournal } from "./journal-lab";
+if (!customElements.get("lab-journal")) customElements.define("lab-journal", LabJournal);

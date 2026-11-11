@@ -4,4 +4,5 @@
 Tools you can use while you study. Everything runs on your device.
 
 1. [Cost calculator](cost-calculator.md)
-2. [Position size calculator](position-size-calculator.md)
+2. [Trade journal](journal.md)
+3. [Position size calculator](position-size-calculator.md)

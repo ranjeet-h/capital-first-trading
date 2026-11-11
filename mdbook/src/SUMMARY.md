@@ -113,4 +113,5 @@
   - [Gate G7 live-readiness review and the one-page trading plan](10-graduation-gates/07-gate-g7-live-readiness-plan/index.md)
 - [Labs](labs/index.md)
   - [Cost calculator](labs/cost-calculator.md)
+  - [Trade journal](labs/journal.md)
   - [Position size calculator](labs/position-size-calculator.md)
