@@ -5,9 +5,9 @@ builder and for chapter authors**, not the finished chapters.
 
 | File | Tracks | Status |
 |---|---|---|
-| `tracks-0-2.md` | T0 Orientation, T1 Market basics, T2 Money maths and costs | draft, reviewed |
-| `tracks-3-6.md` | T3 Charts and price action, T4 Kite platform, T5 Orders and execution, T6 Strategy and rules | draft, reviewed |
-| `tracks-7-10.md` | T7 Backtesting and forward testing, T8 Risk and psychology, T9 Advanced theory (F&O theory only), T10 Graduation gates | draft, reviewed |
+| `tracks-0-2.md` | T0 Start here, T1 Market foundations, T2 Money and math | draft, reviewed |
+| `tracks-3-6.md` | T3 Chart reading, T4 Kite and execution (demo only), T5 Indicators, T6 Strategy | draft, reviewed |
+| `tracks-7-10.md` | T7 Testing and validation, T8 Psychology and journaling, T9 Advanced (theory only), T10 Graduation gates | draft, reviewed |
 
 ## How to use
 
