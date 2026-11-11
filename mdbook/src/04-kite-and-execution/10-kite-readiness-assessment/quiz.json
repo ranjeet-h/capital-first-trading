@@ -1,0 +1,138 @@
+[
+  {
+    "id": "T4.10-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital Rs 50,000, risk 1%, entry Rs 300, stop Rs 290, concentration cap 25%. How many whole shares does the plan allow?",
+    "answer": 41,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "Risk budget = Rs 500. Risk per share = Rs 10. Raw shares = 50. Cash cap = floor(50,000 / 300) = 166. Concentration cap = floor(12,500 / 300) = 41. Shares = the minimum of 50, 166 and 41 = 41.",
+    "concepts": ["position-sizing", "binding-constraint"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.10-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. You hold 50 shares bought at Rs 250. The stop trigger is Rs 240. The price gaps down overnight and your stop fills at Rs 232. What is the loss in rupees?",
+    "answer": 900,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Loss per share = 250 - 232 = Rs 18. Loss = 50 x 18 = Rs 900. Check: 50 x 250 = Rs 12,500 and 50 x 232 = Rs 11,600. The difference is Rs 900. The planned loss was Rs 500, so the gap added Rs 400.",
+    "concepts": ["gap-loss", "stop-fill"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.10-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. You hold 50 shares bought at Rs 250. A stop-loss order has trigger Rs 240 and limit Rs 238. The price trades at Rs 238 and the order fills there. What is the loss in rupees?",
+    "answer": 600,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Loss per share = 250 - 238 = Rs 12. Loss = 50 x 12 = Rs 600. Check: 50 x 250 = Rs 12,500 and 50 x 238 = Rs 11,900. The difference is Rs 600.",
+    "concepts": ["stop-fill", "order-types"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.10-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. You want an exit order that always leaves your position once the trigger price is hit, even if the price falls fast. Which order type fits this goal best?",
+    "options": [
+      {"id": "a", "text": "A stop order with a limit price, because the limit protects the exit price"},
+      {"id": "b", "text": "A stop order with no limit price, because it leaves at the next available price once triggered"},
+      {"id": "c", "text": "A limit buy order, because it exits at the trigger price"},
+      {"id": "d", "text": "A stop order with a limit price, because the limit makes the exit certain"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A limit price protects the price you accept. If the price falls below that limit, the order may not fill. It does not make the exit certain.",
+      "c": "A buy order adds shares. It does not exit a long position.",
+      "d": "A limit price can stop the order filling. It does not make the exit certain."
+    },
+    "concepts": ["order-types", "stop-fill"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.10-q5",
+    "type": "scenario",
+    "prompt": "Hypothetical. You plan to hold a delivery position for three weeks. Your order preview shows the intraday product. Which response is correct?",
+    "options": [
+      {"id": "a", "text": "Submit it, because the intraday product is cheaper"},
+      {"id": "b", "text": "Change the product to the delivery product before you submit, because the intraday product is for same-day trades"},
+      {"id": "c", "text": "Submit it, then change the product in the holdings screen"},
+      {"id": "d", "text": "Submit it, because the product makes no difference to a holding"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Cost is not the test. The holding period decides the product. Intraday is for same-day trades, so a three-week plan does not fit it.",
+      "c": "Changing the product after submission is not the fix. Check the product before you submit.",
+      "d": "The product changes how the position is held and closed. It matters for a holding."
+    },
+    "concepts": ["product-types", "execution-mistakes"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.10-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake in this order preview: \"Buy 100 shares at Rs 250. Product: intraday. Plan: hold for three weeks. Stop: Rs 240.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The quantity of 100 shares"},
+      {"id": "b", "text": "The intraday product, for a plan to hold three weeks"},
+      {"id": "c", "text": "The stop at Rs 240"},
+      {"id": "d", "text": "Nothing. the preview is correct"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The quantity is a separate choice. It can be right or wrong, but the product is the clear error here.",
+      "c": "A stop at Rs 240 is a valid level for this example. The error is the product.",
+      "d": "The product does not fit a three-week hold, so the preview is not correct."
+    },
+    "concepts": ["product-types", "spot-the-mistake"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.10-q7",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"My demo trade filled at Rs 250, so my stop at Rs 240 will fill at Rs 240.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The entry of Rs 250"},
+      {"id": "b", "text": "The claim that a stop at the trigger always fills at the trigger"},
+      {"id": "c", "text": "The stop level of Rs 240"},
+      {"id": "d", "text": "Nothing. a stop always fills at its trigger"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The entry is the price of the earlier fill. It is not the error.",
+      "c": "A stop level is a choice, and Rs 240 is a valid level. The error is the claim about the fill.",
+      "d": "A stop does not always fill at its trigger. After a gap, the fill can be far from the trigger, and a limit can stop the order filling at all."
+    },
+    "concepts": ["stop-fill", "gap-loss"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.10-q8",
+    "type": "scenario",
+    "prompt": "Hypothetical. You hold 100 shares. You set a GTT sell order for 150 shares at Rs 240. What is the mistake?",
+    "options": [
+      {"id": "a", "text": "The GTT is too far from the price"},
+      {"id": "b", "text": "The GTT quantity is larger than the holding, so it cannot match what you own"},
+      {"id": "c", "text": "A GTT cannot be used for a stop at all"},
+      {"id": "d", "text": "GTT orders never expire, so there is no mistake to find"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The price level is a plan choice. The quantity is the clear error here.",
+      "c": "A GTT can hold a stop-type exit order. The problem in this example is the quantity.",
+      "d": "GTT orders have validity limits. Check the expiry date as well as the quantity [VERIFY: Kite GTT validity]."
+    },
+    "concepts": ["gtt", "execution-mistakes"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

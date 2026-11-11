@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T3.4-q1",
+    "type": "mcq",
+    "prompt": "Which pair describes an uptrend structure?",
+    "options": [
+      {"id": "a", "text": "Higher highs and higher lows"},
+      {"id": "b", "text": "Lower highs and lower lows"},
+      {"id": "c", "text": "Equal highs and lower lows"},
+      {"id": "d", "text": "One large up candle"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "Lower highs and lower lows describe a downtrend.",
+      "c": "Equal highs and lower lows do not match either trend. The highs are not rising.",
+      "d": "One up candle is not a pattern of swings. An uptrend needs successive higher highs and higher lows."
+    },
+    "concepts": ["hh-hl", "uptrend"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.4-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Swing sequence in time order: low 100, high 120, low 110, high 125, low 115. In an uptrend, what is the structure-break level, in rupees?",
+    "answer": 115,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "In an uptrend, the structure-break level is the most recent swing low. The most recent swing low in this sequence is 115. Check: the lows run 100, 110, 115, so 115 is the last one.",
+    "concepts": ["structure-break"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.4-q3",
+    "type": "mcq",
+    "prompt": "Hypothetical. Swing highs are 250, then 252, then 250. Swing lows are 240, then 238, then 240. How should the structure be classified?",
+    "options": [
+      {"id": "a", "text": "Uptrend, because the last high is above the first"},
+      {"id": "b", "text": "Downtrend, because the last low is below the first"},
+      {"id": "c", "text": "Range, because the highs and lows do not rise or fall together"},
+      {"id": "d", "text": "Cannot be classified without a volume figure"}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "The highs do not rise in a line. The high of 252 is followed by 250, which is a lower high.",
+      "b": "The lows do not fall in a line. The low of 238 is followed by 240, which is a higher low.",
+      "d": "Structure uses swing points, not volume. The swing points here are enough to classify the structure."
+    },
+    "concepts": ["range"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.4-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. A trader says: 'Price made a new high on one day, so the trend is up.' What is the best reply?",
+    "options": [
+      {"id": "a", "text": "Agreed. A new high is enough to call a trend."},
+      {"id": "b", "text": "One new high is one point. A trend needs successive swing points, so check the higher lows as well."},
+      {"id": "c", "text": "Agreed, but only if the day closed higher."},
+      {"id": "d", "text": "The trend is down, because a new high always means a reversal."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A single new high is not enough. A trend needs successive swing points.",
+      "c": "A close higher on one day still does not make a trend. The swing sequence must show the pattern.",
+      "d": "A new high does not always mean a reversal. The swing sequence decides the label, not one high."
+    },
+    "concepts": ["trend-definition"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.4-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: 'I first used a swing high with lower highs on both sides within N candles. The chart did not show the trend I wanted, so I changed N to one candle on each side.' Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "I first used a swing high with lower highs on both sides within N candles"},
+      {"id": "b", "text": "The chart did not show the trend I wanted"},
+      {"id": "c", "text": "So I changed N to one candle on each side"},
+      {"id": "d", "text": "There is no mistake"}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "This part is correct. A swing definition with N is a valid choice, as long as it is written down first.",
+      "b": "This describes a result. It is not the mistake. The mistake is what the trader did after seeing the result.",
+      "d": "There is a mistake. Changing the definition after seeing the result is hindsight, and the label is no longer a fair test."
+    },
+    "concepts": ["swing-definition", "hindsight"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.4-q6",
+    "type": "numeric",
+    "prompt": "Hypothetical. Swing sequence in time order: high 260, low 240, high 255, low 238. For a downtrend view, what is the structure-break level, in rupees?",
+    "answer": 255,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "For a downtrend view, the structure-break level is the most recent swing high. That is 255. A close above 255 means the last lower high has failed. Check: the highs run 260, then 255, so 255 is the most recent one.",
+    "concepts": ["structure-break", "downtrend"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

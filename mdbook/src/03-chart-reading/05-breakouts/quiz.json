@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T3.5-q1",
+    "type": "mcq",
+    "prompt": "Which breakout rule is easier to test?",
+    "options": [
+      {"id": "a", "text": "Any trade above the range top, even for one second"},
+      {"id": "b", "text": "A candle that closes above the range top"},
+      {"id": "c", "text": "The day with the highest volume"},
+      {"id": "d", "text": "A news headline about the stock"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A touch can happen and reverse within seconds. It is harder to test because the rule must say what counts.",
+      "c": "Volume is context. It does not define a breakout by itself.",
+      "d": "A news headline does not define a price level. The rule must use the price."
+    },
+    "concepts": ["close-vs-touch"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.5-q2",
+    "type": "mcq",
+    "prompt": "Hypothetical. The range top is Rs 310. A candle trades at Rs 311 but closes at Rs 308. What is it under a close-based rule?",
+    "options": [
+      {"id": "a", "text": "A close-based breakout"},
+      {"id": "b", "text": "A confirmed breakout"},
+      {"id": "c", "text": "No close-based breakout"},
+      {"id": "d", "text": "A breakdown"}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "The close is Rs 308, which is inside the range. A close-based breakout needs a close above Rs 310.",
+      "b": "A confirmed breakout needs the close beyond the level under this rule. The close is inside the range.",
+      "d": "A breakdown is a move below the range bottom. This move is above the range top."
+    },
+    "concepts": ["false-breakout", "close-based"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.5-q3",
+    "type": "scenario",
+    "prompt": "Hypothetical. A trader says: 'Price went above Rs 310 today, so the range is broken.' The close was Rs 308. What is the best reply?",
+    "options": [
+      {"id": "a", "text": "Agreed. The range is broken."},
+      {"id": "b", "text": "Under a close-based rule, no breakout happened. The close was Rs 308, which is inside the range."},
+      {"id": "c", "text": "A breakout counts only if the volume is above average."},
+      {"id": "d", "text": "The range is broken, because the high was above Rs 310."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The price traded above the top, but it closed inside the range. Under a close-based rule, that is not a breakout.",
+      "c": "Volume is context, not the rule. The close decides the close-based rule.",
+      "d": "A high above the top is a touch. A touch is not a close-based breakout."
+    },
+    "concepts": ["close-vs-touch", "scenario"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.5-q4",
+    "type": "numeric",
+    "prompt": "Hypothetical. A range runs from Rs 500 to Rs 520. A day closes at Rs 522. The stop is Rs 516 and the size is 40 shares. What is the planned loss, in rupees?",
+    "answer": 240,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Stop distance = entry minus stop = 522 minus 516 = 6. Planned loss = 40 x 6 = 240. Check: 40 x 6 = 240, and 6 x 40 = 240 again.",
+    "concepts": ["planned-loss", "breakout-stop"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.5-q5",
+    "type": "numeric",
+    "prompt": "Hypothetical. A range runs from Rs 150 to Rs 158. A day closes at Rs 160. Entry Rs 160, stop Rs 154, size 30 shares. What is the planned loss, in rupees?",
+    "answer": 180,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Risk per share = 160 minus 154 = 6. Planned loss = 30 x 6 = 180. Check: 30 x 6 = 180, and 3 x 60 = 180 again.",
+    "concepts": ["planned-loss"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.5-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: 'Price traded at Rs 161 above the range top this morning. Breakout confirmed, so I bought.' Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "Price traded at Rs 161 above the range top this morning"},
+      {"id": "b", "text": "Breakout confirmed"},
+      {"id": "c", "text": "So I bought"},
+      {"id": "d", "text": "There is no mistake"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This part is correct as a description. A trade above the top is a touch, and a touch is a fact about one moment.",
+      "c": "The buy is not the error by itself. The error is calling a touch a confirmed breakout under a close-based rule.",
+      "d": "There is a mistake. A touch is not a confirmed breakout unless the rule is touch-based and was defined before the move."
+    },
+    "concepts": ["close-vs-touch", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "T4.2-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. You follow 10 symbols, each at Rs 250. What is the cost of buying one share of each, before charges?",
+    "answer": 2500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Cost = 10 multiplied by Rs 250 = Rs 2,500, before charges. Check: Rs 2,500 divided by 10 symbols = Rs 250 each.",
+    "concepts": ["watchlist-cost"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.2-q2",
+    "type": "mcq",
+    "prompt": "What does an alert do?",
+    "options": [
+      {"id": "a", "text": "It places an order when the price is reached."},
+      {"id": "b", "text": "It notifies you when a price level you chose is reached."},
+      {"id": "c", "text": "It sets your stop-loss automatically."},
+      {"id": "d", "text": "It shows the best bid and best ask."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Whether an alert can place an order is [VERIFY: alert behaviour]. This book does not rely on an alert to trade.",
+      "c": "A stop-loss is part of your written plan. An alert does not set it.",
+      "d": "The best bid and best ask are shown in the depth view. An alert does not show them."
+    },
+    "concepts": ["alerts", "alert-vs-order"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.2-q3",
+    "type": "mcq",
+    "prompt": "Which description of a watchlist is best?",
+    "options": [
+      {"id": "a", "text": "A buy list"},
+      {"id": "b", "text": "A tool for keeping attention on symbols that you have written rules for"},
+      {"id": "c", "text": "A list of stocks the book recommends"},
+      {"id": "d", "text": "A list that places trades automatically"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A watchlist does not say that you should buy anything. It only holds your attention.",
+      "c": "This book does not recommend stocks, and a watchlist is not a recommendation list.",
+      "d": "A watchlist does not place trades. Orders are a separate step that you take with your own plan."
+    },
+    "concepts": ["watchlist"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.2-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. A student adds the stock that rose most today to the watchlist and sets an alert at its high. What is the best reply?",
+    "options": [
+      {"id": "a", "text": "Good. Rising stocks are the best ones to watch."},
+      {"id": "b", "text": "Check your written rules first. A rise today is not a reason to act, and the alert is only a review prompt."},
+      {"id": "c", "text": "Good, because the alert will place the order when the price rises."},
+      {"id": "d", "text": "Wrong. Only falling stocks belong on a watchlist."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A stock that rose most today may not match your rules. Rising is not a reason on its own.",
+      "c": "Whether an alert can place an order is [VERIFY: alert behaviour]. Even if it could, the plan comes first.",
+      "d": "A watchlist can hold any symbol that meets your written rules. Falling is not a rule."
+    },
+    "concepts": ["watchlist", "fomo", "alerts"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.2-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake. A student writes: 'The alert fired at Rs 252, so I placed an order straight away without checking my plan.' Which part is the mistake?",
+    "options": [
+      {"id": "a", "text": "The alert fired at Rs 252."},
+      {"id": "b", "text": "So I placed an order straight away without checking my plan."},
+      {"id": "c", "text": "I set the alert earlier in the day."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This is a fact about the alert. An alert is a notification, so its firing is not the mistake.",
+      "c": "Setting an alert earlier is a normal step. The mistake is what the student did after it fired."
+    },
+    "concepts": ["alert-vs-order", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

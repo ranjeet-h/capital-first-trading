@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T6.2-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Win rate 30 percent, average win 3R, average loss 1R. What is the expectancy in R per trade?",
+    "answer": 0.2,
+    "tolerance": 0.01,
+    "unit": "R",
+    "solution": "Win part = 0.30 x 3 = 0.90R. Loss rate = 0.70. Loss part = 0.70 x 1 = 0.70R. Expectancy = 0.90R - 0.70R = 0.20R per trade.",
+    "concepts": ["expectancy", "win-rate"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.2-q2",
+    "type": "mcq",
+    "prompt": "Which statement is the best hypothesis for an edge?",
+    "options": [
+      {"id": "a", "text": "This method will make money next year."},
+      {"id": "b", "text": "If condition X occurs, the average trade result over 50 trades will be positive. The test uses data not used to design the rule."},
+      {"id": "c", "text": "I will trade when I feel confident about the market."},
+      {"id": "d", "text": "Price always returns after a fall, so buying after a fall works."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This is a promise about the future, with no condition and no test. A hypothesis must be something a test could prove wrong.",
+      "c": "Confidence is a feeling. It cannot be tested, so it is not a rule.",
+      "d": "This is a belief with no clear condition and no test. It also says the result always happens, which no test can confirm."
+    },
+    "concepts": ["hypothesis", "testing"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.2-q3",
+    "type": "scenario",
+    "prompt": "Hypothetical. A rule won 8 of its last 10 trades. Which conclusion is correct?",
+    "options": [
+      {"id": "a", "text": "The rule has an edge, because 8 wins out of 10 is strong."},
+      {"id": "b", "text": "The result may be luck. Ten trades are too few to show an edge."},
+      {"id": "c", "text": "The rule has positive expectancy, because the win rate is high."},
+      {"id": "d", "text": "The rule has an edge only if costs are zero."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A high win rate on a small sample can come from luck. Ten trades cannot separate skill from luck.",
+      "c": "A win rate alone does not give expectancy. The size of the wins and losses matters too.",
+      "d": "Costs reduce expectancy, but this option does not explain why the sample is too small to show an edge."
+    },
+    "concepts": ["sample-size", "expectancy"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T6.2-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"I designed the rule on last year's charts. It looked strong on those same charts, so the rule has an edge.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The word designed"},
+      {"id": "b", "text": "Testing on the same charts used to design the rule"},
+      {"id": "c", "text": "The word strong"},
+      {"id": "d", "text": "Nothing; the statement is correct"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Designing a rule on past data is normal. The error is in the testing step that follows.",
+      "c": "The word strong describes the result. The error is that the result was not tested on fresh data.",
+      "d": "The statement is not correct. A rule tested on the data used to build it always looks better than it is."
+    },
+    "concepts": ["overfitting", "out-of-sample"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T6.2-q5",
+    "type": "numeric",
+    "prompt": "Hypothetical. Win rate 40 percent, average win 2R, average loss 1R, R = Rs 500. Assumed cost Rs 50 per trade. What is the expectancy after costs, in rupees per trade?",
+    "answer": 50,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Expectancy = 0.40 x 2R - 0.60 x 1R = 0.80R - 0.60R = 0.20R. In rupees: 0.20 x Rs 500 = Rs 100. After the Rs 50 cost: Rs 100 - Rs 50 = Rs 50 per trade.",
+    "concepts": ["expectancy", "costs"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.2-q6",
+    "type": "mcq",
+    "prompt": "Which statement about costs is correct?",
+    "options": [
+      {"id": "a", "text": "Costs matter only for large accounts."},
+      {"id": "b", "text": "Costs reduce expectancy at any account size."},
+      {"id": "c", "text": "Costs are already included in the win rate."},
+      {"id": "d", "text": "Costs do not matter when the win rate is high."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Costs are a fixed amount on each trade. They take a share of each trade's result at any account size.",
+      "c": "The win rate counts winning trades. It does not include the cost of each trade.",
+      "d": "A high win rate does not remove costs. Costs still come out of every trade's result."
+    },
+    "concepts": ["costs", "expectancy"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

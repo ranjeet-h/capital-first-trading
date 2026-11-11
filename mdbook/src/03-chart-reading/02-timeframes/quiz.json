@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T3.2-q1",
+    "type": "mcq",
+    "prompt": "What is the timeframe of a chart?",
+    "options": [
+      {"id": "a", "text": "The number of stocks shown on the chart"},
+      {"id": "b", "text": "The length of one candle"},
+      {"id": "c", "text": "The number of trades in the whole day"},
+      {"id": "d", "text": "The difference between the highest and lowest price on the screen"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A chart can show one stock at many timeframes. The number of stocks is not the timeframe.",
+      "c": "The number of trades is not set by the timeframe. The timeframe sets how long one candle covers.",
+      "d": "That is the price range shown on screen. It is not the timeframe."
+    },
+    "concepts": ["timeframe"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.2-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Five one-minute candles: (500, 501, 499, 500.5), (500.5, 503, 500, 502), (502, 504, 501, 501), (501, 502, 498, 499) and (499, 500, 497, 498.5). What is the high of the joined five-minute candle, in rupees?",
+    "answer": 504,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "The high of the joined candle is the largest of all five highs: 501, 503, 504, 502 and 500. The largest is 504. Check: 504 is the high of minute 3, and no other minute is higher.",
+    "concepts": ["aggregation", "high"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.2-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. Using the same five one-minute candles, what is the range of the joined five-minute candle, in rupees?",
+    "answer": 7,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Range = highest high minus lowest low = 504 minus 497 = 7. The lowest low is 497, from minute 5. Check: 504 minus 497 is 7, and 497 plus 7 is 504.",
+    "concepts": ["aggregation", "range"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.2-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. On the one-minute chart, the latest candle is bullish. On the five-minute chart, the candle that covers the same minutes is bearish. A trader asks which label is correct. What is the best reply?",
+    "options": [
+      {"id": "a", "text": "The one-minute label is correct, because shorter candles are more accurate."},
+      {"id": "b", "text": "The five-minute label is correct, because longer candles are always right."},
+      {"id": "c", "text": "Both labels are correct. Each one describes a different period, so the timeframe must be stated with the label."},
+      {"id": "d", "text": "Neither label is correct, because the chart is wrong."}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "A shorter candle is not more accurate. It covers a shorter period and shows more noise.",
+      "b": "A longer candle is not always right. It covers more time and shows fewer moves.",
+      "d": "The chart is not wrong. Each candle is built from its own period."
+    },
+    "concepts": ["timeframe", "opposite-labels"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.2-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake. A student writes: 'The open comes from the first short candle. The high is the high of the last short candle. The close comes from the last short candle. The label is bearish when the close is below the open.' Which sentence is wrong?",
+    "options": [
+      {"id": "a", "text": "The open comes from the first short candle."},
+      {"id": "b", "text": "The high is the high of the last short candle."},
+      {"id": "c", "text": "The close comes from the last short candle."},
+      {"id": "d", "text": "The label is bearish when the close is below the open."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This sentence is correct. The open of the joined candle is the open of the first short candle.",
+      "c": "This sentence is correct. The close of the joined candle is the close of the last short candle.",
+      "d": "This sentence is correct. A close below the open is bearish."
+    },
+    "concepts": ["aggregation", "high"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.2-q6",
+    "type": "mcq",
+    "prompt": "A trader checks the one-minute, five-minute, one-hour and daily charts. The trader keeps switching until one chart shows a pattern. Then the trader uses that chart. What is the main problem?",
+    "options": [
+      {"id": "a", "text": "There is no problem. More charts give more information."},
+      {"id": "b", "text": "The trader chose the timeframe after seeing the result, which is hindsight shopping and gives false confidence."},
+      {"id": "c", "text": "The daily chart is always wrong."},
+      {"id": "d", "text": "The chart is slow to load."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "More charts give more chances to find a pattern by chance. They do not give more information about the plan.",
+      "c": "The daily chart is not wrong. It covers a longer period than the other charts.",
+      "d": "Loading speed does not change the plan. The problem is the order of choice."
+    },
+    "concepts": ["hindsight-shopping"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

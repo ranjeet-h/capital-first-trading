@@ -1,0 +1,124 @@
+[
+  {
+    "id": "T6.1-q1",
+    "type": "mcq",
+    "prompt": "Hypothetical. A person buys shares of a company and holds them for ten years, because the person expects the business to grow. This is best described as:",
+    "options": [
+      {"id": "a", "text": "Investing"},
+      {"id": "b", "text": "Trading"},
+      {"id": "c", "text": "Speculation"},
+      {"id": "d", "text": "Intraday trading"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "Trading uses a shorter holding period with written entry, exit and risk rules. Ten years is far longer than a trading horizon.",
+      "c": "Speculation is a bet on a price move with no testable rule. This person bases the hold on the expected growth of a business over years.",
+      "d": "Intraday trading closes positions within the same session. This person holds for ten years."
+    },
+    "concepts": ["investing", "holding-period"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.1-q2",
+    "type": "scenario",
+    "prompt": "Hypothetical. A trader wants to earn Rs 2,500 every trading day from a Rs 50,000 account. The trader says, 'This is a normal daily goal for a careful trader.' Which response fits the book?",
+    "options": [
+      {"id": "a", "text": "Agree. A daily goal of this size is a normal and safe plan"},
+      {"id": "b", "text": "Rs 2,500 is 5 percent of the account each day. The book treats a daily rupee target of this size as unrealistic, and it does not use a daily profit target as a goal"},
+      {"id": "c", "text": "A daily target removes the need for a stop, because the target protects the account"},
+      {"id": "d", "text": "The target is safe if the trader uses intraday trading, because intraday trades close the same day"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A daily goal of 5 percent of the account is not treated as realistic in this book. See the reality check for the numbers.",
+      "c": "A target is a goal, not a stop. It does not limit loss. Losses still need a fixed stop and a planned size.",
+      "d": "Closing on the same day does not make the target safe. Intraday trading also adds watching and cost pressure, and this book does not teach it as practice."
+    },
+    "concepts": ["daily-target", "reality-check"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.1-q3",
+    "type": "numeric",
+    "prompt": "Dummy numbers, not real charges. Ten round trips each cost Rs 50 in total. What is the total cost of the ten round trips, in rupees?",
+    "answer": 500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Total = 10 x Rs 50 = Rs 500. The Rs 50 is a made-up number for the arithmetic, not a real charge.",
+    "concepts": ["costs", "round-trip"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.1-q4",
+    "type": "numeric",
+    "prompt": "Dummy numbers, not real charges. One round trip costs Rs 50 in total on a position of Rs 12,500. What is the cost as a percent of the position?",
+    "answer": 0.4,
+    "tolerance": 0.05,
+    "unit": "%",
+    "solution": "Cost as a share of the position = 50 / 12,500 = 0.004 = 0.4 percent.",
+    "concepts": ["costs", "percent-of-position"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.1-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Read this statement. Which part is wrong? 'Investing means there is no risk at all. Trading uses written rules for entry, exit and risk.'",
+    "options": [
+      {"id": "a", "text": "Investing means there is no risk at all"},
+      {"id": "b", "text": "Trading uses written rules for entry, exit and risk"},
+      {"id": "c", "text": "The statement has no mistake"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "This part is correct. Trading, as this book defines it, uses written rules for entry, exit and risk.",
+      "c": "There is a mistake. Investing carries risk. A business can lose value over many years."
+    },
+    "concepts": ["investing", "risk"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.1-q6",
+    "type": "mcq",
+    "prompt": "Which statement describes the focus of this book?",
+    "options": [
+      {"id": "a", "text": "Scalping on very short timeframes"},
+      {"id": "b", "text": "End-of-day swing and positional trading, with a fixed loss per trade"},
+      {"id": "c", "text": "Option buying with borrowed money"},
+      {"id": "d", "text": "Doubling the position after each loss"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Scalping is not the book's focus. It is covered later as a danger, not as a method to practise.",
+      "c": "Option buying with borrowed money is not taught. Options are covered only as theory, and leverage is not practised.",
+      "d": "Doubling after a loss is a dangerous approach. The book warns against it."
+    },
+    "concepts": ["styles", "book-focus"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.1-q7",
+    "type": "scenario",
+    "prompt": "Hypothetical. A reader buys a stock before its results date and plans to sell the next day. The reader says, 'This is trading, because I have a clear plan.' Which response fits the book?",
+    "options": [
+      {"id": "a", "text": "Agree. Any plan with a clear entry and exit is trading"},
+      {"id": "b", "text": "The label depends on whether the plan has a rule that can be tested. Without a tested rule, the outcome is closer to speculation on one event"},
+      {"id": "c", "text": "The plan is investing, because it has a result date in it"},
+      {"id": "d", "text": "The plan is not possible, because nobody can buy before a results date"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A plan can have an entry and exit and still depend on one event. A clear plan is not the same as a tested rule.",
+      "c": "Investing has a long holding period tied to the business. A one-day hold tied to a result date does not fit that description.",
+      "d": "Traders do buy before results. The question is whether the plan has a tested rule, not whether it can be done."
+    },
+    "concepts": ["speculation", "trading-vs-speculation"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

@@ -1,0 +1,105 @@
+[
+  {
+    "id": "T3.9-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital Rs 50,000, risk 1 percent. Entry Rs 252, stop Rs 247. The shares allowed are 49. What is the planned loss in rupees?",
+    "answer": 245,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Risk per share = 252 minus 247 = Rs 5. Planned loss = 49 multiplied by Rs 5 = Rs 245. Check: Rs 245 divided by 49 = Rs 5 per share.",
+    "concepts": ["risk-per-share", "planned-loss"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.9-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. The same trade: 49 shares, entry Rs 252, stop Rs 247. The market opens at Rs 240. What is the actual loss in rupees if you leave at the open?",
+    "answer": 588,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Loss per share = 252 minus 240 = Rs 12. Actual loss = 49 multiplied by Rs 12 = Rs 588. Check: 50 multiplied by 12 = 600, and 600 minus 12 = 588.",
+    "concepts": ["gap-risk", "planned-versus-actual"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.9-q3",
+    "type": "scenario",
+    "prompt": "Hypothetical. You planned a loss of Rs 245 on 49 shares. The market opens at Rs 240, below your stop. Which statement is correct?",
+    "options": [
+      {"id": "a", "text": "The loss stays at Rs 245, because the stop was set."},
+      {"id": "b", "text": "The loss is 49 multiplied by Rs 12, which is Rs 588. That is more than the Rs 500 risk budget."},
+      {"id": "c", "text": "The loss equals the Rs 500 risk budget, because the stop limits it."},
+      {"id": "d", "text": "The stop at Rs 247 protects the loss at exactly that price."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A stop is a trigger, not a guarantee. A gap can open the price past the stop, so the loss can grow.",
+      "c": "The loss is Rs 588 in this case. A stop does not cap the loss at the risk budget when a gap happens.",
+      "d": "The market opened at Rs 240. The stop at Rs 247 did not hold the price. The exit came at the open."
+    },
+    "concepts": ["gap-risk", "stop-trigger"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.9-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake. A student writes: 'Set the stop at Rs 250, inside the zone of Rs 249 to Rs 252. No reason is needed for a stop inside a zone.' Which part is the mistake?",
+    "options": [
+      {"id": "a", "text": "Set the stop at Rs 250."},
+      {"id": "b", "text": "Inside the zone of Rs 249 to Rs 252."},
+      {"id": "c", "text": "No reason is needed for a stop inside a zone."}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "A stop price is a normal part of a plan. Rs 250 is not wrong by itself.",
+      "b": "A zone is a band of prices. A stop can sit inside a zone when the plan gives a reason for it.",
+      "c": "The mistake is the claim that no reason is needed. Every stop needs a stated reason that you can check."
+    },
+    "concepts": ["stop-placement", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.9-q5",
+    "type": "mcq",
+    "prompt": "Which prices give risk per share for a buy?",
+    "options": [
+      {"id": "a", "text": "The entry price minus the stop price."},
+      {"id": "b", "text": "The entry price alone, because it is the price you paid."},
+      {"id": "c", "text": "The high of the zone minus the low of the zone."},
+      {"id": "d", "text": "The stop price plus the risk budget."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "The entry price alone does not show how far the stop is from the entry. The stop sets the risk per share.",
+      "c": "The zone range measures the band of prices. It does not show the loss from your stop.",
+      "d": "The risk budget is a rupee amount you allow for the trade. It is not a price."
+    },
+    "concepts": ["risk-per-share"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.9-q6",
+    "type": "mcq",
+    "prompt": "Which statement about passing the chart-reading assessment is correct?",
+    "options": [
+      {"id": "a", "text": "Passing shows that you read the chart items correctly. It does not show that any chart method works."},
+      {"id": "b", "text": "Passing shows that chart methods work."},
+      {"id": "c", "text": "Passing proves that the zone levels will hold."},
+      {"id": "d", "text": "Passing means you can place live trades with confidence."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "Reading items correctly is a skill. It is not evidence that any chart method earns money.",
+      "c": "A zone is a band on a past chart. Nothing in the assessment shows that a level will hold in the future.",
+      "d": "The assessment checks reading skills on sample items only. It does not test live trading, and it does not show that trading works."
+    },
+    "concepts": ["assessment-limits"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

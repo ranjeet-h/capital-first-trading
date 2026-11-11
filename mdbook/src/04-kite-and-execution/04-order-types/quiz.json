@@ -1,0 +1,126 @@
+[
+  {
+    "id": "T4.4-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. You are long 50 shares bought at Rs 250. The SL trigger is Rs 240. What is the planned loss at the trigger, in rupees?",
+    "answer": 500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Loss per share = 250 - 240 = Rs 10. Planned loss = 50 x 10 = Rs 500. Check: 50 x 250 = 12,500 and 50 x 240 = 12,000. The difference is 500.",
+    "concepts": ["stop-loss", "planned-loss"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.4-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Same holding: 50 shares bought at Rs 250, with an SL-M trigger at Rs 240. The price gaps and the SL-M fills at Rs 232. What is the loss in rupees?",
+    "answer": 900,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Loss per share = 250 - 232 = Rs 18. Loss = 50 x 18 = Rs 900. Check: 50 x 232 = 11,600. The cost was 12,500. 12,500 - 11,600 = 900.",
+    "concepts": ["sl-m", "gap-risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.4-q3",
+    "type": "scenario",
+    "prompt": "Hypothetical. You are long 100 shares. You placed an SL sell with a trigger of Rs 290 and a limit of Rs 287. The price gaps down and opens at Rs 284. What happens to the SL order at the open?",
+    "options": [
+      {"id": "a", "text": "It fills at Rs 287, because that is the limit price."},
+      {"id": "b", "text": "It fills at Rs 290, because that is the trigger price."},
+      {"id": "c", "text": "It does not fill at the open, because Rs 284 is below the limit of Rs 287, so the order stays open."},
+      {"id": "d", "text": "It is cancelled automatically at the open."}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "A sell limit fills only at Rs 287 or higher. The market is at Rs 284, so no fill happens at Rs 287.",
+      "b": "The trigger starts the order. It does not set the fill price. The open at Rs 284 is below the limit, so no fill happens.",
+      "d": "Nothing in the scenario cancels the order. It stays open until it fills, is cancelled or expires."
+    },
+    "concepts": ["sl", "gap-risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.4-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Read this plan. 'My holding was bought at Rs 250. I set a sell SL with a trigger of Rs 240 and a limit of Rs 242. Once the trigger is reached, the order sells at Rs 242 or better.' Which part of the plan is wrong?",
+    "options": [
+      {"id": "a", "text": "The trigger of Rs 240 is below the entry of Rs 250."},
+      {"id": "b", "text": "The order type should be SL-M, because SL-M always fills."},
+      {"id": "c", "text": "The limit of Rs 242 is above the trigger of Rs 240, which breaks the rule for a sell stop."},
+      {"id": "d", "text": "Nothing is wrong. The plan is correct."}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "This part is correct. For a long holding, the trigger of a sell stop is below the entry price.",
+      "b": "SL-M fills once triggered, but the fill can be far from the trigger. Changing the order type does not fix a limit above the trigger.",
+      "d": "The plan is not correct. For a sell stop, the limit must be at or below the trigger."
+    },
+    "concepts": ["sl", "stop-placement"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.4-q5",
+    "type": "mcq",
+    "prompt": "Which statement about SL and SL-M is correct?",
+    "options": [
+      {"id": "a", "text": "SL sells at the best price available once it is triggered."},
+      {"id": "b", "text": "SL-M sells at the limit price or better once it is triggered."},
+      {"id": "c", "text": "SL sells only at its limit price or better. SL-M sells at the best price available once it is triggered."},
+      {"id": "d", "text": "SL and SL-M are the same order with different names."}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "This describes a market order, not SL. SL sells at its limit price or better.",
+      "b": "This describes SL, not SL-M. SL-M has no limit price. It sells at the best price available then.",
+      "d": "They are different. SL has a trigger and a limit. SL-M has a trigger only."
+    },
+    "concepts": ["sl", "sl-m"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.4-q6",
+    "type": "mcq",
+    "prompt": "Which statement about stop orders is correct?",
+    "options": [
+      {"id": "a", "text": "A stop order guarantees the trigger price."},
+      {"id": "b", "text": "A stop order cannot lose more than the planned amount."},
+      {"id": "c", "text": "Once triggered, an SL order fills only at its limit price or better."},
+      {"id": "d", "text": "A stop order always fills at the trigger price."}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "A trigger starts the order. It does not guarantee a price. Prices can move past the trigger in a gap.",
+      "b": "A gap can make the loss bigger than planned, so a stop does not cap the loss.",
+      "d": "A fill at the trigger is not guaranteed. An SL can stay open, and an SL-M can fill far from the trigger."
+    },
+    "concepts": ["stop-orders", "gap-risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.4-q7",
+    "type": "scenario",
+    "prompt": "Hypothetical. A trader holds shares bought at Rs 250. She wants to sell once the price falls to Rs 240, and she wants the sale to happen even if the price falls further. Which order type best matches this goal?",
+    "options": [
+      {"id": "a", "text": "A limit order to sell at Rs 240, placed now."},
+      {"id": "b", "text": "An SL-M order with a trigger of Rs 240."},
+      {"id": "c", "text": "A market order to sell now."},
+      {"id": "d", "text": "A buy SL order with a trigger of Rs 240."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A sell limit at Rs 240 sits in the market now. It fills only at Rs 240 or higher, so it may never fill if the price falls further.",
+      "c": "A market order sells now, not when the price falls to Rs 240.",
+      "d": "This is a buy order. It works on the wrong side of the trade for a holding you want to sell."
+    },
+    "concepts": ["sl-m", "order-choice"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

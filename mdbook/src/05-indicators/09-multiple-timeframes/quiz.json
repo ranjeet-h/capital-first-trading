@@ -1,0 +1,104 @@
+[
+  {
+    "id": "T5.9-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Five daily candles: highs 296, 301, 300, 297 and 298; lows 288, 293, 292, 290 and 289. What is the weekly high?",
+    "answer": 301,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "The weekly high is the largest of the five daily highs. The largest is 301 (Tuesday). Weekly high = Rs 301.",
+    "concepts": ["timeframe-aggregation"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.9-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Using the same five daily candles, what is the weekly range in rupees (weekly high minus weekly low)?",
+    "answer": 13,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Weekly high = 301. Weekly low = 288, the smallest of 288, 293, 292, 290 and 289. Range = 301 - 288 = Rs 13.",
+    "concepts": ["timeframe-aggregation", "range"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.9-q3",
+    "type": "mcq",
+    "prompt": "Hypothetical. Five daily candles from Monday to Friday, with Monday's open at Rs 290 and Tuesday's open at Rs 294. What is the weekly open?",
+    "options": [
+      {"id": "a", "text": "Rs 290"},
+      {"id": "b", "text": "Rs 294"},
+      {"id": "c", "text": "Rs 296, the Friday close"},
+      {"id": "d", "text": "Rs 288, the weekly low"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "Rs 294 is Tuesday's open. The weekly open uses the first day of the period, which is Monday.",
+      "c": "Rs 296 is the weekly close, not the open. The open comes from the first candle, and the close comes from the last.",
+      "d": "Rs 288 is the weekly low. The low is the smallest low of the week, not the open."
+    },
+    "concepts": ["timeframe-aggregation"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.9-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. A trader adds four timeframes to a chart. The trader takes a trade only when all four agree. The trader says, 'Four timeframes agree, so this trade is safer.' Which response fits the book's rules?",
+    "options": [
+      {"id": "a", "text": "Agree. More timeframes give more evidence, so the trade is safer"},
+      {"id": "b", "text": "Each extra timeframe adds settings that can be fitted to past data. Fix the framework before testing, and keep the stop and size rules"},
+      {"id": "c", "text": "Four timeframes are the only correct method for every trader"},
+      {"id": "d", "text": "Agreement across timeframes proves that the trade will work"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "More timeframes add more settings, not more proof. They also make it easier to find a setting that looks good on past data.",
+      "c": "No timeframe method is the only correct one. The book uses a simple two-timeframe frame as an example.",
+      "d": "Agreement is not proof. The trade can still lose, so the stop and size rules still apply."
+    },
+    "concepts": ["multiple-timeframes", "overfitting"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.9-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Read this statement. Which part is wrong? 'The weekly open is the Friday open. The weekly close is the Friday close. The weekly high is the highest high of the five days.'",
+    "options": [
+      {"id": "a", "text": "The weekly open is the Friday open"},
+      {"id": "b", "text": "The weekly close is the Friday close"},
+      {"id": "c", "text": "The weekly high is the highest high of the five days"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "This part is correct. The weekly close comes from the last candle in the period, which is Friday.",
+      "c": "This part is correct. The weekly high is the largest of the daily highs."
+    },
+    "concepts": ["timeframe-aggregation"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.9-q6",
+    "type": "mcq",
+    "prompt": "Hypothetical. Which role fits a higher timeframe in this book's method?",
+    "options": [
+      {"id": "a", "text": "It sets the exact minute to enter"},
+      {"id": "b", "text": "It is a filter that decides whether trades are allowed"},
+      {"id": "c", "text": "It replaces the stop"},
+      {"id": "d", "text": "It removes the need for position sizing"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The lower timeframe is the trigger. It decides when to act, inside the trades the filter allows.",
+      "c": "A stop is still needed on every trade. The higher timeframe does not replace it.",
+      "d": "Position sizing still applies. The filter only decides whether a look is allowed."
+    },
+    "concepts": ["multiple-timeframes", "filter-and-trigger"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

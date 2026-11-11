@@ -1,0 +1,98 @@
+[
+  {
+    "id": "T6.5-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. A scalp buys 100 shares at Rs 100 with an assumed round-trip cost of Rs 50. What is the break-even move per share, in rupees?",
+    "answer": 0.5,
+    "tolerance": 0.001,
+    "unit": "Rs",
+    "solution": "Break-even move = cost / shares = Rs 50 / 100 = Rs 0.50 per share, which is 0.5 percent of Rs 100. Checked again: 100 x Rs 0.50 = Rs 50.",
+    "concepts": ["break-even", "scalping"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.5-q2",
+    "type": "numeric",
+    "prompt": "A position falls 40 percent. What gain, in percent, is needed to recover to the starting value? Give one decimal place.",
+    "answer": 66.7,
+    "tolerance": 0.1,
+    "unit": "%",
+    "solution": "After a 40 percent fall, 60 percent of the value remains. Gain needed = 1 / 0.6 - 1 = 0.667 = 66.7 percent. Checked again: 0.6 x 1.667 = 1.000.",
+    "concepts": ["recovery-math", "drawdown"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.5-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. Base risk is Rs 500 and each loss doubles the next stake. What is the total lost after five losing trades, in rupees?",
+    "answer": 15500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Stakes are Rs 500, Rs 1,000, Rs 2,000, Rs 4,000 and Rs 8,000. Total = 500 x (1 + 2 + 4 + 8 + 16) = Rs 15,500. Checked again: 500 + 1,000 + 2,000 + 4,000 + 8,000 = 15,500.",
+    "concepts": ["martingale", "stake-growth"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.5-q4",
+    "type": "mcq",
+    "prompt": "A trader says: \"Averaging down lowers my risk.\" Which response is correct?",
+    "options": [
+      {"id": "a", "text": "Correct, a lower average price lowers the risk."},
+      {"id": "b", "text": "Incorrect, averaging down increases the money at risk on the same idea."},
+      {"id": "c", "text": "Correct, if the price is near a support level."},
+      {"id": "d", "text": "Correct, because the break-even price falls."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The average price falls, but the total money at risk grows. The risk rises with the extra shares.",
+      "c": "No price level makes averaging down a safe rule in this book. Adding to a losing position still raises the money at risk.",
+      "d": "The break-even price falls, but the exposure also grows. The loss at a lower price can be larger."
+    },
+    "concepts": ["averaging-down", "exposure"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T6.5-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"The stake doubles after each loss, so the worst case is one lost stake.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The stake doubles after each loss"},
+      {"id": "b", "text": "The worst case is one lost stake"},
+      {"id": "c", "text": "The word stake"},
+      {"id": "d", "text": "Nothing; the statement is correct"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Doubling after each loss describes the method correctly. The error is in the worst-case claim.",
+      "c": "Stake is the right word for the amount put at risk on a trade.",
+      "d": "The statement is wrong. Losses add up, so a long run of losses makes the total much larger than one stake."
+    },
+    "concepts": ["martingale", "uncapped-sequence"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T6.5-q6",
+    "type": "mcq",
+    "prompt": "At theory level, which statement about options is correct?",
+    "options": [
+      {"id": "a", "text": "Option buyers and option sellers have the same loss limits."},
+      {"id": "b", "text": "An option buyer's loss is limited to the premium paid."},
+      {"id": "c", "text": "An option seller's loss is always capped at the premium received."},
+      {"id": "d", "text": "Option buying is safe because the premium is small."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The buyer and the seller have different loss profiles. The buyer's loss is limited, but the seller's loss can be far larger.",
+      "c": "The seller's gain is limited to the premium received. The seller's loss is not capped at that amount.",
+      "d": "A small premium does not make a trade safe. The buyer can still lose the whole premium, and the book treats options as theory only."
+    },
+    "concepts": ["options-theory", "loss-profile"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  }
+]

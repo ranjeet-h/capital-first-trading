@@ -1,0 +1,95 @@
+[
+  {
+    "id": "T4.3-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Best bid Rs 249.90, best ask Rs 250.10. What is the spread in rupees?",
+    "answer": 0.2,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Spread = 250.10 minus 249.90 = Rs 0.20. Check: 249.90 plus 0.20 = 250.10.",
+    "concepts": ["spread"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.3-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Same prices: best bid Rs 249.90, best ask Rs 250.10. You buy 100 shares at the market. What is the cost above the mid-price in rupees?",
+    "answer": 10,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Mid-price = (249.90 plus 250.10) divided by 2 = Rs 250.00. Cost above mid = (250.10 minus 250.00) multiplied by 100 = Rs 10. Check: 100 shares at Rs 250.10 cost Rs 25,010, and 100 shares at Rs 250.00 cost Rs 25,000. The difference is Rs 10.",
+    "concepts": ["mid-price", "crossing-the-spread"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.3-q3",
+    "type": "mcq",
+    "prompt": "What is the spread?",
+    "options": [
+      {"id": "a", "text": "A fee that the broker charges"},
+      {"id": "b", "text": "The best ask minus the best bid"},
+      {"id": "c", "text": "The best bid plus the best ask"},
+      {"id": "d", "text": "The volume multiplied by the price"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The spread is not a fee. It is the gap between the best bid and the best ask. Broker charges are shown separately.",
+      "c": "Adding the bid and the ask gives a number that is used for the mid-price, not the spread.",
+      "d": "Volume multiplied by price gives traded value. It is not the spread."
+    },
+    "concepts": ["spread"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.3-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. A very large bid quantity appears at Rs 249.90. A trader thinks the price will hold at that level. What is the best reply?",
+    "options": [
+      {"id": "a", "text": "Correct. A big bid guarantees that the price will hold."},
+      {"id": "b", "text": "The bid is one moment in the order book. It can change or disappear, so it does not promise support."},
+      {"id": "c", "text": "Correct, because large quantities always stay in place."},
+      {"id": "d", "text": "Wrong. A bid can never be large."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "No bid guarantees a price. Orders can be cancelled at any time.",
+      "c": "Large quantities can be cancelled or filled at any moment, so they do not always stay.",
+      "d": "Bids can be large. The issue is that they change, not that they cannot be large."
+    },
+    "concepts": ["depth-snapshot", "support-claims"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.3-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake. A student writes: 'The depth shows a big bid, so I can use it to plan my end-of-day exit.' Which part is the mistake?",
+    "options": [
+      {"id": "a", "text": "The depth shows a big bid."},
+      {"id": "b", "text": "So I can use it to plan my end-of-day exit."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This describes what the screen shows at one moment. It is not the mistake, although the bid can change.",
+      "b": "Depth shows one moment and can change quickly. It is not a basis for an end-of-day plan."
+    },
+    "concepts": ["depth-snapshot", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.3-q6",
+    "type": "numeric",
+    "prompt": "Hypothetical. Best bid Rs 180.40, best ask Rs 180.60, mid-price Rs 180.50. You buy 200 shares at the market. What is the cost above mid in rupees?",
+    "answer": 20,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Cost above mid = (180.60 minus 180.50) multiplied by 200 = Rs 20. Check: 200 shares at Rs 180.60 cost Rs 36,120, and 200 shares at Rs 180.50 cost Rs 36,100. The difference is Rs 20.",
+    "concepts": ["mid-price", "crossing-the-spread"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]
