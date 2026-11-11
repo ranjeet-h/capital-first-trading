@@ -314,7 +314,7 @@ Missed week then run; symbol delisted or renamed; partial data for some symbols;
 - Failure tests: stale data, bad OHLC, network failure, corrupted state all fail closed with clear messages.
 - Importer merges the sample output into the journal with no manual edits and no duplicates on re-import.
 - Runs for 5 consecutive real trading days on the owner's machine without manual intervention (M7 acceptance).
-- No credentials, no broker packages, no order endpoints anywhere in the repo (CI grep check).
+- No credentials, no broker packages, no order endpoints anywhere in the repo (checked by a local `make check` grep).
 
 ---
 

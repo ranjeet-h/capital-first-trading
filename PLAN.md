@@ -1,6 +1,6 @@
 # Capital-First Trading Study Book: Master Plan
 
-Status: written 2026-11-11. Built so far, in the order M0, M1, M3 (the owner approved this order and asked for it "done properly"): the book, the foundation (storage, encrypted backup, offline service worker, installable manifest), the money core (Lab 2 cost calculator, Lab 1 position size), and the Lab 3 journal (plans, buys and sells in parts, review, dashboard, weekly review, backup and restore). Still open: journal auto-fill from Labs 1 and 2, Zerodha Console importer, synced-folder auto-save, AGENTS.md, CI, and Labs 4 and 5. Detail: docs/M3-journal-plan.md.
+Status: written 2026-11-11. Built so far, in the order M0, M1, M3 (the owner approved this order and asked for it "done properly"): the book, the foundation (storage, encrypted backup, offline service worker, installable manifest), the money core (Lab 2 cost calculator, Lab 1 position size), and the Lab 3 journal (plans, buys and sells in parts, review, dashboard, weekly review, backup and restore). Still open: journal auto-fill from Labs 1 and 2, Zerodha Console importer, synced-folder auto-save, AGENTS.md, and Labs 4 and 5. There is no CI and none is planned: all checks run locally with `make`. Detail: docs/M3-journal-plan.md.
 Companion file: [LABS.md](LABS.md) (detailed specs for the five labs).
 
 This plan is the single reference for the coding agent. Where it says **OPEN**, the owner has not decided; the agent must not decide silently, it must ask.
@@ -139,9 +139,8 @@ capital-first-trading/
 ├── data/
 │   ├── facts.json               # verified facts registry
 │   └── synthetic/               # generated datasets + generator config
-├── tests/
-│   ├── unit/ (in packages)  e2e/ (Playwright)  content/ (link, schema, facts, math checks)
-└── .github/workflows/           # build, test, deploy
+└── tests/
+    ├── unit/ (in packages)  e2e/ (Playwright)  content/ (link, schema, facts, math checks)
 ```
 
 ### 5.3 Build pipeline
@@ -204,7 +203,7 @@ Each entry: `id`, `value`, `unit`, `sourceUrl`, `verifiedOn`, `reviewEveryDays`,
 - **Unit (Vitest):** every function in `packages/core` including edge cases; golden tests for cost engine against Zerodha's published worked examples and the official calculator; property tests (for example, shares x risk-per-share never exceeds the risk budget).
 - **Component tests:** custom elements render, respond to input, restore state.
 - **E2E (Playwright):** every page loads; labs work; quiz flow; **offline test** (install, switch network off, visit every page, run each lab, reload); backup export/import round trip; mobile viewport runs; iOS WebKit project included.
-- **Content checks (CI):** broken links; every chapter has the required sections; quiz JSON schema; facts freshness; every number-with-rupee in a worked example is either computed by a tested function or flagged `<!-- hand-checked -->` with a reviewer note; spelling.
+- **Content checks (run locally with `make check`):** broken links; every chapter has the required sections; quiz JSON schema; facts freshness; every number-with-rupee in a worked example is either computed by a tested function or flagged `<!-- hand-checked -->` with a reviewer note; spelling.
 - **Accessibility:** axe checks in Playwright on a page sample plus every lab.
 - **Performance budgets:** see 8.2.
 
@@ -223,7 +222,7 @@ Each milestone ends with a working, deployable, offline-capable build and passes
 
 | M | Deliverable | Acceptance (summary) |
 |---|---|---|
-| M0 Foundation | Repo scaffold, mdBook + TS build, loader, service worker, manifest, storage layer, backup/export, CI, AGENTS.md, one sample chapter with one sample component. | Installs as PWA on Android Chrome, iOS Safari (Home Screen) and desktop; sample page works fully offline; CI green; backup round trip works. |
+| M0 Foundation | Repo scaffold, mdBook + TS build, loader, service worker, manifest, storage layer, backup/export, AGENTS.md, one sample chapter with one sample component. | Installs as PWA on Android Chrome, iOS Safari (Home Screen) and desktop; sample page works fully offline; local `make` checks green; backup round trip works. |
 | M1 Money core | `packages/core` costs and sizing with golden tests; facts registry v1 with verified Zerodha charges. **Lab 2 and Lab 1** shipped. | Lab 1 and 2 pass LABS.md acceptance; verification dates shown; stale-fact banner tested. |
 | M2 Tracks 0-2 content | Tracks 0, 1 and 2 chapters with animations, quizzes, reality-check module, streak simulator, gates G1-G2. Until M3 ships, "log it in your journal" paper tasks are done on paper. | Every chapter has all pattern elements; all quizzes validate; gates G1-G2 functional. |
 | M3 **Journal (Lab 3 MVP)** | **Starts only after the owner explicitly approves pausing book work** (decided 2026-11-11: book first, then journal; the agent must ask before diverting). Scope: `journal_v1` schema, plan and execution forms with auto-fill from Labs 1 and 2 (manual override allowed), `core/stats` with tests, dashboard with equity and drawdown curves and R histogram, filters by mode, weekly review form, JSON/CSV export and import, merge with `updated_at`/tombstones, Web Share, optional encryption, backup reminders. Works on phone and desktop, offline. Target: ready before the owner's first Kite demo or paper trade. | Lab 3 acceptance (LABS.md) except items that need Lab 5; hand-computed fixtures match; export on device A and import on device B merges correctly; installable PWA. |
@@ -243,7 +242,7 @@ Having the journal does not unlock live trading; the gates in section 6 still de
 4. Works offline, on 360 px width, with keyboard only, and with reduced motion.
 5. Quizzes validated, wrong-answer explanations written.
 6. Sources listed; no copied third-party text.
-7. Tests added and passing in CI.
+7. Tests added and passing locally (`make test`, `make e2e`).
 8. No unlabelled hypothetical returns.
 
 ## 11. Open items for the owner
