@@ -88,18 +88,21 @@ Equity cash segment on NSE and BSE: **delivery (CNC)** and **intraday (MIS)**. F
 ### Inputs
 Buy price, sell price, quantity (or buy and sell values), product (CNC/MIS), exchange (NSE/BSE), and optionally a "trade is a sell-only leg" mode for DP charges when selling existing holdings.
 
-### Charge model *(all provisional; verify each)*
+### Charge model *(verified 2026-11-11 against zerodha.com/charges and the official calculator script; re-check every 90 days)*
 | Component | Delivery (CNC) | Intraday (MIS) |
 |---|---|---|
 | Brokerage | Rs 0 | Lower of Rs 20 or 0.03% of turnover, per executed order |
 | STT | 0.1% on buy and sell | 0.025% on sell only |
-| Exchange transaction charge (NSE equity) | 0.00297% of turnover | 0.00297% of turnover |
+| Exchange transaction charge (NSE equity) | 0.00307% of turnover (0.00297% exchange + 0.0001% IPFT, each rounded to 2 decimals separately) | same |
 | SEBI charge | Rs 10 per crore | Rs 10 per crore |
 | Stamp duty | 0.015% on buy | 0.003% on buy |
 | GST | 18% of (brokerage + SEBI charge + exchange transaction charge) | same |
 | DP charge on sell | Rs 15.34 per scrip per day on sale, including GST (Rs 3.5 CDSL + Rs 9.5 Zerodha + GST) | none |
 
-BSE rates, rounding rules, and whether the DP charge applies once per scrip per day regardless of number of sell orders must be read from the official page and the official calculator, then encoded in the facts registry.
+Verified facts (2026-11-11, read from https://zerodha.com/static/js/brokerage.js and checked against seven calculator screenshots):
+- Rates live in `data/rates/zerodha-equity.json` (NSE 297 and IPFT 10 per crore, BSE 375 and IPFT 0), read by `packages/core/src/costs.ts`. The cost labs show the verified date and a stale warning after 90 days.
+- Rounding: each charge is rounded to 2 decimals on its own (`f2`); STT and stamp duty use `Math.round` to whole rupees; GST = 18% of (brokerage + exchange + SEBI) after those roundings. MIS brokerage is the lower of Rs 20 or 0.03% per leg.
+- The official calculator does **not** include the DP charge. Lab 2 shows the Rs 15.34 DP charge on delivery sells as a separate line, charged once on the first sell of a position, so totals match Zerodha's calculator plus a clearly labelled extra.
 
 ### Rounding and precision
 Follow the official calculator's rounding (decide by comparing outputs; document the rule in the code). All intermediate values in paise or decimals. The lab shows each component to 2 decimals and a total that equals the sum of the displayed components (no off-by-one-paisa mismatch). Test this.
@@ -327,10 +330,10 @@ Missed week then run; symbol delisted or renamed; partial data for some symbols;
 | No network at runtime | yes | yes | yes | yes | data fetch only (script) |
 
 ## Suggested order of work for the coding agent
-1. M0 scaffold, storage, backup, PWA.
-2. M1: `core/costs` + Lab 2 (golden tests against the official calculator first), then `core/sizing` + Lab 1.
+1. M0 scaffold, storage, backup, PWA. **Done.**
+2. M1 **(done)**: `core/costs` + Lab 2 (golden tests against the official calculator first), then `core/sizing` + Lab 1.
 3. M2: Tracks 0-2 content (book).
-4. M3: journal schema, `core/stats`, Lab 3 MVP with auto-fill from Labs 1 and 2. **Ask the owner for approval before starting; do not divert from book work on your own.**
+4. M3 **(journal built, including weekly review; auto-fill from Labs 1 and 2 and the Console importer still open)**: journal schema, `core/stats`, Lab 3 MVP with auto-fill from Labs 1 and 2. **Ask the owner for approval before starting; do not divert from book work on your own.**
 5. Synthetic generator, adapters, indicators, backtest engine, Lab 4.
 6. Strategy spec finalised, `tools/forward-test`, Lab 5 (and the journal's forward-import).
 

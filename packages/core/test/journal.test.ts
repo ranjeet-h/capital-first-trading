@@ -121,3 +121,30 @@ describe("csv export", () => {
     expect(lines[1]).toContain('"\'=HYPERLINK(""x""), ""quoted"""');
   });
 });
+
+import { weekOf, newReview, reviewId, weekResults, localDay } from "../src/journal";
+describe("weekly review", () => {
+  it("finds Monday to Sunday for any day", () => {
+    expect(weekOf(new Date(2026, 10, 11))).toEqual({ start: "2026-11-09", end: "2026-11-15" }); // a Wednesday
+    expect(weekOf(new Date(2026, 10, 15))).toEqual({ start: "2026-11-09", end: "2026-11-15" }); // Sunday
+    expect(weekOf(new Date(2026, 10, 16))).toEqual({ start: "2026-11-16", end: "2026-11-22" }); // next Monday
+    expect(weekOf(new Date(2026, 0, 1))).toEqual({ start: "2025-12-29", end: "2026-01-04" });    // across a year
+  });
+  it("uses a fixed id per mode and week, so saving again edits the same review", () => {
+    const a = newReview("t1", { mode: "paper", week_start: "2026-11-09", week_end: "2026-11-15", rules_broken: [], went_well: " ok ", to_change: "", rule_next: "" });
+    const b = newReview("t2", { mode: "paper", week_start: "2026-11-09", week_end: "2026-11-15", rules_broken: [], went_well: "better", to_change: "", rule_next: "" });
+    expect(a.id).toBe(reviewId("paper", "2026-11-09")); expect(b.id).toBe(a.id); expect(a.went_well).toBe("ok");
+    expect(newReview("t", { mode: "live", week_start: "2026-11-09", week_end: "2026-11-15", rules_broken: [], went_well: "x", to_change: "", rule_next: "" }).id).not.toBe(a.id);
+  });
+  it("refuses an empty review", () => {
+    expect(() => newReview("t", { mode: "paper", week_start: "a", week_end: "b", rules_broken: [], went_well: " ", to_change: "", rule_next: "" })).toThrow("at least one line");
+  });
+  it("keeps only trades closed inside the week", () => {
+    const mk = (i: number, d: string) => resultOf(closed(i, 10, 100, 110, 95, 1, d), rates);
+    const day = (iso: string) => localDay(iso);
+    const rs = [mk(1, "2026-11-08"), mk(2, "2026-11-10"), mk(3, "2026-11-12")];
+    const inWeek = weekResults(rs, "2026-11-09", "2026-11-15");
+    expect(inWeek.map((r) => r.id)).toEqual(["t2", "t3"]);
+    expect(day("2026-11-10T14:00:00Z").length).toBe(10);
+  });
+});

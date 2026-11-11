@@ -1,7 +1,7 @@
 import rawRates from "../../../data/rates/zerodha-equity.json";
 import type { Rates, Exchange, Product } from "../../core/src/costs";
 import { IndexedDbStore, type Store, type StoredRecord } from "../../core/src/store";
-import { MODES, newTrade, newNote, recordEntry, addExit, amendPlan, statusOf, resultOf, tombstone, validatePlan, type Mode, type Trade, type Note, type Result } from "../../core/src/journal";
+import { MODES, newTrade, newNote, recordEntry, addExit, amendPlan, statusOf, resultOf, tombstone, validatePlan, weekOf, weekResults, newReview, reviewId, REVIEW_RULES, type Mode, type Trade, type Note, type Review, type Result } from "../../core/src/journal";
 import { computeStats, lossLimitBreaches, MIN_TRADES_FOR_TRUST, type Stats } from "../../core/src/stats";
 import { tradesToCsv } from "../../core/src/export";
 import { exportBackup, encryptBackup, decryptBackup, parseBackup, previewImport, importBackup, BackupError, type BackupFile } from "../../core/src/backup";
@@ -22,7 +22,7 @@ const dateText = (iso: string) => new Date(iso).toLocaleString("en-IN", { day: "
 const DAY = 86_400_000;
 
 interface Settings extends StoredRecord { mode: Mode; dailyLossPaise?: number }
-type Tab = "trades" | "dashboard" | "backup";
+type Tab = "trades" | "dashboard" | "review" | "backup";
 
 export class LabJournal extends HTMLElement {
   private store!: Store;
@@ -30,6 +30,9 @@ export class LabJournal extends HTMLElement {
   private settings: Settings = { id: SETTINGS_ID, updated_at: nowIso(), mode: "paper" };
   private trades: Trade[] = [];
   private notes: Note[] = [];
+  private reviews: Review[] = [];
+  private weekShift = 0; // weeks back from this week
+  private reviewMsg = "";
   private body!: HTMLElement;
   private tabs!: HTMLElement;
   private banner!: HTMLElement;
@@ -56,9 +59,10 @@ export class LabJournal extends HTMLElement {
   }
 
   private async load() {
-    const rows = (await this.store.all("journal")).filter((r) => !r.deleted) as unknown as (Trade | Note)[];
+    const rows = (await this.store.all("journal")).filter((r) => !r.deleted) as unknown as (Trade | Note | Review)[];
     this.trades = rows.filter((r): r is Trade => r.entry_type === "trade").sort((a, b) => (a.planned_at < b.planned_at ? 1 : -1));
     this.notes = rows.filter((r): r is Note => r.entry_type === "note").sort((a, b) => (a.at < b.at ? 1 : -1));
+    this.reviews = rows.filter((r): r is Review => r.entry_type === "review");
     const s = await this.store.get("settings", SETTINGS_ID);
     if (s) this.settings = s as Settings;
     this.lastBackup = (await this.store.getMeta("lastBackupAt")) as number | undefined;
@@ -70,14 +74,14 @@ export class LabJournal extends HTMLElement {
   private render() {
     this.modeBox.replaceChildren(segmented<Mode>("Which trades are you looking at?", "jmode", MODES.map((m) => [m, MODE_LABEL[m]]), this.settings.mode, (m) => { void this.saveSettings({ mode: m }).then(() => this.render()); }).root,
       h("p", { class: "lab-hint lab-modehint" }, "Each kind is kept apart. Paper, live and test results are never added together."));
-    this.tabs.replaceChildren(...(["trades", "dashboard", "backup"] as Tab[]).map((t) =>
-      h("button", { type: "button", role: "tab", class: "lab-tab", "aria-selected": String(t === this.tab), onclick: () => { this.tab = t; this.render(); } }, { trades: "Trades", dashboard: "Dashboard", backup: "Backup" }[t])));
+    this.tabs.replaceChildren(...(["trades", "dashboard", "review", "backup"] as Tab[]).map((t) =>
+      h("button", { type: "button", role: "tab", class: "lab-tab", "aria-selected": String(t === this.tab), onclick: () => { this.tab = t; this.render(); } }, { trades: "Trades", dashboard: "Dashboard", review: "Weekly review", backup: "Backup" }[t])));
     this.renderBanner();
-    this.body.replaceChildren(...(this.tab === "trades" ? this.tradesView() : this.tab === "dashboard" ? this.dashboardView() : this.backupView()));
+    this.body.replaceChildren(...(this.tab === "trades" ? this.tradesView() : this.tab === "dashboard" ? this.dashboardView() : this.tab === "review" ? this.reviewView() : this.backupView()));
   }
 
   private renderBanner() {
-    const n = this.trades.length + this.notes.length;
+    const n = this.trades.length + this.notes.length + this.reviews.length;
     const age = this.lastBackup === undefined ? undefined : Date.now() - this.lastBackup;
     const due = n >= 3 && (age === undefined || age > 7 * DAY);
     this.banner.hidden = !due;
@@ -252,6 +256,61 @@ export class LabJournal extends HTMLElement {
     out.push(h("div", { class: "lab-charts" }, lineChart("Money over time (after costs)", s.equity), lineChart("Drop from the highest point", s.drawdown.map((x) => -x), true), histogram(s)));
     const lim = this.settings.dailyLossPaise;
     if (lim) { const b = lossLimitBreaches(results, lim); out.push(h("section", { class: "lab-limit" }, h("h3", {}, "Daily loss limit"), b.length ? h("ul", {}, ...b.map((x) => h("li", {}, `${x.day}: lost ${fmtRs(x.lossPaise)}, over your limit of ${fmtRs(lim)}`))) : h("p", {}, `You stayed within your limit of ${fmtRs(lim)} a day.`))); }
+    return out;
+  }
+
+  // ---------- weekly review ----------
+  private reviewView(): HTMLElement[] {
+    const mode = this.settings.mode;
+    const base = new Date(); base.setDate(base.getDate() - 7 * this.weekShift);
+    const wk = weekOf(base), id = reviewId(mode, wk.start);
+    const saved = this.reviews.find((r) => r.id === id);
+    const range = (a: string, b: string) => { const f = (x: string) => new Date(x + "T12:00:00").toLocaleDateString("en-IN", { day: "numeric", month: "short" }); return `${f(a)} to ${f(b)}`; };
+    const out: HTMLElement[] = [];
+    out.push(h("div", { class: "lab-weeknav" },
+      h("button", { type: "button", class: "lab-btn", onclick: () => { this.weekShift++; this.reviewMsg = ""; this.render(); } }, "Earlier week"),
+      h("div", { class: "lab-weeklabel", "aria-live": "polite" }, h("strong", {}, this.weekShift === 0 ? "This week" : this.weekShift === 1 ? "Last week" : `${this.weekShift} weeks ago`), h("span", {}, range(wk.start, wk.end))),
+      h("button", { type: "button", class: "lab-btn", disabled: this.weekShift === 0, onclick: () => { this.weekShift--; this.reviewMsg = ""; this.render(); } }, "Later week")));
+
+    const week = weekResults(this.results(), wk.start, wk.end), s = computeStats(week);
+    const card = (k: string, v: string, sub = "") => h("div", { class: "lab-card" }, h("div", { class: "lab-card-k" }, k), h("div", { class: "lab-card-v" }, v), h("div", { class: "lab-card-s" }, sub));
+    if (s.count === 0) out.push(h("p", { class: "lab-empty" }, `No ${MODE_NAME[mode]} trades were closed this week. You can still write a review below.`));
+    else {
+      const worst = week.reduce((a, b) => (b.netPaise < a.netPaise ? b : a));
+      out.push(h("div", { class: "lab-cards lab-cards-4" },
+        card("Trades closed", fmtInt(s.count), `${s.wins} won, ${s.losses} lost`),
+        card("Profit after costs", fmtRs(s.netPaise), `Costs paid: ${fmtRs(s.costsPaise)}`),
+        card("Plan followed", s.planAdherence === null ? "n/a" : (s.planAdherence * 100).toFixed(0) + "%", s.planAdherence === null ? "Review your closed trades first" : "Of trades you reviewed"),
+        card("Biggest loss", worst.netPaise < 0 ? fmtRs(worst.netPaise) : "none", worst.netPaise < 0 ? "One trade, after costs" : "No losing trade this week")));
+    }
+
+    const rules = new Set(saved?.rules_broken ?? []);
+    const checks = REVIEW_RULES.map((r) => { const c = checkbox(r, rules.has(r), (v) => (v ? rules.add(r) : rules.delete(r))); return c.root; });
+    const area = (label: string, name: string, val: string, ph: string) => { const id2 = `rv-${name}`; return h("div", { class: "lab-field" }, h("label", { for: id2 }, label), h("textarea", { id: id2, name, rows: 3, placeholder: ph }, val)); };
+    const ww = area("What went well?", "went_well", saved?.went_well ?? "", "Something you did right, even if you lost money");
+    const tc = area("What do you want to change?", "to_change", saved?.to_change ?? "", "One habit that cost you this week");
+    const rn = area("One rule for next week", "rule_next", saved?.rule_next ?? "", "A single rule you can keep. For example: no trades after 2 pm");
+    const err = h("div", { class: "lab-err", role: "alert" });
+    const val = (el: HTMLElement) => (el.querySelector("textarea") as HTMLTextAreaElement).value;
+    out.push(h("form", { class: "lab-form lab-card-box lab-stack", onsubmit: (ev: Event) => {
+      ev.preventDefault();
+      try { const r = newReview(nowIso(), { mode, week_start: wk.start, week_end: wk.end, rules_broken: [...rules], went_well: val(ww), to_change: val(tc), rule_next: val(rn) }); this.reviewMsg = "Review saved."; void this.save(r); }
+      catch (x) { err.textContent = (x as Error).message; }
+    } },
+      h("h3", {}, "Your review"),
+      h("fieldset", { class: "lab-fieldset" }, h("legend", {}, "Did you break any of these rules?"), ...checks),
+      ww, tc, rn, err,
+      h("button", { type: "submit", class: "lab-btn lab-btn-primary" }, saved ? "Update review" : "Save review"),
+      h("div", { class: "lab-msg lab-msg-ok", role: "status", hidden: !this.reviewMsg }, this.reviewMsg)));
+
+    const past = this.reviews.filter((r) => r.mode === mode && r.id !== id).sort((a, b) => (a.week_start < b.week_start ? 1 : -1));
+    if (past.length) out.push(h("section", { class: "lab-notes" }, h("h3", {}, "Earlier reviews"), ...past.map((r) => h("div", { class: "lab-note-item" },
+      h("time", {}, range(r.week_start, r.week_end)),
+      r.rules_broken.length ? h("p", {}, h("strong", {}, "Rules broken: "), r.rules_broken.join(", ")) : null,
+      r.went_well ? h("p", {}, h("strong", {}, "Went well: "), r.went_well) : null,
+      r.to_change ? h("p", {}, h("strong", {}, "To change: "), r.to_change) : null,
+      r.rule_next ? h("p", {}, h("strong", {}, "Rule: "), r.rule_next) : null,
+      h("button", { type: "button", class: "lab-btn lab-btn-quiet", onclick: () => void this.save(tombstone(r, nowIso())) }, "Delete review")))));
     return out;
   }
 

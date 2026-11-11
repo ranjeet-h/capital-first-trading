@@ -212,3 +212,43 @@ test.describe("trade journal", () => {
     }
   });
 });
+
+test("weekly review: shows this week, saves, edits, and survives reload", async ({ page }) => {
+  await open(page);
+  await page.getByRole("tab", { name: "Weekly review" }).click();
+  await expect(page.getByText("This week", { exact: true })).toBeVisible();
+  await expect(page.getByText(/No paper trades were closed this week/)).toBeVisible();
+  await page.getByRole("button", { name: "Save review" }).click();
+  await expect(page.getByRole("alert").filter({ hasText: "at least one line" })).toBeVisible();
+  await page.getByLabel("Moved or removed a stop-loss").check();
+  await page.getByLabel("What went well?").fill("Waited for my entry");
+  await page.getByLabel("One rule for next week").fill("No trades after 2 pm");
+  await page.getByRole("button", { name: "Save review" }).click();
+  await expect(page.getByText("Review saved.")).toBeVisible();
+  await page.reload();
+  await page.getByRole("tab", { name: "Weekly review" }).click();
+  await expect(page.getByLabel("What went well?")).toHaveValue("Waited for my entry");
+  await expect(page.getByLabel("Moved or removed a stop-loss")).toBeChecked();
+  await expect(page.getByRole("button", { name: "Update review" })).toBeVisible();
+  // earlier week is empty, and the saved one shows under "Earlier reviews" from there
+  await page.getByRole("button", { name: "Earlier week" }).click();
+  await expect(page.getByText("Last week", { exact: true })).toBeVisible();
+  await expect(page.getByLabel("What went well?")).toHaveValue("");
+  await expect(page.getByText("Earlier reviews")).toBeVisible();
+  await expect(page.getByText("No trades after 2 pm")).toBeVisible();
+  await page.getByRole("button", { name: "Later week" }).click();
+  await expect(page.getByRole("button", { name: "Later week" })).toBeDisabled();
+});
+
+test("weekly review: counts this week's closed trade and is phone friendly", async ({ page }) => {
+  await open(page);
+  await plan(page, "TCS", "100", "95", "10");
+  await buy(page, "TCS", "100");
+  await sell(page, "TCS", "110");
+  await page.getByRole("tab", { name: "Weekly review" }).click();
+  await expect(page.getByText("Trades closed")).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  for (const el of await page.locator(".lab-journal button:visible, .lab-journal .lab-check:visible").all()) {
+    const b = await el.boundingBox(); expect(b!.height).toBeGreaterThanOrEqual(43.5);
+  }
+});

@@ -29,7 +29,29 @@ export interface Trade extends StoredRecord {
   mae_paise?: number; mfe_paise?: number;
 }
 export interface Note extends StoredRecord { entry_type: "note"; at: string; text: string; tags: string[] }
-export type Entry = Trade | Note;
+/** One weekly review per mode per week. The id is fixed, so saving again edits it. */
+export interface Review extends StoredRecord {
+  entry_type: "review"; mode: Mode; week_start: string; week_end: string;
+  rules_broken: string[]; went_well: string; to_change: string; rule_next: string;
+}
+export type Entry = Trade | Note | Review;
+export const REVIEW_RULES = ["Traded without a plan", "Moved or removed a stop-loss", "Added to a losing trade", "Traded after hitting my daily limit", "Took a trade that was too big", "Chased a price after missing the entry"];
+
+/** Monday to Sunday (local calendar dates) around the given date. */
+export function weekOf(d: Date): { start: string; end: string } {
+  const day = (d.getDay() + 6) % 7; // Monday = 0
+  const s = new Date(d.getFullYear(), d.getMonth(), d.getDate() - day), e = new Date(s.getFullYear(), s.getMonth(), s.getDate() + 6);
+  const f = (x: Date) => `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, "0")}-${String(x.getDate()).padStart(2, "0")}`;
+  return { start: f(s), end: f(e) };
+}
+/** Local calendar day (YYYY-MM-DD) of an ISO time. */
+export const localDay = (iso: string) => { const d = new Date(iso); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
+export const reviewId = (mode: Mode, weekStart: string) => `review-${mode}-${weekStart}`;
+
+export function newReview(now: string, f: { mode: Mode; week_start: string; week_end: string; rules_broken: string[]; went_well: string; to_change: string; rule_next: string }): Review {
+  if (!f.went_well.trim() && !f.to_change.trim() && !f.rule_next.trim() && !f.rules_broken.length) throw new Error("Write at least one line before saving.");
+  return { id: reviewId(f.mode, f.week_start), updated_at: now, entry_type: "review", mode: f.mode, week_start: f.week_start, week_end: f.week_end, rules_broken: f.rules_broken, went_well: f.went_well.trim(), to_change: f.to_change.trim(), rule_next: f.rule_next.trim() };
+}
 export type Status = "planned" | "open" | "closed";
 
 const isInt = (n: unknown): n is number => typeof n === "number" && Number.isInteger(n);
@@ -120,4 +142,9 @@ export function resultOf(t: Trade, rates: Rates): Result {
     grossPaise: gross, costsPaise, netPaise, plannedRiskPaise, r: plannedRiskPaise > 0 ? netPaise / plannedRiskPaise : 0,
     followedPlan: t.followed_plan, amended: t.amended_after_entry,
   };
+}
+
+/** Results whose close falls inside the week (local dates, inclusive). */
+export function weekResults(results: Result[], start: string, end: string): Result[] {
+  return results.filter((r) => r.status === "closed" && localDay(r.closedAt!) >= start && localDay(r.closedAt!) <= end);
 }

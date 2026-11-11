@@ -1,10 +1,10 @@
 # Journal build plan (M0 -> M1 -> M3, done properly)
 
-Status: owner chose "do it properly" (2026-11-11): build the foundation and money core first, then the journal. Field names: chosen by me from research (see Schema decisions).
+Status: BUILT (committed in fad7e28, weekly review added after). Still open: auto-fill from Labs 1 and 2, Console importer. Owner chose "do it properly" (2026-11-11): build the foundation and money core first, then the journal. Field names: chosen by me from research (see Schema decisions).
 
 ## Order
 1. **M0 foundation:** TS packages, build, tests, loader, storage, service worker, manifest, backup.
-2. **M1 money core:** `core/costs` + Lab 2, `core/sizing` + Lab 1, facts registry read by code. Verified Zerodha charges (read 2026-11-11 from zerodha.com/charges: NSE exchange charge 0.00307%, BSE 0.00375%, DP Rs 15.34 incl. GST, stamp 0.015%/0.003%, SEBI Rs 10/crore; this corrects LABS.md's provisional 0.00297%).
+2. **M1 money core:** `core/costs` + Lab 2, `core/sizing` + Lab 1, facts registry read by code. Verified Zerodha charges (read 2026-11-11 from zerodha.com/charges: NSE exchange charge 0.00307% (0.00297% + 0.0001% IPFT), BSE 0.00375%, DP Rs 15.34 incl. GST, stamp 0.015%/0.003%, SEBI Rs 10/crore ; LABS.md now carries the corrected figure).
 3. **M3 journal**, with auto-fill from Labs 1 and 2 included.
 
 ## Schema decisions (research: journals keep ~one record per position, R-multiple needs the initial stop, setup + emotion + deviation tags, start small)

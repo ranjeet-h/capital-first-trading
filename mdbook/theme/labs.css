@@ -142,3 +142,16 @@
 .lab-pos { color: var(--lab-ok); } .lab-neg { color: var(--lab-loss); }
 .lab-area { fill: var(--lab-accent); opacity: .12; } .lab-area-loss { fill: var(--lab-loss); opacity: .15; }
 .lab-line-loss { stroke: var(--lab-loss); } .lab-dot-loss { fill: var(--lab-loss); }
+
+/* weekly review */
+.lab-weeknav { display: grid; grid-template-columns: auto 1fr auto; gap: .6em; align-items: center; margin-bottom: 1em; }
+.lab-weeklabel { text-align: center; display: flex; flex-direction: column; gap: .1em; }
+.lab-weeklabel span { font-size: .85em; opacity: .75; }
+.lab-weeknav .lab-btn[disabled] { opacity: .45; cursor: not-allowed; }
+.lab-fieldset { border: 0; padding: 0; margin: 0 0 1em; display: grid; gap: .2em; }
+.lab-fieldset legend { font-weight: 600; padding: 0; margin-bottom: .4em; }
+.lab-field textarea { width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; }
+@media (max-width: 520px) { .lab-weeknav { grid-template-columns: 1fr 1fr; } .lab-weeklabel { grid-column: 1 / -1; order: -1; } }
+.lab-stack .lab-field + .lab-field { margin-top: 1em; }
+.lab-stack > .lab-btn[type=submit] { margin-top: 1em; }
+.lab-stack > .lab-btn[type=submit] + .lab-msg { margin-top: .8em; }

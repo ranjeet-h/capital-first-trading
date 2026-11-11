@@ -1,6 +1,6 @@
 # Capital-First Trading Study Book: Master Plan
 
-Status: DRAFT for owner review. Written 2026-11-11. Nothing is built yet.
+Status: written 2026-11-11. Built so far, in the order M0, M1, M3 (the owner approved this order and asked for it "done properly"): the book, the foundation (storage, encrypted backup, offline service worker, installable manifest), the money core (Lab 2 cost calculator, Lab 1 position size), and the Lab 3 journal (plans, buys and sells in parts, review, dashboard, weekly review, backup and restore). Still open: journal auto-fill from Labs 1 and 2, Zerodha Console importer, synced-folder auto-save, AGENTS.md, CI, and Labs 4 and 5. Detail: docs/M3-journal-plan.md.
 Companion file: [LABS.md](LABS.md) (detailed specs for the five labs).
 
 This plan is the single reference for the coding agent. Where it says **OPEN**, the owner has not decided; the agent must not decide silently, it must ask.
@@ -196,7 +196,7 @@ Passing G1-G7 enables a "may consider small real-money stage" message with cavea
 - Original diagrams. Mermaid for static diagrams; custom elements for animated ones.
 
 ### 7.1 Facts registry (`data/facts.json`)
-Each entry: `id`, `value`, `unit`, `sourceUrl`, `verifiedOn`, `reviewEveryDays`, `notes`. Chapters and labs reference ids, never hard-code numbers. A build check fails if a referenced fact is older than its review window, and the UI shows "Verified on <date>" beside it, with a warning banner when stale. Initial facts to verify first: Zerodha equity delivery and intraday brokerage, STT, exchange transaction charges, SEBI fee, stamp duty, GST, DP charge, tax rates on short- and long-term gains and on business income, market hours, T+1 rule, circuit limit rules, Kite demo and API plan statements, retail algo framework dates. Provisional values found on 2026-11-11 are in LABS.md and are **not yet verified**.
+Each entry: `id`, `value`, `unit`, `sourceUrl`, `verifiedOn`, `reviewEveryDays`, `notes`. Chapters and labs reference ids, never hard-code numbers. A build check fails if a referenced fact is older than its review window, and the UI shows "Verified on <date>" beside it, with a warning banner when stale. Initial facts to verify first: Zerodha equity delivery and intraday brokerage, STT, exchange transaction charges, SEBI fee, stamp duty, GST, DP charge, tax rates on short- and long-term gains and on business income, market hours, T+1 rule, circuit limit rules, Kite demo and API plan statements, retail algo framework dates. The Zerodha equity charges were verified on 2026-11-11 and live in `data/rates/zerodha-equity.json` (NSE exchange charge 0.00307% = 0.00297% + 0.0001% IPFT; rounding and the DP-charge exclusion are in LABS.md). Other facts remain unverified until their chapters are written.
 
 ## 8. Quality and testing
 
