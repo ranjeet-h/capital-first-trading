@@ -1,18 +1,26 @@
 # Capital-First Trading — Multi-Language Plan (translation_v1)
 
-Status: reviewed against the repo on 2026-11-12 and revised. Nothing is built yet.
-English is the source of truth in `mdbook/src/`. Marathi comes first; other languages
-follow the same pattern.
+Status: revised twice (repo review 2026-11-12, then a second review of seams). Nothing is
+built yet. English is the source of truth in `mdbook/src/`. Marathi comes first; other
+languages follow the same pattern.
 
 ## Decisions already made with the maintainer
 
-- **Scope for v1:** chapters + quizzes. Labs (web components), demos and the forward-test
-  tool stay English. (Exception found in review: the quiz *buttons and feedback* are
-  English strings inside `mdbook/theme/components.js`, so they are in v1 scope. See
-  mechanism 11.)
+- **Scope for v1:** chapters, quizzes, the front page, generated pages, and **every
+  reader-facing string produced by shared theme code** (see the string inventory in
+  mechanism 11). Labs (web components), other demos and the forward-test tool stay English.
 - **Missing translations:** fall back to English. The book is always complete.
-- **Site layout:** one site, language subpaths. English at `/`, Marathi at `/mr/`.
+- **Site layout:** one site, language subpaths. English at the site root, Marathi in an
+  `mr/` folder below it. On GitHub Pages that is `/capital-first-trading/` and
+  `/capital-first-trading/mr/`. **No code may hard-code `/mr/`** (mechanism 6).
 - **Workflow:** LLM-drafted, human-reviewed against a fixed glossary.
+- **Reviewer:** the maintainer reviews the glossary and chapters. Readers then send
+  corrections and the translation improves gradually; that is why the book is open source.
+- **Status levels (one definition, used everywhere):** `draft` (LLM output, not read by the
+  maintainer), `reviewed` (maintainer read and fixed it), `confirmed` (a reader correction
+  was checked and merged, or a second reader verified it), `stale` (the English source
+  changed after the translation was stamped). The 1-in-5 spot check is **extra QA on
+  top of** the maintainer's pass for risky topics, not a replacement for reviewing.
 
 ## Core approach
 
@@ -27,254 +35,339 @@ English copy with a visible notice, so Marathi can ship early and fill in gradua
 ```
 mdbook/
   src/                       # English, unchanged, canonical
-  i18n/mr/                   # Marathi overlay: only translated files, same relative paths
-    00-start-here/01-what-trading-is-and-is-not/{index.md,quiz.json}
-    manifest.json            # per chapter: source hashes, status draft|reviewed, reviewer, date
-    strings.json             # UI strings: quiz buttons/feedback, banners, track names, switcher
-    book.toml                # language = "mr", translated title/description only
+  i18n/mr/
+    content/                 # overlay of src/: only translated files, same relative paths
+      index.md               # front page (translated or fallback)
+      00-start-here/01-what-trading-is-and-is-not/{index.md,quiz.json}
+    manifest.json            # per page: source hashes (SHA-256), status, reviewer, date
+    strings.json             # all UI strings, with templates (mechanism 11)
+    book.toml                # FULL config (mdBook does not merge TOML), see below
+    manifest.webmanifest     # translated PWA name/description
   book.toml                  # English config
-  theme/                     # shared; add lang-switch.js/css and a Devanagari font stack
+  theme/                     # shared; adds lang-switch.js/css, i18n.js (generated), Devanagari fonts
 tools/build/
-  assemble_lang.mjs          # NEW: builds .build/<lang>/ (see mechanism 2)
-  gen_summary.py             # --lang, --out; track/labs page text comes from strings.json
-  gen_sw.mjs                 # --lang, per-language cache prefix, exclude other-language folders
-  deploy.sh                  # builds EN at root and MR at /mr/ into .pages-build/
+  assemble_lang.mjs          # NEW: builds .build/<lang>/ (mechanism 2)
+  gen_i18n_js.mjs            # NEW: compiles strings.json into theme/i18n.js (mechanism 11)
+  gen_summary.py             # --lang, --out; sentences from strings.json
+  gen_sw.mjs                 # --lang, prefix, scope-relative checks, exclude other-language folders
+  deploy.sh                  # builds EN at root and MR in mr/ into .pages-build/
 tools/check/
-  check_chapters.py          # --lang, --root; parity checks against English (mechanism 4)
-  i18n_status.py             # NEW: covered / stale / draft counts
-docs/i18n/glossary-mr.md     # fixed term translations and style rules
+  check_chapters.py          # --lang, --root; parity + completeness (mechanisms 4, 5)
+  i18n_status.py             # NEW: translated / reviewed / confirmed / stale / fallback counts
+tools/i18n/
+  extract_terms.py           # NEW: glossary seed from the English book
+tests/i18n/                  # assembler and parity unit tests (vitest include is extended)
+docs/i18n/{glossary-mr.md, CONTRIBUTORS.md}
+CONTRIBUTING-i18n.md
 ```
 
-The assembled folder is a full mdBook root, not just a `src/`:
-`.build/mr/{book.toml, src/, theme/}`. mdBook reads `theme/` and the `additional-js/css`
-paths in `book.toml` relative to the book root, so `theme/` (including generated
-`theme/dist/labs.js`) is linked or copied in, and generated files under `src/labs/`
-(downloads, `bt-worker.js`) come along with the English copy.
+**Layout rule.** `i18n/mr/content/` maps to `.build/mr/src/`. `manifest.json`,
+`strings.json` and `manifest.webmanifest` are metadata and are never copied into `src/`.
+`i18n/mr/book.toml` is the **whole** Marathi config (copied from English, then
+`language`, `title`, `description` changed). It keeps `additional-js`, `additional-css`,
+`head.hbs`, search and every other setting, because mdBook does not merge partial TOML.
+`check` fails if the two configs differ in anything but the translated keys.
+
+The assembled folder is a full mdBook root: `.build/mr/{book.toml, src/, theme/}`.
+`theme/` (including generated `theme/dist/labs.js` and `theme/i18n.js`) is copied in, and
+generated files under `src/labs/` (downloads, `bt-worker.js`) come along with the English
+copy.
 
 ## Key mechanisms
 
 1. **Chapter IDs are the cross-language key.** Every chapter has `id: T0.1` in its
-   `<!-- meta` block and quizzes use `T0.1-q1`. Overlay files must keep the same ids and
-   the same folder slugs. URLs stay English slugs on purpose, so links never break.
+   `<!-- meta` block and quizzes use `T0.1-q1`. Overlay files keep the same ids and the
+   same folder slugs. URLs stay English slugs on purpose, so links never break.
 
-2. **Assembly with a build-time fallback notice.** `assemble_lang.mjs` copies `src/` to
-   `.build/mr/src/`, overlays `i18n/mr/`, and for every page that is still English it
-   *inserts a short notice into the page itself* ("Not yet translated. Showing English.").
-   Doing it at build time (not by fetching a status file in the browser) keeps pages
-   self-contained, makes the notice work with no script, and keeps it consistent in
-   search. Drafts that are not yet human-reviewed get a different quiet notice
-   ("Draft translation, not yet reviewed. English is the reference."). The tool fails the
-   build if an overlay file has no English counterpart (renamed or removed chapter).
+2. **Assembly with per-page language status.** `assemble_lang.mjs` copies `src/` to
+   `.build/mr/src/`, overlays `i18n/mr/content/`, and gives **every page and every quiz a
+   status** from the manifest: `translated`, `draft`, `stale` or `fallback`. Labs pages
+   get a fifth kind, `english-only` (never planned for translation). It then:
+   - inserts a **notice into the page** at build time: fallback ("Not yet translated.
+     Showing English."), draft ("Draft translation, not yet reviewed. English is the
+     reference."), stale ("The English page has changed. This translation may be out of
+     date."), and for labs a separate, calmer "This tool is in English for now.";
+   - wraps fallback and english-only body content in `<div lang="en">` and writes
+     `data-page-lang` / `data-quiz-lang` on the page (`mr` or `en`). This is the **per-page
+     language**: it drives which strings the shared JS uses (mechanism 11) and lets screen
+     readers pronounce English text correctly. `<html lang>` is never used to decide;
+   - fails the build on an overlay file with no English counterpart or a mismatched `id`;
+   - adds `<meta name="robots" content="noindex">` to fallback and draft pages (they
+     duplicate English), and `hreflang` alternate links between each English page and its
+     Marathi page when the Marathi page is translated.
 
-3. **Per-language generated pages.** `gen_summary.py` currently writes into `src/`
-   (SUMMARY.md plus generated track and labs index pages, with English sentences inside
-   the script). It gets `--lang` and `--out` and reads track names and sentences from
-   `strings.json`. Titles come from overlay front matter when translated, from English
-   when not.
+3. **Per-language generated pages.** `gen_summary.py` gets `--lang` and `--out`. Track
+   landing pages and `labs/index.md` are **strings-only**: sentences come from
+   `strings.json`, titles from overlay front matter when translated, else English. The
+   labs index is translated (it is navigation); the labs themselves stay English with the
+   `english-only` notice. The front page `index.md` is a first-class page: it has a
+   manifest entry, status and parity checks, and goes into Phase 1.
 
-4. **Checker per language, with parity against English.** `check_chapters.py --lang mr`
-   keeps today's structure checks and adds checks that catch what an LLM gets wrong:
-   - same `id`; headings in the same order and count (translated heading text is
-     allowed; see the heading decision below);
-   - same sequence of `<!-- component: ... -->` markers and the standing-disclaimer marker;
-   - **numbers, URLs and dates are identical to English** (multiset compare of digit
-     sequences, rupee amounts and URLs, with Western digits mandatory);
-   - quiz parity: same question ids, types, option ids, correct answers and numeric
-     answers; only text fields may differ;
-   - banned-phrase scan with a Marathi list (assured-return and risk-free wording) as well
-     as the English list;
-   - `[VERIFY` count not lower than English.
-   Staleness is a **warning**, not a failure: `manifest.json` stores the SHA-1 of the
-   English chapter and quiz at translation time; `make i18n-status` lists translations
-   whose English source changed afterwards. `make i18n-stamp ID=T0.1` records a new hash
-   after a human re-check. (Hashes live in the manifest, not in `quiz.json`, which has no
-   front matter.)
+4. **Parity checks against English** (`check_chapters.py --lang mr`). Keep today's
+   structure checks and add:
+   - same `id`; the H1 equals the `title` in the meta block; all other meta fields
+     (`page_type`, `prerequisites`, `labs`, `estimated_minutes`) identical to English;
+   - **real heading parsing**: only line-start `^#{2,3} ` lines, ignoring fenced code
+     blocks, compared by order and count; translated text allowed;
+   - same sequence of `<!-- component: ... -->` markers, and **all component parameters
+     identical except `caption`** (a translated `src` or `passPct` would break the quiz);
+   - **numbers, URLs and dates identical** (multiset compare of digit sequences, rupee
+     amounts and URLs; Western digits mandatory);
+   - quiz parity: preserve `id`, `type`, `answer`, `tolerance`, `unit`, `concepts`,
+     `difficulty`, `reviewAfterDays`, option ids and order, question order and explanation
+     keys. Only `prompt`, option text, `explanation` and `solution` text may differ;
+   - Marathi banned-phrase list (assured-return and risk-free wording) plus the English one;
+   - `[VERIFY` count not lower than English;
+   - glossary consistency (see quality plan), with allowlists for code, URLs and
+     boilerplate so it does not produce noise.
+   Hash: **SHA-256**, the same as `gen_sw.mjs`. The comparison logic starts from
+   `tools/check/compare_to_head.py`, which already has the right key list.
 
-5. **Build, test, deploy per language.** The Makefile variable is **`BOOK_LANG`**
-   (default `en`), not `LANG`: `LANG` is a standard shell variable (`en_US.UTF-8`), and
-   make imports environment variables, so `LANG ?= en` would silently pick up the wrong
-   value. Targets: `make build BOOK_LANG=mr`, `make serve BOOK_LANG=mr` (port 3001),
-   `make check BOOK_LANG=mr`, `make e2e BOOK_LANG=mr` (`.e2e-book-mr`, port 4174). Deploy
-   builds both. All manual, no CI.
+5. **Completeness gate (catches silently dropped content).** Parity of numbers and ids is
+   not enough, because an LLM can drop a paragraph with no number in it. The checker also
+   compares, per page: paragraph count, list-item count, table-row count and blockquote
+   count (each within a small stated tolerance, default exact for tables and lists);
+   fenced code and Mermaid blocks equal except their label text; and a Marathi to
+   English word-count ratio inside a sane band (flag, not fail, outside it). `## Limits and
+   common mistakes` and `## Remember` must match item for item. Mermaid labels are
+   translated by rule: node text may change, node ids, arrows and structure may not.
 
-6. **GitHub Pages layout.** English at `/`, Marathi at `/mr/`, one `gh-pages` push. The
-   root service worker must not cache the Marathi build twice (see 8). `.pages-build/` is
-   built English first, then `mdbook build -d .pages-build/mr` from the assembled root.
+6. **Paths, build, test and deploy per language.**
+   - The Makefile variable is **`BOOK_LANG`** (default `en`), not `LANG` (a standard shell
+     variable that make imports).
+   - Targets: `make build|serve|check|e2e BOOK_LANG=mr`, `make i18n-status`,
+     `make i18n-stamp ID=T0.1`, `make i18n-new BOOK_LANG=<code>`; all in `.PHONY`.
+     `make clean` removes `.build/`, `.e2e-book-mr/` and `.e2e-combined/`.
+   - **No absolute `/mr/` anywhere.** Everything is relative to the site root derived from
+     the script or service-worker location (`new URL("mr/", self.registration.scope)`).
+     Reason: Pages serves the site under `/capital-first-trading/`, and locally the
+     Marathi book is its own root.
+   - **Combined fixture.** The assembled single-language roots are for editing. All
+     deploy-shape tests (switcher, service-worker scope, offline) run against a **combined
+     fixture** built the same way as `deploy.sh`: English at `/`, Marathi at `/mr/`,
+     served as `.e2e-combined/` on its own port. `deploy.sh` builds the same tree into
+     `.pages-build/`.
+   - `make serve BOOK_LANG=mr` serves `.build/mr` (port 3001). Because it does not watch
+     `mdbook/i18n/mr/`, the target runs a small watcher that re-assembles on change (or,
+     if that proves flaky, documents a restart). Never kill the user's `mdbook serve`.
 
 7. **Language switcher.** `theme/lang-switch.js` shows "English | मराठी" in the menu bar.
-   Path mapping works from the page's own location (relative hop up or down one level,
-   found from the script URL the way `register-sw.js` does it), not from a hard-coded
-   base path. Locally the two languages run on different ports, so the switcher is hidden
-   under `make serve` unless both are running; on Pages it always works because every
-   English page has a Marathi page (translated or fallback).
+   It derives the two language roots from its own script URL, swaps the root prefix and
+   keeps the rest of the URL (deep pages, `index.html`, the root page, query string and
+   hash). It is hidden on `localhost` / `127.0.0.1` single-language serves (decided by a
+   build flag written into `theme/i18n.js`, never by probing the network), and visible on
+   the combined fixture and on Pages.
 
-8. **Service workers must not collide.** Today `gen_sw.mjs` names caches `cft-<hash>` and
-   deletes every `cft-*` it does not own, so two languages on one origin would wipe each
-   other. Changes:
-   - prefixes `cft-en-<hash>` and `cft-mr-<hash>`; each worker deletes only its own prefix;
-   - the English `gen_sw` walk **excludes `mr/`** (otherwise the whole Marathi book lands
-     in the English cache list), and the English fetch handler returns early for `/mr/`;
-   - `/mr/sw.js` has the narrower scope `/mr/`, so Marathi pages are controlled by it.
-     `register-sw.js` resolves `../sw.js` from its own script URL, so it already points to
-     `/mr/sw.js` on Marathi pages with no change.
-   - Size: the English book is about 13 MB (search index 3.4 MB, mermaid 2.5 MB). A reader
-     who uses both languages caches roughly twice that. Accepted; measure after Phase 0.
+8. **Service workers must not collide.**
+   - Cache prefixes `cft-en-<hash>` and `cft-mr-<hash>`; each worker deletes only its own
+     prefix. A **one-time cleanup** in the new English worker also deletes the old
+     `cft-<hash>` (unprefixed) caches so existing readers do not keep a stale 13 MB copy.
+   - The English `gen_sw` walk **excludes `mr/`**; the English fetch handler returns early
+     for any URL under `new URL("mr/", self.registration.scope)` (scope-relative, so it
+     works under `/capital-first-trading/`). The Marathi worker never caches English paths.
+   - `mr/sw.js` has the narrower scope `mr/`. `register-sw.js` resolves `../sw.js` from its
+     own script URL, so it already points at the right file; do not change that.
+   - Size: two full books are about 26 MB. After Phase 0, measure quota and eviction on a
+     real phone. If a problem shows, do not cache the search index twice (share it) or
+     cache only what the reader opens.
 
-9. **Devanagari rendering, offline-safe.** No CDN fonts. Use a system Devanagari stack
-   (`Noto Sans Devanagari`, `Nirmala UI`, `Devanagari Sangam MN`, then `system-ui`) and a
-   taller line height (about 1.7) so vowel marks do not collide. Optionally bundle one open
-   font later. Headings, tables and the 44px / 16px / no-horizontal-scroll rules stay;
-   Devanagari is wider, so the Marathi e2e run is where overflow shows up.
+9. **Devanagari rendering, offline-safe.** No CDN fonts. System stack (`Noto Sans
+   Devanagari`, `Nirmala UI`, `Devanagari Sangam MN`, then `system-ui`), line height about
+   1.7. Optionally bundle one open font later. Headings, tables and the 16px /
+   no-horizontal-scroll rules stay. Devanagari heading ids in mdBook are tested in Phase 1.
+   Because translated headings change heading ids, **no `](#...)` anchors are used in
+   chapters** (there are none today); if one is ever added it must use an explicit id.
 
-10. **Quizzes** are overlay `quiz.json` files with the same ids. Quiz fetch paths do not
-    change.
+10. **Quizzes** are overlay `quiz.json` files with the same ids and fetch paths. `q.unit`
+    stays in the same language as the prompt and the numeric check never reads the unit
+    text. `q.type` labels (scenario, mcq, numeric...) come from the dictionary, and a
+    "Q1" prefix has a Marathi form.
 
-11. **Quiz and chapter UI strings (new in review).** `components.js` hard-codes "Check",
-    "Correct.", "Not quite.", "Correct options: ..." and similar; some demo files do too.
-    Phase 0 moves the quiz-block strings into a small dictionary chosen by
-    `<html lang>`, with English as the default. Other demos stay English in v1. mdBook's
-    own chrome (search box placeholder, "Toggle sidebar") also stays English; we say so
-    in the Marathi front page.
+11. **Full UI-string inventory, not quiz-only.** The inventory is built in Phase 0 by
+    searching the shared theme code and CSS for reader-visible text, then every item gets a
+    key in `strings.json`:
+    - **Standing disclaimer** and its pass-mark note (`components.js`, generated in JS, so
+      translating the Markdown marker cannot change it). **This is first**, a safety
+      message, and ships with Phase 1 at the latest;
+    - `[VERIFY` chips and their tooltip: decision, the label is translated, the checked
+      fact text itself stays as written in the chapter;
+    - quiz: raw type labels, placeholders ("Enter a number"), "Expected ...", "Correct
+      option(s)", "Pass mark ...", "Not checked yet", "Check", "Reset quiz", "Correct.",
+      "Not quite.", loading and error messages;
+    - CSS-added navigation text ("Previous", "Next", from `components.css`): moved into the
+      dictionary through a `data-` attribute or generated CSS, not left as a CSS `content`
+      literal;
+    - Mermaid container `aria-label` (`mermaid-init.js` currently says "Agentic AI
+      engineering diagram" for every diagram, which is wrong in English too): fixed to use
+      each diagram's own caption in both languages;
+    - switcher, notices, correction link, track names, labs index sentences, PWA name.
+    Delivery: `gen_i18n_js.mjs` compiles `strings.json` into one `theme/i18n.js` per built
+    book (shared `components.js` cannot read the overlay file at runtime and no network
+    call is allowed). Messages that carry numbers are **templates with named slots** ("{n}
+    of {total} correct ({pct}%)", pass and fail sentences, plural forms where needed).
+    Numbers are formatted by hand, **never `Intl.NumberFormat("mr-IN")`**, so digits stay
+    Western. The JS picks strings from the page's `data-page-lang` / `data-quiz-lang`,
+    with English as default.
+    **Digit input:** quiz number fields normalise Devanagari and Arabic-Indic digits to
+    Western before `parseFloat`; stored answers stay Western.
+    mdBook's own chrome (search placeholder, "Toggle sidebar") stays English, said so on the
+    Marathi front page.
 
-12. **English is authoritative.** The standing disclaimer and every dated fact are
-    translated, but each Marathi page links to the English page, and the notice on the
-    Marathi front page says English governs if the two ever differ.
+12. **English is authoritative.** The disclaimer and every dated fact are translated, but
+    each Marathi page links to the English page, and the notice on the Marathi front page
+    says English governs if the two ever differ. The PWA manifest carries the translated
+    name and description for the Marathi book.
+
+13. **Stale translations cannot look reviewed.** A change in the English source after a
+    stamp turns that page to `stale` automatically (the build recomputes SHA-256), and the
+    stale notice shows. `make deploy` **refuses** to publish while any `reviewed` or
+    `confirmed` page is stale unless `ALLOW_STALE=1` is passed on purpose.
+    `make i18n-stamp ID=T0.1` requires a reviewer name and date and updates both the
+    chapter hash and the quiz hash.
 
 ## Translation workflow (LLM-drafted, human-reviewed)
 
-1. Write `docs/i18n/glossary-mr.md` first. Rules to include: Rs and paise stay as written;
-   **Western digits only** (so every number matches the calculators and quizzes);
-   keep NSE, BSE, SEBI, Kite, ETF and similar names in Latin script; keep lab button and
-   field names in English with a Marathi explanation in brackets (the labs stay English);
-   plain, short sentences like the English book; never write "assured", "sure" or
-   "risk-free" wording that the English book bans.
+1. Write `docs/i18n/glossary-mr.md` first. Rules: Rs and paise stay as written; **Western
+   digits only**; keep NSE, BSE, SEBI, Kite, ETF and similar names in Latin script; keep
+   lab button and field names in English with a Marathi explanation in brackets; plain,
+   short sentences like the English book; never write "assured", "sure" or "risk-free"
+   wording that the English book bans.
 2. For each chapter: an LLM drafts from the English file plus the glossary (per project
    practice, large prose goes to Haiku 5.5 subagents; the pilot checks that its Marathi is
-   good enough, and the pilot decides the model for the rest). The draft is saved as the
-   overlay with `status: draft` in `manifest.json`.
-3. The maintainer reads it in the built page and fixes it, then the chapter is marked
-   `reviewed` with a date. Drafts may be published at any time with the draft notice from
-   mechanism 2. Reader corrections later are ordinary small pull requests or issues.
+   good enough and decides the model for the rest). Saved as the overlay with
+   `status: draft`.
+3. The maintainer reads it in the built page and fixes it, then it is stamped `reviewed`
+   with a name and date. Drafts may be published any time with the draft notice. Reader
+   corrections later are small pull requests or issues.
 4. `make check BOOK_LANG=mr` must pass.
-5. Order: pilot one chapter, then track 00 to 10. Spot-check at least 1 in 5 chapters of
-   each track even after the pilot, because errors vary by topic (derivatives and tax are
-   the highest risk).
+5. Order: pilot one chapter, then tracks 00 to 10. Risky topics (derivatives, tax, costs,
+   leverage) get a second look even after the pilot.
 
 ## What makes the translation good (quality plan)
 
-1. **A real glossary, built from the book itself.** `tools/i18n/extract_terms.py` lists
-   every bold term, heading word and repeated phrase from the English chapters, with the
-   chapter ids where it appears. The first glossary is drafted from that list, then the
-   maintainer fixes it once. About 150 to 250 terms cover the book. Each entry has the
-   Marathi form, whether the English word is kept in brackets on first use, and a short
-   note on when not to use it.
-2. **Plain Marathi for every reader.** Same rule as the English book: easy words, short
-   sentences. Use the words Marathi readers really say about markets. Where traders
-   normally say the English word (stop-loss, demat, margin, ETF), keep it in Devanagari
-   or Latin script as the glossary says, instead of a stiff Sanskrit coinage. One term, one
-   translation, everywhere.
-3. **Consistency check.** The checker flags a glossary term that appears in the English
-   page but whose approved Marathi form is missing, and flags known wrong variants
-   (listed in the glossary under "do not use"). This catches drift across 99 chapters.
-4. **Two passes, not one.** Pass 1 drafts from English plus glossary. Pass 2 is a separate
-   LLM check that reads the Marathi *without* the English, summarises what it says back in
-   English, and the diff against the original is shown to the reviewer. Meaning drift
-   (for example "can lose money" turning into "will lose money") then stands out, and the
-   maintainer's time goes to those spots first instead of reading every line.
-5. **Risk-weighted review order.** Review first: Track 0 (first impression), anything about
-   costs, tax, leverage, F&O and loss figures, then the quizzes' explanations, then the
-   rest. Review levels are `draft`, `reviewed` (maintainer) and `confirmed` (a reader's
-   correction was checked and merged).
-6. **Examples that work in Marathi.** Keep Indian names, rupee amounts and tickers, but
-   swap English-only idioms and wordplay for Marathi equivalents. Quiz prompts keep the
-   same facts and the same one correct answer.
-7. **Readable on a phone.** Marathi text is longer than English. The Marathi e2e run checks
-   tables and the quiz layout for overflow at phone width.
+1. **A real glossary, built from the book.** `tools/i18n/extract_terms.py` lists every bold
+   term, heading word and repeated phrase with the chapter ids where it appears. The
+   first glossary is drafted from that list, then the maintainer fixes it once. About 150
+   to 250 terms. Each entry has the Marathi form, whether the English word is kept in
+   brackets on first use, and a note on when not to use it. Changes to the glossary go
+   through a pull request and trigger a re-check of the pages that use the term.
+2. **Plain Marathi for every reader.** Easy words, short sentences. Use what Marathi
+   readers really say about markets; where traders say the English word (stop-loss, demat,
+   margin, ETF), keep it as the glossary says. One term, one translation, everywhere.
+3. **Consistency check.** Flags a glossary term whose approved Marathi form is missing, and
+   known wrong variants (the "do not use" list). Code, URLs and repeated boilerplate are
+   allowlisted so it does not cry wolf.
+4. **Two passes.** Pass 1 drafts. Pass 2 is a separate LLM check that reads the Marathi
+   *without* the English and summarises it back in English; the diff against the original
+   goes to the maintainer, so meaning drift ("can lose" becoming "will lose") stands out.
+   Pass 2 is a review aid; the **gates are the mechanical checks** (mechanisms 4, 5, 13).
+5. **Risk-weighted review order.** Track 0 and the front page first, then costs, tax,
+   leverage, F&O and loss figures, then quiz explanations, then the rest.
+6. **Examples that work in Marathi.** Keep Indian names, rupee amounts and tickers; swap
+   English-only idioms for Marathi ones. Quiz prompts keep the same facts and the same one
+   correct answer.
+7. **Readable on a phone.** Marathi is longer than English. The Marathi e2e run checks
+   tables and the quiz layout for overflow at phone width. **Tap targets:** the current
+   quiz buttons are 36px (`components.css`), below the 44px rule. Phase 0 raises quiz
+   controls to 44px in both languages, so the rule is the same everywhere and the Marathi
+   e2e can enforce it.
 
 ## Reader feedback loop (open source, no network from the book)
 
-- **A "Suggest a correction" link on every Marathi page**, added by the theme. It is an
+- **"Suggest a correction" link on every Marathi page**, added by the theme. It is an
   ordinary link the reader chooses to click, not a network call from the book. It opens a
-  new GitHub issue with a ready template that already holds the chapter id, the page
-  address and the language, so the reader only writes what is wrong and what they think is
-  better. The page also says the book works offline and the link needs internet.
-- **Issue template and label:** `translation-mr`, with fields: chapter, the sentence, the
-  better wording, and whether it is wrong, unclear or just awkward.
-- **`CONTRIBUTING-i18n.md`:** how to fix a sentence by editing one overlay file and opening
-  a pull request, the glossary rules, and that `make check BOOK_LANG=mr` must pass.
-  Corrections are small text changes, so they are easy to merge.
-- **Credits:** a `docs/i18n/CONTRIBUTORS.md` list of people who improved the translation.
-- **Public status:** a generated page in the Marathi book, "How much is translated", showing
-  chapters translated, reviewed and confirmed, so readers know what to trust.
-- **Triage routine:** corrections are batched. After merging, `make i18n-status` shows the
-  chapter as `confirmed` and the version is published with `make deploy`.
+  new GitHub issue from a template. The link uses the **canonical public page URL** (a
+  value in `book.toml`/`theme/i18n.js`), never the page's own `localhost` address, and it
+  carries the chapter id and language. The page says the link needs internet and the book
+  itself works offline.
+- **Issue template and label** `translation-mr`: chapter, the sentence, better wording,
+  and wrong / unclear / awkward.
+- **`CONTRIBUTING-i18n.md`:** to fix a chapter, edit its overlay `index.md` and, when the
+  quiz changes, its `quiz.json`; follow the glossary; `make check BOOK_LANG=mr` must pass.
+- **Credits:** `docs/i18n/CONTRIBUTORS.md`.
+- **Public status page** in the Marathi book, "How much is translated", generated from the
+  manifest: translated, reviewed, confirmed, stale, fallback.
+- **Triage:** corrections are batched; after merging, `make i18n-stamp` marks the page and
+  `make deploy` publishes.
 
 ## Phases
 
-- **Phase 0, skeleton (no translation):** `assemble_lang.mjs`; parameterised summary, sw,
-  check and Makefile; deploy with two outputs; language switcher; service-worker prefix
-  fix; quiz string dictionary; `i18n_status.py`; `.gitignore` (`.build/`, `.e2e-book-mr/`)
-  and `AGENTS.md` updates. **Acceptance:** with no overlay, the English build tree is
-  identical to today's (same file list and file hashes except the generated `sw.js`
-  version); the Marathi build with an empty overlay is the English book, every page
-  marked as fallback, no dead links; unit tests for the assembler (fallback, overlay,
-  orphan overlay file, id mismatch).
-- **Phase 1, Marathi pilot:** extract terms and draft the glossary, the maintainer's glossary pass, issue template and `CONTRIBUTING-i18n.md`, the "Suggest a correction" link, one chapter (`T0.1`) and its quiz, full
-  `make check BOOK_LANG=mr`, a small `tests/e2e/mr.spec.ts` (switcher, fallback notice,
-  draft notice, quiz feedback in Marathi, no horizontal scroll or tap-target problems on
-  desktop and phone, offline load of `/mr/`), the maintainer's review, and a search test (the stock
-  mdBook search tokenises Devanagari plainly, so check that Marathi words are found).
-- **Phase 2, rollout:** tracks 00 to 10, a few chapters at a time. `/mr/` goes live after
-  Phase 1 passes, with fallback and draft notices doing their job.
+- **Phase 0, skeleton (no translation):** `assemble_lang.mjs`; per-page status and notices;
+  parameterised `gen_summary`, `gen_sw`, `check_chapters` and Makefile; `gen_i18n_js.mjs`
+  and the UI-string inventory with the disclaimer, `[VERIFY` chip, quiz and navigation
+  strings moved into the dictionary; Devanagari digit normalisation; quiz controls to
+  44px; Mermaid aria-label fix; full overlay `book.toml` rule; service-worker prefixes and
+  one-time cleanup; switcher; combined fixture and `deploy.sh`; `i18n_status.py`;
+  vitest include for `tests/i18n/`; separate Playwright config/project/webServer for the
+  combined fixture; `.gitignore` and `AGENTS.md` updates.
+  **Acceptance (replaces "identical hashes"):** with no overlay, the English build has
+  the same URLs, the same `<main>` content and the same visible body text as today. An
+  explicit allowlist covers the expected differences: the switcher script and CSS tags,
+  `i18n.js`, the `sw.js` content and cache prefix, the new quiz control size and the
+  fixed Mermaid label. The Marathi build with an empty overlay is the English book,
+  every page marked fallback with `lang="en"` wrapping and no dead links. Assembler unit
+  tests: fallback, overlay, orphan file, id mismatch, stale status, labs `english-only`.
+- **Phase 1, Marathi pilot:** `extract_terms.py` and the glossary draft, the maintainer's
+  glossary pass, issue template and `CONTRIBUTING-i18n.md`, correction link, translated
+  disclaimer and quiz strings, the **front page**, PWA manifest strings, one chapter
+  (`T0.1`) and its quiz; full `make check BOOK_LANG=mr`; `tests/e2e/mr.spec.ts` on the
+  combined fixture (switcher on deep pages, fallback / draft / stale / labs notices, per
+  page language, quiz in Marathi, Devanagari digits typed into a numeric question, no
+  horizontal scroll, 44px taps, 16px inputs on desktop and phone, offline load under the
+  `mr/` scope); Devanagari heading ids; a search test.
+- **Phase 2, rollout:** tracks 00 to 10, a few chapters at a time. Publish `mr/` after
+  Phase 1 passes, with notices doing their job and noindex on fallback/draft pages.
 - **Phase 3, interactive text:** labs and demo strings into dictionaries; Marathi labs;
   e2e parameterised on language.
 - **Phase 4, next language:** `make i18n-new BOOK_LANG=<code>` scaffolds an overlay.
 
 ## Explicit non-goals (v1)
 
-- Translating web-component labs, other demos, or forward-test script output.
+- Translating web-component labs, other demos or forward-test script output.
 - Machine translation without human review for anything marked `reviewed`.
 - Separate repos or branches per language, CI, or a CMS.
 - Translating `data/facts` or `data/rates` source documents (they stay English; chapters
   cite them with Marathi explanations).
 - Localising mdBook's own interface text.
 
-## Decisions (recommended defaults, maintainer to confirm)
+## Decisions (recommended defaults; maintainer to confirm)
 
-1. **Headings:** translate them. Checked by order and count against English, so the
-   structure rules still hold. Anchor links inside chapters use file paths, so nothing
-   breaks.
-2. **Fallback notice:** a quiet notice at the top of every English-fallback page, added at
-   build time. It is the honest signal; a hidden badge could mislead readers.
-3. **Publishing:** go live at `/mr/` after the pilot, with fallback and draft notices.
-4. **Labs UI stays English in v1:** confirmed by the maintainer; quiz UI strings are the
-   one addition.
-5. **Reviewer: decided.** The maintainer reviews the glossary and the chapters. After
-   publishing, readers send corrections and the translation improves gradually, which is
-   the point of it being open source. Nothing waits for perfection: a chapter goes live as
-   `draft`, becomes `reviewed` after the maintainer's pass, and keeps improving from
-   reader feedback.
-6. **Digits:** Western digits (0 to 9) everywhere. Recommended so numbers match the
-   calculators, quizzes and the number-parity check.
+1. **Headings:** translate them; checked by order and count (real heading parsing).
+2. **Fallback notice:** quiet, build-time, with a separate calmer notice for labs.
+3. **Publishing:** go live at `mr/` after the pilot.
+4. **Labs UI stays English in v1**; shared theme strings (disclaimer, quiz, navigation,
+   chips) are in scope.
+5. **Reviewer:** the maintainer; levels `draft` / `reviewed` / `confirmed` / `stale`.
+6. **Digits:** Western digits everywhere in content; Devanagari digits accepted as quiz
+   input only.
+7. **`[VERIFY` chip:** label translated, fact text as written in the chapter.
+8. **Stale policy:** deploy refuses stale reviewed pages unless `ALLOW_STALE=1`.
 
-## What changed after review
+## What changed after each review
 
 | Finding | Change |
 |---|---|
-| `LANG` is a standard environment variable, so `make ... LANG=mr` defaults break | Renamed to `BOOK_LANG` |
-| Assembly built only `src/`, but mdBook needs `book.toml` and `theme/` at the book root | Assemble a full root (`.build/mr/`) |
-| `gen_summary.py` writes generated files into `src/` and holds English sentences | `--lang`, `--out`, strings from `strings.json` |
-| Root service worker would cache `/mr/` and walk its files | Exclude `mr/`, skip `/mr/` in fetch, per-language prefixes |
-| Runtime fetch of `i18n.json` for the fallback notice | Notice inserted at build time |
-| Quiz buttons and feedback are English in `components.js` | Quiz strings added to v1 scope |
-| Checks did not catch LLM number or answer drift | Parity checks: numbers, URLs, quiz ids and answers, component markers |
-| "Human-reviewed" was not recorded anywhere | `manifest.json` with status, reviewer, date, and a draft notice |
-| Hash for stale detection had no home for `quiz.json` | Hashes kept in the manifest |
-| Switcher assumed a fixed base path; local serve uses two ports | Relative mapping; hidden locally unless both run |
-| Paths said `theme/`; the real path is `mdbook/theme/` | Fixed |
-| Phase 0 could change the English deploy silently | Acceptance: identical English output, plus assembler unit tests |
-| Marathi e2e was vague | A small dedicated spec, not the English suite |
-| Devanagari digits, line height, search quality, size, English-authoritative notice not covered | Added (mechanisms 8, 9, 12, workflow, Phase 1) |
-| Process note about the plan directory | Removed |
-| Reviewer decided: the maintainer, then readers over time | Draft/reviewed/confirmed levels, reader feedback loop, risk-weighted review order |
-| Nothing said how to get the best translation | Quality plan: glossary built from the book, plain-Marathi rule, consistency check, back-translation pass, examples and phone layout |
+| `LANG` is a shell variable | `BOOK_LANG` |
+| mdBook needs `book.toml` and `theme/` at the root | Assemble a full root |
+| `gen_summary.py` writes into `src/` | `--lang`, `--out`, strings from `strings.json` |
+| Root service worker would cache `mr/` | Exclude it, scope-relative skip, per-language prefixes |
+| Runtime fetch for the notice | Build-time notice |
+| Checks missed number and answer drift | Parity checks |
+| "Reviewed" not recorded | Manifest with status, reviewer, date |
+| Phase 0 "identical hashes" contradicted the switcher | Acceptance by URLs, `<main>` content and visible text, with an allowlist |
+| Absolute `/mr/` breaks on Pages and in local builds | Scope-relative paths; combined fixture for deploy-shape tests |
+| String scope was quiz-only | Full inventory; disclaimer, chips, nav, Mermaid label, digits |
+| `<html lang>` is one value per book | Per-page language: `data-page-lang`, `lang="en"` wrapping |
+| No completeness check | Paragraph, list, table, code and Mermaid counts; word ratio |
+| Stale translation could ship as reviewed | Auto `stale`, notice, deploy refusal |
+| Front page, PWA manifest, labs index outside the model | In scope; labs get `english-only` notice |
+| Reviewer and status enum inconsistent | One definition at the top |
+| Overlay mixed content and metadata; partial `book.toml` | `content/` split; full config, diff-checked |
+| `strings.json` could not reach shared JS | Compiled into `theme/i18n.js`; templates; hand-formatted digits |
+| Anchor rationale wrong | No `#` anchors; Devanagari ids tested |
+| Quiz tap targets are 36px | Raised to 44px in both languages |
+| Old `cft-*` caches would never be deleted | One-time cleanup |
+| SEO and accessibility of fallback pages | noindex, hreflang, `lang="en"` wrapping |
+| Switcher on deep pages, localhost | Root swap from script URL; build flag |
+| Test harness underspecified | `tests/i18n/`, vitest include, separate Playwright config |
+| Hash and enum mismatches, missing Makefile entries | SHA-256; `.PHONY`; `clean` |
