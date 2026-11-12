@@ -49,7 +49,7 @@
 @media (max-width: 560px) {
   .lab-seg-btn, .lab-check { font-size: 1em; }
   .lab-field label { font-size: .95em; }
-  .lab .lab-table th:nth-child(2), .lab .lab-table td:nth-child(2) { display: none; }
+  .lab:not(.lab-bt) .lab-table th:nth-child(2), .lab:not(.lab-bt) .lab-table td:nth-child(2) { display: none; }
   .lab-rate-sm { display: block; }
 }
 .lab-note { font-size: .82em; opacity: .7; margin-top: .6em; }
@@ -162,3 +162,16 @@ a.lab-btn { display: inline-flex; align-items: center; justify-content: center; 
 a.lab-btn-primary, .content a.lab-btn-primary:link, .content a.lab-btn-primary:visited { color: #fff; }
 .content a.lab-btn:link, .content a.lab-btn:visited { text-decoration: none; }
 .content a.lab-btn:not(.lab-btn-primary):link { color: var(--lab-accent); }
+
+/* Strategy tester */
+.lab-bt .lab-more { margin: .6em 0 1em; }
+.lab-bt .lab-more summary, .lab-bt .lab-exp summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-weight: 600; }
+.lab-bt .lab-exp { border-top: 1px solid var(--lab-line); padding: .2em 0 .9em; }
+.lab-bt .lab-exp-out { margin-top: .8em; overflow-x: auto; }
+.lab-bt h3 { margin: 1em 0 .5em; }
+
+.lab-bt .lab-card-v { font-size: 1.3em; white-space: nowrap; }
+.lab-bt .lab-exp summary { list-style: none; justify-content: space-between; }
+.lab-bt .lab-exp summary::-webkit-details-marker { display: none; }
+.lab-bt .lab-exp summary::after { content: "+"; font-size: 1.4em; opacity: .6; padding-left: .5em; }
+.lab-bt .lab-exp[open] summary::after { content: "\2212"; }

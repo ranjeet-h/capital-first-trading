@@ -452,7 +452,7 @@ function download(blob: Blob, name: string) { const a = h("a", { href: URL.creat
 const fieldName = (f: string) => ({ stopPaise: "Stop-loss", targetPaise: "Target", entryPaise: "Entry", qty: "Quantity", setup: "Setup", thesis: "Reason", checklistOk: "Rules check" } as Record<string, string>)[f] ?? f;
 const fmtVal = (f: string, v: unknown) => (f.endsWith("Paise") ? (typeof v === "number" ? fmtRs(v) : "none") : String(v ?? "none"));
 
-function lineChart(title: string, values: number[], loss = false): HTMLElement {
+export function lineChart(title: string, values: number[], loss = false): HTMLElement {
   const W = 600, H = 170, pad = 8;
   const lo = Math.min(0, ...values), hi = Math.max(0, ...values), span = hi - lo || 1;
   const x = (i: number) => pad + (values.length === 1 ? (W - 2 * pad) / 2 : (i * (W - 2 * pad)) / (values.length - 1));

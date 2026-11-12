@@ -115,3 +115,4 @@
   - [Cost calculator](labs/cost-calculator.md)
   - [Trade journal](labs/journal.md)
   - [Position size calculator](labs/position-size-calculator.md)
+  - [Strategy tester](labs/strategy-tester.md)

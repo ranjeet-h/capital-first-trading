@@ -6,3 +6,6 @@ if (!customElements.get("lab-position-size")) customElements.define("lab-positio
 
 import { LabJournal } from "./journal-lab";
 if (!customElements.get("lab-journal")) customElements.define("lab-journal", LabJournal);
+
+import { LabBacktest } from "./backtest-lab";
+if (!customElements.get("lab-backtest")) customElements.define("lab-backtest", LabBacktest);

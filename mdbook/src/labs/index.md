@@ -6,12 +6,10 @@ Tools you can use while you study. Everything runs on your device.
 1. [Cost calculator](cost-calculator.md)
 2. [Trade journal](journal.md)
 3. [Position size calculator](position-size-calculator.md)
+4. [Strategy tester](strategy-tester.md)
 
 ## Coming soon
 
 These tools are planned. They are not ready yet, and each one will work on your device with no internet, like the tools above.
 
-- **Strategy tester.** Try a simple trading rule on past prices, with real costs included. It also checks the rule on days it has never seen, so a lucky result cannot fool you.
 - **Forward test tracker.** Run your rule once a day after the market closes, and keep an honest record of what it would have done. Import the record into your journal.
-- **Zerodha statement import.** Bring your real trades from a Zerodha statement into your journal, so you do not have to type them again.
-- **Automatic backup to a folder.** On a computer, save your journal backup to a folder you choose, such as one that syncs to your cloud drive.

@@ -197,6 +197,8 @@ Open trades excluded from realised stats but shown in open-risk; trades spanning
 
 ## Lab 4: Backtester with costs, walk-forward and out-of-sample splits
 
+> **Status (2026-11-12):** First version shipped on made-up prices: three rule types, costs and slippage, six experiments (split test, look-ahead, survivorship, costs, overfitting, shuffle). Not built yet: walk-forward, real-data import, regime view, background worker, per-trade chart replay.
+
 **Purpose.** Show how a rule-based strategy would have behaved on past data, including costs, and teach why backtests lie.
 
 **Used in chapters.** Testing track; strategy chapter; gate G5.

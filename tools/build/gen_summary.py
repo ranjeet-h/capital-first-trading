@@ -30,10 +30,7 @@ for tdir in sorted(d for d in os.listdir(SRC) if os.path.isdir(os.path.join(SRC,
     out.append(f'- [{name}]({tdir}/index.md)')
     out += [f'  - [{ti}]({p})' for ti, p in chapters]
 UPCOMING = [
-    ('Strategy tester', 'Try a simple trading rule on past prices, with real costs included. It also checks the rule on days it has never seen, so a lucky result cannot fool you.'),
     ('Forward test tracker', 'Run your rule once a day after the market closes, and keep an honest record of what it would have done. Import the record into your journal.'),
-    ('Zerodha statement import', 'Bring your real trades from a Zerodha statement into your journal, so you do not have to type them again.'),
-    ('Automatic backup to a folder', 'On a computer, save your journal backup to a folder you choose, such as one that syncs to your cloud drive.'),
 ]
 labs = sorted(glob.glob(os.path.join(SRC, 'labs', '*.md')))
 labs = [f for f in labs if os.path.basename(f) != 'index.md']
