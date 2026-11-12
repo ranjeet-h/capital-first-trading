@@ -4,8 +4,9 @@ import type { Rates } from "../../core/src/costs";
 import { generateUniverse } from "../../core/src/backtest/synth";
 import { runBacktest, validateStrategy } from "../../core/src/backtest/engine";
 import { summarise, type Summary } from "../../core/src/backtest/metrics";
-import { splitTest, lookAheadDemo, survivorshipDemo, costSensitivity, overfitDemo, monteCarlo } from "../../core/src/backtest/experiments";
+import { splitTest, walkForward, lookAheadDemo, survivorshipDemo, costSensitivity, overfitDemo, monteCarlo } from "../../core/src/backtest/experiments";
 import { DEFAULT_CONFIG, type Config, type RunResult, type Series, type Strategy, type StrategyType } from "../../core/src/backtest/types";
+import { parseBarsCsv, checkSeries } from "../../core/src/forward";
 import { IndexedDbStore } from "../../core/src/store";
 import type { Trade } from "../../core/src/journal";
 import { h, fmtRs, fmtInt, parseNum } from "./util";
@@ -25,6 +26,8 @@ const pct = (n: number) => n.toFixed(1) + "%";
 export class LabBacktest extends HTMLElement {
   private out!: HTMLElement;
   private universe: Series[] = [];
+  private real: Series[] | null = null;
+  private realNote!: HTMLElement;
   private last: { run: RunResult; strategy: Strategy; cfg: Config; seed: number } | null = null;
   private type: StrategyType = "breakout";
 
@@ -45,6 +48,8 @@ export class LabBacktest extends HTMLElement {
     const fast = textField("Quick average days", "20", { name: "fast", whole: true });
     const slow = textField("Slow average days", "50", { name: "slow", whole: true });
     const slip = textField("Slippage each side", "5", { name: "slip", suffix: "bps", hint: "100 bps is 1%. Real orders rarely fill at the exact price." });
+    this.realNote = h("p", { class: "lab-note", role: "status" });
+    const files = h("input", { type: "file", id: "bt-files", name: "pricefiles", accept: ".csv,text/csv", multiple: true, onchange: () => void this.loadFiles(files) });
     const err = h("div", { class: "lab-err", role: "alert" });
     const params = h("div", { class: "lab-grid" });
     const showParams = () => { params.replaceChildren(...(this.type === "breakout" ? [look.root, trail.root] : this.type === "sma_cross" ? [fast.root, slow.root] : []), ...(this.type === "buy_and_hold" ? [] : [stopAtr.root, risk.root, maxPos.root])); help.textContent = TYPE_HELP[this.type]; };
@@ -56,21 +61,21 @@ export class LabBacktest extends HTMLElement {
     const form = h("form", { class: "lab-form lab-card-box", onsubmit: (ev: Event) => { ev.preventDefault(); err.textContent = ""; void this.go(() => this.run()); } },
       h("h3", {}, "Set up a test"), seg.root, help, params,
       h("div", { class: "lab-grid" }, capital.root, slip.root),
-      h("details", { class: "lab-more" }, h("summary", {}, "Made-up prices"), h("div", { class: "lab-grid" }, seed.root, shares.root, years.root)),
+      h("details", { class: "lab-more" }, h("summary", {}, "Prices: made-up or your own"), h("div", { class: "lab-grid" }, seed.root, shares.root, years.root),
+        h("div", { class: "lab-field" }, h("label", { for: "bt-files" }, "Or use your own price files"), files, h("p", { class: "lab-hint" }, "One CSV file per share, named like RELIANCE.csv, with date, open, high, low, close and volume. They stay on this device. Real prices make the made-up settings above unused."), this.realNote)),
       err, h("button", { type: "submit", class: "lab-btn lab-btn-primary" }, "Run the test"));
-    root.append(h("div", { class: "lab-banner", role: "note" }, h("strong", {}, "Hypothetical backtest. Not live results."), " The prices are made up by a computer. No real share is involved."), form, this.out);
+    root.append(h("div", { class: "lab-banner", role: "note" }, h("strong", {}, "Hypothetical backtest. Not live results."), " The prices are made up by a computer unless you choose your own files. No order is ever placed."), form, this.out);
 
     const num = (f: { input: HTMLInputElement }) => parseNum(f.input.value);
     this.run = () => {
       const s = Math.round(num(seed)), y = Math.round(num(years)), n = Math.round(num(shares)), cap = num(capital) * 100;
-      if (!(y >= 2 && y <= 10)) throw new Error("Years of prices must be from 2 to 10.");
-      if (!(n >= 4 && n <= 30)) throw new Error("Number of shares must be from 4 to 30.");
       if (!(cap >= 10000_00 && cap <= 10_00_00_000_00)) throw new Error("Starting money must be from Rs 10,000 to Rs 10 crore.");
-      const strategy: Strategy = { version: 1, name: TYPE_LABEL.find((t) => t[0] === this.type)![1], type: this.type, atrPeriod: 14, stopAtr: num(stopAtr), riskPct: this.type === "buy_and_hold" ? 1 : num(risk), maxPositions: this.type === "buy_and_hold" ? n : Math.round(num(maxPos)),
+      const strategy: Strategy = { version: 1, name: TYPE_LABEL.find((t) => t[0] === this.type)![1], type: this.type, atrPeriod: 14, stopAtr: num(stopAtr), riskPct: this.type === "buy_and_hold" ? 1 : num(risk), maxPositions: this.type === "buy_and_hold" ? (this.real?.length ?? n) : Math.round(num(maxPos)),
         ...(this.type === "breakout" ? { lookback: Math.round(num(look)), trailAtr: num(trail) } : this.type === "sma_cross" ? { fast: Math.round(num(fast)), slow: Math.round(num(slow)) } : {}) };
       const bad = validateStrategy(strategy); if (bad.length) throw new Error(bad[0]);
       const cfg: Config = { ...DEFAULT_CONFIG, capitalPaise: Math.round(cap), slippageBps: Math.max(0, num(slip) || 0) };
-      this.universe = generateUniverse(s, n, y);
+      if (!this.real) { if (!(y >= 2 && y <= 10)) throw new Error("Years of prices must be from 2 to 10."); if (!(n >= 4 && n <= 30)) throw new Error("Number of shares must be from 4 to 30."); }
+      this.universe = this.real ?? generateUniverse(s, n, y);
       const run = runBacktest(R, this.universe, strategy, cfg);
       this.last = { run, strategy, cfg, seed: s };
       this.show();
@@ -79,6 +84,19 @@ export class LabBacktest extends HTMLElement {
   }
   private run!: () => void;
   private errBox!: HTMLElement;
+  private async loadFiles(input: HTMLInputElement) {
+    const fl = [...(input.files ?? [])]; this.real = null; this.realNote.textContent = "";
+    if (!fl.length) return;
+    const series: Series[] = [], bad: string[] = [];
+    for (const f of fl) {
+      const sym = f.name.replace(/\.csv$/i, "").toUpperCase(), r = parseBarsCsv(sym, await f.text());
+      const probs = [...r.problems, ...(r.series.bars.length ? checkSeries(r.series, r.series.bars[r.series.bars.length - 1]!.d).filter((p) => !p.why.startsWith("The newest")) : [])];
+      if (probs.length || r.series.bars.length < 200) bad.push(`${f.name}: ${probs[0]?.why ?? "Fewer than 200 days of prices."}`); else series.push(r.series);
+    }
+    if (bad.length) { this.realNote.className = "lab-err"; this.realNote.setAttribute("role", "alert"); this.realNote.textContent = `Not used. ${bad.slice(0, 3).join(" ")}`; return; }
+    this.real = series; this.realNote.className = "lab-note"; this.realNote.setAttribute("role", "status");
+    this.realNote.textContent = `Using your prices: ${series.length} ${series.length === 1 ? "share" : "shares"}, ${series[0]!.bars[0]!.d} to ${series[0]!.bars[series[0]!.bars.length - 1]!.d}. Clear the choice to go back to made-up prices.`;
+  }
   private async go(f: () => void) {
     this.out.replaceChildren(h("p", { class: "lab-note", role: "status" }, "Working…"));
     await new Promise((r) => setTimeout(r, 30));
@@ -145,7 +163,14 @@ export class LabBacktest extends HTMLElement {
         into.replaceChildren(tbl(["", "Profit after costs"], [[`Average of all ${t.combos} settings, learning days`, fmtRs(Math.round(t.averageInSamplePaise))], [`Best setting (look-back ${t.best.lookback}, stop ${t.best.stopAtr}), learning days`, fmtRs(t.best.netPaise)], ["The same best setting, days it never saw", fmtRs(t.bestOut.stats.netPaise)]]),
           h("p", { class: "lab-note" }, `You tried ${t.combos} settings. The more you try, the more likely the best one is just lucky.`));
       }),
-      mk("6. The same trades in a different order", "Shuffle the order of your trades 1,000 times. The trades are the same, only their luck of order changes. See how bad a run of bad luck can get.", (into) => {
+      mk("6. Walk-forward: learn, then test, again and again", "The days are cut into five slices. It learns the best setting on the slices so far, then tests only that setting on the next slice. This is the fairest picture of a rule that gets tuned.", (into) => {
+        const w = walkForward(R, u(), strategy, cfg);
+        if (!w.folds.length) { into.replaceChildren(h("p", { class: "lab-note" }, "There are too few days for this test. Use at least about three years of prices.")); return; }
+        into.replaceChildren(tbl(["Test slice", "Chosen setting", "Learned", "Test result"], w.folds.map((f) => [`${f.testFrom} to ${f.testTo}`, `look-back ${f.lookback}, stop ${f.stopAtr}`, fmtRs(f.trainPaise), fmtRs(f.testPaise)])),
+          h("p", {}, h("strong", {}, `All test slices together: ${fmtRs(w.totalTestPaise)} from ${w.totalTestTrades} trades.`)),
+          h("p", { class: "lab-note" }, "Only the last column counts. If it is far below the learned column, the tuning found luck, not an edge."));
+      }),
+      mk("7. The same trades in a different order", "Shuffle the order of your trades 1,000 times. The trades are the same, only their luck of order changes. See how bad a run of bad luck can get.", (into) => {
         const t = monteCarlo(this.last!.run.trades, cfg.capitalPaise, this.last!.seed);
         into.replaceChildren(t.runs === 0 ? h("p", { class: "lab-note" }, "No trades to shuffle.") : tbl(["After 1,000 shuffles", ""], [["A typical biggest drop", pct(t.medianDrawdownPct)], ["A bad-luck biggest drop (1 time in 20)", pct(t.p95DrawdownPct)], ["A bad-luck losing streak (1 time in 20)", fmtInt(t.p95LosingStreak) + " trades"], [`Chance of losing ${t.ruinAtPct}% of your money`, (t.ruinChance * 100).toFixed(1) + "%"]]));
       }));
@@ -161,7 +186,7 @@ export class LabBacktest extends HTMLElement {
       for (let i = 0; i < run.trades.length; i++) {
         const t = run.trades[i]!;
         const rec: Trade = { id: `bt-${tag}-${i + 1}`, updated_at: now, entry_type: "trade", mode: "backtest", symbol: t.symbol, exchange: "NSE", product: "cnc", planned_at: at(t.entryDay, "09:15:00"),
-          plan: { entryPaise: t.entryPaise, stopPaise: t.stopPaise, qty: t.qty, setup: strategy.name, thesis: `Hypothetical backtest on made-up prices (seed ${seed}).`, checklistOk: false },
+          plan: { entryPaise: t.entryPaise, stopPaise: t.stopPaise, qty: t.qty, setup: strategy.name, thesis: this.real ? "Hypothetical backtest on price files chosen by the reader." : `Hypothetical backtest on made-up prices (seed ${seed}).`, checklistOk: false },
           amended_after_entry: false, amendments: [], opened_at: at(t.entryDay, "09:15:00"), entry_price_paise: t.entryPaise, entry_qty: t.qty, exits: [{ at: at(t.exitDay, "15:30:00"), qty: t.qty, pricePaise: t.exitPaise }],
           costs_paise: t.costsPaise, emotions: [], tags: ["backtest"], notes: "" };
         await store.put("journal", rec);

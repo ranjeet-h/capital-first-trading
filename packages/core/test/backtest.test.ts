@@ -5,7 +5,7 @@ import { computeCosts } from "../src/costs";
 import { runBacktest, validateStrategy } from "../src/backtest/engine";
 import { generateUniverse } from "../src/backtest/synth";
 import { summarise } from "../src/backtest/metrics";
-import { splitDays, splitTest, lookAheadDemo, survivorshipDemo, costSensitivity, overfitDemo, monteCarlo } from "../src/backtest/experiments";
+import { splitDays, splitTest, walkForward, lookAheadDemo, survivorshipDemo, costSensitivity, overfitDemo, monteCarlo } from "../src/backtest/experiments";
 import { DEFAULT_CONFIG, type Bar, type Config, type Strategy } from "../src/backtest/types";
 
 const rates = JSON.parse(readFileSync("data/rates/zerodha-equity.json", "utf8")) as Rates;
@@ -112,5 +112,21 @@ describe("whole runs and experiments (seed 11)", () => {
     expect(a).toEqual(b);
     expect(a.p95DrawdownPct).toBeGreaterThanOrEqual(a.medianDrawdownPct);
     expect(summarise(runBacktest(rates, U, brk, DEFAULT_CONFIG), DEFAULT_CONFIG.capitalPaise).endPaise).toBeGreaterThan(0);
+  });
+});
+
+describe("walk-forward", () => {
+  const u = generateUniverse(3, 8, 6), s: Strategy = { version: 1, name: "b", type: "breakout", lookback: 20, atrPeriod: 14, stopAtr: 2, trailAtr: 3, riskPct: 1, maxPositions: 5 };
+  it("tests each slice only on days after the days it learned from, and the slices do not overlap", () => {
+    const w = walkForward(rates, u, s, DEFAULT_CONFIG, 4);
+    expect(w.folds).toHaveLength(4);
+    w.folds.forEach((f, i) => { expect(f.testFrom > f.trainTo).toBe(true); expect(f.testTo >= f.testFrom).toBe(true); if (i) expect(f.testFrom > w.folds[i - 1]!.testTo).toBe(true); });
+    expect(w.totalTestPaise).toBe(w.folds.reduce((a, f) => a + f.testPaise, 0));
+  });
+  it("gives the same answer every time", () => {
+    expect(walkForward(rates, u, s, DEFAULT_CONFIG)).toEqual(walkForward(rates, u, s, DEFAULT_CONFIG));
+  });
+  it("returns nothing when there are too few days", () => {
+    expect(walkForward(rates, generateUniverse(3, 4, 2).map((x) => ({ ...x, bars: x.bars.slice(0, 60) })), s, DEFAULT_CONFIG).folds).toHaveLength(0);
   });
 });

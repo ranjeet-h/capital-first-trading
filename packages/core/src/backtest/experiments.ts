@@ -56,3 +56,25 @@ export function monteCarlo(trades: BtTrade[], capitalPaise: number, seed: number
   return { runs, medianDrawdownPct: q(dds, 0.5), p95DrawdownPct: q(dds, 0.95), p95LosingStreak: q(streaks, 0.95), ruinChance: ruin / runs, ruinAtPct };
 }
 export type { Summary, RunResult };
+
+export interface Fold { trainTo: string; testFrom: string; testTo: string; lookback: number; stopAtr: number; trainPaise: number; testPaise: number; testTrades: number }
+/**
+ * Walk-forward: learn on everything up to a date, pick the best setting, test it on the next slice of days it has not seen.
+ * Then move forward and repeat. The answer is the sum of the test slices only.
+ */
+export function walkForward(r: Rates, u: Series[], base: Strategy, c: Config, folds = 4, lookbacks = [10, 20, 40], stops = [1.5, 2, 3]) {
+  const days = [...new Set(u.flatMap((s) => s.bars.map((b) => b.d)))].sort();
+  const chunk = Math.floor(days.length / (folds + 1)), out: Fold[] = [];
+  if (chunk < 30) return { folds: out, totalTestPaise: 0, totalTestTrades: 0 };
+  for (let i = 1; i <= folds; i++) {
+    const trainTo = days[i * chunk - 1]!, testFrom = days[i * chunk]!, testTo = days[Math.min(days.length - 1, (i + 1) * chunk - 1)]!;
+    let best = { lookback: lookbacks[0]!, stopAtr: stops[0]!, net: -Infinity };
+    for (const lookback of lookbacks) for (const stopAtr of stops) {
+      const net = run(r, u, { ...base, type: "breakout", lookback, stopAtr }, { ...c, to: trainTo }).m.stats.netPaise;
+      if (net > best.net) best = { lookback, stopAtr, net };
+    }
+    const t = run(r, u, { ...base, type: "breakout", lookback: best.lookback, stopAtr: best.stopAtr }, { ...c, from: testFrom, to: testTo }).m;
+    out.push({ trainTo, testFrom, testTo, lookback: best.lookback, stopAtr: best.stopAtr, trainPaise: best.net, testPaise: t.stats.netPaise, testTrades: t.stats.count });
+  }
+  return { folds: out, totalTestPaise: out.reduce((a, f) => a + f.testPaise, 0), totalTestTrades: out.reduce((a, f) => a + f.testTrades, 0) };
+}

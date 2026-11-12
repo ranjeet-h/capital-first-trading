@@ -17,7 +17,7 @@ test.describe("Strategy tester", () => {
     const a = await cardValue(page, "Money at the end").innerText();
     await page.getByRole("button", { name: "Run the test" }).click(); await expect(page.getByText("Working…")).toHaveCount(0);
     expect(await cardValue(page, "Money at the end").innerText()).toBe(a);
-    await page.getByText("Made-up prices", { exact: true }).click();
+    await page.getByText("Prices: made-up or your own", { exact: true }).click();
     await page.locator('input[name="seed"]').fill("12");
     await page.getByRole("button", { name: "Run the test" }).click();
     await expect(cardValue(page, "Money at the end")).not.toHaveText(a);
@@ -32,7 +32,7 @@ test.describe("Strategy tester", () => {
   });
   test("every experiment runs and explains itself", async ({ page }) => {
     await open(page); await run(page);
-    const names = [/^1\. Test on days/, /^2\. Peeking/, /^3\. Shares that disappeared/, /^4\. What if costs/, /^5\. Trying many settings/, /^6\. The same trades/];
+    const names = [/^1\. Test on days/, /^2\. Peeking/, /^3\. Shares that disappeared/, /^4\. What if costs/, /^5\. Trying many settings/, /^6\. Walk-forward/, /^7\. The same trades/];
     for (const n of names) {
       const d = page.locator("details.lab-exp").filter({ has: page.locator("summary", { hasText: n }) });
       await d.locator("summary").click();
@@ -40,6 +40,17 @@ test.describe("Strategy tester", () => {
       await expect(d.locator("table")).toBeVisible({ timeout: 15_000 });
     }
     await expect(page.getByText("Never seen (from")).toBeVisible();
+  });
+  test("runs on the reader's own price files, and refuses a bad file", async ({ page }) => {
+    await open(page);
+    await page.getByText("Prices: made-up or your own", { exact: true }).click();
+    const d = "tools/forward-test/sample/prices/";
+    await page.locator('input[name="pricefiles"]').setInputFiles([d + "AAA.csv", d + "BBB.csv", d + "CCC.csv"]);
+    await expect(page.getByText("Using your prices: 3 shares")).toBeVisible();
+    await run(page);
+    await expect(page.getByText("price files chosen by the reader")).toHaveCount(0);
+    await page.locator('input[name="pricefiles"]').setInputFiles({ name: "BAD.csv", mimeType: "text/csv", buffer: Buffer.from("date,open,high,low,close,volume\n2020-01-01,10,9,8,9,100\n") });
+    await expect(page.getByRole("alert").filter({ hasText: "Not used" })).toBeVisible();
   });
   test("keeps the trades in the journal under Backtest, without duplicates", async ({ page }) => {
     await open(page); await run(page);
