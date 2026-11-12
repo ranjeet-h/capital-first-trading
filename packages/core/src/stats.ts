@@ -8,6 +8,8 @@ export interface Stats {
   grossPaise: number; costsPaise: number; netPaise: number;
   avgWinPaise: number; avgLossPaise: number; payoff: number | null;
   expectancyPaise: number; expectancyR: number;
+  /** How many trades had a planned risk, so R could be measured. Imported trades have none. */
+  rCount: number;
   profitFactor: number | null;
   equity: number[]; drawdown: number[]; maxDrawdownPaise: number;
   maxWinStreak: number; maxLossStreak: number;
@@ -43,13 +45,14 @@ export function computeStats(results: Result[]): Stats {
 
   // R histogram in whole-R buckets from -3 to +3; anything beyond lands in the end buckets.
   const rHistogram = Array.from({ length: 7 }, (_, i) => ({ from: i - 3, to: i - 2, count: 0 }));
-  for (const r of closed) rHistogram[Math.min(6, Math.max(0, Math.floor(r.r) + 3))]!.count++;
+  const withR = closed.filter((r) => r.plannedRiskPaise > 0);
+  for (const r of withR) rHistogram[Math.min(6, Math.max(0, Math.floor(r.r) + 3))]!.count++;
 
   return {
     count: n, wins: wins.length, losses: losses.length, winRate: n ? wins.length / n : 0,
     grossPaise: sum(closed.map((r) => r.grossPaise)), costsPaise: totalCosts, netPaise: net,
     avgWinPaise: avgWin, avgLossPaise: avgLoss, payoff: avgLoss < 0 ? avgWin / -avgLoss : null,
-    expectancyPaise: n ? net / n : 0, expectancyR: n ? sum(closed.map((r) => r.r)) / n : 0,
+    expectancyPaise: n ? net / n : 0, expectancyR: withR.length ? sum(withR.map((r) => r.r)) / withR.length : 0, rCount: withR.length,
     profitFactor: lossSum < 0 ? winSum / -lossSum : null,
     equity, drawdown, maxDrawdownPaise: maxDd, maxWinStreak: maxW, maxLossStreak: maxL,
     planAdherence: known.length ? known.filter((r) => r.followedPlan).length / known.length : null,

@@ -295,4 +295,40 @@ test.describe("hand-off from the calculators", () => {
     await page.getByRole("button", { name: "Plan a new trade" }).click();
     await expect(page.locator('input[name="p_entry"]')).toHaveValue("");
   });
+  test.describe("Zerodha Console import", () => {
+    const H = "symbol,isin,trade_date,exchange,segment,series,trade_type,auction,quantity,price,trade_id,order_id,order_execution_time";
+    const L = (sym: string, day: string, t: string, side: string, q: number, px: string, id: string, seg = "EQ") => `${sym},INE1,${day},NSE,${seg},EQ,${side},false,${q},${px},${id},o${id},${day}T${t}`;
+    const csv = [H, L("INFY", "2026-03-02", "09:20:00", "buy", 10, "100.00", "1"), L("INFY", "2026-03-02", "14:00:00", "sell", 10, "105.00", "2"),
+      L("TCS", "2026-03-03", "10:00:00", "buy", 5, "200.00", "3"), L("TCS", "2026-03-04", "10:00:00", "sell", 5, "190.00", "4"),
+      L("NIFTY", "2026-03-03", "10:00:00", "buy", 50, "100.00", "5", "FO")].join("\n");
+
+    test("preview, import, no duplicates, honest dashboard", async ({ page }, info) => {
+      await open(page);
+      const path = info.outputPath("tradebook.csv"); writeFileSync(path, csv);
+      await page.getByRole("tab", { name: "Backup" }).click();
+      await page.getByLabel("Choose a Zerodha tradebook file").setInputFiles(path);
+      await expect(page.getByText("Found 2 trades. 2 new.")).toBeVisible();
+      await expect(page.getByText("Row 6: Segment FO is not supported")).toBeVisible();
+      await page.getByRole("button", { name: "Add 2 to my Live journal" }).click();
+      await expect(page.getByText("Added 2 trades.")).toBeVisible();
+
+      await page.getByRole("radio", { name: "Live" }).click();
+      await page.getByRole("tab", { name: "Dashboard" }).click();
+      await expect(page.locator(".lab-card").filter({ has: page.getByText("Closed trades", { exact: true }) }).locator(".lab-card-v")).toHaveText("2");
+      await expect(page.getByText("R needs a planned stop-loss")).toBeVisible();
+      await expect(page.getByText("How many trades ended at each R result")).toHaveCount(0);
+
+      await page.getByRole("tab", { name: "Backup" }).click();
+      await page.getByLabel("Choose a Zerodha tradebook file").setInputFiles(path);
+      await expect(page.getByText("0 new, 2 already in your journal")).toBeVisible();
+      await expect(page.getByRole("button", { name: /^Add \d/ })).toHaveCount(0);
+    });
+    test("a wrong file gets a plain message", async ({ page }, info) => {
+      await open(page);
+      const path = info.outputPath("bad.csv"); writeFileSync(path, "a,b\n1,2");
+      await page.getByRole("tab", { name: "Backup" }).click();
+      await page.getByLabel("Choose a Zerodha tradebook file").setInputFiles(path);
+      await expect(page.getByText(/does not look like a Zerodha tradebook/)).toBeVisible();
+    });
+  });
 });

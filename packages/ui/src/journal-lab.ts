@@ -4,6 +4,7 @@ import { IndexedDbStore, type Store, type StoredRecord } from "../../core/src/st
 import { MODES, newTrade, newNote, recordEntry, addExit, amendPlan, statusOf, resultOf, tombstone, validatePlan, weekOf, weekResults, newReview, reviewId, REVIEW_RULES, type Mode, type Trade, type Note, type Review, type Result } from "../../core/src/journal";
 import { computeStats, lossLimitBreaches, MIN_TRADES_FOR_TRUST, type Stats } from "../../core/src/stats";
 import { tradesToCsv } from "../../core/src/export";
+import { parseTradebook, type ConsoleParse } from "../../core/src/console-import";
 import { exportBackup, encryptBackup, decryptBackup, parseBackup, previewImport, importBackup, BackupError, type BackupFile } from "../../core/src/backup";
 import { h, svg, fmtRs, fmtInt, parseRupees, parseNum, draft, type JournalDraft } from "./util";
 import { textField, segmented, checkbox } from "./field";
@@ -41,6 +42,7 @@ export class LabJournal extends HTMLElement {
   private planOpen = false;
   private backupMsg: { text: string; kind: "ok" | "err" } | null = null;
   private pending: { file: BackupFile; preview: { added: number; updated: number; kept: number } } | null = null;
+  private tb: { parse: ConsoleParse; fresh: Trade[]; dupes: number } | null = null;
   private lastBackup: number | undefined;
   private openPanel = new Map<string, string>(); // trade id -> which panel is open
 
@@ -254,13 +256,13 @@ export class LabJournal extends HTMLElement {
       card("Closed trades", fmtInt(s.count), `${s.wins} won, ${s.losses} lost`),
       card("Win rate", (s.winRate * 100).toFixed(0) + "%", "Winning is not the same as making money"),
       card("Profit after costs", fmtRs(s.netPaise), `Costs paid: ${fmtRs(s.costsPaise)}`),
-      card("Average trade", fmtRs(Math.round(s.expectancyPaise)), `${s.expectancyR >= 0 ? "+" : ""}${s.expectancyR.toFixed(2)} R per trade`),
+      card("Average trade", fmtRs(Math.round(s.expectancyPaise)), s.rCount ? `${s.expectancyR >= 0 ? "+" : ""}${s.expectancyR.toFixed(2)} R per trade${s.rCount < s.count ? ` (on the ${s.rCount} with a plan)` : ""}` : "R needs a planned stop-loss"),
       card("Average win vs loss", s.payoff === null ? "n/a" : s.payoff.toFixed(2), `Win ${fmtRs(Math.round(s.avgWinPaise))} · Loss ${fmtRs(Math.round(s.avgLossPaise))}`),
       card("Profit factor", s.profitFactor === null ? "n/a" : s.profitFactor.toFixed(2), "Total won divided by total lost"),
       card("Biggest drop", fmtRs(s.maxDrawdownPaise), "From a high point to a low point"),
       card("Plan followed", s.planAdherence === null ? "n/a" : (s.planAdherence * 100).toFixed(0) + "%", s.amendedCount ? `${s.amendedCount} had the plan changed after buying` : "Review closed trades to fill this")));
     out.push(h("p", { class: "lab-note" }, `Longest run of wins: ${s.maxWinStreak}. Longest run of losses: ${s.maxLossStreak}. ${s.costShareOfGrossProfit !== null ? `Costs took ${(s.costShareOfGrossProfit * 100).toFixed(1)}% of your gross winnings.` : ""}`));
-    out.push(h("div", { class: "lab-charts" }, lineChart("Money over time (after costs)", s.equity), lineChart("Drop from the highest point", s.drawdown.map((x) => -x), true), histogram(s)));
+    out.push(h("div", { class: "lab-charts" }, lineChart("Money over time (after costs)", s.equity), lineChart("Drop from the highest point", s.drawdown.map((x) => -x), true), ...(s.rCount ? [histogram(s)] : [])));
     const lim = this.settings.dailyLossPaise;
     if (lim) { const b = lossLimitBreaches(results, lim); out.push(h("section", { class: "lab-limit" }, h("h3", {}, "Daily loss limit"), b.length ? h("ul", {}, ...b.map((x) => h("li", {}, `${x.day}: lost ${fmtRs(x.lossPaise)}, over your limit of ${fmtRs(lim)}`))) : h("p", {}, `You stayed within your limit of ${fmtRs(lim)} a day.`))); }
     return out;
@@ -349,7 +351,18 @@ export class LabJournal extends HTMLElement {
       imp.append(h("div", { class: "lab-msg lab-msg-ok" }, `This file would add ${p.added}, update ${p.updated}, and leave ${p.kept} as they are.`),
         h("div", { class: "lab-actions" }, h("button", { type: "button", class: "lab-btn lab-btn-primary", onclick: () => void this.confirmImport() }, "Import now"), h("button", { type: "button", class: "lab-btn", onclick: () => { this.pending = null; this.render(); } }, "Cancel")));
     }
-    out.push(imp, msg);
+    const tbFile = h("input", { type: "file", accept: ".csv,text/csv", "aria-label": "Choose a Zerodha tradebook file", onchange: () => void this.pickTradebook(tbFile) });
+    const tbox = h("section", { class: "lab-card-box lab-tb" }, h("h3", {}, "Import from Zerodha Console"),
+      h("p", { class: "lab-note" }, "In Console, open Reports, then Tradebook, pick the dates and download the CSV file. Choose it here. Your trades are added to the Live list. Nothing is sent anywhere."),
+      h("p", { class: "lab-note" }, "Only buys and sells of normal shares are read. Imported trades have no stop-loss, so they count in the money figures but not in the R figures. The product (intraday or delivery) is guessed: a position bought and sold on the same day is intraday. Costs are estimated, not taken from your contract note."),
+      h("div", { class: "lab-field" }, tbFile));
+    if (this.tb) {
+      const { parse, fresh, dupes } = this.tb;
+      tbox.append(h("div", { class: "lab-msg lab-msg-ok", role: "status" }, `Found ${parse.trades.length} ${parse.trades.length === 1 ? "trade" : "trades"}. ${fresh.length} new${dupes ? `, ${dupes} already in your journal (left alone)` : ""}.`));
+      if (parse.skipped.length) tbox.append(h("div", { class: "lab-conflicts", role: "note" }, h("strong", {}, `${parse.skipped.length} ${parse.skipped.length === 1 ? "row was" : "rows were"} not imported`), h("ul", {}, ...parse.skipped.slice(0, 20).map((k) => h("li", {}, `Row ${k.row}: ${k.reason}`))), parse.skipped.length > 20 ? h("p", {}, `And ${parse.skipped.length - 20} more.`) : null));
+      tbox.append(h("div", { class: "lab-actions" }, fresh.length ? h("button", { type: "button", class: "lab-btn lab-btn-primary", onclick: () => void this.confirmTradebook() }, `Add ${fresh.length} to my Live journal`) : null, h("button", { type: "button", class: "lab-btn", onclick: () => { this.tb = null; this.render(); } }, "Cancel")));
+    }
+    out.push(imp, tbox, msg);
     return out;
   }
 
@@ -381,6 +394,23 @@ export class LabJournal extends HTMLElement {
       this.pending = { file, preview: await previewImport(this.store, file) }; this.backupMsg = null;
     } catch (e) { this.pending = null; this.backupMsg = { text: e instanceof BackupError ? e.message : "This file could not be read as a backup.", kind: "err" }; }
     this.render();
+  }
+  private async pickTradebook(input: HTMLInputElement) {
+    const f = input.files?.[0]; if (!f) return;
+    try {
+      const parse = parseTradebook(await f.text(), nowIso());
+      const have = new Set(this.trades.map((t) => t.id));
+      const fresh = parse.trades.filter((t) => !have.has(t.id));
+      this.tb = { parse, fresh, dupes: parse.trades.length - fresh.length }; this.backupMsg = null;
+    } catch (e) { this.tb = null; this.backupMsg = { text: (e as Error).message, kind: "err" }; }
+    this.render();
+  }
+  private async confirmTradebook() {
+    if (!this.tb) return;
+    const n = this.tb.fresh.length;
+    for (const t of this.tb.fresh) await this.store.put("journal", t);
+    this.tb = null; await this.load();
+    this.backupMsg = { text: `Added ${n} ${n === 1 ? "trade" : "trades"}. Switch to Live at the top to see them.`, kind: "ok" }; this.render();
   }
   private async confirmImport() {
     if (!this.pending) return;
