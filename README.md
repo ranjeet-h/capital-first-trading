@@ -4,13 +4,13 @@
 
 **A free, offline study book for the Indian stock market. It teaches you to protect your money before you try to grow it.**
 
-99 chapters · interactive demos · four working tools · no accounts · no server · nothing leaves your device
+99 chapters · interactive demos · five working tools · no accounts · no server · nothing leaves your device
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-2563eb.svg)](LICENSE)
 ![Chapters](https://img.shields.io/badge/chapters-99-16a34a)
 ![Works offline](https://img.shields.io/badge/works-offline-0ea5e9)
-![Unit tests](https://img.shields.io/badge/unit%20tests-71-8b5cf6)
-![End-to-end tests](https://img.shields.io/badge/e2e%20tests-97-8b5cf6)
+![Unit tests](https://img.shields.io/badge/unit%20tests-88-8b5cf6)
+![End-to-end tests](https://img.shields.io/badge/e2e%20tests-109-8b5cf6)
 ![Mobile friendly](https://img.shields.io/badge/mobile-friendly-f59e0b)
 
 **[Read it online](https://ranjeet-h.github.io/capital-first-trading/)** ·
@@ -45,6 +45,7 @@ It is written in plain English, for readers of any age, for people who trade thr
 | 📏 **Position size calculator** | Give it your capital and the most you will risk. It tells you how many shares, and warns you when a plan is unsafe. |
 | 📓 **Trade journal** | Plan before you buy, record buys and sells in parts, review each trade, then read your own numbers. |
 | 🧪 **Strategy tester** | Test simple rules on made-up prices with real Zerodha costs, then run experiments that show why backtests lie (peeking, lost shares, many settings, higher costs). |
+| 🔭 **Forward test** | A small script you run once a day on your own computer. It logs what a fixed rule would have done on new prices. Bring the log into the journal and compare it with earlier days. It places no orders. |
 | 🗓️ **Weekly review** | Look at the week, tick the rules you broke, and write one rule for next week. |
 | 📴 **Fully offline** | Install it like an app. No internet needed after the first visit. |
 | 🔒 **Private by design** | Your journal lives only in your browser. Backups are files you control, with optional passphrase locking. |
@@ -107,8 +108,8 @@ Other commands:
 
 ```sh
 make build     # static site in mdbook/book/, with offline support
-make test      # 71 unit tests (Vitest)
-make e2e       # 97 browser tests on desktop and phone (Playwright)
+make test      # 88 unit tests (Vitest)
+make e2e       # 109 browser tests on desktop and phone (Playwright)
 make check     # structural checks on every chapter and quiz
 make deploy    # build and publish the site to GitHub Pages (gh-pages branch)
 ```
@@ -149,7 +150,7 @@ The journal never leaves your device. Browsers can clear their own storage, so u
 - ✅ Journal auto-fill from the calculators
 - ✅ Import from a Zerodha Console tradebook (cash shares, long trades)
 - ✅ Strategy tester on made-up prices, with six "why backtests lie" experiments. Not built yet: walk-forward testing, importing real price files, a regime view
-- 🔜 Forward-test tool
+- ✅ Forward-test script (`tools/forward-test`) and importer. Prices come from files you save yourself; downloading prices is not built in
 
 The full roadmap is in [PLAN.md](PLAN.md) and [LABS.md](LABS.md).
 

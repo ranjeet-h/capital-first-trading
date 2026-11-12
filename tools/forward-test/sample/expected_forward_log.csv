@@ -1,0 +1,15 @@
+trade_id,mode,symbol,exchange,product,status,opened_at,entry_price,entry_qty,plan_stop,closed_at,exit_price,costs,net_pnl,r_multiple,exit_reason,strategy_hash,data_source
+fw-f550803b-CCC-2016-03-09,forward,CCC,NSE,cnc,closed,2016-03-09,479.72,7,414.60,2016-03-22,517.17,23.61,238.54,0.52,stop,f550803b,csvDir
+fw-f550803b-AAA-2016-03-18,forward,AAA,NSE,cnc,closed,2016-03-18,1224.55,2,1021.32,2016-05-31,1843.09,21.58,1215.50,2.99,stop,f550803b,csvDir
+fw-f550803b-BBB-2016-03-23,forward,BBB,NSE,cnc,closed,2016-03-23,1189.45,2,1013.78,2016-03-28,1013.27,19.49,-371.85,-1.06,stop,f550803b,csvDir
+fw-f550803b-BBB-2016-04-05,forward,BBB,NSE,cnc,closed,2016-04-05,1243.70,2,1010.95,2016-04-20,1138.34,20.51,-231.23,-0.50,stop,f550803b,csvDir
+fw-f550803b-CCC-2016-04-05,forward,CCC,NSE,cnc,closed,2016-04-05,676.69,5,578.33,2016-04-06,578.04,22.59,-515.84,-1.05,stop,f550803b,csvDir
+fw-f550803b-CCC-2016-04-25,forward,CCC,NSE,cnc,closed,2016-04-25,730.18,5,635.95,2016-05-05,635.63,23.60,-496.35,-1.05,stop,f550803b,csvDir
+fw-f550803b-BBB-2016-05-03,forward,BBB,NSE,cnc,closed,2016-05-03,1536.86,1,1229.22,2016-05-23,1285.68,18.43,-269.61,-0.88,stop,f550803b,csvDir
+fw-f550803b-CCC-2016-06-07,forward,CCC,NSE,cnc,closed,2016-06-07,733.69,4,623.19,2016-07-20,1028.42,22.61,1156.31,2.62,stop,f550803b,csvDir
+fw-f550803b-AAA-2016-06-30,forward,AAA,NSE,cnc,closed,2016-06-30,2008.73,1,1733.03,2016-07-04,1732.16,19.47,-296.04,-1.07,stop,f550803b,csvDir
+fw-f550803b-BBB-2016-07-18,forward,BBB,NSE,cnc,closed,2016-07-18,1117.41,2,924.83,2016-08-22,987.99,19.49,-278.33,-0.72,stop,f550803b,csvDir
+fw-f550803b-CCC-2016-08-16,forward,CCC,NSE,cnc,closed,2016-08-16,1259.14,2,1074.26,2016-09-13,1451.88,20.55,364.93,0.99,stop,f550803b,csvDir
+fw-f550803b-CCC-2016-10-25,forward,CCC,NSE,cnc,closed,2016-10-25,1943.06,1,1662.29,2016-11-04,1661.46,19.47,-301.07,-1.07,stop,f550803b,csvDir
+fw-f550803b-AAA-2016-11-04,forward,AAA,NSE,cnc,open,2016-11-04,1095.97,2,915.30,,,,,,,f550803b,csvDir
+fw-f550803b-CCC-2016-12-06,forward,CCC,NSE,cnc,open,2016-12-06,1689.41,2,1443.17,,,,,,,f550803b,csvDir

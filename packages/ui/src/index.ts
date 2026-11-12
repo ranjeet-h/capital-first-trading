@@ -9,3 +9,6 @@ if (!customElements.get("lab-journal")) customElements.define("lab-journal", Lab
 
 import { LabBacktest } from "./backtest-lab";
 if (!customElements.get("lab-backtest")) customElements.define("lab-backtest", LabBacktest);
+
+import { LabForward } from "./forward-lab";
+if (!customElements.get("lab-forward")) customElements.define("lab-forward", LabForward);

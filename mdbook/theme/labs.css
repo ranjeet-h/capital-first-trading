@@ -49,7 +49,7 @@
 @media (max-width: 560px) {
   .lab-seg-btn, .lab-check { font-size: 1em; }
   .lab-field label { font-size: .95em; }
-  .lab:not(.lab-bt) .lab-table th:nth-child(2), .lab:not(.lab-bt) .lab-table td:nth-child(2) { display: none; }
+  .lab:not(.lab-bt):not(.lab-fw) .lab-table th:nth-child(2), .lab:not(.lab-bt):not(.lab-fw) .lab-table td:nth-child(2) { display: none; }
   .lab-rate-sm { display: block; }
 }
 .lab-note { font-size: .82em; opacity: .7; margin-top: .6em; }
@@ -175,3 +175,6 @@ a.lab-btn-primary, .content a.lab-btn-primary:link, .content a.lab-btn-primary:v
 .lab-bt .lab-exp summary::-webkit-details-marker { display: none; }
 .lab-bt .lab-exp summary::after { content: "+"; font-size: 1.4em; opacity: .6; padding-left: .5em; }
 .lab-bt .lab-exp[open] summary::after { content: "\2212"; }
+
+.lab-fw .lab-field { margin-bottom: 1em; }
+.lab-fw .lab-field input[type=file] { min-height: 44px; max-width: 100%; }

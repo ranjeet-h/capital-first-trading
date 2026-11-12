@@ -6,3 +6,4 @@ test-results/
 .e2e-book/
 __pycache__/
 .pages-build/
+tools/forward-test/.dist/

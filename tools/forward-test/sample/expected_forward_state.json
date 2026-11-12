@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "strategyHash": "f550803b",
+  "strategyName": "Breakout",
+  "startDate": "2016-03-01",
+  "lastDay": "2016-12-06",
+  "source": "csvDir",
+  "open": [
+    {
+      "symbol": "AAA",
+      "entryDay": "2016-11-04",
+      "entryPaise": 109597,
+      "qty": 2,
+      "stopPaise": 91530
+    },
+    {
+      "symbol": "CCC",
+      "entryDay": "2016-12-06",
+      "entryPaise": 168941,
+      "qty": 2,
+      "stopPaise": 144317
+    }
+  ],
+  "before": {
+    "period": "2015-01-01 to 2016-02-29",
+    "trades": 14,
+    "winRatePct": 21.428571428571427,
+    "expectancyR": -0.507101459669788,
+    "netPaise": -235881
+  }
+}

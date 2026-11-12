@@ -269,6 +269,8 @@ No trades generated; one trade; all losers; split-adjusted vs unadjusted mismatc
 
 ## Lab 5: Forward-test script and importer
 
+> **Status (2026-11-12):** First version shipped. The script reads price files from a folder (`csvDir`) and reuses the Lab 4 engine, so results match it exactly. It stops on bad or stale data, refuses before 15:45 India time, uses a lock file, and is safe to run twice. The log is rebuilt every run. The importer previews, merges without copies, and compares with earlier days. Not built yet: Yahoo download, split detection beyond the 20% jump check, a holiday calendar, pending orders for tomorrow.
+
 **Purpose.** Test a fixed strategy on **unseen real prices** by logging hypothetical trades day by day. It places no orders and holds no credentials. This is the honest check that a backtest cannot give.
 
 **Used in chapters.** Testing track (paper and forward testing); gate G6.

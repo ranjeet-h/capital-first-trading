@@ -1,0 +1,10 @@
+{
+  "strategyFile": "strategy.json",
+  "symbols": ["AAA", "BBB", "CCC"],
+  "capitalRupees": 50000,
+  "startDate": "2016-03-01",
+  "dataSource": "csvDir",
+  "csvDir": "prices",
+  "outDir": "out",
+  "slippageBps": 5
+}

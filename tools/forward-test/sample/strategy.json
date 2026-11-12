@@ -1,0 +1,1 @@
+{ "version": 1, "name": "Breakout", "type": "breakout", "lookback": 20, "atrPeriod": 14, "stopAtr": 2, "trailAtr": 3, "riskPct": 1, "maxPositions": 3 }

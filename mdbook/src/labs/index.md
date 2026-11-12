@@ -4,12 +4,7 @@
 Tools you can use while you study. Everything runs on your device.
 
 1. [Cost calculator](cost-calculator.md)
-2. [Trade journal](journal.md)
-3. [Position size calculator](position-size-calculator.md)
-4. [Strategy tester](strategy-tester.md)
-
-## Coming soon
-
-These tools are planned. They are not ready yet, and each one will work on your device with no internet, like the tools above.
-
-- **Forward test tracker.** Run your rule once a day after the market closes, and keep an honest record of what it would have done. Import the record into your journal.
+2. [Forward test](forward-test.md)
+3. [Trade journal](journal.md)
+4. [Position size calculator](position-size-calculator.md)
+5. [Strategy tester](strategy-tester.md)

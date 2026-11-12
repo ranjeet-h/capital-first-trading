@@ -4,5 +4,5 @@
     "strict": true, "noUncheckedIndexedAccess": true, "skipLibCheck": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable"], "noEmit": true, "resolveJsonModule": true
   },
-  "include": ["packages/*/src", "packages/*/test", "data"]
+  "include": ["tools/forward-test/cli.ts", "packages/*/src", "packages/*/test", "data"]
 }

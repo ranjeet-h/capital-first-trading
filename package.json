@@ -8,7 +8,8 @@
   "scripts": {
     "test": "vitest run",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "build:js": "node tools/build/bundle.mjs"
+    "build:js": "node tools/build/bundle.mjs",
+    "forward": "node tools/forward-test/run.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.65.0",
