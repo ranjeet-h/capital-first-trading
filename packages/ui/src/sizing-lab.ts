@@ -1,7 +1,7 @@
 import rawRates from "../../../data/rates/zerodha-equity.json";
 import { ratesAreStale, type Exchange, type Product, type Rates } from "../../core/src/costs";
 import { sizePosition, type SizingInput, type SizingResult } from "../../core/src/sizing";
-import { h, svg, fmtRs, fmtInr, fmtInt, fmtPct, parseRupees, parseNum, store } from "./util";
+import { h, svg, fmtRs, fmtInr, fmtInt, fmtPct, parseRupees, parseNum, store, draft } from "./util";
 import { textField, segmented, checkbox } from "./field";
 
 const R = rawRates as unknown as Rates;
@@ -63,7 +63,7 @@ export class LabPositionSize extends HTMLElement {
       out.replaceChildren();
       if (!input) { out.append(h("p", { class: "lab-empty" }, "Fix the highlighted fields to see the position size.")); return; }
       const r = sizePosition(R, input);
-      out.append(cards(r, input), conflicts(r), h("div", { class: "lab-vis" }, ladder(input, r), sens(input)));
+      out.append(cards(r, input), conflicts(r), r.shares > 0 ? journalLink(input, r) : h("span"), h("div", { class: "lab-vis" }, ladder(input, r), sens(input)));
     };
 
     const cards = (r: SizingResult, i: SizingInput) => h("div", {},
@@ -72,6 +72,10 @@ export class LabPositionSize extends HTMLElement {
         card("Loss if the stop is hit", fmtRs(r.trueLossPaise), `Budget ${fmtRs(r.riskBudgetPaise)}${i.includeCosts && r.shares ? `. Includes ${fmtRs(r.costsAtStopPaise)} costs` : ""}`),
         card("Reward to risk", r.rewardToRisk === undefined ? "n/a" : r.rewardToRisk.toFixed(2), r.rewardToRisk === undefined ? "Add a target to see this" : `Target gain ${fmtRs(Math.round(r.rewardToRisk * r.plannedLossPaise))} before costs`)),
       h("p", { class: "lab-bind" }, h("strong", {}, "What limits the size: "), BIND[r.binding]));
+
+    const journalLink = (i: SizingInput, r: SizingResult) => h("p", { class: "lab-handoff" },
+      h("a", { class: "lab-btn lab-btn-primary", href: "journal.html", onclick: () => draft.set({ from: "size", entry: String(i.entryPaise / 100), stop: String(i.stopPaise / 100), target: i.targetPaise === undefined ? "" : String(i.targetPaise / 100), qty: String(r.shares), product: i.product, exchange: i.exchange }) }, "Plan this trade in my journal"),
+      h("span", { class: "lab-hint" }, "Opens the journal with these numbers filled in. You can change them."));
 
     const conflicts = (r: SizingResult) => r.warnings.length
       ? h("div", { class: "lab-conflicts", role: "note" }, h("strong", {}, "Things to check"), h("ul", {}, ...r.warnings.map((w) => h("li", {}, w))))

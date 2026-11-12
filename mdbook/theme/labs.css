@@ -155,3 +155,10 @@
 .lab-stack .lab-field + .lab-field { margin-top: 1em; }
 .lab-stack > .lab-btn[type=submit] { margin-top: 1em; }
 .lab-stack > .lab-btn[type=submit] + .lab-msg { margin-top: .8em; }
+
+/* calculator -> journal hand-off */
+.lab-handoff { display: flex; flex-wrap: wrap; align-items: center; gap: .6em 1em; margin: 1em 0 0; }
+a.lab-btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; box-sizing: border-box; }
+a.lab-btn-primary, .content a.lab-btn-primary:link, .content a.lab-btn-primary:visited { color: #fff; }
+.content a.lab-btn:link, .content a.lab-btn:visited { text-decoration: none; }
+.content a.lab-btn:not(.lab-btn-primary):link { color: var(--lab-accent); }

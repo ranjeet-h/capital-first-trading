@@ -1,6 +1,6 @@
 import rawRates from "../../../data/rates/zerodha-equity.json";
 import { computeCosts, ratesAreStale, type Exchange, type Product, type Rates, type CostResult } from "../../core/src/costs";
-import { h, fmtInr, fmtRs, fmtPct, parseRupees, parseNum, store } from "./util";
+import { h, fmtInr, fmtRs, fmtPct, parseRupees, parseNum, store, draft } from "./util";
 import { textField, segmented, checkbox } from "./field";
 
 const R = rawRates as unknown as Rates;
@@ -56,7 +56,9 @@ export class LabCosts extends HTMLElement {
         return;
       }
       const res = computeCosts(R, { buyPricePaise: buy, sellPricePaise: sell, quantity: qty, product, exchange, dpCharge: product === "cnc" && dp });
-      out.append(result(res, buy, qty), compare(buy, sell, qty));
+      out.append(result(res, buy, qty), compare(buy, sell, qty), h("p", { class: "lab-handoff" },
+        h("a", { class: "lab-btn", href: "journal.html", onclick: () => draft.set({ from: "costs", entry: String(buy / 100), qty: String(qty), product, exchange }) }, "Plan this trade in my journal"),
+        h("span", { class: "lab-hint" }, "Opens the journal with the price, quantity and product filled in. Add your stop-loss there.")));
     };
 
     const result = (res: CostResult, buy: number, qty: number) => {

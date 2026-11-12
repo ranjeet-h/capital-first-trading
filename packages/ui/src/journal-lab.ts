@@ -5,7 +5,7 @@ import { MODES, newTrade, newNote, recordEntry, addExit, amendPlan, statusOf, re
 import { computeStats, lossLimitBreaches, MIN_TRADES_FOR_TRUST, type Stats } from "../../core/src/stats";
 import { tradesToCsv } from "../../core/src/export";
 import { exportBackup, encryptBackup, decryptBackup, parseBackup, previewImport, importBackup, BackupError, type BackupFile } from "../../core/src/backup";
-import { h, svg, fmtRs, fmtInt, parseRupees, parseNum } from "./util";
+import { h, svg, fmtRs, fmtInt, parseRupees, parseNum, draft, type JournalDraft } from "./util";
 import { textField, segmented, checkbox } from "./field";
 
 const R = rawRates as unknown as Rates;
@@ -33,6 +33,7 @@ export class LabJournal extends HTMLElement {
   private reviews: Review[] = [];
   private weekShift = 0; // weeks back from this week
   private reviewMsg = "";
+  private draft: JournalDraft | null = null;
   private body!: HTMLElement;
   private tabs!: HTMLElement;
   private banner!: HTMLElement;
@@ -55,6 +56,7 @@ export class LabJournal extends HTMLElement {
     this.tabs = h("div", { class: "lab-tabs", role: "tablist", "aria-label": "Journal sections" });
     this.body = h("div", { class: "lab-jbody", role: "tabpanel" });
     root.append(this.banner, this.modeBox, this.tabs, this.body);
+    this.draft = draft.get(); draft.clear(); if (this.draft) { this.planOpen = true; }
     this.load().then(() => this.render()).catch(() => { this.body.replaceChildren(h("p", { class: "lab-err" }, "Could not open your saved journal. Try reloading the page.")); });
   }
 
@@ -95,7 +97,7 @@ export class LabJournal extends HTMLElement {
 
   private tradesView(): HTMLElement[] {
     const list = this.inMode();
-    const out: HTMLElement[] = [h("button", { type: "button", class: "lab-btn lab-btn-primary", "aria-expanded": String(this.planOpen), onclick: () => { this.planOpen = !this.planOpen; this.render(); } }, this.planOpen ? "Close the plan form" : "Plan a new trade")];
+    const out: HTMLElement[] = [h("button", { type: "button", class: "lab-btn lab-btn-primary", "aria-expanded": String(this.planOpen), onclick: () => { this.planOpen = !this.planOpen; if (!this.planOpen) this.dropDraft(); this.render(); } }, this.planOpen ? "Close the plan form" : "Plan a new trade")];
     if (this.planOpen) out.push(this.planForm());
     if (!list.length && !this.planOpen) out.push(h("p", { class: "lab-empty" }, `No ${MODE_NAME[this.settings.mode]} trades yet. Start with a plan: write down your entry, your stop-loss and your reason before you buy.`));
     for (const t of list) out.push(this.tradeCard(t));
@@ -103,17 +105,20 @@ export class LabJournal extends HTMLElement {
     return out;
   }
 
+  private dropDraft() { this.draft = null; draft.clear(); }
+
   private planForm(): HTMLElement {
+    const dr = this.draft;
     const f = {
       symbol: textField("Stock symbol", "", { name: "symbol", hint: "For example RELIANCE" }),
-      entry: textField("Planned entry price", "", { name: "p_entry", prefix: "Rs", hint: "Where you plan to buy" }),
-      stop: textField("Stop-loss price", "", { name: "p_stop", prefix: "Rs", hint: "Where you will get out if wrong" }),
-      target: textField("Target price", "", { name: "p_target", prefix: "Rs", hint: "Optional", optional: true }),
-      qty: textField("Quantity", "", { name: "p_qty", suffix: "shares", hint: "Whole shares", whole: true }),
+      entry: textField("Planned entry price", dr?.entry ?? "", { name: "p_entry", prefix: "Rs", hint: "Where you plan to buy" }),
+      stop: textField("Stop-loss price", dr?.stop ?? "", { name: "p_stop", prefix: "Rs", hint: "Where you will get out if wrong" }),
+      target: textField("Target price", dr?.target ?? "", { name: "p_target", prefix: "Rs", hint: "Optional", optional: true }),
+      qty: textField("Quantity", dr?.qty ?? "", { name: "p_qty", suffix: "shares", hint: "Whole shares", whole: true }),
     };
     f.symbol.input.inputMode = "text"; f.symbol.input.autocapitalize = "characters";
-    const exch = segmented<Exchange>("Exchange", "p_exch", [["NSE", "NSE"], ["BSE", "BSE"]], "NSE", () => {});
-    const prod = segmented<Product>("Product", "p_prod", [["cnc", "Delivery (CNC)"], ["mis", "Intraday (MIS)"]], "cnc", () => {});
+    const exch = segmented<Exchange>("Exchange", "p_exch", [["NSE", "NSE"], ["BSE", "BSE"]], dr?.exchange === "BSE" ? "BSE" : "NSE", () => {});
+    const prod = segmented<Product>("Product", "p_prod", [["cnc", "Delivery (CNC)"], ["mis", "Intraday (MIS)"]], dr?.product === "mis" ? "mis" : "cnc", () => {});
     const setupId = "setup-list";
     const setup = h("input", { type: "text", name: "setup", list: setupId, autocomplete: "off", placeholder: "Pick or type" });
     const thesis = h("textarea", { name: "thesis", rows: 3, placeholder: "Why this trade? What would prove you wrong?" });
@@ -136,11 +141,13 @@ export class LabJournal extends HTMLElement {
       if (bad.length) { err.textContent = bad[0]!; return; }
       try {
         const tr = newTrade(uid(), nowIso(), { mode: this.settings.mode, symbol: f.symbol.input.value, exchange: exch.get(), product: prod.get(), plan });
-        this.planOpen = false; void this.save(tr);
+        this.planOpen = false; this.dropDraft(); void this.save(tr);
       } catch (x) { err.textContent = (x as Error).message; }
     };
+    upd();
     return h("form", { class: "lab-form lab-card-box", onsubmit: (ev: Event) => { ev.preventDefault(); submit(); } },
       h("h3", {}, "Plan"),
+      dr ? h("div", { class: "lab-banner", role: "status" }, dr.from === "size" ? "Filled in from the position size calculator. " : "Filled in from the cost calculator. ", dr.from === "costs" ? "Add your stop-loss below. " : "", "Check every number before you save.") : null,
       h("div", { class: "lab-grid" }, f.symbol.root, exch.root, prod.root, f.entry.root, f.stop.root, f.target.root, f.qty.root,
         h("div", { class: "lab-field" }, h("label", { for: "jn-setup" }, "Setup"), (setup.id = "jn-setup", setup), h("datalist", { id: setupId }, ...SETUPS.map((s) => h("option", { value: s })))),
         h("div", { class: "lab-field lab-wide" }, h("label", { for: "jn-thesis" }, "Your reason"), (thesis.id = "jn-thesis", thesis))),

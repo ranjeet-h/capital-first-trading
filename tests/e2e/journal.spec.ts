@@ -252,3 +252,47 @@ test("weekly review: counts this week's closed trade and is phone friendly", asy
     const b = await el.boundingBox(); expect(b!.height).toBeGreaterThanOrEqual(43.5);
   }
 });
+
+test.describe("hand-off from the calculators", () => {
+  test("position size -> journal plan form arrives filled in, and saves", async ({ page }) => {
+    await page.goto("/labs/position-size-calculator.html");
+    await page.locator('input[name="capital"]').fill("200000");
+    await page.locator('input[name="entry"]').fill("500");
+    await page.locator('input[name="stop"]').fill("480");
+    const shares = (await page.locator(".lab-card", { hasText: "Shares" }).locator(".lab-card-v").first().textContent())!.replace(/,/g, "").trim();
+    expect(Number(shares)).toBeGreaterThan(0);
+    await page.getByRole("link", { name: "Plan this trade in my journal" }).click();
+    await expect(page.locator("lab-journal .lab-journal")).toBeVisible();
+    await expect(page.getByText("Filled in from the position size calculator")).toBeVisible();
+    await expect(page.locator('input[name="p_entry"]')).toHaveValue("500");
+    await expect(page.locator('input[name="p_stop"]')).toHaveValue("480");
+    await expect(page.locator('input[name="p_qty"]')).toHaveValue(shares);
+    await fill(page, "symbol", "HDFCBANK");
+    await page.getByRole("button", { name: "Save plan" }).click();
+    await expect(card(page, "HDFCBANK")).toBeVisible();
+    // used once: a reload does not fill the form again
+    await page.reload();
+    await expect(page.getByText("Filled in from")).toHaveCount(0);
+  });
+
+  test("cost calculator -> journal asks for the stop-loss", async ({ page }) => {
+    await page.goto("/labs/cost-calculator.html");
+    await page.locator('input[name="buy"]').fill("250");
+    await page.locator('input[name="qty"]').fill("20");
+    await page.getByRole("radio", { name: "Intraday (MIS)" }).click();
+    await page.getByRole("link", { name: "Plan this trade in my journal" }).click();
+    await expect(page.getByText("Add your stop-loss below")).toBeVisible();
+    await expect(page.locator('input[name="p_entry"]')).toHaveValue("250");
+    await expect(page.locator('input[name="p_qty"]')).toHaveValue("20");
+    await expect(page.locator('input[name="p_stop"]')).toHaveValue("");
+    await expect(page.getByRole("radio", { name: "Intraday (MIS)" })).toHaveAttribute("aria-checked", "true");
+  });
+
+  test("closing the plan form drops the hand-off", async ({ page }) => {
+    await page.goto("/labs/cost-calculator.html");
+    await page.getByRole("link", { name: "Plan this trade in my journal" }).click();
+    await page.getByRole("button", { name: "Close the plan form" }).click();
+    await page.getByRole("button", { name: "Plan a new trade" }).click();
+    await expect(page.locator('input[name="p_entry"]')).toHaveValue("");
+  });
+});

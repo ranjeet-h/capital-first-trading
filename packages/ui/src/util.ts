@@ -49,5 +49,14 @@ export const store = {
   },
 };
 
+/** A hand-off from a calculator to the journal's plan form. Lives in this browser only; the journal clears it once used. */
+export const DRAFT_KEY = "cft-journal-draft-v1";
+export interface JournalDraft { from: "size" | "costs"; entry?: string; stop?: string; target?: string; qty?: string; product?: string; exchange?: string }
+export const draft = {
+  get(): JournalDraft | null { const d = store.get(DRAFT_KEY) as JournalDraft | null; return d && (d.from === "size" || d.from === "costs") ? d : null; },
+  set(d: JournalDraft) { store.set(DRAFT_KEY, d as unknown as Record<string, string>); },
+  clear() { try { localStorage.removeItem(DRAFT_KEY); } catch { /* fine */ } },
+};
+
 let uid = 0;
 export const nextId = (p: string) => `${p}-${++uid}`;

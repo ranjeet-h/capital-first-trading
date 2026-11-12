@@ -10,7 +10,7 @@
 ![Chapters](https://img.shields.io/badge/chapters-99-16a34a)
 ![Works offline](https://img.shields.io/badge/works-offline-0ea5e9)
 ![Unit tests](https://img.shields.io/badge/unit%20tests-48-8b5cf6)
-![End-to-end tests](https://img.shields.io/badge/e2e%20tests-71-8b5cf6)
+![End-to-end tests](https://img.shields.io/badge/e2e%20tests-77-8b5cf6)
 ![Mobile friendly](https://img.shields.io/badge/mobile-friendly-f59e0b)
 
 **[Read it online](https://ranjeet-h.github.io/capital-first-trading/)** ·
@@ -107,7 +107,7 @@ Other commands:
 ```sh
 make build     # static site in mdbook/book/, with offline support
 make test      # 48 unit tests (Vitest)
-make e2e       # 71 browser tests on desktop and phone (Playwright)
+make e2e       # 77 browser tests on desktop and phone (Playwright)
 make check     # structural checks on every chapter and quiz
 make deploy    # build and publish the site to GitHub Pages (gh-pages branch)
 ```
@@ -144,7 +144,7 @@ The journal never leaves your device. Browsers can clear their own storage, so u
 - ✅ Cost calculator, position size calculator
 - ✅ Trade journal with dashboard, weekly review, backup and restore
 - ✅ Offline and installable
-- 🔜 Journal auto-fill from the calculators
+- ✅ Journal auto-fill from the calculators
 - 🔜 Import from Zerodha Console statements
 - 🔜 Strategy testing tool and forward-test tool
 

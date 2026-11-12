@@ -1,6 +1,6 @@
 # Capital-First Trading Study Book: Master Plan
 
-Status: written 2026-11-11. Built so far, in the order M0, M1, M3 (the owner approved this order and asked for it "done properly"): the book, the foundation (storage, encrypted backup, offline service worker, installable manifest), the money core (Lab 2 cost calculator, Lab 1 position size), and the Lab 3 journal (plans, buys and sells in parts, review, dashboard, weekly review, backup and restore). Still open: journal auto-fill from Labs 1 and 2, Zerodha Console importer, synced-folder auto-save, AGENTS.md, and Labs 4 and 5. There is no CI and none is planned: all checks run locally with `make`. Detail: docs/M3-journal-plan.md.
+Status: written 2026-11-11. Built so far, in the order M0, M1, M3 (the owner approved this order and asked for it "done properly"): the book, the foundation (storage, encrypted backup, offline service worker, installable manifest), the money core (Lab 2 cost calculator, Lab 1 position size), and the Lab 3 journal (plans, buys and sells in parts, review, dashboard, weekly review, backup and restore). Journal auto-fill from Labs 1 and 2 is done. Still open: Zerodha Console importer, synced-folder auto-save, AGENTS.md, and Labs 4 and 5. There is no CI and none is planned: all checks run locally with `make`. Detail: docs/M3-journal-plan.md.
 Companion file: [LABS.md](LABS.md) (detailed specs for the five labs).
 
 This plan is the single reference for the coding agent. Where it says **OPEN**, the owner has not decided; the agent must not decide silently, it must ask.
