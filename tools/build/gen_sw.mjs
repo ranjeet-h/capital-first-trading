@@ -23,7 +23,18 @@ self.addEventListener("activate", (e) => {
 });
 self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET" || new URL(e.request.url).origin !== location.origin) return;
-  e.respondWith(caches.match(e.request, { ignoreSearch: true }).then((hit) => hit || fetch(e.request)));
+  e.respondWith(fresh(e.request));
 });
+// Online: always the newest copy (and keep it for later). Offline or slow (over 4 seconds): the saved copy.
+async function fresh(req) {
+  const cache = await caches.open(CACHE);
+  try {
+    const res = await Promise.race([fetch(req), new Promise((_, no) => setTimeout(no, 4000))]);
+    if (res.ok) cache.put(req, res.clone());
+    return res;
+  } catch (err) {
+    return (await cache.match(req, { ignoreSearch: true })) || Response.error();
+  }
+}
 `);
 console.log("sw.js: " + urls.length + " files, version " + version);
