@@ -331,4 +331,36 @@ test.describe("hand-off from the calculators", () => {
       await expect(page.getByText(/does not look like a Zerodha tradebook/)).toBeVisible();
     });
   });
+  test.describe("Folder auto-save", () => {
+    test("says so plainly when the browser cannot do it", async ({ page }) => {
+      await page.addInitScript(() => { delete (window as unknown as Record<string, unknown>).showDirectoryPicker; });
+      await open(page);
+      await page.getByRole("tab", { name: "Backup" }).click();
+      await expect(page.getByText("This browser cannot do this.")).toBeVisible();
+      await expect(page.getByRole("button", { name: "Choose a folder" })).toHaveCount(0);
+    });
+    test("saves a fresh copy after each change and can be stopped", async ({ page }) => {
+      // A real (private) browser folder stands in for the one a person would pick.
+      await page.addInitScript(() => { (window as unknown as Record<string, unknown>).showDirectoryPicker = () => navigator.storage.getDirectory(); });
+      await open(page);
+      await page.getByRole("tab", { name: "Backup" }).click();
+      await page.getByRole("button", { name: "Choose a folder" }).click();
+      await expect(page.getByText(/Saving to the folder/)).toBeVisible();
+      const read = () => page.evaluate(async () => { const d = await navigator.storage.getDirectory(); const names: string[] = []; for await (const k of (d as unknown as { keys(): AsyncIterable<string> }).keys()) names.push(k); const f = await (await d.getFileHandle("capital-first-journal-latest.json")).getFile(); return { names, json: JSON.parse(await f.text()) }; });
+      expect((await read()).json.format).toBe("cft-backup");
+
+      await page.getByRole("tab", { name: "Trades" }).click();
+      await plan(page, "sync", "100", "95", "10");
+      await expect.poll(async () => (await read()).json.data.journal.length).toBe(1);
+      const r = await read();
+      expect(r.names.filter((n) => /^capital-first-journal-\d{4}-\d{2}-\d{2}\.json$/.test(n))).toHaveLength(1);
+
+      await page.getByRole("tab", { name: "Backup" }).click();
+      await page.reload();
+      await page.getByRole("tab", { name: "Backup" }).click();
+      await expect(page.getByText(/Saving to the folder/)).toBeVisible(); // remembered after a reload
+      await page.getByRole("button", { name: "Stop saving to a folder" }).click();
+      await expect(page.getByRole("button", { name: "Choose a folder" })).toBeVisible();
+    });
+  });
 });

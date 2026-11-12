@@ -4,6 +4,7 @@ import { IndexedDbStore, type Store, type StoredRecord } from "../../core/src/st
 import { MODES, newTrade, newNote, recordEntry, addExit, amendPlan, statusOf, resultOf, tombstone, validatePlan, weekOf, weekResults, newReview, reviewId, REVIEW_RULES, type Mode, type Trade, type Note, type Review, type Result } from "../../core/src/journal";
 import { computeStats, lossLimitBreaches, MIN_TRADES_FOR_TRUST, type Stats } from "../../core/src/stats";
 import { tradesToCsv } from "../../core/src/export";
+import { FolderSync, folderSyncSupported } from "./folder-sync";
 import { parseTradebook, type ConsoleParse } from "../../core/src/console-import";
 import { exportBackup, encryptBackup, decryptBackup, parseBackup, previewImport, importBackup, BackupError, type BackupFile } from "../../core/src/backup";
 import { h, svg, fmtRs, fmtInt, parseRupees, parseNum, draft, type JournalDraft } from "./util";
@@ -43,6 +44,8 @@ export class LabJournal extends HTMLElement {
   private backupMsg: { text: string; kind: "ok" | "err" } | null = null;
   private pending: { file: BackupFile; preview: { added: number; updated: number; kept: number } } | null = null;
   private tb: { parse: ConsoleParse; fresh: Trade[]; dupes: number } | null = null;
+  private sync!: FolderSync;
+  private booted = false;
   private lastBackup: number | undefined;
   private openPanel = new Map<string, string>(); // trade id -> which panel is open
 
@@ -58,6 +61,7 @@ export class LabJournal extends HTMLElement {
     this.tabs = h("div", { class: "lab-tabs", role: "tablist", "aria-label": "Journal sections" });
     this.body = h("div", { class: "lab-jbody", role: "tabpanel" });
     root.append(this.banner, this.modeBox, this.tabs, this.body);
+    this.sync = new FolderSync({ get: (k) => this.store.getMeta("sync:" + k), set: (k, v) => this.store.setMeta("sync:" + k, v) });
     this.draft = draft.get(); draft.clear(); if (this.draft) { this.planOpen = true; }
     this.load().then(() => this.render()).catch(() => { this.body.replaceChildren(h("p", { class: "lab-err" }, "Could not open your saved journal. Try reloading the page.")); });
   }
@@ -70,6 +74,14 @@ export class LabJournal extends HTMLElement {
     const s = await this.store.get("settings", SETTINGS_ID);
     if (s) this.settings = s as Settings;
     this.lastBackup = (await this.store.getMeta("lastBackupAt")) as number | undefined;
+    if (!this.booted) { this.booted = true; await this.sync.restore(); } else void this.autoSave();
+  }
+  /** After any change, drop a fresh copy into the chosen folder. */
+  private async autoSave() {
+    if (this.sync.state !== "ok") return;
+    const text = JSON.stringify(await exportBackup(this.store), null, 2);
+    await this.sync.write(text, new Date().toISOString().slice(0, 10));
+    if (this.tab === "backup") this.render();
   }
   private async save(rec: StoredRecord, coll = "journal") { await this.store.put(coll, rec); await this.load(); this.render(); }
   private async saveSettings(patch: Partial<Settings>) { this.settings = { ...this.settings, ...patch, updated_at: nowIso() }; await this.store.put("settings", this.settings); }
@@ -362,8 +374,25 @@ export class LabJournal extends HTMLElement {
       if (parse.skipped.length) tbox.append(h("div", { class: "lab-conflicts", role: "note" }, h("strong", {}, `${parse.skipped.length} ${parse.skipped.length === 1 ? "row was" : "rows were"} not imported`), h("ul", {}, ...parse.skipped.slice(0, 20).map((k) => h("li", {}, `Row ${k.row}: ${k.reason}`))), parse.skipped.length > 20 ? h("p", {}, `And ${parse.skipped.length - 20} more.`) : null));
       tbox.append(h("div", { class: "lab-actions" }, fresh.length ? h("button", { type: "button", class: "lab-btn lab-btn-primary", onclick: () => void this.confirmTradebook() }, `Add ${fresh.length} to my Live journal`) : null, h("button", { type: "button", class: "lab-btn", onclick: () => { this.tb = null; this.render(); } }, "Cancel")));
     }
-    out.push(imp, tbox, msg);
+    out.push(this.folderBox(), imp, tbox, msg);
     return out;
+  }
+
+  private folderBox(): HTMLElement {
+    const box = h("section", { class: "lab-card-box lab-folder" }, h("h3", {}, "Save a copy to a folder automatically"));
+    if (!folderSyncSupported()) { box.append(h("p", { class: "lab-note" }, "This browser cannot do this. It works in Chrome, Edge and similar browsers on a computer. Use Download backup instead.")); return box; }
+    const f = this.sync, say = (t: string, k = "ok") => h("div", { class: `lab-msg lab-msg-${k}`, role: "status" }, t);
+    box.append(h("p", { class: "lab-note" }, "Pick a folder, for example one your cloud drive keeps in sync. After every change a fresh copy is saved there, plus one copy for each day. The copy is not locked, so pick a folder only you can open."));
+    const act = h("div", { class: "lab-actions" });
+    if (f.state === "none") act.append(h("button", { type: "button", class: "lab-btn lab-btn-primary", onclick: () => void f.choose().then(() => this.autoSave()).then(() => this.render()).catch((e) => { if ((e as Error).name !== "AbortError") this.backupMsg = { text: "Could not use that folder.", kind: "err" }; this.render(); }) }, "Choose a folder"));
+    else {
+      box.append(f.state === "ok" ? say(`Saving to the folder "${f.handle!.name}".${f.lastAt ? ` Last saved ${dateText(new Date(f.lastAt).toISOString())}.` : " It saves after your next change."}`)
+        : f.state === "needs-permission" ? say(`The browser needs your permission again to use "${f.handle!.name}".`, "err") : say(f.error, "err"));
+      if (f.state === "needs-permission") act.append(h("button", { type: "button", class: "lab-btn lab-btn-primary", onclick: () => void f.allowAgain().then(() => this.autoSave()).then(() => this.render()) }, "Allow again"));
+      if (f.state === "ok") act.append(h("button", { type: "button", class: "lab-btn", onclick: () => void this.autoSave().then(() => this.render()) }, "Save a copy now"));
+      act.append(h("button", { type: "button", class: "lab-btn", onclick: () => void f.stop().then(() => this.render()) }, "Stop saving to a folder"));
+    }
+    box.append(act); return box;
   }
 
   private async doExport(pass: string, share: boolean) {
