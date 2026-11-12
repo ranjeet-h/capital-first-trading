@@ -1,4 +1,4 @@
-.PHONY: e2e serve build check summary clean js test
+.PHONY: e2e serve build check summary clean js test deploy
 
 js:
 	node tools/build/bundle.mjs
@@ -26,6 +26,10 @@ e2e: summary js
 # Live-reloading local server at http://localhost:3000
 serve: summary js
 	cd mdbook && mdbook serve --open
+
+# Publish the book to GitHub Pages (gh-pages branch). No CI: run this by hand.
+deploy:
+	./tools/build/deploy.sh
 
 clean:
 	rm -rf mdbook/book

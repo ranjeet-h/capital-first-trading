@@ -13,6 +13,7 @@
 ![End-to-end tests](https://img.shields.io/badge/e2e%20tests-71-8b5cf6)
 ![Mobile friendly](https://img.shields.io/badge/mobile-friendly-f59e0b)
 
+**[Read it online](https://ranjeet-h.github.io/capital-first-trading/)** ·
 [Repository](https://github.com/ranjeet-h/capital-first-trading) ·
 [Master plan](PLAN.md) ·
 [Tool specs](LABS.md) ·
@@ -85,7 +86,11 @@ It is written in plain English, for readers of any age, for people who trade thr
 - **No tracking, no sign-up, no network calls.** Open it on a plane.
 - **Mobile first.** 44 px tap targets, 16 px inputs, no horizontal scroll, enforced by tests.
 
-## Quick start
+## Read it online
+
+Open **https://ranjeet-h.github.io/capital-first-trading/**. On a phone, use your browser's "Add to Home Screen" to install it. After the first visit it works with no internet.
+
+## Run it yourself
 
 You need [Node.js](https://nodejs.org) 20+, Python 3, and [mdBook](https://rust-lang.github.io/mdBook/) (`cargo install mdbook`, tested with 0.4.52).
 
@@ -104,6 +109,7 @@ make build     # static site in mdbook/book/, with offline support
 make test      # 48 unit tests (Vitest)
 make e2e       # 71 browser tests on desktop and phone (Playwright)
 make check     # structural checks on every chapter and quiz
+make deploy    # build and publish the site to GitHub Pages (gh-pages branch)
 ```
 
 Use `make serve`, not a double-clicked HTML file. Quizzes load their questions with `fetch`, which browsers block on `file://`.
