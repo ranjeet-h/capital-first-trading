@@ -167,6 +167,7 @@ The script writes these files into `outDir`:
 | --- | --- |
 | `forward_log.csv` | One row for each hypothetical trade. The trade is either still open or closed. |
 | `forward_state.json` | The rule's fingerprint (a short code that changes if the rule changes), the start date, the last day run, the open positions, and how the same rule did on days before the start date. |
+| `forward_pending.csv` | What the rule would do at the next open: one row per buy or sell, with the next trading day. It is a note to yourself. Nothing is sent anywhere. The next-day date comes from a holiday list that has only one source, so check it against NSE. |
 | `forward_warnings.log` | Problems the script found. Read this file first when the script stops. |
 | `forward.lock` | Exists only while a run is going. It is removed when the run ends. |
 

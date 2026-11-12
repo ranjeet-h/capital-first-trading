@@ -32,7 +32,7 @@ test.describe("Strategy tester", () => {
   });
   test("every experiment runs and explains itself", async ({ page }) => {
     await open(page); await run(page);
-    const names = [/^1\. Test on days/, /^2\. Peeking/, /^3\. Shares that disappeared/, /^4\. What if costs/, /^5\. Trying many settings/, /^6\. Walk-forward/, /^7\. The same trades/];
+    const names = [/^1\. Test on days/, /^2\. Peeking/, /^3\. Shares that disappeared/, /^4\. What if costs/, /^5\. Trying many settings/, /^6\. Walk-forward/, /^7\. The same trades/, /^8\. Does it work/];
     for (const n of names) {
       const d = page.locator("details.lab-exp").filter({ has: page.locator("summary", { hasText: n }) });
       await d.locator("summary").click();
@@ -41,6 +41,21 @@ test.describe("Strategy tester", () => {
     }
     await expect(page.getByText("Never seen (from")).toBeVisible();
   });
+  test("shows one trade on a chart, and changes when another is picked", async ({ page }) => {
+    await open(page); await run(page);
+    await expect(page.getByRole("heading", { name: "Look at one trade" })).toBeVisible();
+    const chart = page.locator(".lab-replay svg.lab-chart");
+    await expect(chart).toBeVisible();
+    const first = await page.locator(".lab-replay li").first().innerText();
+    await page.locator('select[name="tradepick"]').selectOption({ index: 1 });
+    await expect(page.locator(".lab-replay li").first()).not.toHaveText(first);
+  });
+  test("the experiments keep the page responsive (worker or not)", async ({ page }) => {
+    await open(page); await run(page);
+    const d = page.locator("details.lab-exp").filter({ has: page.locator("summary", { hasText: /^6\. Walk-forward/ }) });
+    await d.locator("summary").click(); await d.getByRole("button", { name: "Run this" }).click();
+    await expect(d.locator("table")).toBeVisible({ timeout: 30_000 });
+  });
   test("runs on the reader's own price files, and refuses a bad file", async ({ page }) => {
     await open(page);
     await page.getByText("Prices: made-up or your own", { exact: true }).click();
@@ -48,7 +63,9 @@ test.describe("Strategy tester", () => {
     await page.locator('input[name="pricefiles"]').setInputFiles([d + "AAA.csv", d + "BBB.csv", d + "CCC.csv"]);
     await expect(page.getByText("Using your prices: 3 shares")).toBeVisible();
     await run(page);
-    await expect(page.getByText("price files chosen by the reader")).toHaveCount(0);
+    const r8 = page.locator("details.lab-exp").filter({ has: page.locator("summary", { hasText: /^8\. Does it work/ }) });
+    await r8.locator("summary").click(); await r8.getByRole("button", { name: "Run this" }).click();
+    await expect(r8.getByText("carry no market labels")).toBeVisible();
     await page.locator('input[name="pricefiles"]').setInputFiles({ name: "BAD.csv", mimeType: "text/csv", buffer: Buffer.from("date,open,high,low,close,volume\n2020-01-01,10,9,8,9,100\n") });
     await expect(page.getByRole("alert").filter({ hasText: "Not used" })).toBeVisible();
   });

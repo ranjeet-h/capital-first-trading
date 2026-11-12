@@ -193,3 +193,15 @@ a.lab-btn-primary, .content a.lab-btn-primary:link, .content a.lab-btn-primary:v
 .lab-bt .lab-more > summary::after { content: "+"; font-size: 1.4em; opacity: .6; }
 .lab-bt .lab-more[open] > summary::after { content: "\2212"; }
 .lab-bt .lab-more[open] > summary { margin-bottom: 1em; }
+
+/* Strategy tester: look at one trade */
+.lab-bt select { font-size: 1em; min-height: 2.75em; width: 100%; max-width: 100%; padding: 0.4em 0.6em; border: 1px solid var(--lab-line, #8886); border-radius: 0.4em; background: var(--bg, transparent); color: inherit; }
+.lab-replay .lab-chart { width: 100%; height: auto; color: var(--lab-accent); }
+.lab-legend { margin: 0.6em 0 0; padding-left: 1.2em; line-height: 1.5; }
+@media (max-width: 480px) { .lab-bt .lab-exp-out .lab-table th, .lab-bt .lab-exp-out .lab-table td { padding-left: 0.35em; padding-right: 0.35em; font-size: 0.92em; } }
+@media (max-width: 480px) {
+  .lab-bt .lab-exp-out { overflow-x: auto; }
+  .lab-bt .lab-exp-out .lab-table { width: 100%; font-size: 0.85em; }
+  .lab-bt .lab-exp-out .lab-table th { white-space: normal; letter-spacing: 0; overflow-wrap: normal; word-break: normal; }
+  .lab-bt .lab-exp-out .lab-table td.lab-num { white-space: nowrap; }
+}

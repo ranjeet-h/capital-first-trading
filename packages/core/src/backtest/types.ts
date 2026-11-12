@@ -24,5 +24,8 @@ export interface BtTrade {
   stopPaise: number; grossPaise: number; costsPaise: number; netPaise: number; plannedRiskPaise: number; r: number;
   exitReason: "stop" | "signal" | "delisted" | "end";
 }
-export interface RunResult { trades: BtTrade[]; equity: { d: string; v: number }[]; skipped: { d: string; symbol: string; why: string }[]; exposure: number }
+export interface RunResult { trades: BtTrade[]; equity: { d: string; v: number }[]; skipped: { d: string; symbol: string; why: string }[]; exposure: number;
+  /** Orders the rule would place for the next trading day, read from the last day's close. Nothing is filled yet. */
+  pending?: PendingOrder[] }
+export interface PendingOrder { symbol: string; action: "buy" | "sell" }
 export const DEFAULT_CONFIG: Config = { capitalPaise: 10_000_000, slippageBps: 5, costMult: 1, fillAt: "next_open" };

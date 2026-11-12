@@ -9,8 +9,8 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-2563eb.svg)](LICENSE)
 ![Chapters](https://img.shields.io/badge/chapters-99-16a34a)
 ![Works offline](https://img.shields.io/badge/works-offline-0ea5e9)
-![Unit tests](https://img.shields.io/badge/unit%20tests-92-8b5cf6)
-![End-to-end tests](https://img.shields.io/badge/e2e%20tests-111-8b5cf6)
+![Unit tests](https://img.shields.io/badge/unit%20tests-100-8b5cf6)
+![End-to-end tests](https://img.shields.io/badge/e2e%20tests-115-8b5cf6)
 ![Mobile friendly](https://img.shields.io/badge/mobile-friendly-f59e0b)
 
 **[Read it online](https://ranjeet-h.github.io/capital-first-trading/)** ·
@@ -108,8 +108,8 @@ Other commands:
 
 ```sh
 make build     # static site in mdbook/book/, with offline support
-make test      # 92 unit tests (Vitest)
-make e2e       # 111 browser tests on desktop and phone (Playwright)
+make test      # 100 unit tests (Vitest)
+make e2e       # 115 browser tests on desktop and phone (Playwright)
 make check     # structural checks on every chapter and quiz
 make deploy    # build and publish the site to GitHub Pages (gh-pages branch)
 ```
@@ -149,8 +149,8 @@ The journal never leaves your device. Browsers can clear their own storage, so u
 - ✅ Optional automatic copy to a folder you pick (Chrome and Edge on a computer)
 - ✅ Journal auto-fill from the calculators
 - ✅ Import from a Zerodha Console tradebook (cash shares, long trades)
-- ✅ Strategy tester on made-up prices, with seven "why backtests lie" experiments, including walk-forward testing, and you can use your own price files. Not built yet: a regime view, per-trade chart replay
-- ✅ Forward-test script (`tools/forward-test`) and importer. Prices come from files you save yourself; downloading prices is not built in
+- ✅ Strategy tester on made-up prices, with eight "why backtests lie" experiments (including walk-forward and a kind-of-market view), a chart of any single trade, and your own price files
+- ✅ Forward-test script (`tools/forward-test`) and importer. It also writes what the rule would do at the next open. Prices come from files you save yourself; downloading prices is not built in, on purpose
 
 The full roadmap is in [PLAN.md](PLAN.md) and [LABS.md](LABS.md).
 

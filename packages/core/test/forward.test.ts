@@ -78,3 +78,18 @@ describe("fail closed checks", () => {
     expect(marketIsFinished(new Date("2026-11-10T04:00:00Z"), "2026-11-09")).toBe(true);  // yesterday's bar is complete
   });
 });
+
+import { splitLike, nextTradingDay, toPending } from "../src/forward";
+describe("split signs, next day and pending orders", () => {
+  it("spots common split ratios and ignores ordinary moves", () => {
+    expect(splitLike(0.5)).toBe("1/2"); expect(splitLike(0.34)).toBe("1/3"); expect(splitLike(0.97)).toBeNull(); expect(splitLike(1.02)).toBeNull();
+  });
+  it("skips weekends and closed days", () => {
+    expect(nextTradingDay("2026-11-13")).toBe("2026-11-16");
+    expect(nextTradingDay("2026-11-23", ["2026-11-24"])).toBe("2026-11-25");
+  });
+  it("writes one row per pending order", () => {
+    const csv = toPending({ closed: [], open: [], pending: [{ symbol: "AAA", action: "buy" }], lastDay: "x", before: {} as never, strategyHash: "h" }, "2026-11-16");
+    expect(csv.split("\n")[1]).toBe("AAA,buy,2026-11-16,Would buy at the next open");
+  });
+});

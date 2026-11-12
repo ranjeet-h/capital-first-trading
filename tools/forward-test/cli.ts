@@ -3,7 +3,8 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync, ope
 import { join, resolve, dirname } from "node:path";
 import type { Rates } from "../../packages/core/src/costs";
 import ratesJson from "../../data/rates/zerodha-equity.json";
-import { parseBarsCsv, checkSeries, runForward, toLog, marketIsFinished, strategyHash, type Problem, type ForwardConfig } from "../../packages/core/src/forward";
+import { parseBarsCsv, checkSeries, runForward, toLog, marketIsFinished, strategyHash, toPending, nextTradingDay, type Problem, type ForwardConfig } from "../../packages/core/src/forward";
+import holidays from "../../data/facts/nse-holidays-2026.json";
 import { validateStrategy } from "../../packages/core/src/backtest/engine";
 import type { Strategy } from "../../packages/core/src/backtest/types";
 
@@ -52,9 +53,13 @@ export function runCli(argv: string[], now: Date, say: (s: string) => void = con
     const cfg: ForwardConfig = { strategy, startDate: raw.startDate, capitalPaise: Math.round(raw.capitalRupees * 100), slippageBps: raw.slippageBps, symbols: raw.symbols, source: "csvDir" };
     const res = runForward(rates ?? (ratesJson as unknown as Rates), universe, cfg);
     writeFileSync(log, toLog(res, "csvDir"));
+    const next = nextTradingDay(res.lastDay, holidays[0]!.value);
+    writeFileSync(join(out, "forward_pending.csv"), toPending(res, next));
     writeFileSync(statePath, JSON.stringify({ version: 1, strategyHash: hash, strategyName: strategy.name, startDate: raw.startDate, lastDay: res.lastDay, source: "csvDir", open: res.open.map((t) => ({ symbol: t.symbol, entryDay: t.entryDay, entryPaise: t.entryPaise, qty: t.qty, stopPaise: t.stopPaise })), before: res.before }, null, 2) + "\n");
     say(`Done. Prices to ${res.lastDay}. Closed trades: ${res.closed.length}. Open now: ${res.open.length}.`);
     for (const t of res.open) say(`  open: ${t.symbol} ${t.qty} shares from ${t.entryDay}`);
+    for (const o of res.pending) say(`  for ${next}: would ${o.action} ${o.symbol} at the open`);
+    say(`The next trading day is ${next} (from a holiday list that has one source; check it against NSE).`);
     say("These are hypothetical. No order was placed anywhere.");
     return 0;
   } finally { try { unlinkSync(lockPath); } catch { /* already gone */ } }

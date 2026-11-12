@@ -130,3 +130,40 @@ describe("walk-forward", () => {
     expect(walkForward(rates, generateUniverse(3, 4, 2).map((x) => ({ ...x, bars: x.bars.slice(0, 60) })), s, DEFAULT_CONFIG).folds).toHaveLength(0);
   });
 });
+
+describe("pending orders", () => {
+  it("lists the orders read from the last close, and none fill early", () => {
+    const u = generateUniverse(5, 6, 4), s: Strategy = { version: 1, name: "b", type: "breakout", lookback: 20, atrPeriod: 14, stopAtr: 2, trailAtr: 3, riskPct: 1, maxPositions: 5 };
+    const days = [...new Set(u.flatMap((x) => x.bars.map((b) => b.d)))].sort();
+    let found = false;
+    for (let i = 300; i < 700 && !found; i += 7) {
+      const r = runBacktest(rates, u, s, { ...DEFAULT_CONFIG, to: days[i]! });
+      if (r.pending!.length) { found = true; const r2 = runBacktest(rates, u, s, { ...DEFAULT_CONFIG, to: days[i + 1]! }); const open = new Set(r2.trades.filter((t) => t.entryDay === days[i + 1]).map((t) => t.symbol)); for (const o of r.pending!.filter((x) => x.action === "buy")) expect(open.has(o.symbol) || r2.skipped.some((k) => k.symbol === o.symbol)).toBe(true); }
+    }
+    expect(found).toBe(true);
+  });
+});
+
+import { regimeBreakdown, tradeWindow } from "../src/backtest/replay";
+import { computeExperiment } from "../src/backtest/compute";
+describe("regime view, trade window and the experiment dispatcher", () => {
+  const u = generateUniverse(7, 8, 6), s: Strategy = { version: 1, name: "b", type: "breakout", lookback: 20, atrPeriod: 14, stopAtr: 2, trailAtr: 3, riskPct: 1, maxPositions: 5 };
+  const r = runBacktest(rates, u, s, DEFAULT_CONFIG);
+  it("puts every trade in exactly one kind of market", () => {
+    const rows = regimeBreakdown(r.trades, u)!;
+    expect(rows.reduce((a, x) => a + x.trades, 0)).toBe(r.trades.length);
+    expect(rows.reduce((a, x) => a + x.netPaise, 0)).toBe(r.trades.reduce((a, t) => a + t.netPaise, 0));
+  });
+  it("has no regime view for prices without labels", () => {
+    expect(regimeBreakdown(r.trades, u.map((x) => ({ ...x, regimes: undefined })))).toBeNull();
+  });
+  it("shows the days around a trade, with entry and exit inside", () => {
+    const t = r.trades[0]!, v = tradeWindow(u.find((x) => x.symbol === t.symbol)!, t)!;
+    expect(v.bars[v.entryIdx]!.d).toBe(t.entryDay); expect(v.bars[v.exitIdx]!.d <= t.exitDay).toBe(true); expect(v.exitIdx).toBeGreaterThanOrEqual(v.entryIdx);
+  });
+  it("gives the same result by name as by direct call, and survives a JSON round trip (worker messages)", () => {
+    const a = { rates, universe: u, strategy: s, cfg: DEFAULT_CONFIG, seed: 7, trades: r.trades };
+    const via = computeExperiment("cost", JSON.parse(JSON.stringify(a)));
+    expect(via).toEqual(costSensitivity(rates, u, s, DEFAULT_CONFIG));
+  });
+});

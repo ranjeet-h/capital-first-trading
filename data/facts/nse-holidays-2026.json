@@ -1,0 +1,12 @@
+[
+  {
+    "id": "nse_equity_weekday_holidays_2026",
+    "value": ["2026-01-15","2026-01-26","2026-03-03","2026-03-26","2026-03-31","2026-04-03","2026-04-14","2026-05-01","2026-05-28","2026-06-26","2026-09-14","2026-10-02","2026-10-20","2026-11-10","2026-11-24","2026-12-25"],
+    "unit": "weekday dates when the NSE equity segment is closed in 2026",
+    "sourceUrl": "https://www.bajajbroking.in/nse-holidays",
+    "sourceName": "Bajaj Broking NSE holiday list 2026 (one source only; not yet checked against NSE's own circular)",
+    "verifiedOn": "2026-11-12",
+    "reviewEveryDays": 30,
+    "notes": "Used only to word a message and to name the next trading day. It never skips a data check. Another site lists 16 days and one lists 15, so compare with NSE's circular before relying on it."
+  }
+]

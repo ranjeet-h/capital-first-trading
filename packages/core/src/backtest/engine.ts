@@ -6,7 +6,7 @@
 //  - Every sale pays the real Zerodha costs (delivery). Optional slippage on each side. No borrowed money.
 import { computeCosts, type Rates } from "../costs";
 import { atr, highestBefore, sma } from "./indicators";
-import type { BtTrade, Config, RunResult, Series, Strategy } from "./types";
+import type { BtTrade, PendingOrder, Config, RunResult, Series, Strategy } from "./types";
 
 interface Pos { symbol: string; qty: number; entry: number; stop: number; initialStop: number; entryDay: string; atrAtSignal: number }
 interface Pend { symbol: string; atr: number }
@@ -95,7 +95,8 @@ export function runBacktest(rates: Rates, universe: Series[], s: Strategy, cfg: 
     if (pos.size) expo++;
     equity.push({ d: day, v: equityNow(di) });
   }
+  const pending: PendingOrder[] = [...pend.map((o) => ({ symbol: o.symbol, action: "buy" as const })), ...[...pendExit].map((symbol) => ({ symbol, action: "sell" as const }))].sort((a, b) => (a.symbol < b.symbol ? -1 : 1));
   for (const p of [...pos.values()]) { const x = S.find((q) => q.u.symbol === p.symbol)!; const i = (() => { let k = -1; x.u.bars.forEach((b, j) => { if (b.d <= days[hi]!) k = j; }); return k; })(); close(p, days[hi]!, x.u.bars[Math.max(0, i)]!.c, "end"); }
   if (equity.length) equity[equity.length - 1]!.v = cash;
-  return { trades, equity, skipped, exposure: equity.length ? expo / equity.length : 0 };
+  return { trades, equity, skipped, exposure: equity.length ? expo / equity.length : 0, pending };
 }

@@ -197,7 +197,7 @@ Open trades excluded from realised stats but shown in open-risk; trades spanning
 
 ## Lab 4: Backtester with costs, walk-forward and out-of-sample splits
 
-> **Status (2026-11-12):** First version shipped on made-up prices: three rule types, costs and slippage, six experiments (split test, look-ahead, survivorship, costs, overfitting, shuffle). Not built yet: walk-forward, real-data import, regime view, background worker, per-trade chart replay.
+> **Status (2026-11-12):** First version shipped on made-up prices: three rule types, costs and slippage, eight experiments (split test, look-ahead, survivorship, costs, overfitting, walk-forward, shuffle, regime view). Also built: use your own price files (one CSV per share, checked before use), a chart of any single trade, and the experiments run in a Web Worker (with a fallback on the page). Not built: a price download, and regime labels for your own files (only made-up prices carry them).
 
 **Purpose.** Show how a rule-based strategy would have behaved on past data, including costs, and teach why backtests lie.
 
@@ -269,7 +269,7 @@ No trades generated; one trade; all losers; split-adjusted vs unadjusted mismatc
 
 ## Lab 5: Forward-test script and importer
 
-> **Status (2026-11-12):** First version shipped. The script reads price files from a folder (`csvDir`) and reuses the Lab 4 engine, so results match it exactly. It stops on bad or stale data, refuses before 15:45 India time, uses a lock file, and is safe to run twice. The log is rebuilt every run. The importer previews, merges without copies, and compares with earlier days. Not built yet: Yahoo download, split detection beyond the 20% jump check, a holiday calendar, pending orders for tomorrow.
+> **Status (2026-11-12):** First version shipped. The script reads price files from a folder (`csvDir`) and reuses the Lab 4 engine, so results match it exactly. It stops on bad or stale data, refuses before 15:45 India time, uses a lock file, and is safe to run twice. The log is rebuilt every run. The importer previews, merges without copies, and compares with earlier days. Also built: pending orders for tomorrow (`forward_pending.csv`), split and bonus ratio detection, and a next-trading-day note from a holiday list. That list has one source only (`data/facts/nse-holidays-2026.json`) and is not checked against NSE's own circular. It is used for wording only and never skips a data check. Not built, on purpose: downloading prices from a website. Terms of use and a changing format make that unsafe to promise, so prices stay files you save yourself.
 
 **Purpose.** Test a fixed strategy on **unseen real prices** by logging hypothetical trades day by day. It places no orders and holds no credentials. This is the honest check that a backtest cannot give.
 

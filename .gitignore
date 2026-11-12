@@ -8,3 +8,4 @@ __pycache__/
 .pages-build/
 tools/forward-test/.dist/
 mdbook/src/labs/downloads/
+mdbook/src/labs/bt-worker.js

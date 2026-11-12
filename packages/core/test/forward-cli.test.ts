@@ -12,6 +12,8 @@ describe("forward script", () => {
   it("matches the committed expected log, and a second run changes nothing", () => {
     const d = fixture(), a = go(d);
     expect(a.code).toBe(0);
+    expect(readFileSync(join(d, "out/forward_pending.csv"), "utf8").split("\n")[0]).toBe("symbol,action,for_day,note");
+    expect(a.text).toMatch(/next trading day is 2016-12-07/);
     const log = readFileSync(join(d, "out/forward_log.csv"), "utf8");
     expect(log).toBe(readFileSync("tools/forward-test/sample/expected_forward_log.csv", "utf8"));
     const state = readFileSync(join(d, "out/forward_state.json"), "utf8");

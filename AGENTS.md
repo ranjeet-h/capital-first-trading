@@ -35,9 +35,9 @@ Run these from the repo root.
 - `packages/core/src/`: pure TypeScript logic (costs, sizing, journal, stats, store, backup, console import). Tests in `packages/core/test/`.
 - `packages/ui/src/`: the web components for the three labs.
 - `data/rates/`: Zerodha charge rates, with source and verification date.
-- `data/facts/`: checked facts, each with `sourceUrl`, `verifiedOn` and `reviewEveryDays`.
+- `data/facts/`: checked facts (including the single-source NSE holiday list used by the forward script), each with `sourceUrl`, `verifiedOn` and `reviewEveryDays`.
 - `tests/e2e/`: Playwright specs (`labs`, `journal`, `offline`).
-- `tools/build/`: `gen_summary.py`, `gen_sw.mjs`, `bundle.mjs` (also builds the Forward test page downloads into `mdbook/src/labs/downloads/`, git-ignored), `deploy.sh`.
+- `tools/build/`: `gen_summary.py`, `gen_sw.mjs`, `bundle.mjs` (also builds the Forward test page downloads into `mdbook/src/labs/downloads/` and the strategy tester's `mdbook/src/labs/bt-worker.js`, both git-ignored), `deploy.sh`.
 - `tools/forward-test/`: the forward-test script (`cli.ts`, `main.ts`), a sample, and a README. The book page offers the bundled script as a download.
 - `tools/check/`: `check_chapters.py` and two other check scripts.
 - `docs/`: design notes and screenshots. `LABS.md` holds the lab specs.

@@ -5,12 +5,12 @@ import { rupeesToPaise, splitCsvLine } from "./console-import";
 import type { Trade } from "./journal";
 import { runBacktest, validateStrategy } from "./backtest/engine";
 import { summarise } from "./backtest/metrics";
-import { DEFAULT_CONFIG, type Bar, type BtTrade, type Series, type Strategy } from "./backtest/types";
+import { DEFAULT_CONFIG, type Bar, type BtTrade, type PendingOrder, type Series, type Strategy } from "./backtest/types";
 
 export interface ForwardConfig { strategy: Strategy; startDate: string; capitalPaise: number; slippageBps?: number; symbols: string[]; source: string }
 export interface Problem { symbol: string; day?: string; why: string }
 export interface BtSummary { period: string; trades: number; winRatePct: number | null; expectancyR: number | null; netPaise: number }
-export interface ForwardResult { closed: BtTrade[]; open: BtTrade[]; lastDay: string; before: BtSummary; strategyHash: string }
+export interface ForwardResult { closed: BtTrade[]; open: BtTrade[]; pending: PendingOrder[]; lastDay: string; before: BtSummary; strategyHash: string }
 
 /** A short fixed fingerprint of text (FNV-1a), so a row can say which rule made it. */
 export function hashText(s: string): string {
@@ -53,6 +53,10 @@ export function parseBarsCsv(symbol: string, csv: string): { series: Series; pro
   return { series: { symbol, bars, delisted: false }, problems };
 }
 
+const SPLITS: [number, string][] = [[0.5, "1/2"], [2 / 3, "2/3"], [1 / 3, "1/3"], [0.25, "1/4"], [0.2, "1/5"], [0.1, "1/10"]];
+/** A one-day price ratio that sits very close to a common split or bonus ratio. */
+export function splitLike(ratio: number): string | null { const hit = SPLITS.find(([r]) => Math.abs(ratio / r - 1) < 0.03); return hit ? hit[1] : null; }
+
 /** Checks that make the script stop instead of trading on bad data. */
 export function checkSeries(s: Series, latestDay: string): Problem[] {
   const out: Problem[] = [];
@@ -61,6 +65,7 @@ export function checkSeries(s: Series, latestDay: string): Problem[] {
     if (b.h < Math.max(b.o, b.c, b.l) || b.l > Math.min(b.o, b.c, b.h)) out.push({ symbol: s.symbol, day: b.d, why: "High and low do not fit the open and close." });
     if (b.v === 0) out.push({ symbol: s.symbol, day: b.d, why: "No shares traded that day." });
     if (i && Math.abs(b.c / s.bars[i - 1]!.c - 1) > 0.2) out.push({ symbol: s.symbol, day: b.d, why: "The price moved more than 20% in one day. Check for a split or a bonus." });
+    if (i) { const k = splitLike(b.c / s.bars[i - 1]!.c); if (k) out.push({ symbol: s.symbol, day: b.d, why: `The price fell to about ${k} of the day before. That looks like a split or a bonus. Use prices that are adjusted for it.` }); }
     if (i && b.d === s.bars[i - 1]!.d) out.push({ symbol: s.symbol, day: b.d, why: "The same day appears twice." });
   });
   const last = s.bars[s.bars.length - 1]!.d;
@@ -84,7 +89,7 @@ export function runForward(rates: Rates, universe: Series[], cfg: ForwardConfig)
   const bt = back.length ? runBacktest(rates, universe, cfg.strategy, { ...base, to: back[back.length - 1] }) : null;
   const s = bt ? summarise(bt, cfg.capitalPaise) : null;
   const before: BtSummary = { period: back.length ? `${back[0]} to ${back[back.length - 1]}` : "no earlier prices", trades: bt?.trades.length ?? 0, winRatePct: s && s.stats.count ? s.stats.winRate * 100 : null, expectancyR: s && s.stats.rCount ? s.stats.expectancyR : null, netPaise: bt ? bt.trades.reduce((a, t) => a + t.netPaise, 0) : 0 };
-  return { closed: now.trades.filter((t) => t.exitReason !== "end"), open: now.trades.filter((t) => t.exitReason === "end"), lastDay, before, strategyHash: strategyHash(cfg.strategy) };
+  return { closed: now.trades.filter((t) => t.exitReason !== "end"), pending: now.pending ?? [], open: now.trades.filter((t) => t.exitReason === "end"), lastDay, before, strategyHash: strategyHash(cfg.strategy) };
 }
 
 const rs = (p: number) => (p / 100).toFixed(2);
@@ -120,4 +125,17 @@ export function parseForwardLog(csv: string, now: string): LogParse {
       exits: cd && exit !== null ? [{ at: at(cd, "15:30:00"), qty, pricePaise: exit }] : [], costs_paise: costs, emotions: [], tags: ["forward"], notes: "" });
   }
   return { trades, skipped };
+}
+
+export const PENDING_HEADER = ["symbol", "action", "for_day", "note"];
+/** What the rule would do at the next open. Written as plain rows; nothing is sent anywhere. */
+export function toPending(res: ForwardResult, nextDay: string): string {
+  return [PENDING_HEADER.join(","), ...res.pending.map((o) => [o.symbol, o.action, nextDay, o.action === "buy" ? "Would buy at the next open" : "Would sell at the next open"].join(","))].join("\n") + "\n";
+}
+
+/** The next weekday after a date that is not in the given closed-days list. */
+export function nextTradingDay(after: string, closed: string[] = []): string {
+  const d = new Date(after + "T00:00:00Z");
+  do d.setUTCDate(d.getUTCDate() + 1); while (d.getUTCDay() === 0 || d.getUTCDay() === 6 || closed.includes(d.toISOString().slice(0, 10)));
+  return d.toISOString().slice(0, 10);
 }
