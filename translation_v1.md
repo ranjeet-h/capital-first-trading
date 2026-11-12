@@ -152,13 +152,62 @@ paths in `book.toml` relative to the book root, so `theme/` (including generated
    practice, large prose goes to Haiku 5.5 subagents; the pilot checks that its Marathi is
    good enough, and the pilot decides the model for the rest). The draft is saved as the
    overlay with `status: draft` in `manifest.json`.
-3. A Marathi reader reviews it in the built page and fixes it, then the chapter is marked
-   `reviewed` with a name and date. Unreviewed drafts may be published only with the draft
-   notice from mechanism 2.
+3. The maintainer reads it in the built page and fixes it, then the chapter is marked
+   `reviewed` with a date. Drafts may be published at any time with the draft notice from
+   mechanism 2. Reader corrections later are ordinary small pull requests or issues.
 4. `make check BOOK_LANG=mr` must pass.
 5. Order: pilot one chapter, then track 00 to 10. Spot-check at least 1 in 5 chapters of
    each track even after the pilot, because errors vary by topic (derivatives and tax are
    the highest risk).
+
+## What makes the translation good (quality plan)
+
+1. **A real glossary, built from the book itself.** `tools/i18n/extract_terms.py` lists
+   every bold term, heading word and repeated phrase from the English chapters, with the
+   chapter ids where it appears. The first glossary is drafted from that list, then the
+   maintainer fixes it once. About 150 to 250 terms cover the book. Each entry has the
+   Marathi form, whether the English word is kept in brackets on first use, and a short
+   note on when not to use it.
+2. **Plain Marathi for every reader.** Same rule as the English book: easy words, short
+   sentences. Use the words Marathi readers really say about markets. Where traders
+   normally say the English word (stop-loss, demat, margin, ETF), keep it in Devanagari
+   or Latin script as the glossary says, instead of a stiff Sanskrit coinage. One term, one
+   translation, everywhere.
+3. **Consistency check.** The checker flags a glossary term that appears in the English
+   page but whose approved Marathi form is missing, and flags known wrong variants
+   (listed in the glossary under "do not use"). This catches drift across 99 chapters.
+4. **Two passes, not one.** Pass 1 drafts from English plus glossary. Pass 2 is a separate
+   LLM check that reads the Marathi *without* the English, summarises what it says back in
+   English, and the diff against the original is shown to the reviewer. Meaning drift
+   (for example "can lose money" turning into "will lose money") then stands out, and the
+   maintainer's time goes to those spots first instead of reading every line.
+5. **Risk-weighted review order.** Review first: Track 0 (first impression), anything about
+   costs, tax, leverage, F&O and loss figures, then the quizzes' explanations, then the
+   rest. Review levels are `draft`, `reviewed` (maintainer) and `confirmed` (a reader's
+   correction was checked and merged).
+6. **Examples that work in Marathi.** Keep Indian names, rupee amounts and tickers, but
+   swap English-only idioms and wordplay for Marathi equivalents. Quiz prompts keep the
+   same facts and the same one correct answer.
+7. **Readable on a phone.** Marathi text is longer than English. The Marathi e2e run checks
+   tables and the quiz layout for overflow at phone width.
+
+## Reader feedback loop (open source, no network from the book)
+
+- **A "Suggest a correction" link on every Marathi page**, added by the theme. It is an
+  ordinary link the reader chooses to click, not a network call from the book. It opens a
+  new GitHub issue with a ready template that already holds the chapter id, the page
+  address and the language, so the reader only writes what is wrong and what they think is
+  better. The page also says the book works offline and the link needs internet.
+- **Issue template and label:** `translation-mr`, with fields: chapter, the sentence, the
+  better wording, and whether it is wrong, unclear or just awkward.
+- **`CONTRIBUTING-i18n.md`:** how to fix a sentence by editing one overlay file and opening
+  a pull request, the glossary rules, and that `make check BOOK_LANG=mr` must pass.
+  Corrections are small text changes, so they are easy to merge.
+- **Credits:** a `docs/i18n/CONTRIBUTORS.md` list of people who improved the translation.
+- **Public status:** a generated page in the Marathi book, "How much is translated", showing
+  chapters translated, reviewed and confirmed, so readers know what to trust.
+- **Triage routine:** corrections are batched. After merging, `make i18n-status` shows the
+  chapter as `confirmed` and the version is published with `make deploy`.
 
 ## Phases
 
@@ -170,10 +219,10 @@ paths in `book.toml` relative to the book root, so `theme/` (including generated
   version); the Marathi build with an empty overlay is the English book, every page
   marked as fallback, no dead links; unit tests for the assembler (fallback, overlay,
   orphan overlay file, id mismatch).
-- **Phase 1, Marathi pilot:** glossary, one chapter (`T0.1`) and its quiz, full
+- **Phase 1, Marathi pilot:** extract terms and draft the glossary, the maintainer's glossary pass, issue template and `CONTRIBUTING-i18n.md`, the "Suggest a correction" link, one chapter (`T0.1`) and its quiz, full
   `make check BOOK_LANG=mr`, a small `tests/e2e/mr.spec.ts` (switcher, fallback notice,
   draft notice, quiz feedback in Marathi, no horizontal scroll or tap-target problems on
-  desktop and phone, offline load of `/mr/`), human review, and a search test (the stock
+  desktop and phone, offline load of `/mr/`), the maintainer's review, and a search test (the stock
   mdBook search tokenises Devanagari plainly, so check that Marathi words are found).
 - **Phase 2, rollout:** tracks 00 to 10, a few chapters at a time. `/mr/` goes live after
   Phase 1 passes, with fallback and draft notices doing their job.
@@ -200,8 +249,11 @@ paths in `book.toml` relative to the book root, so `theme/` (including generated
 3. **Publishing:** go live at `/mr/` after the pilot, with fallback and draft notices.
 4. **Labs UI stays English in v1:** confirmed by the maintainer; quiz UI strings are the
    one addition.
-5. **Reviewer:** still open. Who reviews Marathi (glossary and chapters)? Without a named
-   reviewer nothing can move past `draft`.
+5. **Reviewer: decided.** The maintainer reviews the glossary and the chapters. After
+   publishing, readers send corrections and the translation improves gradually, which is
+   the point of it being open source. Nothing waits for perfection: a chapter goes live as
+   `draft`, becomes `reviewed` after the maintainer's pass, and keeps improving from
+   reader feedback.
 6. **Digits:** Western digits (0 to 9) everywhere. Recommended so numbers match the
    calculators, quizzes and the number-parity check.
 
@@ -224,3 +276,5 @@ paths in `book.toml` relative to the book root, so `theme/` (including generated
 | Marathi e2e was vague | A small dedicated spec, not the English suite |
 | Devanagari digits, line height, search quality, size, English-authoritative notice not covered | Added (mechanisms 8, 9, 12, workflow, Phase 1) |
 | Process note about the plan directory | Removed |
+| Reviewer decided: the maintainer, then readers over time | Draft/reviewed/confirmed levels, reader feedback loop, risk-weighted review order |
+| Nothing said how to get the best translation | Quality plan: glossary built from the book, plain-Marathi rule, consistency check, back-translation pass, examples and phone layout |
