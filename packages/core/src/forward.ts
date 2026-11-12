@@ -19,18 +19,34 @@ export function hashText(s: string): string {
 }
 export const strategyHash = (s: Strategy) => hashText(JSON.stringify(s));
 
-/** Read one share's price file: date,open,high,low,close,volume with rupee prices. Bad rows are reported, never guessed. */
+const MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+/** Accepts 2026-11-12, 12-11-2026, 12/11/2026 and 12-Nov-2026. Returns YYYY-MM-DD or null. */
+export function normDate(x: string): string | null {
+  const t = x.trim(); let m = /^(\d{4})-(\d{2})-(\d{2})/.exec(t);
+  if (m) return `${m[1]}-${m[2]}-${m[3]}`;
+  m = /^(\d{1,2})[-/ ](\d{1,2})[-/ ](\d{4})$/.exec(t);
+  if (m) return `${m[3]}-${m[2]!.padStart(2, "0")}-${m[1]!.padStart(2, "0")}`;
+  m = /^(\d{1,2})[-/ ]([A-Za-z]{3})[A-Za-z]*[-/ ](\d{4})$/.exec(t);
+  const mo = m ? MONTHS.indexOf(m[2]!.toLowerCase()) : -1;
+  return m && mo >= 0 ? `${m[3]}-${String(mo + 1).padStart(2, "0")}-${m[1]!.padStart(2, "0")}` : null;
+}
+const ALIASES: Record<string, string[]> = {
+  date: ["date", "timestamp", "trade date", "datetime"], open: ["open", "open price", "opening price"], high: ["high", "high price"], low: ["low", "low price"],
+  close: ["close", "close price", "closing price", "last price", "ltp"], volume: ["volume", "total traded quantity", "shares traded", "traded quantity", "ttl trd qnty", "qty"],
+};
+const cleanHead = (x: string) => x.toLowerCase().replace(/[^a-z ]/g, "").replace(/\s+/g, " ").trim();
+
+/** Read one share's price file. Common column names and date styles are accepted. Bad rows are reported, never guessed. */
 export function parseBarsCsv(symbol: string, csv: string): { series: Series; problems: Problem[] } {
   const problems: Problem[] = [], bars: Bar[] = [];
-  const lines = csv.split(/\r?\n/).filter((l) => l.trim() !== "");
-  const head = splitCsvLine(lines[0] ?? "").map((x) => x.toLowerCase());
-  const col = (n: string) => head.indexOf(n);
-  const ix = ["date", "open", "high", "low", "close", "volume"].map(col);
-  if (ix.some((i) => i < 0)) { problems.push({ symbol, why: "The file needs the columns date, open, high, low, close, volume." }); return { series: { symbol, bars, delisted: false }, problems }; }
+  const lines = csv.replace(/^\uFEFF/, "").split(/\r?\n/).filter((l) => l.trim() !== "");
+  const head = splitCsvLine(lines[0] ?? "").map(cleanHead);
+  const ix = ["date", "open", "high", "low", "close", "volume"].map((k) => head.findIndex((h) => ALIASES[k]!.includes(h)));
+  if (ix.some((i) => i < 0)) { problems.push({ symbol, why: "The file needs the columns date, open, high, low, close and volume (or the same names NSE uses)." }); return { series: { symbol, bars, delisted: false }, problems }; }
   for (let i = 1; i < lines.length; i++) {
-    const f = splitCsvLine(lines[i]!), d = f[ix[0]!] ?? "";
-    const p = [1, 2, 3, 4].map((k) => rupeesToPaise(f[ix[k]!] ?? "")), v = Number(f[ix[5]!]);
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(d) || p.some((x) => x === null || x <= 0) || !Number.isFinite(v)) { problems.push({ symbol, day: d, why: `Row ${i + 1} is not a clean price row.` }); continue; }
+    const f = splitCsvLine(lines[i]!), d = normDate(f[ix[0]!] ?? "");
+    const p = [1, 2, 3, 4].map((k) => rupeesToPaise(f[ix[k]!] ?? "")), v = Number((f[ix[5]!] ?? "").replace(/,/g, ""));
+    if (!d || p.some((x) => x === null || x <= 0) || !Number.isFinite(v)) { problems.push({ symbol, day: f[ix[0]!], why: `Row ${i + 1} is not a clean price row.` }); continue; }
     bars.push({ d, o: p[0]!, h: p[1]!, l: p[2]!, c: p[3]!, v });
   }
   bars.sort((a, b) => (a.d < b.d ? -1 : 1));

@@ -49,6 +49,14 @@ describe("forward test", () => {
   });
 });
 
+describe("price file formats", () => {
+  it("reads NSE-style headings, text dates and thousands separators, in any order", () => {
+    const r = parseBarsCsv("AAA", "Date,Series,Open Price,High Price,Low Price,Close Price,Total Traded Quantity\n12-Nov-2026,EQ,\"1,500.00\",1510,1490,1505.5,\"1,200\"\nbad,EQ,1,1,1,1,5\n");
+    expect(r.problems.map((p) => p.why)).toHaveLength(1);
+    expect(r.series.bars).toEqual([{ d: "2026-11-12", o: 150000, h: 151000, l: 149000, c: 150550, v: 1200 }]);
+  });
+});
+
 describe("fail closed checks", () => {
   const csv = (rows: string[]) => "date,open,high,low,close,volume\n" + rows.join("\n");
   it("reads clean rows into paise and reports bad ones", () => {

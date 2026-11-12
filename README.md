@@ -9,7 +9,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-2563eb.svg)](LICENSE)
 ![Chapters](https://img.shields.io/badge/chapters-99-16a34a)
 ![Works offline](https://img.shields.io/badge/works-offline-0ea5e9)
-![Unit tests](https://img.shields.io/badge/unit%20tests-88-8b5cf6)
+![Unit tests](https://img.shields.io/badge/unit%20tests-89-8b5cf6)
 ![End-to-end tests](https://img.shields.io/badge/e2e%20tests-109-8b5cf6)
 ![Mobile friendly](https://img.shields.io/badge/mobile-friendly-f59e0b)
 
@@ -108,7 +108,7 @@ Other commands:
 
 ```sh
 make build     # static site in mdbook/book/, with offline support
-make test      # 88 unit tests (Vitest)
+make test      # 89 unit tests (Vitest)
 make e2e       # 109 browser tests on desktop and phone (Playwright)
 make check     # structural checks on every chapter and quiz
 make deploy    # build and publish the site to GitHub Pages (gh-pages branch)

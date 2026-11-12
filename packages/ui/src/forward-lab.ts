@@ -5,7 +5,10 @@ import { parseForwardLog, type BtSummary } from "../../core/src/forward";
 import { resultOf, type Trade } from "../../core/src/journal";
 import { computeStats, MIN_TRADES_FOR_TRUST } from "../../core/src/stats";
 import { IndexedDbStore } from "../../core/src/store";
-import { h, fmtRs } from "./util";
+import { validateStrategy } from "../../core/src/backtest/engine";
+import type { Strategy, StrategyType } from "../../core/src/backtest/types";
+import { h, fmtRs, parseNum } from "./util";
+import { textField, segmented } from "./field";
 
 const R = rawRates as unknown as Rates;
 interface State { strategyName?: string; startDate?: string; lastDay?: string; before?: BtSummary }
@@ -26,6 +29,51 @@ export class LabForward extends HTMLElement {
     this.render();
   }
 
+  private setupNodes?: Node[];
+  private type: StrategyType = "breakout";
+
+  /** Steps 1 to 4: everything the reader needs to make the two files, with no folder or repository needed. */
+  private setup(): Node[] {
+    const symbols = textField("Shares to follow", "RELIANCE, TCS, INFY", { name: "symbols", hint: "Use the NSE symbols, separated by commas. Start with 3 to 10." });
+    const capital = textField("Pretend money", "100000", { name: "capital", prefix: "Rs", hint: "Only used to size trades. No real money is used." });
+    const start = textField("Start date", new Date().toISOString().slice(0, 10), { name: "start", hint: "Write it as year-month-day. Never change it later." });
+    const look = textField("Look-back days", "20", { name: "lb", whole: true }), fast = textField("Quick average days", "20", { name: "fast", whole: true }), slow = textField("Slow average days", "50", { name: "slow", whole: true });
+    const params = h("div", { class: "lab-grid" }), err = h("div", { class: "lab-err", role: "alert" });
+    const show = () => params.replaceChildren(...(this.type === "breakout" ? [look.root] : this.type === "sma_cross" ? [fast.root, slow.root] : []));
+    const seg = segmented<StrategyType>("Which rule?", "fwtype", [["breakout", "Breakout"], ["sma_cross", "Two averages"], ["buy_and_hold", "Buy and hold"]], this.type, (v) => { this.type = v; show(); });
+    show();
+    const make = () => {
+      err.textContent = "";
+      const list = symbols.input.value.split(/[ ,]+/).map((x) => x.trim().toUpperCase()).filter(Boolean);
+      const cap = parseNum(capital.input.value);
+      const st: Strategy = { version: 1, name: this.type === "breakout" ? "Breakout" : this.type === "sma_cross" ? "Two averages" : "Buy and hold", type: this.type, atrPeriod: 14, stopAtr: 2, trailAtr: 3, riskPct: 1, maxPositions: Math.min(5, Math.max(1, list.length)) };
+      if (this.type === "breakout") st.lookback = parseNum(look.input.value); if (this.type === "sma_cross") { st.fast = parseNum(fast.input.value); st.slow = parseNum(slow.input.value); }
+      const bad = validateStrategy(st);
+      if (!list.length || list.some((x) => !/^[A-Z0-9&-]{1,20}$/.test(x))) return void (err.textContent = "Write the share symbols with letters and numbers only, like RELIANCE, TCS.");
+      if (!(cap >= 10000)) return void (err.textContent = "Pretend money should be at least Rs 10,000.");
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(start.input.value)) return void (err.textContent = "Write the start date as year-month-day, like 2026-11-12.");
+      if (bad.length) return void (err.textContent = bad[0] ?? "");
+      save("strategy.json", JSON.stringify(st, null, 2) + "\n");
+      save("forward.config.json", JSON.stringify({ strategyFile: "strategy.json", symbols: list, capitalRupees: cap, startDate: start.input.value, dataSource: "csvDir", csvDir: "prices", outDir: "out", slippageBps: 5 }, null, 2) + "\n");
+    };
+    const dl = (name: string, label: string) => h("a", { class: "lab-btn", href: "downloads/" + name, download: name }, label);
+    const li = (...k: (Node | string)[]) => h("li", {}, ...k);
+    return [
+      h("section", { class: "lab-card-box" }, h("h3", {}, "How it works, in five steps"),
+        h("ol", { class: "lab-steps" },
+          li(h("strong", {}, "Get the script. "), "It is one small file. You need Node.js, a free program, version 20 or newer. Get it from nodejs.org. To check, type ", h("code", {}, "node --version"), " in a terminal. Put the script in a new folder, for example ", h("code", {}, "forward-test"), "."),
+          li(h("strong", {}, "Make your two settings files. "), "Fill in the form below. Save both files in the same folder."),
+          li(h("strong", {}, "Add price files. "), "Make a folder called ", h("code", {}, "prices"), " inside it. Add one file per share, named like ", h("code", {}, "RELIANCE.csv"), ". Each file needs daily prices with the columns date, open, high, low, close and volume. Many data sites and charting tools let you save daily prices for a share as a CSV file. Check the site's own rules first. The script tells you if a file is not in the right shape. To try it first, download the sample files below."),
+          li(h("strong", {}, "Run it after the market closes. "), "In the terminal, go to your folder and type ", h("code", {}, "node forward-test.mjs --config forward.config.json"), ". Wait until 3:45 pm India time. It writes a folder called ", h("code", {}, "out"), "."),
+          li(h("strong", {}, "Bring the results here. "), "Choose the two files from the ", h("code", {}, "out"), " folder in the last box on this page.")),
+        h("div", { class: "lab-actions" }, dl("forward-test.mjs", "Download the script"), dl("sample-prices/AAA.csv", "Sample prices: AAA"), dl("sample-prices/BBB.csv", "Sample prices: BBB"), dl("sample-prices/CCC.csv", "Sample prices: CCC")),
+        h("p", { class: "lab-note" }, "The sample prices are made up. They only show the file shape. The script will say they are old, which is the safety check working. The script never places an order and never goes online.")),
+      h("form", { class: "lab-form lab-card-box", onsubmit: (e: Event) => { e.preventDefault(); make(); } }, h("h3", {}, "Make your settings files"), symbols.root, seg.root, params, h("div", { class: "lab-grid" }, capital.root, start.root), err,
+        h("button", { type: "submit", class: "lab-btn lab-btn-primary" }, "Download my two files"),
+        h("p", { class: "lab-note" }, "Your browser may ask to allow two downloads. Other settings use safe defaults: risk 1% of your pretend money per trade, a stop-loss 2 ATR below the buy price, and 5 shares held at most.")),
+    ];
+  }
+
   private render() {
     const logIn = h("input", { type: "file", accept: ".csv,text/csv", name: "forward-log", "aria-label": "Choose forward_log.csv" });
     const stIn = h("input", { type: "file", accept: ".json,application/json", name: "forward-state", "aria-label": "Choose forward_state.json (optional)" });
@@ -34,7 +82,7 @@ export class LabForward extends HTMLElement {
       h("div", { class: "lab-field" }, h("label", {}, "The trade log (forward_log.csv)"), logIn),
       h("div", { class: "lab-field" }, h("label", {}, "The state file (forward_state.json), optional"), stIn, h("p", { class: "lab-hint" }, "It adds the comparison with earlier days.")),
       h("div", { class: "lab-actions" }, h("button", { type: "button", class: "lab-btn lab-btn-primary", onclick: () => void this.read(logIn, stIn) }, "Read the files")));
-    const kids: Node[] = [h("div", { class: "lab-banner", role: "note" }, h("strong", {}, "Hypothetical trades. No orders were placed."), " Fills are assumed at the next morning's open. Real trading can do worse."), box];
+    const kids: Node[] = [h("div", { class: "lab-banner", role: "note" }, h("strong", {}, "Hypothetical trades. No orders were placed."), " Fills are assumed at the next morning's open. Real trading can do worse."), ...(this.setupNodes ??= this.setup()), box];
     if (this.msg) kids.push(h("div", { class: this.msg.kind === "ok" ? "lab-msg lab-msg-ok" : "lab-msg lab-err", role: this.msg.kind === "ok" ? "status" : "alert" }, this.msg.text));
     if (this.prev) kids.push(...this.preview(this.prev));
     this.out.replaceChildren(...kids);
@@ -96,3 +144,5 @@ export class LabForward extends HTMLElement {
     this.render();
   }
 }
+
+function save(name: string, text: string) { const a = h("a", { href: URL.createObjectURL(new Blob([text], { type: "application/json" })), download: name }); document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 5000); }

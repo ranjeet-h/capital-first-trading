@@ -178,3 +178,18 @@ a.lab-btn-primary, .content a.lab-btn-primary:link, .content a.lab-btn-primary:v
 
 .lab-fw .lab-field { margin-bottom: 1em; }
 .lab-fw .lab-field input[type=file] { min-height: 44px; max-width: 100%; }
+
+/* The tester's settings form is a single column. Only the groups of fields inside it are grids. */
+.lab-bt .lab-form, .lab-fw .lab-form { display: block; }
+.lab-bt .lab-form > *, .lab-fw .lab-form > * { margin-bottom: 1.1em; }
+.lab-bt .lab-form > :last-child, .lab-fw .lab-form > :last-child { margin-bottom: 0; }
+.lab-bt .lab-form h3, .lab-fw .lab-form h3 { margin-top: 0; }
+.lab-fw .lab-steps { padding-left: 1.3em; } .lab-fw .lab-steps li { margin-bottom: .8em; }
+.lab-fw pre.lab-code { overflow-x: auto; padding: .8em 1em; border: 1px solid var(--lab-line); border-radius: 8px; font-size: .85em; }
+.lab-bt .lab-grid, .lab-fw .lab-grid { grid-template-columns: repeat(auto-fit, minmax(13em, 1fr)); gap: 1em 1.1em; }
+.lab-bt .lab-form .lab-seg { max-width: 34em; }
+.lab-bt .lab-more > summary { display: flex; align-items: center; justify-content: space-between; cursor: pointer; list-style: none; padding: 0 1em; border: 1px solid var(--lab-line); border-radius: 8px; font-weight: 600; }
+.lab-bt .lab-more > summary::-webkit-details-marker { display: none; }
+.lab-bt .lab-more > summary::after { content: "+"; font-size: 1.4em; opacity: .6; }
+.lab-bt .lab-more[open] > summary::after { content: "\2212"; }
+.lab-bt .lab-more[open] > summary { margin-bottom: 1em; }

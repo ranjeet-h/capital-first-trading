@@ -8,13 +8,6 @@ Then you bring its two files here. This page adds the trades to your journal in 
 
 <lab-forward></lab-forward>
 
-## How to use it
-
-1. **Set up the script.** The steps are in the `tools/forward-test` folder of the project, in a file called `README.md`. You need one price file per share, and a rule file.
-2. **Run it each day** after 3:45 pm India time. If you miss days, the next run catches up.
-3. **Choose the two files here.** `forward_log.csv` has the trades. `forward_state.json` is optional and adds the comparison.
-4. **Check the preview**, then add the trades. Adding the same file again never makes copies.
-
 ## Read the result with care
 
 - The script assumes you buy at the **next morning's open**. Real orders can fill at a worse price.
