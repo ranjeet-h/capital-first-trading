@@ -8,7 +8,7 @@ for _f in glob.glob(os.path.join(root, '..', 'theme', 'demos*.js')):
     ALLOWED |= set(re.findall(r'^\s*D\.([a-zA-Z0-9]+)\s*=', _t, re.M))
 ALLOWED |= set('order-flow-sim order-book-sim candle-builder sl-trigger-sim leverage-demo position-size-viz drawdown-compounding streak-sim indicator-playground pattern-quiz predict-next spot-the-mistake exercise-block gate-check lab-position-size lab-costs lab-journal capital-allocation-planner risk-limit-simulator strategy-simulator'.split())
 BANNED = re.compile(r'guaranteed|sure profit|easy money|good trade|risk-free', re.I)
-for d in sorted([x for x in glob.glob(root + '/*/*/')]):
+for d in sorted([x for x in glob.glob(root + '/*/*/') if not x[len(root)+1:].startswith('labs/')]):
     name = d[len(root)+1:]
     probs = []
     ip = d + 'index.md'; qp = d + 'quiz.json'

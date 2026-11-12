@@ -17,7 +17,7 @@ test.describe("Strategy tester", () => {
     const a = await cardValue(page, "Money at the end").innerText();
     await page.getByRole("button", { name: "Run the test" }).click(); await expect(page.getByText("Working…")).toHaveCount(0);
     expect(await cardValue(page, "Money at the end").innerText()).toBe(a);
-    await page.getByText("Prices: made-up or your own", { exact: true }).click();
+    await page.locator("lab-backtest summary", { hasText: "Prices: made-up or your own" }).click();
     await page.locator('input[name="seed"]').fill("12");
     await page.getByRole("button", { name: "Run the test" }).click();
     await expect(cardValue(page, "Money at the end")).not.toHaveText(a);
@@ -56,9 +56,16 @@ test.describe("Strategy tester", () => {
     await d.locator("summary").click(); await d.getByRole("button", { name: "Run this" }).click();
     await expect(d.locator("table")).toBeVisible({ timeout: 30_000 });
   });
+  test("experiments still work when the browser has no workers", async ({ page }) => {
+    await page.addInitScript(() => { Object.defineProperty(window, "Worker", { value: undefined }); });
+    await open(page); await run(page);
+    const d = page.locator("details.lab-exp").filter({ has: page.locator("summary", { hasText: /^4\. What if costs/ }) });
+    await d.locator("summary").click(); await d.getByRole("button", { name: "Run this" }).click();
+    await expect(d.locator("table")).toBeVisible({ timeout: 15_000 });
+  });
   test("runs on the reader's own price files, and refuses a bad file", async ({ page }) => {
     await open(page);
-    await page.getByText("Prices: made-up or your own", { exact: true }).click();
+    await page.locator("lab-backtest summary", { hasText: "Prices: made-up or your own" }).click();
     const d = "tools/forward-test/sample/prices/";
     await page.locator('input[name="pricefiles"]').setInputFiles([d + "AAA.csv", d + "BBB.csv", d + "CCC.csv"]);
     await expect(page.getByText("Using your prices: 3 shares")).toBeVisible();

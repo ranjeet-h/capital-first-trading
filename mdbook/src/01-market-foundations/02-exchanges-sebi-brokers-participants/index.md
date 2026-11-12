@@ -21,7 +21,7 @@ Many institutions sit between your order and the shares in your name. Each one h
 
 **Exchanges (NSE and BSE)** run the marketplace where orders are matched. They are the two main stock exchanges in India. SEBI keeps the official list of recognised exchanges on its website. A buy order is matched with a sell order there. The exchange does not hold your money.
 
-**The clearing corporation** works after a trade. It records what each side owes because of the trade. It is part of how settlement is guaranteed. Settlement is the final transfer of shares and money. Think of a trusted middle person at a market who promises each side that the other will pay or deliver. NSE's clearing corporation is called NSE Clearing Limited. BSE's is called Indian Clearing Corporation Limited (ICCL).
+**The clearing corporation** works after a trade. It records what each side owes because of the trade. It is part of how settlement is assured. Settlement is the final transfer of shares and money. Think of a trusted middle person at a market who promises each side that the other will pay or deliver. NSE's clearing corporation is called NSE Clearing Limited. BSE's is called Indian Clearing Corporation Limited (ICCL).
 
 **Depositories** hold shares electronically. India has two: NSDL and CDSL. They work like a bank for shares, keeping a record of who owns what. Your shares are recorded in your name at a depository, not in a paper certificate kept in a drawer.
 

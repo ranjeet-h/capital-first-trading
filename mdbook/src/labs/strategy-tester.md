@@ -2,7 +2,7 @@
 
 Try a simple trading rule on past prices. See what it would have made after costs. Then see how easily a test like this can fool you.
 
-The prices here are made up by a computer, so no real share is involved. Your settings and results stay on this device.
+The prices are made up by a computer, so no real share is involved. You can also test on your own price files, one file for each share. Your settings, files and results stay on this device.
 
 <lab-backtest></lab-backtest>
 
@@ -10,8 +10,13 @@ The prices here are made up by a computer, so no real share is involved. Your se
 
 1. **Pick a rule** and press *Run the test*. Start with the defaults.
 2. **Read the result.** Look at money at the end, the biggest drop, and the number of trades. Fewer than 30 trades proves very little.
-3. **Try the experiments** below the result. Each one changes a single thing, so you can see why a good-looking test can still be wrong.
-4. **Keep the trades** if you want to study them in your journal. They are kept apart from your real trades.
+3. **Look at one trade.** Pick any trade to see the prices around it, where you got in, and where you got out.
+4. **Try the experiments** below the result. Each one changes a single thing, so you can see why a good-looking test can still be wrong.
+5. **Keep the trades** if you want to study them in your journal. They are kept apart from your real trades.
+
+## Your own price files
+
+Open *Prices: made-up or your own* and choose one CSV file for each share, named like `RELIANCE.csv`. Each file needs the columns date, open, high, low, close and volume. A file with odd prices is refused, and the page tells you why. Use prices already adjusted for splits and bonuses.
 
 ## The honest rules this tool follows
 

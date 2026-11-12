@@ -11,7 +11,7 @@ estimated_minutes: 15
 
 ## Hook
 
-A headline says, "Foreign investors bought heavily today, so prices will rise." This is a hypothetical example. On that day, foreign investors bought Rs 4,000 crore of shares. They sold Rs 3,500 crore. So the net buying was Rs 500 crore. The number is real. But it does not say which stocks were bought, or why, or what happens next. A message in a group also offers "guaranteed Rs 10,000 a month" on a Rs 50,000 account. That is a claim to check. It is not information to act on.
+A headline says, "Foreign investors bought heavily today, so prices will rise." This is a hypothetical example. On that day, foreign investors bought Rs 4,000 crore of shares. They sold Rs 3,500 crore. So the net buying was Rs 500 crore. The number is real. But it does not say which stocks were bought, or why, or what happens next. A message in a group also offers "assured Rs 10,000 a month" on a Rs 50,000 account. That is a claim to check. It is not information to act on.
 
 ## The idea
 
@@ -37,7 +37,7 @@ Many kinds of people trade in the Indian market. Knowing who they are helps you 
 Start from primary sources. Use secondary sources for context. Treat unverified claims as claims to check, not as facts.
 
 **Signs of a misleading tip:**
-- guaranteed or promised returns,
+- assured or promised returns,
 - urgency, such as "join now or lose the chance",
 - pressure to join a group or pay for a signal,
 - no registration details,
@@ -55,7 +55,7 @@ The table shows the three levels of the information ladder. Each level has a wri
 |---|---|---|---|
 | Primary | Company filing, exchange announcement, SEBI order | Checking the facts | Check the date and the issuer |
 | Secondary | News article, analysis report | Context and cross-checking | Check the author's method and any conflicts |
-| Unverified | Tip, forwarded message, social media post | Nothing, until checked against a primary source | Guaranteed returns, urgency, or payment for signals |
+| Unverified | Tip, forwarded message, social media post | Nothing, until checked against a primary source | Assured returns, urgency, or payment for signals |
 
 ## Worked example
 
@@ -71,7 +71,7 @@ This is a hypothetical day with made-up numbers.
 
 The figure shows the total flow. It does not show which stocks were bought, or why.
 
-**Tip claim.** "Guaranteed Rs 10,000 a month from my signals" on a Rs 50,000 account.
+**Tip claim.** "Assured Rs 10,000 a month from my signals" on a Rs 50,000 account.
 
 | Step | Calculation | Result |
 |---|---|---|
@@ -91,7 +91,7 @@ The book treats a promised 20% a month, with a guarantee, as a red flag. It is n
 
 1. A company's filing on the exchange website, announcing a board meeting date.
 2. A business news article that sums up that filing.
-3. A forwarded message: "Guaranteed 3x in a month, join now, only 10 seats left."
+3. A forwarded message: "Assured 3x in a month, join now, only 10 seats left."
 4. A SEBI order published on SEBI's website.
 5. A social media post with a screenshot of a broker statement and no source given.
 
@@ -103,7 +103,7 @@ Hints:
 **Answer:**
 1. Primary. It is the company's own filing on the exchange.
 2. Secondary. It repeats and sums up a primary source.
-3. Unverified. No source, and it carries guaranteed returns and urgency.
+3. Unverified. No source, and it carries assured returns and urgency.
 4. Primary. It is a regulator's own order.
 5. Unverified. The screenshot has no source you can check, so it is a claim to check.
 
@@ -118,7 +118,7 @@ A sample checklist:
 1. Find the original source of the claim.
 2. Find the primary document (filing, exchange announcement or regulator order) that supports it.
 3. Check whether the person or firm is SEBI-registered, using the official lookup on the SEBI website.
-4. Check for red flags: guaranteed returns, urgency, payment for signals, group pressure.
+4. Check for red flags: assured returns, urgency, payment for signals, group pressure.
 5. Write down what would prove the claim wrong, and check for it.
 6. Decide. "Do nothing" is an allowed result. Do not act on a tip alone.
 
@@ -146,13 +146,13 @@ Five questions. They cover net flow arithmetic, what a net flow does and does no
 - A registration check is not an endorsement of the adviser's views.
 - The book does not recommend stocks, groups, or signal services.
 - A source that looks official is not verified. Check the primary document.
-- Scams often use guaranteed returns and pressure to act fast. Treat both as warning signs, not as information.
+- Scams often use assured returns and pressure to act fast. Treat both as warning signs, not as information.
 
 ## Remember
 
 - Net flow = buy value minus sell value. It is a total for a group, not a stock pick.
 - Start from primary sources. Use secondary sources for context. Treat unverified claims as claims.
-- Red flags: guaranteed returns, urgency, payment for signals, group pressure, insider claims, no registration.
+- Red flags: assured returns, urgency, payment for signals, group pressure, insider claims, no registration.
 - Being in a group does not mean an adviser is registered. Check the SEBI list.
 - Doing nothing is an allowed result. Often it is the right one.
 

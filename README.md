@@ -10,7 +10,7 @@
 ![Chapters](https://img.shields.io/badge/chapters-99-16a34a)
 ![Works offline](https://img.shields.io/badge/works-offline-0ea5e9)
 ![Unit tests](https://img.shields.io/badge/unit%20tests-100-8b5cf6)
-![End-to-end tests](https://img.shields.io/badge/e2e%20tests-115-8b5cf6)
+![End-to-end tests](https://img.shields.io/badge/e2e%20tests-117-8b5cf6)
 ![Mobile friendly](https://img.shields.io/badge/mobile-friendly-f59e0b)
 
 **[Read it online](https://ranjeet-h.github.io/capital-first-trading/)** ·
@@ -44,7 +44,7 @@ It is written in plain English, for readers of any age, for people who trade thr
 | 🧮 **Cost calculator** | Matches Zerodha's own calculator to the paisa. Shows every charge, the break-even price, and the profit after costs. |
 | 📏 **Position size calculator** | Give it your capital and the most you will risk. It tells you how many shares, and warns you when a plan is unsafe. |
 | 📓 **Trade journal** | Plan before you buy, record buys and sells in parts, review each trade, then read your own numbers. |
-| 🧪 **Strategy tester** | Test simple rules on made-up prices with real Zerodha costs, then run experiments that show why backtests lie (peeking, lost shares, many settings, higher costs). |
+| 🧪 **Strategy tester** | Test simple rules on made-up prices or your own price files, with real Zerodha costs. Eight experiments show why backtests lie (peeking, lost shares, many settings, higher costs, walk-forward and more), and a chart shows any single trade. |
 | 🔭 **Forward test** | A small script you run once a day on your own computer. It logs what a fixed rule would have done on new prices. Bring the log into the journal and compare it with earlier days. It places no orders. |
 | 🗓️ **Weekly review** | Look at the week, tick the rules you broke, and write one rule for next week. |
 | 📴 **Fully offline** | Install it like an app. No internet needed after the first visit. |
@@ -109,7 +109,7 @@ Other commands:
 ```sh
 make build     # static site in mdbook/book/, with offline support
 make test      # 100 unit tests (Vitest)
-make e2e       # 115 browser tests on desktop and phone (Playwright)
+make e2e       # 117 browser tests on desktop and phone (Playwright)
 make check     # structural checks on every chapter and quiz
 make deploy    # build and publish the site to GitHub Pages (gh-pages branch)
 ```
