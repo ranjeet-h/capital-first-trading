@@ -2,8 +2,13 @@ mdbook/book/
 .DS_Store
 node_modules/
 mdbook/theme/dist/
+mdbook/theme/i18n.js
 test-results/
 .e2e-book/
+.e2e-book-mr/
+.e2e-combined/
+.build/
+.dev-combined/
 __pycache__/
 .pages-build/
 tools/forward-test/.dist/

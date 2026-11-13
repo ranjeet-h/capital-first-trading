@@ -1,15 +1,25 @@
 #!/bin/sh
-# Builds the book and publishes it to the gh-pages branch (GitHub Pages). No CI: run `make deploy` yourself.
+# Builds the combined site and publishes it to the gh-pages branch (GitHub Pages).
+# No CI: run `make deploy` yourself.
 set -e
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 OUT="$ROOT/.pages-build"
 cd "$ROOT"
-python3 tools/build/gen_summary.py
-node tools/build/bundle.mjs
-rm -rf "$OUT"
-(cd mdbook && mdbook build -d "$OUT")
-node tools/build/gen_sw.mjs "$OUT"
-touch "$OUT/.nojekyll"
+
+if [ -n "$(git status --porcelain)" ] && [ "${ALLOW_DIRTY:-0}" != "1" ]; then
+  echo "Working tree is not clean. Commit first, or set ALLOW_DIRTY=1 to publish it on purpose." >&2
+  exit 1
+fi
+
+if ! python3 tools/check/i18n_status.py --lang mr --check-stale; then
+  if [ "${ALLOW_STALE:-0}" != "1" ]; then
+    echo "A reviewed Marathi page is stale. Review it and run make i18n-stamp, or set ALLOW_STALE=1 on purpose." >&2
+    exit 1
+  fi
+fi
+
+node tools/build/build_combined.mjs --out "$OUT"
+
 REMOTE="$(git remote get-url origin)"
 SRC="$(git rev-parse --short HEAD)"
 cd "$OUT"

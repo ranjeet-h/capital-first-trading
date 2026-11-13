@@ -1,3 +1,5 @@
+:root { --content-max-width: 1100px; }
+
 .cft-box { border: 1px solid var(--quote-border, #ccc); border-radius: 6px; padding: 12px 16px; margin: 16px 0; background: var(--quote-bg, rgba(127,127,127,.08)); }
 .cft-box-title { font-weight: 600; margin-bottom: 6px; }
 .cft-placeholder { border-style: dashed; }
@@ -10,10 +12,10 @@
 .cft-q-n { font-weight: 700; }
 .cft-q-type { text-transform: uppercase; letter-spacing: .04em; }
 .cft-q-prompt { margin: 6px 0; white-space: pre-wrap; }
-.cft-opt { display: block; margin: 4px 0; cursor: pointer; }
+.cft-opt { display: flex; align-items: center; gap: 8px; min-height: 44px; margin: 2px 0; cursor: pointer; }
 .cft-opts li { margin: 2px 0; }
-.cft-num { padding: 6px 8px; width: 16em; max-width: 100%; }
-.cft-btn { margin-top: 8px; padding: 6px 14px; cursor: pointer; }
+.cft-num { padding: 6px 8px; width: 16em; max-width: 100%; font-size: 16px; }
+.cft-btn { margin-top: 8px; padding: 6px 14px; min-height: 44px; cursor: pointer; }
 .cft-feedback { margin-top: 8px; padding: 8px 12px; border-radius: 4px; }
 .cft-feedback div { margin-top: 4px; }
 .cft-ok { background: rgba(46,160,67,.18); }
@@ -43,10 +45,14 @@
 .cft-pass-yes { color: #2ea043; }
 .cft-pass-no { color: #d9822b; }
 .cft-score .cft-btn-row { margin-top: 6px; }
-.cft-btn { min-height: 36px; }
+.cft-btn { min-height: 44px; }
 
-/* Previous / next buttons at the end of each page: clear, labelled, easy to tap. */
-.nav-wrapper { margin-block-start: 2.4rem; overflow: hidden; }
+/* Previous / next buttons at the end of each page: clear, labelled, easy to tap.
+   Keep them at the bottom on every screen. The fixed side arrows cover the page and
+   take space from the reading column, so they are hidden at every width. */
+.nav-wide-wrapper { display: none !important; }
+.nav-chapters { display: none !important; }
+.nav-wrapper { display: block !important; margin-block-start: 2.4rem; overflow: hidden; }
 .mobile-nav-chapters {
   display: inline-flex; align-items: center; justify-content: center; gap: .8rem;
   width: calc(50% - .6rem); max-width: 22rem; min-height: 4.8rem; box-sizing: border-box;
@@ -58,5 +64,39 @@
 .mobile-nav-chapters:hover { background: var(--theme-hover); }
 .mobile-nav-chapters:focus-visible { outline: 3px solid var(--links); outline-offset: 2px; }
 .mobile-nav-chapters i { color: inherit !important; font-size: 1.8rem; }
-.mobile-nav-chapters.previous::after { content: "Previous"; order: 2; }
-.mobile-nav-chapters.next::before { content: "Next"; order: -1; }
+.mobile-nav-chapters.previous::after { content: attr(data-label); order: 2; }
+.mobile-nav-chapters.next::before { content: attr(data-label); order: -1; }
+
+/* Build-time notices. Calm, not an alert; the page below is still usable. */
+.cft-lang-notice {
+  margin: 0 0 1.6rem;
+  padding: 1rem 1.4rem;
+  border-inline-start: 4px solid #d9822b;
+  border-radius: 4px;
+  background: rgba(217, 130, 43, .12);
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+.cft-lang-notice-labs {
+  border-inline-start-color: var(--links);
+  background: rgba(74, 144, 217, .10);
+}
+.cft-lang-en { display: block; }
+.cft-correction {
+  margin-top: 2.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--quote-border, #ccc);
+  font-size: 1.4rem;
+}
+.cft-correction span { opacity: .75; margin-inline-start: .6rem; }
+.cft-quiz-lang-note { margin: 0 0 1rem; }
+
+/* Devanagari needs a little more line height. No web font: the book stays offline. */
+html[lang="mr"] body {
+  font-family: "Noto Sans Devanagari", "Nirmala UI", "Devanagari Sangam MN", system-ui, sans-serif;
+  line-height: 1.7;
+}
+html[lang="mr"] .cft-lang-en {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}

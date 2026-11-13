@@ -1,0 +1,38 @@
+name: Marathi translation correction
+description: Tell us a sentence that is wrong, unclear or awkward in the Marathi book.
+title: "[mr] "
+labels: ["translation-mr"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: The page address or chapter name, for example T0.1 or the front page.
+    validations:
+      required: true
+  - type: textarea
+    id: sentence
+    attributes:
+      label: The Marathi sentence
+      description: Copy the sentence as it appears.
+    validations:
+      required: true
+  - type: textarea
+    id: better
+    attributes:
+      label: Better wording
+      description: Write what it should say, or explain what is confusing.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem is it?
+      options:
+        - Wrong meaning
+        - Unclear
+        - Awkward Marathi
+        - Term should match the glossary
+        - Something else
+    validations:
+      required: true

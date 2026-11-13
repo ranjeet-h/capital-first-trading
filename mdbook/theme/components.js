@@ -3,6 +3,27 @@
 
   // Finds <!-- component: name | key: value ... --> comments in the rendered chapter
   // and replaces them with a live quiz (quiz-block) or a labelled placeholder box.
+  // Reader-facing text comes from theme/i18n.js, generated per built book.
+
+  function T(key, vars) {
+    // Quiz strings follow the quiz language; everything else follows the page language.
+    // A fallback page in the Marathi book therefore shows English chrome, while the
+    // build-time notice above it stays in Marathi.
+    var lang = /^ui\.quiz\./.test(key) ? quizLang() : pageLang();
+    if (window.CFT_T) return window.CFT_T(key, vars, lang);
+    return key;
+  }
+
+  function pageLang() {
+    var main = document.querySelector("main");
+    return (main && main.getAttribute("data-page-lang")) ||
+      document.documentElement.lang || "en";
+  }
+
+  function quizLang() {
+    var main = document.querySelector("main");
+    return (main && main.getAttribute("data-quiz-lang")) || pageLang();
+  }
 
   function el(tag, cls, text) {
     var e = document.createElement(tag);
@@ -31,15 +52,17 @@
 
   function placeholder(c) {
     var box = el("div", "cft-box cft-placeholder");
-    box.appendChild(el("div", "cft-box-title", "Interactive component: " + c.name));
+    box.appendChild(el("div", "cft-box-title", T("ui.placeholder.title", { name: c.name })));
     var cap = c.params.filter(function (p) { return p[0] === "caption"; })[0];
     if (cap) box.appendChild(el("p", "cft-caption", cap[1]));
     var rest = c.params.filter(function (p) { return p[0] !== "caption"; });
     if (rest.length) {
       box.appendChild(el("div", "cft-params",
-        "Planned inputs: " + rest.map(function (p) { return p[0] + " = " + p[1]; }).join(", ")));
+        T("ui.placeholder.inputs", {
+          inputs: rest.map(function (p) { return p[0] + " = " + p[1]; }).join(", "),
+        })));
     }
-    box.appendChild(el("div", "cft-note", "Interactive demo coming soon."));
+    box.appendChild(el("div", "cft-note", T("ui.placeholder.soon")));
     return box;
   }
 
@@ -56,9 +79,21 @@
     var old = box.querySelector(".cft-feedback");
     if (old) old.remove();
     var f = el("div", "cft-feedback " + (ok ? "cft-ok" : "cft-bad"));
-    if (!noLabel) f.appendChild(el("strong", null, ok ? "Correct. " : "Not quite. "));
+    if (!noLabel) f.appendChild(el("strong", null, ok ? T("ui.quiz.correct") + " " : T("ui.quiz.notQuite") + " "));
     lines.forEach(function (l) { f.appendChild(el("div", null, l)); });
     box.appendChild(f);
+  }
+
+  function normalizeDigits(value) {
+    return String(value)
+      .replace(/[\u0966-\u096F]/g, function (d) { return String(d.charCodeAt(0) - 0x0966); })
+      .replace(/[\u0660-\u0669]/g, function (d) { return String(d.charCodeAt(0) - 0x0660); })
+      .replace(/[\u06F0-\u06F9]/g, function (d) { return String(d.charCodeAt(0) - 0x06F0); });
+  }
+
+  function typeLabel(type) {
+    var label = T("ui.quiz.type." + type);
+    return label === "ui.quiz.type." + type ? type : label;
   }
 
   // Builds one question. Returns {box, check, reset, result}.
@@ -67,8 +102,8 @@
   function renderQuestion(q, n, onChange) {
     var box = el("div", "cft-q");
     var head = el("div", "cft-q-head");
-    head.appendChild(el("span", "cft-q-n", "Q" + n));
-    head.appendChild(el("span", "cft-q-type", q.type));
+    head.appendChild(el("span", "cft-q-n", T("ui.quiz.qPrefix", { n: n })));
+    head.appendChild(el("span", "cft-q-type", typeLabel(q.type)));
     box.appendChild(head);
     box.appendChild(el("p", "cft-q-prompt", q.prompt));
 
@@ -104,13 +139,13 @@
       var inp = el("input", "cft-num");
       inp.type = "text";
       inp.setAttribute("inputmode", "decimal");
-      inp.placeholder = "Your answer" + (q.unit ? " (" + q.unit + ")" : "");
+      inp.placeholder = T("ui.quiz.numeric.placeholder") + (q.unit ? " (" + q.unit + ")" : "");
       inp.addEventListener("input", stale);
       box.appendChild(inp);
       getAnswer = function () { return inp.value.trim(); };
       clearInputs = function () { inp.value = ""; };
     } else if (q.type === "order") {
-      box.appendChild(el("p", "cft-hint", "Type the option letters in the correct order, e.g. b, a, c."));
+      box.appendChild(el("p", "cft-hint", T("ui.quiz.order.hint")));
       var list = el("ul", "cft-opts");
       (q.options || []).forEach(function (o) {
         list.appendChild(el("li", null, o.id + ") " + o.text));
@@ -118,7 +153,7 @@
       box.appendChild(list);
       var oinp = el("input", "cft-num");
       oinp.type = "text";
-      oinp.placeholder = "e.g. b, a, c";
+      oinp.placeholder = T("ui.quiz.order.placeholder");
       oinp.addEventListener("input", stale);
       box.appendChild(oinp);
       getAnswer = function () {
@@ -154,21 +189,21 @@
       var ok, lines = [];
       clearFeedback();
       if (q.type === "numeric") {
-        var v = parseFloat(String(a).replace(/[,\s]/g, ""));
-        if (isNaN(v)) { notChecked("Enter a number."); return; }
+        var v = parseFloat(normalizeDigits(String(a)).replace(/[,\s]/g, ""));
+        if (isNaN(v)) { notChecked(T("ui.quiz.enterNumber")); return; }
         ok = Math.abs(v - q.answer) <= (q.tolerance || 0);
-        if (!ok) lines.push("Expected " + q.answer + (q.unit ? " " + q.unit : "") + ".");
+        if (!ok) lines.push(T("ui.quiz.expected", { answer: q.answer, unit: q.unit ? " " + q.unit : "" }));
         if (q.solution) lines.push(q.solution);
       } else if (q.type === "order") {
-        if (!a.length) { notChecked("Type the letters in order."); return; }
+        if (!a.length) { notChecked(T("ui.quiz.typeLetters")); return; }
         ok = a.length === q.answer.length && a.every(function (x, i) { return x === q.answer[i]; });
-        if (!ok) lines.push("Correct order: " + q.answer.join(", ") + ".");
+        if (!ok) lines.push(T("ui.quiz.correctOrder", { answer: q.answer.join(", ") }));
       } else if (q.type === "multi") {
-        if (!a.length) { notChecked("Pick at least one option."); return; }
+        if (!a.length) { notChecked(T("ui.quiz.pickAtLeastOne")); return; }
         var want = q.answer.slice().sort().join(",");
         ok = a.slice().sort().join(",") === want;
         if (!ok) {
-          lines.push("Correct options: " + q.answer.join(", ") + ".");
+          lines.push(T("ui.quiz.correctOptions", { answer: q.answer.join(", ") }));
           a.forEach(function (id) {
             if (q.answer.indexOf(id) < 0 && q.explanations && q.explanations[id]) {
               lines.push(id + ": " + q.explanations[id]);
@@ -176,11 +211,11 @@
           });
         }
       } else {
-        if (a === undefined) { notChecked("Pick an option."); return; }
+        if (a === undefined) { notChecked(T("ui.quiz.pickOne")); return; }
         ok = a === q.answer;
         if (!ok) {
           if (q.explanations && q.explanations[a]) lines.push(q.explanations[a]);
-          lines.push("Correct option: " + q.answer + ".");
+          lines.push(T("ui.quiz.correctOption", { answer: q.answer }));
         }
       }
       setResult(ok, lines);
@@ -192,7 +227,7 @@
       result = null;
     }
 
-    var btn = el("button", "cft-btn", "Check");
+    var btn = el("button", "cft-btn", T("ui.quiz.check"));
     btn.type = "button";
     btn.addEventListener("click", check);
     box.appendChild(btn);
@@ -205,8 +240,11 @@
     var passPct = passParam ? parseFloat(passParam[1]) : NaN;
     var hasPass = !isNaN(passPct);
     var box = el("div", "cft-box cft-quiz");
-    box.appendChild(el("div", "cft-box-title", "Quiz"));
-    var status = el("p", "cft-hint", "Loading quiz...");
+    // The page wrapper already carries the language when both match. Mark the quiz only
+    // when it differs, as on a translated page whose quiz still falls back to English.
+    if (quizLang() !== pageLang()) box.setAttribute("lang", quizLang());
+    box.appendChild(el("div", "cft-box-title", T("ui.quiz.title")));
+    var status = el("p", "cft-hint", T("ui.quiz.loading"));
     box.appendChild(status);
     host.parentNode.replaceChild(box, host);
     var base = location.href.replace(/[#?].*$/, "").replace(/[^/]*$/, "");
@@ -217,20 +255,24 @@
       status.remove();
       var items = [];
 
+      if (quizLang() === "en" && pageLang() !== "en") {
+        box.appendChild(el("p", "cft-hint cft-quiz-lang-note", T("ui.notice.quizFallback")));
+      }
+
       // Score panel, shown above the questions.
       var panel = el("div", "cft-score");
       var scoreLine = el("p", "cft-score-line");
       scoreLine.setAttribute("aria-live", "polite");
       var passNote = hasPass ? el("p", "cft-hint",
-        "Pass mark: " + passPct + "%. A pass mark checks what you learned. It is not permission to trade.") : null;
+        T("ui.quiz.passMark", { pct: passPct })) : null;
       var passLine = hasPass ? el("p", "cft-pass-line") : null;
       var bar = el("div", "cft-btn-row");
-      var checkAll = el("button", "cft-btn", "Check all answers");
+      var checkAll = el("button", "cft-btn", T("ui.quiz.checkAll"));
       checkAll.type = "button";
       checkAll.addEventListener("click", function () {
         items.forEach(function (it) { it.check(); });
       });
-      var resetBtn = el("button", "cft-btn cft-btn-reset", "Reset quiz");
+      var resetBtn = el("button", "cft-btn cft-btn-reset", T("ui.quiz.reset"));
       resetBtn.type = "button";
       resetBtn.addEventListener("click", function () {
         items.forEach(function (it) { it.reset(); });
@@ -252,20 +294,20 @@
         });
         var p = total ? Math.round(right / total * 100) : 0;
         if (!done) {
-          scoreLine.textContent = "Not checked yet. " + total + " question" + (total === 1 ? "" : "s") + ".";
+          scoreLine.textContent = T(total === 1 ? "ui.quiz.notChecked.one" : "ui.quiz.notChecked.other", { total: total });
         } else {
-          scoreLine.textContent = right + " of " + total + " correct (" + p + "%)" +
-            (done < total ? ". " + done + " of " + total + " checked so far." : ".");
+          scoreLine.textContent = T("ui.quiz.score", { right: right, total: total, pct: p }) +
+            (done < total ? " " + T("ui.quiz.checkedSoFar", { done: done, total: total }) : "");
         }
         if (passLine) {
           passLine.className = "cft-pass-line";
           if (done < total) {
-            passLine.textContent = "Check all " + total + " questions to see if you reached the pass mark.";
+            passLine.textContent = T(total === 1 ? "ui.quiz.checkAllPass.one" : "ui.quiz.checkAllPass.other", { total: total });
           } else if (p >= passPct) {
-            passLine.textContent = "Pass. You reached the pass mark of " + passPct + "%.";
+            passLine.textContent = T("ui.quiz.pass", { pct: passPct });
             passLine.className = "cft-pass-line cft-pass-yes";
           } else {
-            passLine.textContent = "Not yet. The pass mark is " + passPct + "%. Read the notes under each question, change your answers and check again.";
+            passLine.textContent = T("ui.quiz.fail", { pct: passPct });
             passLine.className = "cft-pass-line cft-pass-no";
           }
         }
@@ -278,11 +320,23 @@
       });
       update();
     }).catch(function () {
-      status.textContent = "Could not load " + src + ". Run the book with `mdbook serve` (a local web server); opening the HTML file directly blocks loading.";
+      status.textContent = T("ui.quiz.loadError", { src: src });
+    });
+  }
+
+  function markNavLabels() {
+    // The build writes labels for readers without JavaScript. Set them here as well so
+    // local `mdbook serve` pages (which skip the build step) and fallback pages use the
+    // same language as the page itself.
+    [["previous", "ui.nav.previous"], ["next", "ui.nav.next"]].forEach(function (pair) {
+      document.querySelectorAll(".mobile-nav-chapters." + pair[0]).forEach(function (a) {
+        a.setAttribute("data-label", T(pair[1]));
+      });
     });
   }
 
   function init() {
+    markNavLabels();
     markVerify();
     var root = document.querySelector("main") || document.body;
     commentNodes(root).forEach(function (n) {
@@ -311,8 +365,7 @@
         }
       } else if (/^standing-disclaimer/.test(t)) {
         n.parentNode.insertBefore(host, n);
-        var d = el("div", "cft-box cft-disclaimer",
-          "Education only. This is not investment advice.");
+        var d = el("div", "cft-box cft-disclaimer", T("ui.disclaimer"));
         host.appendChild(d);
       }
     });
@@ -329,8 +382,8 @@
       parts.forEach(function (p) {
         var m = p.match(/^\[VERIFY:\s*([^\]]*)\]$/);
         if (m) {
-          var s = el("span", "cft-verify", "check: " + m[1]);
-          s.title = "Confirm this against the official source before relying on it";
+          var s = el("span", "cft-verify", T("ui.verify.label") + m[1]);
+          s.title = T("ui.verify.title");
           frag.appendChild(s);
         } else if (p) frag.appendChild(document.createTextNode(p));
       });

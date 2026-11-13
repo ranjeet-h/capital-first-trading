@@ -1,0 +1,1401 @@
+{
+  "meta": {
+    "language": "mr",
+    "name": "मराठी"
+  },
+  "pages": {
+    "index.md": {
+      "status": "draft",
+      "sourceSha256": "1d57d7284303e2af0cab64f6eb18873d44422e9f689dda343589b092349f0a12",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13"
+    },
+    "00-start-here/01-what-trading-is-and-is-not/index.md": {
+      "status": "draft",
+      "sourceSha256": "857a6ba5966665d3fc8e21398555d82c44dba718e1b97b391c075fe21f9445d9",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "4e35215ef58c295babac5e352c293d72ce478c23062e8606bfc08c3d90ce5ad7",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "00-start-here/02-capital-first-rules/index.md": {
+      "status": "draft",
+      "sourceSha256": "c0de98dd7638c8cbbaa4ac3fbdff5742aa0f17c1323963125d463a9b44edd495",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "59ca51ccedd6a3e71a29b82e4314463aa1915d232ff6b04b1fa1f36f1d57b12b",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "00-start-here/03-how-to-use-this-book/index.md": {
+      "status": "draft",
+      "sourceSha256": "480f6362b26eb695347f818cdc8950a98f200d511a5d8c5ce43014cc0d59a1c7",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "e771bbf48d3e13aa8fe5e2d5d63cdb05cfee4b8d917125aa496962324732d642",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "01-market-foundations/01-companies-shares-and-listings/index.md": {
+      "status": "draft",
+      "sourceSha256": "9fcb0c5a31c9ba84328178510b126318f0f5f29f664569fe8909e32ec268db48",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "43f29f06250279c100195c429df863f1366c37bc7eedb79278e0d9ec09a11fcc",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "01-market-foundations/02-exchanges-sebi-brokers-participants/index.md": {
+      "status": "draft",
+      "sourceSha256": "d7f5fae26af95db1760e2b170f1602e0cdef819434d91157109235511c1e7545",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "7fce0213b5ff7afa810f79793926e3b915af5bffbd4b2e6ae9ef3e77a8c43cf0",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "01-market-foundations/03-demat-accounts-and-settlement/index.md": {
+      "status": "draft",
+      "sourceSha256": "57ddd7cdb864e34c43a1b8e11043404cd0888b21d67efe638a0e72c98ce517a5",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "4ddfd52eabe15c479e6d85a26492102cba832c8bbe1a2b7d6a60bff4f2f7ab17",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "01-market-foundations/04-how-prices-move-order-book/index.md": {
+      "status": "draft",
+      "sourceSha256": "0d90dc3b1a367a9d3ba2ca5268a1fee86439457cb3617086c1831850e812b163",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "b52ec9137cfbf95a5c15a20d979af889745fc4024f285b2c610ab250ce41a1fd",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "01-market-foundations/05-order-matching-spread-liquidity/index.md": {
+      "status": "draft",
+      "sourceSha256": "2cfc80e033a65b3093ebbe28d3725b8e3757586862833599332ab9432aca161e",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "b4534c3e2e52c4b9b5b31f484228e33f5ab051b228a26441575492a9a0311a25",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "01-market-foundations/06-trading-sessions-and-holidays/index.md": {
+      "status": "draft",
+      "sourceSha256": "387bd148f21a0e9e4e789bec2c8ff5d2a940bdd4677062b93d4599e39871fd54",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "dd608f75bcc50af26cfd8233f056b8977d849334c13017be45cb7ef6d3363fc0",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "01-market-foundations/07-circuit-limits-and-halts/index.md": {
+      "status": "draft",
+      "sourceSha256": "800bdbe36eef79f5a0e28cf17a92a8a5f3dbee76ab0f642c93b3cef46992b157",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "4dea4ddbc699f98dfa310d68e5a2bae3184c819fd4d48c07c920e16f58388d52",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "01-market-foundations/08-indices-nifty-sensex/index.md": {
+      "status": "draft",
+      "sourceSha256": "4d31eb8b5446ae1ed5d5d003b94bf26982e95cecedaddbb055c3acd758d001c4",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "8901f610a7f1a6fe1d6a0870bfb1adf1188237d9a9e875f64655423d56f94796",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "01-market-foundations/09-corporate-actions/index.md": {
+      "status": "draft",
+      "sourceSha256": "369822fd1a49a5ba014acedc3168cc68c6583e96a53d09412743f4526b50f2b9",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "502c55e5ce13f9c3240f0bee5aa2b1db967fbcd9f7081e34d0a653aaebbc3c45",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "01-market-foundations/10-market-participants-and-tips/index.md": {
+      "status": "draft",
+      "sourceSha256": "b49bb931f661fb0d5742ca888000984c11758342b40424d7eae01d0240e682a4",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "f483e192881b95b443a2fd89ae7bc1908ddbb0530de5776ca19abab2eaee5815",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/01-money-math-first/index.md": {
+      "status": "draft",
+      "sourceSha256": "75b41594fc324bec2aa6eaff4f9f6264601fc4fdac4f5b173217f540cde3307b",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "4c492d10e15c05c757a7784fd49075970ece1afd1b17c030ddacdc78532822c7",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/02-costs-on-a-trade/index.md": {
+      "status": "draft",
+      "sourceSha256": "7b1ee4684de3039721884187db52443eedfdc21d667c165e77f4cecaa5e5f0a1",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "f4a9f81db7cb0a27d7b5a956e75524ec9b53b7310adc80526e4803f2c75f969a",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/03-taxes-on-trading-profits/index.md": {
+      "status": "draft",
+      "sourceSha256": "5c0cded80b92d5179836578cb81907a4874f3ce61429fe3a149e9321d80fb6cf",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "0d44ffa66d5a21b0073da75c106a2ac22be2302fc8ac3044e2d4aed2cb07480d",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/04-risk-per-trade/index.md": {
+      "status": "draft",
+      "sourceSha256": "d77fd8ee8776117a9e9707d23c1ca12d8df5f60570a4a91ef0123e43888489c7",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "938d3eecc27073d8195ca9d51aabc0f27dfedab8e9daabd57ebf9c8a8c0e9d2c",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/05-position-sizing/index.md": {
+      "status": "draft",
+      "sourceSha256": "e8171278b8a7616ba47989a12ddb85fc5a345d5d71e5cf3290fcb377c7ed924e",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "59e71635a5d19044e34baa6f2e287b37aba78bcd8a00de683d524226de35d052",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/06-slippage-and-gaps/index.md": {
+      "status": "draft",
+      "sourceSha256": "f7b7f2b6f572f06df0d21012e4b67268cbf9f5f8ccab302a59263e73b219ccdc",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "81375312ffb3e6912141327e676b86cba3edb2d1b65d603cd15a5e4f63effbc7",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/07-reward-to-risk-and-break-even/index.md": {
+      "status": "draft",
+      "sourceSha256": "8d14a25978a685d3d0c053c2b60b160a92fc3ca8bb4abe3dcecbcb7281d548b7",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "39eae26ddd1f2e589dc17ac1b5f6849643a353d145f1a52c05c3bdcaa9862354",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/08-expectancy-and-profit-factor/index.md": {
+      "status": "draft",
+      "sourceSha256": "ded411bda950558e96c39fdfdc3a5f0989ff8948cbe364a0afb1b10d5d8fbd53",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "3152f8eb5829f1def4bcf859f13d373f5c1f00e76ec28c9047348f029bb59af3",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/09-drawdown-and-recovery/index.md": {
+      "status": "draft",
+      "sourceSha256": "e999ac91329d7d9a9404808946a14491b5550c83038143fbf6573223c7449f84",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "559fdf01fb4fbfc7c9f10b73d61eca0c9defda93939d78138a4de4663aaf0dde",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/10-losing-streaks/index.md": {
+      "status": "draft",
+      "sourceSha256": "7ca16ea8b614f9a1f78ed320cb9cc4aa3eb50672a7d57283260abbbcf9ab283d",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "db27064a0d5863148bb47dea82f07437d4d1be5e874d422736f3ed08d33fea30",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/11-risk-limits/index.md": {
+      "status": "draft",
+      "sourceSha256": "11d66bafe95e521103582436b1be157e09448459158bae9191c8b092baeee37d",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "1bc996a7ed5829a1d8c14db56c7056575b84f23a92bcdeadb846aa338244376e",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/12-overtrading/index.md": {
+      "status": "draft",
+      "sourceSha256": "59cb08e83f5003ffb3fa848431d19ed18be49f6aa1e5433ed36c193a3ab7beed",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "eda2cea017633e316870e6cec97be45e516dc78ff609ae84121f6161164d372c",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/13-leverage-and-margin/index.md": {
+      "status": "draft",
+      "sourceSha256": "e5ee04d4254c97cd3d964f7008ef76b4eb5c982b5c73d231805749c45df0ccb6",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "750c9f482946a5884d5ed591d56221bfb88fb3f390349c4687c09d86cc99afcc",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/14-portfolio-exposure/index.md": {
+      "status": "draft",
+      "sourceSha256": "a0a10d9cf2d0de2e3fae9889789398c9eaae8f8e0fc7d35433c83fab235efd1b",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "bbe146510ad7bef486c76781b2af5746d77138a7da8439792614a3e7aca4af1f",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/15-capital-allocation/index.md": {
+      "status": "draft",
+      "sourceSha256": "08c4a53a4df6141cc7bfb15afb6d98d479c0c08fbdd6fd96c93b84a1878a06f8",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "8b7bf3dd9c5008fcd089bddc547c9a1ab4a9a4e615a5a22d6ae369e2fab22413",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/16-reality-check/index.md": {
+      "status": "draft",
+      "sourceSha256": "ced65d95a4fd02325c7cc4168cfa3fd81a2df4e236e56e2e2b0ad1e9a9240294",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "5e9853d9948be8f07ea3f680297562beb2c9f755690a7ea9d3738d8f2db3d820",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/17-scaling-and-withdrawal/index.md": {
+      "status": "draft",
+      "sourceSha256": "5338116d362ec03b4200eaa92958b5ba549309c3bcace36dfb8d30beceaad2b5",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "ba8fd1ff724a8028cd4b03ed1d96e4ffde3d5734a74e356587bfa26fc030330e",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "02-money-and-math/18-money-math-assessment/index.md": {
+      "status": "draft",
+      "sourceSha256": "b19f4e6dd18b2db41dcd559235e6aa2b50f246e072d44a262e5351f7e31188f7",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "2f3eb2e4a51544c650e6b9a468c9cb09e9e496822b0caf2d9072e461ee2af27f",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "03-chart-reading/01-candlesticks/index.md": {
+      "status": "draft",
+      "sourceSha256": "065d7025696c7f38f9707bc4ee46b33479f28bc62fab9e675c6e1085e415b2ad",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "107fdc85bee2469c2c4599dca2d2f2e7d70da7361458a7bfb2462a41ebfb5fa2",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "03-chart-reading/02-timeframes/index.md": {
+      "status": "draft",
+      "sourceSha256": "48c4adb960a087558340d302bbc2b74b63be60797c0890051a9f4539270bbaf0",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "aacf6312b32071bc8335b6454b7757f0cda7d2d9700cbb6dda05028934c3eee8",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "03-chart-reading/03-support-and-resistance/index.md": {
+      "status": "draft",
+      "sourceSha256": "8e72ecdfd9e252f203b0ef30e3b127dfeac70cac831150ccbc42c9f1706eb905",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "d2d2f9ac4a15cfc37951b5fb41a72b82f7b83e890baadcdf62311735d1f87586",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "03-chart-reading/04-trend-and-market-structure/index.md": {
+      "status": "draft",
+      "sourceSha256": "2b289373deeccd64b97739de768fdac1fa74a48d9c689b3b683886a64b170b68",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "92945fd173503cf6ad5b3976c5d8379bace3977247cb8c7cf3b538b1bdb15c4f",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "03-chart-reading/05-breakouts/index.md": {
+      "status": "draft",
+      "sourceSha256": "a189bedda243f336fce14e84f04290d933eee9968b313b079cbbec355154371f",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "1cbb29c7c42904e39ce23ca1fb7f9df442c2a8dc45bb6196fcb15a53f18fe8e6",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "03-chart-reading/06-gaps-and-stops/index.md": {
+      "status": "draft",
+      "sourceSha256": "ab1ea2833bc9d208c5cc0c50a7261a6b882578e8c584a6b9e5abbf72b1d0f538",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "d684ad3a5fa531b2dd1afd0d7a5d52b94af6783abeec1738b90b340e30846967",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "03-chart-reading/07-volume-and-what-it-adds/index.md": {
+      "status": "draft",
+      "sourceSha256": "05a926dfc5df353d03fa076e41a3bd82537afa94f35fc15f0f53fe0976d171d2",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "79b7b3fa289b1689e5641c1dd2336edc026066d7d42dbc9138680385f35e0355",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "03-chart-reading/08-candlestick-formations-and-price-action/index.md": {
+      "status": "draft",
+      "sourceSha256": "466727ffa0a62b6546796e8d59885d082a07a6089f85f20273fdf92082e8ed0b",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "2eae1a39a1fd234350430701d7e84644d538cf284be64e8ec0030418c1994c72",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "03-chart-reading/09-chart-reading-assessment/index.md": {
+      "status": "draft",
+      "sourceSha256": "f769b3304810aad6e73c417c4e51bfa218297d794534770a4f5ce01cf61da2e0",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "39c39d82ffdf685845ec682a74f99b0d66fa4af0b8dd0e12ec3274aa9c84f043",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "04-kite-and-execution/01-kite-web-and-mobile-tour/index.md": {
+      "status": "draft",
+      "sourceSha256": "981b2a15ff329ddd85a5ba3ece39a0aa31114b551b1d25fd4a78c757f54dd5a1",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "ea5d68cc6b9a0cb5efccfa96474e7570c511c4cfcafb0f4e58d22652112054ea",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "04-kite-and-execution/02-watchlists-search-and-alerts/index.md": {
+      "status": "draft",
+      "sourceSha256": "97de28f1da461facc2cd62ce26e9cd910bcb251a994397754c1137b3c57f3876",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "405767104e1f0f2af425a6aab9ad76b9e6d94db59676a3451e6be55ba24d982b",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "04-kite-and-execution/03-market-depth-and-charts-in-kite/index.md": {
+      "status": "draft",
+      "sourceSha256": "daf07a2e296a6449d5e188e902e671855ed0f07396aa3ffd6d401605b748a278",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "35da872c06083ef6b995b58f787e80f02853459f174a37060fe9cc4a028918f9",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "04-kite-and-execution/04-order-types/index.md": {
+      "status": "draft",
+      "sourceSha256": "c2f7aa7e26df6be378474d6a9b3a349a31fa739a35b96c9844074c41c7fdf984",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "4fd47d044e8ccaa4ed35baa299b2d31a2506692d166e6b1cf8822458ce1b6fa9",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "04-kite-and-execution/05-product-types/index.md": {
+      "status": "draft",
+      "sourceSha256": "caf1b377a80a77ddca06d500a931a4c83123bd925c1dc08e6534a4c712850950",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "db5467c695d659c6e58178294633f85cd80c0eda7c32d1c382eb9ec3ffd88167",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "04-kite-and-execution/06-gtt-orders/index.md": {
+      "status": "draft",
+      "sourceSha256": "4ca5d9bb1ca0849d2500ff9baf26d78de311020359f7579e80a5fed00199a8fa",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "2a7e534d56282adc2231041a1912d044d861367245f4e31909656f2e7b4924dd",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "04-kite-and-execution/07-order-book/index.md": {
+      "status": "draft",
+      "sourceSha256": "3104d8c5d6ad17c1bd70373ceecc19487a2fec63bc61f217d54667171ae2dddb",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "1f2da818bb7a0232b97bc0ea5e0d87f4aedfd13a29a56add4c9cc14f4d5a53fc",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "04-kite-and-execution/08-execution-mistakes/index.md": {
+      "status": "draft",
+      "sourceSha256": "5150ddce9cdef8eb6cb63f21991983978c340f023c8571647f7f0f2ed77f68aa",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "dceab9de36d6231db4bd3b0c6408a4c821288b3327a755475826bd05bf68967a",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "04-kite-and-execution/09-demo-walkthrough/index.md": {
+      "status": "draft",
+      "sourceSha256": "07438f8d31f27b9e5a03e40e0d5893a81c2c5c61528bc4f94f51ee153eb612d9",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "de9bfd21a7126e8f954ec9f71c4115d6d9be13cdf606b7fe791221dd8ed7e4a3",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "04-kite-and-execution/10-kite-readiness-assessment/index.md": {
+      "status": "draft",
+      "sourceSha256": "07a1dd70650573c50e5d43c124f194620cbe4c56f5f52757046a2669cabdd27c",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "718e34f2ca9f4eefc5d504bf159249ae9e1c762984e8da79626df9d69a96d83e",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "05-indicators/01-what-indicators-are/index.md": {
+      "status": "draft",
+      "sourceSha256": "a35321e3b6b0b28638fadb5f2939ecbe9cf4822a8a95760ce3841757d4b1af0e",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "87515440a59059712d3cbb3904b14fa954be2151c08a4a4506e243a1d145b8a0",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "05-indicators/02-moving-averages/index.md": {
+      "status": "draft",
+      "sourceSha256": "b52acb15e1e1973e1fdad725e79f11f2cc049202d9290df3aaf43bd53e6d744e",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "299dcf47669069044535908c1f38c2b4adb9b7a8758e725c4a9f649465b69b50",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "05-indicators/03-atr-and-stops/index.md": {
+      "status": "draft",
+      "sourceSha256": "fecc88c9ea91b3c6e1ba27b65e3976107a6402bb5e321f7b731621a9f7e48164",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "e5f6333851b56b7009f8f7f5dcac9c4d721a8500cd03c1d4dc2c5d5d3ca6967e",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "05-indicators/04-rsi/index.md": {
+      "status": "draft",
+      "sourceSha256": "f5337f084d1c2e6f67f1e30a7fcac4b1e392133a67fe40a63566c9a90e2c6026",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "28dfd9accca8c3249260e879fdde4449908bf9fa47d8e213ec5c376096b8e766",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "05-indicators/05-macd/index.md": {
+      "status": "draft",
+      "sourceSha256": "4d39760fd48d20650811aecfe3f10a60f09e638cf1ed57392d2ea3f957cc3da4",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "e6cb0ff1e9562d73f9632f6b57ff72f596c85c22cf054105ee79a61ff62d14b7",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "05-indicators/06-bollinger-bands/index.md": {
+      "status": "draft",
+      "sourceSha256": "08ffa721c5fa44ea5491d04456c75df8f89c7fe5f1aa1e18d3a1e5cd69d4624e",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "31210a63698c993690b1b30cf552ef2675941f0fc9cc0f6fe3ea650be8c1e606",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "05-indicators/07-fibonacci-retracement/index.md": {
+      "status": "draft",
+      "sourceSha256": "44e523343e8826dc05a14e6082dcba7a09c81ca46b4a88fe15a946d852cd5101",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "9f4bb29f06c7625ab7cc6088d112ce9d42e983766c3f01c13b81450ba2d4bdf4",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "05-indicators/08-volume-indicators-and-vwap/index.md": {
+      "status": "draft",
+      "sourceSha256": "a69765bfbd6aa3b07bfd9e7df15eb5678aaf46fcdfe5fdbf0596436ead7c6d8c",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "af363cc2f76e72448c6e32491cfb78c2106cee253e953f86bdf5c0c3e0d8d83f",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "05-indicators/09-multiple-timeframes/index.md": {
+      "status": "draft",
+      "sourceSha256": "66dcb8e0eaa4e06c7b3fe45225673eb0b09117891756135b5748d521078a4cb0",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "e78ccab412cb182e7e095f4a3ceeed89bf15c90a97158dd9247ffdcd43c6d28e",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "05-indicators/10-indicator-disagreement/index.md": {
+      "status": "draft",
+      "sourceSha256": "2fb73e23c49576b197b7f413b2139b34912f65cbe74d01b75773887824fa35dc",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "51677afb89b9765181fd3b9c80da58fb531dbc1a96722405343d6c6b4e04d898",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "06-strategy/01-investing-and-trading-styles/index.md": {
+      "status": "draft",
+      "sourceSha256": "a62f15a997b0c2807bbe276a17edc129d3793d16ecf2c031921a82ee7ee98eb0",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "9dbc8af3edb62d852602d70718291965afc32c07334db3e27de05f46f8a78edd",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "06-strategy/02-trading-edge/index.md": {
+      "status": "draft",
+      "sourceSha256": "a5209bfd9582523d3907965c20a9e49e8470658aaea8ab349e73df94728c7302",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "7069a83b66e6dbe45f87a4cd06819645f70f36d95f438fe231686354db276375",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "06-strategy/03-trend-following/index.md": {
+      "status": "draft",
+      "sourceSha256": "e06e3785da089fa0b741d6255bdb3425d9cf3293ca6ae9796eedcb18fa840e10",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "70f8405d102e7f3a1e3477aeded7e59d5a76f9bf4968cefe0bb28d07f2072ffa",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "06-strategy/04-swing-strategy/index.md": {
+      "status": "draft",
+      "sourceSha256": "7be9d8f007719ea321fb180a628c7053f0f76c0cc291e91a44717a087daa1a79",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "3aafc25e5867f3caed4e54573b84284e85ce256a2ba81628f2c6932b8a3cdba5",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "06-strategy/05-dangerous-approaches/index.md": {
+      "status": "draft",
+      "sourceSha256": "65abb5aba51db69d11a4166f235cce173f91ad55c7b755169e22e31ed1cd458b",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "21fa16a2957dafa34810592cf2ff1245a182211d25a1923d7329f16f3de81cd5",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "06-strategy/06-strategy-simulator/index.md": {
+      "status": "draft",
+      "sourceSha256": "b16e7666e76106d64f1b190a27ce2165234e62687f203d19bf455ffba8fe1fd1",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "da938ce667afdf20db9b7a720d51d79bf1752149bb46fcbb5d48dfc41cf56144",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "06-strategy/07-choosing-no-trade/index.md": {
+      "status": "draft",
+      "sourceSha256": "e2da7df539d187adf24be8cf66a5e44fb1156056a4026f01e00d439fd2126805",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "2acea4af08c96a80fcfc447ba00d2237d9c71a88d052c40c6ac0f2bcefae9bbd",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "10-graduation-gates/01-gate-g1-market-knowledge/index.md": {
+      "status": "draft",
+      "sourceSha256": "407627600a49ede0dea4c5c5c4d6352277b58bdf8c0989f7b4e206906d8d83a2",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "0554d394a1f04d0187de3bca73fef7660ee6e70d85905a526af1aef43472db44",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "10-graduation-gates/02-gate-g2-money-math/index.md": {
+      "status": "draft",
+      "sourceSha256": "ca3af8e038b8f5ffda1f37009532ef91f01c8cc4eabfab28fba223f7ea1bc4c8",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "7fe15c112241d479a5477c17ef60a3d4018abe5603c99067d33027b96ac6b5d3",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "10-graduation-gates/03-gate-g3-kite-readiness/index.md": {
+      "status": "draft",
+      "sourceSha256": "cd3ae290f36df1400d869fc846cdf08353886b5f5ba9a3cbb429cd3f0560b478",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "87f99967272850c1a76a24f1f64956160f50680b5f1ea655cc310a2f7835d0e5",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "10-graduation-gates/04-gate-g4-risk-discipline/index.md": {
+      "status": "draft",
+      "sourceSha256": "4a1b9e1b275d5aa9d66159875ebe37f9d29de2b0aa1ac9973bfbffed405a3fc3",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "f6f8f2a15d0ea0496e28a0ad16b33b3850df55d8afb3d1c2f4d098129bb5b052",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "10-graduation-gates/05-gate-g5-strategy-validation/index.md": {
+      "status": "draft",
+      "sourceSha256": "a73b055076d5e77ce6da745cfc1467050f014f86157ba1466ac501bdcbf6c493",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "49f9dd08085186a779c6d8e9c9c274a38f3bf92263dd69894d29caa39ee2134d",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "10-graduation-gates/06-gate-g6-paper-and-forward-record/index.md": {
+      "status": "draft",
+      "sourceSha256": "fab5689bc8a15f059b649520355a924e1e6dcbbb5a5584603f78f2d62dbb9fe3",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "f8a67a338948bfe833fc4474acf9ea4f46b02012196c6da1e287da5edc1e684f",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "10-graduation-gates/07-gate-g7-live-readiness-plan/index.md": {
+      "status": "draft",
+      "sourceSha256": "e4ef68a2c608f8ce5fb299c64247b03aef1d1bdee7d7ffe424485baa6c402988",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "e9d0e74b84fde79087919c2335a052ee303352351a67fcfcfbfad99fd930d602",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "09-advanced/01-futures-and-leverage/index.md": {
+      "status": "draft",
+      "sourceSha256": "b695bfc9766d560f5abfa5f1181a986c54218e1687870258e0478d99a212edf7",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "e7e95f6b7b91ad051cede2fe81060aa4045b32132fa29f890eb13530695c1ae4",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "09-advanced/02-options-basics-and-greeks/index.md": {
+      "status": "draft",
+      "sourceSha256": "446ef4cd7cf59630a78145154f5eebe7fb47c9ae129b05daaeab4be659d95259",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "b59f61b402d7a771be78074b3b8b140e310b6951ebb1af8ab662650efe46d61c",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "09-advanced/03-hedging/index.md": {
+      "status": "draft",
+      "sourceSha256": "527c4097ab3fc62e78a340994b12f3563da7adb5f77ef6c122d284c77572f8c0",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "f0ebd9d1a273e39700c5c0dbb6ddf0f35ec3501d96cdc41710bb565fce6b273b",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "09-advanced/04-sebi-fo-studies-case-study/index.md": {
+      "status": "draft",
+      "sourceSha256": "85819d8dac74de9b59f677c17c1cd5ba890a870b846dd7ac8a7a543e39c5703b",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "e92cf640226ffdeeff1aa6e4bbc616e08b2763cf62af2efca55c539f8f5f883f",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "09-advanced/05-algo-trading-and-why-no-automation/index.md": {
+      "status": "draft",
+      "sourceSha256": "6e9168c8553700edf210106466cd80c13541ec942681588909ef0ce918929a12",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "e7f3bb8c7b09d4e7eefbcb62f51585c645d0f800d8ce41e0a8a256f505af4a67",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "09-advanced/06-microstructure-and-auctions/index.md": {
+      "status": "draft",
+      "sourceSha256": "703ad313d3d16a3726c0746b237f002d6eb8bd8d5e47ac9c552047909eacca7d",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "8f94760bf883d249d6d673bc9904fef1538ac17f6d6a869553280707f67604e5",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "09-advanced/07-fii-dii-data-and-limits/index.md": {
+      "status": "draft",
+      "sourceSha256": "fb1f1c31fbb9931aedbb0caa5031c1d902ab76a85a1cd40cea8b9fb541cff11f",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "83ed3adba6958b6d39ba6b6dbfcbc49344f6fafa1c3962cafecfd5f0a70aa60c",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "07-testing-and-validation/01-from-idea-to-hypothesis/index.md": {
+      "status": "draft",
+      "sourceSha256": "7e30e11425c56587f9421fffeeeb86235711077ed90314ef6204ab7d501f683c",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "6a1156842b35d0ce78a9863bd0ccad48e6350dfc478403af646be893288ef8d4",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "07-testing-and-validation/02-historical-data/index.md": {
+      "status": "draft",
+      "sourceSha256": "9ec6f3340d7d2ab912330fb8ab47c4d637a22c05eb023cf08354ba9afcf22027",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "50b9a868639e5656f5df6e66322cc440946f3f0fcb62f81adac745287719d06b",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "07-testing-and-validation/03-backtesting-basics-and-realism/index.md": {
+      "status": "draft",
+      "sourceSha256": "2e0d22aaffa2dfec0903389de7b2cd9df2fcaa7c33434478468b5fb2889d7dd3",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "bc1778cf3b809c3e85378306cb2b67186462bf7d636dbe57a9b44e9a98dc5c3d",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "07-testing-and-validation/04-look-ahead-bias/index.md": {
+      "status": "draft",
+      "sourceSha256": "d2ca9d1217a9785660db714ab41e3b18520b468bb30abed797ce77e9dee79e03",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "502a85fc5322d00fb73b51719d37410f0ac167b1f6ef4437b8cf11ffefb0b381",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "07-testing-and-validation/05-survivorship-bias/index.md": {
+      "status": "draft",
+      "sourceSha256": "58b5b13a014e20af5f051093289976d8a048044d83c4798331b7cfa76f1163a9",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "7df095b494b725dff0e1623ce9b0cb6d27cbb2c794ec20ae8d3325e2a1a68722",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "07-testing-and-validation/06-overfitting/index.md": {
+      "status": "draft",
+      "sourceSha256": "9d4412ffd6fa6e0cfb1bae5be99dffe27666b82ec2a2ed74485a2ee104159e4a",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "ff53d0dd91ac33793cd5333eee5b0e4bb8c68005519b0a1c7e0debc2fb8ab484",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "07-testing-and-validation/07-out-of-sample-and-walk-forward/index.md": {
+      "status": "draft",
+      "sourceSha256": "b269aeffd806774be01afacffedc37a73e4414c4753f6b3db7f307750c533e66",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "dedd7fc285207469f1d65e3fae6260ce6b0da0061d0cfd9e24a673790cafd773",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "07-testing-and-validation/08-metrics-and-their-limits/index.md": {
+      "status": "draft",
+      "sourceSha256": "8497f89de864ed89c31008f66a8bea551cebf1eb036a411343366c5ef938c48a",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "f50b758e76a3e428205c64c4c6b3e2817befa37df93dfe4abe36f326d196c193",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "07-testing-and-validation/09-monte-carlo-trade-order/index.md": {
+      "status": "draft",
+      "sourceSha256": "ec2c80762595bd7eb19d8e0c3afe80eae10f2e8b49a5f7c71ed6b3d153d8b711",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "dbeb7ca4cd3c618b5485b7e5d526309a3cc0faf3945c887902fb5c24062ce3b2",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "07-testing-and-validation/10-paper-and-forward-testing/index.md": {
+      "status": "draft",
+      "sourceSha256": "452d497f5ed7e90d47760d49e79dce821090b2e65d68578c39724d3a0632e734",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "46df359e62559b493fb09c954977d26a259fb2e8aa0268f14f780ebc7540d4fd",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "07-testing-and-validation/11-strategy-validation-assessment/index.md": {
+      "status": "draft",
+      "sourceSha256": "75fbb96f3e0426e9cf82610f71f1bd66b969a9e8696a07d1b2c2585b6cbc33fa",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "0313555488502905423326a8b8525dab0dbefd92c73dd346325dddecbe85bf06",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "08-psychology-and-journaling/01-fear-greed-and-losses/index.md": {
+      "status": "draft",
+      "sourceSha256": "f34b5210cad367fa3a983da22559d3070980c2fcd0cc8730521f99769ed09d60",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "d740d4130c93dcc83a02924879223af4f39decff6ae91a91844ae09bbf9b430a",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "08-psychology-and-journaling/02-loss-aversion-and-revenge/index.md": {
+      "status": "draft",
+      "sourceSha256": "07dee82cb07fb9cb5bb9f82565be12b6737a3eff0b41f717ade2ae97b5db8a58",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "e9c84cc1f2652bf6141a2d81eae8c9cfe8eb80a8189fb984238b5576e7c8eaf4",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "08-psychology-and-journaling/03-fomo-and-bias/index.md": {
+      "status": "draft",
+      "sourceSha256": "1d24ef87776cdc6727aa35ad8a23feb08d594235d5224079a686e8dcf8f3e1e2",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "149fcf63ac3d9aa4521b171c44fb105937ed2e303fc78e0a20a4a623d3b6e9e8",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "08-psychology-and-journaling/04-discipline/index.md": {
+      "status": "draft",
+      "sourceSha256": "d116ea3bd69fca4955fd066c640fd7d70bb373abe0968d8e3ca5403beca55169",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "55298091eee842593dcb79e0a255a937e21bba7319b79eb8085502c03550fb6f",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "08-psychology-and-journaling/05-journal-as-a-tool/index.md": {
+      "status": "draft",
+      "sourceSha256": "61c1d8a4ad9219e5da70d69192bea9463d77a0560cbd1e530513dc6ae9212cb3",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "3adf010cc3f57fbee7a682473c62c968f9c51c032e6e223b3e50869759e7c5c9",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "08-psychology-and-journaling/06-losing-streak/index.md": {
+      "status": "draft",
+      "sourceSha256": "c377878538275033094866b7e25eb70e8d27556fdb936cd675ac1d5c7da2387c",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "154053ebc0e97cb46686dfe091aea59ec4aa24f3645ec115e5221c9ece10742a",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    },
+    "08-psychology-and-journaling/07-when-to-stop/index.md": {
+      "status": "draft",
+      "sourceSha256": "225c1fccd2cf42a8ef6984a73b764d628c08d0effeb269eafd981d4c190ce708",
+      "reviewer": null,
+      "reviewedOn": null,
+      "draftedOn": "2026-11-13",
+      "quiz": {
+        "status": "draft",
+        "sourceSha256": "91bdba6530e1de436cc13672f5e86497d5795ae59d8bf0b5a3ac36c6e61b443a",
+        "reviewer": null,
+        "reviewedOn": null,
+        "draftedOn": "2026-11-13"
+      }
+    }
+  }
+}

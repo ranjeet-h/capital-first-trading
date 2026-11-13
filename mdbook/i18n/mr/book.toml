@@ -1,0 +1,23 @@
+[book]
+title = "भांडवल-प्रथम ट्रेडिंग"
+authors = ["Ranjeet Harishchandre"]
+description = "भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक."
+language = "mr"
+src = "src"
+
+[build]
+build-dir = "book"
+create-missing = false
+
+[output.html]
+no-section-label = true
+smart-punctuation = true
+additional-css = ["theme/components.css", "theme/cft-anim.css", "theme/labs.css", "theme/lang-switch.css"]
+additional-js = ["theme/i18n.js", "theme/mermaid.min.js", "theme/mermaid-init.js", "theme/cft-lib.js", "theme/demos.js", "theme/demos-charts.js", "theme/demos-indicators.js", "theme/demos-kite.js", "theme/demos-testing.js", "theme/demos-fo-market.js", "theme/demos-money-psych.js", "theme/components.js", "theme/dist/labs.js", "theme/sidebar.js", "theme/lang-switch.js", "theme/register-sw.js"]
+
+[output.html.fold]
+enable = true
+level = 0
+
+[output.html.search]
+enable = true
