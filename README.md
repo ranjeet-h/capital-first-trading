@@ -92,6 +92,15 @@ It is written in plain English, for readers of any age, for people who trade thr
 
 Open **https://ranjeet-h.github.io/capital-first-trading/**. On a phone, use your browser's "Add to Home Screen" to install it. After the first visit it works with no internet.
 
+## Marathi (मराठी)
+
+The book is also being translated into Marathi: **https://ranjeet-h.github.io/capital-first-trading/mr/**. Use the language switch in the menu bar to move between English and Marathi on the same page.
+
+- All 99 chapters and quizzes have a Marathi draft. They are **drafts**: each page says so and has not been fully reviewed yet.
+- English is the reference. If the two ever differ, English is right.
+- The labs (calculators, journal, strategy tester) stay in English for now.
+- Spot a wrong or awkward sentence? Use the "Suggest a correction" link on the page, or read [CONTRIBUTING-i18n.md](CONTRIBUTING-i18n.md) to fix it yourself.
+
 ## Run it yourself
 
 You need [Node.js](https://nodejs.org) 20+, Python 3, and [mdBook](https://rust-lang.github.io/mdBook/) (`cargo install mdbook`, tested with 0.4.52).
@@ -108,10 +117,20 @@ Other commands:
 
 ```sh
 make build     # static site in mdbook/book/, with offline support
-make test      # 100 unit tests (Vitest)
+make test      # 112 unit tests (Vitest)
 make e2e       # 117 browser tests on desktop and phone (Playwright)
 make check     # structural checks on every chapter and quiz
-make deploy    # build and publish the site to GitHub Pages (gh-pages branch)
+make deploy    # build and publish the site (English and Marathi) to GitHub Pages
+```
+
+Marathi commands:
+
+```sh
+make serve-i18n               # English and Marathi together, with the language switch
+make check BOOK_LANG=mr       # checks the Marathi book against English
+make e2e BOOK_LANG=mr         # browser tests on the combined English + Marathi site
+make i18n-status              # how many pages are draft, reviewed, confirmed or stale
+make i18n-stamp ID=T0.1 REVIEWER=<name>   # mark a page as reviewed
 ```
 
 Use `make serve`, not a double-clicked HTML file. Quizzes load their questions with `fetch`, which browsers block on `file://`.
@@ -150,6 +169,7 @@ The journal never leaves your device. Browsers can clear their own storage, so u
 - ✅ Journal auto-fill from the calculators
 - ✅ Import from a Zerodha Console tradebook (cash shares, long trades)
 - ✅ Strategy tester on made-up prices, with eight "why backtests lie" experiments (including walk-forward and a kind-of-market view), a chart of any single trade, and your own price files
+- ✅ Marathi drafts of all 99 chapters and quizzes, with a language switch (under review)
 - ✅ Forward-test script (`tools/forward-test`) and importer. It also writes what the rule would do at the next open. Prices come from files you save yourself; downloading prices is not built in, on purpose
 
 The full roadmap is in [PLAN.md](PLAN.md) and [LABS.md](LABS.md).
