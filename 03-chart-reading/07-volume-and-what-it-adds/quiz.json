@@ -1,0 +1,95 @@
+[
+  {
+    "id": "T3.7-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. The average volume for the last 20 days is 1,00,000 shares. The breakout day's volume is 1,80,000 shares. What is the relative volume?",
+    "answer": 1.8,
+    "tolerance": 0.05,
+    "unit": "times the average",
+    "solution": "Relative volume = 1,80,000 divided by 1,00,000 = 1.8. Check: 1.8 multiplied by 1,00,000 = 1,80,000.",
+    "concepts": ["relative-volume"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.7-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. On the same breakout day, 1,80,000 shares trade at Rs 312. What is the traded value in rupees?",
+    "answer": 56160000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Traded value = 1,80,000 multiplied by Rs 312 = Rs 5,61,60,000. Check: Rs 5,61,60,000 divided by Rs 312 = 1,80,000 shares.",
+    "concepts": ["traded-value"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.7-q3",
+    "type": "scenario",
+    "prompt": "Hypothetical. A stock has an average volume of 2,50,000 shares. It falls 2 percent on a day with 90,000 shares traded. Which reading of this day is best?",
+    "options": [
+      {"id": "a", "text": "The fall shows that sellers will keep selling tomorrow."},
+      {"id": "b", "text": "The day had low trading. Volume does not show the direction of the next move."},
+      {"id": "c", "text": "The volume shows that news caused the fall."},
+      {"id": "d", "text": "The fall is a sign that the stock is weak."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Volume on one day does not predict tomorrow. It only shows how much traded on this day.",
+      "c": "Volume cannot name a cause. News is one possible cause, but the volume does not show it.",
+      "d": "Volume does not show strength or weakness. It shows how much trading took place."
+    },
+    "concepts": ["relative-volume", "volume-direction"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.7-q4",
+    "type": "mcq",
+    "prompt": "Which statement about volume is correct?",
+    "options": [
+      {"id": "a", "text": "High volume always means the price will go up."},
+      {"id": "b", "text": "High volume means more shares traded than usual. It does not show direction."},
+      {"id": "c", "text": "Low volume means the price will fall."},
+      {"id": "d", "text": "Volume and price are the same measure."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "High volume shows more trading. It does not show which way the price will go.",
+      "c": "Low volume shows less trading. It does not show the next direction of the price.",
+      "d": "Volume is the number of shares traded. Price is the rupee level of each share. They are different measures."
+    },
+    "concepts": ["volume-direction"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.7-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake. A reader writes: 'Volume was 2.0 times its average, so the stock is definitely heading up.' Which part is the mistake?",
+    "options": [
+      {"id": "a", "text": "Volume was 2.0 times its average."},
+      {"id": "b", "text": "So the stock is definitely heading up."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This part can be correct. A relative volume of 2.0 means twice the average volume on that day.",
+      "b": "Volume does not show direction, so this conclusion is not supported. The word definitely adds certainty that the data does not give."
+    },
+    "concepts": ["volume-direction", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.7-q6",
+    "type": "numeric",
+    "prompt": "Hypothetical. The average volume is 2,50,000 shares. The volume on a down day is 90,000 shares. What is the relative volume?",
+    "answer": 0.36,
+    "tolerance": 0.01,
+    "unit": "times the average",
+    "solution": "Relative volume = 90,000 divided by 2,50,000 = 0.36. Check: 2,50,000 multiplied by 0.36 = 90,000.",
+    "concepts": ["relative-volume"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

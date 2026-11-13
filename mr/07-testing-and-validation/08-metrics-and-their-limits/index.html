@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>मेट्रिक्स आणि त्यांच्या मर्यादा - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../07-testing-and-validation/08-metrics-and-their-limits/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../07-testing-and-validation/08-metrics-and-their-limits/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T7.8
+title: मेट्रिक्स आणि त्यांच्या मर्यादा
+page_type: Math/Calculator
+prerequisites: [T2.7, T2.8, T2.9, T7.3]
+labs: [Lab 3, Lab 4]
+estimated_minutes: 30
+-->
+<h1 id="मेटरिकस-आणि-तयांचया-मरयादा"><a class="header" href="#मेटरिकस-आणि-तयांचया-मरयादा">मेट्रिक्स आणि त्यांच्या मर्यादा</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एका चाचणी अहवालात 50 टक्के विजय दर, 2.2 प्रॉफिट फॅक्टर आणि Rs 1,000 ची सर्वाधिक ड्रॉडाउन दिसते. हे काल्पनिक आकडे आहेत. वाचणाऱ्याला वाटू शकते की नियम मजबूत आणि सुरक्षित आहे. पण हा अहवाल फक्त सहा व्यापारांवर बनलेला आहे. सहा व्यापार नियम काम करतो की नाही, हे दाखवू शकत नाहीत. हे प्रकरण प्रत्येक आकडा समजावते, तो हाताने कसा काढायचा ते दाखवते, आणि प्रत्येक आकडा काय सांगू शकत नाही ते सांगते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>व्यापारांची यादी घेऊन सुरुवात करा. प्रत्येक व्यापाराचा निकाल रुपयांमध्ये असतो. जिंकणाऱ्या व्यापाराची संख्या धन असते. तोट्याच्या व्यापाराची संख्या ऋण असते. चिन्हे स्पष्ट ठेवा.</p>
+<ul>
+<li><strong>विजय दर</strong> म्हणजे जिंकलेल्या व्यापारांची संख्या, एकूण व्यापारांच्या संख्येने भागलेली. तो नफा मिळवलेल्या व्यापारांचा शेअर, म्हणजे वाटा, आहे.</li>
+<li><strong>सरासरी विजय</strong> म्हणजे जिंकलेल्या व्यापारांची एकूण रक्कम, विजयांच्या संख्येने भागलेली.</li>
+<li><strong>सरासरी तोटा</strong> म्हणजे तोट्याच्या व्यापारांची एकूण रक्कम, तोट्यांच्या संख्येने भागलेली. तो धन संख्या म्हणून दाखवा.</li>
+<li><strong>रुपयांमधील अपेक्षित परतावा</strong> म्हणजे (विजय दर x सरासरी विजय) वजा (तोटा दर x सरासरी तोटा). तोटा दर म्हणजे 1 वजा विजय दर. हा या नमुन्यातील प्रति व्यापार सरासरी निकाल आहे. पुढच्या व्यापाराबद्दल तो काही सांगत नाही.</li>
+<li><strong>R मधील अपेक्षित परतावा</strong> म्हणजे रुपयांमधील अपेक्षित परतावा, एका R च्या रुपयांतील जोखमीने भागलेला. एक R म्हणजे एका व्यापारातील नियोजित तोटा (<em>प्रति व्यापार जोखीम आणि स्टॉप-लॉस अंतर</em>).</li>
+<li><strong>प्रॉफिट फॅक्टर</strong> म्हणजे एकूण नफा, एकूण तोट्याने भागलेला. एकूण नफा म्हणजे विजयांची एकूण रक्कम. एकूण तोटा म्हणजे तोट्यांची एकूण रक्कम, धन संख्या म्हणून दाखवलेली. तोटे नसतील, तर प्रॉफिट फॅक्टर काढता येत नाही.</li>
+<li><strong>इक्विटी कर्व्ह</strong> म्हणजे व्यापाराच्या निकालांची चालू बेरीज. ती शून्यापासून सुरू होते.</li>
+<li><strong>सर्वाधिक ड्रॉडाउन</strong> म्हणजे इक्विटी कर्व्हवरील सर्वात मोठी घसरण. ती एका उच्च बिंदूपासून नंतरच्या निम्न बिंदूपर्यंत मोजली जाते. ती सुरुवातीपासून मोजली जात नाही.</li>
+<li><strong>शार्प रेशिओ</strong> म्हणजे सुरक्षित दरापेक्षा वरचा सरासरी परतावा, परतावे वर-खाली किती सरकतात त्याने भागलेला. तो गृहीत धरतो की परतावे सरासरीभोवती काहीसे नियमित पसरतात. ट्रेडिंगचे परतावे अनेकदा तसे वागत नाहीत. निकाल तुम्ही निवडलेल्या सुरक्षित दरावरही अवलंबून असतो. बॅकटेस्ट लॅब डिफॉल्ट सुरक्षित दर 0 वापरते आणि या मेट्रिकला कमकुवत असे लेबल देते.</li>
+</ul>
+<p>लॅब 30 पेक्षा कमी व्यापारांवर इशारा दाखवते: काहीही ठरवण्यासाठी व्यापार खूप कमी आहेत. एकच मेट्रिक जोखीम पूर्णपणे दाखवत नाही. उच्च विजय दर किंवा उच्च प्रॉफिट फॅक्टर म्हणजे कमी जोखीम असा होत नाही.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: drawdown-compounding | trades: 1000, -500, 1500, -500, -500, 800 | caption: सोडवलेल्या उदाहरणातील सहा व्यापारांचा इक्विटी कर्व्ह, ज्यात उच्च बिंदू आणि नंतरचा निम्न बिंदू दिसतो, ज्यामुळे सर्वाधिक ड्रॉडाउन मिळते -->
+<p>सर्वात मोठ्या घसरणीआधीचा सर्वोच्च बिंदू शोधा. मग त्यानंतरचा सर्वात खालचा बिंदू शोधा. या दोन बिंदूंमधील गॅप (अंतर) म्हणजे उदाहरणातील सर्वाधिक ड्रॉडाउन. विजय दर आणि इतर मेट्रिक्स चित्रावरून नव्हे, तर व्यापारांच्या यादीवरून काढलेले आहेत.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> रुपयांमध्ये सहा व्यापार: +1,000, -500, +1,500, -500, -500, +800. प्रति व्यापार नियोजित जोखीम Rs 500 आहे, म्हणून 1R = Rs 500.</p>
+<div class="table-wrapper"><table><thead><tr><th>व्यापार</th><th>निकाल (Rs)</th><th>व्यापारानंतरची इक्विटी (Rs)</th></tr></thead><tbody>
+<tr><td>1</td><td>+1,000</td><td>1,000</td></tr>
+<tr><td>2</td><td>-500</td><td>500</td></tr>
+<tr><td>3</td><td>+1,500</td><td>2,000</td></tr>
+<tr><td>4</td><td>-500</td><td>1,500</td></tr>
+<tr><td>5</td><td>-500</td><td>1,000</td></tr>
+<tr><td>6</td><td>+800</td><td>1,800</td></tr>
+</tbody></table>
+</div>
+<p><strong>पायरी 1. विजय आणि तोटे.</strong> तीन विजयांची एकूण रक्कम Rs 3,300 (1,000 + 1,500 + 800). तीन तोट्यांची एकूण रक्कम Rs 1,500 (500 + 500 + 500).</p>
+<p><strong>पायरी 2. विजय दर.</strong> 3 / 6 = <strong>50%</strong>.</p>
+<p><strong>पायरी 3. सरासरी.</strong> सरासरी विजय = 3,300 / 3 = <strong>Rs 1,100</strong>. सरासरी तोटा = 1,500 / 3 = <strong>Rs 500</strong>.</p>
+<p><strong>पायरी 4. रुपयांमधील अपेक्षित परतावा.</strong> (0.5 x 1,100) - (0.5 x 500) = 550 - 250 = <strong>प्रति व्यापार Rs 300</strong>.</p>
+<p><strong>पायरी 5. R मधील अपेक्षित परतावा.</strong> 300 / 500 = <strong>0.6R</strong>.</p>
+<p><strong>पायरी 6. प्रॉफिट फॅक्टर.</strong> 3,300 / 1,500 = <strong>2.2</strong>.</p>
+<p><strong>पायरी 7. सर्वाधिक ड्रॉडाउन.</strong> सर्वोच्च बिंदू Rs 2,000 आहे, व्यापार 3 नंतर. त्यानंतरचा सर्वात खालचा बिंदू Rs 1,000 आहे, व्यापार 5 नंतर. घसरण 2,000 - 1,000 = <strong>Rs 1,000</strong>.</p>
+<p><strong>तपासा.</strong> निव्वळ निकाल = 3,300 - 1,500 = Rs 1,800. तो शेवटच्या इक्विटी आकड्याशी जुळतो.</p>
+<p>सहा व्यापार काहीही ठरवण्यासाठी खूपच कमी आहेत. हे आकडे फक्त या सहा व्यापारांचे वर्णन करतात. या उदाहरणात शार्प रेशिओ काढलेला नाही. त्यासाठी परताव्यांची लांब यादी आणि निवडलेला सुरक्षित दर लागतो.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> या व्यापारांसह अपेक्षित परतावा पुन्हा काढा: +600, -300, +900, -300 (Rs मध्ये). मग 300 Rs प्रति व्यापार जोखीम वापरून निकाल R मध्ये लिहा.</p>
+<p>संकेत:</p>
+<ol>
+<li>आधी विजय आणि तोटे शोधा, मग सरासरी.</li>
+<li>निकाल R मध्ये लिहिण्यासाठी Rs 300 जोखमीने भागा.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>विजय: 600 आणि 900, एकूण Rs 1,500, 2 व्यापारांमधून. तोटे: 300 आणि 300, एकूण Rs 600, 2 व्यापारांमधून.</li>
+<li>विजय दर = 2 / 4 = 50%.</li>
+<li>सरासरी विजय = 1,500 / 2 = Rs 750. सरासरी तोटा = 600 / 2 = Rs 300.</li>
+<li>अपेक्षित परतावा = (0.5 x 750) - (0.5 x 300) = 375 - 150 = <strong>प्रति व्यापार Rs 225</strong>.</li>
+<li>तपासा: निव्वळ निकाल = 1,500 - 600 = 900. 900 / 4 = 225.</li>
+<li>R मध्ये: 225 / 300 = <strong>0.75R</strong>.</li>
+</ul>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> रुपयांमध्ये हे दहा काल्पनिक व्यापार वापरा: +800, -400, +1,200, -400, -400, +600, -400, +1,000, -400, +500. प्रति व्यापार नियोजित जोखीम Rs 400 आहे, म्हणून 1R = Rs 400. विजय दर, सरासरी विजय, सरासरी तोटा, रुपयांमधील आणि R मधील अपेक्षित परतावा, प्रॉफिट फॅक्टर आणि सर्वाधिक ड्रॉडाउन काढा. मग या नमुन्यात काय दाखवता येते आणि काय दाखवता येत नाही, यावर एक वाक्य लिहा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>विजय दर: 10 व्यापारांपैकी 5 विजय = 50%.</li>
+<li>एकूण विजय: 800 + 1,200 + 600 + 1,000 + 500 = Rs 4,100. सरासरी विजय = 4,100 / 5 = Rs 820.</li>
+<li>एकूण तोटे: Rs 400 चे पाच व्यापार = Rs 2,000. सरासरी तोटा = 2,000 / 5 = Rs 400.</li>
+<li>अपेक्षित परतावा = (0.5 x 820) - (0.5 x 400) = प्रति व्यापार Rs 210. तपासा: निव्वळ निकाल 4,100 - 2,000 = 2,100, आणि 2,100 / 10 = 210.</li>
+<li>R मधील अपेक्षित परतावा: 210 / 400 = 0.525R.</li>
+<li>प्रॉफिट फॅक्टर: 4,100 / 2,000 = 2.05.</li>
+<li>सर्वाधिक ड्रॉडाउन: इक्विटी कर्व्ह 800, 400, 1,600, 1,200, 800, 1,400, 1,000, 2,000, 1,600, 2,100 असा जातो. व्यापार 3 नंतर उच्च बिंदू Rs 1,600 आहे. त्यानंतरचा निम्न बिंदू व्यापार 5 नंतर Rs 800 आहे. घसरण Rs 800 आहे.</li>
+<li>नमुना वाक्य: दहा व्यापारांचा निव्वळ निकाल Rs 2,100 आहे. ते 30 पेक्षा खूप कमी आहेत, त्यामुळे नियम काम करतो की नाही, हे आकडे दाखवू शकत नाहीत.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ अपेक्षित परताव्याचे सूत्र, शून्य तोट्यांवर प्रॉफिट फॅक्टर, सर्वाधिक ड्रॉडाउन, शार्पच्या मर्यादा आणि लहान नमुन्यावरून मेट्रिक्स वाचणे, हे तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> बॅकटेस्ट. म्हणजे व्यापार मागील डेटावरून आलेले आहेत.</p>
+<ol>
+<li>सोडवलेल्या उदाहरणातील सहा व्यापार क्रमाने, मोड बॅकटेस्ट म्हणून तुमच्या जर्नलमध्ये लिहा. लॅब 3 तयार असेल तर तिचा वापर करा. नसेल, तर कागदावर किंवा स्प्रेडशीटमध्ये लिहा.</li>
+<li>जर्नल किंवा स्प्रेडशीट दिलेले आकडे वाचा. ते उदाहरणाशी तपासा: विजय दर 50 टक्के, अपेक्षित परतावा प्रति व्यापार Rs 300, प्रॉफिट फॅक्टर 2.2, सर्वाधिक ड्रॉडाउन Rs 1,000.</li>
+<li>कोणताही आकडा वेगळा असेल, तर पुढे जाण्याआधी चूक शोधा.</li>
+<li>एक वाक्य लिहा: सहा व्यापार काहीही ठरवण्यासाठी खूप कमी आहेत.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>प्रत्येक आकडा यादीतील व्यापारांचे वर्णन करतो. तो पुढच्या व्यापाराचे वर्णन करत नाही.</li>
+<li>छोटा नमुना कोणत्याही मेट्रिकला योगायोगाने मजबूत किंवा कमकुवत दाखवू शकतो. 30 पेक्षा कमी व्यापारांवर लॅब इशारा देते.</li>
+<li>उच्च विजय दर म्हणजे कमी जोखीम नव्हे. नियम अनेकदा जिंकू शकतो आणि तरीही त्याच्या काही मोठ्या तोट्यांमुळे खूप गमावू शकतो.</li>
+<li>शार्प रेशिओ तुम्ही निवडलेल्या सुरक्षित दरावर अवलंबून असतो. ट्रेडिंगचे परतावे अनेकदा तो गृहीत धरलेल्या पॅटर्ननुसार चालत नाहीत.</li>
+<li>यादीत खर्च आधीच धरलेले असल्याशिवाय या आकड्यांमध्ये खर्च नसतात (<em>एका व्यापारावरील खर्च</em>).</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>अपेक्षित परतावा = (विजय दर x सरासरी विजय) - (तोटा दर x सरासरी तोटा).</li>
+<li>प्रॉफिट फॅक्टर = एकूण नफा भागिले एकूण तोटा. तोटे नसतील, तर तो काढता येत नाही.</li>
+<li>सर्वाधिक ड्रॉडाउन उच्च बिंदूपासून नंतरच्या निम्न बिंदूपर्यंत मोजला जातो, सुरुवातीपासून नाही.</li>
+<li>शार्प रेशिओ सुरक्षित दरावर आणि परताव्यांच्या पसरण्यावर अवलंबून असतो.</li>
+<li>30 पेक्षा कमी व्यापारांवर कोणताही मेट्रिक निष्कर्ष देत नाही.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>William F. Sharpe (1966), “Mutual Fund Performance”, The Journal of Business (व्यवसाय नियतकालिक), 39(1), 119-138.</li>
+<li>बॅकटेस्ट लॅबच्या डॅशबोर्ड आणि मेट्रिक यादीवरील नोंदी.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T7.8&amp;body=Page%3A%2007-testing-and-validation%2F08-metrics-and-their-limits%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../07-testing-and-validation/07-out-of-sample-and-walk-forward/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../07-testing-and-validation/09-monte-carlo-trade-order/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../07-testing-and-validation/07-out-of-sample-and-walk-forward/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../07-testing-and-validation/09-monte-carlo-trade-order/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

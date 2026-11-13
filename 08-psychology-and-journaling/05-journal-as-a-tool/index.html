@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The journal as a tool - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/08-psychology-and-journaling/05-journal-as-a-tool/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T8.5
+title: The journal as a tool
+page_type: Lab
+prerequisites: [T8.4, T7.8]
+labs: [Lab 3]
+estimated_minutes: 30
+-->
+<h1 id="the-journal-as-a-tool"><a class="header" href="#the-journal-as-a-tool">The journal as a tool</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Three weeks ago you took a trade. Today you cannot remember your planned stop. You also cannot remember whether you moved it. Memory tends to keep the reasons that make you look sensible. It often drops the rest. A journal keeps the record as it was, so you can judge your behaviour fairly. This chapter shows how to set up that record, and how to read it.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>A journal records two sets of fields for each trade.</p>
+<ul>
+<li><strong>Planned fields</strong> are written before you enter. They include the planned entry, the stop, the target and the planned shares.</li>
+<li><strong>Executed fields</strong> are written after the trade. They include the fill price, the time and the exit.</li>
+</ul>
+<p>The gap between the two sets is what you study. Comparing them shows what changed, and why.</p>
+<p><strong>Locked fields.</strong> The planned fields lock at entry. You can add notes later, but you cannot rewrite the plan. This stops a plan from being changed to fit the result.</p>
+<p><strong>Modes.</strong> Each trade belongs to one mode: paper, forward, backtest, live or kite_demo. Keep the modes separate. Do not mix practice results with live results by default.</p>
+<p>Three numbers come from the comparison:</p>
+<ul>
+<li><strong>Slippage in rupees</strong> = (fill price - plan price) x shares, for a long entry. It is the extra rupees you paid above the plan price.</li>
+<li><strong>Plan adherence %</strong> = trades where the plan was followed / total trades x 100.</li>
+<li><strong>Rule breaks</strong> are tagged by category. Your weekly review looks at the most frequent category.</li>
+</ul>
+<p>Two rules keep the record honest:</p>
+<ul>
+<li>Journal entries before the gates are never marked live.</li>
+<li>The journal records what you did. It is not a tool to make losses look smaller.</li>
+</ul>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: lab-journal | mode: paper | weekly: yes | form: plan-and-execution | caption: Plan form, execution form and weekly review form for one hypothetical practice trade. The planned fields lock at entry. -->
+<p>Fill the plan form first. Then fill the execution form after the trade. Compare the two. The weekly review asks you to name one change.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Plan entry Rs 250. Fill price Rs 251. Shares 40.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>1. Price difference</td><td>251 - 250</td><td>Rs 1</td></tr>
+<tr><td>2. Slippage</td><td>1 x 40</td><td>Rs 40</td></tr>
+</tbody></table>
+</div>
+<p><strong>Hypothetical.</strong> Ten trades in the week. Nine followed the plan.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>3. Plan adherence</td><td>9 / 10 x 100</td><td>90%</td></tr>
+</tbody></table>
+</div>
+<p>One trade broke two rules. One break was a late exit, tagged as exit late. The other was oversize, tagged as size. The weekly review looks at the tags and names one change: fix the exit timing check.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Plan entry Rs 250. Fill price Rs 252.50. Shares 40. Work out the slippage in rupees.</p>
+<p>Hints:</p>
+<ol>
+<li>Find the difference first, then multiply by the shares.</li>
+<li>The difference is Rs 2.50.</li>
+</ol>
+<p><strong>Answer:</strong> Slippage = (252.50 - 250) x 40 = 2.50 x 40 = <strong>Rs 100</strong>.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Complete a weekly review for three learning-note trades. Write what went well, one rule break, and one change.</p>
+<details><summary>Check your answer</summary>
+<p>There is no single right review. A useful review:</p>
+<ul>
+<li>names one thing that followed the plan, for example “I wrote the plan before entry”,</li>
+<li>names one rule break, using a tag,</li>
+<li>names one change that is small enough to test next week.</li>
+</ul>
+<p>Example: “Went well: the plan was written before entry. Rule break: exit later than the plan. Change: add an exit-time check before entry.”</p>
+<p>All trades in this exercise are learning-note trades. None are live.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks slippage, adherence, locked fields, mode separation and the order of journal entries.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper for practice entries, never live</strong>. Log it in your journal (or on paper until the journal app is ready).</p>
+<ol>
+<li>Log three learning-note entries. For each, write the planned fields first: entry, stop, target and shares.</li>
+<li>After each trade, write the executed fields: fill price, time and exit.</li>
+<li>For each entry, work out the slippage in rupees and the plan adherence for the set.</li>
+<li>Write one line for a weekly review. Name one change.</li>
+<li>Mark every entry as paper. If the lab is not ready, do this in a spreadsheet.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>The journal shows what you did. It cannot explain why a trade won or lost.</li>
+<li>Slippage from one fill is one number. It does not show your average trade quality.</li>
+<li>Plan adherence counts followed rules, not profits. A trade can follow the plan and still lose.</li>
+<li>A journal is useful only when you fill it in on time. Notes written from memory are less accurate.</li>
+<li>Journal entries are for judging behaviour. They are not a way to make losses look smaller.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Planned fields are written before entry. Executed fields are written after.</li>
+<li>Planned fields lock at entry.</li>
+<li>Slippage (Rs) = (fill price - plan price) x shares, for a long entry.</li>
+<li>Plan adherence % = trades where the plan was followed / total trades x 100.</li>
+<li>Keep paper, forward, backtest, live and kite_demo entries separate.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Lab 3, the record definition and features of the journal.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../08-psychology-and-journaling/04-discipline/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../08-psychology-and-journaling/06-losing-streak/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../08-psychology-and-journaling/04-discipline/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../08-psychology-and-journaling/06-losing-streak/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

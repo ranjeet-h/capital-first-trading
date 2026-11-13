@@ -1,0 +1,418 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>एका व्यापारावरील खर्च - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../02-money-and-math/02-costs-on-a-trade/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../02-money-and-math/02-costs-on-a-trade/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T2.2
+title: एका व्यापारावरील खर्च
+page_type: Math/Calculator
+prerequisites: [T1.3, T2.1]
+labs: [Lab 2]
+estimated_minutes: 30
+-->
+<h1 id="एका-वयापारावरील-खरच"><a class="header" href="#एका-वयापारावरील-खरच">एका व्यापारावरील खर्च</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एक ट्रेडर Rs 5,000 चा शेअर खरेदी करतो. काही दिवसांनी तो तोच शेअर त्याच भावाला विकतो. बाजार हलला नाही, म्हणून त्याला वाटते की त्याचा निकाल तोटा टाळण्याचा, म्हणजे शून्य, असेल. पण स्टेटमेंटमध्ये तोटा दिसतो. फरक खर्चाचा आहे. खरेदीवर काही छोटे शुल्क असते, आणि विक्रीवर आणखी असते. हे प्रकरण दाखवते की ही शुल्के कशी वाढतात. यात DUMMY मॉडेल वापरले आहे, ज्यात गोल आकडे आहेत, म्हणून प्रत्येक ओळ तुम्ही हाताने तपासू शकता.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>एका व्यापारात दोन लेग असतात:</strong> खरेदी आणि विक्री. प्रत्येक लेगवर अनेक शुल्के लागू शकतात. तुमचा एकूण खर्च म्हणजे ही सर्व शुल्के मिळून होणारी बेरीज.</p>
+<p>भारतीय <strong>इक्विटी</strong> व्यापारांवर तुम्हाला पुढील शुल्क प्रकार दिसतील.</p>
+<ul>
+<li><strong>ब्रोकरेज:</strong> ऑर्डर पूर्ण करण्यासाठी ब्रोकर आकारतो ते शुल्क.</li>
+<li><strong>सिक्युरिटीज ट्रांझॅक्शन टॅक्स (STT):</strong> व्यापारांवर लागणारा सरकारी कर. डिलिव्हरी व्यापारांत तो खरेदी आणि विक्री दोन्हीवर लागतो. इंट्राडे व्यापारांत तो फक्त विक्रीवर लागतो.</li>
+<li><strong>एक्सचेंज ट्रांझॅक्शन चार्ज:</strong> व्यापार झालेल्या मूल्यावर एक्सचेंज आकारते ते छोटे शुल्क.</li>
+<li><strong>SEBI शुल्क:</strong> नियामक SEBI चे छोटे शुल्क, जे व्यापार झालेल्या मूल्यावर लागते.</li>
+<li><strong>स्टॅम्प ड्युटी:</strong> फक्त खरेदीच्या बाजूवर लागणारी सरकारी ड्युटी. 1 जुलै 2020 पासून ती सर्व राज्यांत सारखीच आहे.</li>
+<li><strong>GST:</strong> काही इतर शुल्कांवर लागणारा कर, संपूर्ण व्यापारावर नव्हे. तो ब्रोकरेज, SEBI शुल्क आणि एक्सचेंज ट्रांझॅक्शन चार्ज यावर लागतो.</li>
+<li><strong>डिपॉझिटरी (DP) शुल्क:</strong> तुम्ही डिमॅट खात्यातून शेअर्स विकता तेव्हा लागणारे शुल्क. एका दिवसात विकलेल्या प्रत्येक शेअर नावासाठी ते एकदाच लागते, संख्या कितीही असो.</li>
+</ul>
+<p>शुल्के दोन गटांत मोडतात:</p>
+<ul>
+<li><strong>प्रमाणशीर</strong> शुल्क टर्नओव्हरसोबत वाढते. एका लेगसाठी टर्नओव्हर म्हणजे भाव x संख्या. व्यापार दुप्पट केला, तर शुल्कही दुप्पट होते.</li>
+<li><strong>स्थिर</strong> शुल्क टर्नओव्हरसोबत वाढत नाही. प्रति ऑर्डर किंवा प्रति शेअर प्रति दिवस ठरलेली रक्कम छोट्या आणि मोठ्या व्यापारासाठी सारखीच असते.</li>
+</ul>
+<p>म्हणूनच छोट्या व्यापारांवर खर्चाचा भार जास्त वाटतो. छोट्या पोझिशनमध्ये स्थिर शुल्काचा वाटा मोठा असतो.</p>
+<p>दोन सूत्रे:</p>
+<ul>
+<li>एका लेगचा टर्नओव्हर = भाव x संख्या.</li>
+<li>एकूण खर्च = दोन्ही लेगवरील सर्व शुल्कांची बेरीज.</li>
+</ul>
+<p><strong>तोटा टाळण्याची हालचाल, शब्दांत:</strong> एकूण खर्च भागिले पोझिशनचे मूल्य. चिन्हांत, C म्हणजे एकूण खर्च आणि V म्हणजे पोझिशनचे मूल्य. तर तोटा टाळण्याची हालचाल सुमारे C / V असते. ही फक्त अंदाजे संख्या आहे. बाहेर पडण्याचा भाव प्रमाणशीर शुल्के बदलतो. हे अंगठ्याचा नियम म्हणून वापरा, अचूक आकडा म्हणून नव्हे.</p>
+<p><strong>DUMMY मॉडेल.</strong> खालील गणित या मॉडेलवर आधारित आहे. हा कोणत्याही ब्रोकरचा, एक्सचेंजचा किंवा सरकारचा दर नाही.</p>
+<ul>
+<li>प्रमाणशीर: प्रत्येक लेगवर टर्नओव्हरच्या 0.1%.</li>
+<li>स्थिर: प्रति ऑर्डर Rs 20, प्रत्येक लेगवर.</li>
+<li>DP शुल्क: प्रति शेअर Rs 50, फक्त विक्रीच्या लेगवर.</li>
+</ul>
+<p>हे सरावासाठी गोल आकडे आहेत. हे खरे शुल्क नाहीत. यांना Zerodha किंवा सरकारचे आकडे म्हणून सांगू नका. खरे शुल्क पुढच्या तक्त्यात आहेत.</p>
+<p>डिलिव्हरीवरील ब्रोकरेज सराव मॉडेलमध्ये नाही. इंट्राडे खर्च येथे मोजलेला नाही.</p>
+<h3 id="वासतविक-शुलक-आज"><a class="header" href="#वासतविक-शुलक-आज">वास्तविक शुल्क आज</a></h3>
+<p>खालील तक्त्यात Zerodha च्या शुल्क पानावर इक्विटी व्यापारांसाठी काय दिले आहे ते दाखवले आहे. एक्सचेंज, SEBI आणि सरकारी शुल्के Zerodha च्या बाहेर ठरतात.</p>
+<div class="table-wrapper"><table><thead><tr><th>शुल्क</th><th>इक्विटी डिलिव्हरी</th><th>इक्विटी इंट्राडे</th></tr></thead><tbody>
+<tr><td>ब्रोकरेज</td><td>शून्य</td><td>0.03% किंवा प्रत्येक पूर्ण झालेल्या ऑर्डरसाठी Rs 20, जे कमी असेल ते</td></tr>
+<tr><td>STT</td><td>0.1%, खरेदी आणि विक्री दोन्हीवर</td><td>0.025%, फक्त विक्रीच्या बाजूवर</td></tr>
+<tr><td>NSE ट्रांझॅक्शन चार्ज</td><td>व्यापार झालेल्या मूल्याच्या 0.00307%</td><td>व्यापार झालेल्या मूल्याच्या 0.00307%</td></tr>
+<tr><td>BSE ट्रांझॅक्शन चार्ज</td><td>व्यापार झालेल्या मूल्याच्या 0.00375%</td><td>व्यापार झालेल्या मूल्याच्या 0.00375%</td></tr>
+<tr><td>SEBI शुल्क</td><td>प्रति कोटी Rs 10</td><td>प्रति कोटी Rs 10</td></tr>
+<tr><td>स्टॅम्प ड्युटी (फक्त खरेदीच्या बाजूवर)</td><td>0.015%</td><td>0.003%</td></tr>
+<tr><td>GST</td><td>18%, ब्रोकरेज + SEBI शुल्क + ट्रांझॅक्शन चार्ज यावर</td><td>18%, ब्रोकरेज + SEBI शुल्क + ट्रांझॅक्शन चार्ज यावर</td></tr>
+<tr><td>DP शुल्क</td><td>एका दिवसात विकलेल्या प्रत्येक शेअर नावासाठी Rs 15.34 (Rs 3.50 डिपॉझिटरी शुल्क + Rs 9.50 Zerodha शुल्क + Rs 2.34 GST), संख्या कितीही असो</td><td>लागत नाही, कारण डिमॅट खात्यातून काहीही विकले जात नाही</td></tr>
+</tbody></table>
+</div>
+<p>आणखी काही Zerodha शुल्क जाणून घेण्यासारखी आहेत. डीलरमार्फत दिलेल्या ऑर्डर (कॉल अँड ट्रेड) साठी प्रति ऑर्डर Rs 50 लागतात. इंट्राडे पोझिशन ऑटो स्क्वेअर-ऑफने तुमच्यासाठी बंद केली, तर बंद झालेल्या प्रत्येक ऑर्डरसाठी Rs 50 अधिक 18% GST आकारला जातो. नवीन खात्यांसाठी वार्षिक खाते शुल्क (AMC) पहिल्या वर्षी मोफत आहे. त्यानंतर रक्कम खात्याच्या प्रकारावर आणि तुमच्या होल्डिंगच्या मूल्यावर अवलंबून असते, म्हणून शुल्क पानावर ती वाचा.</p>
+<p>(11 नोव्हेंबर 2026 पर्यंत, Zerodha शुल्क पान, 27 फेब्रुवारी 2026 चे NSE परिपत्रक आणि जून 2020 मधील स्टॅम्प ड्युटीवरील SEBI टीप यावरून. नियम आणि दर बदलतात, म्हणून कोणताही आकडा वापरण्यापूर्वी Zerodha शुल्क पान आणि ब्रोकरेज कॅल्क्युलेटर तपासा.)</p>
+<p>Zerodha च्या पानावर म्हटले आहे की सर्व वैधानिक आणि नियामक शुल्के प्रत्यक्ष खर्चानुसार आकारली जातात. प्रत्येक ओळीसाठी गोलाई नियम दिलेला नाही. STT ला जवळच्या रुपयावर गोल केले जाते. इतर ओळी तुमच्या स्वतःच्या बेरजेपेक्षा काही पैशांनी वेगळ्या असू शकतात. अधिकृत ब्रोकरेज कॅल्क्युलेटर हीच तपासणी आहे.</p>
+<p>आणखी एक मुद्दा. एका ओळीत शून्य म्हणजे शून्य खर्च नव्हे. ब्रोकर शून्य ब्रोकरेज दाखवू शकतो. वरील यादीतील इतर शुल्के तरीही लागू होतात. प्रत्येक घटक जोडा.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>खालील तक्त्यात दोन राउंड ट्रिपचा DUMMY खर्च प्रमाणशीर, स्थिर आणि DP भागांत विभागला आहे. स्तंभांच्या खाली वाचा.</p>
+<div class="table-wrapper"><table><thead><tr><th>घटक (DUMMY)</th><th>Rs 5,000 राउंड ट्रिप</th><th>Rs 50,000 राउंड ट्रिप</th></tr></thead><tbody>
+<tr><td>प्रमाणशीर, प्रत्येक लेगवर 0.1%</td><td>5 + 5 = 10</td><td>50 + 50 = 100</td></tr>
+<tr><td>प्रति ऑर्डर स्थिर, प्रति लेग Rs 20</td><td>20 + 20 = 40</td><td>20 + 20 = 40</td></tr>
+<tr><td>विक्रीवर DP शुल्क, Rs 50</td><td>50</td><td>50</td></tr>
+<tr><td><strong>एकूण</strong></td><td><strong>100</strong></td><td><strong>190</strong></td></tr>
+<tr><td>स्थिर असलेला वाटा (ऑर्डर + DP)</td><td>100 पैकी 90 = 90%</td><td>190 पैकी 90 = 47.4%</td></tr>
+</tbody></table>
+</div>
+<p>तक्त्याचा मुद्दा वाट्यांमध्ये आहे. छोट्या व्यापारातील बहुतांश खर्च स्थिर शुल्कांचा असतो. मोठ्या व्यापारात त्यांचा परिणाम खूप कमी असतो.</p>
+<!-- component: lab-costs | mode: walkthrough | rates: dummy | tradeValue: 5000 | product: delivery | caption: Rs 5,000 च्या राउंड ट्रिपच्या प्रत्येक खर्च ओळीतून वॉकथ्रू करा, DUMMY दर लेबल केलेले ठेवा; मग व्यापाराचे मूल्य बदला आणि स्थिर वाटा कसा कमी होतो ते पाहा -->
+<p>प्रत्येक लेगमधून पुढे जाण्यासाठी वॉकथ्रू वापरा. कोणती ओळ बदलते आणि कोणती तशीच राहते हे पाहण्यासाठी व्यापाराचे मूल्य बदला. DUMMY या लेबलचा अर्थ, दर खरे नाहीत.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक, DUMMY मॉडेल (सरावासाठी गोल आकडे, खरे शुल्क नव्हे).</strong> खरेदी आणि विक्रीचे भाव सारखे आहेत, त्यामुळे भाव हलत नाही.</p>
+<p><strong>Rs 5,000 चा राउंड ट्रिप</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>खरेदीचा टर्नओव्हर</td><td>5,000</td><td>Rs 5,000</td></tr>
+<tr><td>खरेदीवरील प्रमाणशीर</td><td>0.1% x 5,000 = 5</td><td>Rs 5.00</td></tr>
+<tr><td>खरेदीवरील स्थिर</td><td>Rs 20</td><td>Rs 20.00</td></tr>
+<tr><td><strong>खरेदी लेगची एकूण रक्कम</strong></td><td>5.00 + 20</td><td><strong>Rs 25.00</strong></td></tr>
+<tr><td>विक्रीचा टर्नओव्हर</td><td>5,000</td><td>Rs 5,000</td></tr>
+<tr><td>विक्रीवरील प्रमाणशीर</td><td>0.1% x 5,000 = 5</td><td>Rs 5.00</td></tr>
+<tr><td>विक्रीवरील स्थिर</td><td>Rs 20</td><td>Rs 20.00</td></tr>
+<tr><td>विक्रीवरील DP शुल्क</td><td>Rs 50</td><td>Rs 50.00</td></tr>
+<tr><td><strong>विक्री लेगची एकूण रक्कम</strong></td><td>5.00 + 20 + 50</td><td><strong>Rs 75.00</strong></td></tr>
+<tr><td><strong>एकूण खर्च</strong></td><td>25.00 + 75.00</td><td><strong>Rs 100.00</strong></td></tr>
+</tbody></table>
+</div>
+<p>पोझिशनमधील वाटा म्हणून एकूण खर्च: 100 / 5,000 = 0.02 = <strong>2.0%</strong>. तोटा टाळण्याची हालचाल सुमारे 2.0% आहे.</p>
+<p><strong>Rs 50,000 चा राउंड ट्रिप</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>खरेदी लेगची एकूण रक्कम</td><td>50 + 20</td><td>Rs 70.00</td></tr>
+<tr><td>विक्री लेगची एकूण रक्कम</td><td>50 + 20 + 50</td><td>Rs 120.00</td></tr>
+<tr><td><strong>एकूण खर्च</strong></td><td>70 + 120</td><td><strong>Rs 190.00</strong></td></tr>
+</tbody></table>
+</div>
+<p>पोझिशनमधील वाटा म्हणून एकूण खर्च: 190 / 50,000 = 0.0038 = <strong>0.38%</strong>.</p>
+<p><strong>दोन्ही प्रकरणांत DP शुल्क.</strong> ते प्रत्येक वेळी Rs 50 आहे. व्यापाराचा वाटा म्हणून, छोट्या व्यापारासाठी ते 50 / 5,000 = 1.0% आहे. मोठ्यासाठी ते 50 / 50,000 = 0.1% आहे. छोट्या व्यापारात तेच रुपयांतील शुल्क टक्केवारीच्या दहापट आहे.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<!-- component: lab-costs | mode: walkthrough | rates: dummy | tradeValue: 10000 | product: delivery | caption: मार्गदर्शित सराव: DUMMY दरांसह Rs 10,000 चा राउंड ट्रिप -->
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> DUMMY मॉडेल वापरून Rs 10,000 च्या राउंड ट्रिपचा एकूण खर्च काढा. खरेदी आणि विक्रीचे भाव सारखे आहेत. एकूण रुपयांत आणि Rs 10,000 च्या टक्केवारीत लिहा.</p>
+<p><strong>संकेत:</strong></p>
+<ol>
+<li>प्रथम खरेदी लेग काढा. Rs 10,000 वरील प्रमाणशीर शुल्क शोधा, मग स्थिर Rs 20 मिळवा.</li>
+<li>विक्री लेग काढा. प्रमाणशीर शुल्क, स्थिर Rs 20 आणि Rs 50 DP शुल्क मिळवा.</li>
+<li>दोन्ही लेग मिळवा, मग Rs 10,000 ने भागा.</li>
+</ol>
+<p><strong>उत्तर:</strong> खरेदी लेग: 10 + 20 = Rs 30. विक्री लेग: 10 + 20 + 50 = Rs 80. एकूण: Rs 110, म्हणजे 110 / 10,000 = 1.1%.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> Rs 200 दराने 100 शेअर्स खरेदी करा (Rs 20,000). नंतर सर्व 100 शेअर्स Rs 210 दराने विका (Rs 21,000). DUMMY मॉडेल वापरून एकूण खर्च, शुल्कांपूर्वीचा एकूण नफा आणि शुल्कांनंतरचा निव्वळ नफा काढा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>खरेदी लेग: प्रमाणशीर 0.1% x 20,000 = 20; स्थिर 20; एकूण 40.</li>
+<li>विक्री लेग: प्रमाणशीर 0.1% x 21,000 = 21; स्थिर 20; DP 50; एकूण 91.</li>
+<li>एकूण खर्च: 40 + 91 = Rs 131.</li>
+<li>एकूण नफा: (210 - 200) x 100 = Rs 1,000.</li>
+<li>निव्वळ नफा: 1,000 - 131 = Rs 869.</li>
+</ul>
+<p>हे DUMMY गणित आहे. ते कोणत्याही खऱ्या व्यापाराचा अंदाज नाही.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ DUMMY मॉडेलच्या गणिताची तपासणी करते. स्थिर आणि प्रमाणशीर शुल्कातील फरक, आणि वापरण्यापूर्वी दर का तपासावा लागतो, हेही ती तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>पद्धत:</strong> शिकण्याची नोंद. ती तुमच्या जर्नलमध्ये लिहा.</p>
+<ol>
+<li>अधिकृत Zerodha शुल्क पान आणि अधिकृत ब्रोकरेज कॅल्क्युलेटर उघडा. तुम्ही कधी पाहिले ती तारीख लिहा.</li>
+<li>एक Rs 5,000 चा डिलिव्हरी व्यापार आणि एक Rs 50,000 चा डिलिव्हरी व्यापार घ्या. प्रत्येक घटकाची ओळ आणि कॅल्क्युलेटर दाखवणारी एकूण रक्कम लिहा.</li>
+<li>घटकांच्या नावांची यादी स्वतःच्या शब्दांत, स्रोत दुव्याच्या शेजारी लिहा.</li>
+<li>हे आकडे अजून पुस्तकात किंवा कोणत्याही गणितात कॉपी करू नका. नोंदीला शिकण्याची नोंद म्हणून चिन्हांकित करा, कोणताही व्यापार न लावता.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>हे तुम्हाला कोणतेही खरे शुल्क सांगत नाही. येथील प्रत्येक दर DUMMY आहे. सध्याचे दर फक्त अधिकृत स्रोतांत मिळतात.</li>
+<li>यात कर धरलेला नाही. ट्रेडिंग नफ्यावरील कर हा वेगळा प्रश्न आहे (<em>Taxes on trading profits</em>).</li>
+<li>यात स्लिपेज धरलेले नाही. स्लिपेज म्हणजे अपेक्षित आणि प्रत्यक्ष मिळालेल्या भावातील फरक. यावर जोखीम, गॅप आणि नियोजित विरुद्ध प्रत्यक्ष परिणाम पाहण्यासाठी <em>Slippage, gaps and planned versus actual risk</em> वाचा. खरा व्यापार तक्त्यात दाखवलेल्यापेक्षा जास्त खर्च करू शकतो.</li>
+<li>यात असे म्हटलेले नाही की छोटा व्यापार वाईट कल्पना आहे. ते इतकेच सांगते की छोट्या व्यापारांवर स्थिर शुल्काचा भार जास्त असतो. तसेच प्रत्येक योजनेत ही शुल्के धरणे आवश्यक आहे, हेही ते सांगते.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>खर्च म्हणजे दोन्ही लेगवरील प्रत्येक शुल्काची बेरीज, फक्त ब्रोकरेज नव्हे.</li>
+<li>प्रमाणशीर शुल्क टर्नओव्हरसोबत वाढते. स्थिर शुल्क वाढत नाही.</li>
+<li>DUMMY मॉडेलमध्ये Rs 5,000 च्या राउंड ट्रिपवर एकूण Rs 100, म्हणजे 2.0%. Rs 50,000 वर ते Rs 190, म्हणजे 0.38%.</li>
+<li>एका ओळीतील शून्य म्हणजे शून्य खर्च नव्हे.</li>
+<li>प्रत्येक दर वापरण्यापूर्वी अधिकृत स्रोतावरून, तारखेसह पडताळा.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Zerodha शुल्क पान (zerodha.com/charges), 11 नोव्हेंबर 2026 रोजी वाचले, आणि Zerodha ब्रोकरेज कॅल्क्युलेटर.</li>
+<li>STT (STT चे दर आणि गोलाई), DP शुल्क आणि ऑटो स्क्वेअर-ऑफ शुल्क यावरील Zerodha सहाय्य पाने, 11 नोव्हेंबर 2026 रोजी वाचली.</li>
+<li>NSE परिपत्रक NSE/FA/73061, 27 फेब्रुवारी 2026, ट्रांझॅक्शन शुल्कातील सुधारणा, 1 मार्च 2026 पासून लागू.</li>
+<li>1 जुलै 2020 पासूनच्या स्टॅम्प ड्युटी दरांवरील SEBI टीप (भारतीय स्टॅम्प कायद्यावरील FAQ, जून 2020).</li>
+<li>SEBI टर्नओव्हर शुल्क: Zerodha शुल्क पानावर दिल्याप्रमाणे. हे शुल्क SEBI ठरवते, म्हणून SEBI ची स्वतःची पानेही तपासा.</li>
+</ul>
+<!-- facts-needed: Zerodha equity delivery brokerage; STT rates and basis; NSE and BSE exchange transaction charge rates; SEBI turnover fee; stamp duty rates by state; GST rate and base; DP charge and per-scrip-per-day rule; rounding rules from the official calculator. -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T2.2&amp;body=Page%3A%2002-money-and-math%2F02-costs-on-a-trade%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/01-money-math-first/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/03-taxes-on-trading-profits/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/01-money-math-first/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/03-taxes-on-trading-profits/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

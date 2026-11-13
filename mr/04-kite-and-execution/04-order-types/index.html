@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ऑर्डर प्रकार - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../04-kite-and-execution/04-order-types/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../04-kite-and-execution/04-order-types/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T4.4
+title: ऑर्डर प्रकार
+page_type: Kite walkthrough
+prerequisites: [T4.3, T2.6, T3.6]
+labs: [Lab 1]
+estimated_minutes: 30
+-->
+<h1 id="ऑरडर-परकार"><a class="header" href="#ऑरडर-परकार">ऑर्डर प्रकार</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>तुमच्याकडे Rs 250 ला घेतलेले 50 शेअर्स आहेत. भाव Rs 240 पर्यंत खाली आला की विक्री व्हावी, असा स्टॉप-लॉस तुम्हाला हवा आहे. आणि हा स्टॉप रात्रभर चालू राहावा, असे वाटते. दुसऱ्या दिवशी सकाळी भाव Rs 232 ला उघडतो. तो तुमच्या ट्रिगरच्या खाली आहे. तुमची विक्री होईल का? उत्तर तुम्ही निवडलेल्या ऑर्डर प्रकारावर अवलंबून आहे. Kite तो ऑर्डर किती वेळ जिवंत ठेवते, यावरही ते अवलंबून आहे. हे प्रकरण चार ऑर्डर प्रकार समजावून सांगते: बाजार, लिमिट, SL आणि SL-M.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>ऑर्डर म्हणजे खरेदी किंवा विक्रीची सूचना. काही ऑर्डरला अट असते. अट म्हणजे एक भावाचा नियम, जो आधी पूर्ण व्हावा लागतो. प्रत्येक ऑर्डर प्रकार भावाला वेगळ्या पद्धतीने हाताळतो.</p>
+<p><strong>बाजार ऑर्डर.</strong> तुम्ही आत्ता उपलब्ध असलेल्या सर्वोत्तम भावाने खरेदी किंवा विक्री करता. भाव तुम्ही ठरवत नाही. वेग मिळतो, पण भावाची खात्री मिळत नाही. वेगवान हालचालीत तुम्हाला मिळणारा भाव, तुम्ही शेवटचा पाहिलेल्या भावापासून खूप दूर असू शकतो.</p>
+<p><strong>लिमिट ऑर्डर.</strong> तुम्ही स्वीकारणारा सर्वात वाईट भाव ठरवता. खरेदी लिमिट भावावर किंवा त्यापेक्षा कमी भावावर पूर्ण होते. विक्री लिमिट भावावर किंवा त्यापेक्षा जास्त भावावर पूर्ण होते. भाव तुमच्या लिमिटपर्यंत कधीच पोहोचला नाही, तर ऑर्डर कधीच पूर्ण होऊ शकत नाही.</p>
+<p><strong>ट्रिगर भाव.</strong> काही ऑर्डर ट्रिगर भावाची वाट पाहतात. ट्रिगर हा भाव आहे जो ऑर्डर सुरू करतो. भाव ट्रिगरपर्यंत पोहोचेपर्यंत काहीच होत नाही.</p>
+<p><strong>SL (स्टॉप-लॉस लिमिट).</strong> SL ऑर्डरला दोन भाव असतात: एक ट्रिगर आणि एक लिमिट. ट्रिगर गाठला की ऑर्डर लिमिट ऑर्डर बनते आणि लिमिट भावावर चालते. ती फक्त लिमिट भावावर किंवा त्यापेक्षा चांगल्या भावावर पूर्ण होते.</p>
+<p><strong>SL-M (स्टॉप-लॉस मार्केट).</strong> SL-M ऑर्डरला फक्त ट्रिगर असतो. ट्रिगर गाठला की ऑर्डर बाजार ऑर्डर बनते. त्या वेळी उपलब्ध असलेल्या सर्वोत्तम भावाने ती विकली जाते. ती पूर्ण होणारा भाव ट्रिगरपासून खूप दूर असू शकतो.</p>
+<p><strong>लॉन्ग</strong> म्हणजे तुमच्याकडे शेअर्स आहेत आणि भाव वाढावा अशी तुमची इच्छा आहे. लॉन्ग होल्डिंगसाठी स्टॉप-लॉस विक्रीचा ट्रिगर तुमच्या एन्ट्री भावाच्या खाली असतो. तिची लिमिट ट्रिगरवर किंवा त्याच्या खाली असते.</p>
+<p><strong>गॅप</strong> म्हणजे भावात होणारी उडी, ज्यात मध्ये व्यवहार होत नाहीत. गॅप अनेकदा बाजार उघडताना होतात. गॅपमुळे स्टॉप तुम्हाला अपेक्षित असलेल्यापेक्षा वेगळा वागू शकतो. <em>गॅप आणि त्यांचा स्टॉपवर होणारा परिणाम</em> हा भाग पाहा.</p>
+<div class="table-wrapper"><table><thead><tr><th>ऑर्डर प्रकार</th><th>तुम्ही काय ठरवता</th><th>कधी सक्रिय होतो</th><th>कोणता भाव मिळू शकतो</th><th>मुख्य जोखीम</th></tr></thead><tbody>
+<tr><td>बाजार</td><td>काही नाही</td><td>आत्ता</td><td>आत्ता उपलब्ध सर्वोत्तम भाव</td><td>मिळणारा भाव शेवटच्या पाहिलेल्या भावापासून खूप दूर असू शकतो</td></tr>
+<tr><td>लिमिट</td><td>लिमिट भाव</td><td>आत्ता</td><td>लिमिट भाव किंवा चांगला भाव</td><td>कदाचित कधीच पूर्ण होणार नाही</td></tr>
+<tr><td>SL</td><td>ट्रिगर आणि लिमिट</td><td>भाव ट्रिगरपर्यंत पोहोचला की</td><td>लिमिट भाव किंवा चांगला भाव</td><td>गॅपमध्ये कदाचित पूर्ण होणार नाही</td></tr>
+<tr><td>SL-M</td><td>ट्रिगर</td><td>भाव ट्रिगरपर्यंत पोहोचला की</td><td>त्या वेळचा सर्वोत्तम भाव</td><td>पूर्ण होणारा भाव ट्रिगरपासून खूप दूर असू शकतो</td></tr>
+</tbody></table>
+</div>
+<p>SL ची ओळ पुन्हा वाचा. गॅपमध्ये SL ऑर्डर उघडा राहू शकतो, तर भाव सतत खाली जात असतो. तुमच्याकडे शेअर्स अजूनही असतात.</p>
+<p><strong>वैधता</strong> म्हणजे ऑर्डर किती वेळ लाइव्ह राहतो. Kite मध्ये <strong>Day</strong> (डीफॉल्ट, म्हणजे त्या दिवसापुरता), <strong>Immediate or Cancel</strong> (IOC, जे शक्य तितके त्याच वेळी पूर्ण करते आणि उरलेले रद्द करते) आणि <strong>Minutes</strong> (1 ते 120 मिनिटे) असे पर्याय आहेत. सामान्य SL किंवा SL-M ऑर्डर फक्त एका ट्रेडिंग दिवसासाठी वैध असतो. सत्र संपेपर्यंत तो ट्रिगर झाला नाही, तर संपतो. जास्त काळ टिकणारा स्टॉप हवा असेल, तर GTT (good till triggered) वापरा. <em>GTT ऑर्डर आणि त्यांच्या मर्यादा</em> हा भाग पाहा.</p>
+<p><strong>बाजार संरक्षण (Market protection).</strong> वेबवर <strong>Advanced</strong> वर क्लिक करा, मग <strong>Market protection</strong> वर टिक करा. मग बाजार ऑर्डर फक्त शेवटच्या भावाच्या ठरवलेल्या मर्यादेतच पूर्ण होतो. त्या मर्यादेत जो भाग पूर्ण होऊ शकत नाही, तो संरक्षण भावावर लिमिट ऑर्डर बनतो आणि उघडा राहतो.</p>
+<p><strong>ब्लॉक केलेले ऑर्डर.</strong> Kite स्टॉक ऑप्शन्सवरील आणि काही इंडेक्स ऑप्शन कॉन्ट्रॅक्ट्सवरील बाजार ऑर्डर ब्लॉक करते. इंडेक्स ऑप्शन्स आणि सर्व BSE इन्स्ट्रुमेंट्ससाठी ते SL-M ब्लॉक करते. BSE वर Zerodha त्याऐवजी SL सुचवते.</p>
+<p><strong>इतर ऑर्डर प्रकार</strong> (Kite याला “varieties” म्हणते, म्हणजे तुम्ही देऊ शकता असे ऑर्डरचे प्रकार):</p>
+<ul>
+<li><strong>Cover (CO).</strong> NSE इक्विटीवर, फक्त इंट्राडे व्यापारांसाठी, बाजार किंवा लिमिट एन्ट्री आणि त्यासोबत बिल्ट-इन स्टॉप-लॉस. पहिला भाग पूर्ण झाला की दुसरा भाग रद्द करता येत नाही.</li>
+<li><strong>Iceberg.</strong> मोठा ऑर्डर, जो Kite एक्सचेंजला लहान भागांत पाठवते. <em>Kite मधील बाजार डेप्थ आणि चार्ट</em> हा भाग पाहा.</li>
+<li><strong>Disclosed quantity.</strong> फक्त इक्विटी ऑर्डरसाठी. ऑर्डरचा फक्त काही भाग बाजाराला दिसतो. तो ऑर्डर विंडोमध्ये कुठे दिसतो ते बदलू शकते, म्हणून तुमच्या स्वतःच्या अॅपमध्ये तो शोधा.</li>
+<li><strong>AMO (After Market Order).</strong> बाजार बंद झाल्यावर दिलेला ऑर्डर. बाजार उघडल्यावर Kite तो एक्सचेंजला पाठवते. तोपर्यंत ऑर्डर बुकमध्ये <strong>AMO REQ RECEIVED</strong> दिसते. तो अजून एक्सचेंज ऑर्डर नाही. AMO ला Cover किंवा Iceberg ऑर्डरसाठी परवानगी नाही. प्री-मार्केट किंवा AMO ऑर्डर पूर्ण होतील, याची Zerodha खात्री देत नाही.</li>
+</ul>
+<p>ऑर्डर टप्प्याटप्प्याने प्रवास करतो. तो तुमच्याकडून तुमच्या ब्रोकरकडे जातो. ब्रोकर तो एक्सचेंजला पाठवतो. एक्सचेंज त्याची जुळवणी विरुद्ध बाजूच्या ऑर्डरशी करतो. खालील चित्र हा मार्ग दाखवते.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: sl-trigger-sim | entry: 250 | trigger: 240 | limit: 238 | openPrice: 232 | mode: normal | caption: लॉन्ग होल्डिंगसाठी 50 शेअर्सवर SL आणि SL-M ची तुलना, नॉर्मल मोड आणि गॅप मोडमध्ये -->
+<!-- component: order-flow-sim | caption: एक ऑर्डर तुमच्याकडून, तुमच्या ब्रोकरमार्गे एक्सचेंजकडे आणि जुळवणीपर्यंत जाताना -->
+<p>नॉर्मल मोडने सुरुवात करा. SL ऑर्डर काय करतो आणि SL-M ऑर्डर काय करतो, त्याची तुलना करा. मग गॅप मोडवर जा आणि पुन्हा तुलना करा. प्रत्येक वेळी पूर्ण होणारा भाव लक्षात ठेवा. ऑर्डर फ्लो पॅनल एका ऑर्डरचा मार्ग दाखवते.</p>
+<!-- component: kite-flow | flow: place-a-limit-buy-cnc,place-a-stop-sl-order,amo,mobile-swipe-to-place | platform: web | caption: लिमिट खरेदी, स्टॉप ऑर्डर, AMO आणि फोनवरील स्वाइप यासाठी क्लिक मार्ग. Zerodha डेमोमध्ये किंवा डमी डेटासह सराव करा. स्क्रीन आणि बटणांची नावे बदलू शकतात, म्हणून Kite च्या मदत पेजेस तपासा. -->
+<!-- component: kite-illustration | screen: order-types | caption: ऑर्डर प्रकार बदला आणि कोणते बॉक्स वापरले जातात व प्रत्येक प्रकारात कोणता धोका आहे ते पहा. Zerodha डेमोमध्ये किंवा डमी डेटासह सराव करा. स्क्रीन आणि बटणांची नावे बदलू शकतात, म्हणून Kite च्या मदत पेजेस तपासा. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> तुमच्याकडे Rs 250 ला घेतलेले 50 शेअर्स आहेत. तुमच्या स्टॉपचा ट्रिगर Rs 240 आहे आणि लिमिट Rs 238 आहे. तो दुसऱ्या दिवशी सकाळपर्यंत लाइव्ह असला पाहिजे. सामान्य SL सत्र संपताच संपला असता, म्हणून हा स्टॉप GTT आहे.</p>
+<p>ट्रिगरवर नियोजित तोटा = 50 x (250 - 240) = 50 x 10 = <strong>Rs 500</strong>.</p>
+<div class="table-wrapper"><table><thead><tr><th>परिस्थिती</th><th>काय होते</th><th>पूर्ण होणारा भाव</th><th>तोटा</th></tr></thead><tbody>
+<tr><td>A. हळूहळू घसरण</td><td>भाव Rs 240 च्या खाली आणि मग Rs 238 च्या खाली जातो</td><td>Rs 238</td><td>50 x (250 - 238) = 50 x 12 = <strong>Rs 600</strong></td></tr>
+<tr><td>B. Rs 232 ला गॅप, लिमिट स्टॉपसह (SL, किंवा लिमिट भाव असलेला GTT)</td><td>ट्रिगर ओलांडला जातो. Rs 238 किंवा त्यापेक्षा चांगल्या भावाची विक्री Rs 232 ला पूर्ण होऊ शकत नाही</td><td>पूर्ण होत नाही. ऑर्डर उघडा राहतो</td><td>अजून विक्री झालेली नाही. तोटा उघडा आहे आणि वाढू शकतो</td></tr>
+<tr><td>C. Rs 232 ला गॅप, बाजार स्टॉपसह (SL-M, किंवा Market वर सेट केलेला GTT)</td><td>ट्रिगर ओलांडला जातो. ऑर्डर त्या वेळचा सर्वोत्तम भाव घेऊन विकला जातो</td><td>सुमारे Rs 232</td><td>50 x (250 - 232) = 50 x 18 = <strong>Rs 900</strong></td></tr>
+</tbody></table>
+</div>
+<p>परिस्थिती A मध्ये नियोजितपेक्षा Rs 100 जास्त तोटा होतो (Rs 600 वजा Rs 500). परिस्थिती C मध्ये नियोजितपेक्षा Rs 400 जास्त तोटा होतो (Rs 900 वजा Rs 500). परिस्थिती B मध्ये अजून विक्री झालेली नाही, त्यामुळे तोटा उघडा राहतो.</p>
+<p>Kite वर बाजार स्टॉपला बाजार संरक्षण असू शकते. असेल, तर ऑर्डरचा काही भाग Rs 232 ला पूर्ण होण्याऐवजी संरक्षण भावावर उघडा राहू शकतो.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> तुमच्याकडे Rs 250 ला घेतलेले 50 शेअर्स आहेत. SL ट्रिगर Rs 240 आहे आणि लिमिट Rs 236 आहे. भाव Rs 235 ला उघडतो. SL ऑर्डर पूर्ण होतो का ते ठरवा. मग SL-M ऑर्डर काय करेल ते काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>विक्री लिमिट फक्त त्याच्या भावावर किंवा त्यापेक्षा चांगल्या भावावर पूर्ण होते.</li>
+<li>लिमिटपेक्षा खालचा उघडणारा भाव ऑर्डर पूर्ण करत नाही.</li>
+<li>SL-M ऑर्डर उघडणाऱ्या भावाजवळ पूर्ण होतो.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>SL पूर्ण होत नाही. भाव Rs 235 आहे, जो लिमिट Rs 236 च्या खाली आहे.</li>
+<li>SL-M Rs 235 जवळ पूर्ण होतो.</li>
+<li>SL-M वरील तोटा: 50 x (250 - 235) = 50 x 15 = <strong>Rs 750</strong>.</li>
+</ul>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> तुमच्याकडे Rs 300 ला घेतलेले 100 शेअर्स आहेत. SL ट्रिगर Rs 290 आहे आणि लिमिट Rs 287 आहे. भाव Rs 284 ला उघडतो. ट्रिगरवर नियोजित तोटा, SL-M वरील तोटा आणि SL पूर्ण होतो का, ते काढा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>ट्रिगरवर नियोजित तोटा: 100 x (300 - 290) = 100 x 10 = Rs 1,000.</li>
+<li>SL-M वरील तोटा: 100 x (300 - 284) = 100 x 16 = Rs 1,600.</li>
+<li>SL पूर्ण होतो का: नाही. Rs 284 चा ओपन हा Rs 287 च्या लिमिटच्या खाली आहे.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>या प्रकरणात SL आणि SL-M मधील फरक आणि गॅपचा स्टॉपवर काय परिणाम होतो, हे तपासले जाते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> लिखित कामासाठी <code>paper</code>. <code>kite_demo</code> फक्त स्क्रीन वाचण्यासाठी वापरा. तुमच्या जर्नलमध्ये नोंद करा (जर्नल तयार नसेल तर कागदावर लिहा).</p>
+<ol>
+<li>Kite डेमो उघडा आणि ऑर्डर विंडो शोधा. तुमचे स्वतःचे अॅप ऑर्डर प्रकारासाठी जे लेबल वापरते ते शोधा.</li>
+<li>तुम्ही वापरणार असलेला ट्रिगर आणि लिमिट कागदावर लिहा.</li>
+<li>SL ऑर्डरचे ट्रिगर आणि लिमिट भाव कागदावर लिहा. कोणताही खरा ऑर्डर देऊ नका.</li>
+<li>तुम्ही पाहिलेली फील्डची नावे आणि ऑर्डर व्ह्यूमध्ये काय दिसले ते लिहा.</li>
+<li>एक वाक्य लिहा: गॅपमध्ये हा ऑर्डर काय करेल?</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>स्टॉप विक्रीची खात्री देत नाही. भाव ट्रिगर ओलांडल्यानंतरही SL ऑर्डर उघडा राहू शकतो.</li>
+<li>SL-M म्हणजे SL नव्हे. SL-M ट्रिगर झाल्यावर सर्वोत्तम उपलब्ध भावाने विकतो. SL फक्त त्याच्या लिमिट भावावर किंवा त्यापेक्षा चांगल्या भावावर विकतो.</li>
+<li>स्टॉप तोटा मर्यादित करत नाही. गॅपमुळे तोटा नियोजितपेक्षा मोठा होऊ शकतो (<em>स्लिपेज</em>).</li>
+<li>सामान्य SL किंवा SL-M ऑर्डर फक्त एका ट्रेडिंग दिवसासाठी टिकतो. जास्त काळ टिकणारा स्टॉप हवा असेल, तर GTT लागतो.</li>
+<li>SL-M इंडेक्स ऑप्शन्स आणि BSE इन्स्ट्रुमेंट्ससाठी ब्लॉक आहे. कोणत्याही ऑर्डरवर अवलंबून राहण्यापूर्वी सध्याचे नियम तपासा.</li>
+<li>तोट्यात असलेल्या शेअर्सचे आणखी शेअर्स खरेदी करून स्टॉपची समस्या भरून काढू नका. याला सरासरी कमी करणे (averaging down) म्हणतात, आणि हे पुस्तक त्याला परवानगी देत नाही.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>बाजार ऑर्डर आत्ता उपलब्ध सर्वोत्तम भावाने पूर्ण होतो. भावाची खात्री देत नाही.</li>
+<li>लिमिट ऑर्डर तुम्ही स्वीकारणारा सर्वात वाईट भाव ठरवतो. तो कदाचित कधीच पूर्ण होणार नाही.</li>
+<li>SL मध्ये ट्रिगर आणि लिमिट असतात. SL-M मध्ये फक्त ट्रिगर असतो.</li>
+<li>लॉन्ग होल्डिंगसाठी स्टॉप-लॉस विक्रीची लिमिट ट्रिगरवर किंवा त्याच्या खाली असते.</li>
+<li>गॅपमध्ये SL कदाचित पूर्ण होणार नाही, आणि SL-M ट्रिगरपासून खूप दूर पूर्ण होऊ शकतो.</li>
+<li>सामान्य SL किंवा SL-M ऑर्डर फक्त एका ट्रेडिंग दिवसासाठी टिकतो. जास्त काळासाठी GTT वापरा.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Zerodha सपोर्ट लेख: स्टॉप-लॉस ऑर्डर, बाजार संरक्षण आणि ऑर्डर वैधता. Zerodha हे नियम बदलते, त्यामुळे त्यावर अवलंबून राहण्यापूर्वी त्यांच्या सपोर्ट पेजेसवर खात्री करा.</li>
+<li>NSE India, ऑर्डर प्रकार आणि ट्रेडिंग नियम</li>
+</ul>
+<!-- facts-needed: Kite availability of SL and SL-M by product and segment; order validity rules; exchange order-type definitions; Kite order view field names and labels. -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T4.4&amp;body=Page%3A%2004-kite-and-execution%2F04-order-types%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../04-kite-and-execution/03-market-depth-and-charts-in-kite/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../04-kite-and-execution/05-product-types/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../04-kite-and-execution/03-market-depth-and-charts-in-kite/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../04-kite-and-execution/05-product-types/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

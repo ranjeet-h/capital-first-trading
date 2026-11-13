@@ -1,0 +1,414 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Costs on a trade - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/02-money-and-math/02-costs-on-a-trade/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T2.2
+title: Costs on a trade
+page_type: Math/Calculator
+prerequisites: [T1.3, T2.1]
+labs: [Lab 2]
+estimated_minutes: 30
+-->
+<h1 id="costs-on-a-trade"><a class="header" href="#costs-on-a-trade">Costs on a trade</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A trader buys Rs 5,000 of a share. A few days later, the trader sells it at exactly the same price. Nothing moved, so the trader expects to break even. But the statement shows a loss. The difference is costs. There are several small charges on the buy, and more on the sell. This chapter shows how those charges add up. It uses a DUMMY model with round numbers, so you can check every line by hand.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>A trade has two <strong>legs</strong>: the buy and the sell. Each leg can carry several charges. Your total cost is the sum of all of them.</p>
+<p>The charge types you will meet on Indian equity trades are these.</p>
+<ul>
+<li><strong>Brokerage:</strong> what the broker charges for carrying out the order.</li>
+<li><strong>Securities transaction tax (STT):</strong> a government tax on trades. On delivery trades it is charged on both the buy and the sell. On intraday trades it is charged only on the sell.</li>
+<li><strong>Exchange transaction charge:</strong> a small fee the exchange charges on the value traded.</li>
+<li><strong>SEBI fee:</strong> the regulator’s small fee on the value traded.</li>
+<li><strong>Stamp duty:</strong> a government duty on the buy side only. Since 1 July 2020 it is the same in every state.</li>
+<li><strong>GST:</strong> a tax on some of the other charges, not on the whole trade. It is charged on brokerage, SEBI fee and exchange transaction charge.</li>
+<li><strong>Depository (DP) charge:</strong> a charge when you sell shares from your demat account. It is charged once for each share name sold on a day, whatever the quantity.</li>
+</ul>
+<p>Charges fall into two groups:</p>
+<ul>
+<li><strong>Proportional</strong> charges grow with turnover. Turnover is price x quantity for one leg. Double the trade, and the charge doubles.</li>
+<li><strong>Fixed</strong> charges do not grow with turnover. A fixed amount per order, or per stock per day, is the same for a small trade and a large one.</li>
+</ul>
+<p>This is why costs weigh more on small trades. Fixed charges take a bigger share of a small position.</p>
+<p>Two formulas:</p>
+<ul>
+<li>Turnover of a leg = price x quantity.</li>
+<li>Total cost = sum of all charges on both legs.</li>
+</ul>
+<p>Break-even move, in words: total cost divided by the position value. In symbols, with C for the total cost and V for the position value, the break-even move is about C / V. It is only approximate. The exit price changes the proportional charges. Use it as a rule of thumb, not as an exact figure.</p>
+<p><strong>DUMMY model.</strong> The arithmetic below uses this model. It is not any broker’s, exchange’s or government’s rate.</p>
+<ul>
+<li>Proportional: 0.1% of turnover on each leg.</li>
+<li>Fixed: Rs 20 per order, on each leg.</li>
+<li>DP charge: Rs 50 per stock, on the sell leg only.</li>
+</ul>
+<p>These are round numbers for practice. They are not the real charges. Do not quote them as Zerodha or government figures. The real charges are in the next table.</p>
+<p>Brokerage on delivery is not in the practice model. Intraday costs are not worked out here.</p>
+<h3 id="the-real-charges-today"><a class="header" href="#the-real-charges-today">The real charges today</a></h3>
+<p>The table below shows what Zerodha lists for equity trades on its charges page. The exchange, SEBI and government charges are set outside Zerodha.</p>
+<div class="table-wrapper"><table><thead><tr><th>Charge</th><th>Equity delivery</th><th>Equity intraday</th></tr></thead><tbody>
+<tr><td>Brokerage</td><td>Zero</td><td>0.03% or Rs 20 per executed order, whichever is lower</td></tr>
+<tr><td>STT</td><td>0.1% on buy and on sell</td><td>0.025% on the sell side only</td></tr>
+<tr><td>NSE transaction charge</td><td>0.00307% of the value traded</td><td>0.00307% of the value traded</td></tr>
+<tr><td>BSE transaction charge</td><td>0.00375% of the value traded</td><td>0.00375% of the value traded</td></tr>
+<tr><td>SEBI fee</td><td>Rs 10 per crore</td><td>Rs 10 per crore</td></tr>
+<tr><td>Stamp duty (buy side only)</td><td>0.015%</td><td>0.003%</td></tr>
+<tr><td>GST</td><td>18% on brokerage + SEBI fee + transaction charge</td><td>18% on brokerage + SEBI fee + transaction charge</td></tr>
+<tr><td>DP charge</td><td>Rs 15.34 for each share name sold in a day (Rs 3.50 depository fee + Rs 9.50 Zerodha fee + Rs 2.34 GST), whatever the quantity</td><td>Not charged, because nothing is sold from the demat account</td></tr>
+</tbody></table>
+</div>
+<p>A few more Zerodha charges are worth knowing. Orders placed through a dealer (call and trade) cost Rs 50 per order. When an intraday position is closed for you by auto square-off, Rs 50 plus 18% GST is charged for each order closed. For new accounts, the yearly account fee (AMC) is free for the first year. After that, the amount depends on the account type and the value of your holdings, so read it on the charges page.</p>
+<p>(As of 11 Nov 2026, from the Zerodha charges page, the NSE circular of 27 Feb 2026 and the SEBI note on stamp duty of June 2020. Rules and rates change, so check the Zerodha charges page and brokerage calculator before you rely on any figure.)</p>
+<p>Zerodha’s page says all statutory and regulatory charges are levied “at actuals”. It does not state a rounding rule for every line. STT is rounded to the nearest rupee. The other lines may differ by a few paise from your own sum. The official brokerage calculator is the check.</p>
+<p>One more point. A zero on one line is not a zero cost. A broker may show zero brokerage. The other charges in the list above still apply. Add every component.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<p>The table below splits the dummy cost of two round trips into proportional, fixed and DP parts. Read down the columns.</p>
+<div class="table-wrapper"><table><thead><tr><th>Component (DUMMY)</th><th>Rs 5,000 round trip</th><th>Rs 50,000 round trip</th></tr></thead><tbody>
+<tr><td>Proportional, 0.1% per leg</td><td>5 + 5 = 10</td><td>50 + 50 = 100</td></tr>
+<tr><td>Fixed per order, Rs 20 per leg</td><td>20 + 20 = 40</td><td>20 + 20 = 40</td></tr>
+<tr><td>DP charge on sell, Rs 50</td><td>50</td><td>50</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>100</strong></td><td><strong>190</strong></td></tr>
+<tr><td>Share that is fixed (order + DP)</td><td>90 of 100 = 90%</td><td>90 of 190 = 47.4%</td></tr>
+</tbody></table>
+</div>
+<p>The point of the table is the shares. Fixed charges make up most of the cost on the small trade. They matter much less on the large trade.</p>
+<!-- component: lab-costs | mode: walkthrough | rates: dummy | tradeValue: 5000 | product: delivery | caption: Walk through each cost line for a Rs 5,000 round trip with DUMMY rates labelled; then change the trade value and watch the fixed share fall -->
+<p>Use the walkthrough to step through each leg. Change the trade value to see which lines move and which stay the same. The DUMMY label means the rates are not real.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical, DUMMY model (round numbers for practice, not the real charges).</strong> The buy and sell prices are the same, so the price does not move.</p>
+<p><strong>Round trip of Rs 5,000</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>Buy turnover</td><td>5,000</td><td>Rs 5,000</td></tr>
+<tr><td>Buy proportional</td><td>0.1% x 5,000 = 5</td><td>Rs 5.00</td></tr>
+<tr><td>Buy fixed</td><td>Rs 20</td><td>Rs 20.00</td></tr>
+<tr><td><strong>Buy leg total</strong></td><td>5.00 + 20</td><td><strong>Rs 25.00</strong></td></tr>
+<tr><td>Sell turnover</td><td>5,000</td><td>Rs 5,000</td></tr>
+<tr><td>Sell proportional</td><td>0.1% x 5,000 = 5</td><td>Rs 5.00</td></tr>
+<tr><td>Sell fixed</td><td>Rs 20</td><td>Rs 20.00</td></tr>
+<tr><td>Sell DP charge</td><td>Rs 50</td><td>Rs 50.00</td></tr>
+<tr><td><strong>Sell leg total</strong></td><td>5.00 + 20 + 50</td><td><strong>Rs 75.00</strong></td></tr>
+<tr><td><strong>Total cost</strong></td><td>25.00 + 75.00</td><td><strong>Rs 100.00</strong></td></tr>
+</tbody></table>
+</div>
+<p>Total cost as a share of the position: 100 / 5,000 = 0.02 = <strong>2.0%</strong>. The break-even move is about 2.0%.</p>
+<p><strong>Round trip of Rs 50,000</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>Buy leg total</td><td>50 + 20</td><td>Rs 70.00</td></tr>
+<tr><td>Sell leg total</td><td>50 + 20 + 50</td><td>Rs 120.00</td></tr>
+<tr><td><strong>Total cost</strong></td><td>70 + 120</td><td><strong>Rs 190.00</strong></td></tr>
+</tbody></table>
+</div>
+<p>Total cost as a share of the position: 190 / 50,000 = 0.0038 = <strong>0.38%</strong>.</p>
+<p><strong>The DP charge in both cases.</strong> It is Rs 50 each time. As a share of the trade, it is 50 / 5,000 = 1.0% for the small trade. It is 50 / 50,000 = 0.1% for the large one. The same rupee charge is ten times the percentage on the small trade.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<!-- component: lab-costs | mode: walkthrough | rates: dummy | tradeValue: 10000 | product: delivery | caption: Guided exercise: round trip of Rs 10,000 with DUMMY rates -->
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Using the DUMMY model, compute the total round-trip cost for a Rs 10,000 round trip. The buy and sell prices are the same. Give the total in rupees and as a percentage of Rs 10,000.</p>
+<p>Hints:</p>
+<ol>
+<li>Compute the buy leg first. Find the proportional charge on Rs 10,000, then add the fixed Rs 20.</li>
+<li>Compute the sell leg. Add the proportional charge, the fixed Rs 20 and the Rs 50 DP charge.</li>
+<li>Add the two legs, then divide by Rs 10,000.</li>
+</ol>
+<p><strong>Answer:</strong> Buy leg: 10 + 20 = Rs 30. Sell leg: 10 + 20 + 50 = Rs 80. Total: Rs 110, which is 110 / 10,000 = 1.1%.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Buy 100 shares at Rs 200 (Rs 20,000). Later, sell all 100 at Rs 210 (Rs 21,000). Using the DUMMY model, compute the total cost, the gross profit before costs and the net profit after costs.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>Buy leg: proportional 0.1% x 20,000 = 20; fixed 20; total 40.</li>
+<li>Sell leg: proportional 0.1% x 21,000 = 21; fixed 20; DP 50; total 91.</li>
+<li>Total cost: 40 + 91 = Rs 131.</li>
+<li>Gross profit: (210 - 200) x 100 = Rs 1,000.</li>
+<li>Net profit: 1,000 - 131 = Rs 869.</li>
+</ul>
+<p>This is DUMMY arithmetic. It is not an estimate of any real trade.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the arithmetic of the dummy model. It checks the difference between fixed and proportional charges, and why you must verify a rate before you use it.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong>. Write it in your journal.</p>
+<ol>
+<li>Open the official Zerodha charges page and the official brokerage calculator. Write down the date you looked.</li>
+<li>For one Rs 5,000 delivery trade and one Rs 50,000 delivery trade, write each component line and the total the calculator gives.</li>
+<li>Write the list of component names in your own words, next to the source link.</li>
+<li>Do not copy these figures into the book or into any calculation yet. Mark the note as a learning note, with no trade placed.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>It does not tell you any real charge. Every rate here is DUMMY. The official sources are the only place for current rates.</li>
+<li>It does not include tax. Tax on gains is a separate question (<em>Taxes on trading profits</em>).</li>
+<li>It does not include slippage, the difference between the expected and the actual fill price (<em>Slippage, gaps and planned versus actual risk</em>). A real trade can cost more than the table shows.</li>
+<li>It does not say that a small trade is a bad idea. It says that fixed charges weigh more on small trades. It also says you must include them in every plan.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Costs are the sum of every charge on both legs, not just brokerage.</li>
+<li>Proportional charges grow with turnover. Fixed charges do not.</li>
+<li>On a Rs 5,000 round trip in the dummy model, the total is Rs 100, or 2.0%. On Rs 50,000, it is Rs 190, or 0.38%.</li>
+<li>A zero on one line is not a zero cost.</li>
+<li>Verify every rate from the official source, with a date, before you use it.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Zerodha charges page (zerodha.com/charges), read on 11 Nov 2026, and the Zerodha brokerage calculator.</li>
+<li>Zerodha support pages on STT (STT rates and rounding), DP charges and auto square-off charges, read on 11 Nov 2026.</li>
+<li>NSE circular NSE/FA/73061 of 27 Feb 2026, revision in transaction charges, in force from 1 Mar 2026.</li>
+<li>SEBI note on stamp duty rates from 1 July 2020 (FAQ on the Indian Stamp Act, June 2020).</li>
+<li>SEBI turnover fee: as listed on the Zerodha charges page. SEBI sets this fee, so check SEBI’s own pages too.</li>
+</ul>
+<!-- facts-needed: Zerodha equity delivery brokerage; STT rates and basis; NSE and BSE exchange transaction charge rates; SEBI turnover fee; stamp duty rates by state; GST rate and base; DP charge and per-scrip-per-day rule; rounding rules from the official calculator. -->
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/01-money-math-first/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/03-taxes-on-trading-profits/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/01-money-math-first/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/03-taxes-on-trading-profits/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

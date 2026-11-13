@@ -1,0 +1,395 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Investing and trading styles - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/06-strategy/01-investing-and-trading-styles/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T6.1
+title: Investing and trading styles
+page_type: Concept
+prerequisites: [T0.1, T2.1, T2.16]
+labs: [Lab 3]
+estimated_minutes: 35
+-->
+<h1 id="investing-and-trading-styles"><a class="header" href="#investing-and-trading-styles">Investing and trading styles</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Two people each put Rs 50,000 into the market. One buys shares in a business and plans to hold them for years. The other watches prices all day and hopes to earn Rs 2,500 every day. Both people use the word “trading,” but they are doing very different things. This chapter sorts the words, compares the main styles, and shows which style this book focuses on.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Three words are often mixed up. They differ by purpose and holding period.</p>
+<ul>
+<li><strong>Investing</strong> means owning part of a business for a long time. The result depends on how the business and the wider market do over years.</li>
+<li><strong>Trading</strong> means holding for a shorter time, with written rules for entry, exit and risk. A trade can last a day or several weeks.</li>
+<li><strong>Speculation</strong> means betting on a price move without a rule you can test. The result depends on luck or on an event you cannot analyse well. The line between trading and speculation is blurry. A label does not prove that a plan has an edge.</li>
+</ul>
+<p>Common trading styles include:</p>
+<ul>
+<li><strong>Intraday.</strong> Open and close within the same session.</li>
+<li><strong>Swing.</strong> Hold for days to a few weeks.</li>
+<li><strong>Positional.</strong> Hold for weeks to months.</li>
+<li><strong>Momentum.</strong> Buy what has risen and hold while it keeps rising.</li>
+<li><strong>Breakout.</strong> Enter when the price moves beyond a defined range.</li>
+<li><strong>Trend following.</strong> Stay in while the trend continues, and exit when it ends.</li>
+<li><strong>Reversal.</strong> Bet that a falling price will turn up, or a rising price will turn down.</li>
+<li><strong>Price action.</strong> Read the candles and structure directly, without many indicators.</li>
+</ul>
+<p>The book sets seven criteria for a beginner. A style should fit all of them as far as possible:</p>
+<ol>
+<li>Protect capital first.</li>
+<li>No daily profit target as a goal.</li>
+<li>No need to watch prices all day.</li>
+<li>A fixed loss per trade.</li>
+<li>No leverage, which means no borrowed money to take bigger positions.</li>
+<li>Results that hold across different kinds of market.</li>
+<li>A clear downside before you enter.</li>
+</ol>
+<p>Some points to keep in mind:</p>
+<ul>
+<li>The scores below are the book’s judgement against these seven criteria. They are not evidence about how any style performs.</li>
+<li>A style is a method, not a result. No style is shown here as profitable.</li>
+<li>Round trip means one buy and one sell of the same shares. Every round trip has costs (<em>Costs on a trade</em>).</li>
+</ul>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Style</th><th>Usual holding period</th><th>Watching needed</th><th>Fit with the seven criteria</th></tr></thead><tbody>
+<tr><td>Intraday</td><td>Same session</td><td>High, all day</td><td><strong>Poor fit.</strong> Needs watching all day. Often uses margin, which is borrowed money, so it conflicts with criterion 5.</td></tr>
+<tr><td>Swing (end of day)</td><td>Days to a few weeks</td><td>Check once after the close</td><td><strong>Fits well.</strong> Decisions are made from the daily candle, with a fixed loss set before entry.</td></tr>
+<tr><td>Positional</td><td>Weeks to months</td><td>Low, with a regular review</td><td><strong>Fits well.</strong> Fewer decisions. Results are slow to show, so records take longer to build.</td></tr>
+<tr><td>Momentum</td><td>Days to months</td><td>Medium to high</td><td><strong>Mixed.</strong> Fits only with written rules, a fixed stop and a clear downside.</td></tr>
+<tr><td>Breakout</td><td>Days to weeks</td><td>Medium, around the breakout</td><td><strong>Mixed.</strong> Fits if the breakout is defined by a close, which can be checked at the end of the day.</td></tr>
+<tr><td>Trend following</td><td>Weeks to months</td><td>Low to medium</td><td><strong>Fits.</strong> Uses a fixed loss and a trailing stop. Long periods of small losses must be expected.</td></tr>
+<tr><td>Reversal</td><td>Days to weeks</td><td>Medium to high</td><td><strong>Poor fit.</strong> Often tempts traders to add to a falling position (averaging down), which the book forbids.</td></tr>
+<tr><td>Price action</td><td>Varies</td><td>High, because reading is judgement</td><td><strong>Mixed.</strong> Hard to test, so it is hard to check the fit with criterion 6.</td></tr>
+</tbody></table>
+</div>
+<p>The table describes common usage. It does not describe a rule for any style. Read each cell as a judgement with a reason, not as a fact.</p>
+<!-- component: style-compare | caption: Slide the holding time and the watching time and see how many round trips, how much cost and how much screen time each style needs. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Dummy numbers. Not real charges.</strong> Suppose a round trip costs Rs 50 in total. The position is Rs 12,500. This Rs 50 is a made-up number to show the arithmetic. It is not a Zerodha charge and it is not a rate to use.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>Cost of one round trip as a share of the position</td><td>50 / 12,500</td><td>0.4%</td></tr>
+<tr><td>Cost of ten round trips</td><td>10 x Rs 50</td><td>Rs 500</td></tr>
+<tr><td>Ten round trips as a share of the account</td><td>500 / 50,000</td><td>1%</td></tr>
+</tbody></table>
+</div>
+<p>Ten such trades cost Rs 500, which is 1 percent of the Rs 50,000 account. This happens before any profit or loss. A swing style with one round trip every two weeks makes far fewer trades. Its total cost is much smaller for the same account.</p>
+<p>Check: 0.4% of Rs 12,500 is Rs 50, and 10 x 0.4% of Rs 12,500 is Rs 500. The figures agree.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Classify these five examples as investing, trading or speculation. Give one reason for each.</p>
+<ol>
+<li>Buy shares in a business and hold them for years.</li>
+<li>Buy shares before a results date and sell the next day.</li>
+<li>Hold shares for about three weeks after a defined breakout.</li>
+<li>Place a bet each day that the price will move by a daily target amount.</li>
+<li>Put a fixed share of savings into a mix of businesses for many years.</li>
+</ol>
+<p>Hints:</p>
+<ol>
+<li>Look at the holding period first.</li>
+<li>Ask whether the plan has a rule you can test.</li>
+<li>Ask whether the outcome depends on one event or a long business result.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ol>
+<li><strong>Investing.</strong> The holding period is long and the result depends on the business over years.</li>
+<li><strong>Speculation.</strong> The outcome depends on one event, the results, and no tested rule is stated.</li>
+<li><strong>Trading.</strong> The holding period is defined and the entry rule is written.</li>
+<li><strong>Speculation.</strong> The aim is a daily amount, not a rule. The result depends on luck, not a tested method.</li>
+<li><strong>Investing.</strong> The horizon is long and the result depends on the businesses over time.</li>
+</ol>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Score three styles against the seven criteria in this chapter: swing, intraday and trend following. Write one line of reason for each cell. Then state which style does not fit, and why.</p>
+<details><summary>Check your answer</summary>
+<p>A model answer:</p>
+<ul>
+<li><strong>Swing.</strong> Fits criteria 1, 3, 4, 5 and 7 well, because the decision is made after the close and the loss is set before entry. Criterion 6 needs a test. Criterion 2 is met if no daily target is set.</li>
+<li><strong>Intraday.</strong> Fails criterion 3, because it needs watching all day. Often conflicts with criterion 5, because margin is borrowed money. Its many round trips also add cost (see the worked example).</li>
+<li><strong>Trend following.</strong> Fits criteria 4 and 7, because it uses a fixed loss and a trailing stop. It needs long periods of small losses to be accepted, which tests criterion 1 (capital first).</li>
+<li><strong>Does not fit:</strong> intraday. It conflicts with criterion 3 and criterion 5 directly, and the book does not teach it as practice.</li>
+</ul>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the three words, the book’s focus, and why a daily goal is not a plan.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong>. Write it in your journal (or on paper until the journal app is ready).</p>
+<ol>
+<li>Write down the style you would consider first, and why.</li>
+<li>Write down the holding period you expect, in days or weeks.</li>
+<li>Write down the seven criteria and mark each one as met, not met or not known yet.</li>
+<li>List three things that would make you reject that style.</li>
+<li>Do not record a live account or a real order in this note.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>The scores in this chapter are the book’s judgement. They are not market evidence about any style’s results.</li>
+<li>No style is shown as profitable. The table describes methods and fit, not results.</li>
+<li>The line between trading and speculation is blurry. A label does not prove that a plan has an edge.</li>
+<li>Investing is not risk-free. A business can lose value over many years.</li>
+<li>Tax and charge treatment can differ by style. As of 11 Nov 2026, Zerodha lists zero brokerage on delivery trades, and 0.03% or Rs 20 per order (whichever is lower) on intraday trades. The law treats a trade that is not settled by delivery as speculative, with different loss rules from delivery gains. The details are in <em>Costs on a trade</em> and <em>Taxes on trading profits</em>. Rules change, so check the Zerodha charges page and incometax.gov.in, and ask a qualified tax professional.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Investing is long-term ownership. Trading uses written rules for a shorter stay. Speculation has no rule you can test.</li>
+<li>Compare styles on holding period, watching needed and fit with the criteria.</li>
+<li>A daily profit target is a goal, not a method. This book does not use one (<em>The Rs 2,000-3,000 reality check</em>).</li>
+<li>The book focuses on end-of-day swing and positional trading. These fit its criteria best.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>SEBI investor education pages, for investor awareness material.</li>
+<li>Zerodha Varsity, trading styles module (reference only, original wording).</li>
+<li>Zerodha charges page, read on 11 Nov 2026, for brokerage by product.</li>
+<li><em>Taxes on trading profits</em>, for the tax rules, with their own sources.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../06-strategy/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../06-strategy/02-trading-edge/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../06-strategy/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../06-strategy/02-trading-edge/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

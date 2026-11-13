@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>सर्किट मर्यादा आणि ट्रेडिंग थांबवणे - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../01-market-foundations/07-circuit-limits-and-halts/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../01-market-foundations/07-circuit-limits-and-halts/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T1.7
+title: सर्किट मर्यादा आणि ट्रेडिंग थांबवणे
+page_type: Concept
+prerequisites: [T1.4, T1.6]
+labs: []
+estimated_minutes: 20
+-->
+<h1 id="सरकिट-मरयादा-आणि-टरेडिंग-थांबवणे"><a class="header" href="#सरकिट-मरयादा-आणि-टरेडिंग-थांबवणे">सर्किट मर्यादा आणि ट्रेडिंग थांबवणे</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>तुमच्याकडे Rs 400 दराने खरेदी केलेले 100 शेअर्स आहेत. तुमचा स्टॉप-लॉस Rs 380 वर आहे. तुमचे नियोजित तोटा Rs 2,000 आहे. हे एक काल्पनिक उदाहरण आहे. दुसऱ्या दिवशी शेअरचा भाव थेट खालच्या प्राइस बँडच्या Rs 360 पर्यंत पडतो. फक्त विक्रेते आहेत आणि खरेदीदार नाहीत. सिद्धांतात तुमचा स्टॉप सक्रिय होतो, पण Rs 380 वर प्रत्यक्ष व्यापार होत नाही. आता कागदावर तुमचे Rs 4,000 चे तोटा दिसते. तुम्ही ठरवलेल्या भावाला बाहेर पडू शकत नाही.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>प्राइस बँड</strong>, ज्याला <strong>सर्किट लिमिट</strong> असेही म्हणतात, म्हणजे एका दिवसात शेअरचा भाव जास्तीत जास्त किती हलू शकतो ती मर्यादा. ही हालचाल आधीच्या क्लोज भावापासून मोजली जाते. बँड शेअरच्या प्रकारावर अवलंबून असतो. NSE वर बँड 2%, 5%, 10% आणि 20% असे वर किंवा खाली असतात. एक्सचेंजने बँड ठरवलेला नसलेल्या इतर सर्व शेअर्सना 20% मिळतो. फ्यूचर्स आणि ऑप्शन्स (F&amp;O) असलेल्या शेअर्सना निश्चित बँड नसतो. त्यांच्यासाठी एक्सचेंज 10% ची ऑपरेटिंग रेंज वापरते, जी दिवसभरात वाढवता किंवा कमी करता येते. (11 नोव्हेंबर 2026 पर्यंत, NSE च्या सेकंडरी मार्केटवरील Basic FAQs आणि ट्रेडिंगवरील SEBI मास्टर परिपत्रक. नियम बदलतात, म्हणून NSE संकेतस्थळ तपासा.)</p>
+<ul>
+<li><strong>अप्पर सर्किट:</strong> त्या दिवशी परवानगी असलेला सर्वात जास्त भाव.</li>
+<li><strong>लोअर सर्किट:</strong> त्या दिवशी परवानगी असलेला सर्वात कमी भाव.</li>
+<li><strong>संदर्भ बिंदू:</strong> बँड आधीच्या क्लोज भावापासून मोजला जातो, आजच्या ओपन भावापासून नाही. NSE च्या FAQs मध्ये म्हटले आहे की बँड आदल्या दिवसाच्या क्लोज भावापासून मोजला जातो.</li>
+</ul>
+<p>सोप्या शब्दांत:</p>
+<ul>
+<li>अप्पर बँड = आधीचा क्लोज भाव, अधिक त्या भावाच्या बँड टक्केवारीइतकी रक्कम.</li>
+<li>लोअर बँड = आधीचा क्लोज भाव, वजा त्या भावाच्या बँड टक्केवारीइतकी रक्कम.</li>
+</ul>
+<p><strong>लॉक्ड सर्किट.</strong> शेअर एका बँडला पोहोचतो. सर्व ऑर्डर एकाच बाजूला असतात. उदाहरणार्थ, लोअर बँडला फक्त विक्रेते असतात. त्या भावाच्या पलीकडे कोणताही व्यापार होऊ शकत नाही. खरेदीदार आणि विक्रेते भेटेपर्यंत, किंवा बँड बदलेपर्यंत भाव तिथेच थांबलेला राहतो.</p>
+<p><strong>ट्रेडिंग थांबवणे आणि इंडेक्स-स्तरावरील सर्किट ब्रेकर.</strong> एक्सचेंज एखाद्या शेअरमधील ट्रेडिंग थांबवू शकते. ते संपूर्ण बाजारातील ट्रेडिंगही थांबवू शकते. हे तेव्हा होते जेव्हा एखादा इंडेक्स ठरलेल्या पातळ्यांच्या पलीकडे जातो. पातळ्या आणि नियम खाली दिले आहेत.</p>
+<p>बाजार-स्तरावरील सर्किट ब्रेकर Nifty 50 किंवा Sensex यापैकी जो आधी ठरलेली पातळी ओलांडतो, त्यावर चालतात. पातळ्या आधीच्या क्लोज भावापासून 10%, 15% आणि 20% अशा आहेत.</p>
+<div class="table-wrapper"><table><thead><tr><th>किती घसरण</th><th>केव्हा होते</th><th>काय होते</th></tr></thead><tbody>
+<tr><td>10%</td><td>दुपारी 1:00 च्या आधी</td><td>45 मिनिटे ट्रेडिंग थांबते, मग 15 मिनिटांचा प्री-ओपन</td></tr>
+<tr><td>10%</td><td>दुपारी 1:00 ते 2:30</td><td>15 मिनिटे ट्रेडिंग थांबते, मग 15 मिनिटांचा प्री-ओपन</td></tr>
+<tr><td>10%</td><td>दुपारी 2:30 नंतर</td><td>थांबवणे नाही</td></tr>
+<tr><td>15%</td><td>दुपारी 1:00 च्या आधी</td><td>1 तास 45 मिनिटे ट्रेडिंग थांबते, मग 15 मिनिटांचा प्री-ओपन</td></tr>
+<tr><td>15%</td><td>दुपारी 1:00 ते 2:00</td><td>45 मिनिटे ट्रेडिंग थांबते, मग 15 मिनिटांचा प्री-ओपन</td></tr>
+<tr><td>15%</td><td>दुपारी 2:00 नंतर</td><td>उरलेल्या दिवसासाठी ट्रेडिंग थांबते</td></tr>
+<tr><td>20%</td><td>कधीही</td><td>उरलेल्या दिवसासाठी ट्रेडिंग थांबते</td></tr>
+</tbody></table>
+</div>
+<p>(11 नोव्हेंबर 2026 पर्यंत, NSE चे सर्किट ब्रेकर पान आणि 28 जून 2001 चे SEBI परिपत्रक, जे 2013 मध्ये सुधारले गेले. नियम बदलतात, म्हणून NSE संकेतस्थळ तपासा.)</p>
+<p>फ्यूचर्स आणि ऑप्शन्स असलेल्या शेअर्ससाठी, भाव त्या बँडविरुद्ध सतत ढकलला जात राहिला तर 10% ची रेंज टप्प्याटप्प्याने वाढवली जाते. SEBI चा नियम असा आहे: दोन वेळा 5%, मग दोन वेळा 3%, मग 2%. प्रत्येक वेळी थोडा थांबण्याचा कालावधी असतो (15 मिनिटे, मग 30 मिनिटे, मग 60 मिनिटे). (11 नोव्हेंबर 2026 पर्यंत, ट्रेडिंगवरील SEBI मास्टर परिपत्रक, डिसेंबर 2024.)</p>
+<p><strong>बँड बदलू शकतात.</strong> एखाद्या शेअरसाठीचा बँड कालांतराने सुधारला जाऊ शकतो. NSE च्या FAQs नुसार पाळत ठेवण्याच्या उपायांखाली बँड कमी केले जातात. तो फक्त दर दोन महिन्यांच्या आढाव्यात, आणि शेअर निकष पूर्ण करत असेल तरच वाढवला जातो. काही शेअर्स “ट्रेड-फॉर-ट्रेड” विभागातही ठेवले जातात. तिथे प्रत्येक व्यवहार डिलिव्हरीने पूर्ण झाला पाहिजे आणि शेअर्स त्याच दिवशी विकता येत नाहीत. (11 नोव्हेंबर 2026 पर्यंत, NSE च्या सेकंडरी मार्केटवरील Basic FAQs आणि Zerodha सहाय्य.)</p>
+<p><strong>सर्किट भाव मर्यादित करते, तोटा नाही.</strong> बँड एका दिवसात भाव आणखी पुढे जाण्यापासून थांबवतो. तुमच्या पोझिशनचे मूल्य घसरण्यापासून ते थांबवत नाही. शेअर लॉक झालेला असेल, तर ट्रेडिंग पुन्हा सुरू होईपर्यंत तुम्ही बाहेर पडू शकत नाही.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: sl-trigger-sim | prevClose: 400 | bandPct: 10 | qty: 100 | stop: 380 | scenario: locked-lower | caption: 100 शेअर्सची होल्डिंग, स्टॉप 380 वर, आणि शेअर 360 च्या लोअर बँडला विक्रेत्यांशिवाय लॉक -->
+<p>Rs 380 वरील स्टॉप-लॉस रेषा आणि Rs 360 वरील लोअर बँड पाहा. भाव स्टॉपच्या पलीकडे जाऊन बँडपर्यंत पोहोचू शकतो. स्टॉप भावावर प्रत्यक्ष व्यापार होत नाही. सर्किट लॉक असताना ऑर्डर पूर्ण होत नाही. या दृश्यातील बँड टक्केवारी बनावट मूल्य आहे, ती फक्त गणितासाठी वापरली आहे.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p>हे एक काल्पनिक उदाहरण आहे. आधीचा क्लोज भाव Rs 400 आहे. बँड एक बनावट 10% आहे. 10% हा सरावासाठीचा गोल आकडा आहे. बहुतेक शेअर्ससाठी खरा बँड 2%, 5%, 10% किंवा 20% असतो, जसे वरील तक्त्यात दिले आहे. फ्यूचर्स आणि ऑप्शन्स असलेले शेअर्स निश्चित बँडऐवजी लवचिक 10% रेंज वापरतात, त्यामुळे अशा लॉकचे त्यांच्यासाठी वेगळे परिणाम होतात.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>अप्पर बँड</td><td>400 x 1.10</td><td>Rs 440</td></tr>
+<tr><td>लोअर बँड</td><td>400 x 0.90</td><td>Rs 360</td></tr>
+<tr><td>स्टॉप-लॉस</td><td>होल्डिंगवर सेट केलेला</td><td>Rs 380</td></tr>
+<tr><td>प्रति शेअर नियोजित तोटा</td><td>400 - 380</td><td>Rs 20</td></tr>
+<tr><td>100 शेअर्सवर नियोजित तोटा</td><td>100 x 20</td><td>Rs 2,000</td></tr>
+<tr><td>Rs 360 वर लॉक आणि बाहेर पडता आले नाही तर तोटा</td><td>100 x (400 - 360)</td><td>Rs 4,000</td></tr>
+</tbody></table>
+</div>
+<p>लॉक झालेल्या बँडवरचा तोटा हा नियोजित Rs 2,000 च्या 2 पट आहे. योजनेत Rs 380 ला विक्री गृहीत धरली होती. लॉक झालेला आकडा दाखवतो की Rs 380 ला विक्री शक्य नसताना काय होते.</p>
+<h2 id="परयतन-करा"><a class="header" href="#परयतन-करा">प्रयत्न करा</a></h2>
+<!-- component: sl-trigger-sim | prevClose: 250 | bandPct: 20 | qty: 100 | caption: मार्गदर्शित सरावाचे आकडे, बनावट 20 टक्के बँड -->
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>कार्य.</strong> आधीचा क्लोज भाव Rs 250 आहे. बनावट बँड 20% आहे. अप्पर आणि लोअर बँड काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>Rs 250 च्या 20% किती ते शोधा.</li>
+<li>ती रक्कम Rs 250 ला मिळवा, म्हणजे अप्पर बँड.</li>
+<li>ती रक्कम Rs 250 मधून वजा करा, म्हणजे लोअर बँड.</li>
+</ol>
+<p><strong>उत्तर:</strong> 250 चे 20% = 50. अप्पर बँड = Rs 300. लोअर बँड = Rs 200.
+तपासणी: 250 x 1.20 = 300; 250 x 0.80 = 200.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>कार्य.</strong> तीन शेअर्स. प्रत्येकाचा आधीचा क्लोज भाव आणि एक बनावट बँड आहे. पहिला Rs 120 चा, 5% बँडसह आहे. दुसरा Rs 800 चा, 10% बँडसह आहे. तिसरा Rs 1,500 चा, 20% बँडसह आहे. प्रत्येकाचे बँड काढा. एका दिवसातील हालचालीला कोणती पोझिशन सर्वात जास्त एक्सपोजर आहे?</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>Rs 120, 5%: 120 x 0.05 = 6. अप्पर Rs 126, लोअर Rs 114.</li>
+<li>Rs 800, 10%: 800 x 0.10 = 80. अप्पर Rs 880, लोअर Rs 720.</li>
+<li>Rs 1,500, 20%: 1,500 x 0.20 = 300. अप्पर Rs 1,800, लोअर Rs 1,200.</li>
+</ul>
+<p>20% बँड असलेला Rs 1,500 चा शेअर सर्वात जास्त एक्सपोजर आहे. त्याच्या बँडमध्ये एका दिवसात 20% हालचाल शक्य आहे. ही सर्वात मोठी टक्केवारी आहे. तसेच त्यात प्रति शेअर Rs 300 पर्यंत हालचाल शक्य आहे. ही सर्वात मोठी रुपयांतील रक्कम आहे.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>पाच प्रश्न. ते बँडची गणिते, सर्किट काय रोखते आणि काय रोखत नाही, लॉक्ड सर्किटमधील स्टॉप, आणि बँडचा संदर्भ बिंदू यांवर आहेत.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड: शिकण्याची नोंद.</strong> फक्त काल्पनिक योजना वापरा. खऱ्या खात्यावर कृती करू नका.</p>
+<ol>
+<li>एक काल्पनिक होल्डिंग लिहा: 100 शेअर्स, आधीचा क्लोज Rs 400, स्टॉप-लॉस Rs 380, बनावट 10% बँड.</li>
+<li>पहिल्याच दिवशी शेअर लोअर बँडला लॉक झाला तर तुमची योजना काय सांगते ते लिहा.</li>
+<li>दुसऱ्या दिवशीही लॉक असेल तर तुमची योजना काय सांगते ते लिहा.</li>
+<li>या होल्डिंगवर तुम्ही स्वीकारू शकाल असे सर्वात मोठे तोटा लिहा. ते तुमच्या ट्रेडिंग पैशांशी तपासा. <em>भांडवल-प्रथम नियम</em> आणि <em>व्यवहारावरील खर्च</em> पाहा.</li>
+<li>हे तुमच्या जर्नलमध्ये लिहा.</li>
+</ol>
+<h2 id="मरयादा-आणि-सामानय-चुका"><a class="header" href="#मरयादा-आणि-सामानय-चुका">मर्यादा आणि सामान्य चुका</a></h2>
+<ul>
+<li>उदाहरणांमधील बँड टक्केवारी सरावासाठीचे गोल आकडे आहेत. खरे बँड 2%, 5%, 10% आणि 20% असतात, आणि फ्यूचर्स आणि ऑप्शन्स असलेले शेअर्स लवचिक 10% रेंज वापरतात.</li>
+<li>बँड तुमचे तोटा मर्यादित करत नाही. लॉक झालेली पोझिशन उघडी राहू शकते आणि तिचे मूल्य घटू शकते.</li>
+<li>स्टॉप-लॉस हा फक्त ट्रिगर आहे. त्यातून बाहेर पडण्याचा भाव ठरत नाही. त्याची ऑर्डर पूर्ण होणे ट्रेडिंग शक्य असण्यावर अवलंबून असते.</li>
+<li>ट्रेडिंग थांबवणे आणि सर्किट ब्रेकरचे स्वतःचे नियम असतात, आणि ते बदलतात. सध्याची परिपत्रके तपासा.</li>
+<li>एखाद्या शेअरचे बँड बदलू शकतात. गेल्या महिन्यातला बँड अजून लागू आहे असे गृहीत धरू नका.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>बँड आधीच्या क्लोज भावापासून मोजला जातो, प्रत्येक दिशेला टक्केवारी म्हणून.</li>
+<li>अप्पर बँड = आधीचा क्लोज भाव x (1 + बँड). लोअर बँड = आधीचा क्लोज भाव x (1 - बँड).</li>
+<li>लॉक्ड सर्किटमुळे बँडच्या पलीकडचा कोणताही व्यापार थांबू शकतो, तुमची बाहेर पडण्याची ऑर्डरही.</li>
+<li>सर्किट भावाची हालचाल मर्यादित करते. ते तुमचे तोटा मर्यादित करत नाही.</li>
+<li>तुमच्या पोझिशनचा आकार लॉक झालेल्या दिवसांसाठी पुरेसा ठेवा. <em>स्लिपेज, गॅप आणि नियोजित विरुद्ध प्रत्यक्ष जोखीम</em> पाहा.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p>स्रोत:</p>
+<ul>
+<li>NSE चे सर्किट लिमिट आणि प्राइस बँडची पाने.</li>
+<li>BSE ची प्राइस बँडची पाने.</li>
+<li>प्राइस बँड आणि सर्किट ब्रेकरवरील SEBI परिपत्रके.</li>
+</ul>
+<p>11 नोव्हेंबर 2026 रोजी तपासलेली तथ्ये:</p>
+<ul>
+<li>बँडची टक्केवारी, आधीच्या क्लोज भावाचा संदर्भ आणि सुधारणेचा नियम NSE च्या सेकंडरी मार्केटवरील Basic FAQs मधून घेतले आहेत.</li>
+<li>फ्यूचर्स आणि ऑप्शन्स असलेल्या शेअर्ससाठीची लवचिक रेंज SEBI च्या ट्रेडिंगवरील मास्टर परिपत्रकातून (डिसेंबर 2024) घेतली आहे.</li>
+<li>बाजार-स्तरावरील सर्किट ब्रेकरच्या पातळ्या आणि थांबण्याच्या वेळा NSE च्या सर्किट ब्रेकर पानावरून आणि 28 जून 2001 च्या SEBI परिपत्रकावरून घेतल्या आहेत, जे 2013 मध्ये सुधारले गेले.</li>
+<li>ट्रेड-फॉर-ट्रेड नियम Zerodha सहाय्य आणि NSE च्या FAQs मधून घेतला आहे.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T1.7&amp;body=Page%3A%2001-market-foundations%2F07-circuit-limits-and-halts%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../01-market-foundations/06-trading-sessions-and-holidays/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../01-market-foundations/08-indices-nifty-sensex/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../01-market-foundations/06-trading-sessions-and-holidays/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../01-market-foundations/08-indices-nifty-sensex/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

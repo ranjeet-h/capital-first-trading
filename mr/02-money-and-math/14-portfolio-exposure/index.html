@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>पोर्टफोलिओ एक्सपोजर आणि एकाग्रता - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../02-money-and-math/14-portfolio-exposure/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../02-money-and-math/14-portfolio-exposure/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T2.14
+title: पोर्टफोलिओ एक्सपोजर आणि एकाग्रता
+page_type: Math/Calculator
+prerequisites: [T2.5, T2.11, T1.8]
+labs: [Lab 3, Lab 1]
+estimated_minutes: 25
+-->
+<h1 id="पोरटफोलिओ-एकसपोजर-आणि-एकागरता"><a class="header" href="#पोरटफोलिओ-एकसपोजर-आणि-एकागरता">पोर्टफोलिओ एक्सपोजर आणि एकाग्रता</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>काल्पनिक: एक ट्रेडर पाच शेअर्स धरून बसला आहे आणि म्हणतो, “माझी गुंतवणूक विविध आहे.” त्यातील पाचपैकी तीन शेअर्स एकाच सेक्टरमधले आहेत. त्या सेक्टरमध्ये एक वाईट आठवडा आला, तर ते तिन्ही एकाच दिशेने, एकाच दिवशी हलतात. खात्याला पाच वेगळे डाव वाटतात. प्रत्यक्षात ते एकाच मोठ्या डावासारखे वागले.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>चार संज्ञा लक्षात ठेवा:</p>
+<ul>
+<li><strong>एक्सपोजर</strong> म्हणजे तुमच्या पोझिशन्सचे रुपयांतील मूल्य. ते अनेकदा भांडवलाची टक्केवारी म्हणून लिहिले जाते. एक्सपोजर म्हणजे जोखीम नव्हे. पोझिशन मोठी असू शकते, आणि तरीही तिचा नियोजित तोटा छोटा असू शकतो.</li>
+<li><strong>ओपन जोखीम</strong> म्हणजे प्रत्येक स्टॉप त्याच्या स्टॉप भावावर पूर्ण झाला तर होणारा नियोजित तोटा.
+<ul>
+<li>ओपन जोखीम = प्रत्येक पोझिशनसाठी (एंट्री - स्टॉप) x शेअर्स, यांची बेरीज.</li>
+<li>हा नियोजित तोटा आहे, कमाल तोटा नव्हे. गॅप आणि सर्किट (एक्सचेंजने ठरवलेल्या दैनिक भाव मर्यादा) यांमुळे प्रत्यक्ष तोटा मोठा होऊ शकतो (<em>स्लिपेज, गॅप आणि नियोजित विरुद्ध प्रत्यक्ष जोखीम</em>).</li>
+</ul>
+</li>
+<li><strong>एकाग्रता</strong> म्हणजे तुमचे भांडवल एका शेअरमध्ये, एका सेक्टरमध्ये किंवा एका थीममध्ये किती आहे.</li>
+<li><strong>सहसंबंध</strong> म्हणजे एकत्र हलण्याकडे कल असलेल्या पोझिशन्स. एकाच सेक्टरमधील शेअर्स अनेकदा एकत्र हलतात. एकत्र हलणारे पाच शेअर्स हे पाच वेगळ्या डावांपेक्षा एका डावाच्या जवळ असतात.</li>
+</ul>
+<p>इतर मुद्दे:</p>
+<ul>
+<li><strong>रोख</strong> = भांडवल - गुंतवलेले मूल्य. गुंतवलेले मूल्य म्हणजे सर्व पोझिशन्सच्या मूल्यांची बेरीज.</li>
+<li><strong>विविधीकरण</strong> एका कंपनीमुळे किंवा एका घटनेमुळे येणारी जोखीम कमी करते. ते संपूर्ण बाजारावर येणारी जोखीम काढून टाकत नाही.</li>
+<li><strong>मर्यादा.</strong> तुम्ही प्रत्येक पोझिशनसाठी, प्रत्येक सेक्टरसाठी आणि एकूण ओपन जोखमीसाठी कमाल मर्यादा ठरवता. Lab 1 मध्ये सुरुवातीचे मूल्य म्हणून प्रति पोझिशन 25% ची मर्यादा वापरली आहे. सेक्टरच्या मर्यादा तुम्ही ठरवता.</li>
+<li><strong>तोट्यातील पोझिशनमध्ये भर घालणे</strong>, सरासरी खर्च कमी करण्यासाठी, अपयशी ठरत असलेल्या कल्पनेतील एकाग्रता वाढवते. याला <strong>सरासरी कमी करणे</strong> म्हणतात. या पुस्तकाचे भांडवल-प्रथम नियम ते करण्यास मनाई करतात (<em>पोझिशन साइजिंग टप्प्याटप्प्याने</em>). भर घालण्यापूर्वी मर्यादा तपासा.</li>
+<li><strong>सेक्टर लेबल्स</strong> तुमच्या डेटामधून येतात. त्यांचा स्रोत NSE सेक्टोरल निर्देशांकाच्या व्याख्यांशी तपासा. NSE Indices प्रत्येक कंपनीला चार स्तरांत ठेवते: मॅक्रो-इकॉनॉमिक सेक्टर, सेक्टर, इंडस्ट्री आणि बेसिक इंडस्ट्री. इतर डेटा पुरवठादार वेगळी लेबल्स वापरू शकतात, त्यामुळे दोन यादींत एकच कंपनी वेगळ्या गटात दिसू शकते. (11 नोव्हेंबर 2026, NSE Indices चे इंडस्ट्री वर्गीकरण असे होते. नियम बदलतात, त्यामुळे NSE साइट तपासा.)</li>
+</ul>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>सोडवलेल्या उदाहरणाचा पाय चार्ट, रुपयांतील मूल्यांसह (काल्पनिक):</p>
+<pre><code class="language-mermaid">pie showData
+    title भांडवलाची विभागणी, Rs 50,000 (काल्पनिक)
+    "सेक्टर X (पोझिशन A आणि B)" : 22500
+    "सेक्टर Y (पोझिशन C)" : 7500
+    "रोख" : 20000
+</code></pre>
+<p>चार्ट दाखवतो की सेक्टर X हा भांडवलाचा सर्वात मोठा तुकडा आहे. सेक्टर X भांडवलाच्या 45% आहे, आणि रोख 40% आहे. सोडवलेल्या उदाहरणातील तक्त्यात ओपन जोखीम आणि सेक्टर मर्यादा देखील दिसतात. पाय चार्ट त्या दाखवू शकत नाही.</p>
+<!-- component: exposure-meter | capital: 50000 | caption: सोडवलेल्या उदाहरणातील तीन पोझिशन्स, Rs 50,000 खात्यात. Add position D (पोझिशन D जोडा) दाबून पाहा की कोणती मर्यादा मोडते. मर्यादा केवळ उदाहरणासाठी आहेत. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> भांडवल Rs 50,000. धरलेल्या पोझिशन्स:</p>
+<div class="table-wrapper"><table><thead><tr><th>पोझिशन</th><th>सेक्टर</th><th>मूल्य</th><th>भांडवलाचा वाटा</th><th>स्टॉपवर नियोजित तोटा</th></tr></thead><tbody>
+<tr><td>A</td><td>X</td><td>10,000</td><td>20%</td><td>500</td></tr>
+<tr><td>B</td><td>X</td><td>12,500</td><td>25%</td><td>500</td></tr>
+<tr><td>C</td><td>Y</td><td>7,500</td><td>15%</td><td>300</td></tr>
+</tbody></table>
+</div>
+<ol>
+<li><strong>गुंतवलेले मूल्य:</strong> 10,000 + 12,500 + 7,500 = Rs 30,000. भांडवलाच्या तुलनेत वाटा: 30,000 / 50,000 = 60%.</li>
+<li><strong>रोख:</strong> 50,000 - 30,000 = Rs 20,000, जे 40% आहे.</li>
+<li><strong>ओपन जोखीम:</strong> 500 + 500 + 300 = Rs 1,300. भांडवलाच्या तुलनेत वाटा: 1,300 / 50,000 = 2.6%.</li>
+<li><strong>सेक्टर X:</strong> 10,000 + 12,500 = Rs 22,500. भांडवलाच्या तुलनेत वाटा: 22,500 / 50,000 = 45%. हे उदाहरणातील सेक्टर मर्यादा 50% च्या आत आहे.</li>
+</ol>
+<p><strong>नवीन पोझिशन जोडणे.</strong> पोझिशन D ही सेक्टर X मधील Rs 6,000 ची आहे, तिचा नियोजित तोटा Rs 300.</p>
+<ol start="5">
+<li>सेक्टर X होतो 22,500 + 6,000 = Rs 28,500. भांडवलाच्या तुलनेत वाटा: 28,500 / 50,000 = 57%.</li>
+<li>ओपन जोखीम होते 1,300 + 300 = Rs 1,600. भांडवलाच्या तुलनेत वाटा: 1,600 / 50,000 = 3.2%.</li>
+<li>उदाहरणातील सेक्टर मर्यादा भांडवलाच्या 50% आहे. D च्या आधी सेक्टर X 45% वर आहे, जे मर्यादेत आहे. D नंतर तो 57% होतो, जो 50% च्या वर आहे, म्हणून मर्यादा मोडली आहे. <strong>नवीन पोझिशन नाकारली जाते.</strong> सेक्टर मर्यादा हाच नियम आहे ज्यामुळे नकार होतो.</li>
+</ol>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<p>प्रत्येक सराव आधी हाताने सोडवा. मग तुमचे उत्तर तपासण्यासाठी डेमो वापरा. <em>हे पाहा</em> खालील डेमो सोडवलेल्या उदाहरणातील तीन पोझिशन्सवर उघडतो, म्हणून तो मार्गदर्शित सरावाला योग्य आहे. स्वतंत्र सरावाचा स्वतःचा डेमो त्याखाली आहे.</p>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> सोडवलेल्या उदाहरणातील होल्डिंग्ज वापरून गुंतवलेली टक्केवारी, ओपन जोखमीची टक्केवारी आणि सेक्टर Y चा वाटा काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>आधी पोझिशन मूल्यांची बेरीज करा, मग ती भांडवलाने भागा.</li>
+<li>नियोजित तोट्यांची बेरीज करा, मग ती भांडवलाने भागा.</li>
+<li>सेक्टर Y मध्ये फक्त एकच पोझिशन आहे.</li>
+</ol>
+<p><strong>उत्तर:</strong> गुंतवलेले 30,000 / 50,000 = 60%. ओपन जोखीम 1,300 / 50,000 = 2.6%. सेक्टर Y 7,500 / 50,000 = 15%.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> चार पोझिशन्स, प्रत्येक भांडवलाच्या 25% इतकी, आणि प्रत्येकाचा नियोजित तोटा भांडवलाच्या 1% इतका. एकूण ओपन जोखीम आणि गुंतवलेली टक्केवारी काढा. मग स्पष्ट करा की चारही एकाच सेक्टरमध्ये असतील तर ही एकाग्रतेची समस्या का आहे.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>प्रत्येक पोझिशन भांडवलाच्या 25% आहे, म्हणून गुंतवलेले = 4 x 25% = 100%. रोख = 0.</p>
+<p>प्रत्येक नियोजित तोटा भांडवलाच्या 1% आहे, म्हणून ओपन जोखीम = 4 x 1% = 4%.</p>
+<p>चारही एकाच सेक्टरमध्ये असतील, तर एका सेक्टरच्या हालचालीने चारही स्टॉप एकाच वेळी गाठले जाऊ शकतात. चार पोझिशन्स चार वेगळ्या डावांपेक्षा त्या सेक्टरवरील एका मोठ्या डावाच्या जवळ असतात. त्यामुळे सेक्टरचा वाटा (भांडवलाच्या 100%) ही एकाग्रतेची समस्या आहे.</p>
+</details>
+<!-- component: exposure-meter | capital: 50000 | caption: स्वतंत्र सरावाची तपासणी: Four equal positions (चार समान पोझिशन्स) दाबा, एक सेक्टर निवडा, आणि ओपन जोखीम व सेक्टरचा वाटा वाचा. -->
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>सहा प्रश्न ओपन जोखीम, सेक्टरचा वाटा, एक्सपोजर आणि जोखीम यातील फरक, सहसंबंध आणि सेक्टर बेरजेतील चूक शोधणे यांवर आहेत.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>पद्धत:</strong> शिकण्याची नोंद (किंवा कागदी काम). कोणतीही ऑर्डर दिली जात नाही.</p>
+<ol>
+<li>तुमच्या जर्नलमध्ये एक साप्ताहिक पोर्टफोलिओ स्नॅपशॉट लिहा. फक्त बनावट होल्डिंग्ज वापरा.</li>
+<li>प्रत्येक पोझिशनसाठी मूल्य, सेक्टर, भांडवलाचा वाटा आणि स्टॉपवरील नियोजित तोटा लिहा.</li>
+<li>एकूण बेरीज करा: गुंतवलेले, रोख, ओपन जोखीम आणि प्रत्येक सेक्टरचा वाटा.</li>
+<li>प्रत्येक बेरीज तुमच्या मर्यादांशी तपासा. कोणतीही मर्यादा मोडली आहे का, यावर एक ओळ लिहा.</li>
+</ol>
+<p>जर्नल अॅप तयार नसेल, तर कागद वापरा.</p>
+<h2 id="मरयादा-आणि-सामानय-चुका"><a class="header" href="#मरयादा-आणि-सामानय-चुका">मर्यादा आणि सामान्य चुका</a></h2>
+<ul>
+<li>एक्सपोजर आणि ओपन जोखीम हे अंदाज नाहीत. ओपन जोखीम गृहीत धरते की प्रत्येक स्टॉप त्याच्या स्टॉप भावावर पूर्ण होतो. गॅप आणि सर्किट ती गृहीतके मोडू शकतात (<em>स्लिपेज, गॅप आणि नियोजित विरुद्ध प्रत्यक्ष जोखीम</em>).</li>
+<li>सेक्टर लेबल्स डेटा स्रोतावर अवलंबून असतात. वापरण्यापूर्वी स्रोत तपासा.</li>
+<li>विविधीकरण बाजारव्यापी जोखीम काढून टाकत नाही. व्यापक घसरण प्रत्येक सेक्टरवर परिणाम करू शकते.</li>
+<li>50% सेक्टर मर्यादा ही उदाहरणासाठी आहे. प्रत्येक मर्यादा तुम्ही ठरवता.</li>
+<li>तोट्यातील पोझिशनमध्ये सरासरी खर्च कमी करण्यासाठी भर घालणे एकाग्रता वाढवते. तो उपाय नाही.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>एक्सपोजर म्हणजे मूल्य. ओपन जोखीम म्हणजे नियोजित तोटा. त्या वेगळ्या संख्या आहेत.</li>
+<li>ओपन जोखीम = सर्व पोझिशन्समधील (एंट्री - स्टॉप) x शेअर्स यांची बेरीज.</li>
+<li>एकाच सेक्टरमधील पोझिशन्स अनेकदा एकत्र हलतात. त्यांना एक मोठा डाव म्हणून मोजा.</li>
+<li>पोझिशन जोडताना प्रत्येक वेळी सेक्टरची बेरीज अद्ययावत करा.</li>
+<li>पोझिशन जोडण्यापूर्वी प्रत्येक मर्यादा तपासा, नंतर नव्हे.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p>स्रोत (फक्त नावे):</p>
+<ul>
+<li>NSE सेक्टोरल निर्देशांक कार्यपद्धतीची कागदपत्रे.</li>
+</ul>
+<p>NSE Indices चे चार स्तरांचे इंडस्ट्री वर्गीकरण 11 नोव्हेंबर 2026 रोजी NSE Indices साइटवरून वाचले गेले.</p>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T2.14&amp;body=Page%3A%2002-money-and-math%2F14-portfolio-exposure%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/13-leverage-and-margin/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/15-capital-allocation/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/13-leverage-and-margin/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/15-capital-allocation/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

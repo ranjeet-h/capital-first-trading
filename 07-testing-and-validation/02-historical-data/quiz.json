@@ -1,0 +1,114 @@
+[
+  {
+    "id": "T7.2-q1",
+    "type": "mcq",
+    "prompt": "Hypothetical. A share of Rs 1,000 splits 1 for 2. An unadjusted series shows the price at Rs 500 after the split. Which statement is correct?",
+    "options": [
+      {"id": "a", "text": "Both the adjusted and the unadjusted series give the same profit and loss for a holder."},
+      {"id": "b", "text": "The unadjusted series shows a 50% fall that did not change the holder's value, so the series must not be mixed with adjusted prices."},
+      {"id": "c", "text": "The unadjusted series is always wrong and should be deleted."},
+      {"id": "d", "text": "The split doubled the value of the holding."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Mixed or wrong series can give a fake fall or gain. The unadjusted and adjusted prices differ after a split, so the results can differ too.",
+      "c": "The unadjusted series is the price as traded. It is correct for its own purpose. It must not be mixed with adjusted data in one test.",
+      "d": "A split changes the number of shares and the price. The total value stays at Rs 10,000 in the worked example."
+    },
+    "concepts": ["adjusted-vs-unadjusted", "corporate-actions"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.2-q2",
+    "type": "mcq",
+    "prompt": "A row shows a low of Rs 252 and a close of Rs 251. What is the correct response?",
+    "options": [
+      {"id": "a", "text": "Ignore it. A low above the close is a small typo."},
+      {"id": "b", "text": "Flag the row. The low is above the close, which breaks the OHLC rule. Check it with the source."},
+      {"id": "c", "text": "Replace the low with the close, and keep the row without a note."},
+      {"id": "d", "text": "Keep the row, because the high can be ignored."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A low above the close breaks the OHLC rule. Such a row is a question to check, not a typo to ignore.",
+      "c": "Changing the value without a source hides the problem. The change must be checked and recorded.",
+      "d": "The OHLC rule covers the low as well as the high. The high is not the cause of this failure."
+    },
+    "concepts": ["ohlc-rule", "data-validation"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.2-q3",
+    "type": "spot-the-mistake",
+    "prompt": "A student says: Any price jump over 20% must be a bad row, so I delete it. Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The word bad row, because a jump over 20% is a question to answer, such as whether there is a flagged split."},
+      {"id": "b", "text": "The word delete, because a row can never be removed."},
+      {"id": "c", "text": "The number 20, because the limit is always 5%."},
+      {"id": "d", "text": "Nothing is wrong. Large jumps are always errors."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "Rows can be removed after a check, with a reason written down. Deleting without a check is the error.",
+      "c": "The 20% figure is the threshold the check uses for a question. It is not a market rule and is not 5%.",
+      "d": "A large move can be real, for example after a flagged split. A large move is a question, not proof of an error."
+    },
+    "concepts": ["jump-check", "data-validation"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.2-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. A file shows a 1-for-2 split on one date. No split flag is in the file. Which action is right?",
+    "options": [
+      {"id": "a", "text": "Assume the data is right and run the test on the unadjusted prices."},
+      {"id": "b", "text": "Check the source for the split and its adjustment, then decide how to handle the rows before the test."},
+      {"id": "c", "text": "Delete the rows after the split, so the test is clean."},
+      {"id": "d", "text": "Mix the two series so the averages look smoother."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Without a check, the test may see a fake 50% fall. The source must be checked before any assumption.",
+      "c": "Deleting rows removes real history and hides the problem. The check decides what to keep.",
+      "d": "Mixing the two series is the error this chapter warns against. It creates a fake fall at the split."
+    },
+    "concepts": ["corporate-actions", "data-validation"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.2-q5",
+    "type": "numeric",
+    "prompt": "Hypothetical. A share of Rs 1,000 splits 1 for 2. An unadjusted series shows the price moving from Rs 1,000 to Rs 500. By how many percent does the unadjusted series seem to fall?",
+    "answer": 50,
+    "tolerance": 0,
+    "unit": "%",
+    "solution": "Fall = (500 - 1,000) / 1,000 = -500 / 1,000 = -50%. The holder's value did not fall, because 10 shares at Rs 1,000 equal 20 shares at Rs 500, both Rs 10,000.",
+    "concepts": ["adjusted-vs-unadjusted"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.2-q6",
+    "type": "spot-the-mistake",
+    "prompt": "A student says: Adj Close is the same across all data providers, so I can mix their files. Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The claim that Adj Close is the same everywhere. Providers can use different adjustment methods, so read the source's notes."},
+      {"id": "b", "text": "The word mix, because files from one provider can never be used together."},
+      {"id": "c", "text": "The column name, because Adj Close is not a real price column."},
+      {"id": "d", "text": "Nothing is wrong. Adjusted prices are always identical."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "Files can be combined only after checking that they use the same adjustment method and the same dates. The word mix is not the error.",
+      "c": "Adj Close is a common column name for an adjusted closing price. The column name is not the problem.",
+      "d": "Sources can differ in how they adjust prices. Identical adjusted prices across all providers cannot be assumed."
+    },
+    "concepts": ["adjusted-vs-unadjusted", "data-licence"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

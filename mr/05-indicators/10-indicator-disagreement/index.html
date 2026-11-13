@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>निर्देशक प्लेग्राउंड आणि निर्देशक एकमत नसतात तेव्हा (Indicator playground and when indicators disagree) - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../05-indicators/10-indicator-disagreement/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../05-indicators/10-indicator-disagreement/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T5.10
+title: निर्देशक प्लेग्राउंड आणि निर्देशक एकमत नसतात तेव्हा (Indicator playground and when indicators disagree)
+page_type: Concept
+prerequisites: [T5.1, T5.2, T5.3, T5.4, T5.5, T5.6, T5.7, T5.8, T5.9]
+labs: [Lab 4]
+estimated_minutes: 25
+-->
+<h1 id="निरदेशक-पलेगराउंड-आणि-निरदेशक-एकमत-नसतात-तेवहा-indicator-playground-and-when-indicators-disagree"><a class="header" href="#निरदेशक-पलेगराउंड-आणि-निरदेशक-एकमत-नसतात-तेवहा-indicator-playground-and-when-indicators-disagree">निर्देशक प्लेग्राउंड आणि निर्देशक एकमत नसतात तेव्हा (Indicator playground and when indicators disagree)</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एक वाचक एका चार्टवर पाच निर्देशक लावतो. चार निर्देशक सांगतात की भाव वाढत आहे. एक निर्देशक सांगतो की ही स्थिती अतिखरेदीची आहे. वाचकाला आत्मविश्वास वाटतो आणि तो खरेदी करतो. नंतर तो एका निर्देशकाचा कालावधी वारंवार बदलतो, इतका की जुना व्यापार यशस्वी दिसू लागतो. हे प्रकरण दाखवते की हे स्वतःची फसवणूक का आहे. डेटा पाहण्यापूर्वी टाय-ब्रेक नियम कसा ठरवायचा, तेही ते दाखवते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>निर्देशक काही मोजक्या माहितीपासून बनतात. ही माहिती बहुधा क्लोज, व्हॉल्यूम आणि हाय व लो असते. अनेक निर्देशक एकाच क्लोजचा वापर करतात. म्हणून त्यांची उत्तरे बहुतेक वेळा सारखीच असतात.</p>
+<p>लक्षात ठेवण्यासारखे काही मुद्दे:</p>
+<ul>
+<li><strong>निर्देशक अनेकदा एकसारखी माहिती देतात.</strong> एकाच क्लोजवर बनलेले दोन मोमेंटम निर्देशक त्याच कारणामुळे बहुतेक वेळा एकमत दाखवतात. नावे मोजू नका, माहितीचे स्रोत मोजा.</li>
+<li><strong>मतभेद सामान्य आहे.</strong> कोणता निर्देशक निर्णय घेईल, किंवा कोणीच नाही, हे डेटा पाहण्यापूर्वी ठरवा.</li>
+<li><strong>निकाल पाहिल्यानंतर सेटिंग्ज बदलणे ही सर्वात सामान्य स्वतःची फसवणूक आहे.</strong> जुन्या डेटावर चांगली दिसणारी सेटिंग नवीन डेटावर चालेलच असे नाही (<em>ओव्हरफिटिंग आणि तुम्ही किती गोष्टी आजमावल्या</em>).</li>
+<li><strong>प्लेग्राउंड समजून घेण्यासाठी आहे.</strong> सेटिंग बदलली तर सूत्र कसे प्रतिक्रिया देते, हे ते दाखवते. सर्वोत्तम सेटिंग शोधण्यासाठी ते नाही.</li>
+<li><strong>स्टॉप-लॉस आणि पोझिशन साइजिंग तरीही लागू होतात.</strong> सर्व निर्देशक एकमत असले तरीही.</li>
+</ul>
+<p>थोडक्यात नियम: आधी टाय-ब्रेक नियम लिहा, मग डेटा पहा.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: indicator-playground | indicator: sma | period: 10 | compareTo: 20,50 | predict: on | sliders: period | bars: 90 | caption: भाव आणि एक छोटी व एक लांब सरासरी; अंदाज मोड उत्तर दाखवण्यापूर्वी सरासरी कोणत्या बाजूला आहे ते सांगायला लावतो -->
+<p>कालावधीचा स्लायडर 10 वरून 50 पर्यंत हलवा. कालावधी वाढत जातो तसा सरासरीचा आकार कसा बदलतो ते पाहा. प्रत्येक उत्तर दाखवण्यापूर्वी अंदाज मोड वापरा. आधी तुमचा अंदाज लिहा, मग तो तपासा. लक्षात घ्या की एकाच तारखेला वेगवेगळ्या कालावधीच्या दोन सरासरी किती वेळा वेगळे उत्तर देतात.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक आणि केवळ उदाहरणासाठी.</strong> एक तारीख. क्लोज Rs 250. खालील चार निर्देशकांची वाचने आहेत.</p>
+<div class="table-wrapper"><table><thead><tr><th>वाचन</th><th>मूल्य</th><th>काय सांगते</th></tr></thead><tbody>
+<tr><td>20-दिवसांची मूव्हिंग ॲव्हरेज</td><td>Rs 248</td><td>भाव सरासरीच्या वर आहे, म्हणून वाचन वर झुकते</td></tr>
+<tr><td>RSI</td><td>72</td><td>सामान्य 70 च्या संदर्भ पातळीच्या वर आहे, म्हणून तो अतिखरेदी दाखवतो</td></tr>
+<tr><td>MACD हिस्टोग्राम</td><td>सकारात्मक</td><td>मोमेंटम वर झुकलेला आहे</td></tr>
+<tr><td>वरचा बोलिंजर बँड</td><td>Rs 255</td><td>भाव वरच्या बँडच्या खाली आहे, म्हणून बँडला स्पर्श झालेला नाही</td></tr>
+</tbody></table>
+</div>
+<p>बहुतेक वाचने वर दाखवतात. एक अतिखरेदी दाखवते. वाचनांची मोजणी व्यापाराचा निर्णय ठरवत नाही. दिवसाआधी लिहिलेला नियम निर्णय ठरवतो.</p>
+<p>समजा नियम फक्त <em>पूर्ण निर्दिष्ट स्विंग रणनीती</em> मधील ब्रेकआउट चाचणी वापरतो. तर RSI चे वाचन अजिबात वापरले जात नाही. ब्रेकआउट चाचणी निर्णय ठरवते, आणि निर्देशकांच्या संख्येचा काहीही फरक पडत नाही.</p>
+<p><strong>पॅरामीटरची संवेदनशीलता.</strong> तीच तारीख, तोच क्लोज Rs 250. आता फक्त सरासरीचा कालावधी बदला:</p>
+<div class="table-wrapper"><table><thead><tr><th>सरासरी</th><th>मूल्य</th><th>Rs 250 च्या क्लोजच्या वर की खाली</th></tr></thead><tbody>
+<tr><td>10-दिवसांची</td><td>Rs 252</td><td>वर</td></tr>
+<tr><td>20-दिवसांची</td><td>Rs 248</td><td>खाली</td></tr>
+<tr><td>50-दिवसांची</td><td>Rs 240</td><td>खाली</td></tr>
+</tbody></table>
+</div>
+<p>20-दिवस आणि 50-दिवस सरासरी क्लोजच्या खाली आहेत. 10-दिवस सरासरी त्याच्या वर आहे. फक्त कालावधी बदलला तरी एकच तारीख वेगळे वाचन देते. म्हणून चाचणीपूर्वी कालावधी निश्चित करा.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<!-- component: indicator-disagree | caption: एका बनावट चार्टवरील पाच वाचने. किती वर झुकतात याचा अंदाज करा, मग तपासा. एक असा दिवस शोधा जेव्हा ती एकमत नसतात -->
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> क्लोज सलग तीन दिवस झपाट्याने वाढतो. 10-दिवसांची सरासरी शेवटच्या क्लोजच्या वर राहील की खाली, याचा अंदाज करा. मग प्लेग्राउंडमध्ये तुमचा अंदाज तपासा.</p>
+<p>संकेत:</p>
+<ol>
+<li>लहान सरासरी लांब सरासरीपेक्षा जलद प्रतिक्रिया देते.</li>
+<li>तीव्र वाढीनंतर लहान सरासरी झपाट्याने वर जाते.</li>
+<li>सरासरीत अजूनही जुने, खालचे क्लोज असतात. शेवटचा क्लोज सरासरीच्या किती वर आहे, याचा विचार करा.</li>
+</ol>
+<p><strong>उत्तर:</strong> 10-दिवसांची सरासरी वाढीनंतर झपाट्याने वर जाते. तिच्यात अजूनही जुने आणि कमी क्लोज असतात, म्हणून ती सहसा शेवटच्या क्लोजच्या खाली राहते. प्लेग्राउंडवर तपासा, आणि वाढीचे दिवस वेगवेगळे ठेवून पाहा.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> एका परिच्छेदात टाय-ब्रेक नियम लिहा. जास्तीत जास्त दोन निर्देशक वापरा. ते एकमत असतील तेव्हा काय करायचे आणि ते वेगळे सांगतील तेव्हा काय करायचे, ते सांगा. कोणताही चार्ट पाहण्यापूर्वी हे लिहा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>चांगल्या उत्तरात हे भाग असतात:</p>
+<ul>
+<li>दोन नावाचे निर्देशक, त्यांचे कालावधी निश्चित केलेले.</li>
+<li>एकमताचा नियम. उदाहरणार्थ: दोन्ही वर झुकतात, म्हणून नियम व्यापाराला परवानगी देतो, आणि स्टॉप-लॉस व पोझिशन साइजिंगचे नियम लागू होतात.</li>
+<li>मतभेदाचा नियम. उदाहरणार्थ: एक वर झुकतो आणि एक खाली झुकतो, म्हणून नियम त्या दिवशी कोणत्याही व्यापाराला परवानगी देत नाही.</li>
+<li>एक नोंद: नियम डेटा वाचण्यापूर्वी लिहिला होता.</li>
+</ul>
+<p>निकालानंतर नियम बदलू नये. तो बदलला, तर बदल नवीन नियम म्हणून लिहा आणि तो नियम वेगळा तपासा.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>हे प्रकरण तपासते की निर्देशक कसे एकमत होतात, कालावधी वाचनाला कसा बदलतो, आणि चाचणीपूर्वी सेटिंग्ज का निश्चित कराव्यात.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> कागदी काम (पेपर). हे फक्त शिकण्याची नोंद आहे. ते तुमच्या जर्नलमध्ये नोंदवा. जर्नल ॲप तयार नसेल तर कागदावर लिहा.</p>
+<ol>
+<li>या ट्रॅकमधील दोन निर्देशक निवडा. त्यांचे कालावधी निश्चित करा आणि लिहून ठेवा.</li>
+<li>मतभेदासाठी टाय-ब्रेक नियम लिहा. डेटा पाहण्यापूर्वी त्यावर तारीख घाला.</li>
+<li>दोन निर्देशक वेगळे सांगतात अशा 10 दिवसांवर नियमाचे उत्तर नोंदवा.</li>
+<li>ठरलेल्या कालावधीनंतर निकाल नंतर नोंदवा. निकाल शिकण्याची नोंद म्हणून लिहा.</li>
+<li>कोणत्याही कालावधी बदलाने तुमचे उत्तर बदलले असते का, यावर एक वाक्य लिहा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>निकाल पाहिल्यानंतर कालावधी बदलणे हा स्वतःला फसवण्याचा मुख्य मार्ग आहे. चाचणीपूर्वी सेटिंग्ज निश्चित करा.</li>
+<li>एकमत म्हणजे पुरावा नाही. एकाच क्लोजवर बनलेले दोन निर्देशक एकच उत्तर दोनदा देऊ शकतात.</li>
+<li>तोटा झाल्यानंतर लिहिलेला मतभेदाचा नियम म्हणजे मागे पाहून केलेला शहाणपणा आहे. तो नियम नाही.</li>
+<li>प्लेग्राउंड सूत्र कसे वागते ते दाखवते. कोणती सेटिंग काम करते ते दाखवत नाही.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>नावे नव्हे, माहितीचे स्रोत मोजा. अनेक निर्देशक एकाच क्लोजचा वापर करतात.</li>
+<li>डेटा पाहण्यापूर्वी टाय-ब्रेक नियम ठरवा.</li>
+<li>चाचणीपूर्वी कालावधी निश्चित करा. तुम्ही आजमावलेली प्रत्येक सेटिंग नोंदवा.</li>
+<li>सर्व निर्देशक एकमत असतानाही स्टॉप-लॉस आणि पोझिशन साइजिंग लागू होतात.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>या ट्रॅकमधील आधीच्या प्रकरणांत दिलेले स्रोत.</li>
+<li>बॅकटेस्टमधील ओव्हरफिटिंगवरील शोधनिबंध (मूळ इंग्रजी संदर्भ): Bailey, Borwein, Lopez de Prado and Zhu (2014), “Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance”, Notices of the American Mathematical Society, 61(5), 458-471.</li>
+<li>Zerodha च्या Kite चार्टिंग मॅन्युअलमध्ये निर्देशकांच्या डीफॉल्ट सेटिंग्ज दिलेल्या नाहीत. प्रत्येक सेटिंग तुमच्या स्वतःच्या स्क्रीनवर वाचा.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T5.10&amp;body=Page%3A%2005-indicators%2F10-indicator-disagreement%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../05-indicators/09-multiple-timeframes/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../06-strategy/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../05-indicators/09-multiple-timeframes/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../06-strategy/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

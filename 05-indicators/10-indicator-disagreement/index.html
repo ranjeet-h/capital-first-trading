@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Indicator playground and when indicators disagree - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/05-indicators/10-indicator-disagreement/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T5.10
+title: Indicator playground and when indicators disagree
+page_type: Concept
+prerequisites: [T5.1, T5.2, T5.3, T5.4, T5.5, T5.6, T5.7, T5.8, T5.9]
+labs: [Lab 4]
+estimated_minutes: 25
+-->
+<h1 id="indicator-playground-and-when-indicators-disagree"><a class="header" href="#indicator-playground-and-when-indicators-disagree">Indicator playground and when indicators disagree</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A reader puts five indicators on one chart. Four say the price is rising. One says it is overbought. The reader feels confident and buys. Later, the reader changes the period of one indicator again and again, until an old trade looks like a winner. This chapter shows why that is self-deception. It also shows how to set a tie-break rule before you look at the data.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Indicators are built from a small set of inputs, mostly the closes, the volume and the high and low. Many indicators use the same closes. So many of them give the same answer.</p>
+<p>Some points to keep in mind:</p>
+<ul>
+<li><strong>Indicators are often redundant.</strong> Two momentum indicators built from the same closes will agree most of the time for that reason. Count the inputs, not the names.</li>
+<li><strong>Disagreement is normal.</strong> Decide before you look which indicator, if any, decides.</li>
+<li><strong>Changing settings after you see results is the most common self-deception.</strong> A setting that looks good on past data may not work on new data (<em>Overfitting and the number of things you tried</em>).</li>
+<li><strong>The playground is for understanding.</strong> It shows how a formula reacts when a setting changes. It is not for finding the best setting.</li>
+<li><strong>Stops and position size still apply.</strong> They apply even when every indicator agrees.</li>
+</ul>
+<p>The short rule: write the tie-break rule first, then look at the data.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: indicator-playground | indicator: sma | period: 10 | compareTo: 20,50 | predict: on | sliders: period | bars: 90 | caption: Price with a short and a longer average; a predict mode asks you to say which side the average sits on before the answer is shown -->
+<p>Move the period slider from 10 to 50. Watch how the average changes shape as the period grows. Use the predict mode before you reveal each answer. Write down your guess, then check it. Notice how often two averages with different periods give different answers on the same date.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical and illustrative only.</strong> One date. Close Rs 250. The readings below come from four indicators.</p>
+<div class="table-wrapper"><table><thead><tr><th>Reading</th><th>Value</th><th>What it says</th></tr></thead><tbody>
+<tr><td>20-day average</td><td>Rs 248</td><td>Price is above the average, so the reading leans up</td></tr>
+<tr><td>RSI</td><td>72</td><td>Above the common 70 reference, so it reads overbought</td></tr>
+<tr><td>MACD histogram</td><td>Positive</td><td>Momentum is leaning up</td></tr>
+<tr><td>Upper Bollinger Band</td><td>Rs 255</td><td>Price is below the upper band, so the band is not touched</td></tr>
+</tbody></table>
+</div>
+<p>Most readings point up. One points to overbought. Counting readings does not decide the trade. A rule written before the day decides.</p>
+<p>Suppose the rule uses only the breakout test from <em>The fully specified swing strategy</em>. Then the RSI reading is not used at all. The breakout test decides, and the count of indicators makes no difference.</p>
+<p><strong>Parameter sensitivity.</strong> Same date, same close of Rs 250. Now change only the period of the average:</p>
+<div class="table-wrapper"><table><thead><tr><th>Average</th><th>Value</th><th>Above or below the close of Rs 250</th></tr></thead><tbody>
+<tr><td>10-day</td><td>Rs 252</td><td>Above</td></tr>
+<tr><td>20-day</td><td>Rs 248</td><td>Below</td></tr>
+<tr><td>50-day</td><td>Rs 240</td><td>Below</td></tr>
+</tbody></table>
+</div>
+<p>The 20-day and 50-day averages sit below the close. The 10-day average sits above it. The same date gives a different reading when only the period changes. That is why you fix the periods before you test.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<!-- component: indicator-disagree | caption: Five readings on one made-up chart. Guess how many lean up, then check. Find a day where they disagree -->
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> The close rises sharply for three days in a row. Predict whether a 10-day average will sit above or below the latest close. Then check your guess in the playground.</p>
+<p>Hints:</p>
+<ol>
+<li>A shorter average reacts faster than a longer one.</li>
+<li>After a sharp rise, the short average moves up quickly.</li>
+<li>The average still includes older, lower closes. Ask how far the latest close sits above the average.</li>
+</ol>
+<p><strong>Answer:</strong> The 10-day average moves up quickly after the rise. It usually stays below the latest close, because it still includes older and lower closes. Check this on the playground, and try a different number of rising days.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Write a tie-break rule in one paragraph. Use at most two indicators. State what you do when they disagree, and what you do when they agree. Write it before you look at any chart.</p>
+<details><summary>Check your answer</summary>
+<p>A good answer has these parts:</p>
+<ul>
+<li>The two named indicators, with their periods fixed.</li>
+<li>The rule for agreement, for example: both lean up, so the rule allows the trade and the stop and size rules apply.</li>
+<li>The rule for disagreement, for example: one leans up and one leans down, so the rule allows no trade that day.</li>
+<li>A note that the rule was written before the data was read.</li>
+</ul>
+<p>The rule should not change after a result. If it changes, write the change as a new rule and test that rule separately.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks how indicators agree, how a period changes a reading, and why settings must be fixed before a test.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong>. This is a learning log only. Log it in your journal (or on paper until the journal app is ready).</p>
+<ol>
+<li>Choose two indicators from this track. Fix their periods and write them down.</li>
+<li>Write a tie-break rule for disagreement. Date it before you look at the data.</li>
+<li>On 10 days where the two indicators disagree, record the rule’s answer.</li>
+<li>Record the outcome later, after a fixed number of days. Write the outcome as a learning note.</li>
+<li>Write one sentence on whether any period change would have changed your answer.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>Changing periods after you see results is the main way to fool yourself. Fix the settings before you test.</li>
+<li>Agreement is not proof. Two indicators built from the same closes can give the same answer twice.</li>
+<li>A disagreement rule written after a loss is hindsight. It is not a rule.</li>
+<li>The playground shows how a formula behaves. It does not show which setting works.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Count the inputs, not the names. Many indicators use the same closes.</li>
+<li>Decide the tie-break rule before you look at the data.</li>
+<li>Fix the periods before you test. Record every setting you try.</li>
+<li>Stops and position size still apply when all indicators agree.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>The sources listed in the earlier chapters of this track.</li>
+<li>Bailey, Borwein, Lopez de Prado and Zhu (2014), “Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance”, Notices of the American Mathematical Society, 61(5), 458-471.</li>
+<li>Zerodha’s Kite charting manual does not list default indicator settings. Read each setting on your own screen.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../05-indicators/09-multiple-timeframes/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../06-strategy/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../05-indicators/09-multiple-timeframes/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../06-strategy/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

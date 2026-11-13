@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Choosing no-trade - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/06-strategy/07-choosing-no-trade/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T6.7
+title: Choosing no-trade
+page_type: Concept
+prerequisites: [T6.4, T2.11, T2.12]
+labs: [Lab 3, Lab 1]
+estimated_minutes: 25
+-->
+<h1 id="choosing-no-trade"><a class="header" href="#choosing-no-trade">Choosing no-trade</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A trader loses Rs 500 on one trade and another Rs 500 on the next. The day’s loss is now Rs 1,000. Hypothetical example. He feels behind and wants to win the money back. A third setup appears. It does not meet all the rules, but he takes it anyway. This chapter shows how to decide, before the session, when not to trade. It also shows why a day with no trade can be a correct day.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>No-trade conditions are written in advance, as a list with rules. They are not decided during the session, when emotions run high.</p>
+<p>A no-trade decision can come from five groups of conditions.</p>
+<p><strong>Market conditions.</strong> There is no setup under the rules. The market is too thin to trade at a sensible price. See <em>Order matching, spread and liquidity</em>. There is a circuit or event risk. See <em>Circuit limits and halts</em>. Check each event date on an official source. For example, NSE publishes its holiday list, and company results dates are posted on the NSE and BSE sites. (As of 11 Nov 2026. Dates change, so check the exchange sites.)</p>
+<p><strong>Account conditions.</strong> The daily or weekly loss limit has been reached. A consecutive-loss rule has been reached. See <em>Risk limits</em> and <em>Consecutive losses and losing streaks</em>. The capital is below the minimum that the plan allows.</p>
+<p><strong>Data conditions.</strong> The prices are stale or the feed has failed. The symbol is unclear. A corporate action is unclear. See <em>Corporate actions</em>.</p>
+<p><strong>Personal conditions.</strong> You are short of sleep, distracted, or in a strong emotion after a loss. Revenge trading is excluded. It is a trade taken to win back money lost. See <em>Loss aversion and revenge trading</em>.</p>
+<p><strong>Plan conditions.</strong> The rule for the trade is not met. The plan does not allow the trade.</p>
+<p>A no-trade decision is not missing out. Earning nothing on a day can be the correct result. A no-trade day has a result of Rs 0 and still follows the plan.</p>
+<p>A rule that stops trading after a limit breach must be fixed in advance. When the limit is reached, trading stops for the day. Do not make an exception because the next trade looks good.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: risk-limit-simulator | capital: 50000 | dailyLossLimit: 1000 | tradeLoss: 500 | caption: Enter trades and a limit, then see the stop-trading state appear at the breach -->
+<p>Enter two losing trades of Rs 500 each. Watch the running total. When the total reaches the limit, the stop-trading state appears. Then try a day with no trades. The day’s result stays at Rs 0.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Example daily loss limit: Rs 1,000 for a Rs 50,000 account. This is 2 percent of capital. It is an example of the arithmetic, not a recommended limit.</p>
+<div class="table-wrapper"><table><thead><tr><th>Event</th><th>Trade result</th><th>Running total for the day</th></tr></thead><tbody>
+<tr><td>Trade 1</td><td>minus Rs 500 (1R)</td><td>minus Rs 500</td></tr>
+<tr><td>Trade 2</td><td>minus Rs 500 (1R)</td><td>minus Rs 1,000</td></tr>
+<tr><td>Limit check</td><td>Limit of minus Rs 1,000 is reached</td><td>No more trades today</td></tr>
+</tbody></table>
+</div>
+<p>The day’s result is minus Rs 1,000, which is the planned maximum loss for the day.</p>
+<p><strong>A day with no setup.</strong> The rules find no setup. There are no trades. The result is Rs 0. The day is compliant with the plan.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Classify six scenarios as trade or no-trade. For each scenario, name the rule that decides.</p>
+<p>Hints:</p>
+<ol>
+<li>Is there a setup under the rules?</li>
+<li>Has a loss limit or a consecutive-loss rule been reached?</li>
+<li>Is the data reliable?</li>
+<li>Is your personal state fit for trading?</li>
+</ol>
+<p>Scenarios:</p>
+<ol>
+<li>No setup appears under the rules, so you wait.</li>
+<li>The daily loss limit was reached this morning. A new setup appears.</li>
+<li>The price feed shows yesterday’s last price with an old timestamp.</li>
+<li>You slept badly and feel angry after a loss.</li>
+<li>A setup meets every rule. The data is clean. The limit is not reached. You are calm.</li>
+<li>A company has announced a corporate action, and the terms are unclear.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ol>
+<li><strong>No-trade.</strong> Market rule: no setup.</li>
+<li><strong>No-trade.</strong> Account rule: loss limit reached.</li>
+<li><strong>No-trade.</strong> Data rule: the price is stale.</li>
+<li><strong>No-trade.</strong> Personal rule: your state is not fit.</li>
+<li><strong>Trade.</strong> All conditions are met.</li>
+<li><strong>No-trade.</strong> Data rule: the corporate action is unclear.</li>
+</ol>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Write your own six-item no-trade list. Each item needs a rule and a category. Use the five categories from <em>The idea</em>.</p>
+<details><summary>Check your answer</summary>
+<p>A sample list:</p>
+<ol>
+<li>No setup under the rules. Category: market.</li>
+<li>Daily loss limit reached. Category: account.</li>
+<li>Two consecutive losses, as set in the plan. Category: account.</li>
+<li>Stale or missing prices. Category: data.</li>
+<li>An unclear symbol or corporate action. Category: data.</li>
+<li>Strong emotion after a loss, or poor sleep. Category: personal.</li>
+</ol>
+<p>Each item has a rule and a category. The check is that every item can be decided before the session begins.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the categories of no-trade, the loss-limit arithmetic, and the rule that stops trading after a breach.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong>. Write it in your journal. If the journal is not ready, use paper.</p>
+<ol>
+<li>Journal five no-trade days, one for each day.</li>
+<li>For each day, write the rule that decided the no-trade.</li>
+<li>Write the category of that rule: market, account, data, personal or plan.</li>
+<li>Record the day’s result, which is Rs 0 when no trade was taken.</li>
+<li>Mark the entries hypothetical unless they come from your own record.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>The Rs 1,000 limit in this chapter is an illustration of the arithmetic. It is not a recommended limit.</li>
+<li>No-trade rules must be written before the session. Writing them during the day invites excuses.</li>
+<li>A no-trade rule does not close a position you already hold. Open positions follow their exit rules.</li>
+<li>Waiting does not remove all risk. A stop can still be hit, and a gap can still cause a loss.</li>
+<li>The calendar of holidays and events must be checked from an official source. NSE’s 2026 list has 16 holidays that fall on weekdays. One of them, 15 Jan, was added after NSE’s first list of 12 Dec 2025. (As of 11 Nov 2026, Zerodha’s market holiday calendar. Check the NSE site for changes.)</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>No-trade conditions are written before the session, in five categories.</li>
+<li>A limit that is reached ends trading for the day. Do not make an exception.</li>
+<li>A day with no trade has a result of Rs 0 and can be a compliant day.</li>
+<li>Missing a trade is not a failure of the plan.</li>
+<li>A no-trade rule does not close open positions. Exit rules still apply.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>NSE India, holiday list page for 2026 (read on 11 Nov 2026).</li>
+<li>SEBI investor education material on trading risks.</li>
+<li>NSE Basic FAQs on the Secondary Market, for price bands (read on 11 Nov 2026). Most shares have a daily band of 2%, 5%, 10% or 20%. Shares with futures and options use a flexible 10% range.</li>
+<li>For each event you use in a rule, write down the official page that gives its date.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../06-strategy/06-strategy-simulator/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../07-testing-and-validation/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../06-strategy/06-strategy-simulator/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../07-testing-and-validation/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

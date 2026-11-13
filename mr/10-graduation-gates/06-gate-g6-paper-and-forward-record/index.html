@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>गेट G6 कागदी आणि फॉरवर्ड नोंद - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../10-graduation-gates/06-gate-g6-paper-and-forward-record/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../10-graduation-gates/06-gate-g6-paper-and-forward-record/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T10.6
+title: गेट G6 कागदी आणि फॉरवर्ड नोंद
+page_type: Assessment
+prerequisites: [T8.5, T7.10, T10.4]
+labs: [Lab 3, Lab 5]
+estimated_minutes: 25
+-->
+<h1 id="गेट-g6-कागदी-आणि-फॉरवरड-नोंद"><a class="header" href="#गेट-g6-कागदी-आणि-फॉरवरड-नोंद">गेट G6 कागदी आणि फॉरवर्ड नोंद</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>तुम्ही अनेक आठवड्यांत 30 कागदी व्यापार नोंदवता. बहुतेक व्यापार तुमच्या लिखित योजनेनुसार होतात. एका दिवशी तुम्ही तुमची दैनिक मर्यादा ओलांडता, पण तरीही ते नोंदवता. हा गेट व्यापार किती चांगले होते याची श्रेणी देत नाही. तो तुमची जर्नल वाचतो आणि त्यात जे दिसते ते मोजतो. मग मोजलेल्या संख्या आणि टक्केवारी दाखवतो.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>हा गेट एक नोंद आहे, क्विझ नाही. यात काहीही यादृच्छिकपणे काढले जात नाही, आणि त्याची नेहमीच्या पद्धतीने पुन्हा चाचणी देता येत नाही. ही सतत चालणारी नोंद आहे. तुम्ही कधीही व्यापाराची नोंद करत राहू शकता.</p>
+<blockquote>
+<p>हे शैक्षणिक क्षमता मोजते. हा नफा मिळेल याचा पुरावा नाही. येथे खऱ्या पैशांनी ट्रेडिंग करण्याची गरज नाही आणि अशी शिफारसही नाही.</p>
+</blockquote>
+<p>गेट त्याच कालावधीसाठी खालील मुद्दे तपासतो:</p>
+<ol>
+<li><strong>व्यापाराची संख्या.</strong> मोड forward किंवा paper मध्ये किमान 30 व्यापार. तीस हा छोटा नमुना आहे, म्हणून त्याला पुराव्याऐवजी किमान मर्यादा माना.</li>
+<li><strong>योजनेचे पालन.</strong> त्या व्यापारांपैकी किमान 90% व्यापारांनी तुमच्या योजनेचे पालन केले.</li>
+<li><strong>मर्यादा भंग नाही.</strong> जर्नलच्या मर्यादा-भंग नोंदीत त्याच कालावधीसाठी कोणताही भंग दिसत नाही.</li>
+</ol>
+<p>फक्त खालील ओळी मोजल्या जातात:</p>
+<ul>
+<li>फॉरवर्ड-टेस्ट स्क्रिप्टमधील (Lab 5) फॉरवर्ड ओळी, त्या स्वतंत्रपणे मोजल्या जातात.</li>
+<li>हाताने नोंदवलेल्या कागदी ओळी, त्या स्वतंत्रपणे मोजल्या जातात.</li>
+</ul>
+<p>दोन्ही संख्या दाखवल्या जातात. बॅकटेस्ट ओळी आणि लाइव्ह ओळी मोजल्या जात नाहीत.</p>
+<p>हाताने केलेल्या नोंदी स्वतः नोंदवलेल्या असतात. फॉरवर्ड-स्क्रिप्टच्या ओळी पुन्हा तयार करता येतात. संख्या वाचताना हा फरक लक्षात ठेवा.</p>
+<p>मोजणी वाढवण्यासाठी तुम्ही नोंदी हटवू शकत नाही. हटवलेला व्यापार नोंदीत राहतो, हटवलेला म्हणून चिन्हांकित. चूक झाली तर दुरुस्तीची नोंद जोडा. ओळ पुसू नका.</p>
+<p>गेटची स्क्रीन सध्याची मोजणी आणि वापरात असलेल्या मर्यादा दाखवते.</p>
+<p>30 व्यापाराची नोंद ही रणनीती काम करते असे दाखवत नाही. हा गेट पार केल्याचा अर्थ व्यापार करावे असा होत नाही.</p>
+<p>फॉरवर्ड-टेस्ट स्क्रिप्ट तयार नसेल, तर तुमची कागदी नोंद जर्नलमध्ये किंवा कागदावर ठेवा, आणि काम लिहिल्याप्रमाणे करा.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>या गेटमध्ये शोधण्यासारखे चित्र नाही. प्रत्येक ओळ कशी मोजली जाते ते पाहण्यासाठी हा तक्ता वापरा.</p>
+<div class="table-wrapper"><table><thead><tr><th>ओळीचा प्रकार</th><th>गेटमध्ये मोजली जाते?</th><th>कशी मोजली जाते</th></tr></thead><tbody>
+<tr><td>फॉरवर्ड-स्क्रिप्टची ओळ</td><td>हो</td><td>स्वतःची संख्या</td></tr>
+<tr><td>हाताने नोंदवलेली कागदी ओळ</td><td>हो</td><td>स्वतःची संख्या</td></tr>
+<tr><td>बॅकटेस्ट ओळ</td><td>नाही</td><td>मोजली जात नाही</td></tr>
+<tr><td>लाइव्ह ओळ</td><td>नाही</td><td>मोजली जात नाही</td></tr>
+</tbody></table>
+</div><!-- component: gate-check | gate: G6 | caption: प्रत्येक निकष फक्त तुमच्या बाबतीत खरा असेल तेव्हाच टिक करा. गेट तुम्ही काय शिकलात ते तपासतो. ती व्यापार करण्याची परवानगी नाही. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> एका कालावधीसाठी तुमच्या जर्नलमध्ये 30 व्यापार आहेत. त्यापैकी 18 फॉरवर्ड-स्क्रिप्टच्या ओळी आहेत आणि 12 हाताने नोंदवलेल्या कागदी ओळी. आणखी पाच बॅकटेस्ट ओळीही आहेत. त्या मोजल्या जात नाहीत.</p>
+<div class="table-wrapper"><table><thead><tr><th>तपासणी</th><th>तुमचा आकडा</th><th>मर्यादा</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>व्यापाराची संख्या</td><td>30</td><td>किमान 30</td><td>पूर्ण</td></tr>
+<tr><td>योजनेचे पालन</td><td>27 पैकी 30 = 90.0%</td><td>किमान 90%</td><td>पूर्ण</td></tr>
+<tr><td>मर्यादा भंग</td><td>0</td><td>शून्य</td><td>पूर्ण</td></tr>
+</tbody></table>
+</div>
+<p>आता एक गोष्ट बदला. 30 पैकी फक्त 26 व्यापार योजनेनुसार झाले, तर पालन 26 / 30 = 86.7% आहे. ते 90% पेक्षा कमी आहे, म्हणून ती तपासणी पूर्ण होत नाही.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> काल्पनिक. एका कालावधीत तुमचे 40 व्यापार आहेत. 90% गाठण्यासाठी किती व्यापारांनी योजनेचे पालन करणे आवश्यक आहे?</p>
+<p>संकेत:</p>
+<ol>
+<li>40 ला 0.90 ने गुणा.</li>
+<li>तुमचा निकाल तपासा. त्याला 40 ने भागा.</li>
+<li>एक कमी धरून पाहा. ते अजूनही 90% गाठते का?</li>
+</ol>
+<p><strong>उत्तर:</strong> 40 x 0.90 = 36. तपासणी: 36 / 40 = 90%. एक कमी, 35 / 40 = 87.5%, पुरेसे नाही.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> काल्पनिक. एका कालावधीत तुमचे 30 व्यापार आहेत. दोन व्यापारांनी तुमची योजना मोडली. त्याच कालावधीत जर्नलमध्ये एक मर्यादा भंग नोंदवलेला आहे. योजनेचे पालन किती आहे, आणि त्या कालावधीसाठी गेट पास होतो का?</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>योजनेचे पालन: 30 पैकी 28 व्यापार योजनेनुसार झाले. 28 / 30 = 93.3%. हे 90% च्या बरोबरीने किंवा त्याहून जास्त आहे, म्हणून ही तपासणी पूर्ण झाली.</li>
+<li>मर्यादा भंग: त्याच कालावधीत एक भंग नोंदवलेला आहे. गेटला भंग शून्य हवे, म्हणून ही तपासणी पूर्ण होत नाही.</li>
+<li>त्या कालावधीसाठी गेट पास होत नाही. पालनाचा आकडा भंगाची भरपाई करत नाही.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ मोजणी, मर्यादा आणि नोंद ठेवण्याचे नियम तपासतो.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> कागदी काम (पेपर). हे तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल, तर कागदावर लिहा.</p>
+<ol>
+<li>प्रत्येक कागदी व्यापार स्वतःच्या ओळीवर नोंदवा. या स्तंभांचा वापर करा: तारीख, मोड (paper किंवा forward), योजनेचे पालन (हो किंवा नाही), मर्यादा भंग (हो किंवा नाही) आणि एक छोटी टीप.</li>
+<li>बॅकटेस्ट ओळी वेगळ्या पानावर ठेवा. कागदी ओळींमध्ये त्या मिसळू नका.</li>
+<li>कालावधीच्या शेवटी व्यापाराची मोजणी करा. योजनेचे पालन केलेल्या व्यापाराची टक्केवारी काढा.</li>
+<li>चूक झाली तर नवीन ओळीवर दुरुस्तीची नोंद लिहा. जुनी ओळ पुसू नका.</li>
+<li>या कामात फक्त कागदी व्यापार वापरा. कोणताही खरा ऑर्डर देऊ नका.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>कागदी आणि हाताने केलेल्या नोंदी स्वतः नोंदवलेल्या असतात. त्यांची अचूकता तुमच्या प्रामाणिकपणावर अवलंबून असते.</li>
+<li>30 व्यापाराची नोंद ही रणनीती काम करते असे दाखवत नाही.</li>
+<li>90% पालन म्हणजे दहापैकी एक व्यापार योजना मोडू शकतो. प्रत्येक मोडलेला व्यापार वाचा आणि त्यातून काय शिकलात ते लिहा.</li>
+<li>तीस व्यापार ही किमान मर्यादा आहे, अंतिम निर्णय नाही. गेट तसे सांगतो, आणि अधिक नोंद अधिक स्पष्ट चित्र देते.</li>
+<li>कागदी व्यापारचा कालावधी एका प्रकारच्या बाजारातील असू शकतो. तुमची नोंद इतर परिस्थितीत रणनीतीने कशी कामगिरी केली ते दाखवत नाही.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>गेट तुमच्या नोंदीची मोजणी करतो. व्यापार चांगले होते म्हणून त्यांना गुण देत नाही.</li>
+<li>एकाच कालावधीसाठी किमान 30 व्यापार आणि किमान 90% योजनेनुसार.</li>
+<li>त्या कालावधीत कोणताही मर्यादा भंग चालत नाही.</li>
+<li>फॉरवर्ड-स्क्रिप्ट ओळी आणि हाताने नोंदवलेल्या कागदी ओळी वेगळ्या मोजल्या जातात.</li>
+<li>मोजणी सुधारण्यासाठी कधीही नोंद हटवू नका.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>या पुस्तकातील जर्नल नियम आणि जर्नलमधील मर्यादा-भंग नोंद, जर्नल प्रकरणात दिलेले.</li>
+<li>या पुस्तकातील फॉरवर्ड-टेस्ट प्रकरण, त्याच्या शीर्षकानुसार.</li>
+</ul>
+<!-- facts-needed: none. Holiday and market-timing facts used by the forward-test script are registered in the forward-testing chapter. -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T10.6&amp;body=Page%3A%2010-graduation-gates%2F06-gate-g6-paper-and-forward-record%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../10-graduation-gates/05-gate-g5-strategy-validation/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../10-graduation-gates/07-gate-g7-live-readiness-plan/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../10-graduation-gates/05-gate-g5-strategy-validation/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../10-graduation-gates/07-gate-g7-live-readiness-plan/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

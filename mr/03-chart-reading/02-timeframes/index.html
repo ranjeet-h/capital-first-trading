@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>टाइमफ्रेम आणि एकच भाव वेगळा कसा दिसतो - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../03-chart-reading/02-timeframes/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../03-chart-reading/02-timeframes/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T3.2
+title: टाइमफ्रेम आणि एकच भाव वेगळा कसा दिसतो
+page_type: Concept
+prerequisites: [T3.1]
+labs: [Lab 3]
+estimated_minutes: 15
+-->
+<h1 id="टाइमफरेम-आणि-एकच-भाव-वेगळा-कसा-दिसतो"><a class="header" href="#टाइमफरेम-आणि-एकच-भाव-वेगळा-कसा-दिसतो">टाइमफ्रेम आणि एकच भाव वेगळा कसा दिसतो</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p><strong>काल्पनिक.</strong> एक ट्रेडर एका शेअरचा एक-मिनिटाचा चार्ट उघडतो. शेवटची काही मिनिटे कमजोर दिसतात, म्हणून ट्रेडर ठरवतो की शेअर घसरत आहे. मग ट्रेडर डेली चार्ट उघडतो आणि त्यात शेअर मागच्या आठवड्यांत वाढलेला दिसतो. दोन्ही चार्टवर एकाच वेळी तोच शेअर दिसतो. कोणता बरोबर आहे? प्रामाणिक उत्तर असे आहे की दोन्ही बरोबर आहेत. ते वेगळे कालावधी दाखवतात. चूक तेव्हा होते, जेव्हा क्षणाच्या मूडशी जुळणारा चार्ट निवडला जातो.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>टाइमफ्रेम</strong> म्हणजे एका कँडलची लांबी. एक-मिनिटाची कँडल ट्रेडिंगचा एक मिनिट दाखवते. डेली कँडल एक पूर्ण दिवस दाखवते. एकच व्यापार वेगवेगळ्या टाइमफ्रेमवर वेगळ्या कँडल देतो.</p>
+<p>लहान कँडल एकत्र करून एक मोठी कँडल बनवताना चार नियम वापरा:</p>
+<ul>
+<li><strong>ओपन</strong> पहिल्या लहान कँडलमधून येतो.</li>
+<li><strong>क्लोज</strong> शेवटच्या लहान कँडलमधून येतो.</li>
+<li><strong>हाय</strong> सर्व लहान कँडलमधील सर्वात मोठा हाय असतो.</li>
+<li><strong>लो</strong> सर्व लहान कँडलमधील सर्वात लहान लो असतो.</li>
+</ul>
+<p>लहान टाइमफ्रेम जास्त लहान हालचाली दाखवतात. त्यातील अनेक हालचाली नॉइज असतात. नॉइज म्हणजे भावातील छोटी हालचाल जी तुमची योजना बदलत नाही. मोठी टाइमफ्रेम कमी हालचाली दाखवते. ती कमी, संथ निर्णय देते.</p>
+<p>शेवटच्या दिवसाच्या योजनेसाठी डेली कँडल निर्णयाची चौकट असते. लहान टाइमफ्रेम नंतरच्या वेळेच्या प्रश्नांसाठी मदत करतात. ते प्रश्न <em>मल्टिपल टाइमफ्रेम विश्लेषण</em> मध्ये सांगितले आहेत.</p>
+<p>तीन गोष्टी लक्षात ठेवा:</p>
+<ul>
+<li>पाच मिनिटांच्या वातीवरून (वात म्हणजे कँडलच्या वर किंवा खाली निघालेली रेषा) ठेवलेला स्टॉप-लॉस हा डेली निर्णय नाही. योजनेत टाइमफ्रेम लिहा.</li>
+<li>पॅटर्न दिसेपर्यंत टाइमफ्रेम बदलत राहणे म्हणजे निकाल पाहून निवड. चार्ट पाहण्याआधीच टाइमफ्रेम निवडा.</li>
+<li>मोठी टाइमफ्रेम आपोआप सुरक्षित नसते. ती कमी हालचाली दाखवते, पण गॅपमुळे भाव तरीही तुमच्या स्टॉप-लॉसच्या पुढे जाऊ शकतो.</li>
+</ul>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: candle-builder | mode: timeframe-switch | timeframes: 1-minute, 5-minute, daily | caption: एकाच टिक डेटाची प्रत्येक टाइमफ्रेम सेटिंगमध्ये वेगळी मांडणी -->
+<p>एक-मिनिट, पाच-मिनिट आणि डेली सेटिंगमध्ये बदल करून पाहा. प्रत्येक सेटिंगवर तोच टिक डेटा पुन्हा काढला जातो. प्रत्येक सेटिंगमध्ये दिसणाऱ्या कँडलची तुलना खालील सोडवलेल्या उदाहरणातील तक्त्याशी करा. लक्षात घ्या की ओपन आणि क्लोज बदलले, तर लेबल बदलू शकते.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> पाच एक-मिनिटाच्या कँडल, प्रत्येकाचा ओपन, हाय, लो आणि क्लोज दिलेला:</p>
+<div class="table-wrapper"><table><thead><tr><th>मिनिट</th><th>ओपन</th><th>हाय</th><th>लो</th><th>क्लोज</th></tr></thead><tbody>
+<tr><td>1</td><td>500</td><td>501</td><td>499</td><td>500.5</td></tr>
+<tr><td>2</td><td>500.5</td><td>503</td><td>500</td><td>502</td></tr>
+<tr><td>3</td><td>502</td><td>504</td><td>501</td><td>501</td></tr>
+<tr><td>4</td><td>501</td><td>502</td><td>498</td><td>499</td></tr>
+<tr><td>5</td><td>499</td><td>500</td><td>497</td><td>498.5</td></tr>
+</tbody></table>
+</div>
+<p>हे पाच कँडल एकत्र करून एक पाच-मिनिटाची कँडल बनवा:</p>
+<div class="table-wrapper"><table><thead><tr><th>भाग</th><th>नियम</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>ओपन</td><td>मिनिट 1 चा ओपन</td><td>500</td></tr>
+<tr><td>हाय</td><td>सर्वात मोठा हाय (मिनिट 3)</td><td>504</td></tr>
+<tr><td>लो</td><td>सर्वात लहान लो (मिनिट 5)</td><td>497</td></tr>
+<tr><td>क्लोज</td><td>मिनिट 5 चा क्लोज</td><td>498.5</td></tr>
+</tbody></table>
+</div>
+<p>रेंज = 504 वजा 497 = Rs 7. तपासणी: रेंज म्हणजे सर्वात मोठा हाय वजा सर्वात लहान लो. त्यामुळे कोणताही आकडा चुकत नाही.</p>
+<p>498.5 हा क्लोज 500 च्या ओपनपेक्षा खाली आहे. म्हणून पाच-मिनिटाची कँडल <strong>मंदीची</strong> आहे. मिनिट 2 वर बंद वर झाला, पण पाच-मिनिटाची कँडल तरीही पहिला ओपन आणि शेवटचा क्लोज तुलना करते.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> सोडवलेल्या उदाहरणातील पाच एक-मिनिटाच्या कँडल एकत्र करून एक पाच-मिनिटाची कँडल बनवा. ओपन, हाय, लो आणि क्लोज द्या. रेंज द्या. कँडल तेजीची आहे की मंदीची, ते सांगा.</p>
+<p>संकेत:</p>
+<ol>
+<li>ओपन हा पहिल्या मिनिटाचा ओपन असतो.</li>
+<li>पाचही हाय यादी करा. सर्वात मोठा घ्या.</li>
+<li>पाचही लो यादी करा. सर्वात लहान घ्या.</li>
+<li>क्लोज हा शेवटच्या मिनिटाचा क्लोज असतो.</li>
+</ol>
+<p><strong>उत्तर:</strong> ओपन 500. हाय 504. लो 497. क्लोज 498.5. रेंज Rs 7 (504 वजा 497). कँडल <strong>मंदीची</strong> आहे, कारण 498.5 हा 500 च्या खाली आहे.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> <strong>काल्पनिक.</strong> चार एक-तासाच्या कँडल खाली दिल्या आहेत. प्रत्येकात ओपन, हाय, लो आणि क्लोज दिलेला आहे: (200, 204, 199, 203), (203, 206, 202, 205), (205, 205, 200, 201) आणि (201, 203, 199, 202). त्या एकत्र करून एक चार-तासाची कँडल बनवा. ती तेजीची आहे की मंदीची, ते सांगा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>ओपन: पहिल्या कँडलचा ओपन, 200.</li>
+<li>हाय: 204, 206, 205 आणि 203 मधील सर्वात मोठा, म्हणजे 206.</li>
+<li>लो: 199, 202, 200 आणि 199 मधील सर्वात लहान, म्हणजे 199.</li>
+<li>क्लोज: शेवटच्या कँडलचा क्लोज, 202.</li>
+<li>रेंज: 206 वजा 199 = Rs 7.</li>
+<li>कँडल <strong>तेजीची</strong> आहे, कारण 202 हा 200 च्या वर आहे.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>हे प्रकरण कँडल एकत्र करण्याचे नियम, रेंज आणि चार्ट पाहण्याआधी टाइमफ्रेम का ठरवावी, हे तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> <strong>paper</strong>. निकाल तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल, तर paper वापरा.</p>
+<ol>
+<li>एक शेअर निवडा.</li>
+<li>त्याच दिवशी त्याचे पाच-मिनिट, एक-तास आणि डेली चार्ट पाहा.</li>
+<li>प्रत्येक चार्टसाठी कँडल वर, खाली की स्थिर दिसतात, ते लिहा.</li>
+<li>तुमची योजना कोणती टाइमफ्रेम वापरते, ते लिहा. चार्ट पाहण्याआधी ते लिहा.</li>
+<li>ज्या दिवशी लेबले वेगळी दिसतात, त्या दिवसाची नोंद करा. ती नोंद नंतरच्या अभ्यासासाठी ठेवा.</li>
+</ol>
+<p>तुम्ही हे Kite डेमोमध्ये करत असाल, तर मोड <code>kite_demo</code> लिहा. Kite डेमो फक्त स्क्रीन पाहण्यासाठी आहे. कोणताही सराव व्यवहार <code>paper</code> म्हणून लिहा.</p>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>मोठी टाइमफ्रेम जोखीम काढून टाकत नाही. गॅपनंतर डेली कँडल तुमच्या स्टॉप-लॉसच्या खूप खाली उघडू शकते (<em>गॅप आणि स्टॉपसाठी त्यांचा अर्थ</em>).</li>
+<li>पॅटर्न दिसेपर्यंत टाइमफ्रेम बदलत राहिल्याने खोटा आत्मविश्वास येतो. आधी टाइमफ्रेम ठरवा.</li>
+<li>पाच-मिनिटाच्या वातीवर ठेवलेला स्टॉप नेहमीच्या नॉइजने गाठला जाऊ शकतो. डेली योजना तो नॉइज दुर्लक्षित करेल. टाइमफ्रेमनुसार नियोजित तोटा बदलतो, त्यामुळे आकडे पुन्हा तपासा.</li>
+<li>इंटरव्हल आणि इतिहास किती मागे जातो, हे प्लॅटफॉर्मवर अवलंबून असते. योजना करण्याआधी सध्याच्या मर्यादा तपासा. Zerodha सांगते की Kite 5-सेकंद, 10-सेकंद, 15-सेकंद, 30-सेकंद आणि 45-सेकंद डेटा फक्त शेवटच्या दोन ट्रेडिंग दिवसांसाठी ठेवते. इक्विटीसाठी 1-मिनिट आणि त्यापेक्षा मोठ्या कँडल 2015 पर्यंत मागे जातात. NSE चा डेली डेटा 2003 पर्यंत आणि BSE चा 2008 पर्यंत मागे जातो. (11 Nov 2026 पर्यंत, Kite चार्टवरील जुन्या डेटाबाबत Zerodha सपोर्ट पेज. मर्यादा बदलतात, त्यामुळे Kite वर तपासा.)</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>टाइमफ्रेम म्हणजे एका कँडलची लांबी.</li>
+<li>कँडल एकत्र करताना: ओपन पहिल्याचा, क्लोज शेवटच्याचा, हाय सर्वात मोठा, लो सर्वात लहान.</li>
+<li>एकच शेअर एका टाइमफ्रेमवर तेजीचा आणि दुसऱ्या टाइमफ्रेमवर मंदीचा दिसू शकतो.</li>
+<li>चार्ट पाहण्याआधी टाइमफ्रेम निवडा आणि योजनेत लिहा.</li>
+<li>स्टॉप-लॉस ज्या योजनेचा आहे, त्याच योजनेच्या टाइमफ्रेमशी जुळला पाहिजे.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Kite चार्ट मदत पाने</li>
+<li>Zerodha Varsity, टाइमफ्रेम मॉड्यूल (केवळ संदर्भासाठी)</li>
+<li>Zerodha सपोर्ट, इंट्राडे डेटा पाने</li>
+</ul>
+<p>11 Nov 2026 रोजी तपासलेली तथ्ये:</p>
+<ul>
+<li>प्रत्येक Kite कँडल लांबी किती मागे जाते, हे Zerodha च्या Kite चार्टवरील जुन्या डेटाच्या सपोर्ट पेजवरून घेतले आहे. Kite देत असलेल्या प्रत्येक इंटरव्हलची यादी येथे कॉपी केलेली नाही, त्यामुळे Kite मधील चार्ट मेनू तपासा.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T3.2&amp;body=Page%3A%2003-chart-reading%2F02-timeframes%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../03-chart-reading/01-candlesticks/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../03-chart-reading/03-support-and-resistance/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../03-chart-reading/01-candlesticks/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../03-chart-reading/03-support-and-resistance/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

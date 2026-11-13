@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>SEBI चे F&amp;O अभ्यास: एक केस स्टडी - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../09-advanced/04-sebi-fo-studies-case-study/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../09-advanced/04-sebi-fo-studies-case-study/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T9.4
+title: SEBI चे F&O अभ्यास: एक केस स्टडी
+page_type: Concept
+prerequisites: [T9.1, T9.2, T7.8, T0.1]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="sebi-चे-fo-अभयास-एक-केस-सटडी"><a class="header" href="#sebi-चे-fo-अभयास-एक-केस-सटडी">SEBI चे F&amp;O अभ्यास: एक केस स्टडी</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एक बातमी म्हणते, “बहुतेक F&amp;O व्यापारी पैसे गमावतात.” तुम्ही ते वाचता आणि विचार करता, “म्हणजे माझेही नुकसान होईल.” एका बातमीतील एक टक्केवारी तुमच्याबाबत काय होईल हे सांगत नाही. हे प्रकरण दाखवते की व्यापाऱ्यांचा अभ्यास काय सांगू शकतो, आणि काय सांगू शकत नाही.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>F&amp;O म्हणजे फ्यूचर्स आणि ऑप्शन्स. हे करार शेअरच्या किंवा निर्देशांकाच्या भावावर आधारित असतात. व्यापाऱ्यांचा <strong>अभ्यास</strong> म्हणजे ठरावीक काळात एका गटातील लोकांचे काय झाले, याची मोजणी. तो भूतकाळाचे वर्णन करतो. एका व्यक्तीबाबत काय होईल याचा तो अंदाज देत नाही.</p>
+<p>कोणताही अभ्यास उद्धृत करण्याआधी या पाच पद्धतीच्या प्रश्नांना उत्तर द्या.</p>
+<ol>
+<li>अभ्यासात कोणते लोक होते, आणि ते कसे निवडले गेले?</li>
+<li>अभ्यास कोणत्या काळाचा होता?</li>
+<li>नफा आणि तोट्यात शुल्क धरले होते का?</li>
+<li>नफा आणि तोटा कसा मोजला गेला?</li>
+<li>लोक अभ्यासातून बाहेर पडले का, आणि तेच लोक काळानुसार मागोवा घेऊन पाहिले गेले का?</li>
+</ol>
+<p><strong>अपेक्षित मूल्य</strong> म्हणजे अशा अनेक सारख्या प्रयत्नांमधून मिळणारा सरासरी निकाल. तोटा करणाऱ्यांची टक्केवारी एकटी तो सरासरी देत नाही. जिंकण्याचा आकार आणि तोट्याचा आकार हे दोन्ही एकत्र लागतात.</p>
+<p><strong>सर्व्हायव्हरशिप</strong> हा एक पूर्वग्रह आहे, जो फक्त नमुन्यात टिकून राहिलेल्या लोकांची मोजणी करतो. जे बाहेर पडले ते बेरजेतून गायब असतात. त्यामुळे अभ्यास पूर्ण गटापेक्षा चांगला दिसू शकतो. <em>सर्व्हायव्हरशिप बायस</em> पाहा.</p>
+<p><strong>आकडे उद्धृत करणे.</strong> आकडा फक्त त्याच्या स्रोतावरून, अभ्यासाच्या नावासह, तारखेसह आणि काळासह उद्धृत करा. स्मरणातून कधीही आकडा उद्धृत करू नका.</p>
+<p><strong>SEBI च्या स्वतःच्या अभ्यासात काय आहे.</strong> SEBI, भारताचा बाजार नियामक, इक्विटी फ्यूचर्स आणि ऑप्शन्समधील वैयक्तिक व्यापाऱ्यांवर तीन अभ्यास प्रसिद्ध केले आहेत. प्रत्येकाचे नाव, तारीख, काळ आणि नमुना खाली दिले आहेत. आकडे SEBI च्या स्वतःच्या कागदपत्रांमधून घेतले आहेत.</p>
+<div class="table-wrapper"><table><thead><tr><th>अभ्यास</th><th>काळ आणि नमुना</th><th>काय नोंदवले आहे</th></tr></thead><tbody>
+<tr><td>“Analysis of Profit and Loss of Individual Traders dealing in Equity F&amp;O Segment”, SEBI, January 2023</td><td>आर्थिक वर्षे 2019 आणि 2022, शीर्ष 10 ब्रोकर्सचा डेटा</td><td>FY22 मध्ये 89 टक्के वैयक्तिक F&amp;O व्यापाऱ्यांना तोटा झाला. सरासरी तोटा सुमारे Rs 1.1 लाख होता.</td></tr>
+<tr><td>“Analysis of Profits &amp; Losses in the Equity Derivatives Segment (FY22-FY24)”, SEBI, 23 September 2024</td><td>आर्थिक वर्षे 2022 ते 2024, शीर्ष 15 ब्रोकर्सचा डेटा</td><td>FY24 मध्ये 91.1 टक्के वैयक्तिक व्यापाऱ्यांना (सुमारे 73 लाख लोक) तोटा झाला, सरासरी निव्वळ तोटा Rs 1.20 लाख होता. तीन वर्षांत 1.13 कोटी अनन्य व्यापाऱ्यांचा एकत्रित निव्वळ तोटा Rs 1.81 लाख कोटी होता, शुल्कासह. सुमारे 93 टक्के तोटा करणारे होते. शुल्कानंतर फक्त 1 टक्के लोकांनी Rs 1 लाखापेक्षा जास्त कमावले.</td></tr>
+<tr><td>“Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26)”, SEBI, August 2026</td><td>आर्थिक वर्षे 2025 आणि 2026, शीर्ष 15 ब्रोकर्सचा डेटा, सुमारे 90 टक्के व्यापारी</td><td>FY25 मध्ये तोटा करणाऱ्यांचा वाटा 90.9 टक्के आणि FY26 मध्ये 87.7 टक्के होता. FY26 मध्ये एकूण निव्वळ तोटा Rs 91,685 कोटी होता. प्रति व्यक्ती सरासरी तोटा Rs 1.17 लाख होता. तोट्यांपैकी 92 टक्के ऑप्शन्समुळे होते.</td></tr>
+</tbody></table>
+</div>
+<p>तक्ता पाच पद्धतीच्या प्रश्नांसह वाचा. तीन अभ्यासांत वेगवेगळे ब्रोकर्स आणि वेगवेगळी वर्षे आहेत, त्यामुळे त्यांचे आकडे एका ओळीत जोडू नका. अभ्यास गटांचे वर्णन करतात. तुमच्याबाबत काय होईल हे ते सांगत नाहीत. (11 Nov 2026 नुसार, SEBI च्या वेबसाइटवरील SEBI अभ्यास. नवे अभ्यास तपासण्यासाठी SEBI साइट पाहा.)</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>कोणतीही बातमी वाचण्याआधी हा तपासणी यादी वापरा. आधी अहवालाचा पद्धतीचा भाग वाचा, मग बातमी.</p>
+<div class="table-wrapper"><table><thead><tr><th>प्रश्न</th><th>तो का महत्त्वाचा आहे</th></tr></thead><tbody>
+<tr><td>नमुन्यात कोण होते?</td><td>छोटा किंवा निवडलेला गट इतरांचे प्रतिनिधित्व करेलच असे नाही.</td></tr>
+<tr><td>कोणता काळ?</td><td>छोटा किंवा असामान्य काळ दिशाभूल करू शकतो.</td></tr>
+<tr><td>शुल्क धरले आहे का?</td><td>खर्च आणि शुल्क निव्वळ निकाल बदलतात.</td></tr>
+<tr><td>नफा आणि तोटा कसा मोजला?</td><td>वेगवेगळ्या मापांमुळे बेरजा वेगळ्या येतात.</td></tr>
+<tr><td>लोक बाहेर पडले का, आणि तेच लोक मागोवा घेऊन पाहिले गेले का?</td><td>बाहेर पडलेले लोक गायब असू शकतात, आणि त्यामुळे चित्र बदलते.</td></tr>
+</tbody></table>
+</div><!-- component: sebi-study-bars | traders: 1000 | winnersPct: 40 | avgGain: 1000 | avgLoss: 2000 | caption: या प्रकरणातील काल्पनिक गट: 400 विजेते आणि 600 तोटा करणारे. एकच टक्केवारी नाही, तर बेरीज आणि पसरा पाहा. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक गट.</strong> 1,000 व्यापारी. 600 जणांना निव्वळ तोटा झाला. 400 जणांना निव्वळ नफा झाला.</p>
+<div class="table-wrapper"><table><thead><tr><th>गट</th><th>संख्या</th><th>एकूण निकाल</th><th>प्रति व्यापारी सरासरी</th></tr></thead><tbody>
+<tr><td>विजेते</td><td>400</td><td>Rs 4,00,000 नफा</td><td>Rs 1,000 नफा</td></tr>
+<tr><td>तोटा करणारे</td><td>600</td><td>Rs 12,00,000 तोटा</td><td>Rs 2,000 तोटा</td></tr>
+<tr><td>संपूर्ण गट</td><td>1,000</td><td>Rs 8,00,000 निव्वळ तोटा</td><td>Rs 800 निव्वळ तोटा</td></tr>
+</tbody></table>
+</div>
+<p>संपूर्ण गट तपासा: Rs 4,00,000 - Rs 12,00,000 = वजा Rs 8,00,000. प्रत्येकी वजा Rs 800 मिळवण्यासाठी 1,000 व्यापाऱ्यांनी भागा.</p>
+<p>फक्त एका टक्केवारीवरून निकाल वाईट दिसतो. 400 तोटा करणारे आणि मोठे सरासरी विजय असलेला दुसरा काल्पनिक गट निव्वळ नफा दाखवू शकतो. धडा असा की एकच टक्केवारी नव्हे, तर बेरजा आणि पद्धत वाचा.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> सोडवलेल्या उदाहरणाचा वापर करून, प्रति विजेता सरासरी नफा आणि प्रति तोटा करणारा सरासरी तोटा काढा. कोणती सरासरी मोठी आहे ते सांगा.</p>
+<p>संकेत:</p>
+<ol>
+<li>प्रति विजेता सरासरी नफा म्हणजे Rs 4,00,000 ला 400 ने भागणे.</li>
+<li>प्रति तोटा करणारा सरासरी तोटा म्हणजे Rs 12,00,000 ला 600 ने भागणे.</li>
+<li>दोन सरासरींची तुलना करा.</li>
+</ol>
+<p><strong>उत्तर:</strong> प्रति विजेता सरासरी नफा = Rs 4,00,000 / 400 = <strong>Rs 1,000</strong>. प्रति तोटा करणारा सरासरी तोटा = Rs 12,00,000 / 600 = <strong>Rs 2,000</strong>. सरासरी तोटा मोठा आहे. 400 व्यापाऱ्यांना नफा झाला तरी संपूर्ण गटाचा निव्वळ निकाल तोटा आहे, याचे कारण हेच आहे.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> SEBI च्या अभ्यासाचे उद्धरण देण्याआधी तुम्ही विचाराव्या अशा पाच पद्धतीच्या प्रश्नांची यादी लिहा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ol>
+<li>अभ्यासात कोणते लोक होते, आणि ते कसे निवडले गेले?</li>
+<li>अभ्यास कोणत्या काळाचा होता?</li>
+<li>नफा आणि तोट्यात शुल्क धरले होते का?</li>
+<li>नफा आणि तोटा कसा मोजला गेला?</li>
+<li>लोक अभ्यासातून बाहेर पडले का, आणि तेच लोक काळानुसार मागोवा घेऊन पाहिले गेले का?</li>
+</ol>
+<p>चांगल्या उत्तरात प्रत्येक प्रश्न का महत्त्वाचा आहे हेही असेल. <em>हे पाहा</em> मधील तपासणी यादी त्याची कारणे देते.</p>
+<p>सोडवलेल्या उदाहरणातील सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ टक्केवारी विरुद्ध अपेक्षित मूल्य, अभ्यासाची पद्धत, आकडे उद्धृत करणे आणि एक परिस्थिती तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> शिकण्याची नोंद. या प्रकरणात सराव नाही. फक्त विचार करायचा आहे.</p>
+<ol>
+<li>तुमच्या शिकण्याच्या नोंदीत पाच पद्धतीचे प्रश्न लिहा.</li>
+<li>तोटा करणाऱ्यांची टक्केवारी एकटी अपेक्षित मूल्य का नाही, यावर एक वाक्य लिहा.</li>
+<li>अभ्यासातील आकडा तुम्ही कसा उद्धृत कराल, यावर एक वाक्य लिहा.</li>
+<li>ही वाक्ये तुमच्या जर्नलमध्ये सेव्ह करा, किंवा जर्नल ॲप तयार होईपर्यंत कागदावर लिहा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>येथील आकडे फक्त थोडक्यात सारांश आहेत. पद्धत आणि पूर्ण तक्त्यांसाठी SEBI ची कागदपत्रे स्वतः वाचा. सारांशात महत्त्वाचे तपशील सुटू शकतात.</li>
+<li>अभ्यास एका काळातील गटाचे वर्णन करतो. तो कोणत्याही एका व्यापाऱ्याचा अंदाज देत नाही.</li>
+<li>चांगला अभ्यास सुद्धा दाखवत नाही की तुमचे व्यापार गटाशी जुळतील.</li>
+<li>बातम्यांमधून अनेकदा काळ, नमुना किंवा शुल्क गाळले जाते. आधी पद्धत तपासा.</li>
+<li>एखादा आकडा तुम्हाला चांगला आठवत असला तरी स्मरणातून उद्धृत करू नका.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>अभ्यास एका काळातील गटाचे वर्णन करतो. तो तुमच्याबाबत अंदाज देत नाही.</li>
+<li>तोटा करणाऱ्यांची टक्केवारी एकटी अपेक्षित मूल्य देत नाही.</li>
+<li>अभ्यास उद्धृत करण्याआधी नमुना, काळ, शुल्क आणि मापे तपासा.</li>
+<li>स्रोतावरून, तारखेसह आणि काळासह आकडे उद्धृत करा.</li>
+<li>सर्व्हायव्हरशिपमुळे अभ्यास पूर्ण गटापेक्षा चांगला दिसू शकतो.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>SEBI, “Analysis of Profit and Loss of Individual Traders dealing in Equity F&amp;O Segment”, January 2023 (sebi.gov.in)</li>
+<li>SEBI, “Analysis of Profits &amp; Losses in the Equity Derivatives Segment (FY22-FY24)”, 23 September 2024 (sebi.gov.in)</li>
+<li>SEBI, “Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26)”, August 2026 (sebi.gov.in)</li>
+<li>प्रत्येक अहवालाचा पद्धतीचा भाग</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T9.4&amp;body=Page%3A%2009-advanced%2F04-sebi-fo-studies-case-study%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../09-advanced/03-hedging/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../09-advanced/05-algo-trading-and-why-no-automation/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../09-advanced/03-hedging/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../09-advanced/05-algo-trading-and-why-no-automation/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>डिमॅट खाती आणि सेटलमेंट - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../01-market-foundations/03-demat-accounts-and-settlement/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../01-market-foundations/03-demat-accounts-and-settlement/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T1.3
+title: डिमॅट खाती आणि सेटलमेंट
+page_type: Concept
+prerequisites: [T1.2]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="डिमॅट-खाती-आणि-सेटलमेंट"><a class="header" href="#डिमॅट-खाती-आणि-सेटलमेंट">डिमॅट खाती आणि सेटलमेंट</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एक काल्पनिक नवशिक्या सकाळी Rs 250 दराने 20 शेअर्स खरेदी करतो. ऑर्डर पूर्ण झालेली तो पाहतो. शेअर्स आधीच डिमॅट खात्यात आले आहेत आणि त्याच दुपारी विकता येतील, असे त्याला वाटते. पण ऑर्डर पूर्ण होणे आणि होल्डिंग दिसणे यामध्ये क्लिअरिंग आणि सेटलमेंटचे टप्पे असतात. पैसे आणि शेअर्स एकाच क्षणी हलत नाहीत.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>तीन खाती यात सहभागी असतात.</strong> प्रत्येकात वेगळी गोष्ट असते.</p>
+<ul>
+<li><strong>ट्रेडिंग खाते:</strong> जिथे ऑर्डर दिल्या जातात आणि पैशांचा हिशोब ठेवला जातो.</li>
+<li><strong>डिमॅट खाते:</strong> जिथे शेअर्स इलेक्ट्रॉनिक स्वरूपात ठेवले जातात.</li>
+<li><strong>जोडलेले बँक खाते:</strong> जिथून पैसे ट्रेडिंग खात्यात येतात आणि बाहेर जातात.</li>
+</ul>
+<p><strong>एक व्यापार तीन टप्प्यांतून जातो.</strong></p>
+<ol>
+<li><strong>एक्झिक्युशन:</strong> एक्सचेंजवर ऑर्डर जुळते. तेव्हा व्यापार होतो.</li>
+<li><strong>क्लिअरिंग:</strong> दोन्ही बाजूंच्या जबाबदाऱ्या मोजल्या जातात. अनेक व्यवहार एकत्र केले जातात.</li>
+<li><strong>सेटलमेंट:</strong> शेअर्स आणि पैसे प्रत्यक्षात हस्तांतरित होतात.</li>
+</ol>
+<p><strong>नेटिंग</strong> म्हणजे एका सेटलमेंट चक्रातील अनेक व्यवहार प्रत्येक शेअरसाठी आणि प्रत्येक रोख रकमेसाठी एका निव्वळ आकड्यात एकत्र करणे. पैसे किंवा शेअर्स हलण्यापूर्वी खरेदी आणि विक्री एकमेकांना भरून काढतात.</p>
+<p><strong>T+1</strong> म्हणजे व्यवहाराच्या तारखेनंतर एक कामाचा दिवस गेल्यावर सेटलमेंट होते. SEBI चे सर्व सूचिबद्ध शेअर्ससाठीचे T+1 चक्र 27 जानेवारी 2023 पासून लागू आहे. (11 नोव्हेंबर 2026 पर्यंत, SEBI परिपत्रक 7 सप्टेंबर 2021 आणि SEBI चे मास्टर परिपत्रक. नियम बदलतात, म्हणून SEBI संकेतस्थळ तपासा.) “T” म्हणजे व्यवहाराचा दिवस. “+1” म्हणजे एक कामाचा दिवस नंतर, एक कॅलेंडर दिवस नव्हे.</p>
+<p><strong>शेअर्स सेटलमेंटनंतरच तुमच्या डिमॅट खात्यात येतात.</strong> तुम्ही सोमवारी खरेदी केली, तर मंगळवारच्या सेटलमेंटनंतर ते जमा होतात. काही ब्रोकर ते येण्यापूर्वीच मंगळवारी विकू देतात. याला BTST म्हणतात, म्हणजे आज खरेदी करा आणि उद्या विका. यात <strong>शॉर्ट डिलिव्हरी</strong> नावाची जोखीम असते. विकलेले शेअर्स वेळेत आले नाहीत, तर एक्सचेंज ऑक्शन घेऊ शकते, आणि दंड मूल्याच्या 20% पर्यंत असू शकतो. ज्या शेअर्सची रक्कम अजून खात्यात आलेली नाही, त्यांच्या विक्रीचे पैसे त्याच दिवशी वापरता येत नाहीत. (11 नोव्हेंबर 2026 पर्यंत, BTST वरील Zerodha सहाय्य पाने. ब्रोकरचे नियम वेगळे असतात आणि बदलतात, म्हणून तुमच्या ब्रोकरकडे तपासा.)</p>
+<p><strong>होल्डिंग आणि पोझिशन वेगळे आहेत.</strong> डिलिव्हरी होल्डिंग म्हणजे सेटल झालेले शेअर्स, जे तुमच्या डिमॅट खात्यात पडून असतात. इंट्राडे पोझिशन म्हणजे जी त्याच दिवशी उघडून बंद केली जाते. ती डिलिव्हरी होल्डिंग नसते. इंट्राडे पोझिशनबद्दल <em>ऑर्डर बुक</em> मध्ये माहिती आहे.</p>
+<p><strong>वेळ लगेच होत नाही.</strong> एक्झिक्युशन, क्लिअरिंग आणि सेटलमेंट वेगवेगळ्या वेळी होतात. सेटलमेंटनंतर होल्डिंग दिसते. ऑर्डर पूर्ण झाल्याच्या क्षणी ते दिसत नाही.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<pre><code class="language-mermaid">flowchart LR
+  A["ऑर्डर दिली (ट्रेडिंग खाते)"] --&gt; B["एक्झिक्युशन: एक्सचेंजवर व्यवहार जुळला"]
+  B --&gt; C["क्लिअरिंग: जबाबदाऱ्या मोजल्या आणि नेट केल्या"]
+  C --&gt; D["T+1 ला सेटलमेंट"]
+  D --&gt; E["शेअर्स डिमॅट खात्यात जमा"]
+</code></pre>
+<p>डावीकडून उजवीकडे बाण पाहा. एक्झिक्युशन आणि सेटलमेंटमधील गॅपमुळे ऑर्डर पूर्ण झाल्या क्षणी होल्डिंग दिसत नाही.</p>
+<!-- component: settlement-timeline | qty: 20 | price: 250 | startDay: 0 | settleDays: 1 | caption: Rs 250 दराने 20 शेअर्सची एक काल्पनिक सोमवारची खरेदी. ती पाहण्यासाठी Play दाबा, आणि काल्पनिक सुट्टी जोडण्यासाठी एखाद्या दिवसावर टॅप करा. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>नेटिंगचे उदाहरण, फक्त संकल्पना.</strong> एका ब्रोकरकडे प्रत्येकी Rs 5,000 चे तीन खरेदी व्यवहार आहेत. त्याचा Rs 2,000 चा एक विक्री व्यवहार देखील आहे. हे चारही एकाच सेटलमेंट चक्रात आहेत.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>काम</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. एकूण खरेदी</td><td>3 x 5,000</td><td>Rs 15,000</td></tr>
+<tr><td>2. विक्रीची रक्कम</td><td>1 x 2,000</td><td>Rs 2,000</td></tr>
+<tr><td>3. निव्वळ देय</td><td>15,000 - 2,000</td><td>Rs 13,000</td></tr>
+</tbody></table>
+</div>
+<p><strong>तपासणी:</strong> 13,000 + 2,000 = 15,000, जी एकूण खरेदीइतकी आहे. हे उदाहरण कल्पना सांगण्यासाठी गोल आकड्यांत मांडले आहे. प्रत्यक्ष सेटलमेंटमध्ये NSE च्या FAQ नुसार नेटिंग प्रत्येक ग्राहकासाठी, प्रत्येक शेअरसाठी केले जाते. ते trade-for-trade विभागातील शेअर्सना किंवा ऑक्शन व्यवहारांना लागू होत नाही, जिथे प्रत्येक व्यवहार पूर्ण रकमेने सेटल होतो. (11 नोव्हेंबर 2026 पर्यंत, NSE च्या दुय्यम बाजारावरील (Secondary Market) Basic FAQs. नियम बदलतात, म्हणून NSE संकेतस्थळ तपासा.)</p>
+<p><strong>वेळापत्रकाचे उदाहरण.</strong> एका काल्पनिक सोमवारी झालेली खरेदी, मंगळवार कामाचा दिवस असल्यास मंगळवारी सेटल होते. पुढचा दिवस सुट्टी असेल तर सेटलमेंट पुढच्या कामाच्या दिवसावर जाते. NSE दरवर्षी आपली सुट्ट्यांची यादी प्रकाशित करते. <em>ट्रेडिंग सत्रे, वेळा आणि सुट्ट्या</em> पाहा.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम:</strong> Rs 250 दराने 20 शेअर्स खरेदीचा, म्हणजे Rs 5,000 च्या व्यवहार मूल्याचा, मागोवा घेण्यासाठी खालील तक्त्यातील रिकाम्या जागा भरा.</p>
+<div class="table-wrapper"><table><thead><tr><th>टप्पा</th><th>कोणते खाते किंवा संस्था</th><th>कोणता दिवस</th><th>रिकामी जागा</th></tr></thead><tbody>
+<tr><td>ऑर्डर दिली</td><td>______</td><td>व्यवहाराचा दिवस</td><td>______</td></tr>
+<tr><td>व्यवहार जुळला</td><td>______</td><td>व्यवहाराचा दिवस</td><td>______</td></tr>
+<tr><td>जबाबदारी नोंदवली</td><td>______</td><td>व्यवहाराचा दिवस</td><td>______</td></tr>
+<tr><td>सेटलमेंट</td><td>______</td><td>पुढचा कामाचा दिवस, T+1</td><td>______</td></tr>
+<tr><td>शेअर्स पोहोचतात</td><td>______</td><td>सेटलमेंटनंतर</td><td>______</td></tr>
+</tbody></table>
+</div>
+<p><strong>संकेत:</strong></p>
+<ol>
+<li>ऑर्डर आणि पैसे कोणते खाते ठेवते? शेअर्स कोणते खाते ठेवते?</li>
+<li>व्यवहार कोणती संस्था जुळवते, आणि जबाबदारी कोणती संस्था नोंदवते?</li>
+<li>व्यवहाराचा दिवस कोणता, आणि सेटलमेंटचा दिवस कोणता?</li>
+</ol>
+<p><strong>उत्तर:</strong> ऑर्डर दिली: ट्रेडिंग खाते, व्यवहाराच्या दिवशी. व्यवहार जुळला: एक्सचेंज. जबाबदारी नोंदवली: क्लिअरिंग कॉर्पोरेशन. सेटलमेंट: पुढच्या कामाच्या दिवशी, T+1 ला. Rs 5,000 जोडलेल्या बँक खात्यातून जातात. शेअर्स डेपॉझिटरी आणि DP मार्फत डिमॅट खात्यात जमा होतात. शेअर्स सेटलमेंटनंतर डिमॅट खात्यात येतात, ऑर्डर पूर्ण झाल्या क्षणी नव्हे.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम:</strong> एक व्यवहार शुक्रवारी, सार्वजनिक सुट्टीच्या आधी केला आहे. त्याची सेटलमेंट तारीख शोधण्यासाठी कोणते स्रोत लागतील ते लिहा. कॅलेंडर न पाहता तारीख काढू नका. कोणतेही संकेत वापरू नका.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>लागणारे स्रोत:</p>
+<ul>
+<li>सध्याचा T+1 नियम आणि त्याची लागू होण्याची तारीख. ते वरील नोंदींत आहेत.</li>
+<li>त्या वर्षाची एक्सचेंजची सुट्ट्यांची यादी, जी NSE संकेतस्थळावर प्रकाशित होते.</li>
+<li>व्यवहाराची तारीख, आणि व्यवहार व संभाव्य सेटलमेंट तारखेमधील आठवड्याचे शेवटचे दिवस.</li>
+</ul>
+<p>हे तीन मिळाल्यावरच कामाचे दिवस मोजता येतात. सुट्ट्या दरवर्षी ठरतात, त्यामुळे तारीख स्मरणातून ठरवता येत नाही.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>सहा प्रश्न होल्डिंगची वेळ, T+1 चा अर्थ, नेटिंगची गणिते आणि प्रत्येक खात्यात काय असते हे तपासतात.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>पद्धत:</strong> Kite डेमो. Kite डेमोमध्ये होल्डिंग आणि निधी कुठे दिसतात ते शोधा, आणि त्यांची लेबले स्वतःच्या शब्दांत लिहा.</p>
+<ol>
+<li>Kite डेमो उघडा. होल्डिंग आणि निधी दाखवणारी लेबले लक्षात घ्या.</li>
+<li>प्रत्येक लेबल तुमच्या स्वतःच्या शब्दांत जर्नलमध्ये किंवा कागदावर लिहा.</li>
+<li>मांडणीला “सध्याच्या मांडणीसाठी तुमचे स्वतःचे Kite तपासा” असे लेबल लावा.</li>
+<li>Kite डेमो शिकण्यासाठी डमी डेटा वापरतो. Zerodha कडे पेपर-ट्रेडिंग खाते नाही. (11 नोव्हेंबर 2026 पर्यंत, Zerodha सहाय्य पाने. त्यात बदल असल्यास तपासा.)</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>शिकण्याच्या सरावात सेटलमेंटची जोखीम कमी असते. लाइव्ह व्यापारांसाठी ती खरी आहे. त्याच दिवशी विक्री करता येईल असे गृहीत धरू नका. आधी तुमच्या ब्रोकरचा सध्याचा नियम तपासा.</li>
+<li>येथील तारखा आणि नेटिंगचे नियम संकल्पना समजावतात. खरे नियम एक्सचेंज आणि SEBI च्या दस्तऐवजांत आहेत.</li>
+<li>डिमॅट खात्यातील होल्डिंग म्हणजे खात्यातील रोख रक्कम नव्हे. पैसे बँकेत आणि ट्रेडिंग खात्यात असतात.</li>
+<li>Kite डेमोची मांडणी बदलू शकते. तुमच्या स्वतःच्या Kite मधील सध्याची मांडणी तपासा.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>ट्रेडिंग खाते ऑर्डर आणि निधी ठेवते. डिमॅट खाते शेअर्स ठेवते. बँक खाते जोडलेले असते.</li>
+<li>व्यवहार एक्झिक्युट, क्लिअर आणि मग सेटल होतो. सेटलमेंटनंतर होल्डिंग दिसते.</li>
+<li>नेटिंग अनेक व्यवहारांना प्रत्येक शेअर आणि प्रत्येक रोख रकमेसाठी एका निव्वळ आकड्यात आणते. उदाहरणात, 15,000 खरेदी वजा 2,000 विक्री म्हणजे निव्वळ Rs 13,000 देय.</li>
+<li>T+1 म्हणजे व्यवहाराच्या तारखेनंतर एक कामाचा दिवस.</li>
+<li>शेअर्स सेटलमेंटनंतरच डिमॅट खात्यात येतात. ते येण्यापूर्वी विकणे (BTST) शॉर्ट-डिलिव्हरीचा धोका घेऊन येते.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p><strong>स्रोत (फक्त नावे):</strong></p>
+<ul>
+<li>क्लिअरिंग आणि सेटलमेंट चक्रावरील SEBI परिपत्रके.</li>
+<li>NSE ची क्लिअरिंग आणि सेटलमेंट पाने.</li>
+<li>NSDL आणि CDSL ची संकेतस्थळे.</li>
+<li>डिमॅट खात्यांवरील Zerodha सहाय्य पाने.</li>
+</ul>
+<p><strong>11 नोव्हेंबर 2026 रोजी तपासलेली तथ्ये:</strong></p>
+<ul>
+<li>27 जानेवारी 2023 पासून सर्व सूचिबद्ध शेअर्सना T+1 लागू आहे. सेटलमेंटवरील SEBI चे मास्टर परिपत्रक दैनंदिन वेळापत्रक ठरवते (pay-in सकाळी 11:00 पर्यंत, निधी pay-out दुपारी 1:30 पर्यंत, शेअर्स pay-out दुपारी 3:30 पर्यंत). 28 मार्च 2024 पासून SEBI ने काही निवडक शेअर्ससाठी ऐच्छिक, त्याच दिवशीच्या (T+0) सेटलमेंटची चाचणी सुरू केली. हे प्रकरण ती शिकवत नाही.</li>
+<li>सेटलमेंटची तारीख सुट्टीवर पडल्यास ती पुढच्या कामाच्या दिवशी जाते. 2026 ची सुट्ट्यांची यादी <em>ट्रेडिंग सत्रे, वेळा आणि सुट्ट्या</em> मध्ये आहे.</li>
+<li>BTST, शॉर्ट डिलिव्हरी आणि ऑक्शन दंड Zerodha च्या BTST वरील सहाय्य पानावरून घेतले आहेत.</li>
+<li>नेटिंगचे नियम NSE च्या दुय्यम बाजारावरील (Secondary Market) Basic FAQs मधून घेतले आहेत.</li>
+<li>डिमॅट खात्याचे शुल्क या प्रकरणात दिलेले नाही. <em>ट्रेडवरील खर्च</em> आणि Zerodha च्या शुल्क पानावर पाहा.</li>
+<li>Kite डेमो आणि पेपर-ट्रेडिंग खात्याचा अभाव Zerodha च्या सहाय्य संकेतस्थळावरून घेतले आहेत.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T1.3&amp;body=Page%3A%2001-market-foundations%2F03-demat-accounts-and-settlement%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../01-market-foundations/02-exchanges-sebi-brokers-participants/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../01-market-foundations/04-how-prices-move-order-book/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../01-market-foundations/02-exchanges-sebi-brokers-participants/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../01-market-foundations/04-how-prices-move-order-book/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Taxes on trading profits - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/02-money-and-math/03-taxes-on-trading-profits/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T2.3
+title: Taxes on trading profits
+page_type: Concept
+prerequisites: [T2.2, T1.9]
+labs: []
+estimated_minutes: 20
+-->
+<h1 id="taxes-on-trading-profits"><a class="header" href="#taxes-on-trading-profits">Taxes on trading profits</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A trader makes Rs 10,000 gross in a year. The trader pays Rs 300 in trading costs. The trader assumes the remaining Rs 9,700 is the profit. Months later, a tax notice arrives. It is for an amount that is not in the trader’s plan at all. The mistake was not the arithmetic. The mistake was assuming that tax is simply a percentage of trading turnover. The trader did not check how the activity is classified. This chapter explains the ideas first. It then lists the main rules as the official sources state them.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Tax is a separate layer from trading costs. Costs (<em>Costs on a trade</em>) are paid to brokers, exchanges and the government on each trade. Tax is worked out on your net gains for the year. The rules depend on what kind of activity it is.</p>
+<p>Three ideas matter:</p>
+<ul>
+<li><strong>Classification.</strong> The same stock can be taxed in different ways. It depends on whether you hold it as an investment, trade it as a business, or do something else. The classification depends on facts. Those facts include how long you hold, how often you trade, and what you intend. The law treats a trade that is not settled by taking delivery of the shares (for example, buying and selling the same day) as a speculative transaction. If such trading is done as a business, it is a separate “speculation business”.</li>
+<li><strong>Holding period.</strong> For listed shares, a gain is short-term if you held the shares for twelve months or less. It is long-term if you held them for more than twelve months. The rates are different for the two.</li>
+<li><strong>Loss set-off.</strong> Some losses can cancel out some gains. Some losses can be carried forward to later years. The rules below show which losses, against which gains, and for how long.</li>
+</ul>
+<h3 id="the-main-rules-in-one-place"><a class="header" href="#the-main-rules-in-one-place">The main rules in one place</a></h3>
+<p>These are the rules for listed shares bought and sold on a stock exchange where STT is paid. They apply from the 2026-27 tax year, when the new Income-tax Act, 2025 came into force on 1 April 2026. Your own case may differ. A qualified tax professional should confirm what applies to you.</p>
+<div class="table-wrapper"><table><thead><tr><th>Topic</th><th>What the official sources say</th></tr></thead><tbody>
+<tr><td>Short-term gain on listed shares (held 12 months or less)</td><td>Taxed at 20%</td></tr>
+<tr><td>Long-term gain on listed shares (held more than 12 months)</td><td>The first Rs 1,25,000 of long-term gains in a year is not taxed. The part above that is taxed at 12.5%, with no indexation</td></tr>
+<tr><td>STT condition</td><td>These special rates apply only where STT was paid. For long-term gains on shares, STT must have been paid when you bought and when you sold, with some exceptions</td></tr>
+<tr><td>Capital loss set-off</td><td>A short-term loss can be set against any capital gain. A long-term loss can be set only against long-term gains</td></tr>
+<tr><td>Capital loss carry-forward</td><td>An unused capital loss can be carried forward for up to 8 years. It can be used only against capital gains</td></tr>
+<tr><td>Business income that is not speculative</td><td>A loss can be set against other heads of income in the same year (but not salary). An unused loss can be carried forward for up to 8 years and used only against business income</td></tr>
+<tr><td>Speculation business (for example, intraday trades with no delivery)</td><td>A loss can be set only against profit from another speculation business. An unused loss can be carried forward for up to 4 years</td></tr>
+<tr><td>Tax audit</td><td>A person with business income must have the accounts audited if turnover is over Rs 1 crore. The limit is Rs 10 crore if cash receipts and cash payments are each 5% or less of the total</td></tr>
+<tr><td>ITR form (individual)</td><td>Capital gains with no business income are reported in ITR-2. Business income, including trading as a business, is reported in ITR-3</td></tr>
+<tr><td>Dividends</td><td>Dividend is added to your income and taxed under “income from other sources”. The company may deduct tax before paying it. Only interest on money borrowed to earn it can be deducted, up to 20% of the dividend</td></tr>
+<tr><td>Tax regime</td><td>The new tax regime is the default. A person with business income who wants the old regime must choose it by the return due date, and the choice can be changed back only once</td></tr>
+</tbody></table>
+</div>
+<p>(As of 11 Nov 2026. Sources: the Income-tax Act, 2025 as published by the Income Tax Department, and the Income Tax Department e-filing help pages on loss set-off and on ITR forms. Rates and limits change with each Budget, so check incometax.gov.in each year.)</p>
+<p>The same rules applied under the older Income-tax Act, 1961 for income up to 31 March 2026. Section numbers changed, but the rates above did not. Losses from earlier years carry forward under the new Act as they did under the old one.</p>
+<p>Costs matter too. STT is not allowed as a deduction when you work out capital gains. For business income, STT paid on trades done in the course of the business can be claimed as a business expense. Other costs, such as brokerage, depend on the head of income. Ask a professional which costs apply to you.</p>
+<p><strong>What the book does and does not do.</strong> This book does not work out your tax. Your tax depends on your own facts, your other income and the year. The practice sum below uses a made-up rate to show the algebra only.</p>
+<p><strong>The formula, in words first.</strong> Net result = gross gain - trading costs - tax. Tax = rate x taxable base. The taxable base depends on the classification. Whether costs can be deducted from it depends on the head of income, as the notes above show.</p>
+<p>In symbols, G is the gross gain, C is the trading costs, B is the taxable base, and t is a tax rate. In the practice sum, t is a made-up number.</p>
+<ul>
+<li>If costs can be deducted, B = G - C.</li>
+<li>Tax = t x B.</li>
+<li>Net = G - C - t x B.</li>
+</ul>
+<p>The symbol t is a placeholder. The practice sum below gives it a made-up value only to show the algebra. The real rates are in the table above.</p>
+<p><strong>Questions about classification.</strong> Before a tax figure means anything, you need answers. For example: How long did I hold this? How many trades did I make in the year? Was I investing, or running trading as a business? A qualified tax professional should answer these questions with you. Writing your answers in your journal helps. The journal becomes the record you will need.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<p>The decision tree below shows the kinds of questions that decide classification. It does not give a result. Each branch ends in a question for a professional.</p>
+<pre><code class="language-mermaid">flowchart TD
+    A["What is the activity?"] --&gt; B{"How long is the holding period?"}
+    A --&gt; C{"How often do you trade, and what is the intent?"}
+    B --&gt;|"12 months or less"| D["Short-term capital gain may apply"]
+    B --&gt;|"More than 12 months"| E["Long-term capital gain may apply"]
+    C --&gt;|"Frequent, business-like"| F["Business income may apply, and an audit limit may matter"]
+    C --&gt;|"Occasional, investment-like"| G["Capital gains may apply"]
+    D --&gt; H[Ask a qualified tax professional]
+    E --&gt; H
+    F --&gt; H
+    G --&gt; H
+</code></pre>
+<p>Read the tree from the top. The branches show which facts you would need to bring to a professional. The rates are in the table above.</p>
+<!-- component: tax-calc | trades: 6000,3000,1000 | costs: 300 | rate: 20 | caption: A practice sum with a DUMMY tax rate. It is not a real rate. Check the official source or ask a tax professional. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical, symbolic.</strong> The gross gain is Rs 10,000. Trading costs are Rs 300. For this practice sum, assume costs can be deducted from the taxable base. In real life this depends on the head of income, as noted above.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Expression</th><th>Value</th></tr></thead><tbody>
+<tr><td>Gross gain</td><td>G</td><td>Rs 10,000</td></tr>
+<tr><td>Trading costs</td><td>C</td><td>Rs 300</td></tr>
+<tr><td>Taxable base</td><td>B = G - C</td><td>10,000 - 300 = Rs 9,700</td></tr>
+<tr><td>Tax</td><td>t x B</td><td>t x 9,700</td></tr>
+<tr><td>Net result</td><td>G - C - t x B</td><td>10,000 - 300 - t x 9,700 = 9,700 - 9,700t</td></tr>
+</tbody></table>
+</div>
+<p><strong>DUMMY illustration, for algebra only (a made-up round number, not your tax).</strong> If t were 20%, tax would be 0.20 x 9,700 = Rs 1,940. The net would be 9,700 - 1,940 = Rs 7,760. The 20% here only shows that the algebra works. It is not a calculation of anyone’s real tax. Do not use it as a tax figure.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> A made-up year has a gross gain of Rs 4,000 and trading costs of Rs 200. Write the net expression using the placeholder rate t. Keep t as a symbol. Do not put a number in it.</p>
+<p>Hints:</p>
+<ol>
+<li>Find the taxable base first. It is the gross gain minus the costs.</li>
+<li>Tax is t multiplied by the taxable base.</li>
+<li>Net is the gross gain minus the costs minus the tax.</li>
+</ol>
+<p><strong>Answer:</strong> Taxable base = 4,000 - 200 = 3,800. Tax = t x 3,800. Net = 4,000 - 200 - t x 3,800 = 3,800 - 3,800t, which is 3,800 x (1 - t).</p>
+<!-- component: tax-calc | trades: 4000 | costs: 200 | rate: 20 | caption: Guided exercise: gross gain Rs 4,000 and costs Rs 200. Keep the rate as a symbol on paper. The slider uses a DUMMY rate only to show the idea. -->
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> List five questions you would bring to a qualified tax professional before your first year of trading.</p>
+<details><summary>Check your answer</summary>
+<p>There is no single correct list. Here are examples of good questions:</p>
+<ol>
+<li>How does my holding period change the treatment of my gains?</li>
+<li>At what level of trading activity does my activity count as a business, and does that change my treatment?</li>
+<li>Which of my losses can cancel which of my gains? Can any be carried forward, and for how long?</li>
+<li>Do my trading costs reduce my taxable base, and which costs?</li>
+<li>Do I need to meet a tax audit requirement, and at what turnover?</li>
+</ol>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the main ideas. Tax is not a flat percentage of turnover. Holding period and classification matter. Loss set-off has rules.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong>. Write it in your journal.</p>
+<ol>
+<li>For each trade you log, add a classification note column with three entries: holding period, intent, and how often you trade.</li>
+<li>Do not calculate any tax figure. The column is a record for later, and a professional can use it.</li>
+<li>Mark the entries as learning notes, not live records.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>It does not tell you what tax you will pay. It lists the main rules as the official sources state them. Your own case may differ.</li>
+<li>This is not tax advice. The book does not give tax advice. Talk to a qualified professional.</li>
+<li>Gains and losses are not always treated the same way across activities. The differences are the reason to get advice.</li>
+<li>It does not show that a tax bill is small or large for any plan. A tax bill can be larger than expected in a year with losses, depending on the rules.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Tax is separate from trading costs. It applies to net gains under rules that depend on the activity.</li>
+<li>Classification, holding period and loss set-off decide much of the treatment. For listed shares, the dividing line is 12 months. Short-term gains are taxed at 20%. Long-term gains above Rs 1,25,000 a year are taxed at 12.5%.</li>
+<li>The formula is net = gross gain - costs - tax, and tax = rate x taxable base.</li>
+<li>Keep a classification record for every trade from the start.</li>
+<li>Take the questions to a qualified tax professional.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Income-tax Act, 2025 (Act 30 of 2025), published by the Income Tax Department (incometaxindia.gov.in). It covers the rates on listed shares, the Rs 1,25,000 exemption, loss set-off and carry-forward, speculation business, tax audit limits and the new tax regime. Read on 11 Nov 2026.</li>
+<li>Income Tax Department e-filing help pages (incometax.gov.in) on set-off and carry-forward of losses, and on the ITR form for business income. Read on 11 Nov 2026.</li>
+<li>The same rates and holding period applied under the older Income-tax Act, 1961 for transfers on or after 23 July 2024.</li>
+<li>Zerodha Varsity tax section, for reference only (link only, no text copied).</li>
+</ul>
+<!-- facts-needed: classification rules for trading income; short-term and long-term capital gains rates and holding-period thresholds; business and speculative income treatment; loss set-off and carry-forward rules; tax audit turnover thresholds; tax regime choice and changes; dividend taxation. -->
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/02-costs-on-a-trade/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/04-risk-per-trade/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/02-costs-on-a-trade/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/04-risk-per-trade/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

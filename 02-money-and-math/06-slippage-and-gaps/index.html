@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Slippage, gaps and planned versus actual risk - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/02-money-and-math/06-slippage-and-gaps/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T2.6
+title: Slippage, gaps and planned versus actual risk
+page_type: Concept
+prerequisites: [T2.4, T2.5, T1.7]
+labs: [Lab 1, Lab 3]
+estimated_minutes: 30
+-->
+<h1 id="slippage-gaps-and-planned-versus-actual-risk"><a class="header" href="#slippage-gaps-and-planned-versus-actual-risk">Slippage, gaps and planned versus actual risk</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Hypothetical account: Rs 50,000, risk 1% = Rs 500. The plan buys at Rs 250 with a stop at Rs 240. That is 50 shares and a planned loss of Rs 500. Overnight, news breaks. The stock opens at Rs 232, below the stop. The stop fills at the open. The actual loss is Rs 900, not Rs 500. The plan’s arithmetic was right. The mistake was to treat the stop as the exact price you would get out at.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>A trade has two risk numbers. They are not the same thing.</p>
+<ul>
+<li><strong>Planned risk</strong> = (entry - stop) x shares. This is the loss the plan expects if the exit happens exactly at the stop.</li>
+<li><strong>Execution risk</strong> = the loss you actually get at the price your exit order fills.</li>
+</ul>
+<p>Key terms:</p>
+<ul>
+<li><strong>Stop-loss</strong>: an instruction to sell once the price reaches a level. It is an instruction. It does not promise you will exit at that level.</li>
+<li><strong>Trigger</strong>: the price at which a stop becomes active.</li>
+<li><strong>Fill</strong>: the price at which an order is actually carried out.</li>
+<li><strong>Gap</strong>: the price opens, or jumps, past a level with no trading in between. A stop triggers at the first price available, which can be far from the stop.</li>
+<li><strong>Slippage</strong>: the difference between the price you expected and the price you got. It comes from the bid-ask spread. That is the gap between the price buyers offer and the price sellers ask. It also comes from thin depth, which means few orders are waiting at each price. The order type matters too (<em>Order matching, spread and liquidity</em>).</li>
+<li><strong>Circuit</strong>: a limit on how far a price can move in one day, set by the exchange (<em>Circuit limits and halts</em>). A stock stuck at its circuit may have no buyers or sellers on the exit side. Then your exit can be blocked completely.</li>
+</ul>
+<p>In words: the actual loss is the entry price minus the exit fill price, times the shares. In symbols: loss = (entry - fill) x shares. To express it in R, divide by the planned risk in rupees. 1R means one planned loss.</p>
+<p>Why this matters for swing trades. A swing trade is a trade held for days. A trade held overnight faces gap risk. News, global moves and company events can happen while the market is closed. Overnight gap risk is part of holding overnight. It is not a rare accident you can design out of the plan.</p>
+<p>Order types. Stop orders come in two forms on Kite: SL and SL-M. They behave differently at the trigger (see <em>Order types</em>).</p>
+<ul>
+<li>An <strong>SL</strong> (stoploss limit) order has a trigger price and a limit price. When the price reaches the trigger, a limit order goes to the exchange. It fills only at your limit price or better. If the price falls fast past your limit, the order can stay open and unfilled.</li>
+<li>An <strong>SL-M</strong> (stoploss market) order has only a trigger price. When the price reaches the trigger, a market order goes to the exchange. It is very likely to fill, but at whatever price is available. That price can be worse than the trigger.</li>
+<li>A stoploss order is valid only for the trading day. If it does not trigger, it ends at the close.</li>
+<li>NSE has stopped the SL-M order type for options. For shares, both forms are available.</li>
+</ul>
+<p>(As of 11 Nov 2026, Zerodha support pages on stoploss orders. Rules change, so check Zerodha support.) Do not assume one form behaves like the other.</p>
+<p>Circuits. The exchange sets a daily price band for each share. Zerodha says the bands range from 2% to 20%, depending on the share. Shares that have futures and options have no fixed daily band. They have a moving 10% band instead. An order outside the band is rejected. If the price is stuck at the band, orders wait until the exchange moves the band. If you are in an intraday (MIS) position and cannot close it because of a circuit, Zerodha says the position turns into a delivery trade. Zerodha may close positions but is not required to. You may then have to pay for the shares, or face a penalty for not delivering them if you had sold. (As of 11 Nov 2026, Zerodha support pages on circuit limits. Rules change, so check Zerodha support and the NSE site.)</p>
+<p>The stress test. You cannot know the next opening price. You can choose a gap assumption. Decide how big a gap loss you can accept. Then size the position so the assumed gap stays inside that limit. The assumption is your choice. A different assumption gives a different size.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: sl-trigger-sim | mode: gap-through-stop | entry: 250 | stop: 240 | open: 232 | slippage: 2 | caption: Shows the trigger, the open and the fill, with planned and actual loss bars. -->
+<p>Look at three things. The trigger sits at Rs 240. The market opens at Rs 232. The fill lands near the open. Compare the planned loss bar (Rs 500) with the actual loss bar. Then move the open price down and set slippage to 0. See how the fill follows the open, not the stop.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><em>Hypothetical.</em> Capital Rs 50,000, risk 1%, entry Rs 250, stop Rs 240.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Working</th><th>Result</th></tr></thead><tbody>
+<tr><td>Risk budget</td><td>1% x 50,000</td><td>Rs 500</td></tr>
+<tr><td>Risk per share</td><td>250 - 240</td><td>Rs 10</td></tr>
+<tr><td>Shares</td><td>500 / 10</td><td>50</td></tr>
+<tr><td>Planned loss (1R)</td><td>50 x 10</td><td>Rs 500</td></tr>
+<tr><td>Overnight open</td><td>opens at Rs 232, below the stop</td><td>stop fills at the open</td></tr>
+<tr><td>Loss per share</td><td>250 - 232</td><td>Rs 18</td></tr>
+<tr><td>Actual gap loss</td><td>50 x 18</td><td>Rs 900</td></tr>
+<tr><td>Multiple of R</td><td>900 / 500</td><td>1.8R</td></tr>
+<tr><td>Share of capital</td><td>900 / 50,000</td><td>1.8%</td></tr>
+</tbody></table>
+</div>
+<p>Now add slippage. <em>Illustrative:</em> assume a further Rs 2 per share of slippage. The fill is then at Rs 230.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Working</th><th>Result</th></tr></thead><tbody>
+<tr><td>Loss per share</td><td>250 - 230</td><td>Rs 20</td></tr>
+<tr><td>Actual loss</td><td>50 x 20</td><td>Rs 1,000</td></tr>
+<tr><td>Multiple of R</td><td>1,000 / 500</td><td>2R</td></tr>
+<tr><td>Share of capital</td><td>1,000 / 50,000</td><td>2%</td></tr>
+</tbody></table>
+</div>
+<p>The planned 1% became an actual loss of 2% of capital.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<!-- component: sl-trigger-sim | mode: gap-through-stop | entry: 250 | stop: 240 | open: 236 | caption: Demo for the guided exercise: set the open to Rs 236 and read the loss. -->
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p>Task: Use the same plan (entry Rs 250, stop Rs 240, 50 shares). Hypothetical: the stock opens at Rs 236 and the stop fills at the open. Work out the actual loss in rupees and in R.</p>
+<p>Hints:</p>
+<ol>
+<li>Find the loss per share first: entry minus fill.</li>
+<li>Multiply by 50 shares.</li>
+<li>Divide by the planned Rs 500 to get R.</li>
+</ol>
+<p><strong>Answer:</strong> Loss per share = 250 - 236 = Rs 14. Loss = 50 x 14 = Rs 700. In R: 700 / 500 = 1.4R. The gap loss is 40% above the plan.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p>Task: The entry is Rs 250 and the stop is Rs 240. You assume the price gaps down to Rs 220. You want the loss at that gap to stay within Rs 500. How many whole shares can you hold? Remember, the gap is your assumption. It is not a prediction.</p>
+<details><summary>Check your answer</summary>
+<p>Loss per share at the assumed gap = 250 - 220 = Rs 30. Shares = 500 / 30 = 16.67, rounded down to 16. Gap loss = 16 x 30 = Rs 480. Seventeen shares would give 17 x 30 = Rs 510, which is above the limit. The gap size is an assumption you choose. A larger assumed gap means fewer shares.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Six questions cover planned and actual loss, gap fills, sizing for a stress test, and stop order types.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong>. Log it in your journal (or on paper until the journal app is ready).</p>
+<ol>
+<li>Write down three hypothetical trades, each with entry, stop and shares.</li>
+<li>For each one, calculate the planned loss: (entry - stop) x shares.</li>
+<li>For each one, add a hypothetical opening price below the stop. Calculate the actual loss at the open.</li>
+<li>Record the slippage fields (slippage_entry_inr and slippage_exit_inr) for each trade. Use zero where no slippage applies.</li>
+<li>Write the planned and actual loss side by side. Note which one your plan had described.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>A stop is an instruction. It does not fix the exit price. In a circuit it may not produce an exit at all.</li>
+<li>Planned risk is the plan. It is not a ceiling on what you can lose.</li>
+<li>The Rs 232 open and the Rs 2 per share slippage are hypothetical. They are not a forecast of how any stock will open.</li>
+<li>The gap size you assume is your own choice. A real gap bigger than you assumed will cause a bigger loss than your stress test allowed.</li>
+<li>A smaller size for a stress test does not reduce the risk of the idea itself.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Planned risk = (entry - stop) x shares. It describes the plan. It is not a maximum.</li>
+<li>Actual loss = (entry - fill) x shares. After a gap, the fill can be far from the stop.</li>
+<li>Gaps and circuits can move or block the exit.</li>
+<li>Holding overnight always carries gap risk.</li>
+<li>Size the position for a stress test you have chosen, not only for the chart you are looking at.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p>Sources, read on 11 Nov 2026:</p>
+<ul>
+<li>Zerodha support: “What are stoploss orders and how to use them”, “What is trigger price in stoploss orders”.</li>
+<li>Zerodha support: “What are circuit limits or price bands” and the page on what happens to intraday positions when a circuit is hit.</li>
+<li>NSE pages on price bands and circuit breakers. Check them for the current band of any share.</li>
+<li>Chapter <em>Circuit limits and halts</em> (circuit limits and price bands).</li>
+</ul>
+<!-- facts-needed: SL and SL-M trigger and fill behaviour on Kite; exchange rules for stop and trigger orders; circuit rules for locked exits (cross-reference *Circuit limits and halts*) -->
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/05-position-sizing/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/07-reward-to-risk-and-break-even/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/05-position-sizing/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/07-reward-to-risk-and-break-even/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

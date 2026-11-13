@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ओव्हरट्रेडिंग आणि दैनिक नफ्याची लक्ष्ये त्याला का चालना देतात - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../02-money-and-math/12-overtrading/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../02-money-and-math/12-overtrading/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T2.12
+title: ओव्हरट्रेडिंग आणि दैनिक नफ्याची लक्ष्ये त्याला का चालना देतात
+page_type: Math/Calculator
+prerequisites: [T2.8, T2.11, T0.2]
+labs: [Lab 3]
+estimated_minutes: 25
+-->
+<h1 id="ओवहरटरेडिंग-आणि-दैनिक-नफयाची-लकषये-तयाला-का-चालना-देतात"><a class="header" href="#ओवहरटरेडिंग-आणि-दैनिक-नफयाची-लकषये-तयाला-का-चालना-देतात">ओव्हरट्रेडिंग आणि दैनिक नफ्याची लक्ष्ये त्याला का चालना देतात</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>काल्पनिक: एक ट्रेडर दररोजचे नफ्याचे लक्ष्य Rs 2,000 ठेवतो. सकाळी मध्याला दिवस Rs 300 ने तोट्यात आहे. चेकलिस्टमधला कोणताही सेटअप अजून आलेला नाही. ट्रेडर “पुन्हा मार्गावर येण्यासाठी” एक व्यापार घेतो. हा व्यापार चेकलिस्टवर नाही, आणि तो तोट्यात जातो. पहिला तोटा लक्ष्यामुळे झाला नाही. लक्ष्यामुळे दुसरा निर्णय बदलला. हाच नमुना हे प्रकरण मोजते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>अपेक्षित परतावा</strong> (प्रति व्यापार सरासरी निकाल) म्हणजे अनेक व्यापारांवरील प्रति व्यापार सरासरी निकाल. त्यात नफा आणि तोटा एकत्र धरले जातात. R मध्ये मोजला (एका व्यापारात जोखीम पत्करलेली रुपयांची रक्कम), तर 0.1R चा अपेक्षित परतावा म्हणजे सरासरी व्यापार एका R च्या दहाव्या भागाइतका नफा देतो.</p>
+<p><strong>खर्च</strong> प्रत्येक व्यापारावर द्यावे लागतात. त्यामुळे ते ही सरासरी कमी करतात:</p>
+<ul>
+<li>निव्वळ अपेक्षित परतावा प्रति व्यापार = अपेक्षित परतावा - प्रति राउंड ट्रिप खर्च. राउंड ट्रिप म्हणजे एक खरेदी आणि एक विक्री.</li>
+</ul>
+<p><strong>लक्ष्य गाठण्यासाठी लागणारे व्यापार</strong>, सरासरीने:</p>
+<ul>
+<li>लागणारे व्यापार = लक्ष्य / निव्वळ अपेक्षित परतावा प्रति व्यापार.</li>
+<li>छोटे रूप: N = T / E_net, जिथे N म्हणजे व्यापार, T म्हणजे लक्ष्य आणि E_net म्हणजे निव्वळ अपेक्षित परतावा.</li>
+</ul>
+<p>यातून तीन गोष्टी समोर येतात:</p>
+<ol>
+<li><strong>अपेक्षित परतावा लहान असेल तर व्यापार जास्त लागतात.</strong> लहान सरासरी दैनिक लक्ष्य गाठण्यासाठी मोठ्या संख्येने व्यापार लागतात.</li>
+<li><strong>खर्च व्यापारांची संख्या बदलतात.</strong> सरासरीतून काढलेला प्रत्येक रुपया खर्च लागणाऱ्या व्यापारांची संख्या कमी करतो.</li>
+<li><strong>निव्वळ अपेक्षित परतावा शून्य किंवा त्याहून कमी असेल तर कोणतीही संख्या लक्ष्य गाठत नाही.</strong> E_net शून्य किंवा खाली असेल, तर किती व्यापार केले तरी सरासरीने लक्ष्य गाठले जात नाही. जास्त व्यापार फक्त जास्त ऋण सरासरी जोडतात.</li>
+</ol>
+<p>दैनिक लक्ष्य दबावासारखेही काम करते. सेटअप नसलेला दिवस तोट्यासारखा वाटायला लावते. त्यामुळे ट्रेडर सेटअप नसतानाही व्यापार घेतो. जास्त व्यापार म्हणजे यादृच्छिक भावाच्या हालचालींचा (नॉइज) जास्त एक्सपोजर, जास्त खर्च आणि नियम मोडण्याच्या जास्त संधी. खर्च <em>व्यापारावरील खर्च</em> मध्ये समजावले आहेत.</p>
+<p>जर्नलमध्ये ओव्हरट्रेडिंगची चिन्हे:</p>
+<ul>
+<li>चेकलिस्टबाहेर केलेले व्यापार.</li>
+<li>दैनिक मर्यादेपेक्षा जास्त व्यापार संख्या.</li>
+<li>नंतरच्या व्यापारात वाढवलेला आकार.</li>
+<li>आधीचा तोटा भरून काढण्यासाठी केलेला व्यापार.</li>
+</ul>
+<p>तुमचे Rs 2,000-3,000 चे आकडे <em>Rs 2,000-3,000 वास्तव तपासणी</em> मध्ये तपासले आहेत. कोणत्याही रणनीतीसाठी ते ध्येय नाही.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>हे स्थिर कोष्टक आहे. लक्ष्य दररोज Rs 2,000 वर निश्चित आहे. प्रत्येक ओळ दाखवते की निव्वळ अपेक्षित परतावा कमी होतो तसे लागणाऱ्या व्यापारांची संख्या कशी वाढते.</p>
+<div class="table-wrapper"><table><thead><tr><th>निव्वळ अपेक्षित परतावा प्रति व्यापार (Rs)</th><th>दररोज लागणारे व्यापार</th><th>नोंद</th></tr></thead><tbody>
+<tr><td>50</td><td>40</td><td>कामाच्या उदाहरणात खर्च लागण्यापूर्वी</td></tr>
+<tr><td>25</td><td>80</td><td></td></tr>
+<tr><td>20</td><td>100</td><td></td></tr>
+<tr><td>10</td><td>200</td><td>कामाच्या उदाहरणात काल्पनिक खर्च लागल्यानंतर</td></tr>
+<tr><td>0 किंवा त्याहून कमी</td><td>सरासरीने कोणतीही संख्या लक्ष्य गाठत नाही</td><td></td></tr>
+</tbody></table>
+</div>
+<p>कोष्टक खाली वाचा. निव्वळ अपेक्षित परतावा निम्मा झाला की व्यापारांची संख्या दुप्पट होते. 200 व्यापारांची ओळ म्हणजे खर्च धरल्यावर कामाचे उदाहरण येथे पोहोचते.</p>
+<!-- component: overtrading-drain | target: 2000 | expectancy: 50 | cost: 40 | caption: दैनिक लक्ष्य Rs 2,000, प्रति व्यापार सरासरी Rs 50, काल्पनिक खर्च Rs 40. लागणाऱ्या व्यापारांची संख्या 40 वरून 200 पर्यंत कशी उडी घेते ते पाहा. हे गाठायचे लक्ष्य नाही. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> फक्त गणितासाठी, अंदाज म्हणून नव्हे: R = Rs 500 (Rs 50,000 चा 1%). अपेक्षित परतावा = 0.1 x 500 = प्रति व्यापार Rs 50. लक्ष्य = दैनिक Rs 2,000.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. खर्चापूर्वी लागणारे व्यापार</td><td>2,000 / 50</td><td>दररोज 40 व्यापार</td></tr>
+<tr><td>2. 250 ट्रेडिंग दिवसांवर (गृहीत धरून)</td><td>40 x 250</td><td>वर्षाला 10,000 व्यापार</td></tr>
+<tr><td>3. प्रति राउंड ट्रिप काल्पनिक खर्च</td><td>Rs 40 गृहीत धरले</td><td>निव्वळ अपेक्षित परतावा = 50 - 40 = Rs 10</td></tr>
+<tr><td>4. खर्चानंतर लागणारे व्यापार</td><td>2,000 / 10</td><td>दररोज 200 व्यापार</td></tr>
+<tr><td>5. 250 ट्रेडिंग दिवसांवर (गृहीत धरून)</td><td>200 x 250</td><td>वर्षाला 50,000 व्यापार</td></tr>
+</tbody></table>
+</div>
+<p>खर्चाच्या गृहीतकामुळे 40 व्यापारांचा दिवस 200 व्यापारांचा होतो. Rs 40 हा आकडा <strong>काल्पनिक</strong> किंमत आहे, फक्त गणितासाठी. तो सरावासाठी ठेवलेला गोल आकडा आहे, खरे ब्रोकर शुल्क किंवा सरकारी कर नाही. 11 Nov 2026 पर्यंत, Zerodha डिलिव्हरी व्यापारांवर शून्य ब्रोकरेज दाखवते. इंट्राडे व्यापारांवर ते व्यापार मूल्याच्या 0.03% किंवा प्रति ऑर्डर Rs 20, यापैकी जे कमी असेल ते, अधिक कर आणि एक्सचेंज शुल्क दाखवते. पूर्ण तक्ता <em>व्यापारावरील खर्च</em> मध्ये आहे. नियम बदलतात, त्यामुळे Zerodha चार्जेस पेज तपासा.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<p>प्रत्येक सराव आधी हाताने करा. मग खाली दिलेल्या डेमोने तुमचे उत्तर तपासा. खर्च बदलून व्यापारांची संख्या कशी हलते ते पाहा.</p>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>कार्य.</strong> दैनिक लक्ष्य Rs 1,000. प्रति व्यापार अपेक्षित परतावा Rs 25. प्रति व्यापार काल्पनिक खर्च Rs 15. खर्चापूर्वी आणि खर्चानंतर लागणारे व्यापार काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>आधी निव्वळ अपेक्षित परतावा काढा: अपेक्षित परतावा वजा खर्च.</li>
+<li>लक्ष्याला आधी अपेक्षित परताव्याने, मग निव्वळ अपेक्षित परताव्याने भागा.</li>
+<li>तपासा: खर्चानंतरची संख्या खर्चापूर्वीच्या संख्येपेक्षा मोठी असली पाहिजे.</li>
+</ol>
+<p><strong>उत्तर:</strong> खर्चापूर्वी, 1,000 / 25 = 40 व्यापार. निव्वळ अपेक्षित परतावा 25 - 15 = Rs 10. खर्चानंतर, 1,000 / 10 = 100 व्यापार.</p>
+<!-- component: overtrading-drain | target: 1000 | expectancy: 25 | cost: 15 | caption: मार्गदर्शित सराव: लक्ष्य Rs 1,000, प्रति व्यापार सरासरी Rs 25, काल्पनिक खर्च Rs 15. -->
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>कार्य.</strong> दैनिक लक्ष्य Rs 3,000. R = Rs 400. अपेक्षित परतावा 0.15R आहे. प्रति व्यापार काल्पनिक खर्च Rs 30. निव्वळ अपेक्षित परतावा, दररोज लागणारे व्यापार, आणि पाच ट्रेडिंग दिवसांत आठवड्याचे व्यापार काढा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>अपेक्षित परतावा = 0.15 x 400 = प्रति व्यापार Rs 60.</p>
+<p>निव्वळ अपेक्षित परतावा = 60 - 30 = प्रति व्यापार Rs 30.</p>
+<p>दररोज लागणारे व्यापार = 3,000 / 30 = 100.</p>
+<p>आठवड्याचे व्यापार = 100 x 5 = 500. तपासणी: 500 / 5 = दररोज 100.</p>
+</details>
+<!-- component: overtrading-drain | target: 3000 | expectancy: 60 | cost: 30 | caption: स्वतंत्र सरावाची तपासणी: लक्ष्य Rs 3,000, प्रति व्यापार सरासरी Rs 60, काल्पनिक खर्च Rs 30. आधी हाताने करून पाहा. -->
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>सहा प्रश्न व्यापार-संख्येची गणिते, खर्चाचा परिणाम, “जास्त व्यापाराने सरासरी समतोल होते” ही चुकीची कल्पना, ओव्हरट्रेडिंगची चिन्हे आणि सेटअप नसलेला दिवस यावर आहेत.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p>मोड: <strong>शिकण्याची नोंद</strong> (Lab 3). कोणताही ऑर्डर दिला जात नाही.</p>
+<ol>
+<li>एका आठवड्यातील प्रत्येक दिवसाची व्यापार संख्या नोंदवा. फक्त काल्पनिक किंवा शिकण्यासाठीच्या नोंदी वापरा.</li>
+<li>प्रत्येक व्यापारासाठी “चेकलिस्ट पास (Y/N)” असा स्तंभ जोडा.</li>
+<li>एक व्यापार न केलेला दिवस नोंदवा आणि कारण लिहा: कोणताही सेटअप चेकलिस्ट पास झाला नाही.</li>
+<li>चेकलिस्ट पास न झालेल्या व्यापारांची मोजणी करा. तोटा भरून काढण्यासाठी केलेला कोणताही व्यापार नोंदवा.</li>
+</ol>
+<p>तुमच्या जर्नलमध्ये लिहा. जर्नल ॲप तयार नसेल, तर कागद वापरा.</p>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>अपेक्षित परतावा हा भूतकाळातील किंवा गृहीत व्यापारांचा सरासरी आहे. तो कोणत्याही एका दिवसाचा अंदाज देत नाही.</li>
+<li>येथील खर्च काल्पनिक आहेत. खरे खर्च <em>व्यापारावरील खर्च</em> आणि Lab 2 मध्ये आहेत.</li>
+<li>कमी व्यापार संख्या नफ्याचे आश्वासन देत नाही. ती खर्चाचा आणि नियम मोडण्याचा एक्सपोजर कमी करते.</li>
+<li>दिवसाला जास्तीत जास्त किती व्यापार असावेत हे तुम्ही ठरवायचे आहे. हे प्रकरण ते ठरवत नाही.</li>
+<li>व्यापार न केलेला दिवस हा वैध निकाल आहे. तो कौशल्याचाही पुरावा नाही.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>लागणारे व्यापार = लक्ष्य / प्रति व्यापार निव्वळ अपेक्षित परतावा.</li>
+<li>खर्च प्रत्येक व्यापारावर लागतात, त्यामुळे ते संख्या वाढवतात.</li>
+<li>दैनिक लक्ष्य व्यापार न केलेल्या दिवसाला अपयश वाटायला लावू शकते. त्यामुळे सेटअप नसताना व्यापार होतात.</li>
+<li>आधीच ठरवा की दिवसाला जास्तीत जास्त किती व्यापार. व्यापार न केलेला दिवस वैध निकाल म्हणून मोजा.</li>
+<li>जर्नलमधील चार चिन्हे पाहा: चेकलिस्टबाहेरील व्यापार, मर्यादेपेक्षा जास्त व्यापार संख्या, मोठा आकार, आणि तोटा भरून काढण्यासाठी केलेले व्यापार.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p>स्रोत (फक्त नावे):</p>
+<ul>
+<li><em>शिस्त</em> आणि <em>तोट्याची भीती आणि बदला घेणारे व्यापार</em>, वर्तनाच्या संबंधासाठी.</li>
+</ul>
+<p>या प्रकरणातील खर्च हे सरावासाठीचे गोल आकडे आहेत. खरे शुल्क, तारखा आणि स्रोतांसह, <em>व्यापारावरील खर्च</em> मध्ये आहेत.</p>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T2.12&amp;body=Page%3A%2002-money-and-math%2F12-overtrading%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/11-risk-limits/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/13-leverage-and-margin/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/11-risk-limits/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/13-leverage-and-margin/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

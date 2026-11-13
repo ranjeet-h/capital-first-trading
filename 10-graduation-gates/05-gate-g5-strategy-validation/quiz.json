@@ -1,0 +1,102 @@
+[
+  {
+    "id": "T10.5-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. The in-sample result is a gain of Rs 4,000. The held-out result is a loss of Rs 500. How many rupees lower is the held-out result than the in-sample result?",
+    "answer": 4500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Difference = in-sample minus held-out = 4,000 - (-500) = 4,000 + 500 = Rs 4,500.",
+    "concepts": ["held-out", "in-sample"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.5-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. You tried 4 settings on Monday, 5 settings on Tuesday and 3 more settings on Wednesday. What trial count do you write in the explanation?",
+    "answer": 12,
+    "tolerance": 0,
+    "unit": "settings",
+    "solution": "Trial count = all settings tried = 4 + 5 + 3 = 12. Count every setting, not only the one you kept.",
+    "concepts": ["trial-count", "overfitting"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.5-q3",
+    "type": "scenario",
+    "prompt": "A friend says: \"The backtest made money, so the strategy is ready to trade.\" Which response matches this gate?",
+    "options": [
+      {"id": "a", "text": "Agree. A backtest that made money is ready."},
+      {"id": "b", "text": "Disagree. The rubric rejects calling a result profitable or ready, and a backtest is not validation."},
+      {"id": "c", "text": "Agree, as long as costs were on."},
+      {"id": "d", "text": "Disagree only if the held-out period is missing."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A result on past data is not readiness. The rubric rejects that wording.",
+      "c": "Costs on makes the test fairer, but it does not make the strategy ready.",
+      "d": "A missing held-out period is one problem. A strategy with both periods is still not validated by a backtest alone."
+    },
+    "concepts": ["validation", "wording"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.5-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"The result used costs, and the run was saved with its record, so the strategy will hold live.\" Which part of this statement is wrong?",
+    "options": [
+      {"id": "a", "text": "\"The result used costs\". This part is correct when costs are on."},
+      {"id": "b", "text": "\"so the strategy will hold live\". This is wrong. The gate lists reasons a result may not hold live."},
+      {"id": "c", "text": "\"the run was saved with its record\". This part is correct."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This part is correct. Costs must be on for the run to count.",
+      "c": "This part is correct. The gate requires the saved record for each run."
+    },
+    "concepts": ["live-risk", "validation"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T10.5-q5",
+    "type": "mcq",
+    "prompt": "What is a held-out period?",
+    "options": [
+      {"id": "a", "text": "The period you used while you shaped the idea."},
+      {"id": "b", "text": "A later period you did not use to shape the idea, reported separately."},
+      {"id": "c", "text": "Only the last week of the data."},
+      {"id": "d", "text": "A period with no trades at all."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "That describes the in-sample period. The held-out period is kept apart from it.",
+      "c": "The held-out period is not defined by its length. It is defined by not being used to shape the idea.",
+      "d": "A held-out period is tested with the same rules. It is kept separate, not empty."
+    },
+    "concepts": ["held-out"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.5-q6",
+    "type": "multi",
+    "prompt": "Which statements are reasons a backtest result may not hold live? Choose all that apply.",
+    "options": [
+      {"id": "a", "text": "Fills may differ from the prices the test assumed."},
+      {"id": "b", "text": "Costs may be wrong or missing from the live result."},
+      {"id": "c", "text": "Market conditions may change after the test period."},
+      {"id": "d", "text": "The test proves the strategy will make money in the future."}
+    ],
+    "answer": ["a", "b", "c"],
+    "explanations": {
+      "d": "A test on past data does not prove future results. This is the wrong reading of a backtest."
+    },
+    "concepts": ["live-risk", "fills", "costs"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  }
+]

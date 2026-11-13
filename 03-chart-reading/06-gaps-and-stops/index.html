@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Gaps and what they mean for stops - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/03-chart-reading/06-gaps-and-stops/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T3.6
+title: Gaps and what they mean for stops
+page_type: Concept
+prerequisites: [T3.1, T1.6, T1.7]
+labs: [Lab 1, Lab 4]
+estimated_minutes: 25
+-->
+<h1 id="gaps-and-what-they-mean-for-stops"><a class="header" href="#gaps-and-what-they-mean-for-stops">Gaps and what they mean for stops</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p><strong>Hypothetical.</strong> A trader buys 100 shares at Rs 400, with a stop at Rs 390. The planned loss is Rs 1,000. The next morning the stock opens at Rs 380, below the stop. The stop does not get filled at Rs 390. The loss is about Rs 2,000, which is twice the plan. This chapter explains why the stop did not protect the planned amount.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>A <strong>gap</strong> is an open that differs from the previous close. No trading happens between the two prices. The gap is the empty space on the chart between the old close and the new open.</p>
+<p>Overnight news and events are common causes of gaps. This book does not predict gaps. It explains what a gap does to a stop.</p>
+<p>A <strong>stop order</strong> is a trigger. When the market reaches the trigger price, the stop becomes a market order or a limit order. From that point, the fill depends on the market at that moment. A trigger price is not a guaranteed fill price.</p>
+<p>If the open is already beyond the stop, the fill is near the open, not at the stop price. This is called a <strong>gap through stop</strong>. The stop did not limit the loss to the planned amount.</p>
+<p><strong>Planned risk</strong> is entry minus stop, times shares. <strong>Actual risk</strong> is entry minus the real fill, times shares. Gaps make the two different.</p>
+<p>Two more points:</p>
+<ul>
+<li>Circuit limits set how far a price may move in one session. A circuit limit can stop trading beyond a band, so an exit may not happen at all. NSE sets daily bands of 2%, 5%, 10% or 20% for most stocks. Stocks with futures and options use a flexible 10% range. (As of 11 Nov 2026, NSE FAQs and SEBI’s master circular.) Circuit limits are covered in <em>Circuit limits and halts</em>.</li>
+<li>Size your position against a gap you can afford, not only against the stop distance. This is covered in <em>Slippage</em>.</li>
+</ul>
+<p>Gap percent = (open minus previous close) divided by previous close, times 100. A negative gap percent means the open was below the previous close.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<p>The sl-trigger-sim shows the trigger, the open and the fill side by side. It runs in gap-through-stop mode.</p>
+<!-- component: sl-trigger-sim | mode: gap-through-stop | prevClose: 400 | entry: 400 | stop: 390 | open: 380 | shares: 100 | caption: Trigger at Rs 390, open at Rs 380, hypothetical fill near the open; the trigger, the open and the fill are shown side by side -->
+<p>Look at the trigger price first. Then look at the open. The fill sits near the open, not at the trigger. Compare the planned loss with the actual loss.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Previous close Rs 400. Entry Rs 400. Stop Rs 390. Size 100 shares. The next day opens at Rs 380.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>Planned loss</td><td>100 x (400 minus 390)</td><td>Rs 1,000</td></tr>
+<tr><td>Gap percent</td><td>(380 minus 400) divided by 400</td><td>minus 5%</td></tr>
+<tr><td>Fill (hypothetical)</td><td>near the open</td><td>about Rs 380</td></tr>
+<tr><td>Actual loss</td><td>100 x (400 minus 380)</td><td>Rs 2,000</td></tr>
+<tr><td>Ratio</td><td>2,000 divided by 1,000</td><td>2 times the plan</td></tr>
+</tbody></table>
+</div>
+<p>The stop triggered, and the fill was near the open of Rs 380. The actual loss was twice the planned loss. All figures are illustrative.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> <strong>Hypothetical.</strong> The same trade as the worked example: previous close Rs 400, entry Rs 400, stop Rs 390, 100 shares. This time the open is Rs 385. Compute the gap percent, the actual loss and the ratio of actual loss to planned loss.</p>
+<p>Hints:</p>
+<ol>
+<li>The gap percent uses the previous close, which is Rs 400.</li>
+<li>The actual loss per share is the entry minus the fill. The fill is the open here.</li>
+<li>Divide the actual loss by the planned loss.</li>
+</ol>
+<p><strong>Answer:</strong> Gap percent = (385 minus 400) divided by 400 = minus 15 divided by 400 = minus 3.75%. Actual loss = 100 x (400 minus 385) = 100 x 15 = Rs 1,500. Planned loss = Rs 1,000. Ratio = 1,500 divided by 1,000 = 1.5.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> <strong>Hypothetical.</strong> Previous close Rs 250. Assume the entry is at Rs 250. Stop Rs 240. Size 50 shares. The open is Rs 228. Compute the planned loss, the actual loss and the ratio.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>Planned loss: 50 x (250 minus 240) = 50 x 10 = Rs 500.</li>
+<li>Actual loss: 50 x (250 minus 228) = 50 x 22 = Rs 1,100. Check: 50 x 20 = 1,000, and 50 x 2 = 100, which adds to 1,100.</li>
+<li>Ratio: 1,100 divided by 500 = 2.2.</li>
+</ul>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks gap through stop, the planned and actual loss, and sizing against a gap.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong>. Log it in your journal, or on paper if the journal is not ready.</p>
+<ol>
+<li>Build a watchlist of stocks you are allowed to view.</li>
+<li>For one month, log every gap above 2 percent on the watchlist.</li>
+<li>For each gap, write the size and the direction.</li>
+<li>Write whether a stop at a distance you chose would have been passed.</li>
+<li>Make no outcome predictions. Record only what happened.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>A stop is a trigger, not insurance. It does not promise the fill price.</li>
+<li>A gap through stop can make the loss several times the planned loss. The planned loss is not a limit.</li>
+<li>Gap percent is not rupees. A 5 percent gap on Rs 400 is Rs 20 per share. Keep the two measures apart.</li>
+<li>Circuit limits can prevent an exit beyond a price band. Check the current rules before you rely on any exit (<em>Circuit limits and halts</em>).</li>
+<li>Compare the planned loss with the largest gap you consider plausible. Keep that loss inside your risk budget (<em>Slippage</em>).</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>A gap is an open that differs from the previous close, with no trading between.</li>
+<li>A stop becomes an order at its trigger. The fill depends on the market then.</li>
+<li>In a gap through stop, the fill is near the open, not at the stop price.</li>
+<li>Planned loss is not the same as actual loss when gaps occur.</li>
+<li>Size against the gap you can afford, not only the stop distance.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>NSE India, market timings and circuit-limit pages</li>
+<li>SEBI circulars on price bands</li>
+<li>Zerodha support, stop-order articles</li>
+</ul>
+<p>Facts checked on 11 Nov 2026:</p>
+<ul>
+<li>Band percentages come from NSE’s Basic FAQs on the Secondary Market and SEBI’s master circular on trading.</li>
+<li>The cash market opens at 9:15 am after pre-open. It closes at 3:30 pm, or at 3:15 pm for stocks with futures and options. This comes from NSE circulars and Zerodha’s market timings page.</li>
+<li>Zerodha explains that a stop-loss market (SL-M) order becomes a market order when the trigger is hit, so it fills at whatever price is available. A stop-loss (SL) order becomes a limit order, so if the price jumps past your limit price after the trigger, it can stay unfilled. A stop-loss order lasts only for the trading day. This comes from Zerodha’s support pages on stop-loss orders. Some order types are blocked for some products, so check Kite.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../03-chart-reading/05-breakouts/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../03-chart-reading/07-volume-and-what-it-adds/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../03-chart-reading/05-breakouts/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../03-chart-reading/07-volume-and-what-it-adds/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

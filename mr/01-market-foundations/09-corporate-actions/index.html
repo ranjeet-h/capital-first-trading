@@ -1,0 +1,387 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>कॉर्पोरेट ॲक्शन्स - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../01-market-foundations/09-corporate-actions/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../01-market-foundations/09-corporate-actions/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T1.9
+title: कॉर्पोरेट ॲक्शन्स
+page_type: Concept
+prerequisites: [T1.1, T1.4]
+labs: []
+estimated_minutes: 20
+-->
+<h1 id="कॉरपोरेट-ॲकशनस"><a class="header" href="#कॉरपोरेट-ॲकशनस">कॉर्पोरेट ॲक्शन्स</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>तुमच्याकडे Rs 1,000 भावाचे 100 शेअर्स आहेत. रात्रीत चार्टवर भाव Rs 500 दिसतो. हे 50% घसरल्यासारखे वाटते. हे एक काल्पनिक उदाहरण आहे. कंपनीने प्रत्येक शेअरचे दोन शेअर्स केले आहेत. आता तुमच्याकडे 200 शेअर्स आहेत. प्रत्येकाचे मूल्य सुमारे Rs 500 आहे. तुमच्या होल्डिंगचे एकूण मूल्य अजूनही Rs 1,00,000 आहे. चार्ट खाली आला, पण तुमचा तोटा झालेला नाही.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>कॉर्पोरेट ॲक्शन</strong> म्हणजे कंपनीने घेतलेला निर्णय, ज्यामुळे घडणारी घटना. ती कंपनीचे शेअर्स, शेअरचा भाव किंवा होल्डरना मिळणारी रोख रक्कम बदलते.</p>
+<ul>
+<li><strong>विभाजन (split):</strong> प्रत्येक जुन्या शेअरचे आणखी शेअर्स होतात. प्रत्येक नवा शेअर कमी भावाचा असतो. विभाजनाच्या क्षणी एकूण मूल्य बदलत नाही. “1:2 विभाजन” म्हणजे प्रत्येक शेअरचे दोन शेअर्स होतात.</li>
+<li><strong>बोनस इश्यू:</strong> कंपनी सांगितलेल्या प्रमाणात विद्यमान होल्डरना मोफत अतिरिक्त शेअर्स देते. “1:1 बोनस” म्हणजे तुमच्या प्रत्येक शेअरमागे एक अतिरिक्त शेअर. इश्यूच्या क्षणी एकूण मूल्य बदलत नाही.</li>
+<li><strong>लाभांश (dividend):</strong> तुमच्याकडील प्रत्येक शेअरमागे दिली जाणारी रोख रक्कम. एक्स-डेटला शेअरचा भाव लाभांशाच्या रकमेइतका साधारण खाली येतो. (11 नोव्हेंबर 2026 पर्यंत, एक्स-डेट आणि रेकॉर्ड डेटवरील Zerodha सहाय्य पान. नियम बदलतात, म्हणून एक्सचेंजचे संकेतस्थळ तपासा.)</li>
+<li><strong>राइट्स इश्यू:</strong> विद्यमान होल्डर ठरलेल्या भावात नवे शेअर्स खरेदी करू शकतात. कंपनीच्या ऑफर दस्तऐवजात कोण खरेदी करू शकते, किती शेअर्स, कोणत्या भावाने आणि कोणत्या तारखेपर्यंत, हे लिहिलेले असते. प्रत्येक राइट्स इश्यूसाठी त्या अटी वाचा, कारण त्या वेगळ्या असतात. हे प्रकरण SEBI च्या राइट्स इश्यू नियमांची शिकवण देत नाही.</li>
+</ul>
+<p><strong>महत्त्वाच्या तारखा.</strong> कंपनी घटनेची घोषणा करते. मग ती <strong>रेकॉर्ड डेट</strong> आणि <strong>एक्स-डेट</strong> ठरवते. <strong>रेकॉर्ड डेट</strong> म्हणजे ज्या दिवशी कंपनी मालकांची यादी तपासते. त्या दिवशी लाभ कोणाला मिळेल हे ठरते. एक्सचेंज रेकॉर्ड डेट पाळते. सेटलमेंट T+1 झाल्यापासून <strong>एक्स-डेट</strong> आणि रेकॉर्ड डेट एकाच दिवशी असतात. लाभ मिळवण्यासाठी त्या दिवसाच्या किमान एक ट्रेडिंग दिवस आधी खरेदी करावी लागते. बक्षीस यादीच्या अंतिम दिवसासारखे समजा: तुमचे नाव आधीच यादीत असले पाहिजे. 1 ऑक्टोबर 2024 रोजी किंवा नंतर घोषित झालेल्या बोनस इश्यूसाठी, बोनस शेअर्स रेकॉर्ड डेटनंतर एक कामाच्या दिवसाने जमा होतात आणि त्यानंतरच्या दिवशी व्यापार सुरू होतो. (11 नोव्हेंबर 2026 पर्यंत, 7 जुलै 2026 रोजी अद्ययावत झालेले NSE कॉर्पोरेट ॲक्शन्स FAQ, Zerodha सहाय्य, आणि 16 सप्टेंबर 2024 चे SEBI परिपत्रक. नियम बदलतात, म्हणून NSE संकेतस्थळ तपासा.)</p>
+<p><strong>गणिती सूत्रे, शब्दांत.</strong></p>
+<ul>
+<li>नवी शेअर संख्या = जुनी शेअर संख्या x गुणोत्तर. 1:2 विभाजनात गुणोत्तर 2 आहे.</li>
+<li>अंदाजे नवा भाव = जुना भाव भागिले त्याच गुणोत्तराने.</li>
+<li>होल्डिंगचे मूल्य = धरलेले शेअर्स x भाव, अधिक मिळालेली रोख रक्कम.</li>
+</ul>
+<p><strong>समायोजित आणि असमायोजित भाव.</strong></p>
+<ul>
+<li><strong>असमायोजित</strong> चार्ट दररोजचा खरा ट्रेडिंग भाव दाखवतो. विभाजन अचानक घसरण म्हणून दिसते.</li>
+<li><strong>समायोजित</strong> चार्ट विभाजन आणि बोनससाठी जुने भाव दुरुस्त करतो. रेषा गुळगुळीत राहते. टूल्स वेगळ्या पद्धतीने समायोजन करतात, आणि काही टूल्स लाभांशासाठी अजिबात समायोजन करत नाहीत. तुमच्या चार्टिंग टूलची सेटिंग तपासा. Zerodha म्हणते की Kite चार्टवर एक्स-डेटपासून कॉर्पोरेट ॲक्शन्स दिसतात.</li>
+</ul>
+<p><strong>घोषणा कुठून येतात.</strong> कंपनी आणि एक्सचेंज कॉर्पोरेट ॲक्शन्स प्रकाशित करतात. अधिकृत फाइलिंग वाचा. फॉरवर्ड केलेल्या सारांशावर अवलंबून राहू नका.</p>
+<p><strong>कॉर्पोरेट ॲक्शनवर भाव घसरणे म्हणजे विक्रीचा संकेत नाही.</strong> विभाजन किंवा एक्स-डेटची घसरण स्क्रीनवरील आकडा बदलते. एवढ्याने तुमच्या होल्डिंगचे मूल्य बदलत नाही.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>तक्त्यात प्रत्येक घटनेपूर्वी आणि नंतर एकच होल्डिंग दाखवले आहे. आकडे काल्पनिक आहेत.</p>
+<div class="table-wrapper"><table><thead><tr><th>घटना</th><th>आधी</th><th>नंतर</th><th>मूल्य तपासणी</th></tr></thead><tbody>
+<tr><td>विभाजन 1:2 (प्रत्येक शेअरचे दोन होतात)</td><td>100 शेअर्स, Rs 1,000 भावाने = Rs 1,00,000</td><td>200 शेअर्स, सुमारे Rs 500 भावाने</td><td>200 x 500 = Rs 1,00,000</td></tr>
+<tr><td>बोनस 1:1 (धरलेल्या प्रत्येक शेअरमागे एक मोफत शेअर)</td><td>100 शेअर्स, Rs 1,000 भावाने = Rs 1,00,000</td><td>200 शेअर्स, सुमारे Rs 500 भावाने</td><td>200 x 500 = Rs 1,00,000</td></tr>
+<tr><td>लाभांश Rs 10 प्रति शेअर (काल्पनिक)</td><td>100 शेअर्स, Rs 1,000 भावाने, रोख रक्कम नाही</td><td>100 शेअर्स, सुमारे Rs 990 भावाने, Rs 1,000 रोख</td><td>100 x 990 + 1,000 = Rs 1,00,000</td></tr>
+</tbody></table>
+</div>
+<p>मूल्य तपासणीचा स्तंभ पाहा. प्रत्येक ओळ एकाच एकूण आकड्यात संपते. हे बाजाराच्या हालचालीपूर्वी आणि कराआधीचे आहे. शेअर्सची संख्या आणि भाव बदलतात. होल्डिंगचे मूल्य बदलत नाही.</p>
+<!-- component: corporate-action-demo | action: split | shares: 100 | price: 1000 | ratio: 2 | caption: या प्रकरणातील Rs 1,000 भावाच्या 100 शेअर्सवरील 1:2 विभाजन. बोनस किंवा लाभांशावर बदला. भाव बदलतो, तुमच्या होल्डिंगचे मूल्य बदलत नाही. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p>हे काल्पनिक उदाहरण आहे, गोल आकड्यांसह.</p>
+<p><strong>विभाजन 1:2.</strong> तुमच्याकडे Rs 1,000 भावाचे 100 शेअर्स आहेत.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणित</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>आधीचे मूल्य</td><td>100 x 1,000</td><td>Rs 1,00,000</td></tr>
+<tr><td>नव्या शेअर्सची संख्या</td><td>100 x 2</td><td>200</td></tr>
+<tr><td>अंदाजे नवा भाव</td><td>1,000 / 2</td><td>सुमारे Rs 500</td></tr>
+<tr><td>नंतरचे मूल्य</td><td>200 x 500</td><td>Rs 1,00,000</td></tr>
+</tbody></table>
+</div>
+<p><strong>लाभांश Rs 10 प्रति शेअर (काल्पनिक).</strong> तुमच्याकडे Rs 1,000 भावाचे 100 शेअर्स आहेत.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणित</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>मिळालेली रोख रक्कम</td><td>100 x 10</td><td>Rs 1,000</td></tr>
+<tr><td>एक्स-डेटला अंदाजे नवा भाव</td><td>1,000 - 10</td><td>सुमारे Rs 990</td></tr>
+<tr><td>शेअर्सचे मूल्य</td><td>100 x 990</td><td>Rs 99,000</td></tr>
+<tr><td>एकूण मूल्य</td><td>99,000 + 1,000</td><td>Rs 1,00,000</td></tr>
+</tbody></table>
+</div>
+<p>हे बाजाराच्या हालचालीपूर्वी आणि कराआधीचे आहे. लाभांशावरील कर नफ्यावरील कराच्या प्रकरणात सांगितला आहे: <em>Taxes on trading profits</em>.</p>
+<p><strong>असमायोजित चार्ट.</strong> विभाजनाच्या दिवशी भाव Rs 1,000 वरून Rs 500 वर येतो. चार्टवरील घसरण (500 - 1,000) / 1,000 = -50% आहे. हा शेअर संख्या आणि भावातील बदल आहे. हा तोटा नाही.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<!-- component: corporate-action-demo | action: bonus | shares: 300 | price: 600 | ratio: 1 | caption: मार्गदर्शित सरावासाठी: 1:1 बोनससह Rs 600 भावाचे 300 शेअर्स. तुमचे उत्तर डेमोशी तपासा. -->
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> तुमच्याकडे Rs 600 भावाचे 300 शेअर्स आहेत. म्हणजे एकूण Rs 1,80,000. 1:1 बोनस घोषित झाला आहे. नवी शेअर संख्या आणि अंदाजे नवा भाव काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>प्रत्येक शेअरला एक मोफत शेअर मिळतो, म्हणून नवी संख्या = जुनी संख्या x 2.</li>
+<li>अंदाजे नवा भाव म्हणजे जुना भाव भागिले 2.</li>
+<li>नवी संख्या नव्या भावाने गुणा. त्यामुळे मूल्य तपासता येते.</li>
+</ol>
+<p><strong>उत्तर:</strong> सुमारे Rs 300 भावाने 600 शेअर्स. तपासणी: 600 x 300 = Rs 1,80,000.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> एका शेअरचा भाव Rs 900 आहे. तुमच्याकडे 50 शेअर्स आहेत. कंपनी 3:1 विभाजन जाहीर करते. प्रत्येक शेअरचे तीन होतात. नवी शेअर संख्या, अंदाजे नवा भाव आणि मूल्य काढा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>नवे शेअर्स: 50 x 3 = 150.</li>
+<li>अंदाजे नवा भाव: 900 / 3 = Rs 300.</li>
+<li>मूल्य: 150 x 300 = Rs 45,000. तपासणी: 50 x 900 = Rs 45,000.</li>
+</ul>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>पाच प्रश्न. ते विभाजनाची गणिते, लाभांशाचे मूल्य, असमायोजित चार्ट, आणि विभाजन किंवा लाभांशामुळे एकूण मूल्य बदलते का, हे तपासतात.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>पद्धत:</strong> शिकण्याची नोंद.</p>
+<ol>
+<li>एक्सचेंजच्या संकेतस्थळावर एका सूचिबद्ध कंपनीची जुनी कॉर्पोरेट ॲक्शन घोषणा शोधा.</li>
+<li>तिचा प्रकार, गुणोत्तर, रेकॉर्ड डेट आणि एक्स-डेट स्वतःच्या शब्दांत लिहा. ज्या तारखेची पडताळणी करता येत नाही ती चिन्हांकित करा.</li>
+<li>तुम्ही वापरत असलेला चार्ट समायोजित आहे की असमायोजित, ते तुमच्या प्लॅटफॉर्मच्या सेटिंगमध्ये तपासा.</li>
+<li>घोषणेवर आधारित कोणताही ट्रेडिंग निर्णय लिहू नका.</li>
+<li>तुमच्या नोंदी जर्नलमध्ये लिहा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>विभाजन किंवा बोनस झाल्याच्या क्षणी तुमच्या होल्डिंगचे मूल्य बदलत नाही.</li>
+<li>लाभांश नेहमी एकूण मूल्य वाढवतो असे नाही. एक्स-डेटला भाव समायोजित होतो. त्यावर बाजाराची हालचाल वर किंवा खाली होते.</li>
+<li>एक्स-डेट किंवा विभाजनावरील घसरण हा विक्रीचा संकेत नाही. केवळ घोषणा हे व्यापार करण्याचे कारण नाही.</li>
+<li>तारखा, गुणोत्तरे आणि राइट्सचे नियम अधिकृत फाइलिंगशी तपासा.</li>
+<li>लाभांशावरील कर <em>Taxes on trading profits</em> मध्ये सांगितला आहे, इथे नाही.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>विभाजन किंवा बोनसमुळे शेअर संख्या आणि भाव बदलतो. त्या क्षणी एकूण मूल्य तेच राहते.</li>
+<li>लाभांश म्हणजे प्रत्येक शेअरमागे रोख रक्कम. एक्स-डेटला भाव साधारण तेवढा खाली येतो.</li>
+<li>असमायोजित चार्ट विभाजननंतर खोटी कोसळण दाखवू शकतो.</li>
+<li>समायोजित चार्ट जुने भाव दुरुस्त करतो, म्हणून रेषा गुळगुळीत राहते.</li>
+<li>अधिकृत घोषणा वाचा, तिचा सारांश नव्हे.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p><strong>स्रोत:</strong></p>
+<ul>
+<li>SEBI चे LODR नियम.</li>
+<li>NSE चे कॉर्पोरेट ॲक्शन्स पान.</li>
+<li>BSE चे कॉर्पोरेट ॲक्शन्स पान.</li>
+<li>एक्सचेंज फाइलिंगवरील कंपन्यांच्या घोषणा.</li>
+</ul>
+<p><strong>11 नोव्हेंबर 2026 रोजी तपासलेली तथ्ये:</strong></p>
+<ul>
+<li>T+1 अंतर्गत रेकॉर्ड डेट आणि एक्स-डेट एकाच दिवशी असतात. एक्सचेंज रेकॉर्ड डेट पाळते, जी कंपन्या SEBI च्या लिस्टिंग नियमांनुसार ठरवतात (Regulation 42).</li>
+<li>बोनसच्या वेळेचा नियम SEBI परिपत्रक CIR/CFD/PoD/2024/122, 16 सप्टेंबर 2024 पासून लागू आहे.</li>
+<li>राइट्स इश्यूच्या अटी आणि चार्ट समायोजनाच्या पद्धती इथे तपासलेल्या नाहीत. प्रत्येक कंपनीचा ऑफर दस्तऐवज आणि तुमच्या चार्टिंग टूलची मदत पाने वाचा.</li>
+<li>लाभांशावरील कर इथे सांगितलेला नाही. <em>Taxes on trading profits</em> पाहा.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T1.9&amp;body=Page%3A%2001-market-foundations%2F09-corporate-actions%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../01-market-foundations/08-indices-nifty-sensex/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../01-market-foundations/10-market-participants-and-tips/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../01-market-foundations/08-indices-nifty-sensex/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../01-market-foundations/10-market-participants-and-tips/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

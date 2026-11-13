@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ऑर्डर बुक - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../04-kite-and-execution/07-order-book/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../04-kite-and-execution/07-order-book/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T4.7
+title: ऑर्डर बुक
+page_type: Kite walkthrough
+prerequisites: [T4.4, T4.5, T1.3]
+labs: [Lab 2, Lab 3]
+estimated_minutes: 20
+-->
+<h1 id="ऑरडर-बुक"><a class="header" href="#ऑरडर-बुक">ऑर्डर बुक</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>तुम्ही 10 शेअर्स खरेदी करण्यासाठी ऑर्डर देता. स्क्रीनवर 6 शेअर्स पूर्ण झाल्याचे दिसते, आणि तुम्हाला वाटते की ऑर्डर संपली. म्हणून तुम्ही ती ऑर्डर पुन्हा देता. तुमच्या पहिल्या ऑर्डरमधील 4 शेअर्स अजून उघडे आहेत, आणि दुसरी ऑर्डर आता आणखी 10 शेअर्सपर्यंत खरेदी करू शकते. तुमच्या योजनेपेक्षा जास्त शेअर्स तुमच्याकडे येऊ शकतात. Kite एकाच ऑर्डरचे चित्र अनेक दृश्यांमध्ये दाखवते. ही दृश्ये एकत्र वाचल्याने ही चूक टळते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>Kite एका ऑर्डरची माहिती अनेक ठिकाणी दाखवते. प्रत्येक ठिकाण त्या गोष्टीचा एक भाग सांगते.</p>
+<p><strong>ऑर्डर बुक (Order book).</strong> तुम्ही दिलेल्या प्रत्येक सूचनेची यादी, तिच्या स्थितीसह. वेबवर शेवटच्या स्थिती OPEN, COMPLETE, REJECTED आणि CANCELLED आहेत. मधल्या स्थितींमध्ये TRIGGER PENDING आणि AMO REQ RECEIVED येतात. “Executed” हे फोन अ‍ॅपमधील एका टॅबचे नाव आहे, स्थिती नव्हे.</p>
+<p><strong>ही माहिती कुठे पाहायची.</strong> वेबवर Orders पेजवर Orders, GTT, Baskets, SIPs आणि Alerts असे टॅब असतात. फोन अ‍ॅपमध्ये Orders विभागात Open, Executed आणि GTT असे टॅब असतात, आणि तुम्ही स्वाइप करून ते बदलता. तुमच्या स्वतःच्या अ‍ॅपमधील अचूक नावे शोधा.</p>
+<p><strong>नाकारलेल्या ऑर्डर.</strong> Kite एखादी ऑर्डर नाकारते तेव्हा कारण देते. वेबवर ऑर्डरच्या पर्याय मेन्यूमध्ये Info शोधा.</p>
+<p><strong>बास्केट्स (Baskets).</strong> बास्केट म्हणजे एकत्र दिलेल्या ऑर्डरचा गट. एका बास्केटमध्ये 20 ऑर्डरपर्यंत असू शकतात, आणि तुमच्याकडे 50 बास्केट्सपर्यंत असू शकतात. Execute केल्यावर ऑर्डर यादीत दिलेल्या क्रमाने दिल्या जातात. हा क्रम लागणारे मार्जिन बदलतो, पण शेवटी ब्लॉक होणारी अंतिम रक्कम बदलत नाही.</p>
+<p><strong>व्यापार बुक (Trade book).</strong> प्रत्येक एक्झिक्यूशनची यादी. एक्झिक्यूशनला फिल (fill) असेही म्हणतात. प्रत्येक ओळीत एक प्रमाण आणि एक भाव असतो. तुमच्या अ‍ॅपमध्ये trades दृश्य शोधा. वेबवरील त्याचे नाव एका स्क्रीनवरून दुसऱ्या स्क्रीनवर वेगळे असू शकते.</p>
+<p><strong>होल्डिंग्ज (Holdings).</strong> सेटलमेंटनंतर तुमच्या डिमॅट खात्यात असलेले शेअर्स. <em>डिमॅट खाती आणि सेटलमेंट (Demat accounts and settlement)</em> पाहा. CNC खरेदी तुम्ही ज्या दिवशी करता त्या दिवशी Positions मध्ये दिसते. पुढच्या ट्रेडिंग दिवसापासून ती Holdings मध्ये दिसते. शेअर्स तुमच्या डिमॅट खात्यात पोहोचेपर्यंत ते T1 होल्डिंग्ज म्हणून दिसतात.</p>
+<p><strong>पोझिशन्स (Positions).</strong> दिवसासाठी किंवा पुढे नेलेले, अजून उघडे असलेले व्यवहार. पोझिशनमध्ये प्रॉडक्ट (जसे CNC, MIS किंवा NRML), इंस्ट्रुमेंट, प्रमाण, सरासरी भाव, शेवटचा भाव आणि नफा किंवा तोटा दिसतो. कोणते व्यवहार इथे दिसतील, हे प्रॉडक्टच्या प्रकारावर अवलंबून असते.</p>
+<p><strong>फंड्स (Funds).</strong> वेबवर F दाबा आणि Funds उघडा. इथे उपलब्ध मार्जिन (नवीन व्यवहारांसाठी वापरता येणारे पैसे), वापरलेले मार्जिन (व्यवहारांमध्ये आणि उघड्या ऑर्डरमध्ये ब्लॉक केलेले पैसे) आणि उपलब्ध कॅश दिसते. Add funds आणि Withdraw ही बटणेही इथेच असतात.</p>
+<p><strong>खर्चाचे पूर्वावलोकन (Cost preview).</strong> ऑर्डर सबमिट करण्यापूर्वी दिसणारे अंदाजे शुल्क. वेबवर ऑर्डर विंडो लागणारे मार्जिन आणि तुमचे उपलब्ध मार्जिन दाखवते. त्यांच्या मध्ये शुल्क दिसू शकते, पण Zerodha मांडणी बदलू शकते. अंतिम शुल्क Console मध्ये, कॉन्ट्रॅक्ट नोटमध्ये आणि लेजरमध्ये असते.</p>
+<p><strong>डिलिव्हरी शेअर्स विकणे.</strong> तुमच्याकडे POA किंवा DDPI नसेल, तर डिलिव्हरी विक्रीपूर्वी Kite CDSL TPIN अधिकृतता मागते. POA किंवा DDPI ही परवानगी आहे, जी तुमच्या ब्रोकरला तुमच्या डिमॅट खात्यातून विक्री करू देते. TPIN ईमेल आणि SMS वर येतो. तुम्ही तो OTP सोबत टाकता. एक अधिकृतता एका दिवसासाठी चालते. वेबवर Holdings पेजवर Authorise बटण शोधा.</p>
+<p>अंशतः पूर्ण म्हणजे काही शेअर्स पूर्ण झाले आहेत आणि काही अजून प्रलंबित आहेत. अंशतः पूर्ण झालेली ऑर्डर संपलेली नसते. ती OPEN राहते, आणि पूर्ण झालेला भाग दिसतो. तिला पूर्ण मानू नका.</p>
+<p>जुळवणी म्हणजे सर्व दृश्ये एकमेकांशी जुळतात का ते तपासणे. ऑर्डरचे प्रमाण म्हणजे सर्व फिलच्या प्रमाणांची बेरीज. ती बेरीज होल्डिंग्ज किंवा पोझिशन्समधील बदलाइतकी असते. आकडे जुळले नाहीत, तर कृती करण्यापूर्वी थांबा आणि कारण शोधा.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> तुम्ही 10 शेअर्ससाठी खरेदी ऑर्डर देता. लिमिट भाव Rs 250 आहे आणि प्रॉडक्ट CNC आहे. दोन फिल होतात.</p>
+<div class="table-wrapper"><table><thead><tr><th>फिल</th><th>प्रमाण</th><th>भाव</th><th>मूल्य</th></tr></thead><tbody>
+<tr><td>1</td><td>6</td><td>Rs 249.80</td><td>6 x 249.80 = Rs 1,498.80</td></tr>
+<tr><td>2</td><td>4</td><td>Rs 250.00</td><td>4 x 250.00 = Rs 1,000.00</td></tr>
+<tr><td><strong>एकूण</strong></td><td><strong>10</strong></td><td></td><td><strong>Rs 2,498.80</strong></td></tr>
+</tbody></table>
+</div>
+<p>व्यापार बुकमध्ये दोन ओळी दिसतात. त्या मिळून 10 शेअर्स होतात.</p>
+<p>सरासरी भाव = एकूण मूल्य भागिले एकूण प्रमाण = 2,498.80 भागिले 10 = <strong>Rs 249.88</strong>.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: kite-flow | flow: check-orders-trades-positions-holdings,cancel-or-modify-an-order,sell-holdings-with-tpin,funds-and-margin | platform: web | caption: Kite मधील Orders, Trades, Positions आणि Holdings मधून एका ऑर्डरचा मागोवा घ्या, आणि ऑर्डर रद्द करणे, विक्रीसाठी अधिकृतता देणे आणि फंड्स तपासण्याचे क्लिक शिका. सराव Zerodha डेमोमध्ये किंवा फक्त नकली डेटासह करा. स्क्रीन आणि बटणांची नावे बदलू शकतात, म्हणून Kite च्या मदत पेजेस तपासा. -->
+<p>ही ऑर्डर ऑर्डर बुकपासून व्यापार बुकपर्यंत, मग होल्डिंग्ज आणि पोझिशन्सपर्यंत पाहा. दृश्यांमध्ये कोणते आकडे जुळतात ते पाहा. अजून प्रलंबित असलेले प्रमाण शोधा.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> वरील सोडवलेले उदाहरण जुळवा. एकूण प्रमाण, एकूण मूल्य आणि सरासरी भाव शोधा.</p>
+<p>संकेत:</p>
+<ol>
+<li>फिलची प्रमाणे बेरीज करा.</li>
+<li>प्रत्येक फिलला त्याच्या भावाने गुणा.</li>
+<li>एकूण मूल्याला एकूण प्रमाणाने भागा.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>एकूण प्रमाण: 6 + 4 = <strong>10 शेअर्स</strong>.</li>
+<li>एकूण मूल्य: Rs 1,498.80 + Rs 1,000.00 = Rs 2,498.80.</li>
+<li>सरासरी भाव: Rs 2,498.80 / 10 = <strong>Rs 249.88</strong>.</li>
+</ul>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> <strong>काल्पनिक.</strong> तुम्ही 20 शेअर्सची ऑर्डर देता. 15 शेअर्स Rs 402 ला पूर्ण होतात. बाकीचे 5 शेअर्स अजून प्रलंबित आहेत. पूर्ण झालेले मूल्य आणि सरासरी भाव काढा. मग या क्षणी प्रत्येक दृश्यात काय दिसायला हवे ते लिहा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>पूर्ण झालेले मूल्य: 15 x 402 = <strong>Rs 6,030</strong>.</li>
+<li>सरासरी भाव: 6,030 / 15 = <strong>Rs 402.00</strong>.</li>
+<li>ऑर्डर बुक: अंशतः पूर्ण, 5 शेअर्स अजून प्रलंबित. ऑर्डर OPEN राहते.</li>
+<li>व्यापार बुक: एकूण 15 शेअर्सचे फिल.</li>
+<li>होल्डिंग्ज किंवा पोझिशन्स: 15 पेक्षा जास्त नाही, कारण फक्त 15 पूर्ण झाले आहेत. नवीन शेअर्स कधी दिसतात ते तुमच्या अ‍ॅपमध्ये तपासा.</li>
+<li>खर्चाचे पूर्वावलोकन: अंदाज. ते अंतिम शुल्क नाही.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>हे प्रकरण फिलचे गणित, प्रत्येक दृश्य काय दाखवते आणि अंशतः पूर्ण झालेली ऑर्डर अजून का संपलेली नसते, हे तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> कागदी काम (paper). लिखित कामासाठी paper मोड वापरा. <code>kite_demo</code> फक्त स्क्रीन वाचण्यासाठी वापरा. ते तुमच्या जर्नलमध्ये नोंदवा (जर्नल अ‍ॅप तयार होईपर्यंत कागदावर).</p>
+<ol>
+<li>एका लहान ऑर्डरसाठी आधी कागदावर लिमिट भाव लिहा.</li>
+<li>Orders मध्ये ती ऑर्डर कशी दिसेल ते लिहा: तिची स्थिती, प्रमाण आणि भाव. ऑर्डर देऊ नका.</li>
+<li>ऑर्डर बुक, व्यापार बुक, होल्डिंग्ज आणि पोझिशन्समध्ये ती कशी दिसेल ते लिहा.</li>
+<li>सबमिट करण्यापूर्वी तुम्हाला दिसेल असे खर्चाचे पूर्वावलोकन लिहा.</li>
+<li>लिहिलेल्या पूर्वावलोकनाची अंतिम शुल्काशी तुलना करा. खऱ्या ऑर्डरचे अंतिम शुल्क Console मध्ये असते.</li>
+<li>एक ओळ लिहा: चारही दृश्ये जुळली का?</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>अंशतः पूर्ण झालेली ऑर्डर संपलेली नसते. पुन्हा कृती करण्यापूर्वी ऑर्डर बुक तपासा.</li>
+<li>प्रलंबित ऑर्डरवर सरासरी कमी करू नका. घसरणाऱ्या होल्डिंगमधील सरासरी भाव कमी करण्यासाठी आणखी खरेदी करणे ही चूक आहे (<em>स्कॅल्पिंग, ऑप्शन खरेदी आणि मार्टिंगेल धोकादायक का आहेत</em>).</li>
+<li>खर्चाचे पूर्वावलोकन हा अंदाज आहे. ते तुमचा अंतिम खर्च म्हणून वापरू नका.</li>
+<li>डेमो डेटा नकली आहे. डेमो फक्त पाहण्यासाठी आहे, त्यात खरे फिल नसतात. तो लाइव्ह फिलसारखा कसा दिसेल ते दाखवू शकत नाही.</li>
+<li>डिलिव्हरी शेअर्सची विक्री TPIN अधिकृतता, DDPI किंवा POA शिवाय अयशस्वी होऊ शकते. विक्रीपूर्वी हे तपासा.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>ऑर्डर बुक प्रत्येक सूचना आणि तिची स्थिती दाखवते.</li>
+<li>व्यापार बुक प्रत्येक फिल त्याच्या प्रमाण आणि भावासह दाखवते.</li>
+<li>होल्डिंग्ज म्हणजे सेटलमेंटनंतरचे शेअर्स. पोझिशन्स प्रॉडक्टच्या प्रकारावर अवलंबून असतात.</li>
+<li>अंशतः पूर्ण झालेली ऑर्डर अजून उघडी असते. प्रलंबित प्रमाण तपासा.</li>
+<li>दृश्यांची जुळवणी करा. आकडे वेगळे असतील, तर कृती करण्यापूर्वी कारण शोधा.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Zerodha सपोर्ट पेजेस: ऑर्डर स्थिती, व्यापार बुक, होल्डिंग्ज आणि CDSL TPIN अधिकृतता. तिथे सध्याची लेबले तपासा.</li>
+<li>Zerodha शुल्क पेज (सध्याचे दर तिथे तपासा)</li>
+</ul>
+<!-- facts-needed: Kite order status labels; display timing of holdings after settlement; how Kite lists positions; cost preview accuracy; where the final charge statement is shown; contract note availability. -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T4.7&amp;body=Page%3A%2004-kite-and-execution%2F07-order-book%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../04-kite-and-execution/06-gtt-orders/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../04-kite-and-execution/08-execution-mistakes/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../04-kite-and-execution/06-gtt-orders/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../04-kite-and-execution/08-execution-mistakes/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

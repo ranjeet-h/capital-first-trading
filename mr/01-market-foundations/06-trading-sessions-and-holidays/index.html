@@ -1,0 +1,404 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ट्रेडिंग सत्रे, वेळा आणि सुट्ट्या - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../01-market-foundations/06-trading-sessions-and-holidays/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../01-market-foundations/06-trading-sessions-and-holidays/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T1.6
+title: ट्रेडिंग सत्रे, वेळा आणि सुट्ट्या
+page_type: Concept
+prerequisites: [T1.3, T1.4]
+labs: []
+estimated_minutes: 15
+-->
+<h1 id="टरेडिंग-सतरे-वेळा-आणि-सुटटया"><a class="header" href="#टरेडिंग-सतरे-वेळा-आणि-सुटटया">ट्रेडिंग सत्रे, वेळा आणि सुट्ट्या</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>शुक्रवारी संध्याकाळी एक शेअर Rs 400 ला बंद होतो. तुम्ही एक योजना लिहिता. शेअर Rs 400 च्या वर राहिला, तर पुढच्या ट्रेडिंग दिवशी खरेदी कराल. ही एक काल्पनिक उदाहरण आहे. सोमवार हा एक्सचेंजची सुट्टी आहे, त्यामुळे तुमची ऑर्डर मंगळवारपर्यंत थांबते. मंगळवारचा ओपनिंग भाव Rs 400 पासून खूप दूर असू शकतो. त्या वेळी काय करायचे ते तुमच्या योजनेत लिहिलेले असले पाहिजे. अनेक नवशिक्या कॅलेंडरकडे दुर्लक्ष करतात.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>ट्रेडिंग दिवस म्हणजे एकच सलग वेळ नसते. त्यात टप्पे असतात. प्रत्येक टप्पा ऑर्डर वेगळ्या पद्धतीने हाताळतो.</p>
+<ul>
+<li><strong>प्री-ओपन:</strong> ऑर्डर गोळा केल्या जातात. सतत ट्रेडिंग सुरू होण्यापूर्वी ओपनिंग भाव ठरवला जातो. NSE वर हा टप्पा सकाळी 9:00 ते 9:15 असा चालतो. पहिल्या काही मिनिटांत ऑर्डर घेतल्या जातात. मग एक्सचेंज त्या जुळवते, आणि सकाळी 9:15 वाजता सामान्य बाजार सुरू होतो. प्री-ओपनमध्ये सापडलेला भाव हा त्या दिवसाचा ओपनिंग भाव बनतो. भाव सापडला नाही, तर सामान्य बाजारातील पहिला व्यापार हा ओपन मानला जातो. (11 नोव्हेंबर 2026 पर्यंत, NSE ची प्री-ओपन पाने आणि 2026 ची NSE परिपत्रके. वेळा बदलतात, म्हणून NSE संकेतस्थळ तपासा.)</li>
+<li><strong>सतत ट्रेडिंग:</strong> ऑर्डर येताच जुळवल्या जातात. हे <em>ऑर्डर जुळवणी, स्प्रेड आणि लिक्विडिटी</em> मध्ये सांगितले आहे.</li>
+<li><strong>क्लोजिंग सत्र:</strong> दिवसाच्या शेवटी जवळ एक क्लोजिंग भाव ठरवला जातो. NSE ने 3 ऑगस्ट 2026 पासून क्लोजिंग ऑक्शन सत्र सुरू केले. त्याची सुरुवात फ्युचर्स आणि ऑप्शन्स असलेल्या शेअर्सपासून झाली. त्या शेअर्ससाठी सामान्य बाजार दुपारी 3:15 ला बंद झाल्यावर हे सत्र चालते. दुपारी 3:00 ते 3:15 या काळातील व्यापारांवरून एक संदर्भ भाव घेतला जातो. त्या संदर्भ भावाच्या 3% च्या आत ऑर्डर मग देता येतात. क्लोजिंग भाव म्हणजे जिथे सर्वाधिक शेअर्सचा व्यापार होऊ शकतो तो भाव. इतर शेअर्स जुन्या क्लोजिंग पद्धतीनेच चालतात, आणि त्यांचा सामान्य बाजार दुपारी 3:30 पर्यंत चालतो. (11 नोव्हेंबर 2026 पर्यंत, NSE चे क्लोजिंग ऑक्शन सत्राचे पान आणि NSE परिपत्रके. NSE यात आणखी शेअर्स जोडू शकते, म्हणून NSE संकेतस्थळ तपासा.)</li>
+</ul>
+<p><strong>ऑक्शन.</strong> प्री-ओपन आणि क्लोजिंग टप्प्यांत अनेक ऑर्डर एकाच भावावर जुळवल्या जातात. सोप्या शब्दांत, एक्सचेंज सर्वाधिक शेअर्सचा व्यापार होऊ शकेल असा भाव निवडते. एखाद्या गावातील लिलावाचा विचार करा, जिथे विक्रेता आणि खरेदीदार शेवटी एका भावावर सहमत होतात. (11 नोव्हेंबर 2026 पर्यंत, NSE ची प्री-ओपन पाने.)</p>
+<p><strong>बाजाराच्या वेळा</strong> एक्सचेंज ठरवते. विशेष सत्रांमध्ये त्या वेगळ्या असू शकतात. पुढील तक्त्यात 11 नोव्हेंबर 2026 रोजी लागू असलेल्या वेळा दिल्या आहेत. त्यावर अवलंबून राहण्यापूर्वी NSE संकेतस्थळ तपासा, कारण त्या या वर्षी बदलल्या आहेत.</p>
+<p><strong>सुट्ट्या.</strong> एक्सचेंज दरवर्षी सुट्ट्यांची यादी प्रकाशित करते. त्या दिवशी ट्रेडिंग होत नाही. NSE च्या 2026 च्या यादीत आठवड्याच्या दिवशी येणाऱ्या 16 सुट्ट्या आहेत. त्यातील एक, 15 जानेवारी, पहिली यादी प्रकाशित झाल्यानंतर जोडली गेली. त्या वेळांच्या तक्त्याखाली दिल्या आहेत. (11 नोव्हेंबर 2026 पर्यंत, NSE चे 12 डिसेंबर 2025 चे परिपत्रक. कोणताही बदल असल्यास NSE संकेतस्थळ तपासा.)</p>
+<p><strong>विशेष सत्रे.</strong> एक्सचेंज काही दिवशी विशेष सत्राची घोषणा करू शकते. उदाहरणार्थ, दिवाळीसाठी रविवार 8 नोव्हेंबर 2026 रोजी एक विशेष मुहूर्त ट्रेडिंग सत्र झाले. (11 नोव्हेंबर 2026 पर्यंत, NSE चे 19 ऑक्टोबर 2026 चे परिपत्रक. नवीन सत्रांसाठी NSE संकेतस्थळ तपासा.)</p>
+<p><strong>शनिवार आणि रविवार</strong> हे ट्रेडिंग नसलेले दिवस आहेत.</p>
+<p><strong>पुढचे सत्र कसे शोधावे.</strong> तुमच्या सुरुवातीच्या दिवसानंतरच्या दिवसापासून सुरुवात करा. शनिवार आणि रविवार वगळा. एक्सचेंजच्या सुट्ट्या वगळा. जो पहिला दिवस तुम्ही वगळला नाही, तोच पुढचे सत्र आहे.</p>
+<p><strong>बाजार बंद झाल्यानंतरचे निर्णय.</strong> बाजार बंद झाल्यानंतर तुम्ही निर्णय घेतला, तर तुमची ऑर्डर पुढच्या सत्रात जाते. ते सत्र तुमच्या योजनेत वापरलेल्या क्लोजपेक्षा वेगळ्या भावावर उघडू शकते. या गॅपबद्दल <em>स्लिपेज, गॅप आणि नियोजित विरुद्ध प्रत्यक्ष जोखीम</em> मध्ये सांगितले आहे.</p>
+<p><strong>बाजार बंद असताना दिलेल्या ऑर्डर</strong> तुमच्या ब्रोकर आणि एक्सचेंजच्या नियमांनुसार चालतात. काही ब्रोकर पुढच्या सत्रासाठी ऑर्डर रांगेत ठेवू देतात, तर काही देत नाहीत. क्लोजनंतर दिलेल्या ऑर्डर तुमचा ब्रोकर कशा हाताळतो हे त्याच्या मदत पानांवर तपासा.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>पहिला तक्ता एका आठवड्यात एक सुट्टी दाखवतो. ही सुट्टी सरावासाठी बनवलेली आहे. दुसरा तक्ता एका ट्रेडिंग दिवसाचे टप्पे दाखवतो. वेळा NSE कडून घेतल्या आहेत आणि 11 नोव्हेंबर 2026 रोजी तपासल्या आहेत.</p>
+<div class="table-wrapper"><table><thead><tr><th>दिवस</th><th>ट्रेडिंग?</th><th>नोंद</th></tr></thead><tbody>
+<tr><td>सोमवार</td><td>नाही</td><td>एक्सचेंजची सुट्टी (सरावासाठी बनवलेली)</td></tr>
+<tr><td>मंगळवार</td><td>होय</td><td>सुट्टीनंतरचे पहिले सत्र</td></tr>
+<tr><td>बुधवार</td><td>होय</td><td></td></tr>
+<tr><td>गुरुवार</td><td>होय</td><td></td></tr>
+<tr><td>शुक्रवार</td><td>होय</td><td></td></tr>
+<tr><td>शनिवार</td><td>नाही</td><td>आठवड्याचा शेवट</td></tr>
+<tr><td>रविवार</td><td>नाही</td><td>आठवड्याचा शेवट</td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th>टप्पा</th><th>काय होते</th><th>वेळ</th></tr></thead><tbody>
+<tr><td>प्री-ओपन</td><td>ऑर्डर गोळा होतात; ओपनिंग भाव ठरतो</td><td>सकाळी 9:00 ते 9:15</td></tr>
+<tr><td>सतत ट्रेडिंग</td><td>ऑर्डर येताच जुळवल्या जातात</td><td>बहुतेक शेअर्ससाठी सकाळी 9:15 ते दुपारी 3:30. फ्युचर्स आणि ऑप्शन्स असलेल्या शेअर्ससाठी सकाळी 9:15 ते दुपारी 3:15</td></tr>
+<tr><td>क्लोजिंग सत्र</td><td>क्लोजिंग भाव ठरतो</td><td>फ्युचर्स आणि ऑप्शन्स असलेल्या शेअर्ससाठी पहिल्या टप्प्यात दुपारी 3:15 ते 3:35</td></tr>
+<tr><td>पोस्ट-क्लोज</td><td>क्लोजिंग भावावर व्यापार होतात</td><td>दुपारी 3:50 ते 4:00</td></tr>
+</tbody></table>
+</div>
+<p>(11 नोव्हेंबर 2026 पर्यंत, NSE ची प्री-ओपन आणि क्लोजिंग ऑक्शन पाने आणि 2026 ची NSE परिपत्रके. वेळा बदलतात, म्हणून NSE संकेतस्थळ तपासा. फ्युचर्स आणि ऑप्शन्स विभाग दुपारी 3:40 पर्यंत चालतो.)</p>
+<p>NSE च्या 12 डिसेंबर 2025 च्या यादीनुसार, 2026 मधील आठवड्याच्या दिवशी येणाऱ्या ट्रेडिंग सुट्ट्या:</p>
+<div class="table-wrapper"><table><thead><tr><th>तारीख</th><th>वार</th><th>सुट्टी</th></tr></thead><tbody>
+<tr><td>15 जानेवारी</td><td>गुरुवार</td><td>महाराष्ट्र महापालिका निवडणुका (पहिल्या यादीनंतर जोडली; NSE संकेतस्थळावर खात्री करा)</td></tr>
+<tr><td>26 जानेवारी</td><td>सोमवार</td><td>प्रजासत्ताक दिन</td></tr>
+<tr><td>3 मार्च</td><td>मंगळवार</td><td>होळी</td></tr>
+<tr><td>26 मार्च</td><td>गुरुवार</td><td>श्रीराम नवमी</td></tr>
+<tr><td>31 मार्च</td><td>मंगळवार</td><td>महावीर जयंती</td></tr>
+<tr><td>3 एप्रिल</td><td>शुक्रवार</td><td>गुड फ्रायडे</td></tr>
+<tr><td>14 एप्रिल</td><td>मंगळवार</td><td>डॉ. बाबासाहेब आंबेडकर जयंती</td></tr>
+<tr><td>1 मे</td><td>शुक्रवार</td><td>महाराष्ट्र दिन</td></tr>
+<tr><td>28 मे</td><td>गुरुवार</td><td>बकरी ईद</td></tr>
+<tr><td>26 जून</td><td>शुक्रवार</td><td>मोहरम</td></tr>
+<tr><td>14 सप्टेंबर</td><td>सोमवार</td><td>गणेश चतुर्थी</td></tr>
+<tr><td>2 ऑक्टोबर</td><td>शुक्रवार</td><td>महात्मा गांधी जयंती</td></tr>
+<tr><td>20 ऑक्टोबर</td><td>मंगळवार</td><td>दसरा</td></tr>
+<tr><td>10 नोव्हेंबर</td><td>मंगळवार</td><td>दिवाळी-बलिप्रतिपदा</td></tr>
+<tr><td>24 नोव्हेंबर</td><td>मंगळवार</td><td>गुरू नानक जयंती</td></tr>
+<tr><td>25 डिसेंबर</td><td>शुक्रवार</td><td>ख्रिसमस</td></tr>
+</tbody></table>
+</div>
+<p>काही इतर सुट्ट्या आठवड्याच्या शेवटी येतात, त्यामुळे ट्रेडिंगचा कोणताही दिवस खर्च होत नाही: रविवार 15 फेब्रुवारी रोजी महाशिवरात्री, शनिवार 21 मार्च रोजी ईद-उल-फित्र, शनिवार 15 ऑगस्ट रोजी स्वातंत्र्य दिन आणि रविवार 8 नोव्हेंबर रोजी दिवाळी लक्ष्मीपूजन. (11 नोव्हेंबर 2026 पर्यंत, NSE चे 12 डिसेंबर 2025 चे परिपत्रक. तारखा बदलू शकतात, म्हणून NSE संकेतस्थळ तपासा.)</p>
+<!-- component: session-clock | caption: ट्रेडिंग दिवसाचे टप्पे. रुंदी प्रमाणात नाही आणि घड्याळाच्या वेळा दाखवलेल्या नाहीत. खऱ्या वेळांसाठी एक्सचेंज तपासा. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p>ही एक काल्पनिक योजना आहे. शुक्रवारचा क्लोज Rs 400 आहे. एका बनवलेल्या सुट्ट्यांच्या यादीत सोमवार ही सुट्टी आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>दिवस</th><th>ट्रेडिंग दिवस?</th><th>काय होते</th></tr></thead><tbody>
+<tr><td>1</td><td>शुक्रवार</td><td>होय</td><td>बाजार बंद झाल्यावर योजना लिहिली जाते</td></tr>
+<tr><td>2</td><td>शनिवार</td><td>नाही</td><td>आठवड्याचा शेवट</td></tr>
+<tr><td>3</td><td>रविवार</td><td>नाही</td><td>आठवड्याचा शेवट</td></tr>
+<tr><td>4</td><td>सोमवार</td><td>नाही</td><td>बनवलेली सुट्टी</td></tr>
+<tr><td>5</td><td>मंगळवार</td><td>होय</td><td>पुढचे सत्र. योजनेची ऑर्डर इथे दिली जाते</td></tr>
+</tbody></table>
+</div>
+<p>शुक्रवारपासून मंगळवारपर्यंतचे कॅलेंडर दिवस मोजा. शनिवार 1. रविवार 2. सोमवार 3. मंगळवार 4. म्हणजे 4 कॅलेंडर दिवस. पण त्या कालावधीत फक्त एकच ट्रेडिंग दिवस येतो, आणि तो मंगळवार आहे.</p>
+<p>तुमची योजना Rs 400 क्लोज वापरत असेल, तर मंगळवारचा ओपनिंग भाव Rs 400 च्या खूप वर किंवा खूप खाली असू शकतो. अशा वेळी काय करायचे ते तुमच्या योजनेत लिहिलेले असले पाहिजे.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<!-- component: next-session-finder | startDay: 4 | holidayAfter: 3 | caption: प्रकरणातील बनवलेला आठवडा: शुक्रवारच्या क्लोजनंतरची योजना, ज्यात सोमवार सुट्टी आहे. सरावाच्या उदाहरणांसाठी दिवसांवर टॅप करा. -->
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> एका बनवलेल्या सुट्ट्यांच्या यादीत शुक्रवार सुट्टी आहे. गुरुवारनंतर सुरुवात करा. पुढचे तीन ट्रेडिंग दिवस शोधा.</p>
+<p>संकेत:</p>
+<ol>
+<li>गुरुवारनंतरचे दिवस क्रमाने लिहा.</li>
+<li>शनिवार आणि रविवार वगळा.</li>
+<li>बनवलेली सुट्टी वगळा, जी शुक्रवार आहे.</li>
+</ol>
+<p><strong>उत्तर:</strong> त्यानंतरच्या आठवड्यातील सोमवार, मंगळवार आणि बुधवार.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> तीन उदाहरणे. प्रत्येकाची स्वतःची बनवलेली सुट्ट्यांची यादी आहे. प्रत्येकासाठी पुढचे ट्रेडिंग सत्र शोधा.</p>
+<p>a. व्यापाराची तारीख मंगळवार आहे. बुधवार ही बनवलेली सुट्टी आहे.
+b. व्यापाराची तारीख शुक्रवार आहे. सोमवार आणि मंगळवार ही बनवलेली सुट्टी आहेत.
+c. व्यापाराची तारीख शुक्रवार आहे. कोणतीही बनवलेली सुट्टी नाही.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>a. बुधवार सुट्टी असल्यामुळे पुढचे सत्र गुरुवार आहे.
+b. शनिवार आणि रविवार हे आठवड्याचे शेवटचे दिवस आहेत. सोमवार आणि मंगळवार सुट्ट्या आहेत. पुढचे सत्र बुधवार आहे.
+c. शनिवार आणि रविवार हे आठवड्याचे शेवटचे दिवस आहेत. सोमवारला सुट्टी नाही, त्यामुळे पुढचे सत्र सोमवार आहे.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>पाच प्रश्न. ते ट्रेडिंग दिवसाच्या टप्प्यांचा क्रम, पुढचे सत्र शोधणे, आठवड्याचे शेवटचे दिवस, प्री-ओपन आणि क्लोजिंग भाव, आणि सुट्टीवरील गॅप जोखीम यावर आहेत.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>पद्धत:</strong> शिकण्याची नोंद.</p>
+<ol>
+<li>चालू वर्षासाठी NSE ची अधिकृत सुट्ट्यांची यादी शोधा.</li>
+<li>ती यादी तुमच्या जर्नलमध्ये स्रोताच्या लिंकसह आणि कॉपी केल्याच्या तारखेसह लिहा.</li>
+<li>त्या यादीचा वापर करून आजपासूनचे पुढचे 10 ट्रेडिंग दिवस लिहा. आठवड्याचे शेवटचे दिवस आणि यादीतील सुट्ट्या वगळा.</li>
+<li>एक ओळ लिहा, ज्यात तुम्ही काय तपासले आणि कुठे तपासले ते सांगा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>टप्पे, वेळा, सुट्ट्या आणि विशेष सत्रे बदलू शकतात. येथील वेळा 11 नोव्हेंबर 2026 रोजी तपासल्या होत्या. त्यावर अवलंबून राहण्यापूर्वी NSE संकेतस्थळ पुन्हा तपासा.</li>
+<li>मागील वर्षाची सुट्ट्यांची यादी ही या वर्षाची यादी नसते.</li>
+<li>पुढचे सत्र कोणते आहे हे माहीत असणे म्हणजे त्यात तुम्हाला मिळणारा भाव माहीत असणे नव्हे.</li>
+<li>विशेष सत्रांमुळे सामान्य वेळा बदलू शकतात.</li>
+<li>एका क्लोजवर आधारित स्टॉप किंवा योजना आठवड्याच्या शेवटी किंवा सुट्टीनंतर खूप वेगळ्या ओपनिंग भावाला सामोरी जाऊ शकते. याला गॅप जोखीम म्हणतात. <em>स्लिपेज, गॅप आणि नियोजित विरुद्ध प्रत्यक्ष जोखीम</em> पाहा.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>ट्रेडिंग दिवसाचे टप्पे असतात. प्रत्येक टप्पा ऑर्डर वेगळ्या पद्धतीने हाताळतो.</li>
+<li>आठवड्याचे शेवटचे दिवस ट्रेडिंग नसलेले दिवस आहेत. सुट्ट्या ट्रेडिंग दिवस कमी करतात.</li>
+<li>पुढचे सत्र शोधण्यासाठी: आठवड्याचे शेवटचे दिवस वगळा, मग सुट्ट्या वगळा.</li>
+<li>प्री-ओपन भाव आणि क्लोजिंग भाव हे वेगवेगळे टप्पे आहेत. ते एकसारखे मानू नका.</li>
+<li>मोठ्या सुट्टीचा किंवा लांबच्या आठवड्याच्या शेवटचा समावेश असलेल्या योजनेत, पुढचा ओपन क्लोजपासून खूप दूर असेल तर काय करायचे ते लिहिलेले असले पाहिजे.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p>स्रोत:</p>
+<ul>
+<li>NSE ची बाजाराच्या वेळा आणि सुट्ट्यांची पाने.</li>
+<li>NSE ची परिपत्रके.</li>
+<li>BSE ची वेळांची पाने.</li>
+<li>बाजाराच्या वेळांवरील Zerodha सहाय्य पान, संदर्भासाठी.</li>
+</ul>
+<p><strong>11 नोव्हेंबर 2026 रोजी तपासलेली तथ्ये:</strong></p>
+<ul>
+<li>प्री-ओपनच्या वेळा (सकाळी 9:00 ते 9:15) आणि प्री-ओपन भाव ओपन होतो हा नियम NSE च्या प्री-ओपन पानावरून आणि 2026 च्या NSE परिपत्रकांवरून घेतले आहेत. प्री-ओपनच्या नव्या पायऱ्या 7 सप्टेंबर 2026 पासून लागू झाल्या.</li>
+<li>क्लोजिंग ऑक्शन सत्र 3 ऑगस्ट 2026 रोजी सुरू झाले (पहिला टप्पा, डेरिव्हेटिव्ह्ज असलेले शेअर्स). त्याच्या वेळा, 3% भाव मर्यादा आणि संदर्भ भाव NSE च्या क्लोजिंग ऑक्शन पानावरून आणि SEBI च्या 16 जानेवारी 2026 च्या परिपत्रकावरून घेतले आहेत.</li>
+<li>सामान्य बाजार बंद होणे (दुपारी 3:30, किंवा डेरिव्हेटिव्ह्ज असलेल्या शेअर्ससाठी दुपारी 3:15), पोस्ट-क्लोज सत्र (दुपारी 3:50 ते 4:00) आणि डेरिव्हेटिव्ह्ज बंद होण्याची वेळ (दुपारी 3:40) NSE आणि Zerodha च्या बाजाराच्या वेळांच्या पानावरून घेतले आहेत.</li>
+<li>2026 ची सुट्ट्यांची यादी आणि मुहूर्त सत्र NSE च्या 12 डिसेंबर 2025 आणि 19 ऑक्टोबर 2026 च्या परिपत्रकांवरून घेतले आहेत.</li>
+<li>क्लोजनंतर दिलेल्या ऑर्डर ब्रोकर कशा हाताळतात हे तपासलेले नाही. तुमच्या ब्रोकरची मदत पाने पाहा.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T1.6&amp;body=Page%3A%2001-market-foundations%2F06-trading-sessions-and-holidays%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../01-market-foundations/05-order-matching-spread-liquidity/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../01-market-foundations/07-circuit-limits-and-halts/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../01-market-foundations/05-order-matching-spread-liquidity/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../01-market-foundations/07-circuit-limits-and-halts/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

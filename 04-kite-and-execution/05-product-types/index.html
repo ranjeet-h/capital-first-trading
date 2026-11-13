@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Product types - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/04-kite-and-execution/05-product-types/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T4.5
+title: Product types
+page_type: Kite walkthrough
+prerequisites: [T4.4, T1.3, T2.13]
+labs: [Lab 2]
+estimated_minutes: 20
+-->
+<h1 id="product-types"><a class="header" href="#product-types">Product types</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Two traders buy 10 shares at Rs 250. Both plan to hold for three weeks. One of them picks the product type meant for a same-day trade. A product type is one setting on the order screen. It tells the broker how long the trade is meant to last. This chapter shows how to read that setting before you submit an order.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>A product type tells the broker how long a trade is meant to last. It also tells the broker how the trade is settled. Settlement is the step where shares and money change hands after a trade. See <em>Demat accounts and settlement</em>.</p>
+<p>Kite names its products like this. Look for these names, or the same choices, in your own app.</p>
+<p><strong>CNC (Longterm, delivery).</strong> CNC stands for cash and carry. You pay the full price for the shares. There is no leverage, which means no borrowed money. Kite does not close a CNC holding for you. A CNC buy shows in Positions on the day you buy. From the next trading day it shows in Holdings. A CNC holding can stay overnight, for weeks or longer. If you buy and sell the same share on the same day under CNC, Zerodha treats it as an intraday trade for brokerage.</p>
+<p><strong>MIS (Intraday, margin).</strong> MIS stands for margin intraday square-off. The position is meant to close within the same trading day. It uses margin, which is borrowed money that lets you control more shares than your cash alone would buy. That is leverage. See <em>Leverage and margin</em>. This book explains MIS as theory only. It does not teach MIS practice.</p>
+<p><strong>NRML (Overnight).</strong> NRML is used for futures and options (F&amp;O). You can hold these positions until expiry. There is no intraday leverage.</p>
+<p><strong>MTF (Margin Trading Facility).</strong> MTF is a separate product where Zerodha funds part of a share purchase. Kite lists it, but this book does not teach it.</p>
+<p><strong>Cover (CO)</strong> is an order type, not a product. It is covered in <em>Order types</em>.</p>
+<p>On the phone app, the product is a tick box named Intraday. Tick it for MIS. Untick it for delivery (CNC).</p>
+<p><strong>Auto square-off.</strong> Zerodha closes open MIS positions at a set time, without any action from you. Kite’s support page gives these times:</p>
+<ul>
+<li>Stocks in the closing auction session (CAS): 3:12 PM.</li>
+<li>Other equity: 3:25 PM.</li>
+<li>F&amp;O: 3:26 PM.</li>
+<li>MCX commodities: 10 minutes before the close.</li>
+</ul>
+<p>These times changed on 26 December 2025. They can change at the risk team’s discretion. Zerodha charges a fee for each order it squares off. At last check it was Rs 50 plus 18% GST. Zerodha can change this, so check the Zerodha support pages before you rely on it. After the cut-off you cannot place a new MIS order. You also cannot convert a CNC or NRML position to MIS. Zerodha does not have to close your intraday position for you, so you must plan to close it yourself.</p>
+<p><strong>Convert.</strong> In Positions, open the options menu for a position and choose Convert. You can change MIS to NRML or CNC, and back. Cover orders cannot be converted. You can convert only before the auto square-off time.</p>
+<p><strong>Margin and leverage.</strong> Zerodha’s support article has said that equity MIS allows up to 5 times leverage, which means 20 percent margin. The risk team can reduce or remove leverage during the day. Zerodha can change this. Check the Zerodha support pages before you rely on it.</p>
+<p><strong>Charges.</strong> The product type can change the charges. Check the cost preview for the product you chose. Do not assume one product is cheaper.</p>
+<p><strong>Why this book uses CNC.</strong> The method in this book looks at prices at the end of each day. It holds trades for days or weeks. That style uses CNC. Intraday trading is a higher-risk style. It is not a shortcut to more money.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> You buy 10 shares at Rs 250.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>Order value</td><td>10 x 250</td><td>Rs 2,500 before charges</td></tr>
+<tr><td>Adverse move</td><td>1% of Rs 2,500</td><td>Rs 25 before charges</td></tr>
+</tbody></table>
+</div>
+<p>An adverse move means the price moves against you. A 1% fall on the order costs Rs 25 before charges.</p>
+<ul>
+<li><strong>CNC:</strong> the holding can continue overnight.</li>
+<li><strong>MIS:</strong> the position is meant to close the same day. If it stays open, Zerodha’s auto square-off applies at the time shown above.</li>
+</ul>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: kite-flow | flow: convert-position-and-mis-square-off | platform: web | caption: The click path for converting a position, and what happens at the auto square-off. Practice in the Zerodha demo or with dummy data only. Screens and button names can change, so check Kite's help pages. -->
+<!-- component: kite-illustration | screen: order-preview | selector: product | selected: CNC | caption: Pick a product and read what it means for how long you can hold. Practice in the Zerodha demo or with dummy data only. Screens and button names can change, so check Kite's help pages. -->
+<p>Look at the product selector and the list of consequences beside it. Change the product and see which consequences change. Note which product matches a holding that lasts for weeks.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Classify three planned trades. Choose a product for each one and write the reason.</p>
+<ul>
+<li>(a) Hold for weeks.</li>
+<li>(b) Close today.</li>
+<li>(c) Carry overnight if the stop is not hit.</li>
+</ul>
+<p>Hints:</p>
+<ol>
+<li>The holding period decides the product.</li>
+<li>If the plan says “carry overnight”, MIS is wrong.</li>
+<li>Write one reason for each choice.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>(a) <strong>CNC.</strong> The plan holds for weeks.</li>
+<li>(b) This is an intraday plan. The matching product is MIS. This book does not practise intraday trading, so write “not for this book” as the reason and do not plan it here.</li>
+<li>(c) <strong>CNC.</strong> The plan carries overnight, so MIS is wrong.</li>
+</ul>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Write a product-error scenario. Explain the consequence, and explain how you would catch the error before you submit.</p>
+<details><summary>Check your answer</summary>
+<p>Sample answer:</p>
+<ul>
+<li>Plan: buy 20 shares and hold them for three weeks. Product: CNC.</li>
+<li>Error: MIS is selected by mistake.</li>
+<li>Consequence: the position is meant to close the same day, and Zerodha’s auto square-off may close it at the cut-off time.</li>
+<li>Catch: before you submit, compare the product field with the holding period written in the plan.</li>
+</ul>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks how the product type follows the holding period, and why this book uses CNC.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong> for the written work. Use <code>kite_demo</code> only to read the screen. Log it in your journal (or on paper until the journal app is ready).</p>
+<ol>
+<li>Find where the product selector sits in the Kite app flow shown above. Use the chapter’s illustration if you do not open the Kite demo.</li>
+<li>List the product choices you see. Note which one is selected first.</li>
+<li>Write that choice in your journal, with today’s date.</li>
+<li>Write one sentence: which product would you choose for a three-week plan, and why.</li>
+<li>Do not submit any order for this task.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>A product type does not make a trade safer. It only sets how long the trade is meant to last.</li>
+<li>MIS rules can close an open position for you. The times above can change. Confirm them on Zerodha’s support pages.</li>
+<li>CNC does not remove risk. A holding for weeks can still fall. Set a stop (<em>Risk per trade and stop-loss distance</em>).</li>
+<li>Margin in MIS is leverage. This book covers it as theory only, and you should not use margin to size a position in this book.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>The product type sets how long the trade is meant to last.</li>
+<li>CNC fits a holding that stays overnight.</li>
+<li>MIS is meant to close the same day. Zerodha closes any MIS position still open at the auto square-off time.</li>
+<li>Check the product field against your plan before you submit.</li>
+<li>Do not pick a product because you think it costs less. Check the cost preview.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Zerodha support articles on what CNC, MIS and NRML mean, and on intraday auto square-off timings. Zerodha changes these times and charges, so confirm them there before you rely on them.</li>
+<li>SEBI and NSE circulars on margin and intraday rules. Search their websites for the current circulars.</li>
+</ul>
+<!-- facts-needed: MIS auto square-off timing and rules; product availability by stock; intraday margin rules; CNC and MIS charges; default product shown in the Kite demo order window. -->
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../04-kite-and-execution/04-order-types/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../04-kite-and-execution/06-gtt-orders/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../04-kite-and-execution/04-order-types/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../04-kite-and-execution/06-gtt-orders/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

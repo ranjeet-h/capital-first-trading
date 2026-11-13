@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>भांडवल-प्रथम ट्रेडिंग - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/components.css">
+        <link rel="stylesheet" href="theme/cft-anim.css">
+        <link rel="stylesheet" href="theme/labs.css">
+        <link rel="stylesheet" href="theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <h1 id="भांडवल-परथम-टरेडिंग"><a class="header" href="#भांडवल-परथम-टरेडिंग">भांडवल-प्रथम ट्रेडिंग</a></h1>
+<p>भारतीय बाजारात (NSE/BSE, Zerodha Kite) ट्रेडिंग शिकण्यासाठी ऑफलाइन अभ्यास पुस्तक. यात एक नियम सर्वांपेक्षा वर आहे: <strong>प्रथम भांडवलाचे संरक्षण करा</strong>.</p>
+<p>हे शिक्षणाचे पुस्तक आहे. ते कोणत्याही शेअर, रणनीती किंवा ब्रोकरच्या कृतीची शिफारस करत नाही आणि नफ्याचे वचन कधीही देत नाही. बहुतेक नवशिके पैसे गमावतात; इथले ध्येय आहे थोडे गमावणे, पटकन शिकणे आणि पुराव्यावर निर्णय घेणे.</p>
+<p>इंग्रजी आणि मराठी आवृत्तीत फरक आढळल्यास इंग्रजी आवृत्ती अंतिम संदर्भ आहे. पुस्तकाचा मुख्य मेनू आणि शोध बटण सध्या इंग्रजीत आहेत.</p>
+<h2 id="कुठून-सुरुवात-करावी"><a class="header" href="#कुठून-सुरुवात-करावी">कुठून सुरुवात करावी</a></h2>
+<ol>
+<li><strong>ट्रॅक 0: इथून सुरुवात करा</strong> - ट्रेडिंग काय आहे आणि काय नाही, भांडवल-प्रथम नियम, हे पुस्तक कसे वापरावे.</li>
+<li><strong>ट्रॅक 1: बाजाराची पायाभरणी</strong> - शेअर्स, एक्सचेंज, सेटलमेंट, ऑर्डर बुक, सर्किट, निर्देशांक.</li>
+<li><strong>ट्रॅक 2: पैसा आणि गणित</strong> - खर्च, कर, प्रत्येक व्यापारातील जोखीम, पोझिशन साइजिंग, ड्रॉडाउन, अपेक्षित परतावा.</li>
+<li><strong>ट्रॅक 3: चार्ट वाचन</strong> - कँडल्स, सपोर्ट आणि रेझिस्टन्स, ट्रेंड, ब्रेकआउट, गॅप.</li>
+<li><strong>ट्रॅक 4: Kite आणि अंमलबजावणी</strong> - फक्त खोट्या डेटासह Kite ची सुरक्षित सफर.</li>
+<li><strong>ट्रॅक 5: निर्देशक</strong> - मूव्हिंग ॲव्हरेज, ATR, RSI, MACD आणि अधिक, आणि ते का एकमेकांशी असहमत होऊ शकतात.</li>
+<li><strong>ट्रॅक 6: रणनीती</strong> - ट्रेडिंगच्या पद्धती, एज, सोपी स्विंग योजना आणि केव्हा ट्रेड करू नये.</li>
+<li><strong>ट्रॅक 7: चाचणी आणि पडताळणी</strong> - जुना डेटा आणि कागदी डेटा वापरून कल्पना कशी तपासावी, आणि तुम्हाला फसवणारे सापळे.</li>
+<li><strong>ट्रॅक 8: मानसशास्त्र आणि जर्नल</strong> - भीती, लोभ, शिस्त, सततचे तोटे आणि केव्हा थांबावे.</li>
+<li><strong>ट्रॅक 9: प्रगत (फक्त सिद्धांत)</strong> - फ्युचर्स, ऑप्शन्स, हेजिंग आणि बाजार डेटा, समजून घेण्यासाठी आणि ट्रेड करण्यासाठी नाही.</li>
+<li><strong>ट्रॅक 10: पात्रतेचे टप्पे</strong> - तुम्ही काय शिकलात याच्या सात तपासण्या. टप्पा उत्तीर्ण होणे म्हणजे ट्रेड करा असे कधीही सांगत नाही.</li>
+</ol>
+<h2 id="हे-पुसतक-कसे-वापरावे"><a class="header" href="#हे-पुसतक-कसे-वापरावे">हे पुस्तक कसे वापरावे</a></h2>
+<ul>
+<li>क्रमाने वाचा. प्रत्येक प्रकरण छोटे आहे. पुढे जाण्यापूर्वी “हे करून पाहा” सराव आणि क्विझ करा.</li>
+<li>पानावरील डेमो सरावासाठी आहेत. संख्या बदला आणि काय होते ते पाहा.</li>
+<li>सर्व पैशांची उदाहरणे काल्पनिक आहेत आणि फक्त शिकण्यासाठी आहेत.</li>
+<li>छोटा पिवळा <strong>तपासा</strong> टॅग म्हणजे एखादी तथ्य (शुल्क, करदर किंवा नियम) बदलू शकते. त्यावर अवलंबून राहण्यापूर्वी अधिकृत स्रोतावर ती तपासा.</li>
+<li>काही साधने, जसे व्यापार जर्नल, बॅकटेस्टर आणि फॉरवर्ड-चाचणी साधन, अजून तयार होत आहेत. तोपर्यंत कागदी कामे कागदावर करा.</li>
+</ul>
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20index.md&amp;body=Page%3A%20index.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next prefetch" href="00-start-here/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next prefetch" href="00-start-here/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="theme/i18n.js"></script>
+        <script src="theme/mermaid.min.js"></script>
+        <script src="theme/mermaid-init.js"></script>
+        <script src="theme/cft-lib.js"></script>
+        <script src="theme/demos.js"></script>
+        <script src="theme/demos-charts.js"></script>
+        <script src="theme/demos-indicators.js"></script>
+        <script src="theme/demos-kite.js"></script>
+        <script src="theme/demos-testing.js"></script>
+        <script src="theme/demos-fo-market.js"></script>
+        <script src="theme/demos-money-psych.js"></script>
+        <script src="theme/components.js"></script>
+        <script src="theme/dist/labs.js"></script>
+        <script src="theme/sidebar.js"></script>
+        <script src="theme/lang-switch.js"></script>
+        <script src="theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

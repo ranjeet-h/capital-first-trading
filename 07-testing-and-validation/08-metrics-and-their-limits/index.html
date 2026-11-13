@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Metrics and their limits - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/07-testing-and-validation/08-metrics-and-their-limits/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T7.8
+title: Metrics and their limits
+page_type: Math/Calculator
+prerequisites: [T2.7, T2.8, T2.9, T7.3]
+labs: [Lab 3, Lab 4]
+estimated_minutes: 30
+-->
+<h1 id="metrics-and-their-limits"><a class="header" href="#metrics-and-their-limits">Metrics and their limits</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A test report shows a win rate of 50 percent, a profit factor of 2.2 and a maximum drawdown of Rs 1,000. These are hypothetical figures. A reader may think the rule is both strong and safe. But the report is built from only six trades. Six trades cannot show whether a rule works. This chapter explains each number, shows how to work it out by hand, and says what each number cannot tell you.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Start with a list of trades. Each trade has a result in rupees. A winning trade has a positive number. A losing trade has a negative number. Keep the signs clear.</p>
+<ul>
+<li><strong>Win rate</strong> is the number of winning trades divided by the total number of trades. It is the share of trades that made money.</li>
+<li><strong>Average win</strong> is the total of the winning trades divided by the number of wins.</li>
+<li><strong>Average loss</strong> is the total of the losing trades divided by the number of losses. Show it as a positive number.</li>
+<li><strong>Expectancy in rupees</strong> is (win rate x average win) minus (loss rate x average loss). The loss rate is 1 minus the win rate. It is the average result per trade in this sample. It does not promise the next trade.</li>
+<li><strong>Expectancy in R</strong> is the expectancy in rupees divided by the rupee risk of one R. One R is your planned loss on one trade (see <em>Risk per trade and stop-loss distance</em>).</li>
+<li><strong>Profit factor</strong> is gross profit divided by gross loss. Gross profit is the total of the wins. Gross loss is the total of the losses, shown as a positive number. If there are no losses, the profit factor cannot be worked out.</li>
+<li><strong>Equity curve</strong> is the running total of trade results. It starts at zero.</li>
+<li><strong>Maximum drawdown</strong> is the largest fall on the equity curve. It is measured from a high point to a later low point. It is not measured from the start.</li>
+<li><strong>Sharpe ratio</strong> is the average return above a safe rate, divided by how much the returns move up and down. It assumes returns are spread in a fairly regular way around the average. Trading returns often do not follow that pattern. The result also changes with the safe rate you pick. The backtest lab uses 0 as the default safe rate and labels the metric as weak.</li>
+</ul>
+<p>The lab shows a warning under 30 trades: too few trades to conclude anything. No single metric captures risk. A high win rate or a high profit factor does not mean low risk.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: drawdown-compounding | trades: 1000, -500, 1500, -500, -500, 800 | caption: Equity curve of the six worked-example trades, showing the peak and the later low that give the maximum drawdown -->
+<p>Find the highest point before the largest fall. Then find the lowest point after it. The gap between those two points is the maximum drawdown in the example. The win rate and the other metrics are worked out from the trade list, not from the picture.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Six trades, in rupees: +1,000, -500, +1,500, -500, -500, +800. Planned risk per trade is Rs 500, so 1R = Rs 500.</p>
+<div class="table-wrapper"><table><thead><tr><th>Trade</th><th>Result (Rs)</th><th>Equity after trade (Rs)</th></tr></thead><tbody>
+<tr><td>1</td><td>+1,000</td><td>1,000</td></tr>
+<tr><td>2</td><td>-500</td><td>500</td></tr>
+<tr><td>3</td><td>+1,500</td><td>2,000</td></tr>
+<tr><td>4</td><td>-500</td><td>1,500</td></tr>
+<tr><td>5</td><td>-500</td><td>1,000</td></tr>
+<tr><td>6</td><td>+800</td><td>1,800</td></tr>
+</tbody></table>
+</div>
+<p><strong>Step 1. Wins and losses.</strong> Three wins total Rs 3,300 (1,000 + 1,500 + 800). Three losses total Rs 1,500 (500 + 500 + 500).</p>
+<p><strong>Step 2. Win rate.</strong> 3 / 6 = <strong>50%</strong>.</p>
+<p><strong>Step 3. Averages.</strong> Average win = 3,300 / 3 = <strong>Rs 1,100</strong>. Average loss = 1,500 / 3 = <strong>Rs 500</strong>.</p>
+<p><strong>Step 4. Expectancy in rupees.</strong> (0.5 x 1,100) - (0.5 x 500) = 550 - 250 = <strong>Rs 300 per trade</strong>.</p>
+<p><strong>Step 5. Expectancy in R.</strong> 300 / 500 = <strong>0.6R</strong>.</p>
+<p><strong>Step 6. Profit factor.</strong> 3,300 / 1,500 = <strong>2.2</strong>.</p>
+<p><strong>Step 7. Maximum drawdown.</strong> The highest point is Rs 2,000, after trade 3. The lowest point after it is Rs 1,000, after trade 5. The fall is 2,000 - 1,000 = <strong>Rs 1,000</strong>.</p>
+<p><strong>Check.</strong> Net result = 3,300 - 1,500 = Rs 1,800. This matches the last equity figure.</p>
+<p>Six trades is far too few to conclude anything. The numbers describe these six trades only. This example does not work out the Sharpe ratio. That needs a longer list of returns and a chosen safe rate.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Recompute the expectancy with these trades: +600, -300, +900, -300 (in Rs). Then express the result in R, using a rupee risk of Rs 300 per trade.</p>
+<p>Hints:</p>
+<ol>
+<li>Find the wins and losses first, then the averages.</li>
+<li>Express the result in R by dividing by the rupee risk of Rs 300.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>Wins: 600 and 900, total Rs 1,500, from 2 trades. Losses: 300 and 300, total Rs 600, from 2 trades.</li>
+<li>Win rate = 2 / 4 = 50%.</li>
+<li>Average win = 1,500 / 2 = Rs 750. Average loss = 600 / 2 = Rs 300.</li>
+<li>Expectancy = (0.5 x 750) - (0.5 x 300) = 375 - 150 = <strong>Rs 225 per trade</strong>.</li>
+<li>Check: net result = 1,500 - 600 = 900. 900 / 4 = 225.</li>
+<li>In R: 225 / 300 = <strong>0.75R</strong>.</li>
+</ul>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Use these ten hypothetical trades, in rupees: +800, -400, +1,200, -400, -400, +600, -400, +1,000, -400, +500. Planned risk per trade is Rs 400, so 1R = Rs 400. Work out the win rate, the average win, the average loss, the expectancy in rupees and in R, the profit factor and the maximum drawdown. Then write one sentence on what this sample can and cannot show.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>Win rate: 5 wins out of 10 trades = 50%.</li>
+<li>Total wins: 800 + 1,200 + 600 + 1,000 + 500 = Rs 4,100. Average win = 4,100 / 5 = Rs 820.</li>
+<li>Total losses: five trades of Rs 400 = Rs 2,000. Average loss = 2,000 / 5 = Rs 400.</li>
+<li>Expectancy = (0.5 x 820) - (0.5 x 400) = Rs 210 per trade. Check: net result 4,100 - 2,000 = 2,100, and 2,100 / 10 = 210.</li>
+<li>Expectancy in R: 210 / 400 = 0.525R.</li>
+<li>Profit factor: 4,100 / 2,000 = 2.05.</li>
+<li>Maximum drawdown: the equity curve goes 800, 400, 1,600, 1,200, 800, 1,400, 1,000, 2,000, 1,600, 2,100. The high point is Rs 1,600 after trade 3. The low point after it is Rs 800 after trade 5. The fall is Rs 800.</li>
+<li>Sample sentence: Ten trades net Rs 2,100. That is far below 30, so the numbers cannot show whether the rule works.</li>
+</ul>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the expectancy formula, profit factor with no losses, maximum drawdown, the limits of Sharpe, and reading metrics from a small sample.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>backtest</strong>, which means the trades come from past data.</p>
+<ol>
+<li>Write the six worked-example trades in your journal, in order, as mode backtest. Use Lab 3 for this if it is ready. If it is not, use paper or a spreadsheet.</li>
+<li>Read the figures the journal or spreadsheet gives you. Check them against the worked example: win rate 50 percent, expectancy Rs 300 per trade, profit factor 2.2, maximum drawdown Rs 1,000.</li>
+<li>If any figure differs, find the error before you go on.</li>
+<li>Write one sentence: six trades are too few to conclude anything.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>Each number describes the trades in the list. It does not describe the next trade.</li>
+<li>A small sample can make any metric look strong or weak by chance. The lab warns when there are under 30 trades.</li>
+<li>A high win rate does not mean low risk. A rule can win often and still lose a lot on its few large losses.</li>
+<li>Sharpe ratio depends on the safe rate you pick. Trading returns often do not follow the pattern it assumes.</li>
+<li>Costs are not in these figures unless the trade list already includes them (<em>Costs on a trade</em>).</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Expectancy = (win rate x average win) - (loss rate x average loss).</li>
+<li>Profit factor = gross profit divided by gross loss. With no losses, it cannot be worked out.</li>
+<li>Maximum drawdown is measured from a high point to a later low point, not from the start.</li>
+<li>Sharpe ratio depends on the safe rate and on how returns are spread.</li>
+<li>Under 30 trades, no metric concludes anything.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>William F. Sharpe (1966), “Mutual Fund Performance”, The Journal of Business, 39(1), 119-138.</li>
+<li>The backtest lab’s notes on the dashboard and its metric list.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../07-testing-and-validation/07-out-of-sample-and-walk-forward/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../07-testing-and-validation/09-monte-carlo-trade-order/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../07-testing-and-validation/07-out-of-sample-and-walk-forward/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../07-testing-and-validation/09-monte-carlo-trade-order/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

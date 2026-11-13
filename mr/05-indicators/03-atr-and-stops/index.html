@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ATR आणि अस्थिरता, स्टॉप-लॉससाठी - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../05-indicators/03-atr-and-stops/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../05-indicators/03-atr-and-stops/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T5.3
+title: ATR आणि अस्थिरता, स्टॉप-लॉससाठी
+page_type: Math/Calculator
+prerequisites: [T5.2, T2.4, T2.5]
+labs: [Lab 1, Lab 4]
+estimated_minutes: 35
+-->
+<h1 id="atr-आणि-असथिरता-सटॉप-लॉससाठी"><a class="header" href="#atr-आणि-असथिरता-सटॉप-लॉससाठी">ATR आणि अस्थिरता, स्टॉप-लॉससाठी</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p><strong>काल्पनिक.</strong> विक्रमला असा स्टॉप-लॉस हवा आहे जो शेअर साधारणपणे किती हलतो त्यात बसेल. त्याने स्टॉप-लॉस एंट्री भावाच्या Rs 2 खाली ठेवला आहे. हा शेअर दिवसात अनेकदा Rs 8 हलतो. त्यामुळे त्याचा स्टॉप-लॉस वाईट बातमीमुळे नाही, तर नेहमीच्या हालचालीमुळे लागतो. त्याने या शेअरसाठी खूपच घट्ट स्टॉप-लॉस वापरला आहे. हे प्रकरण साधारण हालचाल मोजण्याचा एक मार्ग दाखवते. त्याला Average True Range म्हणतात, थोडक्यात ATR.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>अस्थिरता</strong> म्हणजे भाव किती हलतो. दिवसाला Rs 1 हलणारा शेअर, दिवसाला Rs 10 हलणाऱ्या शेअरपेक्षा कमी अस्थिर असतो.</p>
+<p><strong>ट्रू रेंज (TR)</strong> एका दिवसात भाव किती दूर गेला ते मोजते. ती तीन आकड्यांपैकी सर्वात मोठी असते.</p>
+<ol>
+<li>दिवसाचा हाय वजा लो.</li>
+<li>हाय वजा कालचा क्लोज, याचे निरपेक्ष मूल्य (चिन्ह सोडून).</li>
+<li>लो वजा कालचा क्लोज, याचे निरपेक्ष मूल्य (चिन्ह सोडून).</li>
+</ol>
+<p>दुसरी आणि तिसरी संख्या गॅप मोजतात. गॅप म्हणजे भावातील अशी उडी, ज्या दरम्यान ट्रेडिंग झालेले नसते. शेअर कालच्या क्लोजच्या खूप वर उघडला, तर ट्रू रेंजमध्ये ती उडी धरली जाते. फक्त हाय वजा लो काढला तर ती उडी चुकते.</p>
+<p><strong>सरासरी ट्रू रेंज (Average True Range, ATR)</strong> म्हणजे N बारमधील TR ची सरासरी. सामान्य सेटिंग N = 14 आहे. बार एक दिवस असू शकतो, एक तास असू शकतो किंवा इतर कोणताही कालावधी.</p>
+<p>ATR <strong>विल्डर स्मूदिंग (Wilder smoothing)</strong> नावाची पद्धत वापरतो. ही पद्धत अलीकडच्या बारना जास्त वजन देते.</p>
+<ul>
+<li>पहिला ATR म्हणजे पहिल्या N ट्रू रेंजची साधी सरासरी. ही एक सामान्य पद्धत आहे.</li>
+<li>त्यानंतरचा प्रत्येक ATR = (कालचा ATR x (N - 1) + आजचा TR) / N.</li>
+</ul>
+<p>काही मुद्दे लक्षात ठेवा.</p>
+<ul>
+<li>ATR रुपयांमध्ये प्रति शेअर असतो. दोन शेअर्सची तुलना करायची असेल, तर त्याला भावाच्या टक्केवारीत बदला.</li>
+<li>स्टॉप-लॉसचे अंतर ATR चा गुणाकार, k, असू शकते. उदाहरणार्थ, एंट्रीच्या खाली ATR च्या 2 पट स्टॉप-लॉस. हा गुणक एक डिझाइन निवड आहे, जी तुम्ही नंतर तपासता. अशा निवडी कशा ठरतात आणि या पुस्तकात त्या कशा तपासल्या जातात, ते <em>पूर्ण स्पष्ट केलेली स्विंग रणनीती</em> या भागात पाहा.</li>
+<li>ATR जितका मोठा, स्टॉप-लॉस तितका रुंद. एकाच जोखीम मर्यादेत रुंद स्टॉप-लॉस म्हणजे कमी शेअर्स.</li>
+<li>ATR असामान्य गॅप पूर्ण कव्हर करू शकत नाही. गॅप सामान्य हालचालीपेक्षा खूप मोठा असू शकतो. <em>गॅप आणि स्टॉप-लॉससाठी त्यांचा अर्थ (Gaps and what they mean for stops)</em> हा भाग पाहा.</li>
+</ul>
+<p>पोझिशनचा आकार अजूनही <em>पोझिशन साइजिंग, टप्प्याटप्प्याने (Position sizing step by step)</em> या भागातील नियमांवरून ठरतो. ATR स्टॉप-लॉसचे अंतर ठरवतो. बजेट आणि मर्यादा शेअर्सची संख्या ठरवतात.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: position-size-viz | capital: 50000 | riskPct: 1 | entry: 250 | stop: 241.34 | caption: ATR उदाहरणासाठी तीन बार (कच्ची जोखीम मर्यादा 57, रोख मर्यादा 200, एकाग्रता मर्यादा 50); सर्वात लहान बार ठळक केला आहे आणि बंधनकारक मर्यादेचे नाव दिले आहे -->
+<!-- component: lab-position-size | capital: 50000 | riskPct: 1 | entry: 250 | stop: 241.34 | maxPct: 25 | caption: तीन मर्यादांसह पोझिशन साइज कॅल्क्युलेटर. कोणतीही संख्या बदला आणि कोणती मर्यादा ठरवते ते पाहा -->
+<p>तीन बार तीन मर्यादा दाखवतात. सर्वात लहान बार शेअर्सची संख्या ठरवतो. येथे एकाग्रता मर्यादा सर्वात लहान बार आहे. स्टॉप-लॉस बदला आणि जोखीम बार कसा वाढतो ते पाहा. एकाग्रता बार हलत नाही, कारण एंट्री भाव बदलत नाही, हे लक्षात घ्या.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> पाच बार. प्रत्येक ओळीत हाय, लो आणि मागील क्लोज दिलेला आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>बार</th><th>हाय</th><th>लो</th><th>मागील क्लोज</th><th>हाय - लो</th><th>हाय - मागील क्लोज</th><th>लो - मागील क्लोज</th><th>TR</th></tr></thead><tbody>
+<tr><td>दिवस 2</td><td>106</td><td>102</td><td>103</td><td>4</td><td>3</td><td>1</td><td><strong>4</strong></td></tr>
+<tr><td>दिवस 3</td><td>108</td><td>103</td><td>104</td><td>5</td><td>4</td><td>1</td><td><strong>5</strong></td></tr>
+<tr><td>दिवस 4</td><td>107</td><td>104</td><td>107</td><td>3</td><td>0</td><td>3</td><td><strong>3</strong></td></tr>
+<tr><td>दिवस 5</td><td>110</td><td>106</td><td>105</td><td>4</td><td>5</td><td>1</td><td><strong>5</strong></td></tr>
+</tbody></table>
+</div>
+<p>प्रत्येक TR त्याच्या ओळीतील सर्वात मोठी संख्या आहे. उदाहरणार्थ, दिवस 4 चा TR 3 आहे, कारण हाय वजा लो 3 आहे आणि दोन गॅप आकडे 0 आणि 3 आहेत.</p>
+<p><strong>सुरुवातीचा ATR, N = 3.</strong> (4 + 5 + 3) / 3 = <strong>4.00</strong>.</p>
+<p><strong>दिवस 5 वरील विल्डर ATR.</strong> (4.00 x 2 + 5) / 3 = (8 + 5) / 3 = 13 / 3 = <strong>4.33</strong>, गोल केल्यावर.</p>
+<p><strong>स्टॉप-लॉस आणि साइज.</strong> समजा भांडवल Rs 50,000, जोखीम 1 टक्का आणि एकाग्रता सेटिंग 25 टक्के आहे. एंट्री भाव Rs 250 आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. स्टॉप-लॉसचे अंतर</td><td>2 x 4.33</td><td>Rs 8.66</td></tr>
+<tr><td>2. स्टॉप-लॉस भाव</td><td>250 - 8.66</td><td>Rs 241.34</td></tr>
+<tr><td>3. जोखीम मर्यादा</td><td>50,000 x 1%</td><td>Rs 500</td></tr>
+<tr><td>4. कच्चे शेअर्स</td><td>floor(500 / 8.66) = floor(57.7)</td><td>57</td></tr>
+<tr><td>5. रोख मर्यादा</td><td>floor(50,000 / 250)</td><td>200</td></tr>
+<tr><td>6. एकाग्रता मर्यादा</td><td>floor(12,500 / 250)</td><td>50</td></tr>
+<tr><td><strong>शेअर्स</strong></td><td>57, 200 आणि 50 यांपैकी कमीत कमी</td><td><strong>50</strong></td></tr>
+</tbody></table>
+</div>
+<p>बंधनकारक मर्यादा: <strong>एकाग्रता मर्यादा</strong>. नियोजित पोझिशन 50 x Rs 250 = Rs 12,500 आहे, जे भांडवलाच्या 25 टक्के आहे. नियोजित तोटा 50 x Rs 8.66 = Rs 433 आहे, जो Rs 500 च्या जोखीम मर्यादेपेक्षा कमी आहे. मर्यादेने जोखीम मर्यादा पूर्ण वापरण्याआधीच साइज थांबवला.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<!-- component: indicator-playground | indicator: atr | closes: 103,104,107,105,109 | highs: 104,106,108,107,110 | lows: 100,102,103,104,106 | period: 3 | mult: 2 | entry: 250 | edit: on | caption: सोडवलेल्या उदाहरणातील पाच बार. दिवस 1 फक्त दिवस 2 ला मागील क्लोज देण्यासाठी आहे. हाय, लो किंवा क्लोज बदला आणि ट्रू रेंज व ATR कसे बदलतात ते पाहा -->
+<!-- component: position-size-viz | capital: 50000 | riskPct: 1 | entry: 250 | stop: 241.34 | caption: ATR उदाहरण वापरून स्टॉप-लॉसचे अंतर आणि शेअर्स यांचा परस्परसंवादी डेमो -->
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> एका बारचा हाय Rs 300, लो Rs 292 आणि मागील क्लोज Rs 305 आहे. ट्रू रेंज काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>हाय वजा लो = 300 - 292 = 8.</li>
+<li>हाय वजा मागील क्लोज = 300 - 305 = -5, म्हणून निरपेक्ष मूल्य 5.</li>
+<li>लो वजा मागील क्लोज = 292 - 305 = -13, म्हणून निरपेक्ष मूल्य 13.</li>
+</ol>
+<p><strong>उत्तर:</strong> ट्रू रेंज Rs 13 आहे, कारण 8, 5 आणि 13 यांपैकी ती सर्वात मोठी आहे. येथे मागील क्लोजपासूनचा गॅप उत्तर ठरवतो.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> Rs 400 च्या शेअरचा ATR Rs 6.00 आहे. स्टॉप-लॉस गुणक 2.5 आहे. भांडवल Rs 50,000 आहे, जोखीम 1 टक्का आणि एकाग्रता सेटिंग 25 टक्के आहे. स्टॉप-लॉसचे अंतर, स्टॉप-लॉस भाव आणि शेअर्स काढा. बंधनकारक मर्यादेचे नाव सांगा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>स्टॉप-लॉसचे अंतर: 2.5 x Rs 6.00 = <strong>Rs 15</strong>.</li>
+<li>स्टॉप-लॉस भाव: 400 - 15 = <strong>Rs 385</strong>.</li>
+<li>जोखीम मर्यादा: 50,000 x 1% = Rs 500.</li>
+<li>कच्चे शेअर्स: floor(500 / 15) = floor(33.3) = 33.</li>
+<li>रोख मर्यादा: floor(50,000 / 400) = 125.</li>
+<li>एकाग्रता मर्यादा: floor(12,500 / 400) = floor(31.25) = 31.</li>
+<li>शेअर्स: 33, 125 आणि 31 यांपैकी कमीत कमी = <strong>31</strong>.</li>
+<li>बंधनकारक मर्यादा: <strong>एकाग्रता मर्यादा</strong>.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>या क्विझमध्ये गॅप असलेली ट्रू रेंज, ATR वरून स्टॉप-लॉसचे अंतर आणि स्टॉप-लॉस व शेअर्सची संख्या यांच्यातील संबंध तपासला जातो. ATR गॅप कव्हर करत नाही, हेही तपासले जाते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> कागदी काम (paper). खाते किंवा ऑर्डर देण्याची गरज नाही.</p>
+<ol>
+<li>पाच शेअर्स निवडा. प्रत्येकासाठी चार्ट किंवा छापील तक्त्यातून 20 बार हाताने नोंदवा. प्रत्येक बारसाठी हाय, लो आणि क्लोज लिहा.</li>
+<li>मागील क्लोज असलेल्या प्रत्येक बारसाठी ट्रू रेंज काढा.</li>
+<li>पहिल्या 14 बारचा ATR त्यांची साधी सरासरी घेऊन काढा. नंतर पुढील बारसाठी विल्डर स्मूदिंग लावा.</li>
+<li>तुमचा ATR प्लॅटफॉर्मने दाखवलेल्या ATR शी तुलना करा. प्लॅटफॉर्मची सेटिंग तुमच्या स्क्रीनवर दिसते तशी लिहा. Zerodha च्या चार्टिंग मॅन्युअलमध्ये ATR ची डीफॉल्ट सेटिंग दिलेली नाही.</li>
+</ol>
+<p>हे तुमच्या जर्नलमध्ये नोंदवा (जर्नल ॲप तयार होईपर्यंत कागदावर).</p>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>ATR वर आधारित स्टॉप-लॉस सामान्य चढउतारासाठी खूप घट्ट असू शकतो. तो जोखीम मर्यादेत बसण्यासाठी खूप रुंदही असू शकतो.</li>
+<li>जोखीम मर्यादा अजूनही साइज ठरवते. रुंद स्टॉप-लॉसमुळे जास्त शेअर्स मिळत नाहीत, उलट कमी मिळतात.</li>
+<li>सामान्य हालचालीपेक्षा मोठ्या गॅपपासून ATR तुमचे संरक्षण करू शकत नाही.</li>
+<li>ATR रुपयांमध्ये असतो, टक्क्यांमध्ये नाही. त्याला टक्क्यांमध्ये बदलणे ही वेगळी पायरी आहे.</li>
+<li>घट्ट स्टॉप-लॉसमुळे कच्च्या शेअर्सची संख्या वाढते. तरीही मर्यादा अंतिम साइज मर्यादित करतात, जसे <em>पोझिशन साइजिंग, टप्प्याटप्प्याने (Position sizing step by step)</em> या भागात दाखवले आहे.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>ट्रू रेंज म्हणजे हाय वजा लो आणि दोन गॅप अंतरांपैकी सर्वात मोठे.</li>
+<li>ATR म्हणजे ट्रू रेंजची सरासरी. विल्डर स्मूदिंग अलीकडच्या बारना जास्त वजन देते.</li>
+<li>स्टॉप-लॉसचे अंतर = ATR चा गुणाकार. गुणक ही निवड आहे, जी तुम्ही नंतर तपासता.</li>
+<li>शेअर्स अजूनही जोखीम मर्यादा, रोख मर्यादा आणि एकाग्रता मर्यादा यांपैकी कमीत कमी असतात.</li>
+<li>ATR सामान्य हालचालीपलीकडील गॅप कव्हर करत नाही.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>J. Welles Wilder, <em>टेक्निकल ट्रेडिंग सिस्टम्समधील नवीन संकल्पना (New Concepts in Technical Trading Systems)</em> (1978). ATR आणि विल्डर स्मूदिंग इथून आले.</li>
+<li>Zerodha Varsity, अस्थिरता मॉड्यूल (केवळ संदर्भासाठी).</li>
+<li>Zerodha, Kite चार्टिंग मॅन्युअल (kite.trade/docs/kite/charting). त्यात ATR ची डीफॉल्ट सेटिंग दिलेली नाही, म्हणून ती तुमच्या स्क्रीनवर वाचा.</li>
+<li>StockCharts ChartSchool, ATR पेज. त्यात 14 कालावधी आणि विल्डर स्मूदिंग दिलेले आहेत. पहिला ट्रू रेंज म्हणजे हाय वजा लो, आणि पहिला ATR म्हणजे 14 ट्रू रेंजची सरासरी. (11 Nov 2026 पर्यंतची माहिती. ही एक सामान्य पद्धत आहे, एक्सचेंजचा नियम नाही.)</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T5.3&amp;body=Page%3A%2005-indicators%2F03-atr-and-stops%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../05-indicators/02-moving-averages/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../05-indicators/04-rsi/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../05-indicators/02-moving-averages/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../05-indicators/04-rsi/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

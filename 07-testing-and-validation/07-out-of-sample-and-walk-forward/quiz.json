@@ -1,0 +1,114 @@
+[
+  {
+    "id": "T7.7-q1",
+    "type": "mcq",
+    "prompt": "Why should daily prices not be shuffled at random before they are split into training and test parts?",
+    "options": [
+      {"id": "a", "text": "Random shuffles give a fairer test, because every day has an equal chance of landing in either part"},
+      {"id": "b", "text": "Shuffling mixes later prices into the training part, so the choice learns from prices that come after the test days"},
+      {"id": "c", "text": "Shuffling makes the data smaller, so the test runs faster"},
+      {"id": "d", "text": "Shuffling only matters for intraday data, not daily data"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Random shuffles break the time order. The training part then holds prices from after some test days, which leaks the future into the past.",
+      "c": "Shuffling does not change how much data there is. The problem is the order of the dates.",
+      "d": "Time order matters for any price series. Shuffled daily data causes the same leak."
+    },
+    "concepts": ["out-of-sample", "time-order"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.7-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Ten years of daily prices, 2016 to 2025. Training window 3 years, test window 1 year, rolling forward by 1 year. How many test windows are there?",
+    "answer": 7,
+    "tolerance": 0,
+    "unit": "windows",
+    "solution": "Each window covers 3 + 1 = 4 years. The test years run from 2019 to 2025. Count: 2025 - 2019 + 1 = 7. Check: the window starts run from 2016 to 2022, which is also 7 starts. Answer: 7.",
+    "concepts": ["walk-forward", "window-count"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.7-q3",
+    "type": "mcq",
+    "prompt": "You tested a rule on 2023 and then changed one stop distance. You tested again on 2023 and the result looked better. What is 2023 now?",
+    "options": [
+      {"id": "a", "text": "Still out-of-sample, because you changed only one number"},
+      {"id": "b", "text": "Still out-of-sample, because you looked at it only twice"},
+      {"id": "c", "text": "In-sample, because a choice was made using it"},
+      {"id": "d", "text": "A third kind of data that is neither in-sample nor out-of-sample"}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "A single change still counts. The period was used to choose a setting, so it is no longer a clean test.",
+      "b": "The number of looks does not matter here. The problem is that a choice was made using the period.",
+      "d": "There are only two parts in this split: in-sample and out-of-sample. 2023 has been used for choosing, so it is in-sample."
+    },
+    "concepts": ["out-of-sample", "reusing-test-period"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.7-q4",
+    "type": "mcq",
+    "prompt": "What does a walk-forward run tell you?",
+    "options": [
+      {"id": "a", "text": "It proves the strategy works."},
+      {"id": "b", "text": "It shows how the rule's choices held up across several separate test windows, which is one more piece of evidence."},
+      {"id": "c", "text": "It removes all bias from the test."},
+      {"id": "d", "text": "It shows that the test period can be used to choose settings."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A walk-forward run is evidence, not proof. Many things can still go wrong after the test.",
+      "c": "Walk-forward does not remove look-ahead bias, survivorship bias or overfitting. Each needs its own check.",
+      "d": "Using the test period to choose settings makes it in-sample. That breaks the test."
+    },
+    "concepts": ["walk-forward", "evidence"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.7-q5",
+    "type": "scenario",
+    "prompt": "Hypothetical. A split has a training window from 2016 to 2019. Its test window starts in 2018. What is wrong with this split?",
+    "options": [
+      {"id": "a", "text": "Nothing. Test windows may overlap training windows."},
+      {"id": "b", "text": "The test window starts before the training window ends, so the test uses data that the settings were learned from."},
+      {"id": "c", "text": "The training window is too long."},
+      {"id": "d", "text": "The test window is too short to count."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Overlap means the test uses data that the choice already used. That is not out-of-sample testing.",
+      "c": "The length of the training window is not the problem. The overlap is the problem.",
+      "d": "A short test window can be weak evidence, but the main fault here is that the windows overlap."
+    },
+    "concepts": ["walk-forward", "contaminated-split"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.7-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Read this plan: 'I split the data 60/40 by time. I picked the stop distance using the last 40 percent. Then I tested the rule on that same 40 percent.' Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The 60/40 split by time"},
+      {"id": "b", "text": "Using the last 40 percent to pick the stop distance, which makes that part in-sample"},
+      {"id": "c", "text": "Testing the rule at all"},
+      {"id": "d", "text": "Nothing is wrong"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A split by time is correct. The dates stay in order.",
+      "c": "Testing is the right step. The fault is what was done with the test data before the test.",
+      "d": "The 40 percent was used to choose, so testing on it does not give an out-of-sample result."
+    },
+    "concepts": ["out-of-sample", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

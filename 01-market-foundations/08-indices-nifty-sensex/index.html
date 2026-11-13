@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Indices: Nifty and Sensex - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/01-market-foundations/08-indices-nifty-sensex/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T1.8
+title: Indices: Nifty and Sensex
+page_type: Concept
+prerequisites: [T1.1, T1.4]
+labs: []
+estimated_minutes: 20
+-->
+<h1 id="indices-nifty-and-sensex"><a class="header" href="#indices-nifty-and-sensex">Indices: Nifty and Sensex</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>On a day when an index rises 1.6%, a friend says, “The market is up. My holdings must be up too.” This is a hypothetical example. You hold Rs 50,000 in one stock. That stock falls 2% that day. Your holding is down Rs 1,000, while the index is up. The index sums up many stocks. It does not sum up your stock.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>An <strong>index</strong> is one number that sums up a group of stocks. Nifty and Sensex are two such indices. The number is a level, measured in points. It is not a price you can pay. You cannot buy one share of an index.</p>
+<p><strong>Weighting.</strong> Each stock in the group has a weight. The weight is its share of the index. All the weights add up to 100%. The common method is based on market size, with an adjustment for shares that are free to trade. This is called the free-float market-capitalisation method. The Nifty 50 has 50 stocks. The Sensex has 30 stocks. Both use this method. The three-stock and five-stock examples below are made up to keep the arithmetic short. (As of 11 Nov 2026, NSE Indices methodology document, June 2026, and BSE Indices methodology, May 2026. Methods change, so check the NSE and BSE sites.)</p>
+<p><strong>Point change and percent change.</strong></p>
+<ul>
+<li>Point change = new level minus previous level.</li>
+<li>Percent change = point change divided by previous level, times 100.</li>
+</ul>
+<p><strong>Contribution of one stock.</strong> Weight times that stock’s move. The index move is the total of all the contributions.</p>
+<p><strong>Breadth.</strong> Breadth counts how many stocks in the group rose and how many fell. An index can rise even when many stocks fall. This happens if the heavily weighted stocks rise. Breadth is context, not a forecast.</p>
+<p><strong>Broad and sectoral indices</strong> measure different groups. A broad index covers a wide set of stocks. A sectoral index covers one sector.</p>
+<p><strong>Index-linked products</strong> are not covered in this track. They are covered later in the book.</p>
+<p><strong>Rebalancing.</strong> The stocks in an index are reviewed on a schedule. For the Nifty 50, NSE reviews the list twice a year, using six months of data that end in January and July. Changes take effect from the last trading day of March and September, with about four weeks of notice. NSE allows at most 5 changes in a calendar year. The Sensex is reviewed twice a year too. Its changes take effect on the Monday after the third Friday of June and December. (As of 11 Nov 2026, NSE Indices methodology document, June 2026, and BSE Indices methodology, May 2026. Check the NSE and BSE sites for the latest.)</p>
+<p><strong>What an index move tells you.</strong> It describes the group of stocks. It does not tell you what one stock will do. It is not a trade signal by itself.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<p>The table shows a three-stock index. It uses the weights and moves from the worked example. The last column is weight times move.</p>
+<div class="table-wrapper"><table><thead><tr><th>Stock</th><th>Weight</th><th>Move</th><th>Contribution to index</th></tr></thead><tbody>
+<tr><td>A</td><td>50%</td><td>+4%</td><td>+2.0%</td></tr>
+<tr><td>B</td><td>30%</td><td>-2%</td><td>-0.6%</td></tr>
+<tr><td>C</td><td>20%</td><td>+1%</td><td>+0.2%</td></tr>
+<tr><td>Total</td><td>100%</td><td></td><td>+1.6%</td></tr>
+</tbody></table>
+</div>
+<p>Read the contribution column. Stock A moves the index most. It has the largest weight and the largest move. Stock B falls. The index still rises, because the fall in B is smaller than the rise in A.</p>
+<!-- component: index-calculator | preset: chapter | level: 20000 | holding: 50000 | caption: The chapter's three-stock index: A +4%, B -2%, C +1% gives +1.6%. Change a price and watch the index. Try the five-stock example too. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p>This is a hypothetical index move. The index goes from 20,000 to 20,400.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>Point change</td><td>20,400 - 20,000</td><td>+400 points</td></tr>
+<tr><td>Percent change</td><td>400 / 20,000 x 100</td><td>+2.0%</td></tr>
+</tbody></table>
+</div>
+<p>This is a hypothetical weighted example, for illustration only. The weights and moves come from the table above.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>Stock A contribution</td><td>0.50 x 4</td><td>+2.0</td></tr>
+<tr><td>Stock B contribution</td><td>0.30 x (-2)</td><td>-0.6</td></tr>
+<tr><td>Stock C contribution</td><td>0.20 x 1</td><td>+0.2</td></tr>
+<tr><td>Index move</td><td>2.0 - 0.6 + 0.2</td><td>+1.6%</td></tr>
+</tbody></table>
+</div>
+<p>A holding of Rs 50,000 in Stock B falls 2%. That is 50,000 x 0.02 = Rs 1,000. The index still rose 1.6%.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> An index falls from 18,000 to 17,640. Compute the point change and the percent change.</p>
+<p>Hints:</p>
+<ol>
+<li>Point change = new level minus old level.</li>
+<li>Percent change = point change divided by the old level.</li>
+<li>Keep the minus sign.</li>
+</ol>
+<p><strong>Answer:</strong> Point change = 17,640 - 18,000 = -360 points. Percent change = -360 / 18,000 = -2.0%.
+Check: 2% of 18,000 = 360.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> A three-stock index has weights of 40%, 35% and 25%. The moves are +3%, -1% and -4%, in the same order. Compute the index move. Then compute the effect on a Rs 20,000 holding in the first stock.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>Contributions: 0.40 x 3 = +1.2; 0.35 x (-1) = -0.35; 0.25 x (-4) = -1.0.</li>
+<li>Index move = 1.2 - 0.35 - 1.0 = -0.15%. The index falls, even though the first stock rose.</li>
+<li>Effect on Rs 20,000 in the first stock: 20,000 x 0.03 = Rs 600 gain.</li>
+</ul>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Five questions. They cover point and percent change, weights, what an index does and does not say, and the index level as a number.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p><strong>Mode: learning note.</strong></p>
+<ol>
+<li>Pick one broad index.</li>
+<li>Open the exchange site for that index. Find the current layout yourself.</li>
+<li>Record its closing value for five trading days. Write down the source page and the date for each value.</li>
+<li>Compute each day’s point change and percent change.</li>
+<li>Write no conclusions. Write your numbers in your journal.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>An index move describes a group of stocks. It does not describe your stock.</li>
+<li>A rising index does not mean every stock rose. Breadth and weights matter.</li>
+<li>The index level is a number of points, not a price in rupees.</li>
+<li>An index move is not permission to trade.</li>
+<li>Weights and methods change at rebalancing. The stocks shown here may not be current.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>An index is a weighted group of stocks, summed up as one number.</li>
+<li>Percent change = point change divided by the previous level.</li>
+<li>Index move = the total of weight x stock move.</li>
+<li>A heavily weighted stock can move the index more than a light one.</li>
+<li>An index is market context. It is not a trade signal.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p>Sources:</p>
+<ul>
+<li>NSE Indices methodology documents.</li>
+<li>BSE index pages.</li>
+<li>Zerodha Varsity, for reference only (link only, no text copied).</li>
+</ul>
+<p>Facts checked on 11 Nov 2026:</p>
+<ul>
+<li>The Nifty 50 has 50 stocks and uses the free-float market-capitalisation method. Its review schedule comes from NSE Indices’ methodology document of June 2026.</li>
+<li>The Sensex has 30 stocks, is drawn from the BSE 100, and is reviewed twice a year. This comes from BSE’s Indices methodology of May 2026.</li>
+<li>This chapter does not list index constituents or their weights, because they change. Check the NSE and BSE sites.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../01-market-foundations/07-circuit-limits-and-halts/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../01-market-foundations/09-corporate-actions/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../01-market-foundations/07-circuit-limits-and-halts/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../01-market-foundations/09-corporate-actions/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

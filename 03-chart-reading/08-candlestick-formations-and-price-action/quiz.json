@@ -1,0 +1,103 @@
+[
+  {
+    "id": "T3.8-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical hammer-shaped candle: open Rs 200, high Rs 201, low Rs 192, close Rs 199. How many times the body is the lower shadow?",
+    "answer": 7,
+    "tolerance": 0,
+    "unit": "times the body",
+    "solution": "Body = 200 minus 199 = Rs 1. Lower shadow = 199 minus 192 = Rs 7. Lower shadow divided by body = 7 divided by 1 = 7 times. Check: 1 multiplied by 7 = 7.",
+    "concepts": ["hammer-rule"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.8-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical candle: open Rs 200, high Rs 201, low Rs 192, close Rs 199. What is the full range of the candle in rupees, from high to low?",
+    "answer": 9,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Range = high minus low = 201 minus 192 = Rs 9. Check: the body is Rs 1, the lower shadow is Rs 7 and the upper shadow is Rs 1. 1 plus 7 plus 1 = 9.",
+    "concepts": ["candle-range"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.8-q3",
+    "type": "mcq",
+    "prompt": "Which statement about a hammer-shaped candle is correct?",
+    "options": [
+      {"id": "a", "text": "A hammer is always bullish."},
+      {"id": "b", "text": "A hammer is a shape rule. The shape alone does not show what happens next."},
+      {"id": "c", "text": "A hammer must come after a fall of at least 15 percent."},
+      {"id": "d", "text": "A hammer proves that the trend has reversed."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A hammer is a shape. Whether it leads to a rise is an open question that needs testing. It is not always bullish.",
+      "c": "The shape rule does not include a fall size. Any size of fall is a context question that must be stated and tested.",
+      "d": "A shape cannot prove a reversal. A reversal claim needs context and a tested rule."
+    },
+    "concepts": ["hammer-rule", "pattern-limits"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.8-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. A bearish engulfing pattern appears after the stock has fallen 15 percent. A friend says it must reverse the trend. What is the best reply?",
+    "options": [
+      {"id": "a", "text": "Agree. Engulfing patterns always reverse falls."},
+      {"id": "b", "text": "The shape alone does not show that. You need the context, a stated rule and a tested base rate."},
+      {"id": "c", "text": "Agree, as long as the price is above a support level."},
+      {"id": "d", "text": "Disagree, because a fall of that size cannot be reversed."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "No pattern always reverses a fall. A claim like this needs a tested base rate, and this book states none.",
+      "c": "Support is a context idea, but adding it does not prove a reversal. The rule still needs testing.",
+      "d": "A fall can be followed by a rise or by more falls. Nothing in the shape decides that."
+    },
+    "concepts": ["engulfing", "base-rate", "pattern-limits"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.8-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake. A trader says: 'The formation appeared after the price had already moved up 10 percent, so I can name it a winning pattern.' Which part is the mistake?",
+    "options": [
+      {"id": "a", "text": "The formation appeared after the price had already moved up 10 percent."},
+      {"id": "b", "text": "So I can name it a winning pattern."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This is a fact about timing. It is not the mistake. It does show that the shape came after the move, which is a reason to be careful.",
+      "b": "Naming a pattern after the move is hindsight. A label cannot make a pattern a winner. Only a tested rule can show a result."
+    },
+    "concepts": ["hindsight", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.8-q6",
+    "type": "mcq",
+    "prompt": "What is needed before a candlestick rule can be tested?",
+    "options": [
+      {"id": "a", "text": "A famous name for the pattern"},
+      {"id": "b", "text": "An exact definition, a stated context and a fixed test period"},
+      {"id": "c", "text": "A high win rate on five trades"},
+      {"id": "d", "text": "A chart from a broker's app"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A name is only a label. It does not define the rule or the test.",
+      "c": "Five trades are far too few to show anything. A high result on five trades can be chance.",
+      "d": "The source of the chart does not matter. The rule, the context and the test period matter."
+    },
+    "concepts": ["base-rate", "testing"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

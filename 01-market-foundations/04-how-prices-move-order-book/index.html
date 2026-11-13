@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>How prices move: the order book - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/01-market-foundations/04-how-prices-move-order-book/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T1.4
+title: How prices move: the order book
+page_type: Concept
+prerequisites: [T1.2, T1.3]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="how-prices-move-the-order-book"><a class="header" href="#how-prices-move-the-order-book">How prices move: the order book</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A hypothetical trader sees a stock at Rs 250. They decide to buy 250 shares “at Rs 250.” That looks like Rs 62,500. But the buy fills at a total of Rs 62,650. The cheapest 100 shares are gone, and the next 150 are offered at Rs 251. The price on screen was the last trade. It was not the price of the whole order.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p><strong>The price is the last trade.</strong> The price on screen is the price of the most recent matched trade. It is not a fixed value. It is not a fair price on its own.</p>
+<p><strong>An order book is a list of waiting orders.</strong> Orders that have not yet matched wait in the book. Each waiting buy order names the price it will pay. Each waiting sell order names the price it will accept. The book shows how many shares wait at each price.</p>
+<p><strong>Demand and supply.</strong> Demand is the buy orders at or above a given price. These are buyers willing to pay that much. Supply is the sell orders at or below a given price. These are sellers willing to accept that much. The price moves where these meet, as orders arrive and match.</p>
+<p><strong>Two kinds of order.</strong></p>
+<ul>
+<li>A <strong>market order</strong> takes the best available prices now. It fills at whatever the book offers, from the lowest sell price up.</li>
+<li>A <strong>limit order</strong> sets a maximum buy price or a minimum sell price. It fills only at that price or better, and it may not fill at all.</li>
+</ul>
+<p><strong>Price moves when orders use up the best prices.</strong> A large market buy takes the cheapest sell shares first. When those are used up, it moves to the next price. Each price it uses can raise the price.</p>
+<p><strong>News changes expectations, and expectations change orders.</strong> The price responds to the orders that news creates, not to the news itself. A price change shows that orders moved. It does not show which information caused them.</p>
+<p><strong>No price is fair by itself.</strong> The price is what a buyer and a seller agreed to at that moment. A change in price does not show whether the earlier price was right or wrong.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<p>Here is the sell side of a made-up order book. Each row is a price, with shares waiting to be sold at that price.</p>
+<div class="table-wrapper"><table><thead><tr><th>Ask price (Rs)</th><th>Shares waiting at this price</th><th>Running total</th></tr></thead><tbody>
+<tr><td>250</td><td>100</td><td>100</td></tr>
+<tr><td>251</td><td>150</td><td>250</td></tr>
+<tr><td>252</td><td>200</td><td>450</td></tr>
+</tbody></table>
+</div>
+<p>A market buy fills from the top row down. Read the running total. A buy of 250 shares uses the first two rows exactly. A buy of 300 would reach into the third row. The price of the last trade moves up as the buy climbs the rows.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical ask side:</strong> 100 shares at Rs 250, 150 at Rs 251, 200 at Rs 252. A market buy of 250 shares.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Working</th><th>Result</th></tr></thead><tbody>
+<tr><td>1. Fill 100 at the lowest ask</td><td>100 x Rs 250</td><td>Rs 25,000</td></tr>
+<tr><td>2. Fill the next 150 at Rs 251</td><td>150 x Rs 251</td><td>Rs 37,650</td></tr>
+<tr><td>3. Total cost for 250 shares</td><td>25,000 + 37,650</td><td>Rs 62,650</td></tr>
+<tr><td>4. Average price</td><td>62,650 / 250</td><td>Rs 250.60</td></tr>
+<tr><td>5. Last traded price</td><td>last fill</td><td>Rs 251</td></tr>
+</tbody></table>
+</div>
+<p><strong>Check on step 2:</strong> 150 x 251 = 150 x 250 + 150 = 37,500 + 150 = 37,650.</p>
+<p>The buy paid an average of Rs 250.60 per share, not Rs 250. The Rs 250 on screen was only the first price.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<p><strong>Interactive demo.</strong> Use the order-book simulator to walk a market buy up the ask side. Watch the price step up as each price is used up.</p>
+<!-- component: order-book-sim | ask: 250x100, 251x150, 252x200 | market_buy_qty: 250 | caption: A market buy consumes the ask side from the lowest price upward; the last traded price steps up as levels are used. -->
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task:</strong> Using the same made-up book, work out the cost of a market buy of 100 shares, and then of 200 shares.</p>
+<p><strong>Hints:</strong></p>
+<ol>
+<li>Fill from the lowest ask upward.</li>
+<li>For 100 shares, all of the fill is at Rs 250.</li>
+<li>For 200 shares, the first 100 are at Rs 250 and the next 100 are at Rs 251.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>100 shares: 100 x Rs 250 = Rs 25,000. Average Rs 250.00.</li>
+<li>200 shares: 100 x Rs 250 = Rs 25,000, plus 100 x Rs 251 = Rs 25,100. Total Rs 50,100. Average 50,100 / 200 = Rs 250.50.</li>
+</ul>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task:</strong> A market buy of 300 shares uses the same book. Work out the total cost, the average price and the new last traded price. Use no hints.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>First 100 at Rs 250: 100 x 250 = Rs 25,000.</li>
+<li>Next 150 at Rs 251: 150 x 251 = Rs 37,650.</li>
+<li>Last 50 at Rs 252: 50 x 252 = Rs 12,600.</li>
+<li>Total: 25,000 + 37,650 + 12,600 = Rs 75,250.</li>
+<li>Average: 75,250 / 300 = Rs 250.83 (rounded to two decimals).</li>
+<li>New last traded price: Rs 252, the last price the order reached.</li>
+</ul>
+<p>Check the total: 100 + 150 + 50 = 300 shares, and the three amounts add to 75,250.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Six questions check the average price of a walk up the book, the last price, the limit order, a thin-stock case and the claim about information.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p><strong>Mode:</strong> kite_demo. Open the market depth view for one demo stock. Write down the best bid and best ask in your own words, in your journal or on paper.</p>
+<ol>
+<li>Open the market depth view for one stock in the Kite demo.</li>
+<li>Note the best bid (the highest buy price waiting) and the best ask (the lowest sell price waiting).</li>
+<li>Write both in your own words.</li>
+<li>Zerodha says the market depth view shows the best 5 buy prices and the best 5 sell prices. It also shows the open, high, low and close, the volume and the circuit limits. Layouts change, so write “check your own Kite for the current layout” next to your note. The demo uses dummy data. (As of 11 Nov 2026, Zerodha support page on market depth.)</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>This book does not tell you where any price will go. It explains how a price is formed, not what it will do.</li>
+<li>The price on screen is not the price a large order gets. The average can be higher.</li>
+<li>In thin stocks, a market order can fill far from the last price. Use a limit order with a known maximum. Do not assume the price on screen is what you will pay.</li>
+<li>A price move is not proof that anyone knows something. It shows that orders moved.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>The price on screen is the last matched trade. It is not a fixed or fair value.</li>
+<li>A market buy fills from the lowest ask up. In the example, 250 shares cost Rs 62,650, an average of Rs 250.60.</li>
+<li>A limit order is a maximum for a buy. It may not fill.</li>
+<li>A price change shows that orders moved. It does not show why.</li>
+<li>A thin book moves more for the same order size.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p><strong>Sources (names only):</strong></p>
+<ul>
+<li>NSE education pages on order matching.</li>
+<li>Zerodha Varsity, as a reference only (link only, no text copied).</li>
+<li>Zerodha support pages on order types.</li>
+</ul>
+<p><strong>Facts checked on 11 Nov 2026:</strong></p>
+<ul>
+<li>Zerodha’s standard market depth view shows the best 5 bids and offers. A separate 20-level depth view exists as another feature. (Zerodha support site.)</li>
+<li>The exact layout of the Kite demo can change, so this chapter does not describe it. Check it on screen.</li>
+<li>Orders at the same price are matched in the order they arrive. See <em>Order matching, spread and liquidity</em> for the rule and its source.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../01-market-foundations/03-demat-accounts-and-settlement/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../01-market-foundations/05-order-matching-spread-liquidity/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../01-market-foundations/03-demat-accounts-and-settlement/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../01-market-foundations/05-order-matching-spread-liquidity/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

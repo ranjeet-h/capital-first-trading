@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Gate G4 risk discipline - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/10-graduation-gates/04-gate-g4-risk-discipline/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T10.4
+title: Gate G4 risk discipline
+page_type: Assessment
+prerequisites: [T2.11, T2.12, T8.2, T8.4, T8.6, T8.7]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="gate-g4-risk-discipline"><a class="header" href="#gate-g4-risk-discipline">Gate G4 risk discipline</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Imagine a simulated day with a daily loss limit of Rs 1,000. Hypothetical. After two losing trades, you are down Rs 1,000. A third setup looks tempting, and you want to win the money back. This gate asks one question: do you stop? It is not a test of market skill. It tests whether you follow a limit you wrote before the day began.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>The gate runs simulated days. Each simulated day is one scenario. The daily limit is hit at a random point in the day, so you cannot know when it will come.</p>
+<blockquote>
+<p>This measures educational competence. It is not proof of profitability. Nothing here requires or recommends trading with real money.</p>
+</blockquote>
+<p>To pass, you must do both of these in every scenario:</p>
+<ol>
+<li><strong>Stop when the limit is hit.</strong> “Stopped” means you make no further entry in that day after the limit is reached.</li>
+<li><strong>Do not increase your size after a loss.</strong> In no scenario may you raise your size after a loss.</li>
+</ol>
+<p>You must also answer two multiple-choice questions on the rule set. Both must be correct.</p>
+<p>The pass mark is 10 of 10 scenarios.</p>
+<p>Each attempt draws ten new simulated days. The earlier attempt does not carry over. There is no timer and no penalty for retaking.</p>
+<p>If you fail, the gate shows which day broke the rule and what you did on that day. Then you can retake it.</p>
+<p>The simulator is not a test of market skill. It tests whether you follow a written limit.</p>
+<p>Passing this gate does not mean you should trade. A pass only shows that you followed the rule in simulated days.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<p>This gate has no picture to explore. Use this table to see what each outcome means.</p>
+<div class="table-wrapper"><table><thead><tr><th>What you did after the limit was hit</th><th>Result for that day</th></tr></thead><tbody>
+<tr><td>Made no further entry</td><td>Stopped. Rule kept.</td></tr>
+<tr><td>Made one more entry, even a small one</td><td>Not stopped. Rule broken.</td></tr>
+<tr><td>Raised size after a loss</td><td>Size rule broken.</td></tr>
+</tbody></table>
+</div>
+<p>One broken rule in one day fails the attempt.</p>
+<!-- component: gate-check | gate: G4 | caption: Tick each criterion only when it is true for you. A gate checks what you learned. It is not permission to trade. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Ten simulated days. The daily limit is Rs 1,000 in each day.</p>
+<div class="table-wrapper"><table><thead><tr><th>Day</th><th>Limit hit?</th><th>What you did</th><th>Result</th></tr></thead><tbody>
+<tr><td>1</td><td>Yes</td><td>Stopped</td><td>Kept</td></tr>
+<tr><td>2</td><td>No</td><td>Traded normally</td><td>Kept</td></tr>
+<tr><td>3</td><td>Yes</td><td>Stopped</td><td>Kept</td></tr>
+<tr><td>4</td><td>Yes</td><td>Took one more trade</td><td>Broken</td></tr>
+<tr><td>5 to 10</td><td>Mixed</td><td>Stopped each time the limit was hit</td><td>Kept</td></tr>
+</tbody></table>
+</div>
+<p>Nine days kept the rule and one day broke it. That is 9 of 10, which is 90%. The gate needs 10 of 10, so this attempt fails. The result shows day 4 as the broken scenario.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Hypothetical. Your daily limit is Rs 1,500. You lose Rs 600 on trade 1 and Rs 900 on trade 2. Have you hit the limit? What should you do next?</p>
+<p>Hints:</p>
+<ol>
+<li>Add the two losses together.</li>
+<li>Compare the total with the limit. Has it reached the limit?</li>
+<li>Think about what the rule says to do once the limit is reached.</li>
+</ol>
+<p><strong>Answer:</strong> 600 + 900 = Rs 1,500. That equals the limit, so the limit is hit. You make no further entry for that day.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Hypothetical. Your daily limit is Rs 1,000. Your losses are Rs 350, then Rs 400, then Rs 200, then Rs 100. After which trade is the limit hit? What should you do after that?</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>After trade 1: Rs 350. Not hit.</li>
+<li>After trade 2: Rs 350 + Rs 400 = Rs 750. Not hit.</li>
+<li>After trade 3: Rs 750 + Rs 200 = Rs 950. Not hit.</li>
+<li>After trade 4: Rs 950 + Rs 100 = Rs 1,050. The limit of Rs 1,000 is hit.</li>
+</ul>
+<p>The limit is hit after trade 4. You make no further entry for that day. All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the limit arithmetic, the meaning of “stopped” and the size rule.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong>. Write it in your journal. If the journal is not ready, use paper. If the simulator is not ready, do the task on paper or in a spreadsheet.</p>
+<ol>
+<li>Write a hypothetical daily loss limit on paper. Use a made-up figure.</li>
+<li>Write three rules under it. Stop when the limit is hit. Make no entry after that. Do not raise size after a loss.</li>
+<li>Make a table of ten made-up days. For each day, write the losses in order and the point where the limit is hit.</li>
+<li>For each day, write whether you stopped. Mark any day where you did not.</li>
+<li>Mark the whole page as hypothetical.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>The simulator does not measure market skill. A pass does not show you can make money.</li>
+<li>Simulated days use random outcomes. Real days can move in ways the simulator does not show.</li>
+<li>A rule only helps if you write it down before the day starts. Writing it after a loss is too late.</li>
+<li>Ten of ten is a learning standard. It does not promise how you will act with real money.</li>
+<li>If a loss is making you want to win it back, read <em>Living through a losing streak</em> before you trade again.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Stop when the daily limit is hit. Make no further entry that day.</li>
+<li>Never raise your size after a loss.</li>
+<li>The pass mark is 10 of 10 simulated days.</li>
+<li>The gate tests a written limit, not market skill.</li>
+<li>Passing this gate does not mean you should trade.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>The book’s rule for daily limits, in the risk chapters of this book.</li>
+<li>The simulator notes in the earlier risk chapters of this book.</li>
+</ul>
+<!-- facts-needed: none. The gate uses simulated days and the book's own rules. -->
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../10-graduation-gates/03-gate-g3-kite-readiness/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../10-graduation-gates/05-gate-g5-strategy-validation/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../10-graduation-gates/03-gate-g3-kite-readiness/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../10-graduation-gates/05-gate-g5-strategy-validation/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "T2.2-q1",
+    "type": "numeric",
+    "prompt": "DUMMY model (not a real charge). Buy and sell Rs 5,000 of a stock at the same price. Proportional 0.1% per leg, Rs 20 fixed per order, Rs 50 DP charge on the sell. What is the total round-trip cost?",
+    "answer": 100,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Buy leg: 0.1% x 5,000 = 5; plus fixed 20; total 25. Sell leg: 0.1% x 5,000 = 5; plus fixed 20; plus DP 50; total 75. Round trip: 25 + 75 = 100.",
+    "concepts": ["cost-components", "fixed-vs-proportional"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.2-q2",
+    "type": "numeric",
+    "prompt": "Using the same DUMMY model and the Rs 5,000 round trip (total cost Rs 100), what is the break-even move as a percentage of the position value?",
+    "answer": 2.0,
+    "tolerance": 0,
+    "unit": "%",
+    "solution": "Total cost / position value = 100 / 5,000 = 0.02 = 2.0%. This is approximate, because the exit price changes the proportional charges.",
+    "concepts": ["break-even", "fixed-vs-proportional"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.2-q3",
+    "type": "mcq",
+    "prompt": "A broker shows zero brokerage on a delivery order. A trader concludes, \"Zero brokerage means the trade is free.\" Is the conclusion right?",
+    "options": [
+      {"id": "a", "text": "Yes, because brokerage is the only cost that applies"},
+      {"id": "b", "text": "No. Other cost components can still apply. Brokerage is only one line in the list."},
+      {"id": "c", "text": "Yes, if the trade is small enough"},
+      {"id": "d", "text": "No, because zero brokerage is itself a sign of a fraud"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Brokerage is one of several components. Exchange charges, the SEBI fee, stamp duty, GST and the DP charge on a sell can all apply, depending on the rules that must be verified.",
+      "c": "Size changes how much each fixed charge weighs, but it does not remove the charges. A small trade is more expensive as a share of its value, not free.",
+      "d": "Zero brokerage is not evidence of fraud. The point is that one line on a statement is never the whole cost."
+    },
+    "concepts": ["cost-components", "misconceptions"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.2-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"I found a brokerage rate on a finance blog, so I will use that rate in my cost plan.\" Which part of this is wrong?",
+    "options": [
+      {"id": "a", "text": "It is fine if the blog post is recent"},
+      {"id": "b", "text": "A rate must be checked against the official source, with the date of the check, before it is used"},
+      {"id": "c", "text": "Blog rates are always correct once they are published"},
+      {"id": "d", "text": "Only the broker's rates matter, so exchange and government rates can be ignored"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Recency does not make a rate official. A recent blog post can still be wrong, out of date or about a different segment.",
+      "c": "Being published does not make a rate correct. Rates change, and the official page is the only reliable source for them.",
+      "d": "The cost plan has several components from different bodies. Ignoring the exchange, SEBI, state and government lines underestimates the cost."
+    },
+    "concepts": ["verification", "cost-components"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.2-q5",
+    "type": "multi",
+    "prompt": "In the DUMMY model used in this chapter, which charges apply to the SELL leg of a Rs 5,000 round trip? Select all that apply.",
+    "options": [
+      {"id": "a", "text": "Fixed Rs 20 per order"},
+      {"id": "b", "text": "Proportional 0.1% of the sell turnover"},
+      {"id": "c", "text": "DP charge of Rs 50 on the sale"},
+      {"id": "d", "text": "Nothing, because a sell carries no charges"}
+    ],
+    "answer": ["a", "b", "c"],
+    "explanations": {
+      "d": "A sell leg carries charges in the dummy model: the fixed per-order charge, the proportional charge and the DP charge on the sale. Only the buy leg has no DP charge."
+    },
+    "concepts": ["cost-components", "basis-of-charges"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T2.2-q6",
+    "type": "scenario",
+    "prompt": "Hypothetical. Two DUMMY round trips have the same percentage price move. Trade X is Rs 5,000 and trade Y is Rs 50,000. Using the DUMMY model, which trade has the higher cost as a percentage of its value?",
+    "options": [
+      {"id": "a", "text": "Trade X, at 2.0% of its value"},
+      {"id": "b", "text": "Trade Y, at 0.38% of its value"},
+      {"id": "c", "text": "Both are the same, because the rates are the same"},
+      {"id": "d", "text": "Trade Y, because it costs more rupees in total"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "0.38% is the cost of trade Y, the larger trade. Trade X has the higher percentage because fixed charges are spread over less value.",
+      "c": "The rates are the same, but the fixed charges do not grow with value, so the percentages differ.",
+      "d": "Trade Y costs more rupees (Rs 190 against Rs 100), but a larger total does not mean a larger share of the position."
+    },
+    "concepts": ["fixed-vs-proportional", "break-even"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  }
+]

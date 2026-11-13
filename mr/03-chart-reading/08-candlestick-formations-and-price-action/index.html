@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>कँडलस्टिक रचना आणि भाव-कृती - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../03-chart-reading/08-candlestick-formations-and-price-action/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../03-chart-reading/08-candlestick-formations-and-price-action/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T3.8
+title: कँडलस्टिक रचना आणि भाव-कृती
+page_type: Concept
+prerequisites: [T3.1, T3.3, T3.4]
+labs: [Lab 3]
+estimated_minutes: 25
+-->
+<h1 id="कँडलसटिक-रचना-आणि-भाव-कृती"><a class="header" href="#कँडलसटिक-रचना-आणि-भाव-कृती">कँडलस्टिक रचना आणि भाव-कृती</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एक मित्र चार्टवर दोन कँडल दाखवतो. मित्र म्हणतो, “हा मंदीचा एंगल्फिंग पॅटर्न आहे. आता भाव पडणार.” नाव खात्रीशीर वाटते. हे प्रकरण दाखवते की कँडलस्टिक पॅटर्न खरे तर काय असतो. तो एका नावाचा आकार-नियम असतो. तुम्ही हाताने दोन आकार-नियम तपासाल. तसेच नावावरून पुढे भाव काय करेल हे का सांगता येत नाही, तेही शिकाल.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<ul>
+<li><strong>कँडलस्टिक पॅटर्न</strong> म्हणजे आकाराचा नियम. नियम सांगतो की कँडल कशी दिसली पाहिजे. <strong>नाव</strong> हे त्या नियमाचे फक्त लेबल असते.</li>
+<li>लेखक नेहमी नियमावर सहमत नसतात. एकाच नावाचा अर्थ वेगवेगळ्या पुस्तकांत वेगळा आकार असू शकतो. तुम्ही वापरता तो नेमका नियम नेहमी लिहून ठेवा.</li>
+<li><strong>तेजी</strong> आणि <strong>मंदी</strong> कँडलची दिशा सांगतात. हिरवी कँडल बंद होते तेव्हा ती उघडण्याच्या भावापेक्षा वर असते. लाल कँडल बंद होते तेव्हा ती उघडण्याच्या भावापेक्षा खाली असते.</li>
+<li><strong>संदर्भ</strong> म्हणजे आकार कुठे दिसतो. <em>आधार आणि रोध</em> आणि <em>ट्रेंड आणि बाजाराची रचना</em> यांच्याशी तुलना करा. तोच आकार वाढत्या बाजारात वेगळा अर्थ देऊ शकतो, आणि पडत्या बाजारात वेगळा.</li>
+<li><strong>बेस रेट</strong> म्हणजे एखाद्या आकारानंतर त्याच्या नावाप्रमाणे हालचाल किती वेळा येते तो दर. हा अजून खुला संशोधन प्रश्न आहे. हे पुस्तक कोणत्याही रचनेचा आकडा सांगत नाही.</li>
+<li><strong>भाव-कृती</strong> (प्राइस ॲक्शन) म्हणजे भाव आणि कँडल थेट वाचणे. हे फक्त वर्णन आहे. त्याचे नियम तपासल्यावरच ती पद्धत बनते.</li>
+<li>अनेक आकार योगायोगाने दिसतात. भाव आधीच हलल्यानंतर आकाराला नाव देणे म्हणजे मागे पाहून केलेला विचार. मागे पाहिल्यावर सगळे स्पष्ट दिसते.</li>
+<li>पुष्टी करणारे नियम निकाल बदलतात. उदाहरणार्थ, पुढची कँडल बंद होईपर्यंत तुम्ही थांबू शकता. चाचणी करण्यापूर्वी नियम सांगा.</li>
+</ul>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: pattern-quiz | pairs: 3 | caption: तीन जोड्या कँडल; आकाराचे नाव सांगा किंवा कोणताही नाही निवडा, मग बॉडी तपासा -->
+<p>प्रत्येक जोडीत दोन कँडल आहेत. आकार निवडा, किंवा कोणताही नाही निवडा. मग बॉडी तपासा. विचारा की दुसरी बॉडी पहिल्या बॉडीला झाकते का. तसेच विचारा की दुसऱ्या कँडलचा रंग नियमाला हवा तसा आहे का.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक. मंदीचा एंगल्फिंग पॅटर्न.</strong> येथे वापरलेल्या नियमात तीन तपासण्या आहेत. दुसरी कँडल लाल आहे. तिची बॉडी पहिल्या कँडलच्या बॉडीला झाकते. तिचा बंद भाव पहिल्या कँडलच्या उघडण्याच्या भावापेक्षा खाली आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>कँडल</th><th>उघडणे</th><th>बंद</th><th>रंग</th><th>बॉडी</th></tr></thead><tbody>
+<tr><td>दिवस 1</td><td>Rs 105</td><td>Rs 110</td><td>हिरवी</td><td>Rs 105 ते Rs 110</td></tr>
+<tr><td>दिवस 2</td><td>Rs 111</td><td>Rs 102</td><td>लाल</td><td>Rs 102 ते Rs 111</td></tr>
+</tbody></table>
+</div>
+<p>नियम तपासा:</p>
+<ul>
+<li>दिवस 2 ची बॉडी Rs 102 ते Rs 111 आहे. दिवस 1 ची बॉडी Rs 105 ते Rs 110 आहे. दिवस 2 दोन्ही टोकांना दिवस 1 ला झाकते. नियम पाळला गेला.</li>
+<li>दिवस 2 Rs 102 ला बंद होतो. दिवस 1 Rs 105 ला उघडला. Rs 102 हे Rs 105 च्या खाली आहे. नियम पाळला गेला.</li>
+</ul>
+<p><strong>काल्पनिक. हॅमर आकाराची कँडल.</strong> एका आवृत्तीचा नियम म्हणतो: खालची शॅडो बॉडीच्या किमान दुप्पट असावी, आणि वरची शॅडो लहान असावी. शॅडो म्हणजे बॉडीच्या वर किंवा खाली दिसणारी पातळ रेषा. इतर लेखक वेगळे नियम वापरतात.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणन</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. बॉडी</td><td>उघडणे Rs 200, बंद Rs 199. 200 वजा 199</td><td>Rs 1</td></tr>
+<tr><td>2. खालची शॅडो</td><td>बंद Rs 199 वजा नीचांक Rs 192</td><td>Rs 7</td></tr>
+<tr><td>3. खालची शॅडो बॉडीच्या तुलनेत</td><td>7 भागिले 1</td><td>बॉडीच्या 7 पट</td></tr>
+<tr><td>4. वरची शॅडो</td><td>उच्च Rs 201 वजा उघडणे Rs 200</td><td>Rs 1</td></tr>
+</tbody></table>
+</div>
+<p>पायरी 3 तपासा: 1 गुणिले 7 म्हणजे 7. खालची शॅडो बॉडीच्या किमान दुप्पट आहे, म्हणून हा नियम पाळला गेला.</p>
+<p><strong>धडा.</strong> दोन्ही आकार त्यांचे नियम पाळतात. पण दोघेही सांगत नाहीत की भाव पुढे काय करेल. या तपासण्या फक्त आकार तपासतात.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> तीन जोड्या कँडल खाली आहेत. मूल्ये काल्पनिक आहेत. प्रत्येक जोडीसाठी, मंदीचा किंवा तेजीचा एंगल्फिंग नियम पाळला जातो का ते सांगा. बॉडींची तुलना दाखवा.</p>
+<ul>
+<li>जोडी A. दिवस 1: उघडणे Rs 100, बंद Rs 104, हिरवी. दिवस 2: उघडणे Rs 105, बंद Rs 98, लाल.</li>
+<li>जोडी B. दिवस 1: उघडणे Rs 100, बंद Rs 104, हिरवी. दिवस 2: उघडणे Rs 103, बंद Rs 107, हिरवी.</li>
+<li>जोडी C. दिवस 1: उघडणे Rs 110, बंद Rs 104, लाल. दिवस 2: उघडणे Rs 103, बंद Rs 112, हिरवी.</li>
+</ul>
+<p>संकेत:</p>
+<ol>
+<li>बॉडींची तुलना करा, शॅडोची नाही.</li>
+<li>दुसरी बॉडी पहिल्या बॉडीला झाकते का ते तपासा.</li>
+<li>दुसऱ्या कँडलचा रंग तपासा. मंदीसाठी लाल हवी. तेजीसाठी हिरवी हवी.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>जोडी A: मंदीचा एंगल्फिंग नियम पाळला गेला. दिवस 1 ची बॉडी Rs 100 ते Rs 104 आहे. दिवस 2 ची बॉडी Rs 98 ते Rs 105 आहे. दिवस 2 दिवस 1 ला झाकते, आणि दिवस 2 लाल आहे. दिवस 2 Rs 98 ला बंद होतो, जो Rs 100 च्या खाली आहे.</li>
+<li>जोडी B: नियम पाळला गेला नाही. दिवस 2 हिरवी आहे, म्हणून ती मंदी असू शकत नाही. तिची बॉडी Rs 103 पासून सुरू होते, जे Rs 100 च्या वर आहे. ती दिवस 1 च्या बॉडीची सुरुवात झाकत नाही. ती Rs 107 ला बंद होते, जो Rs 100 च्या वर आहे, म्हणून ती मंदी नाही.</li>
+<li>जोडी C: तेजीचा एंगल्फिंग नियम पाळला गेला. दिवस 1 ची बॉडी Rs 104 ते Rs 110 आहे. दिवस 2 ची बॉडी Rs 103 ते Rs 112 आहे. दिवस 2 दिवस 1 ला झाकते, आणि दिवस 2 हिरवी आहे. दिवस 2 Rs 112 ला बंद होतो, जो Rs 110 च्या वर आहे.</li>
+</ul>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> चार ओळींत किंवा कमी शब्दांत एका आकाराची स्वतःची व्याख्या लिहा. तुम्हाला लागणारा संदर्भ सांगा. नियम तपासण्यापूर्वी तुम्हाला लागणाऱ्या तीन गोष्टी लिहा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>नमुना उत्तर:</p>
+<ul>
+<li>व्याख्या: मंदीचा एंगल्फिंग पॅटर्न म्हणजे लाल कँडल, जिची बॉडी आधीच्या हिरव्या कँडलच्या बॉडीला झाकते.</li>
+<li>संदर्भ: हा आकार वाढीनंतर, तुम्ही आधीच चिन्हांकित केलेल्या पातळीजवळ दिसतो.</li>
+<li>चाचणीपूर्वी लागते: संदर्भाची नेमकी व्याख्या. ठरलेला चाचणी कालावधी. निकाल कधी नोंदवायचा याचा ठरलेला नियम.</li>
+</ul>
+<p>कोणतेही उत्तर चालेल, जेव्हा नियम नेमका असतो, संदर्भ सांगितलेला असतो आणि कोणताही निकाल पाहण्यापूर्वी चाचणीचे टप्पे लिहिलेले असतात.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>हे प्रकरण एंगल्फिंग आणि हॅमर नियम, पॅटर्नच्या नावाच्या मर्यादा आणि चाचणीसाठी काय लागते ते तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> कागदी (paper). तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल तर कागदावर लिहा.</p>
+<ol>
+<li>एक आकार निवडा. त्याची व्याख्या चार ओळींत किंवा कमी शब्दांत लिहा.</li>
+<li>तुम्हाला लागणारा संदर्भ लिहा, उदाहरणार्थ आकारापूर्वीचा ट्रेंड.</li>
+<li>तुम्ही पाहिलेल्या चार्टवर 10 उदाहरणे शोधा. प्रत्येक तारीख, कँडल आणि संदर्भ नोंदवा.</li>
+<li>तुम्ही चाचणी सुरू करण्यापूर्वी ठरवलेल्या दिवसांनंतरच निकाल नोंदवा. तो आकडा नंतर बदलू नका.</li>
+<li>निकाल Lab 3 मध्ये शिकण्याच्या नोंदी म्हणून लिहा. कोणत्याही निकालाला ट्रेडिंग सिग्नल मानू नका.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>नाव असलेला पॅटर्न हे वचन नाही. कोणताही पॅटर्न नफा देतो असा दावा हे पुस्तक करत नाही.</li>
+<li>हालचालीनंतर दिलेले नाव म्हणजे मागे पाहून केलेला विचार. आकार आता स्पष्ट दिसू शकतो. भाव हलत असताना तो स्पष्ट नव्हता.</li>
+<li>संदर्भ आणि ठरलेला चाचणी कालावधी नसलेला नियम तपासता येत नाही.</li>
+<li>दहा किंवा वीस उदाहरणे एखादा आकार चालतो किंवा चालत नाही हे दाखवायला खूप कमी आहेत.</li>
+<li>निकाल पाहिल्यावर नियम बदलल्यास चाचणी नियमाशी अन्याय्य होते.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>कँडलस्टिक पॅटर्न म्हणजे आकाराचा नियम. वापरण्यापूर्वी नेमका नियम लिहा.</li>
+<li>संदर्भ आणि पुष्टी करणारे नियम आकाराचा अर्थ बदलतात.</li>
+<li>नाव सांगत नाही की भाव पुढे काय करेल.</li>
+<li>नियमावर विश्वास ठेवण्यापूर्वी त्याची चाचणी करा (<em>बॅकटेस्टिंगची मूलतत्त्वे आणि वास्तवाचा करार</em>).</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p>स्रोत:</p>
+<ul>
+<li>Zerodha Varsity, कँडलस्टिक पॅटर्न मॉड्यूल (फक्त संदर्भासाठी, येथील मजकूर मूळ शब्दांत आहे)</li>
+<li>कँडलस्टिक पॅटर्नवरील समीक्षित संशोधन अभ्यास. या प्रकरणात या अभ्यासांचे कोणतेही निकाल सांगितलेले नाहीत.</li>
+</ul>
+<p>पडताळायची तथ्ये:</p>
+<ul>
+<li>एखाद्या नावाच्या पॅटर्नचा बेस रेट, जर नंतर एखादा अभ्यास उद्धृत केला. या प्रकरणात कोणताही बेस रेट सांगितलेला नाही, कारण या पुस्तकासाठी कोणताही अभ्यास तपासलेला नाही.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T3.8&amp;body=Page%3A%2003-chart-reading%2F08-candlestick-formations-and-price-action%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../03-chart-reading/07-volume-and-what-it-adds/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../03-chart-reading/09-chart-reading-assessment/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../03-chart-reading/07-volume-and-what-it-adds/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../03-chart-reading/09-chart-reading-assessment/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,126 @@
+[
+  {
+    "id": "T8.6-q1",
+    "type": "mcq",
+    "prompt": "Hypothetical. After five losses in a row, someone says: \"A win is due now.\" Which response is correct?",
+    "options": [
+      {"id": "a", "text": "Yes, a win is due after five losses"},
+      {"id": "b", "text": "No. In the simple model here, each trade has the same chance, so the losses do not make a win due"},
+      {"id": "c", "text": "Yes, if I wait an hour before the next trade"},
+      {"id": "d", "text": "Only after six losses is a win due"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This is the gambler's fallacy. The losses before do not change the chance of the next trade in the simple model.",
+      "c": "Waiting does not change the chance. The timing has no effect in this model.",
+      "d": "The count does not change the chance either. Six losses are not a signal that a win is due."
+    },
+    "concepts": ["gamblers-fallacy"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.6-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. At a 40% win rate, the chance of a loss on one trade is 0.6. What is the chance of four losses in a row, starting at one given trade? Give the answer as a decimal to four places.",
+    "answer": 0.1296,
+    "tolerance": 0.0001,
+    "unit": "probability",
+    "solution": "0.6 x 0.6 x 0.6 x 0.6 = 0.6^4 = 0.36 x 0.36 = 0.1296.",
+    "concepts": ["streak-probability"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.6-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. Four losses in a row, at 1R of Rs 500 each. What is the total loss in rupees?",
+    "answer": 2000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "4 x Rs 500 = Rs 2,000. As a share of Rs 50,000 that is 2,000 / 50,000 = 4%.",
+    "concepts": ["planned-loss", "streaks"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.6-q4",
+    "type": "mcq",
+    "prompt": "Hypothetical. At a 40% win rate, which statement about losing streaks is correct?",
+    "options": [
+      {"id": "a", "text": "I will never see six losses in a row"},
+      {"id": "b", "text": "Six losses in a row can happen. From one given trade, the chance is about 4.7%"},
+      {"id": "c", "text": "Six losses in a row means the method is broken"},
+      {"id": "d", "text": "Six losses in a row are impossible if the plan is good"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A 40% win rate does not rule out six losses. It makes them less common than at a lower win rate, but they can still happen.",
+      "c": "A streak alone does not prove the method is broken. The simple model says runs happen by chance.",
+      "d": "A good plan cannot stop a run of losses. It only sets what you do during one."
+    },
+    "concepts": ["streak-probability"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.6-q5",
+    "type": "mcq",
+    "prompt": "Hypothetical. You say: \"I will decide what to do when I am in the streak.\" Which response is correct?",
+    "options": [
+      {"id": "a", "text": "Correct, because I will know my feelings at that time"},
+      {"id": "b", "text": "Wrong. The action for each stage is written before the run begins"},
+      {"id": "c", "text": "Correct, for experienced traders only"},
+      {"id": "d", "text": "Correct, if the streak is short"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Feelings are strongest in a streak. That is why the action is set before it starts.",
+      "c": "Every level of trader can feel pressure in a streak. The pre-set action helps all of them.",
+      "d": "You cannot tell in advance how long a streak will last, so the action must already be written."
+    },
+    "concepts": ["pre-set-actions", "drawdown-stages"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.6-q6",
+    "type": "scenario",
+    "prompt": "Hypothetical. A losing streak reaches your weekly limit on day three. Your plan says: weekly limit reached means stop for the week. What fits the plan?",
+    "options": [
+      {"id": "a", "text": "Trade on day four at the same size, to win back the loss"},
+      {"id": "b", "text": "Stop for the week as the plan says, and write your feelings in the log"},
+      {"id": "c", "text": "Double the size on day four"},
+      {"id": "d", "text": "Skip the journal, because the week is already lost"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Trading again at the same size breaks the weekly limit rule. The plan says to stop for the week.",
+      "c": "A bigger size after a loss breaks the no-increase rule and makes the loss harder to recover.",
+      "d": "The journal is most useful in a streak. It records the feelings and the rule that was followed."
+    },
+    "concepts": ["weekly-limit", "drawdown-stages"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.6-q7",
+    "type": "spot-the-mistake",
+    "prompt": "Hypothetical journal note: \"I doubled my size after four losses to recover faster.\" Which part of this note is the mistake?",
+    "options": [
+      {"id": "a", "text": "Wanting to recover faster"},
+      {"id": "b", "text": "Doubling size is not a planned action for this stage, because size stays fixed in a drawdown"},
+      {"id": "c", "text": "Keeping a feelings log"},
+      {"id": "d", "text": "Watching a streak simulator"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Wanting to recover is a normal feeling. The mistake is the action that follows from it.",
+      "c": "A feelings log is a useful tool. It is not the mistake here.",
+      "d": "Simulators help you learn the odds. The mistake is the doubled size after the losses."
+    },
+    "concepts": ["drawdown-stages", "size"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "T5.6-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Closes Rs 50, Rs 52 and Rs 54. N = 3, population SD, k = 2. What is the upper band?",
+    "answer": 55.27,
+    "tolerance": 0.01,
+    "unit": "Rs",
+    "solution": "Middle band = (50 + 52 + 54) / 3 = 52. Differences -2, 0, +2. Squares 4, 0, 4, total 8. Population variance = 8 / 3 = 2.667. SD = square root of 2.667 = 1.633. Band distance = 2 x 1.633 = 3.266. Upper band = 52 + 3.266 = 55.266, which rounds to Rs 55.27.",
+    "concepts": ["bollinger-bands", "standard-deviation"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.6-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Closes Rs 10, Rs 12 and Rs 14. N = 3, sample SD, k = 2. What is the upper band?",
+    "answer": 16,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Middle band = 12. Total of squared differences = 8. Sample variance = 8 / (3 - 1) = 4. Sample SD = square root of 4 = 2. Band distance = 2 x 2 = 4. Upper band = 12 + 4 = Rs 16.",
+    "concepts": ["bollinger-bands", "sample-vs-population"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.6-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. Closes Rs 200, Rs 204, Rs 196 and Rs 200. N = 4, sample SD, k = 2. What is the upper band?",
+    "answer": 206.53,
+    "tolerance": 0.01,
+    "unit": "Rs",
+    "solution": "Middle band = 200. Total of squared differences = 0 + 16 + 16 + 0 = 32. Sample variance = 32 / 3 = 10.667. Sample SD = square root of 10.667 = 3.266. Band distance = 2 x 3.266 = 6.532. Upper band = 200 + 6.532 = Rs 206.53.",
+    "concepts": ["bollinger-bands", "sample-vs-population"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.6-q4",
+    "type": "mcq",
+    "prompt": "What does standard deviation measure in Bollinger Bands?",
+    "options": [
+      {"id": "a", "text": "The direction of the trend"},
+      {"id": "b", "text": "How spread out the closes are around their average"},
+      {"id": "c", "text": "The total volume traded in the window"},
+      {"id": "d", "text": "The price the market will reach next"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Standard deviation does not show direction. It shows spread. A market can spread widely in either direction.",
+      "c": "Volume is a different measure. Standard deviation uses only the closes in the window.",
+      "d": "No band predicts a future price. The bands describe the closes that have already happened."
+    },
+    "concepts": ["standard-deviation", "bollinger-bands"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.6-q5",
+    "type": "scenario",
+    "prompt": "Hypothetical. A stock closes above its upper band. A reader writes, 'The price is overbought, so I will sell now.' Which response fits the book's rules?",
+    "options": [
+      {"id": "a", "text": "Agree. A close above the upper band means the price must fall soon"},
+      {"id": "b", "text": "Treat the close as an observation. Test whether a band rule works before using it, and set the stop and size first"},
+      {"id": "c", "text": "Ignore the bands, because they are always wrong"},
+      {"id": "d", "text": "Sell only if every other indicator agrees, because a single band is never enough to act"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A close above the band shows where the price sits. It does not show that the price must fall. Trends can keep price above the upper band for a long time.",
+      "c": "Bands are useful for describing spread. They are not always wrong, and they are not a forecast either way.",
+      "d": "Adding more indicators does not turn an untested reading into a rule. The reader still needs a tested rule, a stop and a size."
+    },
+    "concepts": ["bollinger-bands", "hypothesis-testing"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.6-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Read this statement. Which part is wrong? 'The middle band is the 20-day average of closes. The upper band is the middle band plus 2 times the standard deviation. A close above the upper band means the price will reverse.'",
+    "options": [
+      {"id": "a", "text": "The middle band is the 20-day average of closes"},
+      {"id": "b", "text": "The upper band is the middle band plus 2 times the standard deviation"},
+      {"id": "c", "text": "A close above the upper band means the price will reverse"},
+      {"id": "d", "text": "The statement has no mistake"}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "This part is correct. The middle band is the average of the last N closes, and 20 is a common choice for N.",
+      "b": "This part is correct. The upper band is the middle band plus k times the standard deviation, and k = 2 is a common choice.",
+      "d": "There is a mistake. The third sentence turns a description into a forecast. A close above the upper band does not show that the price will reverse."
+    },
+    "concepts": ["bollinger-bands", "limits-of-indicators"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

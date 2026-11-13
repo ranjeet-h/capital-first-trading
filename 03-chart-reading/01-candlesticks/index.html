@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Candlesticks - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/03-chart-reading/01-candlesticks/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T3.1
+title: Candlesticks
+page_type: Concept
+prerequisites: [T1.4, T1.5]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="candlesticks"><a class="header" href="#candlesticks">Candlesticks</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p><strong>Hypothetical.</strong> A stock opens the day at Rs 500. It closes the day at Rs 509. The chart shows that whole day as one box. A trader looks at the box. The trader thinks, “The price went up, so it will keep going up.” That thought is the mistake this chapter addresses. The box is a summary of one day. It holds four numbers. It does not say what the next day will bring.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>A price is one trade. Many trades happen in a day, so many prices appear. A candle squeezes all the prices for one period into four numbers.</p>
+<p>The four numbers are:</p>
+<ul>
+<li><strong>Open:</strong> the first traded price in the period.</li>
+<li><strong>High:</strong> the highest traded price in the period.</li>
+<li><strong>Low:</strong> the lowest traded price in the period.</li>
+<li><strong>Close:</strong> the last traded price in the period.</li>
+</ul>
+<p>A period can be one minute, one day or any other length. The length is covered in <em>Timeframes and how the same price looks different</em>.</p>
+<p>The candle has three parts that come from those four numbers:</p>
+<ul>
+<li><strong>Body:</strong> the thick part. It is the gap between open and close, never a negative number. Body = close minus open, ignoring the sign.</li>
+<li><strong>Shadows</strong> (also called wicks): the thin lines above and below the body. The upper shadow runs from the top of the body up to the high. The lower shadow runs from the bottom of the body down to the low.</li>
+<li><strong>Range:</strong> the full height of the candle. Range = high minus low.</li>
+</ul>
+<p>Two labels describe the candle:</p>
+<ul>
+<li>A <strong>bullish</strong> candle has a close above its open. The price finished higher than it started.</li>
+<li>A <strong>bearish</strong> candle has a close below its open. The price finished lower than it started.</li>
+</ul>
+<p>Colours differ between charting tools. One tool may draw bullish candles in green. Another may use white. Read the legend, the small key on the chart, before you rely on colour. The rule is the comparison of close with open, not the colour. Kite’s default candles are green and red. Zerodha says a setting called “Colour bars based on previous close” can change how the colours are chosen, so read the legend on your own chart. (As of 11 Nov 2026, Zerodha support page on candle colours. Settings change, so check Kite.)</p>
+<p>A candle is built from many trades. Each trade is one tick. The candle keeps the first, highest, lowest and last tick of the period.</p>
+<p>The open of a daily candle on NSE comes from the pre-open phase. NSE sets the day’s open price from the price found in pre-open, which runs from 9:00 am to 9:15 am. If no price is found there, the first trade of the normal market at 9:15 am is the open. The session times are covered in <em>Trading sessions, timings and holidays</em>. (As of 11 Nov 2026, NSE pre-open page. Rules change, so check the NSE site.) Daily candles on Kite use the exchange’s end-of-day data, while minute candles are built from the live price feed, so the open on a minute chart can differ a little from the daily open.</p>
+<p>A candle does not show everything. It does not show the order of trades inside the period. It does not show how many shares were traded. It says nothing certain about the next candle.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: candle-builder | ticks: 501, 499, 510, 506 | caption: One candle forming from four ticks; open, high, low and close update as each tick arrives; Play, Pause, Step and Reset; text table alongside -->
+<p>Use Step to add one tick at a time. The open stays fixed at the first tick. The high and low move only when a new extreme arrives. The close is always the last tick. Use Play, Pause, Step and Reset. Check each number against the text table beside the picture.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> One daily candle: open Rs 500, high Rs 512, low Rs 497, close Rs 509.</p>
+<div class="table-wrapper"><table><thead><tr><th>Part</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>Body</td><td>509 minus 500</td><td>Rs 9</td></tr>
+<tr><td>Upper shadow</td><td>512 minus 509</td><td>Rs 3</td></tr>
+<tr><td>Lower shadow</td><td>500 minus 497</td><td>Rs 3</td></tr>
+<tr><td>Range</td><td>512 minus 497</td><td>Rs 15</td></tr>
+</tbody></table>
+</div>
+<p>Check: body plus both shadows must equal the range. 9 + 3 + 3 = 15.</p>
+<p>The close is above the open, so the candle is <strong>bullish</strong>.</p>
+<p>Cost check, before charges: 100 shares at Rs 509 cost 100 x 509 = Rs 50,900. Check: 100 x 500 = Rs 50,000, and 100 x 9 = Rs 900, which adds to Rs 50,900.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Five ticks arrive in this order: Rs 501, Rs 499, Rs 510, Rs 506 and Rs 504. Build the candle. Give the open, high, low and close. Say whether it is bullish or bearish.</p>
+<p>Hints:</p>
+<ol>
+<li>The open is the first tick.</li>
+<li>The high is the largest tick.</li>
+<li>The low is the smallest tick.</li>
+<li>The close is the last tick.</li>
+</ol>
+<p><strong>Answer:</strong> Open Rs 501. High Rs 510. Low Rs 499. Close Rs 504. The candle is <strong>bullish</strong>, because 504 is above 501.</p>
+<ul>
+<li>Body: 504 minus 501 = Rs 3.</li>
+<li>Upper shadow: 510 minus 504 = Rs 6.</li>
+<li>Lower shadow: 501 minus 499 = Rs 2.</li>
+<li>Range: 510 minus 499 = Rs 11. Check: 3 + 6 + 2 = 11.</li>
+</ul>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> <strong>Hypothetical.</strong> A candle has open Rs 300, high Rs 308, low Rs 296 and close Rs 297. Work out the body, the upper shadow, the lower shadow and the range. Say whether the candle is bullish or bearish. Name one thing this candle does not show.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>Body: 300 minus 297 = Rs 3.</li>
+<li>Upper shadow: the top of the body is the open here, because the close is lower. 308 minus 300 = Rs 8.</li>
+<li>Lower shadow: 297 minus 296 = Rs 1.</li>
+<li>Range: 308 minus 296 = Rs 12. Check: 3 + 8 + 1 = 12.</li>
+<li>The candle is <strong>bearish</strong>, because 297 is below 300.</li>
+<li>One thing it does not show: the order of the trades inside the day. It also does not show the volume. Either answer is correct.</li>
+</ul>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the four prices, the body and shadow arithmetic, and what a single candle cannot tell you.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong>. Pick one stock and a chart you are allowed to view. Write the result in your journal. If the journal is not ready, use paper.</p>
+<ol>
+<li>Choose one stock. Use a chart you are allowed to view.</li>
+<li>For 10 daily candles, write the open, high, low and close.</li>
+<li>For each candle, work out the body, the upper shadow, the lower shadow and the range.</li>
+<li>Mark each candle as bullish or bearish.</li>
+<li>If you use the Kite demo instead, write the mode as <code>kite_demo</code>. Say that the demo is for interface practice only.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>A long lower shadow does not mean the price will bounce. It shows only that the price fell during the period and then recovered part of the fall.</li>
+<li>Colour does not define a candle. Check the legend first. Then compare the close with the open.</li>
+<li>The order of moves inside a candle is unknown. The shape cannot show whether the high or the low came first.</li>
+<li>A candle does not show volume. Two candles with the same shape can have very different numbers of shares traded. Volume is covered in <em>Volume and what it adds</em>.</li>
+<li>A candle is a record of one period. Calling the last candle strong or weak does not predict the next one.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>A candle squeezes one period into four numbers: open, high, low and close.</li>
+<li>Body = close minus open, ignoring the sign. Range = high minus low.</li>
+<li>Bullish means close above open. Bearish means close below open.</li>
+<li>Colour is a display setting. Read the legend before you rely on it.</li>
+<li>A candle describes one past period. It is not a forecast.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Zerodha Varsity, candlestick module (reference only)</li>
+<li>NSE India, market data definitions</li>
+<li>Kite chart help pages</li>
+</ul>
+<p>Facts checked on 11 Nov 2026:</p>
+<ul>
+<li>Kite’s default candle colours are green and red, and a setting can change them. This comes from Zerodha’s support site.</li>
+<li>NSE sets the day’s open from the pre-open price, or from the first normal-market trade if pre-open finds none. This comes from NSE’s pre-open page.</li>
+<li>Daily candles use exchange end-of-day data, and minute and hourly candles use the live feed. This comes from Zerodha’s support site.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../03-chart-reading/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../03-chart-reading/02-timeframes/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../03-chart-reading/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../03-chart-reading/02-timeframes/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

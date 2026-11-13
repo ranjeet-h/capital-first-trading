@@ -1,0 +1,118 @@
+[
+  {
+    "id": "T4.8-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. You planned 10 shares at Rs 250 but typed 100. What is the order value of the typed order, in rupees?",
+    "answer": 25000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Order value = 100 x 250 = Rs 25,000. Check: the intended order is 10 x 250 = Rs 2,500, and 25,000 / 2,500 = 10, so the typed order is ten times the intended size.",
+    "concepts": ["fat-finger", "order-value"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.8-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. The typed order is 100 shares bought at Rs 250, with a stop Rs 10 below the entry. What is the planned loss at the stop, in rupees?",
+    "answer": 1000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Loss per share = 250 - 240 = Rs 10. Planned loss = 100 x 10 = Rs 1,000. Check: the intended 10 shares would lose 10 x 10 = Rs 100, and 1,000 / 100 = 10.",
+    "concepts": ["quantity-error", "planned-loss"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.8-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. The planned loss on the typed order is Rs 1,000. The account is Rs 50,000. What is the planned loss as a percentage of the account? Give the answer as a number.",
+    "answer": 2,
+    "tolerance": 0,
+    "unit": "%",
+    "solution": "Planned loss as a percent of capital = 1,000 / 50,000 x 100 = 2%. Check: 1% of Rs 50,000 is Rs 500, and Rs 1,000 is twice Rs 500, which is 2%.",
+    "concepts": ["percentage", "risk-budget"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.8-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. You hold 100 shares bought at Rs 250. You place a sell stop, but you choose the buy side by mistake. The trigger is Rs 240. What happens?",
+    "options": [
+      {"id": "a", "text": "It protects the holding and sells at Rs 240."},
+      {"id": "b", "text": "It is a buy instruction, not a sell stop, so the holding has no working stop."},
+      {"id": "c", "text": "It sells at the best available price when the price falls to Rs 240."},
+      {"id": "d", "text": "The exchange cancels it automatically, so nothing needs checking."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A buy stop does not sell your holding. The stop is on the wrong side.",
+      "c": "This describes a sell stop. The order was placed on the buy side, so it does not sell the holding.",
+      "d": "Nothing in the scenario cancels the order. A wrong side is a mistake you must catch yourself."
+    },
+    "concepts": ["wrong-side", "sl"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.8-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Which statement is wrong?",
+    "options": [
+      {"id": "a", "text": "A stop placed on the wrong side can leave a holding without a working stop."},
+      {"id": "b", "text": "Seeing no error message proves that the quantity matches the plan."},
+      {"id": "c", "text": "Checking the quantity against your written plan catches many typing errors."},
+      {"id": "d", "text": "An expired GTT can leave a holding without a working stop."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This is correct. A stop on the wrong side does not protect the holding.",
+      "c": "This is correct. Comparing with the written plan is one of the most useful checks.",
+      "d": "This is correct. An expired GTT is no longer active, so the holding has no working stop from it."
+    },
+    "concepts": ["checklist", "confirmation"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.8-q6",
+    "type": "mcq",
+    "prompt": "Which of these is a reason a stop may never trigger?",
+    "options": [
+      {"id": "a", "text": "The order is cancelled or inactive, so it cannot act."},
+      {"id": "b", "text": "A stop always triggers as soon as it is placed."},
+      {"id": "c", "text": "A stop cannot be placed too far from the price."},
+      {"id": "d", "text": "A fat-finger error is always caught by the exchange."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "A stop triggers only when the price reaches its trigger. A stop does not always trigger, so it must be checked.",
+      "c": "A stop can be placed far from the price. A stop placed far away may never reach its trigger.",
+      "d": "The exchange does not catch every typing error. Check your order yourself before you submit."
+    },
+    "concepts": ["stop-trigger", "order-status"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.8-q7",
+    "type": "mcq",
+    "prompt": "Which step is the best one before you submit an order?",
+    "options": [
+      {"id": "a", "text": "Submit now and fix any problem later."},
+      {"id": "b", "text": "Check side, product, quantity and price against the written plan."},
+      {"id": "c", "text": "Add to the position to balance an error."},
+      {"id": "d", "text": "Click Buy or Sell without reading the order window, because Kite will catch any error."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A fix after submission can leave a larger exposure. Check first.",
+      "c": "Adding to a position increases the exposure. It does not fix a mistake.",
+      "d": "Kite does not check your plan. Read the order window before you click Buy or Sell. Kite's messages are not a safety net."
+    },
+    "concepts": ["checklist", "pre-submission"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

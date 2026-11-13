@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T6.7-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. The daily loss limit is Rs 1,000. Two trades each lose Rs 500. How much of the limit is left, in rupees?",
+    "answer": 0,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Losses so far = 500 + 500 = Rs 1,000. Remaining = 1,000 - 1,000 = Rs 0. The limit is reached, so no more trades are taken today. Checked again: 1,000 - 500 - 500 = 0.",
+    "concepts": ["loss-limit", "running-total"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.7-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. The example daily loss limit is 2 percent of a Rs 50,000 account. What is the limit in rupees?",
+    "answer": 1000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "2 percent of Rs 50,000 = 0.02 x 50,000 = Rs 1,000. Checked again: 50,000 / 50 = 1,000. This is an example limit, not a recommended one.",
+    "concepts": ["loss-limit", "percent-of-capital"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.7-q3",
+    "type": "mcq",
+    "prompt": "A price feed has shown yesterday's last price with an old timestamp since the morning. Which no-trade category applies?",
+    "options": [
+      {"id": "a", "text": "Market"},
+      {"id": "b", "text": "Account"},
+      {"id": "c", "text": "Data"},
+      {"id": "d", "text": "Personal"}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "The market is not the problem here. The price itself is not reliable, which is a data problem.",
+      "b": "No loss limit has been reached. The problem is the stale price feed.",
+      "d": "The trader's state is not the issue. The price information cannot be trusted."
+    },
+    "concepts": ["no-trade-categories", "data-conditions"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.7-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. A trader has not traded for five days. On the sixth day, a weak setup that does not meet all the rules appears. The trader takes it to catch up. Which statement is most accurate?",
+    "options": [
+      {"id": "a", "text": "Taking the setup makes up for the days without trades."},
+      {"id": "b", "text": "Days without trades are not a debt. The weak setup fails the rules, so the correct decision is no-trade."},
+      {"id": "c", "text": "The setup is fine, because the trader has been patient."},
+      {"id": "d", "text": "Trading more often keeps the plan on track."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A no-trade stretch does not create a debt to repay. Each trade must meet the rules on its own.",
+      "c": "Patience does not change whether the setup meets the rules. The rule decides.",
+      "d": "The plan is kept on track by following the rules, not by trading more often."
+    },
+    "concepts": ["no-trade", "fomo"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T6.7-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"A day with no trades is a failed day.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The word day"},
+      {"id": "b", "text": "The phrase with no trades"},
+      {"id": "c", "text": "The claim that the day is a failed day"},
+      {"id": "d", "text": "Nothing; the statement is correct"}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "A day is the normal unit for the plan's limits and results. The word is used correctly.",
+      "b": "No trades can be the correct result when no rule is met. The phrase is not the error.",
+      "d": "The statement is wrong. A day with no trade and a result of Rs 0 can follow the plan completely."
+    },
+    "concepts": ["no-trade", "compliance"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T6.7-q6",
+    "type": "mcq",
+    "prompt": "Which statement about a loss limit is correct?",
+    "options": [
+      {"id": "a", "text": "A limit can be exceeded once if the next trade looks strong."},
+      {"id": "b", "text": "A limit is reached when the day's losses meet it, and trading stops for the day."},
+      {"id": "c", "text": "Limits are only advice, and the trader decides when to follow them."},
+      {"id": "d", "text": "A limit applies only to the first trade of the day."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A limit that can be broken on a strong-looking trade is not a limit. The rule must be fixed in advance.",
+      "c": "A limit set in the plan is a rule. It is not a suggestion that changes during the session.",
+      "d": "A daily limit applies to the whole day's total, not only the first trade."
+    },
+    "concepts": ["loss-limit", "breach-rule"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

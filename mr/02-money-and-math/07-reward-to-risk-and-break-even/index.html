@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>नफा-जोखीम गुणोत्तर, विजय दर आणि तोटा टाळण्याचा बिंदू - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../02-money-and-math/07-reward-to-risk-and-break-even/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../02-money-and-math/07-reward-to-risk-and-break-even/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T2.7
+title: नफा-जोखीम गुणोत्तर, विजय दर आणि तोटा टाळण्याचा बिंदू
+page_type: Math/Calculator
+prerequisites: [T2.1, T2.4]
+labs: [Lab 1, Lab 3]
+estimated_minutes: 20
+-->
+<h1 id="नफा-जोखीम-गुणोततर-विजय-दर-आणि-तोटा-टाळणयाचा-बिंदू"><a class="header" href="#नफा-जोखीम-गुणोततर-विजय-दर-आणि-तोटा-टाळणयाचा-बिंदू">नफा-जोखीम गुणोत्तर, विजय दर आणि तोटा टाळण्याचा बिंदू</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>दोन काल्पनिक योजना Rs 250 एंट्रीने सुरू होतात आणि दोन्हींचा स्टॉप Rs 240 आहे. योजना P चे लक्ष्य Rs 260 आहे. योजना Q चे लक्ष्य Rs 270 आहे. प्रत्येक योजना 100 काल्पनिक व्यापारांपैकी 50 जिंकते. खर्च धरण्यापूर्वी, योजना P ला तोटा टाळण्यासाठी फक्त 50% विजय दर लागतो. योजना Q ला फक्त सुमारे 33.3% लागतो. एकच विजय दर दोन योजनांसाठी खूप वेगळा अर्थ देतो.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>सर्वात आधी ही व्याख्या. <strong>नफा-जोखीम गुणोत्तर (R)</strong> एका शेअरसाठी, संभाव्य नफ्याची तुलना संभाव्य तोट्याशी करते. लॉंग व्यापारासाठी:</p>
+<ul>
+<li>प्रति शेअर जोखीम = एंट्री - स्टॉप.</li>
+<li>प्रति शेअर संभाव्य नफा = लक्ष्य - एंट्री.</li>
+<li>R = संभाव्य नफा / जोखीम.</li>
+</ul>
+<p><strong>खर्च न धरता तोटा टाळण्याचा विजय दर.</strong> R असलेली एक योजना घ्या. W म्हणजे विजय दर. तोटा दर 1 - W आहे. अपेक्षित विजय आणि अपेक्षित तोटे समान असतात, तेव्हा योजना तोटा टाळते. जोखीमच्या एककात, एक विजय R देतो आणि एक तोटा 1 खर्च करतो. म्हणून W x R = (1 - W) x 1. सोडवल्यावर W = 1 / (1 + R). हेच असे लिहिता येते: W = जोखीम / (जोखीम + संभाव्य नफा).</p>
+<p><strong>खर्चामुळे तोटा टाळण्याचा बिंदू वाढतो.</strong> प्रत्येक शेअरवर दिलेला खर्च जोखीम वाढवतो आणि नफा कमी करतो. दोन्ही बदल आवश्यक विजय दर वर ढकलतात.</p>
+<p>इतर मुद्दे:</p>
+<ul>
+<li>बहुतेक पद्धतींमध्ये विजय दर आणि R एकमेकांच्या विरुद्ध चालतात. जास्त लक्ष्य अनेकदा कमी वेळा गाठले जाते. एकटा आकडा निकाल ठरवत नाही.</li>
+<li>लक्ष्य ही योजना असते, अंदाज नाही. अनेक पद्धतींमध्ये स्थिर लक्ष्य वापरलेच जात नाही. त्याबद्दल ट्रॅक 6 मध्ये शिकाल.</li>
+<li>येथे तोटा टाळण्याचा बिंदू खर्च, स्लिपेज आणि गॅप यांच्या आधीचा आहे (<em>स्लिपेज, गॅप आणि नियोजित विरुद्ध प्रत्यक्ष जोखीम</em>). ते वेगळे तोटे आहेत.</li>
+</ul>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>लक्ष्य (Rs)</th><th>प्रति शेअर नफा</th><th>R</th><th>खर्च न धरता तोटा टाळण्याचा विजय दर</th></tr></thead><tbody>
+<tr><td>260</td><td>Rs 10</td><td>1</td><td>50.0%</td></tr>
+<tr><td>270</td><td>Rs 20</td><td>2</td><td>33.3%</td></tr>
+<tr><td>280</td><td>Rs 30</td><td>3</td><td>25.0%</td></tr>
+<tr><td>270, काल्पनिक खर्च Rs 2 प्रति शेअर</td><td>Rs 18 (खर्चानंतर)</td><td>1.5 (खर्चासह)</td><td>40.0%</td></tr>
+</tbody></table>
+</div>
+<p>तक्त्यात खाली वाचा. R वाढतो, तसा तोटा टाळण्यासाठी लागणारा विजय दर कमी होतो. शेवटची ओळ त्याच Rs 270 लक्ष्याची आहे, पण प्रति शेअर काल्पनिक Rs 2 खर्चानंतर. तोटा टाळण्याचा बिंदू 33.3% वरून 40.0% होतो. खर्च हा काल्पनिक आकडा आहे, फक्त गणितासाठी वापरला आहे. Rs 2 हा सरावासाठी घेतलेला गोल आकडा आहे, खरा शुल्क नाही. खऱ्या व्यापारात शुल्क उत्पादन आणि भावावर अवलंबून असते. 11 Nov 2026 पर्यंत, Zerodha डिलिव्हरी व्यापारांवर शून्य ब्रोकरेज दाखवते. इंट्रादे व्यापारांवर प्रति ऑर्डर व्यापार मूल्याच्या 0.03% किंवा Rs 20, यापैकी जे कमी असेल ते, तसेच कर आणि एक्सचेंज शुल्क लागते. संपूर्ण तक्ता <em>व्यापारावरील खर्च</em> मध्ये आहे. नियम आणि दर बदलतात, म्हणून Zerodha चार्जेस पान तपासा.</p>
+<!-- component: rr-breakeven | entry: 250 | stop: 240 | target: 270 | cost: 2 | caption: एंट्री Rs 250, स्टॉप Rs 240, लक्ष्य Rs 270, आणि प्रति शेअर काल्पनिक खर्च Rs 2. लक्ष्य आणि खर्च बदला आणि तोटा टाळण्याचा विजय दर कसा बदलतो ते पाहा. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><em>काल्पनिक.</em> एंट्री Rs 250, स्टॉप Rs 240, लक्ष्य Rs 270.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>प्रति शेअर जोखीम</td><td>250 - 240</td><td>Rs 10</td></tr>
+<tr><td>प्रति शेअर संभाव्य नफा</td><td>270 - 250</td><td>Rs 20</td></tr>
+<tr><td>R</td><td>20 / 10</td><td>2</td></tr>
+<tr><td>खर्च न धरता तोटा टाळण्याचा बिंदू</td><td>1 / (1 + 2)</td><td>1/3 = 33.3%</td></tr>
+</tbody></table>
+</div>
+<p>आता <em>काल्पनिक</em> खर्च धरा. 50 शेअर्सवर एक राउंड ट्रिप (खरेदी आणि विक्री) साठी Rs 100 गृहीत धरा. म्हणजे प्रति शेअर Rs 2. हा खरा शुल्क नाही.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>खर्चासह प्रति शेअर जोखीम</td><td>10 + 2</td><td>Rs 12</td></tr>
+<tr><td>खर्चानंतर प्रति शेअर संभाव्य नफा</td><td>20 - 2</td><td>Rs 18</td></tr>
+<tr><td>खर्चासह R</td><td>18 / 12</td><td>1.5</td></tr>
+<tr><td>खर्चासह तोटा टाळण्याचा बिंदू</td><td>W x 18 = (1 - W) x 12, म्हणजे 30W = 12</td><td>W = 0.4 = 40%</td></tr>
+</tbody></table>
+</div>
+<p>तपासणी: 0.4 x 18 = 7.2, आणि 0.6 x 12 = 7.2. दोन्ही बाजू जुळतात.</p>
+<p>इतर लक्ष्ये, तीच एंट्री आणि स्टॉप, खर्च न धरता: लक्ष्य Rs 260 ला R = 1 आणि तोटा टाळण्याचा विजय दर 50%. लक्ष्य Rs 280 ला R = 3 आणि 25%.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p>कार्य: एंट्री Rs 400, स्टॉप Rs 380, लक्ष्य Rs 460. खर्च न धरता R आणि तोटा टाळण्याचा विजय दर काढा.</p>
+<p>सूचना:</p>
+<ol>
+<li>प्रति शेअर जोखीम (एंट्री वजा स्टॉप) आणि प्रति शेअर संभाव्य नफा (लक्ष्य वजा एंट्री) काढा.</li>
+<li>R = संभाव्य नफा / जोखीम.</li>
+<li>तोटा टाळण्याचा विजय दर = 1 / (1 + R).</li>
+</ol>
+<p><strong>उत्तर:</strong> जोखीम Rs 20. संभाव्य नफा Rs 60. R = 3. तोटा टाळण्याचा विजय दर = 1 / 4 = 25%.</p>
+<!-- component: rr-breakeven | entry: 400 | stop: 380 | target: 460 | cost: 0 | winRate: 30 | caption: मार्गदर्शित सराव: एंट्री Rs 400, स्टॉप Rs 380, लक्ष्य Rs 460. तुमची हाताने केलेली बेरीज वरच्या तक्त्याशी तपासा. -->
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p>कार्य: एंट्री Rs 150, स्टॉप Rs 144, लक्ष्य Rs 165. खर्च न धरता R आणि तोटा टाळण्याचा विजय दर काढा. मग, प्रति शेअर Rs 0.50 च्या काल्पनिक खर्चासह तोटा टाळण्याचा विजय दर पुन्हा काढा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>खर्च न धरता: जोखीम Rs 6, संभाव्य नफा Rs 15, R = 2.5, तोटा टाळण्याचा बिंदू = 1 / 3.5 = 28.6%.</p>
+<p>Rs 0.50 काल्पनिक खर्चासह: जोखीम Rs 6.5, संभाव्य नफा Rs 14.5, तोटा टाळण्याचा बिंदू = 6.5 / (6.5 + 14.5) = 6.5 / 21 = 31.0%. खर्चाने तोटा टाळण्याचा बिंदू वाढवला.</p>
+</details>
+<!-- component: rr-breakeven | entry: 150 | stop: 144 | target: 165 | cost: 0.5 | winRate: 30 | caption: स्वतंत्र सरावाची तपासणी: एंट्री Rs 150, स्टॉप Rs 144, लक्ष्य Rs 165, आणि प्रति शेअर काल्पनिक खर्च Rs 0.50. आधी हाताने प्रयत्न करा. -->
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>सहा प्रश्न तोटा टाळण्याच्या गणितावर, खर्चाच्या परिणामावर, किमान R च्या नियमावर आणि फक्त विजय दर पाहून निर्णय घेण्याच्या सापळ्यावर आहेत.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p>मोड: <strong>शिकण्याची नोंद</strong>. ती Lab 3 मध्ये नोंदवा (किंवा जर्नल ॲप तयार होईपर्यंत कागदावर).</p>
+<ol>
+<li>तीन काल्पनिक योजना निवडा. प्रत्येकात एंट्री, स्टॉप आणि लक्ष्य असावे.</li>
+<li>प्रत्येक योजनेसाठी नियोजित R आणि खर्च न धरता तोटा टाळण्याचा विजय दर नोंदवा.</li>
+<li>प्रति शेअर Rs 0.50 चा काल्पनिक खर्च धरा. प्रत्येक योजनेसाठी तोटा टाळण्याचा विजय दर पुन्हा काढा.</li>
+<li>प्रत्येक योजना नियोजित R फील्डसह जर्नलमध्ये जतन करा (Lab 1 मधील save-to-journal, म्हणजे जर्नलमध्ये जतन करणे), शिकण्याच्या नोंद मोडमध्ये.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>R ही योजना आहे. तो अंदाज नाही, आणि लक्ष्य भाव नेहमीच गाठले जातात असे नाही.</li>
+<li>R चांगला दिसावा म्हणून लक्ष्य निवडू नका. नियम व्यापारापूर्वी ठरलेला असतो.</li>
+<li>खर्च न धरता तोटा टाळण्याचा बिंदू स्लिपेज, ऑर्डर पूर्ण होण्याचा भाव आणि गॅप विचारात घेत नाही (<em>स्लिपेज, गॅप आणि नियोजित विरुद्ध प्रत्यक्ष जोखीम</em>). खरा तोटा टाळण्याचा बिंदू जास्त असतो.</li>
+<li>जास्त R नेहमी चांगला नसतो. त्याबरोबर लक्ष्य गाठण्याची शक्यता कमी असू शकते.</li>
+<li>या प्रकरणातील खर्च काल्पनिक आहेत. ते कोणत्याही ब्रोकरचे किंवा सरकारचे खरे दर नाहीत.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>लॉंग व्यापारासाठी R = प्रति शेअर संभाव्य नफा / प्रति शेअर जोखीम.</li>
+<li>खर्च न धरता तोटा टाळण्याचा विजय दर = 1 / (1 + R).</li>
+<li>खर्च जोखीम वाढवतो आणि नफा कमी करतो. म्हणून तो तोटा टाळण्याचा बिंदू वाढवतो.</li>
+<li>विजय दराचा अर्थ फक्त R सोबत पाहिला तरच लागतो.</li>
+<li>तुमच्या किमान R पेक्षा कमी असलेली योजना तुमचा नियम मोडते, कथा कितीही चांगली वाटली तरी.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p>स्रोत (फक्त नावे):</p>
+<ul>
+<li>प्रमाणित अपेक्षित परतावा (expectancy) गणित, या प्रकरणात मोजलेले. कोणताही बाह्य आकडा वापरलेला नाही.</li>
+</ul>
+<p>खर्च येथे सरावासाठी गोल आकडे आहेत. त्यांना खरे शुल्क म्हणून उद्धृत करू नका. खरे शुल्क, तारखा आणि स्रोतांसह, <em>व्यापारावरील खर्च</em> मध्ये आहेत.</p>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T2.7&amp;body=Page%3A%2002-money-and-math%2F07-reward-to-risk-and-break-even%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/06-slippage-and-gaps/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/08-expectancy-and-profit-factor/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/06-slippage-and-gaps/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/08-expectancy-and-profit-factor/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

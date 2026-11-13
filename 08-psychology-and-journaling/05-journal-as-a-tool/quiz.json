@@ -1,0 +1,126 @@
+[
+  {
+    "id": "T8.5-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Plan entry Rs 300. Fill price Rs 302. Shares 25. What is the slippage in rupees?",
+    "answer": 50,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Difference = 302 - 300 = Rs 2. Slippage = 2 x 25 = Rs 50. Check: 25 x 300 = 7,500 planned; 25 x 302 = 7,550 paid; 7,550 - 7,500 = 50.",
+    "concepts": ["slippage", "journal"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.5-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. In a week you made 12 trades. You followed the plan on 8 of them. What is the plan adherence, in percent? Give one decimal place.",
+    "answer": 66.7,
+    "tolerance": 0.1,
+    "unit": "%",
+    "solution": "Plan adherence = trades followed / total trades x 100 = 8 / 12 x 100 = 66.67%, which rounds to 66.7%.",
+    "concepts": ["plan-adherence"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.5-q3",
+    "type": "mcq",
+    "prompt": "Hypothetical. Which statement about the plan fields is correct?",
+    "options": [
+      {"id": "a", "text": "I should edit the plan after entry, so it matches what happened"},
+      {"id": "b", "text": "The plan fields lock at entry, so the record shows what I planned before I traded"},
+      {"id": "c", "text": "The plan can change after entry without leaving a trace"},
+      {"id": "d", "text": "Plan fields do not matter once the trade is filled"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Editing the plan after entry hides what you planned. The plan must stay as it was written.",
+      "c": "A change to the plan after entry leaves no clear record. That is why the planned fields lock.",
+      "d": "The plan fields are the point of the comparison. They matter most after the fill."
+    },
+    "concepts": ["locked-fields", "journal"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.5-q4",
+    "type": "mcq",
+    "prompt": "Hypothetical. Which statement about plan adherence is correct?",
+    "options": [
+      {"id": "a", "text": "Adherence is wins divided by trades"},
+      {"id": "b", "text": "Adherence is trades where the plan was followed, divided by total trades, times 100"},
+      {"id": "c", "text": "Adherence counts only the winning trades"},
+      {"id": "d", "text": "Adherence is the same as profit"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Wins divided by trades measures results. Adherence measures whether the plan was followed.",
+      "c": "Adherence counts trades that followed the plan, win or lose.",
+      "d": "A trade can follow the plan and still lose money. Adherence and profit are different measures."
+    },
+    "concepts": ["plan-adherence"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.5-q5",
+    "type": "mcq",
+    "prompt": "Hypothetical. You are asked whether paper and live trades should go in the same total on your dashboard. Which answer is correct?",
+    "options": [
+      {"id": "a", "text": "Yes, add them together so I see my total"},
+      {"id": "b", "text": "No. Keep the modes separate, so practice results are not mixed with live results"},
+      {"id": "c", "text": "Yes. Once I log a paper trade, it counts as live"},
+      {"id": "d", "text": "The mode does not matter for a journal"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Mixing paper and live results makes both harder to read. Modes are not blended by default.",
+      "c": "A paper trade stays a paper trade, whatever the log says. It is never marked live.",
+      "d": "The mode tells you what kind of record it is. It matters for every entry."
+    },
+    "concepts": ["modes", "journal"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.5-q6",
+    "type": "scenario",
+    "prompt": "Hypothetical. Your plan said entry Rs 250 and stop Rs 240. The fill was at Rs 251. You change the planned entry to Rs 251, so the plan matches the fill. What is the problem?",
+    "options": [
+      {"id": "a", "text": "There is no problem, because the fill is the real entry"},
+      {"id": "b", "text": "You rewrote the plan after entry, so the comparison that shows slippage and adherence is lost"},
+      {"id": "c", "text": "Only the stop matters in a journal"},
+      {"id": "d", "text": "The journal should always match the fill"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The fill is the executed price. The plan price is kept so you can see the difference.",
+      "c": "The entry, the stop, the target and the shares all matter for the comparison.",
+      "d": "The journal should show the plan and the fill side by side. Matching them hides the slippage you need to see."
+    },
+    "concepts": ["locked-fields", "slippage"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.5-q7",
+    "type": "spot-the-mistake",
+    "prompt": "Hypothetical journal note: \"I left the plan blank and filled it at the end of the week.\" Which part of this note is the mistake?",
+    "options": [
+      {"id": "a", "text": "Recording the executed fields after the trade"},
+      {"id": "b", "text": "Filling the plan fields after the week, because the plan must be written before entry"},
+      {"id": "c", "text": "Writing a weekly review"},
+      {"id": "d", "text": "Keeping a journal at all"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Executed fields are written after the trade. That part of the process is correct.",
+      "c": "A weekly review is a good habit. The mistake is in the plan fields, not the review.",
+      "d": "A journal is the right tool. The mistake is that the plan was not written before entry."
+    },
+    "concepts": ["journal", "planned-fields"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

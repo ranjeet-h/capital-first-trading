@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>गेट G5 रणनीती पडताळणी - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../10-graduation-gates/05-gate-g5-strategy-validation/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../10-graduation-gates/05-gate-g5-strategy-validation/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T10.5
+title: गेट G5 रणनीती पडताळणी
+page_type: Assessment
+prerequisites: [T7.1, T7.2, T7.3, T7.4, T7.5, T7.6, T7.7, T7.8, T7.9, T7.10, T7.11, T6.4]
+labs: [Lab 4]
+estimated_minutes: 35
+-->
+<h1 id="गेट-g5-रणनीती-पडताळणी"><a class="header" href="#गेट-g5-रणनीती-पडताळणी">गेट G5 रणनीती पडताळणी</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>काल्पनिक रणनीतीचा बॅकटेस्ट मागील डेटावर सतत नफा दाखवतो. तुम्हाला ते खरे वाटावे अशी इच्छा होते. हा गेट तुम्हाला खर्च चालू ठेवून चाचणी करायला, डेटाचा एक कालावधी बाजूला ठेवायला आणि लाइव्ह ट्रेडिंगमध्ये निकाल का टिकू शकणार नाही ते समजावून सांगायला सांगतो. निकाल किती चांगला आहे त्यापेक्षा निकाल किती चांगला समजावता येतो, ते जास्त महत्त्वाचे आहे.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><em>बॅकटेस्ट</em> म्हणजे मागील भावांवर ट्रेडिंग नियमांचा एक संच चालवणे. <em>इन-सॅम्पल</em> कालावधी म्हणजे तुम्ही कल्पना घडवताना वापरलेला डेटा. <em>होल्डआउट</em> कालावधी म्हणजे डेटाचा एक नंतरचा भाग, जो तुम्ही कल्पना घडवण्यासाठी वापरला नाही. हा गेट तुम्हाला दोन्ही वेगळे नोंदवायला सांगतो.</p>
+<blockquote>
+<p>हे शैक्षणिक क्षमता मोजते. हा नफा मिळेल याचा पुरावा नाही. येथे खऱ्या पैशांनी ट्रेडिंग करण्याची गरज नाही आणि अशी शिफारसही नाही.</p>
+</blockquote>
+<p>पास होण्यासाठी खालील सर्व गोष्टी पूर्ण कराव्या लागतात:</p>
+<ol>
+<li><strong>रन जतन करा.</strong> रन त्याच्या नोंदीसह जतन करा. नोंदीत वापरलेल्या डेटासाठीचा अद्वितीय कोड, सेटिंग्ज म्हणून लिहिलेली रणनीती, पॅरामीटर्स, चाचणी प्रोग्रामची आवृत्ती आणि वापरलेली यादृच्छिक सेटिंग दिसते.</li>
+<li><strong>खर्च चालू करा.</strong> रनमध्ये खर्च चालू असले पाहिजेत.</li>
+<li><strong>दोन कालावधी नोंदवा.</strong> इन-सॅम्पल आणि होल्डआउट कालावधी वेगळे नोंदवा.</li>
+<li><strong>स्पष्टीकरण लिहा.</strong> निकाल समजावून सांगा. किमान तीन पूर्वग्रह तपासा, जसे की लुक-अहेड, सर्व्हायव्हरशिप किंवा ओव्हरफिटिंग. चाचण्यांची संख्या द्या, म्हणजे तुम्ही किती सेटिंग्ज आजमावल्या. लाइव्ह निकाल टिकू शकणारी किमान तीन कारणे द्या. कारणांमध्ये फिल्स, खर्च, बदलती बाजार परिस्थिती, नमुन्याचा आकार आणि लिक्विडिटी येऊ शकतात.</li>
+<li><strong>रूब्रिक टिक करा.</strong> स्पष्टीकरण रूब्रिकमधील प्रत्येक आवश्यक मुद्दा टिक केलेला असावा आणि त्यासाठी मजकूर लिहिलेला असावा.</li>
+</ol>
+<p>रूब्रिक निकालाचे वर्णन करताना “फायदेशीर” आणि “तयार” हे शब्द नाकारतो. त्याऐवजी निकालाचे वर्णन साध्या शब्दांत करा.</p>
+<p>प्रत्येक प्रयत्नात वेगळा दस्तऐवजीकृत डेटासेट वापरला जातो. आधीचे रन तुमच्या इतिहासात राहतात.</p>
+<p>पास झालेले स्पष्टीकरण म्हणजे रणनीतीची पडताळणी नाही. गेट पार करणारी रणनीती तरीही <em>गेट G6 कागदी आणि फॉरवर्ड नोंद</em> मध्ये दाखवलेला फॉरवर्ड पुरावा लागतो. ती लाइव्ह नफा मिळवू शकत नाही.</p>
+<p>बॅकटेस्टर तयार नसेल, तर हे काम कागदावर किंवा स्प्रेडशीटमध्ये करा.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>या गेटमध्ये शोधण्यासारखे चित्र नाही. दोन कालावधी मांडण्यासाठी हा तक्ता वापरा.</p>
+<div class="table-wrapper"><table><thead><tr><th>कालावधी</th><th>तो कशासाठी आहे</th><th>तुम्ही काय नोंदवता</th></tr></thead><tbody>
+<tr><td>इन-सॅम्पल</td><td>कल्पना घडवण्यासाठी</td><td>निकाल, खर्च चालू असताना</td></tr>
+<tr><td>होल्डआउट</td><td>कल्पना घडवताना न वापरलेल्या डेटावर तिची तपासणी</td><td>निकाल, वेगळा नोंदवलेला</td></tr>
+</tbody></table>
+</div>
+<p>दोन ओळी वेगळ्या ठेवा. त्यांना कधीही एका आकड्यात एकत्र करू नका.</p>
+<!-- component: gate-check | gate: G5 | caption: प्रत्येक निकष फक्त तुमच्या बाबतीत खरा असेल तेव्हाच टिक करा. गेट तुम्ही काय शिकलात ते तपासतो. ती व्यापार करण्याची परवानगी नाही. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> एक काल्पनिक रणनीती, काल्पनिक Rs 50,000 भांडवलावर.</p>
+<div class="table-wrapper"><table><thead><tr><th>कालावधी</th><th>भूमिका</th><th>निकाल</th><th>Rs 50,000 च्या टक्केवारीत</th></tr></thead><tbody>
+<tr><td>इन-सॅम्पल</td><td>कल्पना घडवणे</td><td>Rs 4,000 नफा</td><td>8.0%</td></tr>
+<tr><td>होल्डआउट</td><td>नंतर तपासले</td><td>Rs 500 तोटा</td><td>-1.0%</td></tr>
+</tbody></table>
+</div>
+<p>होल्डआउट निकाल इन-सॅम्पल निकालापेक्षा Rs 4,500 ने कमी आहे. हा गॅप समजावून सांगण्यासारखा मुद्दा आहे. लिखित स्पष्टीकरण असे म्हणू शकते की कल्पना नंतरच्या डेटावर टिकली नाही, आणि त्याची कारणे यादीत देते.</p>
+<p><strong>चाचण्यांची संख्या.</strong> तुम्ही 8 सेटिंग्ज आजमावल्या आणि सर्वोत्तम ठेवली. स्पष्टीकरणात हे सांगितले पाहिजे. 8 मधील सर्वोत्तम प्रत्यक्षात आहे त्यापेक्षा चांगला दिसू शकतो.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> वरील काल्पनिक तक्ता वापरून सांगा, होल्डआउट निकाल इन-सॅम्पल निकालापेक्षा किती रुपयांनी कमी आहे.</p>
+<p>संकेत:</p>
+<ol>
+<li>इन-सॅम्पल निकाल Rs 4,000 आहे.</li>
+<li>होल्डआउट निकाल उणे Rs 500 आहे, म्हणजे तोटा.</li>
+<li>इन-सॅम्पल निकालातून होल्डआउट निकाल वजा करा.</li>
+</ol>
+<p><strong>उत्तर:</strong> 4,000 - (-500) = 4,000 + 500 = <strong>Rs 4,500</strong>. होल्डआउट निकाल Rs 4,500 ने कमी आहे.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> तुमच्या शब्दांत, बॅकटेस्टचा निकाल लाइव्ह ट्रेडिंगमध्ये टिकू शकत नाही अशी तीन कारणे लिहा. एकूण 60 शब्दांपेक्षा जास्त वापरू नका.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>चांगल्या उत्तरात किमान तीन मुद्दे असावेत:</p>
+<ul>
+<li><strong>फिल्स.</strong> लाइव्ह मिळणारा भाव चाचणीने गृहीत धरलेल्या भावापेक्षा वेगळा असू शकतो.</li>
+<li><strong>खर्च.</strong> लाइव्ह खर्च चाचणीतील खर्चापेक्षा वेगळे असू शकतात, किंवा ते चुकू शकतात.</li>
+<li><strong>बदलती परिस्थिती.</strong> भविष्यातील बाजाराचे वर्तन मागील कालावधीपेक्षा वेगळे असू शकते.</li>
+<li><strong>नमुन्याचा आकार.</strong> छोट्या चाचणीत व्यापार कमी असतात, त्यामुळे निकाल नशिबाचा असू शकतो.</li>
+<li><strong>लिक्विडिटी.</strong> काही भावांमध्ये तुम्ही नियोजित केलेल्या आकाराचे व्यापार होऊ शकत नाहीत.</li>
+</ul>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ दोन कालावधी, चाचण्यांची संख्या, रूब्रिक नाकारणारे शब्द आणि निकाल लाइव्ह टिकू शकत नाही अशी कारणे तपासतो.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> शिकण्याची नोंद. ती तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल, तर कागदावर लिहा. बॅकटेस्टर तयार नसेल, तर हे काम कागदावर किंवा स्प्रेडशीटमध्ये करा.</p>
+<ol>
+<li>एक काल्पनिक रणनीती निवडा. तुम्ही <em>पूर्णपणे ठरवलेली स्विंग रणनीती</em> मधील उदाहरण वापरू शकता.</li>
+<li>चाचणी कालावधीचे इन-सॅम्पल आणि होल्डआउट असे दोन भाग करा. प्रत्येकासाठी तारखा किंवा डेटाचा भाग लिहा.</li>
+<li>चाचण्यांची संख्या लिहा. तुम्ही आजमावलेली प्रत्येक सेटिंग मोजा, फक्त ठेवलेली एक नाही.</li>
+<li>लाइव्ह निकाल टिकू शकत नाही अशी तीन कारणे लिहा.</li>
+<li>निकालाचे पाच ओळींचे स्पष्टीकरण लिहा. “फायदेशीर” किंवा “तयार” हे शब्द वापरू नका.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>गेट तुमच्या स्पष्टीकरणाची तपासणी करतो. रणनीती काम करते हे तो दाखवत नाही.</li>
+<li>एका जतन केलेल्या रनमध्ये एकच डेटासेट वापरला जातो. इतर कालावधी वेगळे निकाल देऊ शकतात.</li>
+<li>चाचण्यांमधील खर्च फक्त वापरलेल्या खर्चाच्या आकड्यांइतकेच चांगले असतात. खरे खर्च वेगळे असू शकतात.</li>
+<li>तुम्ही आजमावलेली प्रत्येक सेटिंग नशिबाने चांगला दिसणारा निकाल येण्याची शक्यता वाढवते. सर्व मोजा.</li>
+<li>पास झालेले स्पष्टीकरण म्हणजे पडताळणी नाही. गेट त्याच्या स्वतःच्या स्क्रीनवर असे सांगतो.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>इन-सॅम्पल आणि होल्डआउट कालावधी वेगळे नोंदवा.</li>
+<li>प्रत्येक रनमध्ये खर्च चालू ठेवा.</li>
+<li>चाचण्यांची संख्या सांगा, त्यात आजमावलेली प्रत्येक सेटिंग धरून.</li>
+<li>लाइव्ह निकाल टिकू शकत नाही अशी किमान तीन कारणे द्या.</li>
+<li>हा गेट पार केल्याचा अर्थ व्यापार करावे असा होत नाही.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>या पुस्तकातील बॅकटेस्टरसाठीच्या बॅकटेस्ट स्वीकृती नोंदी.</li>
+<li>या पुस्तकातील रणनीती प्रकरणे आणि चाचणी प्रकरणे, त्यांच्या शीर्षकांनुसार.</li>
+</ul>
+<!-- facts-needed: cost figures used by the backtester, with their check dates. -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T10.5&amp;body=Page%3A%2010-graduation-gates%2F05-gate-g5-strategy-validation%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../10-graduation-gates/04-gate-g4-risk-discipline/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../10-graduation-gates/06-gate-g6-paper-and-forward-record/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../10-graduation-gates/04-gate-g4-risk-discipline/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../10-graduation-gates/06-gate-g6-paper-and-forward-record/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

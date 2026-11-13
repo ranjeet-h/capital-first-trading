@@ -1,0 +1,104 @@
+[
+  {
+    "id": "T10.7-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital Rs 50,000. Risk per trade 2%. How many rupees is the risk per trade?",
+    "answer": 1000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Risk per trade = 50,000 x 2% = 50,000 x 0.02 = Rs 1,000. At the 2% level, the risk check passes.",
+    "concepts": ["risk-per-trade", "risk-levels"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.7-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital Rs 50,000. Risk per trade 1.5%. How many rupees is the risk per trade?",
+    "answer": 750,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Risk per trade = 50,000 x 1.5% = 50,000 x 0.015 = Rs 750. This is below 2%, so the risk check passes.",
+    "concepts": ["risk-per-trade"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.7-q3",
+    "type": "scenario",
+    "prompt": "Your form shows 6% risk per trade. You think it is fine, because 6% sounds small. Which response matches this gate?",
+    "options": [
+      {"id": "a", "text": "Pass, because 6% is under 10%."},
+      {"id": "b", "text": "Fail with the hard note, because above 5% is the hard level."},
+      {"id": "c", "text": "Pass with a note."},
+      {"id": "d", "text": "Fail with a note only, which is the same as a pass."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The gate does not use a 10% level. Above 5% fails with the hard note.",
+      "c": "Above 5% is a hard fail, not a pass with a note.",
+      "d": "A fail with a note is still a fail. It is not the same as a pass."
+    },
+    "concepts": ["risk-levels", "hard-note"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.7-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"Passing G7 means I am ready to make money with my capital.\" Which part of this statement is wrong?",
+    "options": [
+      {"id": "a", "text": "\"Passing G7\". This is only a statement about the gate, and it is correct."},
+      {"id": "b", "text": "\"means I am ready to make money\". This is wrong. The gate does not say you are ready to profit."},
+      {"id": "c", "text": "\"with my capital\". This is correct wording for the plan."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This part is correct. Passing G7 is a real result of the gate, not a claim about profit.",
+      "c": "This part is correct. The plan covers your capital, so the words fit the form."
+    },
+    "concepts": ["no-profit-claim", "gate-purpose"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T10.7-q5",
+    "type": "mcq",
+    "prompt": "What does the printed one-page plan show?",
+    "options": [
+      {"id": "a", "text": "A second copy of the plan, saved as a separate file."},
+      {"id": "b", "text": "A view of the saved plan, with every field shown."},
+      {"id": "c", "text": "A new plan that is written each time you print."},
+      {"id": "d", "text": "Only the risk per trade field."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The printed plan is not a second copy. It is a view of the saved plan.",
+      "c": "Printing does not write a new plan. It shows the saved one.",
+      "d": "The printed plan shows every field, not only the risk field."
+    },
+    "concepts": ["saved-plan", "print"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.7-q6",
+    "type": "mcq",
+    "prompt": "What happens when you edit the form after a save?",
+    "options": [
+      {"id": "a", "text": "The older versions are deleted."},
+      {"id": "b", "text": "Each save has a date and older versions stay in your history."},
+      {"id": "c", "text": "The edit is lost when you close the page."},
+      {"id": "d", "text": "All the gates reset to zero."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Older versions are kept in your history. Nothing is deleted when you edit.",
+      "c": "Each save is kept with its date, so the edit is not lost.",
+      "d": "Editing the form does not reset the gates. The gate results are read from their own records."
+    },
+    "concepts": ["versioning", "history"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

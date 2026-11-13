@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>फिबोनॅची रिट्रेसमेंट आणि पुराव्याचा वाद - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../05-indicators/07-fibonacci-retracement/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../05-indicators/07-fibonacci-retracement/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T5.7
+title: फिबोनॅची रिट्रेसमेंट आणि पुराव्याचा वाद
+page_type: Math/Calculator
+prerequisites: [T3.4, T5.1]
+labs: [Lab 4]
+estimated_minutes: 25
+-->
+<h1 id="फिबोनॅची-रिटरेसमेंट-आणि-पुरावयाचा-वाद"><a class="header" href="#फिबोनॅची-रिटरेसमेंट-आणि-पुरावयाचा-वाद">फिबोनॅची रिट्रेसमेंट आणि पुराव्याचा वाद</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एक वाचक घसरणीनंतर चार्टवर फिबोनॅची रेषा काढतो. भाव त्यातल्या एका रेषेजवळ थांबतो. वाचक लिहितो, “ही पातळी उसळी खात्रीने देते.” मग भाव ती रेषा तोडून खाली जातो आणि जातच राहतो. हे प्रकरण सांगते की पातळ्या कशा मोजल्या जातात, तुम्ही निवडलेले स्विंग पॉइंट्स त्या कशा बदलतात, आणि त्या भाव अंदाजतात हा पुरावा अजून वादग्रस्त का आहे.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>रिट्रेसमेंट</strong> म्हणजे एखाद्या हालचालीचा तो भाग जो भाव परत देतो. वर गेल्यानंतर भाव काही काळ खाली येतो आणि मग पुन्हा पुढे जातो. फिबोनॅची रिट्रेसमेंट रेषा दाखवतात की घसरण किती खोल जाऊ शकते. त्यासाठी ठरलेली गुणोत्तरे वापरली जातात.</p>
+<p>वर जाणाऱ्या ट्रेंडसाठी पायऱ्या अशा आहेत:</p>
+<ol>
+<li><strong>स्विंग लो</strong> (चढाईची सुरुवात) आणि <strong>स्विंग हाय</strong> (चढाईचा वरचा टोक) निवडा.</li>
+<li><strong>रेंज</strong> शोधा = स्विंग हाय वजा स्विंग लो.</li>
+<li>प्रत्येक गुणोत्तरासाठी, <strong>पातळी</strong> = स्विंग हाय वजा (गुणोत्तर गुणिले रेंज).</li>
+</ol>
+<p>आधी शब्दांत: पातळी = स्विंग हाय वजा गुणोत्तर गुणिले रेंज. चिन्हांत: level = high - (ratio x range).</p>
+<p>सर्वात जास्त वापरली जाणारी गुणोत्तरे अशी आहेत:</p>
+<ul>
+<li>23.6 टक्के</li>
+<li>38.2 टक्के</li>
+<li>50 टक्के</li>
+<li>61.8 टक्के</li>
+<li>78.6 टक्के</li>
+</ul>
+<p>काही मुद्दे लक्षात ठेवा:</p>
+<ul>
+<li>50 टक्के पातळी काटेकोर अर्थाने फिबोनॅची गुणोत्तर नाही. ती रेंजचा अर्धा भाग आहे, आणि तिचा समावेश ही एक प्रथा (कन्व्हेन्शन) आहे. तिला तसे लेबल करा.</li>
+<li>इतर गुणोत्तरे फिबोनॅची संख्यांच्या क्रमातून सैलपणे येतात. हा दुवा संख्यांमधील एक नमुना आहे. भाव त्या नमुन्याचे पालन करतात याचा तो पुरावा नाही.</li>
+<li>स्विंग लो आणि स्विंग हाय निवडणे हा निर्णय असतो. दोन सावध वाचक वेगळे बिंदू निवडू शकतात आणि त्यांना वेगळ्या पातळ्या मिळू शकतात.</li>
+<li>अनेक ट्रेडर एकाच पातळ्या पाहू शकतात. प्रत्येक प्रतिक्रियेसाठी ते एक संभाव्य स्पष्टीकरण आहे, पण ते एक गृहीतक आहे, तथ्य नाही.</li>
+<li>या पातळ्या भाव अंदाजतात याचा पुरावा वादग्रस्त आहे. प्रत्येक पातळीला एक क्षेत्र म्हणून पाहा, आणि तिला सपोर्ट व रेझिस्टन्सशी तपासा (<em>सपोर्ट आणि रेझिस्टन्स</em>).</li>
+</ul>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>चित्रात प्रत्येक पातळी चार्टवर आडवी रेषा म्हणून दिसते, स्विंग हाय आणि स्विंग लो यांच्यामध्ये. आधी रेंज वाचा. मग प्रत्येक रेषा शोधा. लक्षात घ्या की 61.8 टक्के रेषा 50 टक्के रेषेच्या खाली असते. खालील सोडवलेले उदाहरण एका स्विंगसाठी अचूक भाव देते.</p>
+<!-- component: fib-tool | caption: काल्पनिक चार्ट. स्विंग लो Rs 200 आणि स्विंग हाय Rs 260, सोडवलेल्या उदाहरणाप्रमाणे. वेगळे स्विंग पॉइंट्स निवडा आणि पाचही पातळ्या कशा हलतात ते पाहा. मग पुलबॅक चालवा. पातळ्या वर्णन करतात, अंदाज देत नाहीत. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> स्विंग लो Rs 200. स्विंग हाय Rs 260. रेंज = 260 वजा 200 = Rs 60.</p>
+<div class="table-wrapper"><table><thead><tr><th>गुणोत्तर</th><th>गुणोत्तर x रेंज</th><th>पातळी = 260 वजा (गुणोत्तर x 60)</th></tr></thead><tbody>
+<tr><td>23.6%</td><td>0.236 x 60 = 14.16</td><td>260 वजा 14.16 = <strong>Rs 245.84</strong></td></tr>
+<tr><td>38.2%</td><td>0.382 x 60 = 22.92</td><td>260 वजा 22.92 = <strong>Rs 237.08</strong></td></tr>
+<tr><td>50% (कन्व्हेन्शन)</td><td>0.50 x 60 = 30.00</td><td>260 वजा 30.00 = <strong>Rs 230.00</strong></td></tr>
+<tr><td>61.8%</td><td>0.618 x 60 = 37.08</td><td>260 वजा 37.08 = <strong>Rs 222.92</strong></td></tr>
+<tr><td>78.6%</td><td>0.786 x 60 = 47.16</td><td>260 वजा 47.16 = <strong>Rs 212.84</strong></td></tr>
+</tbody></table>
+</div>
+<p>तपासणी: 78.6 टक्के पातळी सर्वात खाली आहे. स्विंग हायपासूनचे तिचे अंतर सर्वात मोठे आहे. ते 47.16 आहे, जे पूर्ण रेंज 60 पेक्षा कमी आहे. म्हणून पातळी स्विंग लोच्या वर राहते.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> स्विंग लो Rs 150. स्विंग हाय Rs 180. 23.6 टक्के पातळी आणि 61.8 टक्के पातळी शोधा.</p>
+<p>संकेत:</p>
+<ol>
+<li>रेंज म्हणजे 180 वजा 150.</li>
+<li>रेंजला प्रत्येक गुणोत्तराने गुणा.</li>
+<li>प्रत्येक निकाल स्विंग हायमधून वजा करा.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>रेंज: 180 - 150 = Rs 30.</li>
+<li>23.6 टक्के: 0.236 x 30 = 7.08. पातळी = 180 - 7.08 = <strong>Rs 172.92</strong>.</li>
+<li>61.8 टक्के: 0.618 x 30 = 18.54. पातळी = 180 - 18.54 = <strong>Rs 161.46</strong>.</li>
+</ul>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> स्विंग लो Rs 200. स्विंग हाय Rs 240. 38.2 टक्के पातळी शोधा. मग एका वाक्यात सांगा की वेगळा स्विंग लो ही पातळी कशी हलवेल.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>रेंज: 240 - 200 = Rs 40.</li>
+<li>38.2 टक्के: 0.382 x 40 = 15.28.</li>
+<li>पातळी: 240 - 15.28 = <strong>Rs 224.72</strong>.</li>
+<li>वाक्य: खालचा स्विंग लो म्हणजे मोठी रेंज, त्यामुळे पातळी खाली जाते. उदाहरणार्थ, Rs 190 चा स्विंग लो म्हणजे Rs 50 ची रेंज, आणि 38.2 टक्के पातळी Rs 220.90 होते.</li>
+</ul>
+<p>सर्व भाव काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>हे प्रकरण पातळीचे सूत्र, प्रथा (कन्व्हेन्शन) आणि गुणोत्तर यातील फरक, आणि एक पातळी खात्री का नसते, हे तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> कागदी काम (पेपर). हा फक्त शिकण्याचा नोंदवही आहे. कोणताही लाइव्ह ऑर्डर देऊ नका. निकाल तुमच्या जर्नलमध्ये लिहा (किंवा जर्नल ॲप तयार होईपर्यंत कागदावर लिहा).</p>
+<ol>
+<li>असे पाच चार्ट निवडा, ज्यात प्रत्येकात एक स्पष्ट चढ आणि उतार आहे.</li>
+<li>प्रत्येक चार्टवर स्विंग लो आणि स्विंग हाय निवडा. पुढचे भाव पाहण्यापूर्वी ते लिहून ठेवा.</li>
+<li>38.2 टक्के आणि 61.8 टक्के पातळ्या काढा. त्या लिहा.</li>
+<li>नंतर, प्रत्येक पातळीजवळ भावाने प्रतिक्रिया दिली की नाही, आणि कशी दिली ते नोंदवा.</li>
+<li>एक वाक्य लिहा: तुमच्या स्विंग पॉइंट्सच्या निवडीने पातळ्या किती बदलल्या.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>पातळ्या तुम्ही निवडलेल्या स्विंग पॉइंट्सवर अवलंबून असतात. वेगळ्या निवडीमुळे वेगळ्या पातळ्या मिळतात.</li>
+<li>गुणोत्तरे ही प्रथा (कन्व्हेन्शन) आहे, जिचा संख्यांच्या नमुन्याशी सैल संबंध आहे. भाव अंदाजतात याचा पुरावा वादग्रस्त आहे.</li>
+<li>भावाने एकदा एखाद्या पातळीचा आदर केला, म्हणजे ती पुन्हा चालेल असा पुरावा नाही.</li>
+<li>फिबोनॅची पातळी म्हणजे अचूक स्टॉप-लॉस नव्हे. स्टॉप-लॉससाठी सांगितलेला नियम, तपासलेले कारण आणि नियोजित तोटा हवा, जो तुमच्या जोखीम बजेटमध्ये बसतो (<em>प्रति व्यापार जोखीम आणि स्टॉप-लॉस अंतर</em>).</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>पातळी = स्विंग हाय वजा (गुणोत्तर गुणिले रेंज). रेंज = स्विंग हाय वजा स्विंग लो.</li>
+<li>50 टक्के पातळी ही प्रथा (कन्व्हेन्शन) आहे, फिबोनॅची गुणोत्तर नाही.</li>
+<li>स्विंग पॉइंट्स हा निर्णय आहे. भावाचे पुढचे आकडे पाहण्यापूर्वी ते लिहा.</li>
+<li>पातळ्यांना क्षेत्र माना, आणि त्या इतर पुराव्यांशी तपासा.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Zerodha Varsity, फिबोनॅची मॉड्यूल (केवळ संदर्भासाठी, मूळ शब्दरचना).</li>
+<li>या पुस्तकात फिबोनॅची पातळ्यांवरील कोणत्याही अभ्यासाचा उल्लेख नाही. संशोधकांना तांत्रिक ट्रेडिंग नियमांबद्दल सर्वसाधारणपणे मिसळलेले निष्कर्ष मिळाले आहेत, म्हणून कोणत्याही एका दाव्याकडे काळजीने पाहा.</li>
+<li>Zerodha, Kite चार्टिंग मॅन्युअल (kite.trade/docs/kite/charting). त्यात म्हटले आहे की Kite कडे 30 पेक्षा जास्त ड्रॉइंग टूल्स आहेत. तुमच्या स्क्रीनवरील टूल्स मेनूत पाहा की फिबोनॅची टूल आहे का.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T5.7&amp;body=Page%3A%2005-indicators%2F07-fibonacci-retracement%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../05-indicators/06-bollinger-bands/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../05-indicators/08-volume-indicators-and-vwap/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../05-indicators/06-bollinger-bands/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../05-indicators/08-volume-indicators-and-vwap/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

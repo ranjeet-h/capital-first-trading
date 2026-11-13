@@ -1,0 +1,377 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Volume indicators and VWAP - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/05-indicators/08-volume-indicators-and-vwap/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T5.8
+title: Volume indicators and VWAP
+page_type: Math/Calculator
+prerequisites: [T3.7, T5.2]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="volume-indicators-and-vwap"><a class="header" href="#volume-indicators-and-vwap">Volume indicators and VWAP</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A stock rises on a day with heavy trading. One reader says, “The big volume proves the rise is real.” Another reader says, “Volume tells me nothing.” Both claim too much. This chapter shows how two volume tools are built, what each one adds up, and what neither one can show.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Volume is the number of shares traded in a period (<em>Volume and what it adds</em>). Two indicators use volume in different ways.</p>
+<p><strong>On-balance volume (OBV)</strong> is a running total. Each day, it adds or subtracts that day’s volume:</p>
+<ul>
+<li>If today’s close is higher than yesterday’s close, add today’s volume.</li>
+<li>If today’s close is lower than yesterday’s close, subtract today’s volume.</li>
+<li>If the close is the same, leave the total unchanged.</li>
+</ul>
+<p>The total starts at zero, or at any starting number you choose. The starting number only moves the whole line up or down. It does not change the moves.</p>
+<p><strong>Volume-weighted average price (VWAP)</strong> is an average price. Each price counts more when more shares trade at it. The steps are:</p>
+<ol>
+<li>Typical price = (high + low + close) divided by 3.</li>
+<li>Multiply each typical price by that bar’s volume.</li>
+<li>Add these products for the whole session. Add the volumes too.</li>
+<li>VWAP = total of products divided by total volume.</li>
+</ol>
+<p>VWAP starts again at the start of each session. Some charts show VWAP on daily bars. That is a different measure. Zerodha’s charting manual does not give its own VWAP definition, so check the indicator on your screen before you rely on it.</p>
+<p>NSE also uses VWAP for other jobs. Its daily settlement price for futures is based on the VWAP of the last 30 minutes of the day. That is a different window from the whole-session VWAP above. (As of 11 Nov 2026, NSE Clearing settlement page. Check the NSE Clearing site.)</p>
+<p>Some points to keep in mind:</p>
+<ul>
+<li>OBV adds whole days of volume. It does not show how much of that volume came from buyers and how much from sellers.</li>
+<li>VWAP is a reference line. Traders watch it, but its predictive value is not established.</li>
+<li>This book uses VWAP only in an optional intraday module, on paper. It is not used for swing decisions.</li>
+</ul>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: indicator-playground | indicator: obv | volumePane: on | closes: 100,103,101 | highs: 102,105,104 | lows: 98,99,102 | volumes: 10000,20000,5000 | vwap: off | caption: A volume pane under the price; the OBV line is drawn as a running total and a VWAP overlay can be turned on, which resets at each session start -->
+<!-- component: indicator-playground | indicator: vwap | session: 20 | caption: A longer made-up chart cut into sessions of 20 bars. VWAP starts again at each session start -->
+<p>Look at the OBV line as you step through the days. It goes up on a day with a higher close and down on a day with a lower close. Turn VWAP on and watch it reset when a new session starts. Then compare the line with the price. Ask what the line adds, and what it leaves out.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical. OBV.</strong> Closes Rs 100, Rs 103 and Rs 101. Volumes 10,000, 20,000 and 5,000 shares. Start at zero.</p>
+<div class="table-wrapper"><table><thead><tr><th>Day</th><th>Close</th><th>Volume</th><th>Compared with the day before</th><th>OBV</th></tr></thead><tbody>
+<tr><td>1</td><td>Rs 100</td><td>10,000</td><td>no earlier close</td><td>0</td></tr>
+<tr><td>2</td><td>Rs 103</td><td>20,000</td><td>higher, so add</td><td>0 + 20,000 = <strong>20,000</strong></td></tr>
+<tr><td>3</td><td>Rs 101</td><td>5,000</td><td>lower, so subtract</td><td>20,000 - 5,000 = <strong>15,000</strong></td></tr>
+</tbody></table>
+</div>
+<p><strong>Hypothetical. VWAP for three bars.</strong> The typical prices are rounded in the table. Keep the full value while you work. Here, the second and third typical prices are each 307 / 3.</p>
+<div class="table-wrapper"><table><thead><tr><th>Bar</th><th>Typical price</th><th>Volume</th><th>Typical price x volume (rounded)</th></tr></thead><tbody>
+<tr><td>1</td><td>Rs 100.00</td><td>10,000</td><td>10,00,000</td></tr>
+<tr><td>2</td><td>Rs 102.33 (307 / 3)</td><td>20,000</td><td>20,46,667</td></tr>
+<tr><td>3</td><td>Rs 102.33 (307 / 3)</td><td>5,000</td><td>5,11,667</td></tr>
+<tr><td><strong>Total</strong></td><td></td><td><strong>35,000</strong></td><td><strong>35,58,333</strong> (full precision)</td></tr>
+</tbody></table>
+</div>
+<p>VWAP = 35,58,333 / 35,000 = <strong>Rs 101.67</strong>.</p>
+<p>The rounded column adds to a number one unit higher than the full-precision total. That small gap comes from rounding. It does not change the answer.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<!-- component: indicator-playground | indicator: vwap | closes: 200,206 | highs: 201,207 | lows: 199,205 | volumes: 1000,3000 | edit: on | caption: The two bars of the guided exercise. Change the prices or volumes and see the VWAP -->
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Two bars in one session. Bar 1: typical price Rs 200, volume 1,000 shares. Bar 2: typical price Rs 206, volume 3,000 shares. Find the VWAP.</p>
+<p>Hints:</p>
+<ol>
+<li>Multiply each typical price by its volume.</li>
+<li>Add the two products.</li>
+<li>Divide by the total volume.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>Bar 1: 200 x 1,000 = 2,00,000.</li>
+<li>Bar 2: 206 x 3,000 = 6,18,000.</li>
+<li>Total of products: 2,00,000 + 6,18,000 = 8,18,000.</li>
+<li>Total volume: 1,000 + 3,000 = 4,000.</li>
+<li>VWAP: 8,18,000 / 4,000 = <strong>Rs 204.50</strong>.</li>
+</ul>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> OBV starts at 50,000. Day 1: close higher than the day before, volume 10,000. Day 2: close lower, volume 4,000. Day 3: close the same as the day before, volume 8,000. Find the OBV after day 3.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>Start: 50,000.</li>
+<li>Day 1, higher close: 50,000 + 10,000 = 60,000.</li>
+<li>Day 2, lower close: 60,000 - 4,000 = 56,000.</li>
+<li>Day 3, same close: no change, so 56,000.</li>
+<li>OBV after day 3: <strong>56,000</strong>.</li>
+</ul>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the OBV rules, the VWAP formula and the reset rule, and why volume does not show direction.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong>. This is a learning log only. Log it in your journal (or on paper until the journal app is ready).</p>
+<ol>
+<li>For one stock, write the closes and volumes for 10 sessions from a chart you are allowed to view.</li>
+<li>Calculate the OBV for each day, starting from zero. Write each step.</li>
+<li>Record the relative volume (<em>Volume and what it adds</em>) for the same days.</li>
+<li>In the demo chart, look for VWAP in the indicator list; if it is there, note the time it resets, as your screen shows it.</li>
+<li>Write one sentence on what the OBV line did not show you.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>OBV counts whole days of volume. It does not show whether buyers or sellers drove the volume.</li>
+<li>The starting value of OBV moves the line. It does not change the moves.</li>
+<li>VWAP resets each session. Compare it only inside one session, and only with the same definition.</li>
+<li>VWAP’s predictive value is not established. The book uses it only in an optional intraday module, on paper.</li>
+<li>Volume figures can differ between data sources and chart settings. Check what your chart counts.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>OBV adds volume on up closes, subtracts on down closes, and changes nothing on equal closes.</li>
+<li>VWAP = total of (typical price x volume) divided by total volume, from the start of the session.</li>
+<li>Typical price = (high + low + close) divided by 3.</li>
+<li>Volume shows how much traded. It does not show which way the price will go.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Zerodha Varsity, volume indicators module (reference only, original wording).</li>
+<li>NSE India, market timings and trading system pages, for session start and end. NSE says shares without the closing auction trade continuously from 9:15 am to 3:30 pm, and the closing auction for some shares runs after 3:15 pm. (As of 11 Nov 2026. NSE has announced changes, so check the NSE site.)</li>
+<li>Zerodha, Kite charting manual (kite.trade/docs/kite/charting), for the indicators Kite offers.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../05-indicators/07-fibonacci-retracement/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../05-indicators/09-multiple-timeframes/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../05-indicators/07-fibonacci-retracement/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../05-indicators/09-multiple-timeframes/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

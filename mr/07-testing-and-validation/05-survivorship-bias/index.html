@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>सर्व्हायव्हरशिप बायस - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../07-testing-and-validation/05-survivorship-bias/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../07-testing-and-validation/05-survivorship-bias/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T7.5
+title: सर्व्हायव्हरशिप बायस
+page_type: Concept
+prerequisites: [T7.2, T7.4]
+labs: [Lab 4]
+estimated_minutes: 15
+-->
+<h1 id="सरवहायवहरशिप-बायस"><a class="header" href="#सरवहायवहरशिप-बायस">सर्व्हायव्हरशिप बायस</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>समजा तुम्ही आजच्या कंपन्यांच्या यादीवर एक नियम 2015 पर्यंत मागे जाऊन तपासता. चाचणी मजबूत दिसते. पण ज्या कंपन्या बुडाल्या, विलीन झाल्या किंवा व्यापार थांबवला, त्या आजच्या यादीत नाहीत. चाचणीने फक्त टिकलेल्या कंपन्या पाहिल्या. म्हणून निकाल 2015 मध्ये ट्रेडरला मिळू शकला असता त्यापेक्षा चांगला दिसतो. या चुकीला सर्व्हायव्हरशिप बायस म्हणतात.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>सर्व्हायव्हरशिप बायस</strong> म्हणजे चाचणीत फक्त टिकलेल्या गोष्टींचा समावेश असणे. बाजारातून बाहेर पडलेल्या कंपन्या गहाळ असतात.</p>
+<p>कंपनी यादीतून बाहेर पडण्याचे तीन सामान्य मार्ग आहेत:</p>
+<ul>
+<li>ती <strong>डिलिस्ट</strong> होते. तिचे शेअर्स एक्सचेंजवरून काढले जातात आणि ते आता व्यापारात नसतात.</li>
+<li>ती दुसऱ्या कंपनीत <strong>विलीन</strong> होते.</li>
+<li>ती बराच काळ <strong>ट्रेडिंग थांबवते</strong>, किंवा तिचे शेअर्स निरुपयोगी होतात.</li>
+</ul>
+<p>या मार्गांनी बाहेर पडलेल्या कंपन्या आजच्या यादीतून गळतात. त्या यादींवर बांधलेली चाचणी त्यांना कधीच पाहत नाही. गहाळ कंपन्या बहुधा वाईट कामगिरी करणाऱ्या असतात. त्यामुळे बायस निकाल वाईट न दिसता चांगले दिसण्याकडे ढकलतो.</p>
+<p>चाचणीचे विश्व हे असे शेअर्स असले पाहिजेत, जे भूतकाळातील प्रत्येक तारखेला अस्तित्वात होते आणि व्यापार करता येत होते. याला <strong>पॉइंट-इन-टाइम विश्व</strong> म्हणतात. ते वापरणारी चाचणी प्रत्येक भूतकाळातील वर्षात त्या कंपनीचा समावेश करते, जी त्या वेळी खरोखर बाजाराचा भाग होती, जरी ती आज गेलेली असली तरी.</p>
+<p>लॅब 4 मध्ये डिलिस्ट झालेले काल्पनिक टिकर्स आहेत. ती डिलिस्ट झालेल्या शेअरचा तोटा त्याच्या शेवटच्या व्यापारी भावावर नोंदवू शकते. हा तोटा तुम्ही बदलू शकता अशी सेटिंग आहे. तो खरा एक्झिट भाव नाही.</p>
+<p>मोफत डेटा स्रोतांकडे डिलिस्ट झालेल्या कंपन्यांचा भाव इतिहास अनेकदा नसतो. ही डेटाची मर्यादा आहे. ती चाचणीत नमूद केली पाहिजे, लपवली जाऊ नये.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>शेअर (काल्पनिक)</th><th>दोन वर्षांचा निकाल</th><th>फक्त टिकलेल्यांच्या चाचणीत?</th><th>पूर्ण चाचणीत?</th></tr></thead><tbody>
+<tr><td>A</td><td>+50%</td><td>होय</td><td>होय</td></tr>
+<tr><td>B</td><td>+20%</td><td>होय</td><td>होय</td></tr>
+<tr><td>C</td><td>-100%, डिलिस्ट आणि निरुपयोगी</td><td>नाही</td><td>होय</td></tr>
+<tr><td>D</td><td>-40%, व्यापार थांबला आणि आजच्या यादीतून बाहेर</td><td>नाही</td><td>होय</td></tr>
+</tbody></table>
+</div>
+<p>उजवीकडील दोन स्तंभ पाहा. फक्त टिकलेल्यांची चाचणी C आणि D वगळते. पूर्ण चाचणी त्यांना ठेवते. दोन चाचण्यांच्या निकालात मोठा फरक पडतो.</p>
+<!-- component: survivorship-demo | caption: जे शेअर्स बाहेर पडले ते काढा, आणि सरासरी तोट्यापासून नफ्याकडे कशी झेप घेते ते पाहा. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> दोन वर्षांत चार शेअर्स:</p>
+<ul>
+<li>A: +50%</li>
+<li>B: +20%</li>
+<li>C: -100% (डिलिस्ट आणि निरुपयोगी)</li>
+<li>D: -40% (व्यापार थांबला आणि आजच्या यादीतून बाहेर)</li>
+</ul>
+<p><strong>फक्त टिकलेल्यांची चाचणी (A आणि B):</strong></p>
+<ul>
+<li>सरासरी: (50 + 20) / 2 = <strong>+35%</strong>.</li>
+</ul>
+<p><strong>पूर्ण चाचणी (A, B, C आणि D):</strong></p>
+<ul>
+<li>सरासरी: (50 + 20 - 100 - 40) / 4 = -70 / 4 = <strong>-17.5%</strong>.</li>
+</ul>
+<p>सोप्या तुलनेसाठी प्रत्येक सरासरी Rs 10,000 वर लावा:</p>
+<ul>
+<li>फक्त टिकलेल्यांची: Rs 10,000 च्या 35% = <strong>Rs 3,500 नफा</strong>.</li>
+<li>पूर्ण चाचणी: Rs 10,000 च्या -17.5% = <strong>Rs 1,750 तोटा</strong>.</li>
+</ul>
+<p>दोन निकालांमधील अंतर 35 - (-17.5) = 52.5 टक्केबिंदू आहे. फक्त टिकलेल्यांची चाचणी नफा दाखवते. पूर्ण चाचणी तोटा दाखवते. दोन्ही चाचण्या तेच चार शेअर्स वापरतात. फक्त यादी वेगळी आहे.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> पाचवा शेअर E जोडा, जो 10% वाढला. दोन्ही सरासरी पुन्हा काढा. मग E जोडण्याआधी आणि नंतर दोन सरासरींमधील अंतराची तुलना करा.</p>
+<p>संकेत:</p>
+<ol>
+<li>टिकलेले आता A, B आणि E आहेत. पूर्ण विश्वात पाच शेअर्स आहेत.</li>
+<li>प्रत्येक सरासरी एका दशांश स्थानापर्यंत काढा.</li>
+<li>E जोडण्याआधी आणि नंतर अंतराची तुलना करा.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>फक्त टिकलेल्यांची: (50 + 20 + 10) / 3 = 80 / 3 = <strong>+26.7%</strong>.</li>
+<li>पूर्ण चाचणी: (50 + 20 - 100 - 40 + 10) / 5 = -60 / 5 = <strong>-12.0%</strong>.</li>
+<li>E आधीचे अंतर: 35.0 - (-17.5) = 52.5 टक्केबिंदू.</li>
+<li>E नंतरचे अंतर: 26.7 - (-12.0) = 38.7 टक्केबिंदू.</li>
+</ul>
+<p>E जोडल्याने अंतर कमी होते, पण ते नाहीसे होत नाही. फक्त टिकलेल्यांच्या चाचणीत C आणि D अजूनही गहाळ आहेत.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> फक्त निर्देशांकातील सदस्य शेअर्सवर व्यापार करणाऱ्या रणनीतीच्या पॉइंट-इन-टाइम चाचणीसाठी तुम्हाला कोणता डेटा लागेल, ते लिहा. प्रत्येक घटकासाठी सांगा की तो तुम्हाला मोफत मिळू शकतो का.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>तुम्हाला लागेल:</p>
+<ul>
+<li><strong>भूतकाळातील निर्देशांक सदस्यत्वाच्या याद्या</strong>, प्रत्येक कंपनी कधी सामील झाली आणि कधी बाहेर पडली त्या तारखांसह. यांशिवाय प्रत्येक भूतकाळातील तारखेला निर्देशांकात कोण होते, ते कळत नाही.</li>
+<li><strong>निर्देशांकातून बाहेर पडलेल्या कंपन्यांचा भाव इतिहास</strong>, ज्यात डिलिस्ट किंवा विलीन झालेल्या कंपन्यांचा समावेश आहे. यांशिवाय चाचणीत बायस राहतो.</li>
+<li><strong>प्रत्येक कंपनीचा कॉर्पोरेट ॲक्शन इतिहास</strong>, जसे की स्प्लिट, बोनस इश्यू आणि विलीनीकरण (<em>कॉर्पोरेट ॲक्शन</em>). यांशिवाय भाव बरोबर समायोजित करता येत नाहीत (<em>ऐतिहासिक डेटा</em>).</li>
+</ul>
+<p>तीपैकी प्रत्येक गोष्ट मोफत मिळेल की नाही, हे स्रोतावर अवलंबून आहे. प्रत्येक स्रोताची स्वतःची मदत पाने आणि अटी तपासा. अनेक मोफत स्रोतांकडे तिन्ही नसतात. ते न मिळाल्यास चाचणी योजनेत तसे सांगा. गॅप (अंतर) लपवू नका.</p>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ सर्व्हायव्हरशिप बायसची व्याख्या, त्याच्या परिणामाची दिशा आणि भूतकाळातील तारखांच्या चाचणीसाठी विश्व कसे निवडायचे, हे तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> कागदी काम (पेपर). एकाच नियमांवर फक्त-टिकलेल्यांची चाचणी आणि पूर्ण विश्वाची चाचणी चालवण्यासाठी लॅब 4 वापरा. लॅब तयार नसेल, तर चार शेअर्सच्या उदाहरणाचा वापर करून हे काम कागदावर किंवा स्प्रेडशीटमध्ये करा.</p>
+<ol>
+<li>फक्त टिकलेल्यांची सरासरी आणि पूर्ण विश्वाची सरासरी लिहा.</li>
+<li>दोन्हींमधील अंतर लिहा.</li>
+<li>प्रत्येक चाचणीने कोणते शेअर्स वापरले आणि का, ते लिहा.</li>
+<li>नोंद तुमच्या जर्नलमध्ये लिहा (किंवा जर्नल ॲप तयार होईपर्यंत कागदावर).</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>चार शेअर्सचे उदाहरण काल्पनिक आहे. डिलिस्टिंगमुळे प्रत्यक्ष तोटे वेगवेगळे असतात. Rs 1,750 हा आकडा खऱ्या चाचणीला लावू नका.</li>
+<li>मोफत स्रोतांकडे अनेकदा डिलिस्ट झालेल्या कंपन्यांचा भाव इतिहास नसतो. इतिहास गहाळ असणे हा बायसच राहतो, कारण त्याचे कारण व्यावहारिक असले तरी.</li>
+<li>पॉइंट-इन-टाइम यादी विश्व निश्चित करते, नियम नाही. नियमांमध्ये लूक-अहेड तरीही येऊ शकतो (<em>लूक-अहेड बायस</em>).</li>
+<li>शेअर्सची मोठी यादी हा स्वतःहून उपाय नाही. आजच्या कंपन्यांची मोठी यादी ही तरीही फक्त-टिकलेल्यांची यादीच असते.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>सर्व्हायव्हरशिप बायस फक्त टिकलेल्या कंपन्यांची चाचणी केल्याने येतो.</li>
+<li>डिलिस्ट, विलीन आणि व्यापार थांबवलेल्या कंपन्या आजच्या यादीतून बाहेर पडतात.</li>
+<li>या परिणामामुळे निकाल चांगले दिसण्याकडे झुकतात.</li>
+<li>चाचणीचे विश्व हे असे शेअर्स असले पाहिजेत, जे प्रत्येक भूतकाळातील तारखेला व्यापारयोग्य होते.</li>
+<li>डेटाची मर्यादा सांगितली पाहिजे, लपवली जाऊ नये.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>NSE निर्देशांक पद्धती आणि घटक पाने (niftyindices.com आणि nseindia.com), निर्देशांक कसा निवडला जातो आणि बदलला जातो, यासाठी.</li>
+<li>तुम्ही निवडलेल्या डेटा स्रोताचे मदत पान, डिलिस्ट झालेल्या शेअर्सबद्दल काय सांगते ते पाहण्यासाठी.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T7.5&amp;body=Page%3A%2007-testing-and-validation%2F05-survivorship-bias%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../07-testing-and-validation/04-look-ahead-bias/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../07-testing-and-validation/06-overfitting/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../07-testing-and-validation/04-look-ahead-bias/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../07-testing-and-validation/06-overfitting/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

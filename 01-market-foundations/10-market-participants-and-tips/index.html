@@ -1,0 +1,403 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Market participants and misleading tips - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/01-market-foundations/10-market-participants-and-tips/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T1.10
+title: Market participants and misleading tips
+page_type: Concept
+prerequisites: [T1.2, T1.8]
+labs: []
+estimated_minutes: 15
+-->
+<h1 id="market-participants-and-misleading-tips"><a class="header" href="#market-participants-and-misleading-tips">Market participants and misleading tips</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A headline says, “Foreign investors bought heavily today, so prices will rise.” This is a hypothetical example. On that day, foreign investors bought Rs 4,000 crore of shares. They sold Rs 3,500 crore. So the net buying was Rs 500 crore. The number is real. But it does not say which stocks were bought, or why, or what happens next. A message in a group also offers “assured Rs 10,000 a month” on a Rs 50,000 account. That is a claim to check. It is not information to act on.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Many kinds of people trade in the Indian market. Knowing who they are helps you read the data. It does not help you predict prices.</p>
+<ul>
+<li><strong>Retail investors:</strong> individuals trading their own money.</li>
+<li><strong>Institutions:</strong> funds, insurers and banks. They have research teams and different cost structures.</li>
+<li><strong>FII / FPI:</strong> foreign investors. <strong>DII:</strong> domestic institutional investors. These are plain descriptions, not legal definitions. The legal terms are in SEBI’s rules.</li>
+<li><strong>Proprietary traders and market makers:</strong> firms that trade their own money. Some firms also post buy and sell prices at the same time.</li>
+</ul>
+<p><strong>Net flow.</strong> For a group of participants, net flow = buy value minus sell value. A positive figure is net buying. A negative figure is net selling. NSE publishes FII and DII trading figures on its website, and the page offers downloads. The figures are provisional. NSE builds them from the trading codes that its members enter, and final foreign investor data comes later from the depository, NSDL. NSE’s page gives the latest day’s data, but this chapter does not state the exact hour it appears. (As of 11 Nov 2026, NSE FII/DII trading activity page. Check the NSE site.)</p>
+<p><strong>What a net flow tells you.</strong> The total money one group moved on one day.</p>
+<p><strong>What a net flow does not tell you.</strong> Which stocks were bought. Why they were bought. What the buyers expected. What the price will do next.</p>
+<p><strong>The information ladder.</strong> Sources sit on three levels:</p>
+<ul>
+<li><strong>Primary:</strong> the company’s own filings, exchange announcements, and regulator orders. These are the original documents.</li>
+<li><strong>Secondary:</strong> news reports, analysis and research. They repeat or explain primary information.</li>
+<li><strong>Unverified:</strong> tips, forwarded messages and social media posts. They have no source you can check.</li>
+</ul>
+<p>Start from primary sources. Use secondary sources for context. Treat unverified claims as claims to check, not as facts.</p>
+<p><strong>Signs of a misleading tip:</strong></p>
+<ul>
+<li>assured or promised returns,</li>
+<li>urgency, such as “join now or lose the chance”,</li>
+<li>pressure to join a group or pay for a signal,</li>
+<li>no registration details,</li>
+<li>claims of insider information.</li>
+</ul>
+<p><strong>Advisers and research analysts</strong> must be registered with SEBI. SEBI keeps public lists of registered Research Analysts and Investment Advisers on its website. SEBI’s investor site also has a tool to check the registration status of any market intermediary, and a tool called SEBI Check to confirm that a payment ID or account belongs to a registered intermediary. SEBI has also told regulated firms not to work with people who give securities advice without registration, or who promise returns without permission. People who only teach investing are left out of that rule. (As of 11 Nov 2026, SEBI investor support page and SEBI circular of 29 Jan 2025, updated 8 May 2026. Rules change, so check the SEBI site.) Being in a messaging group proves nothing about registration.</p>
+<p><strong>The book does not recommend stocks. No source in this chapter is an endorsement.</strong></p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<p>The table shows the three levels of the information ladder. Each level has a written warning. The warnings are in words, so you do not need to read colour to understand them.</p>
+<div class="table-wrapper"><table><thead><tr><th>Level</th><th>Examples</th><th>Use it for</th><th>Warning</th></tr></thead><tbody>
+<tr><td>Primary</td><td>Company filing, exchange announcement, SEBI order</td><td>Checking the facts</td><td>Check the date and the issuer</td></tr>
+<tr><td>Secondary</td><td>News article, analysis report</td><td>Context and cross-checking</td><td>Check the author’s method and any conflicts</td></tr>
+<tr><td>Unverified</td><td>Tip, forwarded message, social media post</td><td>Nothing, until checked against a primary source</td><td>Assured returns, urgency, or payment for signals</td></tr>
+</tbody></table>
+</div>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p>This is a hypothetical day with made-up numbers.</p>
+<p><strong>Net flow.</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>FII buy value</td><td>given</td><td>Rs 4,000 crore</td></tr>
+<tr><td>FII sell value</td><td>given</td><td>Rs 3,500 crore</td></tr>
+<tr><td>Net flow</td><td>4,000 - 3,500</td><td>Rs 500 crore net buying</td></tr>
+</tbody></table>
+</div>
+<p>The figure shows the total flow. It does not show which stocks were bought, or why.</p>
+<p><strong>Tip claim.</strong> “Assured Rs 10,000 a month from my signals” on a Rs 50,000 account.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>Monthly amount</td><td>given</td><td>Rs 10,000</td></tr>
+<tr><td>Account size</td><td>given</td><td>Rs 50,000</td></tr>
+<tr><td>Monthly return implied</td><td>10,000 / 50,000 x 100</td><td>20% a month</td></tr>
+</tbody></table>
+</div>
+<p>The book treats a promised 20% a month, with a guarantee, as a red flag. It is not information to act on.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<!-- component: tips-checker | caption: Practice with made-up messages. Sort each one and tick the warning signs. Doing nothing is always an allowed result. -->
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Sort these five made-up messages into primary, secondary or unverified. Give a reason for each.</p>
+<ol>
+<li>A company’s filing on the exchange website, announcing a board meeting date.</li>
+<li>A business news article that sums up that filing.</li>
+<li>A forwarded message: “Assured 3x in a month, join now, only 10 seats left.”</li>
+<li>A SEBI order published on SEBI’s website.</li>
+<li>A social media post with a screenshot of a broker statement and no source given.</li>
+</ol>
+<p>Hints:</p>
+<ol>
+<li>Who published it: the company, the exchange, the regulator, or someone repeating it?</li>
+<li>Is it an original document, an explanation, or a claim with no source?</li>
+<li>Can you check it against an official page?</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ol>
+<li>Primary. It is the company’s own filing on the exchange.</li>
+<li>Secondary. It repeats and sums up a primary source.</li>
+<li>Unverified. No source, and it carries assured returns and urgency.</li>
+<li>Primary. It is a regulator’s own order.</li>
+<li>Unverified. The screenshot has no source you can check, so it is a claim to check.</li>
+</ol>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Write a checklist of six steps to check a tip before you act on it. Include “do nothing” as an allowed result.</p>
+<details><summary>Check your answer</summary>
+<p>A sample checklist:</p>
+<ol>
+<li>Find the original source of the claim.</li>
+<li>Find the primary document (filing, exchange announcement or regulator order) that supports it.</li>
+<li>Check whether the person or firm is SEBI-registered, using the official lookup on the SEBI website.</li>
+<li>Check for red flags: assured returns, urgency, payment for signals, group pressure.</li>
+<li>Write down what would prove the claim wrong, and check for it.</li>
+<li>Decide. “Do nothing” is an allowed result. Do not act on a tip alone.</li>
+</ol>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Five questions. They cover net flow arithmetic, what a net flow does and does not show, red flags in tips, and checking adviser registration.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p><strong>Mode: learning note.</strong> No action on tips.</p>
+<ol>
+<li>Create a journal entry titled “Information sources I used”.</li>
+<li>For each source you read this week, write the date, the source name, its type (primary, secondary or unverified) and its verification status.</li>
+<li>Mark any unverified claim as “not checked”.</li>
+<li>Take no action on any tip, group or signal service.</li>
+<li>Write your entry in your journal.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>A net flow figure shows total money moved. It does not show which stocks, why, or what happens next.</li>
+<li>A registration check is not an endorsement of the adviser’s views.</li>
+<li>The book does not recommend stocks, groups, or signal services.</li>
+<li>A source that looks official is not verified. Check the primary document.</li>
+<li>Scams often use assured returns and pressure to act fast. Treat both as warning signs, not as information.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Net flow = buy value minus sell value. It is a total for a group, not a stock pick.</li>
+<li>Start from primary sources. Use secondary sources for context. Treat unverified claims as claims.</li>
+<li>Red flags: assured returns, urgency, payment for signals, group pressure, insider claims, no registration.</li>
+<li>Being in a group does not mean an adviser is registered. Check the SEBI list.</li>
+<li>Doing nothing is an allowed result. Often it is the right one.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p>Sources:</p>
+<ul>
+<li>SEBI investor education and alerts pages.</li>
+<li>SEBI registered intermediaries list.</li>
+<li>NSE FII/DII page.</li>
+<li>Exchange announcement pages.</li>
+</ul>
+<p>Facts checked on 11 Nov 2026:</p>
+<ul>
+<li>The FII/DII data source and its provisional nature come from NSE’s FII/DII trading activity page. The time of day it is published can change, so check the NSE page.</li>
+<li>The registration check tools and the SEBI helpline come from SEBI’s investor support page. The rule on unregistered advice comes from SEBI’s circular of 29 Jan 2025.</li>
+<li>The participant descriptions are plain-English summaries and were not checked against SEBI’s legal definitions.</li>
+<li>Current SEBI investor alerts change often. Read them on SEBI’s investor site.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../01-market-foundations/09-corporate-actions/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../01-market-foundations/09-corporate-actions/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

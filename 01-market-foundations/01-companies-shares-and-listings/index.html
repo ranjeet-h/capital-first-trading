@@ -1,0 +1,359 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Companies, shares and listings - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/01-market-foundations/01-companies-shares-and-listings/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T1.1
+title: Companies, shares and listings
+page_type: Concept
+prerequisites: [T0.1]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="companies-shares-and-listings"><a class="header" href="#companies-shares-and-listings">Companies, shares and listings</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A hypothetical trader hears that a company is “about to list.” They buy shares at its first public offer. They think the company gets the money from that purchase. A week later, they buy more on the exchange from another investor. They believe the company is funded again. Both beliefs mix up two different markets. The difference decides where the money goes.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p><strong>A share is a unit of ownership.</strong> A company has a fixed number of shares, and they are all equal parts. Each part gives its holder a share of the business, in proportion to the number held.</p>
+<p><strong>Ownership percentage</strong> is the shares you hold, divided by the total number of shares. In symbols:</p>
+<p>Ownership % = (shares held / total shares outstanding) x 100</p>
+<p><strong>Value of a holding</strong> is the number of shares times the price of one share. In symbols: holding value = shares x price.</p>
+<p><strong>Why companies sell shares.</strong> A company can raise money from new shareholders instead of borrowing it. Existing owners can also sell part of their stake. These are general reasons. Each company’s own filings give its specific reasons.</p>
+<p><strong>Primary market.</strong> The company issues new shares. The money goes to the company.</p>
+<p><strong>Secondary market.</strong> Investors trade shares that already exist. The money goes to the seller, not to the company. Buying and selling on the exchange takes place in the secondary market.</p>
+<p><strong>IPO (initial public offer).</strong> A company’s first public offer of shares to the public. This chapter explains pricing and allotment (who gets the shares) only in general terms. In a book-building IPO, the company gives a price band, and investors bid inside that band. Think of an auction with a floor and a ceiling. Once the issue closes, the shares are allotted, and SEBI’s rule since December 2023 is that they must start trading within 3 working days after the issue closes (called T+3). (As of 11 Nov 2026, SEBI circular of 9 Aug 2023. Rules change, so check the SEBI site.)</p>
+<p><strong>An IPO is not automatically profitable.</strong> The listing-day price is the first price at which the shares trade on the exchange. It can be above or below the issue price, which is the price set for the offer.</p>
+<p><strong>Dilution.</strong> When new shares are issued, the total number of shares rises. Each existing share is then a smaller part of the company. So an existing holder’s percentage falls, unless they buy some of the new shares.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<pre><code class="language-mermaid">flowchart LR
+  subgraph Primary
+    I1[Investor] --&gt;|money for new shares| C[Company]
+    C --&gt;|new shares| I1
+  end
+  subgraph Secondary
+    B[Buyer] --&gt;|money, matched on exchange| S[Seller]
+    S --&gt;|existing shares| B
+  end
+</code></pre>
+<p>Look at the company box. It appears only in the primary flow. In the secondary flow, money passes between buyer and seller. The company receives nothing.</p>
+<!-- component: share-slices | totalShares: 1000000 | price: 200 | held: 1000 | buyShares: 100 | caption: The chapter's made-up company: 10,00,000 shares at Rs 200. Press Play to issue 5,00,000 new shares and watch your percentage fall. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical company:</strong> 10,00,000 shares outstanding, trading at Rs 200 each.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Working</th><th>Result</th></tr></thead><tbody>
+<tr><td>1. Company value</td><td>10,00,000 x Rs 200</td><td>Rs 20,00,00,000 (Rs 20 crore)</td></tr>
+<tr><td>2. Holder’s ownership</td><td>1,000 / 10,00,000</td><td>0.1%</td></tr>
+<tr><td>3. Holder’s value</td><td>1,000 x Rs 200</td><td>Rs 2,00,000</td></tr>
+<tr><td>4. Secondary trade, 100 shares</td><td>100 x Rs 200</td><td>Rs 20,000 paid to the seller; the company receives nothing</td></tr>
+<tr><td>5. Dilution: company issues 5,00,000 new shares</td><td>Total becomes 10,00,000 + 5,00,000 = 15,00,000; holder’s 1,000 / 15,00,000</td><td>0.0667%</td></tr>
+</tbody></table>
+</div>
+<p><strong>Check on step 5:</strong> 1,000 / 15,00,000 = 1 / 1,500 = 0.000667, which is 0.0667%.</p>
+<p>The holder’s ownership fell from 0.1% to 0.0667%, because the share count rose. The holder still has 1,000 shares. Whether their value falls depends on the price after the new issue. The arithmetic above does not decide that.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task:</strong> A holder owns 250 shares in a company with 20,00,000 shares in total. The share price is Rs 150. Work out the holder’s ownership percentage and the value of the holding.</p>
+<p><strong>Hints:</strong></p>
+<ol>
+<li>Divide the holder’s shares by the total shares to get the fraction.</li>
+<li>Multiply the fraction by 100 to get the percentage.</li>
+<li>Multiply the shares by the price to get the value.</li>
+</ol>
+<p><strong>Answer:</strong> Ownership = 250 / 20,00,000 = 0.000125, which is 0.0125%. Value = 250 x Rs 150 = Rs 37,500.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task:</strong> The company in the worked example issues 10,00,000 new shares. Work out the holder’s new ownership percentage. Explain why the holder’s value is not automatically lower. Use no hints.</p>
+<details><summary>Check your answer</summary>
+<p>New total = 10,00,000 + 10,00,000 = 20,00,000 shares. Holder’s ownership = 1,000 / 20,00,000 = 0.005%.</p>
+<p>The holder’s value is shares x price. The holder still has 1,000 shares. If the price stayed at Rs 200, the holding would still be worth Rs 2,00,000. Trading sets the price. The new money may change the company’s prospects, so the price could move either way. The percentage falls for certain. The value does not fall automatically.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Five questions check ownership sums, the money flow in each market, and the claims about IPOs and dilution.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p><strong>Mode:</strong> learning note. Write it in your journal, or on paper. No purchase.</p>
+<ol>
+<li>Find the public offer document for any past IPO. You can find it on the exchange or SEBI website.</li>
+<li>Find the section called “objects of the issue.” It says what the money is for.</li>
+<li>Write, in your own words, what the company said it would use the money for.</li>
+<li>Record the source, the date you accessed it, and the company name. Do not buy anything.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>This chapter does not tell you whether any IPO is worth buying. An IPO does not get an exemption from the capital-first rules.</li>
+<li>Hype about an IPO, and excitement about getting shares, often lead to rash buying.</li>
+<li>The listing-day price can be above or below the issue price. This chapter does not predict either.</li>
+<li>The percentage and value sums are a snapshot. The price moves, so the value moves too.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>A share is a unit of ownership. Ownership % = shares held / total shares, times 100.</li>
+<li>Primary market: money goes to the company. Secondary market: money goes to the seller.</li>
+<li>An IPO is a company’s first public offer. It is not automatically profitable.</li>
+<li>Dilution: new shares lower each existing holder’s percentage, unless they buy into the issue.</li>
+<li>For 1,000 of 10,00,000 shares, ownership is 0.1%. After 5,00,000 new shares, it is 0.0667%.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p><strong>Sources (names only):</strong></p>
+<ul>
+<li>SEBI ICDR regulations.</li>
+<li>SEBI investor education pages on IPOs.</li>
+<li>NSE and BSE IPO education pages.</li>
+</ul>
+<p><strong>Facts checked on 11 Nov 2026:</strong></p>
+<ul>
+<li>The 3-working-day listing time after an IPO closes comes from a SEBI circular dated 9 Aug 2023. It became compulsory for issues opening on or after 1 Dec 2023.</li>
+<li>The detailed IPO steps, price band limits and allotment rules are in SEBI’s ICDR regulations. Read them on the SEBI site before you apply to any IPO.</li>
+<li>Current IPO figures are out of scope for this chapter.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../01-market-foundations/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../01-market-foundations/02-exchanges-sebi-brokers-participants/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../01-market-foundations/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../01-market-foundations/02-exchanges-sebi-brokers-participants/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

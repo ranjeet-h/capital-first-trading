@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Historical data - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/07-testing-and-validation/02-historical-data/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T7.2
+title: Historical data
+page_type: Concept
+prerequisites: [T7.1, T1.9]
+labs: [Lab 4, Lab 3]
+estimated_minutes: 25
+-->
+<h1 id="historical-data"><a class="header" href="#historical-data">Historical data</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Imagine you test an idea on a file of old prices. The file shows a share falling 50% in one day. Did the share really fall that much, or is the file wrong? A stock split can cause this kind of change. A bad row can cause it too. If you do not check the file first, the test can give a false answer. This chapter explains what price data holds, what it leaves out, and how to check it before a test.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p><strong>Historical data</strong> is a file of past prices. Most free files have one row for each trading day. Each row holds five numbers. The five numbers are called OHLCV:</p>
+<ul>
+<li><strong>Open:</strong> the price at the start of the day.</li>
+<li><strong>High:</strong> the highest price reached during the day.</li>
+<li><strong>Low:</strong> the lowest price reached during the day.</li>
+<li><strong>Close:</strong> the price at the end of the day.</li>
+<li><strong>Volume:</strong> the number of shares that changed hands during the day.</li>
+</ul>
+<p>OHLCV leaves things out. It does not show the bid and the ask, which are the prices buyers and sellers offer at one moment (<em>Order matching, spread and liquidity</em>). It also does not show the order-by-order path of trades inside the day. So a test on daily rows cannot know the order of events inside the day.</p>
+<p><strong>Corporate actions</strong> are company events that change the share price or share count. A <strong>split</strong> is one example. After a split, you hold more shares, each at a lower price. The total value stays the same. Other examples are bonus issues and dividends (<em>Corporate actions</em>).</p>
+<p>Corporate actions create two kinds of price series:</p>
+<ul>
+<li><strong>Unadjusted:</strong> the prices as they traded on each day. The past stays as it was.</li>
+<li><strong>Adjusted:</strong> the past prices are rewritten to match the new share count. The old prices change in the file.</li>
+</ul>
+<p>An adjusted series can contain information that was known only later. The adjustment is worked out after the event. If a test uses that number as if it were known on the day, it looks into the future. This is a form of look-ahead bias (<em>Look-ahead bias</em>).</p>
+<p>Before a test, check the file. The import checks used in Lab 4 are these:</p>
+<div class="table-wrapper"><table><thead><tr><th>Check</th><th>What it looks for</th><th>What to do</th></tr></thead><tbody>
+<tr><td>Sorted dates</td><td>Each date comes after the one before it</td><td>Fix the order against the source. Do not guess.</td></tr>
+<tr><td>Duplicate dates</td><td>Two rows for the same day</td><td>Find out why before you keep either row.</td></tr>
+<tr><td>Gaps</td><td>A trading day missing from the dates</td><td>Compare with the NSE trading holidays page. Some gaps are holidays.</td></tr>
+<tr><td>Zero or negative prices</td><td>A price of zero or below</td><td>Treat it as an error to check.</td></tr>
+<tr><td>OHLC consistency</td><td>The high must be at or above the open and close. The low must be at or below the open and close.</td><td>Check the row against the source.</td></tr>
+<tr><td>Jumps over 20%</td><td>A large move with no flag for a split</td><td>Ask the question: is there a flagged split? Do not delete the row on sight.</td></tr>
+<tr><td>Zero volume</td><td>No shares traded that day</td><td>Check the day with the source before you use it.</td></tr>
+</tbody></table>
+</div>
+<p>Free data is not always complete or correct. The checks find some problems, not all of them.</p>
+<p><strong>Licence.</strong> A data source sets its own terms. Many free sources allow personal use only. Read the terms at the source. Do not assume you may share, sell or publish a file. Two real examples show why you must read the terms.</p>
+<ul>
+<li><strong>Yahoo Finance.</strong> Yahoo’s terms of service say you may not collect its data with automated tools such as robots or scrapers without permission. They also say you may not reuse the service for any commercial purpose, and you may not copy, sell or hand out its content without written permission. The terms do not describe the file columns or the adjustment method. So open your own file and read its header. Files often carry a column for an adjusted close, but check yours. (As of 11 Nov 2026, Yahoo terms of service. Terms change, so read them at the source.)</li>
+<li><strong>NSE.</strong> NSE’s data usage and sharing policy treats end-of-day and historical data as market data. NSE shares it through agreements and licences. So passing NSE data on to others needs NSE’s permission. NSE stopped its old daily “bhavcopy” file on 8 July 2024 and replaced it with a new common bhavcopy format (NSE circular of 12 June 2024). Check the NSE site for the file layout and the terms for each file. (As of 11 Nov 2026, NSE data usage and sharing policy. Terms change, so read them at the source.)</li>
+</ul>
+<p>The bundled practice data in this book is made up. If you import real data, it stays on your own device. The source’s terms still apply to that data.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>What happens</th></tr></thead><tbody>
+<tr><td>1. Read</td><td>The file is opened.</td></tr>
+<tr><td>2. Sniff the header</td><td>The row with the column names is found.</td></tr>
+<tr><td>3. Map columns</td><td>Each column is matched to Date, Open, High, Low, Close and Volume.</td></tr>
+<tr><td>4. Validate</td><td>Each row is checked against the rules in <em>The idea</em>.</td></tr>
+<tr><td>5. Preview</td><td>You see which rows pass and which rows fail.</td></tr>
+<tr><td>6. Accept or exclude</td><td>You decide which rows to keep.</td></tr>
+</tbody></table>
+</div>
+<p>The import in Lab 4 follows these six steps. Read them in order. A row must pass the checks before it reaches a test.</p>
+<!-- component: data-quality-check | caption: Look at a made-up price file and tick the rows you think are wrong, then compare with the seven checks. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical. A split.</strong> One share is priced at Rs 1,000. The company splits it 1 for 2. Each old share becomes 2 shares. The price becomes Rs 500.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th>Before the split</th><th>After the split</th></tr></thead><tbody>
+<tr><td>Your holding</td><td>10 shares at Rs 1,000</td><td>20 shares at Rs 500</td></tr>
+<tr><td>Value</td><td>10 x 1,000 = Rs 10,000</td><td>20 x 500 = Rs 10,000</td></tr>
+</tbody></table>
+</div>
+<p>Your value did not change. But the unadjusted price series falls from Rs 1,000 to Rs 500. That looks like a fall of 50%: (500 - 1,000) / 1,000 = -50%. No one lost value because of the split. A test that uses the unadjusted series will still see a loss.</p>
+<p><strong>Hypothetical. A bad row.</strong> A second file has six rows. Each row is one trading day.</p>
+<div class="table-wrapper"><table><thead><tr><th>Row</th><th>Date</th><th>Open (Rs)</th><th>High (Rs)</th><th>Low (Rs)</th><th>Close (Rs)</th><th>Volume</th></tr></thead><tbody>
+<tr><td>1</td><td>2026-03-02</td><td>250</td><td>254</td><td>248</td><td>252</td><td>1,20,000</td></tr>
+<tr><td>2</td><td>2026-03-03</td><td>252</td><td>256</td><td>250</td><td>255</td><td>98,000</td></tr>
+<tr><td>3</td><td>2026-03-04</td><td>255</td><td>257</td><td>253</td><td>254</td><td>1,10,000</td></tr>
+<tr><td>4</td><td>2026-03-05</td><td>255</td><td>258</td><td>252</td><td>251</td><td>1,05,000</td></tr>
+<tr><td>5</td><td>2026-03-06</td><td>251</td><td>253</td><td>249</td><td>252</td><td>1,01,000</td></tr>
+<tr><td>6</td><td>2026-03-09</td><td>252</td><td>255</td><td>251</td><td>254</td><td>99,000</td></tr>
+</tbody></table>
+</div>
+<p>Row 4 has a low of Rs 252 and a close of Rs 251. The low is above the close. A day’s low cannot be above its close. So row 4 breaks the OHLC rule. The other five rows pass every check.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Check this six-row hypothetical file. Name each problem, the row it sits in, and what you would do next.</p>
+<div class="table-wrapper"><table><thead><tr><th>Row</th><th>Date</th><th>Open (Rs)</th><th>High (Rs)</th><th>Low (Rs)</th><th>Close (Rs)</th><th>Volume</th></tr></thead><tbody>
+<tr><td>1</td><td>2026-03-02</td><td>100</td><td>102</td><td>99</td><td>101</td><td>50,000</td></tr>
+<tr><td>2</td><td>2026-03-03</td><td>101</td><td>103</td><td>100</td><td>102</td><td>60,000</td></tr>
+<tr><td>3</td><td>2026-03-03</td><td>102</td><td>104</td><td>101</td><td>103</td><td>55,000</td></tr>
+<tr><td>4</td><td>2026-03-04</td><td>103</td><td>104</td><td>101</td><td>102</td><td>0</td></tr>
+<tr><td>5</td><td>2026-03-05</td><td>130</td><td>132</td><td>128</td><td>131</td><td>90,000</td></tr>
+<tr><td>6</td><td>2026-03-06</td><td>131</td><td>130</td><td>129</td><td>132</td><td>85,000</td></tr>
+</tbody></table>
+</div>
+<p>Hints:</p>
+<ol>
+<li>Check the date order first, from row 1 to row 6.</li>
+<li>Then check for duplicate dates.</li>
+<li>Then check each row’s OHLC rule, one row at a time.</li>
+<li>A jump over 20% is a question to answer. It is not an automatic deletion.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><strong>Date order:</strong> passes. The dates run from 2 March to 6 March.</li>
+<li><strong>Duplicate date:</strong> rows 2 and 3 both show 3 March. Find out why before you keep either row. Do not keep both.</li>
+<li><strong>Zero volume:</strong> row 4 shows no shares traded. Check the source before you use that day.</li>
+<li><strong>Jump over 20%:</strong> row 5 closes at Rs 131. Row 4 closed at Rs 102. The rise is 131 - 102 = Rs 29. 29 / 102 = 28.4%. There is no split flag in the file. Ask the source. Do not delete the row without a reason.</li>
+<li><strong>OHLC rule:</strong> row 6 fails. Its high is Rs 130. Its open of Rs 131 and its close of Rs 132 are both above the high. Check the row against the source, or exclude it.</li>
+<li><strong>Clean rows:</strong> row 1 passes every check. Row 5 passes the OHLC rule, but its jump needs an answer.</li>
+</ul>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> In writing, explain what goes wrong if adjusted and unadjusted price series are mixed in one backtest.</p>
+<details><summary>Check your answer</summary>
+<p>A backtest that mixes the two series can see the same share at two different prices. Take the split from the worked example. Before the split, the series shows Rs 1,000. After the split, the adjusted series shows Rs 500 for the same past price, or the unadjusted series shows Rs 500 for the new price. Either way, the test sees a fall of 50% that did not happen to the holder. A stop or a signal can then fire on that fake fall. The test reports trades and results that did not happen. The result looks wrong, and the cause is the mixed data, not the idea.</p>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks adjusted and unadjusted prices, the OHLC rule, and the jump check.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong>. Use Lab 4 to import the bundled practice file and write a validation summary. If the lab is not ready, do the task on paper or in a spreadsheet, using the six rows in the worked example.</p>
+<ol>
+<li>Write the row count of the file.</li>
+<li>List each row that fails a check, with the reason.</li>
+<li>Write what you chose to do with each failed row, and why.</li>
+<li>Record the summary in a learning note. Log it in your journal (or on paper until the journal app is ready).</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>Free data can be incomplete or wrong. A file that passes the checks can still contain errors the checks cannot find.</li>
+<li>More history does not always make a test better. Old prices may come from a time with different market rules. Read the source’s notes on the years you use.</li>
+<li>A clean price file is not full market data. It has no bid and ask prices and no order-by-order detail.</li>
+<li>Use data only as the source’s terms allow. Do not share, sell or publish the files.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>OHLCV is one row per day: open, high, low, close and volume.</li>
+<li>A split changes the price and the share count. The total value stays the same.</li>
+<li>Unadjusted and adjusted series must not be mixed in one test.</li>
+<li>A jump over 20% is a question. Check it with the source.</li>
+<li>A row that breaks the OHLC rule is a row to check, not a typo to ignore.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Yahoo terms of service (legal.yahoo.com).</li>
+<li>NSE Data Usage and Data Sharing Policy (nseindia.com).</li>
+<li>NSE circular of 12 June 2024 on the new common bhavcopy.</li>
+<li>NSE trading holidays page.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../07-testing-and-validation/01-from-idea-to-hypothesis/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../07-testing-and-validation/03-backtesting-basics-and-realism/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../07-testing-and-validation/01-from-idea-to-hypothesis/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../07-testing-and-validation/03-backtesting-basics-and-realism/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

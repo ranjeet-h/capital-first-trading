@@ -1,0 +1,114 @@
+[
+  {
+    "id": "T2.3-q1",
+    "type": "mcq",
+    "prompt": "Which statement about tax on trading profits is correct?",
+    "options": [
+      {"id": "a", "text": "Tax is a flat percentage of the turnover you trade"},
+      {"id": "b", "text": "Tax applies to net gains under rules that depend on how the activity is classified"},
+      {"id": "c", "text": "Tax applies to the value of every buy order"},
+      {"id": "d", "text": "Tax never depends on how long a share was held"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Tax is not a percentage of turnover. Trading costs are proportional to turnover, but tax is worked out on the net gain under the applicable rules.",
+      "c": "The value of a buy order is not the taxable base. Gains, not purchases, are what tax is worked out on, under the applicable rules.",
+      "d": "Holding period is one of the classification factors that can change the treatment of a gain. Its cut-off periods must be verified."
+    },
+    "concepts": ["tax-basics", "classification", "misconceptions"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.3-q2",
+    "type": "scenario",
+    "prompt": "Hypothetical. A trader has two gains of the same amount. One comes from a share held for a few days, and the other from a share held for two years. What is the most accurate statement?",
+    "options": [
+      {"id": "a", "text": "Both gains are taxed identically, because both are gains"},
+      {"id": "b", "text": "They may be treated differently, because the holding period is a classification factor. The thresholds and rates must be verified."},
+      {"id": "c", "text": "Both gains are tax-free if the amount is small"},
+      {"id": "d", "text": "Only the broker decides the treatment of each gain"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Equal amounts can be treated differently when holding periods differ. Assuming they are the same is the mistake this chapter warns about.",
+      "c": "No such rule is stated in this book. A tax-free status for small amounts must come from the current official rules, not from memory or from a blog.",
+      "d": "The broker does not decide tax treatment. The rules do, and a professional can help apply them to your facts."
+    },
+    "concepts": ["holding-period", "classification"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T2.3-q3",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"Delivery and intraday gains are always taxed the same way, so I can ignore the type of activity.\" Which part of this statement is wrong?",
+    "options": [
+      {"id": "a", "text": "\"Delivery and intraday gains\""},
+      {"id": "b", "text": "\"are always taxed the same way\""},
+      {"id": "c", "text": "\"so I can ignore the type of activity\""},
+      {"id": "d", "text": "Nothing. The statement is correct."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Naming the two kinds of trade is not the error. The error is the claim about how they are taxed.",
+      "c": "The conclusion follows from the wrong claim. The activity type is exactly what the classification questions examine.",
+      "d": "The statement is not correct. Classification and rates can differ, and the rules must be checked from an official source."
+    },
+    "concepts": ["classification", "misconceptions"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T2.3-q4",
+    "type": "numeric",
+    "prompt": "Hypothetical. Gross gain Rs 4,000 and trading costs Rs 200. Assume costs can be deducted from the taxable base (a working assumption to be verified). What is the taxable base in rupees?",
+    "answer": 3800,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Taxable base = gross gain - costs = 4,000 - 200 = 3,800. No rate is needed to find the base.",
+    "concepts": ["taxable-base", "algebra"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.3-q5",
+    "type": "scenario",
+    "prompt": "A trader made a loss in one year and a gain in the next. The trader says, \"Losses are never usable, so last year's loss is wasted.\" What is the best response?",
+    "options": [
+      {"id": "a", "text": "Agree, because losses are never usable"},
+      {"id": "b", "text": "Disagree in general terms, but do not assume a particular offset. Which losses can cancel which gains, and for how long they can be carried, depends on rules to be checked with a professional."},
+      {"id": "c", "text": "Agree, but only for losses in the first year"},
+      {"id": "d", "text": "Ask the broker to refund the loss"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The claim is too strong. Loss set-off rules exist, but their details must be verified. It is wrong to assume losses are never usable.",
+      "c": "No timing rule like this is stated in this book. Any rule on which years losses can be used must come from the current official rules.",
+      "d": "A broker does not refund a loss. Its treatment is a tax question, governed by the rules."
+    },
+    "concepts": ["loss-set-off", "misconceptions"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T2.3-q6",
+    "type": "mcq",
+    "prompt": "Assuming the taxable base is the gross gain less costs, which expression gives the net result, where G is gross gain, C is trading costs and t is a tax rate?",
+    "options": [
+      {"id": "a", "text": "G - C - t x G"},
+      {"id": "b", "text": "G - C - t x (G - C)"},
+      {"id": "c", "text": "(G - C) x t"},
+      {"id": "d", "text": "G - t x (G - C)"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This taxes the gross gain, which ignores the costs in the taxable base. It is only correct if the rules say costs are not deductible, which must be verified.",
+      "c": "This is the tax alone, not the net result. Costs and gross gain are both missing from the net.",
+      "d": "This leaves out the trading costs entirely, so it overstates the net result."
+    },
+    "concepts": ["algebra", "net-result"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  }
+]

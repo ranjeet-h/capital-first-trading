@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>निर्देशांक: निफ्टी आणि सेन्सेक्स - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../01-market-foundations/08-indices-nifty-sensex/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../01-market-foundations/08-indices-nifty-sensex/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T1.8
+title: निर्देशांक: निफ्टी आणि सेन्सेक्स
+page_type: Concept
+prerequisites: [T1.1, T1.4]
+labs: []
+estimated_minutes: 20
+-->
+<h1 id="निरदेशांक-निफटी-आणि-सेनसेकस"><a class="header" href="#निरदेशांक-निफटी-आणि-सेनसेकस">निर्देशांक: निफ्टी आणि सेन्सेक्स</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एखाद्या दिवशी निर्देशांक 1.6% वर जातो, तेव्हा एक मित्र म्हणतो, “बाजार वर आहे. माझी होल्डिंग्ज पण वर असली पाहिजेत.” हे एक काल्पनिक उदाहरण आहे. तुमच्याकडे एका शेअरमध्ये Rs 50,000 आहेत. तो शेअर त्या दिवशी 2% खाली येतो. तुमची होल्डिंग Rs 1,000 ने कमी होते, आणि निर्देशांक मात्र वर असतो. निर्देशांक अनेक शेअर्सची बेरीज दाखवतो. तो तुमच्या एका शेअरची बेरीज दाखवत नाही.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>निर्देशांक</strong> म्हणजे अनेक शेअर्सच्या गटाची बेरीज दाखवणारी एक संख्या. निफ्टी आणि सेन्सेक्स हे असे दोन निर्देशांक आहेत. ही संख्या अंकांमध्ये मोजलेली पातळी असते. ती भरता येणारा भाव नसतो. निर्देशांकाचा एक शेअर तुम्ही विकत घेऊ शकत नाही.</p>
+<p><strong>वजन.</strong> गटातील प्रत्येक शेअरला वजन असते. वजन म्हणजे निर्देशांकात त्याचा वाटा. सर्व वजने मिळून 100% होतात. सामान्य पद्धत बाजार आकारावर आधारित असते, आणि ज्या शेअर्सची मालकी बाजारात मोकळी आहे त्यांच्यासाठी त्यात समायोजन असते. याला फ्री-फ्लोट बाजार भांडवल पद्धत म्हणतात. Nifty 50 मध्ये 50 शेअर्स आहेत. Sensex मध्ये 30 शेअर्स आहेत. दोन्ही ही पद्धत वापरतात. खालची तीन-शेअर आणि पाच-शेअर ही उदाहरणे गणित सोपे राहावे म्हणून काल्पनिक आहेत. (11 नोव्हेंबर 2026 पर्यंत, NSE Indices पद्धत दस्तऐवज, जून 2026, आणि BSE Indices पद्धत, मे 2026. पद्धती बदलतात, म्हणून NSE आणि BSE संकेतस्थळे तपासा.)</p>
+<p><strong>अंकांतील बदल आणि टक्केवारीतील बदल.</strong></p>
+<ul>
+<li>अंकांतील बदल = नवी पातळी वजा आधीची पातळी.</li>
+<li>टक्केवारीतील बदल = अंकांतील बदल, आधीच्या पातळीने भागलेला, गुणिले 100.</li>
+</ul>
+<p><strong>एका शेअरचा वाटा.</strong> वजन गुणिले त्या शेअरची हालचाल. निर्देशांकाची हालचाल म्हणजे सर्व वाट्यांची बेरीज.</p>
+<p><strong>व्याप्ती (Breadth).</strong> किती शेअर्स वर गेले आणि किती खाली आले, हे व्याप्ती मोजते. अनेक शेअर्स खाली असतानाही निर्देशांक वर जाऊ शकतो. हे तेव्हा होते, जेव्हा जास्त वजन असलेले शेअर्स वर जातात. व्याप्ती हा संदर्भ आहे, अंदाज नव्हे.</p>
+<p><strong>व्यापक आणि क्षेत्रीय निर्देशांक</strong> वेगवेगळे गट मोजतात. व्यापक निर्देशांक शेअर्सचा मोठा संच मोजतो. क्षेत्रीय निर्देशांक एकाच क्षेत्रातील शेअर्स मोजतो.</p>
+<p><strong>निर्देशांकाशी जोडलेली उत्पादने</strong> या ट्रॅकमध्ये समाविष्ट नाहीत. ती पुस्तकात नंतर समजावली आहेत.</p>
+<p><strong>पुनर्संतुलन.</strong> निर्देशांकातील शेअर्सची यादी ठरावीक वेळापत्रकाने तपासली जाते. Nifty 50 साठी NSE यादी वर्षातून दोनदा तपासते. ही तपासणी जानेवारी आणि जुलैमध्ये संपणाऱ्या सहा महिन्यांच्या डेटावर आधारित असते. बदल मार्च आणि सप्टेंबरच्या शेवटच्या ट्रेडिंग दिवसापासून लागू होतात, आणि सुमारे चार आठवड्यांची सूचना दिली जाते. NSE एका कॅलेंडर वर्षात जास्तीत जास्त 5 बदल करते. Sensex चेही वर्षातून दोनदा पुनरावलोकन होते. त्याचे बदल जूनच्या आणि डिसेंबरच्या तिसऱ्या शुक्रवारनंतरच्या सोमवारपासून लागू होतात. (11 नोव्हेंबर 2026 पर्यंत, NSE Indices पद्धत दस्तऐवज, जून 2026, आणि BSE Indices पद्धत, मे 2026. ताज्या माहितीसाठी NSE आणि BSE संकेतस्थळे तपासा.)</p>
+<p><strong>निर्देशांकाच्या हालचालीतून काय समजते.</strong> ती शेअर्सच्या गटाचे वर्णन करते. एखादा शेअर पुढे काय करेल, हे ती सांगत नाही. ती एकटी व्यापाराचा संकेत नाही.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>हा तक्ता तीन-शेअरचा निर्देशांक दाखवतो. तो सोडवलेल्या उदाहरणातील वजने आणि हालचाली वापरतो. शेवटचा स्तंभ म्हणजे वजन गुणिले हालचाल.</p>
+<div class="table-wrapper"><table><thead><tr><th>शेअर</th><th>वजन</th><th>हालचाल</th><th>निर्देशांकातील वाटा</th></tr></thead><tbody>
+<tr><td>A</td><td>50%</td><td>+4%</td><td>+2.0%</td></tr>
+<tr><td>B</td><td>30%</td><td>-2%</td><td>-0.6%</td></tr>
+<tr><td>C</td><td>20%</td><td>+1%</td><td>+0.2%</td></tr>
+<tr><td>एकूण</td><td>100%</td><td></td><td>+1.6%</td></tr>
+</tbody></table>
+</div>
+<p>वाटा स्तंभ वाचा. शेअर A ने निर्देशांक सर्वात जास्त हलवला. त्याचे वजन सर्वात मोठे आहे आणि हालचालही सर्वात मोठी आहे. शेअर B खाली येतो. तरीही निर्देशांक वर जातो, कारण A मधील वाढ B मधील घसरणीपेक्षा मोठी आहे.</p>
+<!-- component: index-calculator | preset: chapter | level: 20000 | holding: 50000 | caption: अध्यायातील तीन-शेअरचा निर्देशांक: A +4%, B -2%, C +1% मिळून +1.6% होतो. एखादा भाव बदला आणि निर्देशांक कसा बदलतो ते पाहा. पाच-शेअरचे उदाहरणही वापरून पाहा. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p>हे एक काल्पनिक निर्देशांक बदल आहे. निर्देशांक 20,000 वरून 20,400 वर जातो.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>अंकांतील बदल</td><td>20,400 - 20,000</td><td>+400 अंक</td></tr>
+<tr><td>टक्केवारीतील बदल</td><td>400 / 20,000 x 100</td><td>+2.0%</td></tr>
+</tbody></table>
+</div>
+<p>हे एक काल्पनिक वजनाधारित उदाहरण आहे, फक्त समजावण्यासाठी. वजने आणि हालचाली वरील तक्त्यातून घेतल्या आहेत.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>शेअर A चा वाटा</td><td>0.50 x 4</td><td>+2.0</td></tr>
+<tr><td>शेअर B चा वाटा</td><td>0.30 x (-2)</td><td>-0.6</td></tr>
+<tr><td>शेअर C चा वाटा</td><td>0.20 x 1</td><td>+0.2</td></tr>
+<tr><td>निर्देशांकाची हालचाल</td><td>2.0 - 0.6 + 0.2</td><td>+1.6%</td></tr>
+</tbody></table>
+</div>
+<p>शेअर B मधील Rs 50,000 चे होल्डिंग 2% खाली येते. ते 50,000 x 0.02 = Rs 1,000 आहे. तरीही निर्देशांक 1.6% वर गेला.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> एक निर्देशांक 18,000 वरून 17,640 वर येतो. अंकांतील बदल आणि टक्केवारीतील बदल काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>अंकांतील बदल = नवी पातळी वजा जुनी पातळी.</li>
+<li>टक्केवारीतील बदल = अंकांतील बदल, जुन्या पातळीने भागलेला.</li>
+<li>वजा चिन्ह ठेवा.</li>
+</ol>
+<p><strong>उत्तर:</strong> अंकांतील बदल = 17,640 - 18,000 = -360 अंक. टक्केवारीतील बदल = -360 / 18,000 = -2.0%.
+तपासणी: 18,000 चे 2% = 360.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> तीन-शेअरच्या निर्देशांकात वजने 40%, 35% आणि 25% आहेत. हालचाली त्याच क्रमाने +3%, -1% आणि -4% आहेत. निर्देशांकाची हालचाल काढा. मग पहिल्या शेअरमधील Rs 20,000 च्या होल्डिंगवर होणारा परिणाम काढा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>वाटे: 0.40 x 3 = +1.2; 0.35 x (-1) = -0.35; 0.25 x (-4) = -1.0.</li>
+<li>निर्देशांकाची हालचाल = 1.2 - 0.35 - 1.0 = -0.15%. पहिला शेअर वर गेला तरी निर्देशांक खाली येतो.</li>
+<li>पहिल्या शेअरमधील Rs 20,000 वर परिणाम: 20,000 x 0.03 = Rs 600 नफा.</li>
+</ul>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>पाच प्रश्न. ते अंकांतील आणि टक्केवारीतील बदल, वजने, निर्देशांक काय सांगतो आणि काय सांगत नाही, आणि निर्देशांक पातळी एक आकडा आहे हे तपासतात.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>पद्धत: शिकण्याची नोंद.</strong></p>
+<ol>
+<li>एक व्यापक निर्देशांक निवडा.</li>
+<li>त्या निर्देशांकाचे एक्सचेंज संकेतस्थळ उघडा. सध्याची मांडणी स्वतः शोधा.</li>
+<li>पाच ट्रेडिंग दिवसांसाठी त्याचे बंद मूल्य नोंदवा. प्रत्येक मूल्यासाठी स्रोत पान आणि तारीख लिहा.</li>
+<li>प्रत्येक दिवसाचा अंकांतील बदल आणि टक्केवारीतील बदल काढा.</li>
+<li>कोणतेही निष्कर्ष लिहू नका. तुमचे आकडे तुमच्या जर्नलमध्ये लिहा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>निर्देशांकाची हालचाल शेअर्सच्या गटाचे वर्णन करते. ती तुमच्या शेअरचे वर्णन करत नाही.</li>
+<li>निर्देशांक वर आहे म्हणजे प्रत्येक शेअर वर गेला, असे नाही. व्याप्ती आणि वजने महत्त्वाची आहेत.</li>
+<li>निर्देशांक पातळी ही अंकांची संख्या आहे, रुपयांतील भाव नव्हे.</li>
+<li>निर्देशांकाची हालचाल म्हणजे व्यापार करण्याची परवानगी नाही.</li>
+<li>वजने आणि पद्धती पुनर्संतुलनावेळी बदलतात. येथे दाखवलेले शेअर्स आता कदाचित चालू नसतील.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>निर्देशांक म्हणजे वजन असलेला शेअर्सचा गट, जो एका आकड्यात मांडला जातो.</li>
+<li>टक्केवारीतील बदल = अंकांतील बदल, आधीच्या पातळीने भागलेला.</li>
+<li>निर्देशांकाची हालचाल = सर्व वजने गुणिले शेअर-हालचाल यांची बेरीज.</li>
+<li>जास्त वजन असलेला शेअर हलक्या शेअरपेक्षा निर्देशांक जास्त हलवू शकतो.</li>
+<li>निर्देशांक हा बाजाराचा संदर्भ आहे. तो व्यापाराचा संकेत नाही.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p><strong>स्रोत:</strong></p>
+<ul>
+<li>NSE Indices पद्धत दस्तऐवज.</li>
+<li>BSE ची निर्देशांक पाने.</li>
+<li>Zerodha Varsity, फक्त संदर्भासाठी (फक्त दुवा, मजकूर कॉपी केलेला नाही).</li>
+</ul>
+<p><strong>11 नोव्हेंबर 2026 रोजी तपासलेली तथ्ये:</strong></p>
+<ul>
+<li>Nifty 50 मध्ये 50 शेअर्स आहेत आणि ते फ्री-फ्लोट बाजार भांडवल पद्धत वापरते. त्याचे पुनरावलोकन वेळापत्रक NSE Indices च्या जून 2026 च्या पद्धत दस्तऐवजातून घेतले आहे.</li>
+<li>Sensex मध्ये 30 शेअर्स आहेत. तो BSE 100 मधून घेतला जातो, आणि वर्षातून दोनदा त्याचे पुनरावलोकन होते. ही माहिती BSE च्या मे 2026 च्या Indices पद्धतीतील आहे.</li>
+<li>हे प्रकरण निर्देशांकातील घटक शेअर्स किंवा त्यांची वजने देत नाही, कारण ती बदलतात. NSE आणि BSE संकेतस्थळे तपासा.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T1.8&amp;body=Page%3A%2001-market-foundations%2F08-indices-nifty-sensex%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../01-market-foundations/07-circuit-limits-and-halts/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../01-market-foundations/09-corporate-actions/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../01-market-foundations/07-circuit-limits-and-halts/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../01-market-foundations/09-corporate-actions/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

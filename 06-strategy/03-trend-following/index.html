@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Trend following in depth - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/06-strategy/03-trend-following/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T6.3
+title: Trend following in depth
+page_type: Strategy
+prerequisites: [T6.2, T3.4, T5.3]
+labs: [Lab 4]
+estimated_minutes: 30
+-->
+<h1 id="trend-following-in-depth"><a class="header" href="#trend-following-in-depth">Trend following in depth</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A trader buys a share that has been rising. Her plan allows a planned loss of Rs 500 per trade. After eight losing trades in a row, she drops the plan and trades by feel. Hypothetical example: the next signal the plan would have taken was a large winner. She missed it, because she had left the rules. This chapter explains why a losing run is part of the design, not a sign to abandon it.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Trend following means you enter when price moves up strongly and stays strong. You hold while the move continues. You exit when the move ends. See <em>Trend and market structure</em>.</p>
+<p>The method accepts many small losses. It aims for fewer, larger wins. In this style there is no fixed profit cap. You do not set a profit target in advance. Every trade still has a loss cap.</p>
+<p><strong>Fixed loss per trade.</strong> Each trade risks the same rupee amount. This is called 1R. For example, 1R may be Rs 500. A losing trade then costs about 1R. Each loss has the same size, so you can count the results in R.</p>
+<p><strong>Trailing stop.</strong> A trailing stop moves up as price rises. It never moves down. It is an exit rule, not a profit target. When price falls back to the stop, the trade closes. The distance of the stop can be set using ATR. See <em>ATR and volatility, used for stops</em>.</p>
+<p><strong>Low win rate.</strong> A method can win only 35 percent of its trades and still have a positive expectancy. This happens when the average win is much larger than the average loss. Expectancy is explained in <em>What a trading edge is</em>. A low win rate is a hypothesis to test. It is not a fact.</p>
+<p><strong>Dry spells.</strong> A dry spell is a long run with no winners, or many small losses in a row. Dry spells are normal in this design. They are also the most dangerous time to change the rules or add money. Write the rule for a dry spell before one starts. See <em>Living through a losing streak</em>.</p>
+<p>This method does not add money after losses.</p>
+<p><strong>Sample size.</strong> A few dozen trades cannot show whether the method works. Results from a small sample can come from luck.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: strategy-simulator | mode: trailing-stop | caption: Trailing-stop mode shows the stop moving up as price rises and never moving down -->
+<!-- component: streak-sim | winRate: 35 | R: 500 | caption: Shows losing runs at a 35 percent win rate, with each loss at 1R of Rs 500 -->
+<p>Use the trailing-stop view first. Watch the stop rise with each new high close, and watch it stay where it is when price falls. Then use the streak view. Look at how often long losing runs appear, even at a fixed win rate.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Twenty trades. 1R = Rs 500. Seven trades are wins, and each win is +3R, which is Rs 1,500. Thirteen trades are losses, and each loss is -1R, which is Rs 500.</p>
+<div class="table-wrapper"><table><thead><tr><th>Item</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>Total from wins</td><td>7 x 3R = 21R, then 21 x Rs 500</td><td>Rs 10,500</td></tr>
+<tr><td>Total from losses</td><td>13 x 1R = 13R, then 13 x Rs 500</td><td>minus Rs 6,500</td></tr>
+<tr><td>Net gross</td><td>21R - 13R = 8R, then 8 x Rs 500</td><td>Rs 4,000</td></tr>
+<tr><td>Win rate</td><td>7 / 20</td><td>35 percent</td></tr>
+<tr><td>Expectancy in R</td><td>0.35 x 3 - 0.65 x 1 = 1.05 - 0.65</td><td>0.40R per trade</td></tr>
+<tr><td>Expectancy in rupees</td><td>0.40 x Rs 500</td><td>Rs 200 per trade</td></tr>
+<tr><td>A run of 10 losses</td><td>10 x Rs 500</td><td>minus Rs 5,000</td></tr>
+</tbody></table>
+</div>
+<p>These figures are before costs and taxes. Real charges and the rules on tax are in <em>Costs on a trade</em> and <em>Taxes on trading profits</em>. (As of 11 Nov 2026, Zerodha lists zero brokerage on delivery trades. Rules change, so check the Zerodha charges page.)</p>
+<p>The losing run is the hard part. The run of 10 losses costs Rs 5,000 with no winner in between. The plan must allow for it before it starts.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Five trades are wins at +2R. Ten trades are losses at -1R. R = Rs 500. Compute the net result in R and in rupees.</p>
+<p>Hints:</p>
+<ol>
+<li>The five wins total 10R.</li>
+<li>The ten losses total 10R.</li>
+<li>Subtract the losses from the wins.</li>
+</ol>
+<p><strong>Answer:</strong> Wins: 5 x 2R = 10R. Losses: 10 x 1R = 10R. Net: 10R - 10R = <strong>0R</strong>, which is <strong>Rs 0</strong> gross.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Forty trades. Win rate 30 percent. Average win 3R. Average loss 1R. R = Rs 500. Compute the expectancy in R, the expectancy in rupees per trade, and the total gross result.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>Expectancy: 0.30 x 3 - 0.70 x 1 = 0.90 - 0.70 = <strong>0.20R</strong>.</li>
+<li>In rupees: 0.20 x Rs 500 = <strong>Rs 100 per trade</strong>.</li>
+<li>Total gross: 40 x Rs 100 = <strong>Rs 4,000</strong>.</li>
+<li>Check by count: 12 wins x 3R = 36R. 28 losses x 1R = 28R. 36R - 28R = 8R. 8 x Rs 500 = Rs 4,000.</li>
+</ul>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the low win rate, the trailing stop and the rules for losing runs.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong>. Write it in your journal. If the journal is not ready, use paper.</p>
+<ol>
+<li>Write the rules for entry, initial stop, trailing stop and the dry-spell rule before you look at any chart.</li>
+<li>From past chart history, pick ten trades that the rules would have taken. Use hypothetical trades only.</li>
+<li>Record the result of each trade in R.</li>
+<li>Add up the net R. Work out the expectancy in R.</li>
+<li>Label the whole set hypothetical.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>A trailing stop does not stop every loss. A price gap can jump past the stop. See <em>Gaps and what they mean for stops</em>.</li>
+<li>No profit cap does not mean no loss cap. Each trade still has a planned loss.</li>
+<li>A low win rate is hard to live with. Plan for dry spells before they start.</li>
+<li>Ten trades show almost nothing. A few dozen trades cannot show whether the method works either.</li>
+<li>The figures here are before costs and taxes. See <em>Costs on a trade</em> and <em>Taxes on trading profits</em>.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Each trade risks the same planned amount, called 1R.</li>
+<li>A trailing stop moves only up. It is an exit rule, not a profit target.</li>
+<li>A 35 percent win rate can still give a positive expectancy, if the average win is large enough. This is a hypothesis to test.</li>
+<li>Dry spells are normal in this design. Keep the rules unchanged during them.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Zerodha Varsity, material on trend following (reference only).</li>
+<li><em>Costs on a trade</em> and <em>Taxes on trading profits</em>, each with its own dated sources (read on 11 Nov 2026).</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../06-strategy/02-trading-edge/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../06-strategy/04-swing-strategy/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../06-strategy/02-trading-edge/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../06-strategy/04-swing-strategy/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

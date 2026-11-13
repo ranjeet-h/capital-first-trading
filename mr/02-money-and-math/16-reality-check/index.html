@@ -1,0 +1,400 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Rs 2,000-3,000 चा वास्तव तपास - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../02-money-and-math/16-reality-check/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../02-money-and-math/16-reality-check/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T2.16
+title: Rs 2,000-3,000 चा वास्तव तपास
+page_type: Math/Calculator
+prerequisites: [T2.2, T2.4, T2.5, T2.9, T2.10, T2.11, T2.12, T2.15]
+labs: [Lab 1, Lab 2]
+estimated_minutes: 30
+-->
+<h1 id="rs-2000-3000-चा-वासतव-तपास"><a class="header" href="#rs-2000-3000-चा-वासतव-तपास">Rs 2,000-3,000 चा वास्तव तपास</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एका काल्पनिक ट्रेडरकडे Rs 50,000 आहेत. तिने तिच्या योजनेत एक आकडा लिहिला आहे: दिवसाला Rs 2,000. 250 ट्रेडिंग दिवसांत हे Rs 5,00,000 होते. म्हणजे तिच्या भांडवलाच्या दहापट. तिच्या योजनेत हे स्पष्ट नाही की कोणती रणनीती हे रोज कसे साध्य करेल. हे प्रकरण ते गणित करते जे तिने वगळले. या निकालावर रणनीतीची समस्या सोडवायची नाही. हा आकडा दाखवतो की हे लक्ष्य या भांडवलात बसत नाही.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>सुरुवात रुपयांतील लक्ष्यापासून करा. मग विचारा की त्यासाठी किती भांडवल आणि किती परतावा लागेल.</p>
+<p><strong>संज्ञा</strong></p>
+<ul>
+<li><strong>दैनिक लक्ष्य:</strong> एका ट्रेडिंग दिवसात हवा असलेला नफा, रुपयांत.</li>
+<li><strong>वर्षातील ट्रेडिंग दिवस:</strong> एका वर्षातील बाजाराच्या सत्रांची संख्या. या प्रकरणात गणित सोपे व्हावे म्हणून 250 ही गोल संख्या वापरली आहे. खरी संख्या थोडी कमी आहे. शनिवार-रविवार आणि बाजाराच्या सुट्ट्या वगळल्यानंतर, 2026 मध्ये NSE च्या कॅलेंडरमध्ये सुमारे 245 नियमित ट्रेडिंग दिवस आहेत. 250 ऐवजी 245 वापरल्यास एकूण आकडे सुमारे 2% ने बदलतात, पण प्रकरणाचा मुद्दा तोच राहतो. (11 Nov 2026 पर्यंत, 2026 ची NSE सुट्ट्यांची यादी. दरवर्षी संख्या बदलते, म्हणून NSE संकेतस्थळ तपासा.)</li>
+<li><strong>वार्षिक परतावा:</strong> वर्षभराचा नफा, तुमच्या भांडवलाच्या टक्केवारीत.</li>
+<li><strong>आवश्यक दैनिक परतावा:</strong> दैनिक लक्ष्य, तुमच्या भांडवलाच्या टक्केवारीत.</li>
+</ul>
+<p><strong>आवश्यक भांडवल.</strong> दैनिक लक्ष्य गुणिले वर्षातील ट्रेडिंग दिवस, भागिले वार्षिक परतावा.</p>
+<p>सूत्रात: C = (T x D) / r. येथे T म्हणजे दैनिक लक्ष्य, D म्हणजे ट्रेडिंग दिवसांची संख्या, r म्हणजे वार्षिक परतावा दशांश स्वरूपात, आणि C म्हणजे भांडवल.</p>
+<p><strong>आवश्यक दैनिक परतावा.</strong> दैनिक लक्ष्य भागिले भांडवल.</p>
+<p>सूत्रात: g = T / C.</p>
+<p><strong>संवेदनशीलता.</strong> वार्षिक परतावा तुम्ही नियंत्रित करू शकत नाही. म्हणून तक्त्यात तीन मूल्ये दाखवली आहेत: 10%, 20% आणि 50%. 20% वार्षिक परतावा हा खूप चांगला निकाल मानता येतो. तो एक संदर्भ बिंदू आहे, अंदाज नाही. 50% ची ओळ फक्त समस्येचा आकार दाखवते. ती अपेक्षा नाही.</p>
+<p><strong>जोखीम आणि व्यापारांची संख्या.</strong> Rs 50,000 आणि प्रति व्यापार 1% जोखीम असताना, एक R म्हणजे Rs 500. Rs 2,000 चा दिवस खर्च वजा करण्यापूर्वी 4R आहे. म्हणजे प्रत्येकी 1R चे चार विजय, एकही तोट्याचा व्यापार नाही. प्रत्येक तोट्याचा व्यापार तो आकडा कमी करतो. लक्ष्यासाठी जितके जास्त व्यापार लागतील, तितक्या संधी खर्च आणि चुकांनी एकत्र येण्याच्या असतात (<em>ओव्हरट्रेडिंग आणि दैनिक नफ्याची लक्ष्ये त्याला का चालना देतात</em>).</p>
+<p><strong>खर्च.</strong> प्रत्येक व्यापारावर खर्च लागतो (<em>एका व्यापारावरील खर्च</em>). हे प्रकरण <em>एका व्यापारावरील खर्च</em> मधील डमी खर्च मॉडेल वापरते: Rs 50,000 वर Rs 190 चा राउंड ट्रिप. डमी आकडे फक्त गणितासाठी आहेत. ते सरावासाठीचे गोल आकडे आहेत, खरे शुल्क नाहीत. 11 Nov 2026 पर्यंत, Zerodha इंट्राडे ब्रोकरेज व्यापार मूल्याच्या 0.03% किंवा प्रति ऑर्डर Rs 20, यापैकी जे कमी असेल ते, अशी यादी करते. याशिवाय STT, एक्सचेंज शुल्क, SEBI शुल्क, स्टॅम्प ड्युटी आणि GST देखील लागतात. <em>एका व्यापारावरील खर्च</em> मधील तक्त्यात प्रत्येक ओळ आहे. नियम बदलतात, म्हणून Zerodha च्या शुल्क पानावर तपासा. कोणताही भाग लक्ष्याकडे मोजला जाण्याआधी, एकूण नफ्याने खर्च भरून काढला पाहिजे.</p>
+<p><strong>सततचे तोटे.</strong> तोट्याचे दिवस एका रांगेत येतात (<em>सलग तोटे आणि सततचे तोटे</em>). सोडवलेल्या उदाहरणात 5, 10 आणि 15 तोट्याच्या दिवसांत गमावलेले भांडवल दाखवले आहे. प्रत्येक तोट्याचा दिवस त्या वेळच्या भांडवलाच्या जोखीम टक्केवारीइतका तोटा होतो, असे गृहीत धरले आहे. त्यामुळे प्रत्येक तोटा आधीच्या तोट्यापेक्षा रुपयांत लहान असतो.</p>
+<p><strong>सातत्य.</strong> दैनिक लक्ष्य स्थिर दैनिक परतावा गृहीत धरते. खरे निकाल एका दिवसापासून दुसऱ्या दिवसापर्यंत बदलतात. काही चांगले दिवस पुढच्या दिवसाबद्दल काहीच सांगत नाहीत. सातत्यपूर्ण दैनिक परताव्याची शाश्वती देता येत नाही.</p>
+<p><strong>कंपाउंडिंग तपासणी.</strong> 1.04 ची 250 वी घात सुमारे 18,000 आहे. दुसऱ्या शब्दांत, Rs 1 ने 250 दिवस दररोज 4% परतावा दिला, तर ते सुमारे Rs 18,000 होतील. कोणतीही जबाबदार योजना हे गृहीत धरू शकत नाही. दररोज 4% हा आकडा फक्त समस्येचा आकार दिसावा म्हणून दाखवला आहे.</p>
+<p><strong>निष्कर्ष.</strong> Rs 10,000 ते Rs 50,000 भांडवलात, दिवसाला Rs 2,000 ते Rs 3,000 चे लक्ष्य वास्तववादी नाही. हे पुस्तक लक्ष्यापासून उलट गणित करून रणनीती शोधून काढत नाही, जी ते शक्य दिसावे म्हणून तयार केली जाईल. लक्ष्य कधीही व्यापाराचा निर्णय चालवू नये.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: streak-sim | capital: 10000 | riskPct: 1 | losingDays: 5 | caption: Rs 10,000 भांडवल आणि 1% जोखीमेवर तोट्याच्या दिवसांची मालिका; 5, 10 आणि 15 तोट्याच्या दिवसांनंतर गमावलेले भांडवल वाचा -->
+<p>पाच तोट्याच्या दिवसांनंतर गमावलेले भांडवल पाहा. मग मालिका 10 आणि 15 करा. तोटा सरळ रेषेपेक्षा थोडा हळू वाढतो, कारण प्रत्येक तोटा लहान होत जाणाऱ्या शिल्लकेच्या 1% असतो. मग जोखीम 2% करा आणि त्याच मालिकेच्या लांबीची तुलना करा.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p>सर्व आकडे <strong>काल्पनिक</strong> आहेत आणि या प्रकरणातील गणिताच्या पद्धतीने मोजले आहेत. 250 दिवसांची संख्या सरावासाठी गोल आकडा आहे. 2026 च्या NSE कॅलेंडरमध्ये सुमारे 245 नियमित ट्रेडिंग दिवस आहेत.</p>
+<h3 id="पायरी-1-20-वारषिक-परतावयावर-दिवसाला-rs-2000-साठी-आवशयक-भांडवल"><a class="header" href="#पायरी-1-20-वारषिक-परतावयावर-दिवसाला-rs-2000-साठी-आवशयक-भांडवल">पायरी 1: 20% वार्षिक परताव्यावर दिवसाला Rs 2,000 साठी आवश्यक भांडवल</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>वार्षिक लक्ष्य</td><td>2,000 x 250</td><td>Rs 5,00,000</td></tr>
+<tr><td>आवश्यक भांडवल</td><td>5,00,000 / 0.20</td><td>Rs 25,00,000 (Rs 25 लाख)</td></tr>
+</tbody></table>
+</div>
+<p>तपासणी: 25,00,000 x 0.20 = 5,00,000.</p>
+<p>दिवसाला Rs 3,000 साठी: 3,000 x 250 = Rs 7,50,000, आणि 7,50,000 / 0.20 = Rs 37,50,000 (Rs 37.5 लाख).</p>
+<h3 id="पायरी-2-वारषिक-परतावयाचा-परिणाम"><a class="header" href="#पायरी-2-वारषिक-परतावयाचा-परिणाम">पायरी 2: वार्षिक परताव्याचा परिणाम</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>दैनिक लक्ष्य</th><th>10% वार्षिक</th><th>20% वार्षिक</th><th>50% वार्षिक (फक्त आकारासाठी)</th></tr></thead><tbody>
+<tr><td>Rs 2,000</td><td>Rs 50,00,000</td><td>Rs 25,00,000</td><td>Rs 10,00,000</td></tr>
+<tr><td>Rs 3,000</td><td>Rs 75,00,000</td><td>Rs 37,50,000</td><td>Rs 15,00,000</td></tr>
+</tbody></table>
+</div>
+<p>प्रत्येक खाना म्हणजे वार्षिक लक्ष्य भागिले परतावा. उदाहरण: 5,00,000 / 0.10 = 50,00,000, आणि 7,50,000 / 0.50 = 15,00,000.</p>
+<h3 id="पायरी-3-आवशयक-दैनिक-परतावा"><a class="header" href="#पायरी-3-आवशयक-दैनिक-परतावा">पायरी 3: आवश्यक दैनिक परतावा</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>भांडवल</th><th>दिवसाला Rs 2,000</th><th>दिवसाला Rs 3,000</th></tr></thead><tbody>
+<tr><td>Rs 10,000</td><td>20% दररोज</td><td>30% दररोज</td></tr>
+<tr><td>Rs 50,000</td><td>4% दररोज</td><td>6% दररोज</td></tr>
+<tr><td>Rs 10,00,000</td><td>0.2% दररोज</td><td>0.3% दररोज</td></tr>
+</tbody></table>
+</div>
+<p>उदाहरण: 2,000 / 10,000 = 0.20, म्हणजे 20%. आणि 3,000 / 50,000 = 0.06, म्हणजे 6%.</p>
+<h3 id="पायरी-4-ठरलेलया-जोखीमेवर-सततचे-तोटे"><a class="header" href="#पायरी-4-ठरलेलया-जोखीमेवर-सततचे-तोटे">पायरी 4: ठरलेल्या जोखीमेवर सततचे तोटे</a></h3>
+<p>प्रत्येक तोटा त्या वेळच्या भांडवलाची जोखीम टक्केवारी असतो. Rs 10,000 वर 1% चे उदाहरण:</p>
+<div class="table-wrapper"><table><thead><tr><th>दिवस</th><th>तोट्यापूर्वीचे भांडवल</th><th>तोटा (1%)</th><th>तोट्यानंतरचे भांडवल</th></tr></thead><tbody>
+<tr><td>1</td><td>Rs 10,000</td><td>Rs 100</td><td>Rs 9,900</td></tr>
+<tr><td>2</td><td>Rs 9,900</td><td>Rs 99</td><td>Rs 9,801</td></tr>
+<tr><td>3</td><td>Rs 9,801</td><td>Rs 98.01</td><td>Rs 9,702.99</td></tr>
+<tr><td>4</td><td>Rs 9,702.99</td><td>Rs 97.03</td><td>Rs 9,605.96</td></tr>
+<tr><td>5</td><td>Rs 9,605.96</td><td>Rs 96.06</td><td>Rs 9,509.90</td></tr>
+</tbody></table>
+</div>
+<p>पाच तोट्यांनंतर खाते सुमारे Rs 9,510 वर आहे, म्हणजे सुमारे Rs 490 गमावले गेले आहेत.</p>
+<p>गमावलेले भांडवल, गोल करून:</p>
+<div class="table-wrapper"><table><thead><tr><th>भांडवल</th><th>प्रति दिवस जोखीम</th><th>5 तोट्याचे दिवस</th><th>10 तोट्याचे दिवस</th><th>15 तोट्याचे दिवस</th></tr></thead><tbody>
+<tr><td>Rs 10,000</td><td>1%</td><td>Rs 490</td><td>Rs 956</td><td>Rs 1,399</td></tr>
+<tr><td>Rs 50,000</td><td>1%</td><td>Rs 2,450</td><td>Rs 4,781</td><td>Rs 6,997</td></tr>
+<tr><td>Rs 10,000</td><td>2%</td><td>Rs 961</td><td>Rs 1,829</td><td>Rs 2,614</td></tr>
+<tr><td>Rs 50,000</td><td>2%</td><td>Rs 4,804</td><td>Rs 9,146</td><td>Rs 13,072</td></tr>
+</tbody></table>
+</div>
+<h3 id="पायरी-5-लकषयावर-खरचाचा-भार"><a class="header" href="#पायरी-5-लकषयावर-खरचाचा-भार">पायरी 5: लक्ष्यावर खर्चाचा भार</a></h3>
+<p>डमी राउंड ट्रिप: Rs 50,000 वर Rs 190 (<em>एका व्यापारावरील खर्च</em> मधील डमी मॉडेलवरून).</p>
+<ul>
+<li>दिवसाला चार राउंड ट्रिप: 4 x Rs 190 = Rs 760 (डमी).</li>
+<li>हे डमी खर्च वजा केल्यानंतरही Rs 2,000 शिल्लक राहावेत, यासाठी एकूण नफा Rs 2,760 (2,000 + 760) असला पाहिजे.</li>
+</ul>
+<h3 id="पायरी-6-कंपाउंडिंग-तपासणी"><a class="header" href="#पायरी-6-कंपाउंडिंग-तपासणी">पायरी 6: कंपाउंडिंग तपासणी</a></h3>
+<p>1.04 ची 250 वी घात सुमारे 18,000 आहे. दररोज 4% दराने Rs 1 चे 250 दिवसांनंतर सुमारे Rs 18,000 होतात. लक्ष्य सूचित करत असलेला हा आकार आहे, आणि म्हणूनच हा टिकाऊ मार्ग नाही.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<!-- component: streak-sim | capital: 50000 | riskPct: 2 | losingDays: 15 | caption: Rs 50,000 भांडवल आणि 2% जोखीमेवर तोट्याच्या दिवसांची मालिका; वाचनांची तुलना सोडवलेल्या उदाहरणातील तक्त्याशी करा -->
+<p>भांडवल आणि जोखीम बदला. तुमची वाचने पायरी 4 मधील तक्त्याशी जुळतात का ते तपासा.</p>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम:</strong> 20% वार्षिक परताव्यावर 250 ट्रेडिंग दिवसांसाठी, Rs 1,500 च्या दैनिक लक्ष्यासाठी आवश्यक भांडवल काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>दैनिक लक्ष्याला 250 ने गुणा आणि वार्षिक लक्ष्य मिळवा.</li>
+<li>वार्षिक लक्ष्याला 0.20 ने भागा, जो 20% परतावा दशांश स्वरूपात आहे.</li>
+<li>तपासणी करा: त्याला 0.20 ने गुणा, आणि तुम्हाला वार्षिक लक्ष्य परत मिळायला हवे.</li>
+</ol>
+<p><strong>उत्तर:</strong> 1,500 x 250 = Rs 3,75,000. मग 3,75,000 / 0.20 = Rs 18,75,000 (Rs 18.75 लाख). तपासणी: 18,75,000 x 0.20 = 3,75,000.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम:</strong> तुमचे भांडवल Rs 50,000 आहे. (a) Rs 2,500 च्या दैनिक लक्ष्यासाठी आवश्यक दैनिक परतावा, आणि (b) 15% वार्षिक परताव्यावर 250 ट्रेडिंग दिवसांत दिवसाला Rs 2,500 साठी आवश्यक भांडवल काढा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>(a) 2,500 / 50,000 = 0.05, म्हणजे दिवसाला 5%.</p>
+<p>(b) 2,500 x 250 = Rs 6,25,000. मग 6,25,000 / 0.15 = Rs 41,66,667, सुमारे Rs 41.7 लाख.</p>
+<p>तपासणी: 41,66,667 x 0.15 हे सुमारे 6,25,000 आहे.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>या क्विझमध्ये सात प्रश्न आहेत. ते आवश्यक भांडवल, आवश्यक दैनिक परतावा, खर्चाचा भार, सततचे तोटे आणि वास्तव तपास यांचा समावेश करतात.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> शिकण्याची नोंद. कोणतेही व्यापार नाहीत आणि लाइव्ह खाते नाही. ती तुमच्या जर्नलमध्ये लिहा. जर्नल अॅप तयार नसेल, तर paper मोड वापरा.</p>
+<ol>
+<li>तुमचे दैनिक लक्ष्य रुपयांत लिहा. तुमच्या भांडवलासाठी बनवलेला किंवा रिकामा आकडा वापरा.</li>
+<li>250 दिवसांवर, किंवा तुमच्या तपासलेल्या ट्रेडिंग दिवसांच्या संख्येवर, 20% वार्षिक परताव्यासाठी आवश्यक भांडवल काढा.</li>
+<li>आवश्यक दैनिक परतावा काढा: लक्ष्य भागिले भांडवल.</li>
+<li>तुमच्या <em>भांडवल वाटप</em> मधील स्वतःचा कट नियम वापरून, कट लागू होण्यापूर्वी तुम्ही निवडलेल्या जोखीमेवर किती तोट्याचे दिवस घेऊ शकता ते मोजा.</li>
+<li>तिन्ही निकाल एका नोंदीत, आजच्या तारखेसह लिहा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>ते कोणत्याही दिवसाच्या निकालाचा अंदाज देत नाही. गणित स्थिर परतावा गृहीत धरते, आणि प्रत्यक्ष ट्रेडिंग तसा परतावा देत नाही.</li>
+<li>250 ट्रेडिंग दिवसांची संख्या आणि डमी खर्च हे सरावासाठीचे गोल आकडे आहेत. 2026 च्या NSE कॅलेंडरमध्ये सुमारे 245 नियमित ट्रेडिंग दिवस आहेत, आणि खरे शुल्क <em>एका व्यापारावरील खर्च</em> मध्ये आहेत. कोणत्याही आकड्यावर अवलंबून राहण्यापूर्वी दोन्ही तपासा.</li>
+<li>ते दाखवत नाही की कोणतीही रणनीती हे लक्ष्य गाठू शकते. ते फक्त लक्ष्याला काय लागेल हे दाखवते.</li>
+<li>20% वार्षिक परतावा हा खूप चांगल्या वर्षाचा मापदंड आहे. ती अपेक्षा नाही. 50% ची ओळ फक्त आकारासाठी आहे.</li>
+<li>सततच्या तोट्याचे आकडे एकच ठरलेली जोखीम टक्केवारी आणि असामान्यपणे एकत्र न येणारे तोटे गृहीत धरतात. प्रत्यक्ष मालिका याहून मोठ्या किंवा लहान असू शकतात.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>आवश्यक भांडवल = दैनिक लक्ष्य x ट्रेडिंग दिवस / वार्षिक परतावा.</li>
+<li>Rs 10,000 मध्ये, दिवसाला Rs 2,000 साठी दररोज 20% परतावा लागतो. Rs 50,000 मध्ये, दररोज 4% लागतो.</li>
+<li>खर्च लक्ष्यावर वर जोडले जातात. सततचे तोटे कामाला लागणाऱ्या पायातून भांडवल काढून घेतात.</li>
+<li>काही चांगले दिवस पुढच्या दिवसाबद्दल काहीच सांगत नाहीत. सातत्यपूर्ण दैनिक परताव्याची शाश्वती देता येत नाही.</li>
+<li>लक्ष्य कधीही व्यापार चालवू नये. या भांडवलात ते वास्तववादी नाही.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p><strong>स्रोत, 11 Nov 2026 रोजी वाचले:</strong></p>
+<ul>
+<li>2026 साठी NSE सुट्ट्यांची यादी आणि ट्रेडिंग कॅलेंडर, ट्रेडिंग दिवसांच्या संख्येसाठी (सुमारे 245 नियमित दिवस).</li>
+<li>Zerodha शुल्क पान, <em>एका व्यापारावरील खर्च</em> मधून संदर्भ दिलेले. या प्रकरणातील Rs 190 राउंड ट्रिप खर्च हा सरावासाठीचा गोल आकडा आहे, Zerodha चा खरा शुल्क नाही. खरे शुल्क <em>एका व्यापारावरील खर्च</em> मधील तक्त्यात आहेत.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T2.16&amp;body=Page%3A%2002-money-and-math%2F16-reality-check%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/15-capital-allocation/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/17-scaling-and-withdrawal/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/15-capital-allocation/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/17-scaling-and-withdrawal/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

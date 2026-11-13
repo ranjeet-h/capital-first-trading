@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Portfolio exposure and concentration - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/02-money-and-math/14-portfolio-exposure/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T2.14
+title: Portfolio exposure and concentration
+page_type: Math/Calculator
+prerequisites: [T2.5, T2.11, T1.8]
+labs: [Lab 3, Lab 1]
+estimated_minutes: 25
+-->
+<h1 id="portfolio-exposure-and-concentration"><a class="header" href="#portfolio-exposure-and-concentration">Portfolio exposure and concentration</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Hypothetical: a trader holds five stocks and says, “I am diversified.” Three of the five are in the same sector. A bad week for that sector moves all three in the same direction, on the same day. The account feels like five separate bets. In practice, it behaved like one large bet.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Four terms to know:</p>
+<ul>
+<li><strong>Exposure</strong> is the rupee value of your positions. It is often written as a percentage of capital. Exposure is not risk. A position can be large and still carry a small planned loss.</li>
+<li><strong>Open risk</strong> is the planned loss if every stop fills at its stop price.
+<ul>
+<li>Open risk = add up (entry - stop) x shares for each position.</li>
+<li>This is the planned loss, not the maximum loss. Gaps and circuits (daily price limits set by the exchange) can make the real loss bigger (<em>Slippage, gaps and planned versus actual risk</em>).</li>
+</ul>
+</li>
+<li><strong>Concentration</strong> is how much of your capital sits in one stock, one sector or one theme.</li>
+<li><strong>Correlation</strong> means positions that tend to move together. Stocks in the same sector often do. Five stocks that move together are closer to one bet than to five bets.</li>
+</ul>
+<p>Other points:</p>
+<ul>
+<li><strong>Cash</strong> = capital - deployed value. Deployed value is the total of the position values.</li>
+<li><strong>Diversification</strong> reduces the risk from one company or one event. It does not remove risk that hits the whole market.</li>
+<li><strong>Limits.</strong> You set a maximum per position, a maximum per sector and a maximum total open risk. Lab 1 uses a 25% per-position cap as a starting value. You choose the sector limits.</li>
+<li><strong>Adding to a losing position</strong> to lower the average cost raises concentration in a failing idea. This is called averaging down. The book’s capital-first rules ban it (<em>Position sizing step by step</em>). Check the limits before you add.</li>
+<li><strong>Sector labels</strong> come from your data. Check their source against the NSE sectoral index definitions. NSE Indices sorts each company into four levels: macro-economic sector, sector, industry and basic industry. Other data providers may use different labels, so two lists can put the same company in different groups. (As of 11 Nov 2026, NSE Indices industry classification. Rules change, so check the NSE site.)</li>
+</ul>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<p>Pie chart of the worked example, with values in rupees (hypothetical):</p>
+<pre><code class="language-mermaid">pie showData
+    title Capital split, Rs 50,000 (hypothetical)
+    "Sector X (positions A and B)" : 22500
+    "Sector Y (position C)" : 7500
+    "Cash" : 20000
+</code></pre>
+<p>The chart shows that Sector X is the largest slice of capital. Sector X is 45% of capital, and cash is 40%. The table in the worked example also shows the open risk and the sector limit. A pie chart cannot show those.</p>
+<!-- component: exposure-meter | capital: 50000 | caption: The worked example: three positions in a Rs 50,000 account. Press Add position D to see which limit it breaks. The limits are examples. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Capital Rs 50,000. Holdings:</p>
+<div class="table-wrapper"><table><thead><tr><th>Position</th><th>Sector</th><th>Value</th><th>% of capital</th><th>Planned loss at stop</th></tr></thead><tbody>
+<tr><td>A</td><td>X</td><td>10,000</td><td>20%</td><td>500</td></tr>
+<tr><td>B</td><td>X</td><td>12,500</td><td>25%</td><td>500</td></tr>
+<tr><td>C</td><td>Y</td><td>7,500</td><td>15%</td><td>300</td></tr>
+</tbody></table>
+</div>
+<ol>
+<li><strong>Deployed:</strong> 10,000 + 12,500 + 7,500 = Rs 30,000. As a share of capital: 30,000 / 50,000 = 60%.</li>
+<li><strong>Cash:</strong> 50,000 - 30,000 = Rs 20,000, which is 40%.</li>
+<li><strong>Open risk:</strong> 500 + 500 + 300 = Rs 1,300. As a share of capital: 1,300 / 50,000 = 2.6%.</li>
+<li><strong>Sector X:</strong> 10,000 + 12,500 = Rs 22,500. As a share of capital: 22,500 / 50,000 = 45%. This is inside the example sector limit of 50%.</li>
+</ol>
+<p><strong>Adding a new position.</strong> Position D is Rs 6,000 in Sector X, with a planned loss of Rs 300.</p>
+<ol start="5">
+<li>Sector X becomes 22,500 + 6,000 = Rs 28,500. As a share of capital: 28,500 / 50,000 = 57%.</li>
+<li>Open risk becomes 1,300 + 300 = Rs 1,600. As a share of capital: 1,600 / 50,000 = 3.2%.</li>
+<li>The example sector limit is 50% of capital. Before D, Sector X is at 45%, which is inside the limit. After D, it is 57%, which is above 50%, so the limit is breached. <strong>The new position is rejected.</strong> The sector limit is the rule that causes the rejection.</li>
+</ol>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<p>Work each exercise by hand first. Then use a demo to check your answer. The demo under <em>See it</em> opens on the three positions of the worked example, so it fits the guided exercise. The independent exercise has its own demo below it.</p>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Using the holdings in the worked example, work out the deployed percentage, the open risk percentage and the Sector Y share.</p>
+<p>Hints:</p>
+<ol>
+<li>Add the position values first, then divide by capital.</li>
+<li>Add the planned losses, then divide by capital.</li>
+<li>Sector Y has one position only.</li>
+</ol>
+<p><strong>Answer:</strong> Deployed 30,000 / 50,000 = 60%. Open risk 1,300 / 50,000 = 2.6%. Sector Y 7,500 / 50,000 = 15%.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Four positions, each at 25% of capital, and each with a planned loss of 1% of capital. Work out the total open risk and the deployed percentage. Then explain why this is a concentration problem if all four are in one sector.</p>
+<details><summary>Check your answer</summary>
+<p>Each position is 25% of capital, so deployed = 4 x 25% = 100%. Cash = 0.</p>
+<p>Each planned loss is 1% of capital, so open risk = 4 x 1% = 4%.</p>
+<p>If all four are in one sector, a single sector move can hit all four stops at once. The four positions are closer to one large bet on that sector than to four separate bets. So the sector share (100% of capital) is the concentration problem.</p>
+</details>
+<!-- component: exposure-meter | capital: 50000 | caption: Independent exercise check: press Four equal positions, one sector, and read the open risk and the sector share. -->
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Six questions cover open risk, sector share, the difference between exposure and risk, correlation, and a spot-the-mistake on sector totals.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong> (or paper). No orders are placed.</p>
+<ol>
+<li>Write a weekly portfolio snapshot in your journal. Use made-up holdings only.</li>
+<li>For each position, note the value, the sector, the percentage of capital and the planned loss at the stop.</li>
+<li>Add up the totals: deployed, cash, open risk and each sector’s share.</li>
+<li>Compare each total with your own limits. Write one line on whether any limit is breached.</li>
+</ol>
+<p>If the journal app is not ready, use paper.</p>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>Exposure and open risk are not forecasts. Open risk assumes every stop fills at its stop price. Gaps and circuits can break that assumption (<em>Slippage, gaps and planned versus actual risk</em>).</li>
+<li>Sector labels depend on the data source. Check the source before use.</li>
+<li>Diversification does not remove market-wide risk. A broad fall can hit every sector.</li>
+<li>The 50% sector limit is an example. You set every limit.</li>
+<li>Adding to a losing position to lower the average cost raises concentration. It is not a fix.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Exposure is value. Open risk is the planned loss. They are different numbers.</li>
+<li>Open risk = total of (entry - stop) x shares across positions.</li>
+<li>Positions in one sector often move together. Count them as one larger bet.</li>
+<li>Update sector totals every time you add a position.</li>
+<li>Check every limit before you add a position, not after.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p>Sources (names only):</p>
+<ul>
+<li>NSE sectoral index methodology documents.</li>
+</ul>
+<p>The NSE Indices four-level industry classification was read on 11 Nov 2026 from the NSE Indices site.</p>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/13-leverage-and-margin/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/15-capital-allocation/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/13-leverage-and-margin/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/15-capital-allocation/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

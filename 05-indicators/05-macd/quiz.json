@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T5.5-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. EMA(12) is Rs 210.40 and EMA(26) is Rs 208.90. What is the MACD line in rupees?",
+    "answer": 1.5,
+    "tolerance": 0.005,
+    "unit": "Rs",
+    "solution": "MACD line = EMA(12) - EMA(26) = 210.40 - 208.90 = Rs 1.50. Check: 208.90 + 1.50 = 210.40.",
+    "concepts": ["macd-line"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.5-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. The MACD line is Rs 1.50 and the signal line is Rs 1.10. What is the histogram in rupees?",
+    "answer": 0.4,
+    "tolerance": 0.005,
+    "unit": "Rs",
+    "solution": "Histogram = MACD line - signal line = 1.50 - 1.10 = Rs 0.40. The histogram is positive, so the MACD line is above the signal line. Check: 1.10 + 0.40 = 1.50.",
+    "concepts": ["histogram", "signal-line"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.5-q3",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"MACD is above zero, so the stock is a buy.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The words \"MACD is above zero\""},
+      {"id": "b", "text": "The words \"so the stock is a buy\", because MACD above zero describes past averages and is not an instruction"},
+      {"id": "c", "text": "The word \"stock\""},
+      {"id": "d", "text": "Nothing. the statement is correct"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A positive MACD line is a correct reading of the two EMAs. The error is the conclusion.",
+      "c": "The word stock is correct. The statement is about a share.",
+      "d": "The statement is not correct. A reading above zero does not tell you to buy. It must be tested with costs and a stop."
+    },
+    "concepts": ["macd-zero-line", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T5.5-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. The stock trades sideways for two weeks. The MACD histogram changes sign four times. A trader treats each change as a fresh buy or sell. What is the best response?",
+    "options": [
+      {"id": "a", "text": "Correct, because each sign change is an independent confirmation of the trend"},
+      {"id": "b", "text": "Not correct. In a sideways market the lines cross often, so many crossings are false signals. Each crossing needs a test, a stop and a size rule"},
+      {"id": "c", "text": "Correct, but only when the histogram changes sign more than three times"},
+      {"id": "d", "text": "Not correct, because MACD does not work on daily charts"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Crossings in a range often reverse. They are not independent proof of a trend.",
+      "c": "A count of sign changes does not make each one a valid signal. The rule must still be tested.",
+      "d": "MACD can be drawn on many chart periods. The problem here is the sideways market, not the chart period."
+    },
+    "concepts": ["whipsaw", "crossovers"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T5.5-q5",
+    "type": "mcq",
+    "prompt": "How is the histogram calculated?",
+    "options": [
+      {"id": "a", "text": "The MACD line minus the signal line"},
+      {"id": "b", "text": "The MACD line itself"},
+      {"id": "c", "text": "The price minus the MACD line"},
+      {"id": "d", "text": "EMA(26) plus EMA(12)"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "The histogram is the difference between the MACD line and the signal line. It is not the MACD line.",
+      "c": "The histogram does not use the price directly. It uses the two MACD lines.",
+      "d": "The MACD line is EMA(12) minus EMA(26), not a sum. The histogram adds another step."
+    },
+    "concepts": ["histogram"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.5-q6",
+    "type": "mcq",
+    "prompt": "What is the signal line in MACD?",
+    "options": [
+      {"id": "a", "text": "The closing price, shown as a line"},
+      {"id": "b", "text": "EMA(9) of the MACD line, a smoothed copy of it"},
+      {"id": "c", "text": "EMA(26) of the closing price"},
+      {"id": "d", "text": "A fixed level of 50"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The signal line is not the price. It is an average of the MACD line.",
+      "c": "EMA(26) is one of the two inputs to the MACD line. The signal line is an EMA of the MACD line, with a period of 9.",
+      "d": "The signal line moves with the MACD line. It is not a fixed level."
+    },
+    "concepts": ["signal-line"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

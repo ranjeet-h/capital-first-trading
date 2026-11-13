@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T5.2-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. A four-day EMA is used. Yesterday's EMA is Rs 200 and today's close is Rs 210. What is today's EMA in rupees?",
+    "answer": 204,
+    "tolerance": 0.005,
+    "unit": "Rs",
+    "solution": "k = 2 / (4 + 1) = 0.4. Today's EMA = 0.4 x 210 + 0.6 x 200 = 84 + 120 = Rs 204.00. Check: 200 + 0.4 x (210 - 200) = 200 + 4 = Rs 204.00.",
+    "concepts": ["ema", "smoothing-factor"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.2-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Four daily closes are Rs 10, Rs 12, Rs 14 and Rs 16. What is the simple moving average over these four days, in rupees?",
+    "answer": 13,
+    "tolerance": 0.005,
+    "unit": "Rs",
+    "solution": "Sum = 10 + 12 + 14 + 16 = 52. SMA = 52 / 4 = Rs 13.00. Check: 4 x 13 = 52.",
+    "concepts": ["simple-moving-average"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.2-q3",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"For an N-day EMA, the smoothing factor is k = 2 divided by N.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The number 2 in the numerator"},
+      {"id": "b", "text": "The divisor N, which should be N + 1"},
+      {"id": "c", "text": "The word \"smoothing\""},
+      {"id": "d", "text": "Nothing. the formula is correct"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The 2 in the numerator is part of the standard formula. The error is in the divisor.",
+      "c": "The smoothing factor does smooth the average. The word is correct. The formula is not.",
+      "d": "The formula is not correct. With N = 5, k = 2 / 5 = 0.4 is wrong. The correct value is 2 / 6 = 0.3333."
+    },
+    "concepts": ["smoothing-factor", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T5.2-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. A short moving average crosses above a long moving average on a sideways chart. A reader calls it a sure buy signal. What is the best response?",
+    "options": [
+      {"id": "a", "text": "Agreed, a crossover from below is a sure signal"},
+      {"id": "b", "text": "A crossover is a rule to test. In a sideways market, crossovers often reverse and can hit a stop"},
+      {"id": "c", "text": "Agreed, but only when the EMA is used"},
+      {"id": "d", "text": "Disagreed, because crossovers are a volume measure"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "No crossover is a sure signal. In a sideways market, crossovers can switch back and forth many times.",
+      "c": "The type of average does not make a crossover certain. The EMA can cross and reverse too.",
+      "d": "A crossover compares two averages of price. It is not a volume measure."
+    },
+    "concepts": ["crossovers", "indicator-limits"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T5.2-q5",
+    "type": "mcq",
+    "prompt": "Which statement is true when both averages use the same length, N = 10?",
+    "options": [
+      {"id": "a", "text": "The SMA reacts faster than the EMA"},
+      {"id": "b", "text": "The EMA reacts faster, because recent days carry more weight"},
+      {"id": "c", "text": "The EMA is always above the SMA"},
+      {"id": "d", "text": "Both averages react at exactly the same speed"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The SMA gives every day the same weight, so it reacts more slowly to a new close than the EMA of the same length.",
+      "c": "The EMA is above or below the SMA depending on the price path. It is not always above.",
+      "d": "The two averages use different weights, so their speeds differ."
+    },
+    "concepts": ["ema", "simple-moving-average"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.2-q6",
+    "type": "mcq",
+    "prompt": "The first EMA is set equal to the first SMA. What does this choice do?",
+    "options": [
+      {"id": "a", "text": "It changes the early values, and it is a convention rather than a fact of the market"},
+      {"id": "b", "text": "It removes the lag from the EMA"},
+      {"id": "c", "text": "It makes the EMA equal to the close on every day"},
+      {"id": "d", "text": "It proves the EMA is more accurate"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "The starting value does not remove lag. Both averages still lag a trend.",
+      "c": "The EMA moves with each new close. It does not equal the close on every day.",
+      "d": "A starting value is a choice. It does not prove accuracy."
+    },
+    "concepts": ["ema", "seeding"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  }
+]

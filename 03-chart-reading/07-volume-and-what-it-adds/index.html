@@ -1,0 +1,381 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Volume and what it adds - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/03-chart-reading/07-volume-and-what-it-adds/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T3.7
+title: Volume and what it adds
+page_type: Math/Calculator
+prerequisites: [T3.1, T3.5]
+labs: []
+estimated_minutes: 15
+-->
+<h1 id="volume-and-what-it-adds"><a class="header" href="#volume-and-what-it-adds">Volume and what it adds</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A stock moves above a price level on a big day. The candle looks strong. Many traders say, “Big volume means the move is real.” Is that true? This chapter shows what volume measures. It also shows what volume cannot tell you. You will compare today’s volume with a normal day. You will also turn shares into rupees, so you can compare the trade with your planned size.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<ul>
+<li>
+<p><strong>Volume</strong> is the number of shares traded in a period. The period can be a day, an hour or one candle. Volume is only a count. It does not say whether buyers or sellers were stronger.</p>
+</li>
+<li>
+<p><strong>Average volume</strong> is the usual amount of trading for the stock. A common choice is the last 20 days. Add up the volume for those days, then divide by 20.</p>
+</li>
+<li>
+<p><strong>Relative volume</strong> compares today with the usual amount.</p>
+<p>Relative volume = today’s volume divided by the average volume.</p>
+<p>A value of 2.0 means twice the usual volume. A value of 0.5 means half the usual volume.</p>
+</li>
+<li>
+<p><strong>High relative volume</strong> means more people traded than usual. It does not show which way they wanted the price to go. Every trade has a buyer and a seller. Volume alone does not say which side was stronger.</p>
+</li>
+<li>
+<p><strong>Traded value</strong> is the rupee amount that changed hands.</p>
+<p>Traded value = volume multiplied by price.</p>
+<p>Shares alone can hide the size of a trade. Rupees show it more clearly.</p>
+</li>
+<li>
+<p><strong>Liquidity</strong> means how easily you can buy or sell without moving the price much. You met this in <em>Order matching, spread and liquidity</em>. A low traded value can make it hard to sell a planned size. Selling is called exiting a trade.</p>
+</li>
+<li>
+<p><strong>Delivery volume</strong> is a different measure from traded volume. It refers to shares that were taken as delivery, not bought and sold again the same day. NSE publishes a report called “Security-wise Delivery Positions”, and NSE reads a higher share of delivered quantity as more buyers holding on to shares. Check NSE’s own definition before you use it. (As of 11 Nov 2026, NSE reports page. Definitions can change, so check the NSE site.)</p>
+</li>
+<li>
+<p>Volume can rise for reasons that have nothing to do with the trend. News, index changes and corporate actions can all add volume. See <em>Corporate actions</em>.</p>
+</li>
+</ul>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: indicator-playground | indicator: relative-volume | lookback: 20 | caption: Volume bars with a relative-volume line; change the lookback and watch the average and the line move -->
+<p>The bars show daily volume. The line shows relative volume. The data is made up. Find the breakout day and read its bar. Then read the line on that day. Change the lookback from 20 days to 10 days. Notice how the average changes and how the line moves.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> The stock trades at Rs 312 on the breakout day.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>1. Average volume, last 20 days</td><td>given</td><td>1,00,000 shares</td></tr>
+<tr><td>2. Breakout day volume</td><td>given</td><td>1,80,000 shares</td></tr>
+<tr><td>3. Relative volume</td><td>1,80,000 divided by 1,00,000</td><td>1.8</td></tr>
+<tr><td>4. Traded value on the day</td><td>1,80,000 multiplied by Rs 312</td><td>Rs 5,61,60,000</td></tr>
+<tr><td>5. Your planned 50 shares, as a share of the day</td><td>50 divided by 1,80,000</td><td>about 0.03%</td></tr>
+</tbody></table>
+</div>
+<p>Check step 4 another way: Rs 5,61,60,000 divided by Rs 312 is 1,80,000 shares. One crore is Rs 1,00,00,000. So the day traded about Rs 5.616 crore.</p>
+<p>Check step 5 another way: 1,80,000 divided by 50 is 3,600. And 100 divided by 3,600 is about 0.028%, which rounds to 0.03%.</p>
+<p><strong>What it shows.</strong> The breakout day had 1.8 times the usual volume. Your planned 50 shares are a tiny part of that day. In this example, the stock is easy to trade. A thin stock can look very different.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<!-- component: indicator-playground | indicator: relative-volume | closes: 100,101,100,102 | volumes: 80000,120000,100000,200000 | lookback: 3 | plan: 0 | edit: on | caption: The four days of the guided exercise. Change the volumes and see the relative volume change -->
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Volumes for the last four days are 80,000, 120,000, 100,000 and 200,000 shares. Find the average of the first three days. Then find the relative volume on the last day.</p>
+<p>Hints:</p>
+<ol>
+<li>Add the first three volumes. Then divide the total by 3.</li>
+<li>Divide the last day’s volume by that average.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>Total of the first three days: 80,000 + 120,000 + 100,000 = 3,00,000 shares.</li>
+<li>Average of the first three days: 3,00,000 divided by 3 = 1,00,000 shares.</li>
+<li>Relative volume on the last day: 2,00,000 divided by 1,00,000 = 2.0.</li>
+<li>Check: 2.0 multiplied by 1,00,000 = 2,00,000. This matches the last day.</li>
+</ul>
+<p>The last day had twice the usual volume. The numbers do not show which way the price moved.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> A stock has an average volume of 2,50,000 shares. Its price falls 2 percent on a day with 90,000 shares traded. Work out the relative volume. Then write one sentence on what it shows and one sentence on what it does not show.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>Relative volume: 90,000 divided by 2,50,000 = 0.36.</li>
+<li>Check: 2,50,000 multiplied by 0.36 = 90,000.</li>
+<li>What it shows: the day had much less trading than usual. Fewer people traded than on a normal day.</li>
+<li>What it does not show: the volume does not tell you the direction of the price next. It also does not prove what caused the fall.</li>
+</ul>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the relative volume formula, traded value in rupees, and what a high or low volume day does and does not show.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: paper. Write it in your journal. If the journal is not ready, use paper.</p>
+<ol>
+<li>Pick 10 breakouts that you logged in <em>Breakouts</em>.</li>
+<li>For each breakout, write the average volume for the 20 days before it.</li>
+<li>Divide the breakout day’s volume by that average. Record the relative volume.</li>
+<li>Put the 10 results in one table. Compare them with the notes you wrote in <em>Breakouts</em>.</li>
+<li>Write that 10 samples are too few to draw a conclusion.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>Volume does not show direction. A down day can have low volume, as the independent exercise shows. A down day can also have high volume.</li>
+<li>A total volume figure means little on its own. Compare it with the same stock’s own average. A number that is large for one stock can be small for another.</li>
+<li>Volume confirmation is a common idea. It is not shown to work in this chapter. Test a rule before you rely on it (<em>Backtesting basics and the realism contract</em>).</li>
+<li>A thin stock can move on small volume. Small volume is a liquidity risk for your planned position.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Volume is the number of shares traded in a period.</li>
+<li>Relative volume = today’s volume divided by the average volume.</li>
+<li>High volume shows more trading. It does not show direction.</li>
+<li>Traded value = volume multiplied by price. It shows the rupee size of the trading.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p>Sources:</p>
+<ul>
+<li>NSE India, market data glossary</li>
+<li>Zerodha Varsity, volume module (reference only, original wording here)</li>
+</ul>
+<p>Facts to check:</p>
+<p>Facts checked on 11 Nov 2026:</p>
+<ul>
+<li>NSE lists a “Security-wise Delivery Positions” report on its reports page and reads a higher deliverable share as buyers holding on to shares. Read the exact NSE definition on the NSE site before you rely on it.</li>
+<li>How Kite draws volume on charts was not checked here. Look at the volume setting on your own chart.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../03-chart-reading/06-gaps-and-stops/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../03-chart-reading/08-candlestick-formations-and-price-action/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../03-chart-reading/06-gaps-and-stops/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../03-chart-reading/08-candlestick-formations-and-price-action/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

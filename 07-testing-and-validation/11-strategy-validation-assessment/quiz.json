@@ -1,0 +1,114 @@
+[
+  {
+    "id": "T7.11-q1",
+    "type": "mcq",
+    "prompt": "Which statement about 'validated for further forward testing' is correct?",
+    "options": [
+      {"id": "a", "text": "A positive out-of-sample result means the strategy is validated."},
+      {"id": "b", "text": "It means the result passed the written criteria. It does not mean profitable or ready for real money."},
+      {"id": "c", "text": "It means the strategy will make money."},
+      {"id": "d", "text": "It is the same as being profitable."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A positive out-of-sample result is one input. The written criteria decide the verdict.",
+      "c": "No verdict in this chapter promises money. The verdict only says the rule is worth more testing.",
+      "d": "Passing the criteria is not the same as profit. The verdict is about the test, not the money."
+    },
+    "concepts": ["verdicts"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.11-q2",
+    "type": "numeric",
+    "prompt": "In the worked example, how many of the seven checklist items have evidence?",
+    "answer": 2,
+    "tolerance": 0,
+    "unit": "items",
+    "solution": "Item 1 (costs on) has evidence, because the out-of-sample figure is after costs. Item 7 (sample size) has evidence, because 18 out-of-sample trades is stated. Items 2 to 6 have no evidence in the example, so they are not done. Total with evidence: 2.",
+    "concepts": ["checklist", "numeric"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.11-q3",
+    "type": "mcq",
+    "prompt": "After you change one setting and test again on the held-out period, what is that period now?",
+    "options": [
+      {"id": "a", "text": "Still held-out, because the change was small"},
+      {"id": "b", "text": "Still held-out, because it was tested only twice"},
+      {"id": "c", "text": "In-sample, because a choice was made using it"},
+      {"id": "d", "text": "A third kind of data that is neither held-out nor in-sample"}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "A small change still counts as a choice made using the period.",
+      "b": "The number of tests does not decide it. The choice made using the period does.",
+      "d": "The period is in-sample now. There is no third kind of data in this split."
+    },
+    "concepts": ["held-out-period"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.11-q4",
+    "type": "mcq",
+    "prompt": "Which way of treating costs is correct for this assessment?",
+    "options": [
+      {"id": "a", "text": "Costs are negligible if the win rate is high, so they can be left out."},
+      {"id": "b", "text": "Costs are on in the run, and the result is stated after costs."},
+      {"id": "c", "text": "Costs only matter for intraday trades."},
+      {"id": "d", "text": "Costs are added at the end, after the verdict is written."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A high win rate does not make costs small. Costs can remove a thin edge.",
+      "c": "Costs apply to every trade, whatever the holding period. This track treats them the same way.",
+      "d": "The verdict must be based on the result after costs. Adding costs afterwards changes the evidence."
+    },
+    "concepts": ["costs", "verdicts"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.11-q5",
+    "type": "scenario",
+    "prompt": "Hypothetical. A write-up says: 'Out-of-sample: 18 trades, expectancy +0.05R. This result is conclusive.' What is the mistake?",
+    "options": [
+      {"id": "a", "text": "Nothing. Any positive result is conclusive."},
+      {"id": "b", "text": "Eighteen trades is below the 30-trade threshold, so the result is inconclusive, not conclusive."},
+      {"id": "c", "text": "The number should be in rupees, not R."},
+      {"id": "d", "text": "The out-of-sample figure should be left out of the write-up."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A positive number does not make a result conclusive. The sample size and the criteria matter.",
+      "c": "R is a valid unit for expectancy. The mistake is the word conclusive.",
+      "d": "The out-of-sample figure is the key evidence. It must be stated, with its limits."
+    },
+    "concepts": ["sample-size", "scenario"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.11-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Memo sentence: 'The strategy is profitable and ready.' Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "'The strategy is profitable', because a memo may never use that word"},
+      {"id": "b", "text": "'and ready', because a validation verdict does not mean ready for real money"},
+      {"id": "c", "text": "'The strategy', because a memo must not name a strategy"},
+      {"id": "d", "text": "Nothing. It is a correct verdict."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The word profitable is a claim about a run. It needs the run, the costs and the sample size. That is a weakness, but the bigger error is in the second half.",
+      "c": "Naming the strategy is normal. The memo may refer to it.",
+      "d": "A validation verdict is only for further forward testing. It is not permission to trade with real money."
+    },
+    "concepts": ["overclaiming", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

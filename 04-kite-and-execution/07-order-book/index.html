@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Order book - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/04-kite-and-execution/07-order-book/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T4.7
+title: Order book
+page_type: Kite walkthrough
+prerequisites: [T4.4, T4.5, T1.3]
+labs: [Lab 2, Lab 3]
+estimated_minutes: 20
+-->
+<h1 id="order-book"><a class="header" href="#order-book">Order book</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>You place an order to buy 10 shares. The screen shows 6 shares done, and you think the order is finished. So you place the order again. Your first order still has 4 shares open, and the second order may now buy up to 10 more. You may end up with more shares than your plan allowed. Kite shows one order in several views. Reading the views together stops this mistake.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Kite shows an order in several places. Each place shows one part of the story.</p>
+<p><strong>Order book.</strong> A list of each instruction you gave, with its status. On the web, the end statuses are OPEN, COMPLETE, REJECTED and CANCELLED. Interim statuses include TRIGGER PENDING and AMO REQ RECEIVED. “Executed” is the name of a phone tab, not a status.</p>
+<p><strong>Where to find these.</strong> On the web, the Orders page has tabs such as Orders, GTT, Baskets, SIPs and Alerts. On the phone app, the Orders area has Open, Executed and GTT tabs, and you swipe to change them. Look for the exact names in your own app.</p>
+<p><strong>Rejected orders.</strong> When Kite rejects an order, it gives a reason. On the web, look for Info in the order’s options menu.</p>
+<p><strong>Baskets.</strong> A basket is a group of orders placed together. A basket can hold up to 20 orders, and you can have up to 50 baskets. Execute places the orders in the order they are listed. That order changes the margin needed, not the final amount blocked.</p>
+<p><strong>Trade book.</strong> A list of each execution, also called a fill. Each row shows a quantity and a price. Look for a trades view in your own app. Its name on the web can differ from one screen to the next.</p>
+<p><strong>Holdings.</strong> The shares in your demat account after settlement. See <em>Demat accounts and settlement</em>. A CNC buy shows in Positions on the day you buy it. From the next trading day it shows in Holdings. Until the shares are delivered to your demat account, they show as T1 holdings.</p>
+<p><strong>Positions.</strong> Trades that are still open for the day or carried forward. A position shows the product (such as CNC, MIS or NRML), the instrument, the quantity, the average price, the last price and the profit or loss. Which trades show here depends on the product type.</p>
+<p><strong>Funds.</strong> On the web, press F to open Funds. Look for the available margin (the money you can use for new trades), the used margin (the money blocked in trades and open orders) and the available cash. The Add funds and Withdraw buttons are here too.</p>
+<p><strong>Cost preview.</strong> The estimated charges shown before you submit an order. On the web, the order window shows the margin needed and your available margin. Charges may appear between them, but Zerodha can change the layout. Final charges are in Console, in the contract note and the ledger.</p>
+<p><strong>Selling delivery shares.</strong> If you do not have a POA or DDPI, Kite asks for a CDSL TPIN authorisation before a delivery sell. A POA or DDPI is a permission that lets your broker sell from your demat account. The TPIN comes by email and SMS. You enter it with an OTP. An authorisation lasts one day. On the web, look for the Authorise button on the Holdings page.</p>
+<p>Partly filled means some shares are done and some are still pending. A partly filled order is not finished. It stays OPEN, with the filled part shown. Do not treat it as complete.</p>
+<p>Reconciliation means checking that the views agree with each other. The order quantity equals the sum of the fills. That sum equals the change in holdings or positions. If the numbers do not agree, stop and find out why before you act.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> You place a buy order for 10 shares with a limit at Rs 250 (CNC). Two fills happen.</p>
+<div class="table-wrapper"><table><thead><tr><th>Fill</th><th>Quantity</th><th>Price</th><th>Value</th></tr></thead><tbody>
+<tr><td>1</td><td>6</td><td>Rs 249.80</td><td>6 x 249.80 = Rs 1,498.80</td></tr>
+<tr><td>2</td><td>4</td><td>Rs 250.00</td><td>4 x 250.00 = Rs 1,000.00</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>10</strong></td><td></td><td><strong>Rs 2,498.80</strong></td></tr>
+</tbody></table>
+</div>
+<p>The trade book shows two rows. Together they total 10 shares.</p>
+<p>Average price = total value divided by total quantity = 2,498.80 divided by 10 = <strong>Rs 249.88</strong>.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: kite-flow | flow: check-orders-trades-positions-holdings,cancel-or-modify-an-order,sell-holdings-with-tpin,funds-and-margin | platform: web | caption: Follow one order through Orders, Trades, Positions and Holdings, and learn the clicks to cancel, authorise a sale and check funds. Practice in the Zerodha demo or with dummy data only. Screens and button names can change, so check Kite's help pages. -->
+<p>Trace this one order from the order book to the trade book, then to holdings and positions. Watch which numbers match across the views. Look for the quantity that is still pending.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Reconcile the worked example above. Find the total quantity, the total value and the average price.</p>
+<p>Hints:</p>
+<ol>
+<li>Add the fill quantities.</li>
+<li>Multiply each fill by its price.</li>
+<li>Divide the total value by the total quantity.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>Total quantity: 6 + 4 = <strong>10 shares</strong>.</li>
+<li>Total value: Rs 1,498.80 + Rs 1,000.00 = Rs 2,498.80.</li>
+<li>Average price: Rs 2,498.80 / 10 = <strong>Rs 249.88</strong>.</li>
+</ul>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Hypothetical. You place an order for 20 shares. 15 shares fill at Rs 402. The other 5 are still pending. Compute the value filled and the average price. Then write what each view should show at this moment.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>Value filled: 15 x 402 = <strong>Rs 6,030</strong>.</li>
+<li>Average price: 6,030 / 15 = <strong>Rs 402.00</strong>.</li>
+<li>Order book: partly filled, with 5 shares still pending. The order stays OPEN.</li>
+<li>Trade book: fills totalling 15 shares.</li>
+<li>Holdings or positions: no more than 15 shares, because only 15 have filled. Check your app for when new shares appear.</li>
+<li>Cost preview: an estimate. It is not a final charge.</li>
+</ul>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks fill arithmetic, what each view shows, and why a partly filled order is not finished.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong> for the written work. Use <code>kite_demo</code> only to read the screens. Log it in your journal (or on paper until the journal app is ready).</p>
+<ol>
+<li>Write the limit price for one small order on paper first.</li>
+<li>Write down what the order would show in Orders: its status, quantity and price. Do not place it.</li>
+<li>Write how it would appear in the order book, the trade book, holdings and positions.</li>
+<li>Write the cost preview you expect to see before you submit.</li>
+<li>Compare your written preview with the final charges. The final charges for a real order are in Console.</li>
+<li>Write one line: did the four views agree?</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>A partly filled order is not finished. Check the order book before you act again.</li>
+<li>Do not average down on a pending order. Buying more of a falling holding to lower your average price is a mistake (<em>Why scalping, option buying and martingale are dangerous</em>).</li>
+<li>The cost preview is an estimate. Do not use it as your final cost.</li>
+<li>Demo data is dummy data. The demo is view-only, so it has no real fills. It cannot show how a live fill would look.</li>
+<li>A sell of delivery shares can fail without the TPIN authorisation or a DDPI or POA. Check this before you sell.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>The order book shows each instruction and its status.</li>
+<li>The trade book shows each fill, with its quantity and price.</li>
+<li>Holdings are shares after settlement. Positions depend on the product type.</li>
+<li>A partly filled order is still open. Check the pending quantity.</li>
+<li>Reconcile the views. If the numbers differ, find out why before you act.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Zerodha support pages on order status, the trade book, holdings and CDSL TPIN authorisation. Check the current labels there.</li>
+<li>Zerodha charges page (check the current rates there)</li>
+</ul>
+<!-- facts-needed: Kite order status labels; display timing of holdings after settlement; how Kite lists positions; cost preview accuracy; where the final charge statement is shown; contract note availability. -->
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../04-kite-and-execution/06-gtt-orders/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../04-kite-and-execution/08-execution-mistakes/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../04-kite-and-execution/06-gtt-orders/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../04-kite-and-execution/08-execution-mistakes/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

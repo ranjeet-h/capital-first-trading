@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>बोलिंजर बँड्स - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../05-indicators/06-bollinger-bands/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../05-indicators/06-bollinger-bands/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T5.6
+title: बोलिंजर बँड्स
+page_type: Math/Calculator
+prerequisites: [T5.2, T5.3]
+labs: [Lab 4]
+estimated_minutes: 25
+-->
+<h1 id="बोलिंजर-बँडस"><a class="header" href="#बोलिंजर-बँडस">बोलिंजर बँड्स</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एक वाचक चार्टवर वरच्या रेषेच्या वर एक क्लोज पाहतो. तो विचार करतो, “भाव खूप वाढला आहे, म्हणजे तो खाली येणार.” तो दुसऱ्या दिवशी सकाळी विक्री करतो. भाव आणखी दोन आठवडे वाढत राहतो. हे प्रकरण सांगते की हे बँड्स काय मोजतात, ते हाताने कसे काढायचे, आणि बँडला स्पर्श झाला म्हणजे तो एकटा संकेत का नाही.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>बोलिंजर बँड्स म्हणजे भावाभोवती काढलेल्या तीन रेषा. प्रत्येक रेषेचे काम वेगळे आहे.</p>
+<ul>
+<li><strong>मधला बँड.</strong> शेवटच्या N क्लोजची सरासरी. एक सामान्य निवड N = 20 आहे.</li>
+<li><strong>स्टँडर्ड डेव्हिएशन (SD).</strong> त्याच क्लोजमध्ये ते किती पसरलेले आहेत हे दाखवणारी संख्या. लहान SD म्हणजे क्लोज एकमेकांजवळ आहेत. मोठा SD म्हणजे ते दूरवर पसरले आहेत.</li>
+<li><strong>वरचा बँड.</strong> मधला बँड अधिक k वेळा SD.</li>
+<li><strong>खालचा बँड.</strong> मधला बँड वजा k वेळा SD. एक सामान्य निवड k = 2 आहे.</li>
+</ul>
+<p>आधी शब्दांत: वरचा बँड = सरासरी + (k वेळा SD). चिन्हांमध्ये: वरचा = सरासरी + k x SD.</p>
+<p>SD काढण्याचे दोन मार्ग आहेत:</p>
+<ul>
+<li><strong>पॉप्युलेशन SD</strong> वर्गफरकांची बेरीज N ने भागते.</li>
+<li><strong>सॅम्पल SD</strong> तीच बेरीज N वजा 1 ने भागते.</li>
+</ul>
+<p>टूल्स यापैकी कोणतीही पद्धत वापरू शकतात. John Bollinger यांची स्वतःची साइट सांगते की ते पॉप्युलेशन पद्धत वापरतात. Zerodha च्या चार्टिंग मॅन्युअलमध्ये Kite कोणती पद्धत वापरते हे सांगितलेले नाही, म्हणून दोन टूल्समधील आकडे तुलना करण्यापूर्वी तपासा. (11 Nov 2026 पर्यंत, bollingerbands.com. ही एक सामान्य पद्धत आहे, एक्सचेंजचा नियम नव्हे.)</p>
+<p>काही गोष्टी लक्षात ठेवा:</p>
+<ul>
+<li>बँड्स सरासरीभोवतीचा पसारा मोजतात. ते भाव पुढे काय करेल हे मोजत नाहीत.</li>
+<li>भाव जास्त हलला की SD वाढतो आणि बँड रुंद होतात. भाव शांत झाला की बँड अरुंद होतात.</li>
+<li>वरच्या बँडच्या वर क्लोज म्हणजे अलीकडच्या क्लोजच्या तुलनेत भाव कुठे आहे ते दिसते. भाव उलटेल असे ते सांगत नाही.</li>
+</ul>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: indicator-playground | indicator: bollinger | closes: 100,102,104,103,105 | period: 5 | k: 2 | sdMode: population | caption: क्लोजभोवती काढलेल्या तीन रेषा; एक स्विच पॉप्युलेशन आणि सॅम्पल SD यांच्यात बदल करतो, आणि बँड पुन्हा काढले जातात -->
+<p>आधी मधल्या रेषेकडे पाहा. मग वरची आणि खालची रेषा मधल्यापासून किती दूर आहेत ते पाहा. पॉप्युलेशन वरून सॅम्पल SD वर स्विच करा आणि बँड थोडे कसे हलतात ते पाहा. k 2 वरून 1 करा आणि बँड किती अरुंद होतात ते पाहा.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> पाच क्लोज: Rs 100, Rs 102, Rs 104, Rs 103 आणि Rs 105. आपण N = 5 घेतो, म्हणजे बेरीज हाताने तपासणे सोपे होते. आपण k = 2 आणि पॉप्युलेशन SD घेतो.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. मधला बँड (सरासरी)</td><td>(100 + 102 + 104 + 103 + 105) / 5</td><td>Rs 102.80</td></tr>
+<tr><td>2. सरासरीपासूनचे फरक</td><td>100 - 102.80, आणि असेच</td><td>-2.80, -0.80, +1.20, +0.20, +2.20</td></tr>
+<tr><td>3. वर्गफरक</td><td>प्रत्येक फरक स्वतःने गुणा</td><td>7.84, 0.64, 1.44, 0.04, 4.84</td></tr>
+<tr><td>4. वर्गफरकांची बेरीज</td><td>7.84 + 0.64 + 1.44 + 0.04 + 4.84</td><td>14.80</td></tr>
+<tr><td>5. पॉप्युलेशन व्हेरियन्स</td><td>14.80 / 5</td><td>2.96</td></tr>
+<tr><td>6. पॉप्युलेशन SD</td><td>2.96 चे वर्गमूळ</td><td>Rs 1.72</td></tr>
+<tr><td>7. बँडचे अंतर</td><td>2 x 1.72, न गोल केलेला SD वापरून</td><td>Rs 3.44</td></tr>
+<tr><td>8. वरचा बँड</td><td>102.80 + 3.44</td><td><strong>Rs 106.24</strong></td></tr>
+<tr><td>9. खालचा बँड</td><td>102.80 - 3.44</td><td><strong>Rs 99.36</strong></td></tr>
+</tbody></table>
+</div>
+<p>काम करताना जास्तीचे दशांश ठेवा. शेवटी फक्त गोल करा.</p>
+<p><strong>काल्पनिक. तेच क्लोज, सॅम्पल SD.</strong> वर्गफरकांची बेरीज अजूनही 14.80 आहे. तिला N वजा 1 = 4 ने भागा. सॅम्पल व्हेरियन्स = 14.80 / 4 = 3.70. सॅम्पल SD = 3.70 चे वर्गमूळ = Rs 1.92 (गोल केलेले). बँडचे अंतर = 2 x 1.9235 = Rs 3.85 (गोल केलेले). वरचा बँड = Rs 106.65. खालचा बँड = Rs 98.95.</p>
+<p>सॅम्पल आवृत्ती येथे थोडे रुंद बँड देते. फरक फक्त भाजकामुळे आहे.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<!-- component: indicator-playground | indicator: bollinger | closes: 10,12,14 | period: 3 | k: 2 | sdMode: population | edit: on | caption: मार्गदर्शित सरावातील क्लोज. ते, विंडो किंवा k बदला आणि बँड पाहा -->
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> क्लोज Rs 10, Rs 12 आणि Rs 14. N = 3, पॉप्युलेशन SD, k = 2. मधला बँड, SD आणि वरचा व खालचा बँड शोधा.</p>
+<p>संकेत:</p>
+<ol>
+<li>10, 12 आणि 14 ची सरासरी म्हणजे मधला बँड.</li>
+<li>सरासरीपासूनच्या प्रत्येक फरकाचा वर्ग काढा. वर्गांची बेरीज करा.</li>
+<li>बेरीज 3 ने भागा म्हणजे व्हेरियन्स मिळेल. मग वर्गमूळ काढा.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>मधला बँड: (10 + 12 + 14) / 3 = <strong>Rs 12</strong>.</li>
+<li>फरक: -2, 0, +2. वर्ग: 4, 0, 4. बेरीज: 8.</li>
+<li>व्हेरियन्स: 8 / 3 = 2.667.</li>
+<li>SD: 2.667 चे वर्गमूळ = 1.633, जे Rs 1.63 असे गोल होते.</li>
+<li>बँडचे अंतर: 2 x 1.633 = 3.266.</li>
+<li>वरचा बँड: 12 + 3.266 = <strong>Rs 15.27</strong>.</li>
+<li>खालचा बँड: 12 - 3.266 = <strong>Rs 8.73</strong>.</li>
+</ul>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> क्लोज Rs 200, Rs 204, Rs 196 आणि Rs 200. N = 4, पॉप्युलेशन SD, k = 2. वरचा आणि खालचा बँड शोधा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>मधला बँड: (200 + 204 + 196 + 200) / 4 = Rs 200.</li>
+<li>फरक: 0, +4, -4, 0. वर्ग: 0, 16, 16, 0. बेरीज: 32.</li>
+<li>पॉप्युलेशन व्हेरियन्स: 32 / 4 = 8.</li>
+<li>SD: 8 चे वर्गमूळ = 2.828, जे Rs 2.83 असे गोल होते.</li>
+<li>बँडचे अंतर: 2 x 2.828 = 5.657, जे Rs 5.66 असे गोल होते.</li>
+<li>वरचा बँड: 200 + 5.66 = <strong>Rs 205.66</strong>.</li>
+<li>खालचा बँड: 200 - 5.66 = <strong>Rs 194.34</strong>.</li>
+</ul>
+<p>सर्व भाव काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>या प्रकरणात बँडचे गणित, दोन SD पद्धतींमधील फरक, आणि बँडला स्पर्श करणे एकटे संकेत का नाही, हे तपासले जाते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड: कागदी काम (पेपर).</strong> हे शिकण्याचे लॉग आहे, व्यापारांची नोंद नाही. ते तुमच्या जर्नलमध्ये लिहा. जर्नल ॲप तयार नसेल तोपर्यंत कागदावर लिहा.</p>
+<ol>
+<li>तुम्हाला पाहण्याची परवानगी असलेल्या कोणत्याही चार्टवरून पाच शेअर्स निवडा.</li>
+<li>दर आठवड्याला क्लोज लिहा, आणि तो वरच्या किंवा खालच्या बँडच्या बाहेर होता का ते लिहा.</li>
+<li>दर आठवड्याला बँडची रुंदी लिहा. बँडची रुंदी = वरचा बँड वजा खालचा बँड.</li>
+<li>महिन्याच्या शेवटी लॉग वाचा. काय आश्चर्यकारक वाटले ते लिहा.</li>
+<li>लॉगला कोणताही बँड नियम काम करतो याचा पुरावा मानू नका.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>बँड फक्त मागील क्लोज वापरतात. पुढचा क्लोज कसा असेल याबद्दल ते निश्चित काही सांगत नाहीत.</li>
+<li>मजबूत ट्रेंडमध्ये भाव एका बँडजवळ बराच काळ राहू शकतो. स्पर्श हा ट्रेंडची सुरुवात असू शकतो, वळण नव्हे.</li>
+<li>निकाल विंडो आणि SD पद्धतीवर अवलंबून असतो. एकाच क्लोजवरून दोन टूल्स वेगळे बँड काढू शकतात.</li>
+<li>बँडला स्पर्श करणे एकटे संकेत नाही. नियमासाठी ठरलेली एंट्री, स्टॉप-लॉस आणि चाचणी लागते, आणि मगच कोणी तो वापरावा (<em>बॅकटेस्ट करण्याची मूलतत्त्वे आणि वास्तववादाचा करार</em> यात चाचणी कशी सेट होते ते सांगितले आहे).</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>मधला बँड ही सरासरी आहे. वरचा आणि खालचा बँड k वेळा SD मिळवतात आणि जोडतात किंवा वजा करतात.</li>
+<li>SD पसारा मोजतो. अरुंद बँड म्हणजे क्लोज एकमेकांजवळ होते.</li>
+<li>पॉप्युलेशन SD N ने भागतो. सॅम्पल SD N वजा 1 ने भागतो. तुमचे टूल कोणते वापरते ते तपासा.</li>
+<li>बँडच्या बाहेरचा क्लोज ही नोंद आहे. तो अंदाज नाही.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>John Bollinger, <em>Bollinger on Bollinger Bands</em> (मूळ लेखकाचे पुस्तक).</li>
+<li>Zerodha Varsity, बोलिंजर बँड्स मॉड्यूल (केवळ संदर्भासाठी, मूळ शब्दरचनेत).</li>
+<li>Zerodha, Kite चार्टिंग मॅन्युअल (kite.trade/docs/kite/charting). त्यात बोलिंजरची डीफॉल्ट सेटिंग दिलेली नाही, म्हणून ते तुमच्या स्वतःच्या स्क्रीनवर वाचा.</li>
+<li>StockCharts ChartSchool, Bollinger Bands पेज. ते 20-कालावधीची साधी सरासरी देते, आणि बँड 2 स्टँडर्ड डेव्हिएशन दूर असतात. (11 Nov 2026 पर्यंत. ही एक सामान्य पद्धत आहे, एक्सचेंजचा नियम नव्हे.)</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T5.6&amp;body=Page%3A%2005-indicators%2F06-bollinger-bands%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../05-indicators/05-macd/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../05-indicators/07-fibonacci-retracement/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../05-indicators/05-macd/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../05-indicators/07-fibonacci-retracement/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

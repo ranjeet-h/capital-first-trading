@@ -1,0 +1,402 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Money-math assessment - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/02-money-and-math/18-money-math-assessment/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T2.18
+title: Money-math assessment
+page_type: Assessment
+prerequisites: [T2.1, T2.2, T2.3, T2.4, T2.5, T2.6, T2.7, T2.8, T2.9, T2.10, T2.11, T2.12, T2.13, T2.14, T2.15, T2.16, T2.17]
+labs: [Lab 1, Lab 2, Lab 3]
+estimated_minutes: 35
+-->
+<h1 id="money-math-assessment"><a class="header" href="#money-math-assessment">Money-math assessment</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A hypothetical trader has Rs 50,000, risks 1% per trade and plans to enter at Rs 400 with a stop at Rs 380. She divides her capital by the entry price and buys 125 shares. Her planned loss at the stop is 125 x 20 = Rs 2,500. That is 5% of her capital, five times the Rs 500 she set as the limit. This assessment checks whether the number of shares follows from the risk rule, not from the cash in the account.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>This assessment covers the money math in this part of the book. It is the check for gate G2. To pass, you must get the cost, position-size and expectancy questions right within the allowed margin, on a fresh set of questions. You must also complete the reality-check chapter (<em>The Rs 2,000-3,000 reality check</em>).</p>
+<p><strong>What it checks</strong></p>
+<ul>
+<li><strong>Costs:</strong> fixed charges (per order) versus proportional charges (a percentage of turnover). Fixed charges weigh more on small trades (<em>Costs on a trade</em>). The practice questions use round numbers. The real charges, with dates and sources, are in the table in <em>Costs on a trade</em>.</li>
+<li><strong>Position size:</strong> the lowest of three limits, not the largest one.</li>
+<li><strong>Break-even win rate:</strong> the win rate at which wins pay for losses, before costs.</li>
+<li><strong>Expectancy and profit factor:</strong> the average result per trade, and the ratio of gains to losses.</li>
+<li><strong>Drawdown recovery:</strong> the gain needed to return to a starting value after a loss.</li>
+<li><strong>Daily-target capital:</strong> the capital a daily target needs (<em>The Rs 2,000-3,000 reality check</em>).</li>
+</ul>
+<p><strong>Position size.</strong> Work out three limits, then take the lowest:</p>
+<ul>
+<li>Risk budget = capital x risk percentage.</li>
+<li>Risk per share = entry - stop.</li>
+<li>Raw shares = risk budget / risk per share, rounded down.</li>
+<li>Cash cap = floor(capital / entry).</li>
+<li>Concentration cap = floor(capital x maximum position percentage / entry). The Lab 1 starting value is 25%.</li>
+<li>Shares = the lowest of raw shares, cash cap and concentration cap.</li>
+</ul>
+<p><strong>Break-even win rate.</strong> Before costs, with a reward of R times the risk (R is the reward-to-risk ratio), break-even win rate = 1 / (1 + R). Equivalently, win rate x R = (1 - win rate) x 1.</p>
+<p><strong>Expectancy.</strong> Per trade, in R: (win rate x average win in R) - (loss rate x average loss in R). In rupees, multiply the R result by the rupee value of one R. Expectancy describes an average over many trades. It is not a forecast of the next trade.</p>
+<p><strong>Profit factor.</strong> Total gross wins divided by total gross losses. A value above 1 means the wins outweighed the losses in the record. It says nothing about how many trades the figure is based on.</p>
+<p><strong>Drawdown recovery.</strong> A loss of L (as a fraction of the value before it) needs a gain of L / (1 - L) on the smaller base. A 30% loss needs 0.3 / 0.7 = 42.9%, not 30%.</p>
+<p><strong>Question types.</strong> Number answers (with a small allowed margin), multiple choice, scenario, spot-the-mistake and order of steps.</p>
+<p><strong>Fresh sets.</strong> The gate uses a new set of questions each time, made by a computer with checks. For example, a long’s stop must be below its entry, capital stays in a sensible range, and quantities are whole shares. Each number answer is worked out by a tested calculation. The sample set in this chapter is fixed.</p>
+<p><strong>Margin for percentages.</strong> Rupee answers must be exact to the paisa (one hundredth of a rupee). Percentages are accepted within a small margin.</p>
+<p><strong>Cost questions and out-of-date facts.</strong> Cost questions depend on the checked facts file. If a cost fact is out of date, the assessment shows a warning and does not count those questions.</p>
+<p><strong>Retakes.</strong> You may retake the assessment at any time. Each retake gets a new set of questions. There is no timer, and your attempt history is kept.</p>
+<p><strong>Common wrong answers to watch for</strong></p>
+<ul>
+<li>Sizing with capital instead of risk per share.</li>
+<li>Ignoring the lowest of the caps.</li>
+<li>Forgetting the loss on a fixed charge.</li>
+<li>Treating expectancy as what the next trade will do.</li>
+</ul>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: gate-check | gate: G2 | caption: G2 pass screen; shows that educational competence is not proof of profitability -->
+<p>The gate screen says: educational competence is not proof of profitability, and there is no pressure to go live. Read that screen before you read your score.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p>Three questions, each worked in full. <strong>Hypothetical</strong> throughout.</p>
+<h3 id="question-1-position-size-with-both-caps"><a class="header" href="#question-1-position-size-with-both-caps">Question 1: position size with both caps</a></h3>
+<p>Capital Rs 50,000. Risk 1%. Entry Rs 400. Stop Rs 380.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Working</th><th>Result</th></tr></thead><tbody>
+<tr><td>Risk budget</td><td>50,000 x 1%</td><td>Rs 500</td></tr>
+<tr><td>Risk per share</td><td>400 - 380</td><td>Rs 20</td></tr>
+<tr><td>Raw shares</td><td>500 / 20, rounded down</td><td>25</td></tr>
+<tr><td>Cash cap</td><td>floor(50,000 / 400)</td><td>125</td></tr>
+<tr><td>Concentration cap (25% of capital)</td><td>floor(50,000 x 0.25 / 400) = floor(31.25)</td><td>31</td></tr>
+<tr><td>Shares</td><td>lowest of 25, 125 and 31</td><td><strong>25</strong> (the risk budget sets the size)</td></tr>
+</tbody></table>
+</div>
+<p>Check: 25 x 20 = Rs 500, which is the risk budget. And 25 x 400 = Rs 10,000, which is within the Rs 12,500 concentration limit.</p>
+<h3 id="question-2-expectancy"><a class="header" href="#question-2-expectancy">Question 2: expectancy</a></h3>
+<p>Hypothetical record: win rate 40%, average win 2R, average loss 1R, and R = Rs 1,000.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Working</th><th>Result</th></tr></thead><tbody>
+<tr><td>Win part</td><td>0.40 x 2R</td><td>0.80R</td></tr>
+<tr><td>Loss part</td><td>0.60 x 1R</td><td>0.60R</td></tr>
+<tr><td>Expectancy</td><td>0.80R - 0.60R</td><td>0.20R</td></tr>
+<tr><td>In rupees</td><td>0.20 x Rs 1,000</td><td>Rs 200 per trade</td></tr>
+</tbody></table>
+</div>
+<p>Check: in 10 hypothetical trades, 4 wins of Rs 2,000 give Rs 8,000, and 6 losses of Rs 1,000 give Rs 6,000. The net is Rs 2,000, and Rs 2,000 / 10 = Rs 200 a trade. This describes that record only. It is not a forecast.</p>
+<p>Profit factor on the same record: 0.80R / 0.60R = 1.3.</p>
+<h3 id="question-3-daily-target-capital"><a class="header" href="#question-3-daily-target-capital">Question 3: daily-target capital</a></h3>
+<p>Target Rs 2,000 a day, 250 trading days (a round number for practice; the 2026 NSE calendar has about 245 normal trading days), 20% a year.</p>
+<ul>
+<li>Yearly target: 2,000 x 250 = Rs 5,00,000.</li>
+<li>Capital: 5,00,000 / 0.20 = Rs 25,00,000.</li>
+</ul>
+<p>Check: 25,00,000 x 0.20 = 5,00,000.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<!-- component: position-size-viz | capital: 50000 | riskPct: 1 | entry: 400 | stop: 380 | caption: Shares against stop distance at Rs 50,000 and 1% risk; check which limit binds -->
+<p>Move the stop to Rs 390 and then to Rs 370. At Rs 390 the risk budget allows 50 shares, but the concentration cap of 31 is lower, so 31 is the size. At Rs 370 the risk budget allows 16 shares, which is the lowest, so 16 is the size. Note that the cash and concentration caps depend on entry price and capital, not on the stop.</p>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task:</strong> Answer three sample questions.</p>
+<ol>
+<li>Capital Rs 50,000, risk 1%, entry Rs 400, stop Rs 380. How many whole shares, applying both caps?</li>
+<li>What win rate breaks even before costs when the reward is R = 3 (win 3R, lose 1R)? Give a percentage.</li>
+<li>An account falls 30%. What gain, in percent, brings it back to its starting value?</li>
+</ol>
+<p>Hints:</p>
+<ol>
+<li>For question 1, work out the risk budget and the risk per share, then the raw shares. Compare the raw shares with both caps and take the lowest.</li>
+<li>For question 2, use W = 1 / (1 + R). Check: 25 wins of 3R and 75 losses of 1R give 75R won and 75R lost.</li>
+<li>For question 3, the gain is loss / (1 - loss), applied to the smaller account. Do not use 30% of the starting value.</li>
+</ol>
+<p><strong>Answer:</strong> Question 1: 25 shares (risk budget Rs 500, risk per share Rs 20, raw 25; caps 125 and 31). Question 2: 25%. Question 3: 42.9%.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task:</strong> Answer a ten-question set on paper with no hints. Then enter your answers in the app. Record your score and the concepts you missed in the learning log.</p>
+<details><summary>Check your answer</summary>
+<p>There is no single answer key for a set you write or draw yourself. Check each result against these tests:</p>
+<ul>
+<li>A share count is never above the lowest of the three limits.</li>
+<li>A break-even win rate satisfies W x R = (1 - W) x 1 for a 1R loss.</li>
+<li>Expectancy in R equals (win rate x average win) minus (loss rate x average loss).</li>
+<li>A drawdown recovery uses loss / (1 - loss), applied to the smaller base.</li>
+</ul>
+<p>Missed questions are scheduled for review after the reviewAfterDays value.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Eight sample questions cover the areas above. The gate uses a fresh set of questions, not this one.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p><strong>Mode:</strong> learning note. Write it in your journal. If the journal app is not ready, use paper.</p>
+<ol>
+<li>Use ten questions covering the areas above. Use the app’s set once it is ready, or write ten yourself.</li>
+<li>Answer all ten on paper, with no notes and no hints.</li>
+<li>Check each answer against the working in this chapter.</li>
+<li>Enter your answers in the app once it is ready.</li>
+<li>Record your score and the missed concepts in the learning log, with the date.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>Passing G2 unlocks no live trading. The gate screen says so.</li>
+<li>Number success does not show that a strategy works. The expectancy in this chapter is a worked example, not a forecast.</li>
+<li>Cost answers are only as good as the checked cost facts. If a fact is out of date, those questions are not counted.</li>
+<li>A pass on a small set is a small sample. The gate’s set of questions is also a sample.</li>
+<li>Money-math skill does not replace the risk rules. They apply before every trade.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Position size is the lowest of the risk, cash and concentration limits.</li>
+<li>Break-even win rate = 1 / (1 + R), before costs.</li>
+<li>Expectancy = (win rate x average win) - (loss rate x average loss), in R.</li>
+<li>Recovering from a 30% loss needs a 42.9% gain, not 30%.</li>
+<li>Educational competence is not proof of profitability.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p><strong>Sources, read on 11 Nov 2026:</strong></p>
+<ul>
+<li><em>Costs on a trade</em>, for the real Zerodha charges that sit beside the practice numbers.</li>
+<li>NSE holiday list and trading calendar for 2026, for the trading-day count (about 245 normal days).</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/17-scaling-and-withdrawal/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../03-chart-reading/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/17-scaling-and-withdrawal/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../03-chart-reading/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,134 @@
+[
+  {
+    "id": "T7.8-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Four trades give these results in rupees: +600, -300, +900, -300. What is the expectancy in rupees per trade?",
+    "answer": 225,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Wins: 600 and 900, total 1,500, from 2 trades. Losses: 300 and 300, total 600, from 2 trades. Win rate 0.5. Average win 750. Average loss 300. Expectancy = 0.5 x 750 - 0.5 x 300 = 225. Check: (1,500 - 600) / 4 = 225.",
+    "concepts": ["expectancy", "numeric"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.8-q2",
+    "type": "mcq",
+    "prompt": "Which statement correctly describes expectancy?",
+    "options": [
+      {"id": "a", "text": "Expectancy is the average win."},
+      {"id": "b", "text": "Expectancy combines the win rate and average win with the loss rate and average loss, to give the average result per trade."},
+      {"id": "c", "text": "Expectancy is the largest single loss."},
+      {"id": "d", "text": "Expectancy is the same as the profit factor."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The average win is only one part of expectancy. Losses must be included too.",
+      "c": "The largest single loss is a different measure. It does not combine wins and losses.",
+      "d": "Profit factor divides gross profit by gross loss. Expectancy is an average per trade. They are different measures."
+    },
+    "concepts": ["expectancy"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.8-q3",
+    "type": "mcq",
+    "prompt": "A list of trades has no losing trades at all. What is the profit factor?",
+    "options": [
+      {"id": "a", "text": "Infinity, so the strategy is great"},
+      {"id": "b", "text": "It cannot be worked out, because gross loss is zero"},
+      {"id": "c", "text": "Zero, because there is no loss"},
+      {"id": "d", "text": "Equal to the win rate"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Dividing by zero does not show a great rule. A run of wins in a short list says little about the next trade.",
+      "c": "Zero would mean no profit. The list has profit, so zero is not the answer.",
+      "d": "With no losses the win rate is 100 percent. The profit factor is a different measure and is not equal to it."
+    },
+    "concepts": ["profit-factor"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.8-q4",
+    "type": "mcq",
+    "prompt": "What is maximum drawdown?",
+    "options": [
+      {"id": "a", "text": "The largest single losing trade"},
+      {"id": "b", "text": "The largest fall from an earlier high point of the equity curve to a later low point"},
+      {"id": "c", "text": "The average of all losing trades"},
+      {"id": "d", "text": "The total of all losing trades"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A fall across several trades can be larger than any one trade. Use the equity curve to measure it.",
+      "c": "The average loss is a different measure. Drawdown is measured on the equity curve.",
+      "d": "The total of losses ignores the wins between them. Drawdown measures a fall from a peak."
+    },
+    "concepts": ["max-drawdown"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.8-q5",
+    "type": "mcq",
+    "prompt": "Which statement about the Sharpe ratio is correct?",
+    "options": [
+      {"id": "a", "text": "A higher Sharpe ratio always means safer money."},
+      {"id": "b", "text": "The Sharpe ratio depends on the safe rate you pick, and it can be a weak guide when returns are skewed."},
+      {"id": "c", "text": "The Sharpe ratio needs no return data."},
+      {"id": "d", "text": "The Sharpe ratio is the same as the win rate."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The ratio is one number built on assumptions. It does not show that money is safe.",
+      "c": "The ratio is built from returns. Without return data it cannot be worked out.",
+      "d": "The win rate counts winning trades. The Sharpe ratio uses average returns and how much they move."
+    },
+    "concepts": ["sharpe"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.8-q6",
+    "type": "scenario",
+    "prompt": "Hypothetical. A dashboard shows a compound annual growth rate (CAGR) after just six trades. CAGR is the yearly growth rate that would turn the starting money into the ending money. What is the best reading of this figure?",
+    "options": [
+      {"id": "a", "text": "The rule has a steady yearly growth rate of that size."},
+      {"id": "b", "text": "Six trades cannot support a yearly figure, so the number says little about the rule."},
+      {"id": "c", "text": "CAGR is more reliable than the win rate."},
+      {"id": "d", "text": "The figure proves the rule works."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Six trades do not show a steady yearly pattern. A yearly figure from so few trades is not a forecast.",
+      "c": "CAGR and win rate measure different things. Neither is reliable from six trades.",
+      "d": "A single small sample cannot prove a rule works. Six trades are far below the lab's 30-trade warning."
+    },
+    "concepts": ["sample-size", "scenario"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.8-q7",
+    "type": "spot-the-mistake",
+    "prompt": "Read this statement: 'My win rate is 70 percent, so my risk is low.' Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "'My win rate is 70 percent' is wrong, because a win rate can never be measured"},
+      {"id": "b", "text": "'so my risk is low' is wrong, because a high win rate says nothing about the size of the losses"},
+      {"id": "c", "text": "'My win rate' is wrong, because it should be called expectancy"},
+      {"id": "d", "text": "Nothing is wrong"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Win rate is a valid count of winning trades. The fault is the conclusion drawn from it.",
+      "c": "Win rate and expectancy measure different things. Expectancy does not replace the win rate.",
+      "d": "A high win rate does not show low risk. A rule can win often and still have large losses."
+    },
+    "concepts": ["win-rate", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

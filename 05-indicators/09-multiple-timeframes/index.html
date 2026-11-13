@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Multiple timeframe analysis - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/05-indicators/09-multiple-timeframes/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T5.9
+title: Multiple timeframe analysis
+page_type: Concept
+prerequisites: [T3.2, T5.2, T5.4]
+labs: [Lab 4]
+estimated_minutes: 25
+-->
+<h1 id="multiple-timeframe-analysis"><a class="header" href="#multiple-timeframe-analysis">Multiple timeframe analysis</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A trader looks at a daily chart and sees a small dip. The trader then checks the 5-minute chart, the hourly chart and the weekly chart. Each one tells a slightly different story. After enough checking, the trader finds one chart where the picture looks clear. The trader then trades on that chart alone. This chapter shows a simple way to use two timeframes, and why adding more can fool you.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Multiple timeframe analysis means looking at the same stock on more than one timeframe (<em>Timeframes and how the same price looks different</em>). Keep the method simple.</p>
+<ul>
+<li><strong>The higher timeframe is a filter.</strong> It decides whether trades are allowed at all. For example, a weekly rule.</li>
+<li><strong>The lower timeframe is the trigger.</strong> It decides when, within the allowed trades, to act. For example, a daily rule.</li>
+</ul>
+<p>You can build a higher-timeframe candle from lower-timeframe candles. The rules from <em>Timeframes and how the same price looks different</em> apply:</p>
+<ul>
+<li>Open comes from the first candle in the period.</li>
+<li>Close comes from the last candle in the period.</li>
+<li>High is the largest high. Low is the smallest low.</li>
+</ul>
+<p>Some points to keep in mind:</p>
+<ul>
+<li>Pick two timeframes before you test anything. Write them down.</li>
+<li>Each extra timeframe adds settings. More settings make it easier to fit a rule to past data (<em>Overfitting and the number of things you tried</em>).</li>
+<li>Holiday weeks have fewer daily candles. A weekly candle built from a short week covers fewer days. The days when the market is shut are on the NSE trading holidays page.</li>
+<li>A filter that passes is not a forecast. It only says the rule allows a look.</li>
+</ul>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: candle-builder | data: five-daily-candles | timeframe: daily | weeklyToggle: on | caption: Five daily candles for one hypothetical week; a switch redraws them as one weekly candle and back -->
+<p>Start with the five daily candles. Switch to weekly and see one candle replace them. Check that the weekly open is the Monday open and the weekly close is the Friday close. Then switch back and compare.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Five daily candles for one week. Each row shows open, high, low and close in rupees.</p>
+<div class="table-wrapper"><table><thead><tr><th>Day</th><th>Open</th><th>High</th><th>Low</th><th>Close</th></tr></thead><tbody>
+<tr><td>Mon</td><td>Rs 290</td><td>Rs 296</td><td>Rs 288</td><td>Rs 294</td></tr>
+<tr><td>Tue</td><td>Rs 294</td><td>Rs 301</td><td>Rs 293</td><td>Rs 299</td></tr>
+<tr><td>Wed</td><td>Rs 299</td><td>Rs 300</td><td>Rs 292</td><td>Rs 293</td></tr>
+<tr><td>Thu</td><td>Rs 293</td><td>Rs 297</td><td>Rs 290</td><td>Rs 291</td></tr>
+<tr><td>Fri</td><td>Rs 291</td><td>Rs 298</td><td>Rs 289</td><td>Rs 296</td></tr>
+</tbody></table>
+</div>
+<p>Build the weekly candle:</p>
+<div class="table-wrapper"><table><thead><tr><th>Part</th><th>Rule</th><th>Check</th><th>Weekly value</th></tr></thead><tbody>
+<tr><td>Open</td><td>open of the first day</td><td>Mon open</td><td><strong>Rs 290</strong></td></tr>
+<tr><td>High</td><td>largest of the five highs</td><td>296, 301, 300, 297, 298</td><td><strong>Rs 301</strong></td></tr>
+<tr><td>Low</td><td>smallest of the five lows</td><td>288, 293, 292, 290, 289</td><td><strong>Rs 288</strong></td></tr>
+<tr><td>Close</td><td>close of the last day</td><td>Fri close</td><td><strong>Rs 296</strong></td></tr>
+</tbody></table>
+</div>
+<p>The weekly candle is bullish, because the close (Rs 296) is above the open (Rs 290).</p>
+<p><strong>Hypothetical filter.</strong> Suppose the rule says: the weekly close must be above a 10-week average of Rs 285. This number is illustrative. Rs 296 is above Rs 285, so the filter passes.</p>
+<p><strong>Hypothetical trigger.</strong> Suppose the daily rule looks for a pullback to about Rs 291, near a 20-day average of Rs 290. This number is also illustrative. The trigger is read only after the filter passes.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Build one weekly candle from the five daily candles in the worked example. Confirm that the weekly candle is bullish.</p>
+<p>Hints:</p>
+<ol>
+<li>The weekly open is the first day’s open.</li>
+<li>Find the largest of the five highs.</li>
+<li>Find the smallest of the five lows.</li>
+<li>The weekly close is the last day’s close.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>Open: Rs 290 (Monday).</li>
+<li>High: Rs 301 (Tuesday’s high is the largest).</li>
+<li>Low: Rs 288 (Monday’s low is the smallest).</li>
+<li>Close: Rs 296 (Friday).</li>
+<li>Bullish, because Rs 296 is above Rs 290.</li>
+</ul>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> A hypothetical week ends with a weekly close of Rs 280. The illustrative 10-week average is Rs 285. Does the filter pass? What does the framework say to do with the daily pullback that week?</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>The filter asks whether the weekly close is above Rs 285.</li>
+<li>Rs 280 is below Rs 285, so the filter does not pass.</li>
+<li>The framework does not allow trades for that direction this week.</li>
+<li>So the daily pullback is not used. The rule does not read it, whatever the daily chart looks like.</li>
+</ul>
+<p>All numbers are hypothetical and illustrative.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks how a weekly candle is built, what a filter does, and why more timeframes add risk.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong>. This is a learning log only. Log it in your journal (or on paper until the journal app is ready).</p>
+<ol>
+<li>Choose five stocks from a chart you are allowed to view.</li>
+<li>Write down your two timeframes before you look at any chart.</li>
+<li>Each week, record the higher-timeframe filter result: pass or not.</li>
+<li>If the filter passes, record what the lower-timeframe rule says.</li>
+<li>After four weeks, write one sentence on whether you changed either timeframe during the test.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>Two timeframes do not make a trade safer. A stop and a position size are still needed.</li>
+<li>Each added timeframe adds settings. More settings make overfitting easier.</li>
+<li>A weekly candle needs its full set of days. A holiday week can give a candle built from fewer days.</li>
+<li>A filter that passes is not a forecast. The filter only allows a look at the trigger.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>The higher timeframe is a filter. The lower timeframe is the trigger.</li>
+<li>A weekly candle has the first day’s open, the highest high, the lowest low and the last day’s close.</li>
+<li>Fix your two timeframes before you test. Do not add more after you see results.</li>
+<li>Agreement across timeframes is not proof that a trade will work.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Zerodha Varsity, multiple timeframe module (reference only, original wording).</li>
+<li>Zerodha, Kite charting manual (kite.trade/docs/kite/charting), for the chart intervals Kite offers. It says intraday data is available from 2015.</li>
+<li>NSE India, trading holidays page.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../05-indicators/08-volume-indicators-and-vwap/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../05-indicators/10-indicator-disagreement/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../05-indicators/08-volume-indicators-and-vwap/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../05-indicators/10-indicator-disagreement/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

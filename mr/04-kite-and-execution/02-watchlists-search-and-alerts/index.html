@@ -1,0 +1,359 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>वॉचलिस्ट, सर्च आणि भाव अलर्ट - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../04-kite-and-execution/02-watchlists-search-and-alerts/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../04-kite-and-execution/02-watchlists-search-and-alerts/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T4.2
+title: वॉचलिस्ट, सर्च आणि भाव अलर्ट
+page_type: Kite walkthrough
+prerequisites: [T4.1, T1.8]
+labs: [Lab 3]
+estimated_minutes: 15
+-->
+<h1 id="वॉचलिसट-सरच-आणि-भाव-अलरट"><a class="header" href="#वॉचलिसट-सरच-आणि-भाव-अलरट">वॉचलिस्ट, सर्च आणि भाव अलर्ट</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एक शेअर दिवसभरात झपाट्याने वाढतो. तुम्ही तो एका यादीत टाकता. मग त्यापेक्षा जास्त भावावर अलर्ट लावता. यादी आणि अलर्ट यामुळे योजना असल्यासारखे वाटू शकते. ते योजना नाहीत. हे प्रकरण दाखवते की वॉचलिस्ट आणि अलर्ट काय करतात. ते काय करत नाहीत, हेही दाखवते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<ul>
+<li><strong>वॉचलिस्ट</strong> म्हणजे तुम्ही लक्षात ठेवत असलेल्या सिम्बॉल्सची यादी. तिचे काम तुमचे लक्ष धरून ठेवणे. कोणताही सिम्बॉल टाकण्यापूर्वी तुमचे नियम लिहा. उपयोगी नियमांमध्ये लिक्विडिटी, क्षेत्र आणि डेटा उपलब्धता यांचा समावेश होतो. लिक्विडिटी तुम्ही <em>ऑर्डर मॅचिंग, स्प्रेड आणि लिक्विडिटी</em> या भागात पाहिली आहे.</li>
+<li>वॉचलिस्ट म्हणजे शिफारशींची यादी नाही. तिच्यावर नाव असणे म्हणजे व्यापार योग्य आहे, असे नाही.</li>
+<li>Kite वेबवर तुमच्या वॉचलिस्टला Marketwatch म्हणतात. तुम्ही 1 ते 7 क्रमांकाच्या 7 याद्या ठेवू शकता. प्रत्येक यादीत 50 सिम्बॉल्सपर्यंत ठेवता येतात. Kite तुमच्या याद्या स्वतः जतन करते.</li>
+<li>वेबवर सिम्बॉल टाकण्यासाठी ~ (टिल्डा की) दाबा. मग सर्च उघडेल. नाव किंवा कोड टाइप करा. हवा असलेल्या निकालाजवळ Add वर क्लिक करा. ओळीवर माउस नेला की तिची बटणे दिसतात: Buy, Sell, Chart, Market depth (बाजारातील डेप्थ), Delete आणि More. अचूक आयकॉन्स तुमच्या ॲपमध्ये पाहा. More मेनूमध्ये Create GTT, Create alert आणि Add to basket असे पर्याय असतात.</li>
+<li><strong>सिम्बॉल सर्च</strong> कंपनीचा कोड किंवा नाव वापरून शेअर शोधते. सारखी नावे आणि कोड असतात. कृती करण्यापूर्वी एक्सचेंज आणि सिम्बॉल तपासा.</li>
+<li>एकाच कंपनीच्या NSE आणि BSE वर वेगळ्या लिस्टिंग असू शकतात. Kite प्रत्येक ओळीजवळ एक्सचेंज दाखवते. तुमचा सिम्बॉल कोणत्या एक्सचेंजचा आहे, ते तपासा.</li>
+<li><strong>अलर्ट</strong> ही सूचना आहे. भाव तुम्ही निवडलेल्या पातळीपर्यंत पोहोचला, हे ती सांगते. साधा अलर्ट फक्त सूचना देतो. Kite मध्ये <strong>ATO (Alert Triggers Order)</strong> ही सुविधाही आहे. ATO चालू असेल, तर अलर्ट सुटल्यावर तो स्वतः 20 ऑर्डर्सपर्यंतची बास्केट लावू शकतो. हे पुस्तक व्यापारासाठी अलर्ट वापरत नाही. अलर्टला पुनरावलोकनाची आठवण माना.</li>
+<li>वेबवर अलर्ट लावण्यासाठी ओळीवर माउस न्या, More वर क्लिक करा, मग Create alert वर क्लिक करा. नाव लिहा, प्रॉपर्टी, ऑपरेटर आणि मूल्य निवडा, मग Create वर क्लिक करा. फोन ॲपवर शेअर उघडा आणि Set alert वर टॅप करा. Kite किती अलर्ट आणि ATO अलर्ट ठेवता येतील यावर मर्यादा घालते. अलर्ट 365 दिवस चालतो.</li>
+<li>अलर्टमुळे घाई वाटते. त्यांचा वापर पुनरावलोकनाची आठवण म्हणून करा, कृतीचा ट्रिगर म्हणून नव्हे. कोणताही अलर्ट सुटण्यापूर्वी तुमचा स्टॉप आणि तुमचा पोझिशनचा आकार ठरलेला असावा.</li>
+</ul>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: kite-flow | flow: add-to-watchlist,create-an-alert-and-ato | platform: web | caption: सुरक्षितपणे सिम्बॉल टाकण्याचे आणि अलर्ट लावण्याचे क्लिक मार्ग. Zerodha च्या डेमोमध्ये किंवा फक्त डमी डेटासह सराव करा. स्क्रीन आणि बटणांची नावे बदलू शकतात, म्हणून Kite च्या मदत पेजेस तपासा. -->
+<p>आधी वॉचलिस्ट पाहा. मग सर्च निकाल पाहा. प्रत्येक सिम्बॉलजवळचे एक्सचेंज लेबल शोधा. मग अलर्ट डायलॉग पाहा. अलर्टसाठी वापरलेले शब्द लक्षात घ्या, आणि ATO पर्याय चालू आहे का ते तपासा. तुमच्या स्वतःच्या Kite मधील मांडणी तपासा.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> समजा तुम्ही 10 सिम्बॉल्सचा मागोवा घेता. प्रत्येकाचा भाव Rs 250 आहे. प्रत्येकी एक शेअर खरेदी करायचा, तर चार्जेसआधी Rs 2,500 खर्च येईल.</p>
+<div class="table-wrapper"><table><thead><tr><th>टप्पा</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. सिम्बॉल</td><td>दिले आहे</td><td>10</td></tr>
+<tr><td>2. प्रत्येकाचा भाव</td><td>दिले आहे</td><td>Rs 250</td></tr>
+<tr><td>3. प्रत्येकी एक शेअर, चार्जेसआधी</td><td>10 गुणिले Rs 250</td><td>Rs 2,500</td></tr>
+</tbody></table>
+</div>
+<p>तपासणी टप्पा 3: Rs 2,500 ला 10 सिम्बॉलने भागले, तर प्रत्येकी Rs 250 येतात.</p>
+<p>वॉचलिस्टला स्वतःचा खर्च नाही. तुमचे लक्षच खरा खर्च आहे.</p>
+<p>आता समजा तुम्ही Rs 252 वर अलर्ट लावला. तो अलर्ट म्हणजे चार्ट पुन्हा पाहण्याची आठवण आहे. तुमचा स्टॉप आणि तुमचा आकार आधीच लिहिलेले असले पाहिजेत. ते अलर्ट सुटला म्हणून ठरवलेले नसावेत.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> कागदावर पाच सिम्बॉल्सची वॉचलिस्ट तयार करा. प्रत्येक सिम्बॉलसाठी एक नियम लिहा. Kite डेमोमध्ये अलर्ट बटण कुठे आहे ते शोधा. मग कागदावर एक अलर्ट एका वाक्यात लिहा. तो सुटल्यावर तुम्ही काय कराल, ते लिहा.</p>
+<p>संकेत:</p>
+<ol>
+<li>प्रत्येक सिम्बॉल टाकण्यापूर्वी त्याचा नियम लिहा.</li>
+<li>प्रत्येक सिम्बॉलचे एक्सचेंज तपासा.</li>
+<li>अलर्टसाठी पुनरावलोकनाची पायरी लिहा. उदाहरणार्थ: चार्ट पाहा, स्टॉप आणि आकार तपासा, आणि तुमची योजना परवानगी देईपर्यंत आणखी काहीही करू नका.</li>
+</ol>
+<p><strong>उत्तर:</strong> तुमचे उत्तर पूर्ण आहे, जेव्हा प्रत्येक सिम्बॉलला लिहिलेला नियम असेल, प्रत्येक एक्सचेंज तपासलेले असेल, आणि अलर्टच्या नोंदीत तुम्ही आधी काय पुनरावलोकन कराल ते लिहिलेले असेल. या सरावात कोणताही ऑर्डर दिला जात नाही.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> एका काल्पनिक शेअरसाठी चार निवड नियम लिहा. मग त्याच शेअरसाठी अलर्ट योजना लिहा. योजनेत अलर्ट कशासाठी आहे आणि कोणताही ऑर्डर देण्यापूर्वी तुम्ही काय कराल, हे लिहा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>एका काल्पनिक शेअरसाठी नमुना उत्तर:</p>
+<ul>
+<li>नियम 1: हा शेअर दररोज इतके शेअर्स व्यवहारात आणतो की नियोजित आकाराचे शेअर्स विकता येतील.</li>
+<li>नियम 2: हा शेअर अशा क्षेत्रात आहे ज्याचा तुम्ही आधीच अभ्यास केला आहे.</li>
+<li>नियम 3: तुमच्या चार्टसाठी लागणारा डेटा तुमच्या स्रोताकडून उपलब्ध आहे.</li>
+<li>नियम 4: हा शेअर फक्त आज झपाट्याने वाढला म्हणून यादीत नाही.</li>
+<li>अलर्ट योजना: अलर्ट एका ठरलेल्या पातळीवर चार्ट पुन्हा पाहण्यासाठी आहे. कोणताही ऑर्डर देण्यापूर्वी तुम्ही स्टॉप, आकार, खर्च आणि तुमची लिहिलेली योजना तपासता. अलर्ट स्वतः काहीही ठरवत नाही.</li>
+</ul>
+<p>सर्व तपशील काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>हे प्रकरण अलर्ट आणि ऑर्डर यातील फरक, वॉचलिस्ट म्हणजे काय, आणि अलर्टनंतरची नेहमीची चूक तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> कागदी काम (पेपर). Kite डेमो फक्त पाहण्यासाठी आहे. त्याचा वापर फक्त अलर्ट बटण शोधण्यासाठी आणि त्यावरील लेबल वाचण्यासाठी करा. वॉचलिस्ट आणि प्रत्येक अलर्ट कागदावर लिहा.</p>
+<ol>
+<li>तुमच्या वॉचलिस्टचे नियम कागदावर लिहा.</li>
+<li>यादीतील प्रत्येक सिम्बॉलचे एक्सचेंज तपासा.</li>
+<li>प्रत्येक अलर्ट कागदावर एका वाक्यात, त्याच्या उद्देशासह लिहा.</li>
+<li>कोणताही ऑर्डर देण्यापूर्वी तुम्ही घेणार असलेल्या पुनरावलोकनाच्या पायऱ्या लिहा.</li>
+<li>हे Lab 3 मध्ये शिकण्याची नोंद म्हणून नोंदवा. ते तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल, तर कागद वापरा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>वॉचलिस्ट म्हणजे खरेदी यादी नाही. तिच्यावर नाव असल्याने व्यवहार योग्य ठरत नाही.</li>
+<li>आज सर्वाधिक वाढलेला शेअर कृती करण्याचे कारण नाही. आधी तुमचे लिहिलेले नियम तपासा.</li>
+<li>साधा अलर्ट म्हणजे ऑर्डर नाही. तो दिसल्याने तुमची योजना बदलत नाही. पण ATO चालू असलेला अलर्ट ऑर्डर लावू शकतो. अलर्ट लावण्यापूर्वी अलर्टच्या सेटिंग्ज तपासा.</li>
+<li>अलर्ट आणि याद्या “संधी निसटण्याची भीती” वाढवू शकतात. यादीतला वाढता भाव तातडीचा वाटू शकतो. थांबा आणि तुमचे नियम तपासा.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>वॉचलिस्ट तुमचे लक्ष नियंत्रित करते. ती शिफारशींची यादी नाही.</li>
+<li>कृती करण्यापूर्वी एक्सचेंज आणि सिम्बॉल तपासा.</li>
+<li>साधा अलर्ट ही सूचना आहे. ATO अलर्ट ऑर्डरही लावू शकतो. दोन्ही बाबतीत आधी तुमची योजना तपासा.</li>
+<li>कोणताही अलर्ट सुटण्यापूर्वी तुमचा स्टॉप आणि आकार लिहा.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p>स्रोत:</p>
+<ul>
+<li>Zerodha सपोर्ट पेजेस: वॉचलिस्ट, अलर्ट आणि ATO (Alert Triggers Order) वर. तिथल्या सध्याच्या मर्यादा तपासा.</li>
+<li>NSE आणि BSE च्या सिम्बॉल यादी</li>
+</ul>
+<p>तपासायची तथ्ये:</p>
+<ul>
+<li>अलर्टचे प्रकार, सूचना देण्याचे माध्यम आणि ATO चे नियम, ज्यात अलर्ट आणि ऑर्डरवरील मर्यादा आहेत. Zerodha च्या अलर्ट पेजेस तपासा.</li>
+<li>NSE आणि BSE च्या सिम्बॉल पेजेवरील सिम्बॉल आणि सिरीज नियम.</li>
+</ul>
+<!-- facts-needed: alert types, notification channels and ATO rules; symbol and series conventions on NSE and BSE -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T4.2&amp;body=Page%3A%2004-kite-and-execution%2F02-watchlists-search-and-alerts%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../04-kite-and-execution/01-kite-web-and-mobile-tour/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../04-kite-and-execution/03-market-depth-and-charts-in-kite/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../04-kite-and-execution/01-kite-web-and-mobile-tour/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../04-kite-and-execution/03-market-depth-and-charts-in-kite/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

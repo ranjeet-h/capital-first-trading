@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Timeframes and how the same price looks different - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/03-chart-reading/02-timeframes/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T3.2
+title: Timeframes and how the same price looks different
+page_type: Concept
+prerequisites: [T3.1]
+labs: [Lab 3]
+estimated_minutes: 15
+-->
+<h1 id="timeframes-and-how-the-same-price-looks-different"><a class="header" href="#timeframes-and-how-the-same-price-looks-different">Timeframes and how the same price looks different</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p><strong>Hypothetical.</strong> A trader opens a stock on the one-minute chart. The last few minutes look weak, so the trader decides the stock is falling. Then the trader opens the daily chart and sees a stock that rose over the past weeks. Both charts show the same stock at the same moment. Which one is right? The honest answer is that both are right. They show different periods. The mistake is to pick the chart that agrees with the mood of the moment.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>A <strong>timeframe</strong> is the length of one candle. A one-minute candle covers one minute of trading. A daily candle covers one whole day. The same trades give different candles at different timeframes.</p>
+<p>When you join shorter candles into one longer candle, use four rules:</p>
+<ul>
+<li><strong>Open</strong> comes from the first short candle.</li>
+<li><strong>Close</strong> comes from the last short candle.</li>
+<li><strong>High</strong> is the largest high of all the short candles.</li>
+<li><strong>Low</strong> is the smallest low of all the short candles.</li>
+</ul>
+<p>Shorter timeframes show more small moves. Many of those moves are noise. Noise means small price movement that does not change your plan. Longer timeframes show fewer moves. They give fewer, slower decisions.</p>
+<p>For an end-of-day plan, the daily candle is the decision frame. Shorter timeframes help with later questions about timing. Those questions are covered in <em>Multiple timeframe analysis</em>.</p>
+<p>Three points to keep in mind:</p>
+<ul>
+<li>A stop set from a five-minute wick is not a daily decision. Write the timeframe in your plan.</li>
+<li>Switching timeframes until a pattern appears is hindsight shopping. Choose the timeframe before you look at the chart.</li>
+<li>A longer timeframe is not safer by default. It shows fewer moves, but a gap can still carry the price past your stop.</li>
+</ul>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: candle-builder | mode: timeframe-switch | timeframes: 1-minute, 5-minute, daily | caption: The same tick data redraws at each timeframe setting -->
+<p>Switch between the one-minute, five-minute and daily settings. The same tick data redraws at each setting. Compare the candle you see at each setting with the table in the worked example. Notice that the close and the open can change the label.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Five one-minute candles, each shown as open, high, low and close:</p>
+<div class="table-wrapper"><table><thead><tr><th>Minute</th><th>Open</th><th>High</th><th>Low</th><th>Close</th></tr></thead><tbody>
+<tr><td>1</td><td>500</td><td>501</td><td>499</td><td>500.5</td></tr>
+<tr><td>2</td><td>500.5</td><td>503</td><td>500</td><td>502</td></tr>
+<tr><td>3</td><td>502</td><td>504</td><td>501</td><td>501</td></tr>
+<tr><td>4</td><td>501</td><td>502</td><td>498</td><td>499</td></tr>
+<tr><td>5</td><td>499</td><td>500</td><td>497</td><td>498.5</td></tr>
+</tbody></table>
+</div>
+<p>Join them into one five-minute candle:</p>
+<div class="table-wrapper"><table><thead><tr><th>Part</th><th>Rule</th><th>Result</th></tr></thead><tbody>
+<tr><td>Open</td><td>open of minute 1</td><td>500</td></tr>
+<tr><td>High</td><td>largest high (minute 3)</td><td>504</td></tr>
+<tr><td>Low</td><td>smallest low (minute 5)</td><td>497</td></tr>
+<tr><td>Close</td><td>close of minute 5</td><td>498.5</td></tr>
+</tbody></table>
+</div>
+<p>Range = 504 minus 497 = Rs 7. Check: the range is also the highest high minus the lowest low, so no number is missed.</p>
+<p>The close of 498.5 is below the open of 500. The five-minute candle is <strong>bearish</strong>. Minute 2 closed up, but the five-minute candle still compares the first open with the last close.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Join the five one-minute candles in the worked example into one five-minute candle. Give the open, high, low and close. Give the range. Say whether the candle is bullish or bearish.</p>
+<p>Hints:</p>
+<ol>
+<li>The open is the open of the first minute.</li>
+<li>List all five highs. Take the largest.</li>
+<li>List all five lows. Take the smallest.</li>
+<li>The close is the close of the last minute.</li>
+</ol>
+<p><strong>Answer:</strong> Open 500. High 504. Low 497. Close 498.5. Range Rs 7 (504 minus 497). The candle is <strong>bearish</strong>, because 498.5 is below 500.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> <strong>Hypothetical.</strong> Four one-hour candles follow. Each shows open, high, low and close: (200, 204, 199, 203), (203, 206, 202, 205), (205, 205, 200, 201) and (201, 203, 199, 202). Join them into one four-hour candle. State whether it is bullish or bearish.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>Open: the first candle’s open, 200.</li>
+<li>High: the largest of 204, 206, 205 and 203, which is 206.</li>
+<li>Low: the smallest of 199, 202, 200 and 199, which is 199.</li>
+<li>Close: the last candle’s close, 202.</li>
+<li>Range: 206 minus 199 = Rs 7.</li>
+<li>The candle is <strong>bullish</strong>, because 202 is above 200.</li>
+</ul>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the aggregation rules, the range, and why a choice of timeframe must come before you look.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong>. Write the result in your journal. If the journal is not ready, use paper.</p>
+<ol>
+<li>Pick one stock.</li>
+<li>On the same day, look at its five-minute, one-hour and daily charts.</li>
+<li>For each chart, write whether the candles look up, down or sideways.</li>
+<li>Write which timeframe your plan uses, and write it before you look at the charts.</li>
+<li>Note any day where the labels disagree. Keep that note for later use in your study.</li>
+</ol>
+<p>If you do this in the Kite demo, write the mode as <code>kite_demo</code>. The Kite demo is for looking at screens only. Write any practice trade as <code>paper</code>.</p>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>A longer timeframe does not remove risk. A daily candle can still open far below your stop after a gap (<em>Gaps and what they mean for stops</em>).</li>
+<li>Changing the timeframe until a pattern appears gives false confidence. Choose the timeframe first.</li>
+<li>A stop placed on a five-minute wick can be hit by normal noise. A daily plan would ignore that noise. The planned loss changes with the timeframe, so recheck the numbers.</li>
+<li>Intervals and how far back the history goes depend on the platform. Check the current limits before you plan. Zerodha says Kite keeps 5-second, 10-second, 15-second, 30-second and 45-second data for only the last two trading days. For equities, 1-minute and longer candles go back to 2015. Daily NSE data goes back to 2003 and BSE data to 2008. (As of 11 Nov 2026, Zerodha support page on historical data on Kite charts. Limits change, so check Kite.)</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>A timeframe is the length of one candle.</li>
+<li>Joining candles: open from the first, close from the last, high is the largest high, low is the smallest low.</li>
+<li>The same stock can look bullish on one timeframe and bearish on another.</li>
+<li>Choose the timeframe and write it in your plan before you look.</li>
+<li>A stop must match the timeframe of the plan it belongs to.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Kite chart help pages</li>
+<li>Zerodha Varsity, timeframe module (reference only)</li>
+<li>Zerodha support, intraday data pages</li>
+</ul>
+<p>Facts checked on 11 Nov 2026:</p>
+<ul>
+<li>How far back each Kite candle length goes comes from Zerodha’s support page on historical data on Kite charts. The list of every interval Kite offers is not copied here, so check the chart menu in Kite.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../03-chart-reading/01-candlesticks/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../03-chart-reading/03-support-and-resistance/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../03-chart-reading/01-candlesticks/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../03-chart-reading/03-support-and-resistance/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

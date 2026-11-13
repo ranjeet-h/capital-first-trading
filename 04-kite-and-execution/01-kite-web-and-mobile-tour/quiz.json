@@ -1,0 +1,92 @@
+[
+  {
+    "id": "T4.1-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. In the order window you enter a buy of 10 shares at Rs 250. You do not submit it. What is the order value before charges?",
+    "answer": 2500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Order value = 10 multiplied by Rs 250 = Rs 2,500, before charges. Check: Rs 2,500 divided by 10 shares = Rs 250 a share.",
+    "concepts": ["order-value", "order-window"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.1-q2",
+    "type": "mcq",
+    "prompt": "Which statement about the Kite demo is correct?",
+    "options": [
+      {"id": "a", "text": "The demo is a paper-trading account that records your ideas."},
+      {"id": "b", "text": "The demo uses dummy data and is for practice with the screens only."},
+      {"id": "c", "text": "The demo shows real market prices for paper trading."},
+      {"id": "d", "text": "The demo is the same thing as a paper-trading account."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The demo is not a record of your ideas. Paper trading means keeping that record. Zerodha says it does not offer demo accounts for paper trading. The demo is a version of Kite that uses dummy data.",
+      "c": "Demo data is dummy data. Its prices are not real market prices.",
+      "d": "The demo and a paper-trading account are different things. Do not treat the demo as a record of your decisions."
+    },
+    "concepts": ["demo", "paper-trading"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.1-q3",
+    "type": "mcq",
+    "prompt": "What is Console used for?",
+    "options": [
+      {"id": "a", "text": "Placing orders"},
+      {"id": "b", "text": "Reports and statements, as a back-office area"},
+      {"id": "c", "text": "Setting price alerts only"},
+      {"id": "d", "text": "Showing live chart prices"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Orders are entered in the order window. Console is not the place to enter an order. The Kite demo is view-only, so it cannot place orders either.",
+      "c": "Alerts are a separate feature. Console is a back-office area for records and reports.",
+      "d": "Live chart prices are shown on the chart, not in Console."
+    },
+    "concepts": ["console"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.1-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. A student says: 'The demo shows real prices, so I can practise paper trading with it and trust my results.' What is the best reply?",
+    "options": [
+      {"id": "a", "text": "Correct. Demo prices are real market prices."},
+      {"id": "b", "text": "The demo uses dummy data and is for practice with the screens. Results from it do not show trading skill."},
+      {"id": "c", "text": "Correct, as long as you use the demo every day."},
+      {"id": "d", "text": "Wrong. Paper trading needs a live account."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The demo uses dummy data. Its prices are not real market prices.",
+      "c": "Using the demo often does not change dummy data. Familiarity with the screens is not evidence of trading skill.",
+      "d": "Paper trading means practising with pretend money and keeping a record. It does not need a live account."
+    },
+    "concepts": ["demo", "paper-trading"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.1-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake. A student writes: 'I will post a cropped screenshot. The name and client ID are cut out, so the balance is safe to show.' Which part is the mistake?",
+    "options": [
+      {"id": "a", "text": "I will post a cropped screenshot."},
+      {"id": "b", "text": "The name and client ID are cut out."},
+      {"id": "c", "text": "So the balance is safe to show."}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "Cropping before you share is the correct step.",
+      "b": "Removing the name and client ID is correct. The rule also covers balances, so the balance must be removed too."
+    },
+    "concepts": ["screenshot-privacy", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

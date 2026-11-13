@@ -1,0 +1,110 @@
+[
+  {
+    "id": "T4.9-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital Rs 50,000, risk 1%, entry Rs 250, stop Rs 240. The cash cap is 200 shares and the concentration cap (25% of capital) is 50 shares. How many shares does the plan allow?",
+    "answer": 50,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "Risk budget = 1% of Rs 50,000 = Rs 500. Risk per share = 250 - 240 = Rs 10. Raw shares = floor(500 / 10) = 50. Cash cap = 200. Concentration cap = floor(12,500 / 250) = 50. Shares = the minimum of 50, 200 and 50 = 50.",
+    "concepts": ["position-sizing", "binding-constraint"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.9-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Using the same plan (50 shares, entry Rs 250, stop Rs 240), what is the planned loss at the stop, in rupees?",
+    "answer": 500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Planned loss = 50 x (250 - 240) = 50 x 10 = Rs 500. Check: this equals the risk budget of Rs 500, because the position was sized to that budget.",
+    "concepts": ["planned-loss"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.9-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital Rs 50,000, risk 1%, entry Rs 300, stop Rs 290. Using 25% of capital as the concentration limit, how many shares does the concentration cap allow?",
+    "answer": 41,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "25% of Rs 50,000 = Rs 12,500. Concentration cap = floor(12,500 / 300) = floor(41.67) = 41. Check: 41 x 300 = 12,300, which is within Rs 12,500. 42 x 300 = 12,600, which is above it.",
+    "concepts": ["concentration-cap", "position-sizing"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.9-q4",
+    "type": "numeric",
+    "prompt": "Hypothetical. Same case: capital Rs 50,000, risk 1%, entry Rs 300, stop Rs 290. After all three limits, the plan allows 41 shares. What is the planned loss at the stop, in rupees?",
+    "answer": 410,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Shares = minimum of 50 (raw), 166 (cash cap) and 41 (concentration cap) = 41. Risk per share = 300 - 290 = Rs 10. Planned loss = 41 x 10 = Rs 410. Check: 40 x 10 = 400, plus 10 = 410.",
+    "concepts": ["planned-loss", "binding-constraint"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.9-q5",
+    "type": "scenario",
+    "prompt": "Hypothetical. In a real order, the fill is Rs 1 away from the entry price in your plan. What should you do?",
+    "options": [
+      {"id": "a", "text": "Ignore it, because it is only a paper trade."},
+      {"id": "b", "text": "Record the difference and the reason, then compare it with the plan."},
+      {"id": "c", "text": "Change the plan to match the fill, so the record looks right."},
+      {"id": "d", "text": "Count the result as proof that the plan works."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A difference between plan and fill is useful information. Ignoring it hides what the fill showed.",
+      "c": "Changing the plan after the fact removes the record of what you planned. Keep the plan as written.",
+      "d": "A paper result does not prove that a plan works. A paper trade uses numbers you wrote yourself."
+    },
+    "concepts": ["plan-vs-execution", "journal"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.9-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Which statement is wrong?",
+    "options": [
+      {"id": "a", "text": "A paper trade uses numbers you wrote yourself."},
+      {"id": "b", "text": "A paper result is evidence that the plan works for live money."},
+      {"id": "c", "text": "A paper trade should be labelled paper in the journal."},
+      {"id": "d", "text": "A fill can differ from the plan."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This is correct. A paper trade uses numbers you wrote yourself, so its profit or loss is not real money.",
+      "c": "This is correct. The label keeps paper records apart from live ones.",
+      "d": "This is correct. A fill can differ from the plan, and the difference should be recorded."
+    },
+    "concepts": ["demo-evidence", "labelling"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.9-q7",
+    "type": "mcq",
+    "prompt": "Which label is correct for a record of a trade you only wrote on paper?",
+    "options": [
+      {"id": "a", "text": "live trade"},
+      {"id": "b", "text": "paper"},
+      {"id": "c", "text": "proven strategy"},
+      {"id": "d", "text": "no label needed"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A paper trade is never a live trade. Labelling it live mixes paper and real results.",
+      "c": "One paper trade does not prove a strategy. The label should say paper.",
+      "d": "Every paper record needs a label, so that it is never mistaken for a live record."
+    },
+    "concepts": ["labelling", "journal"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ट्रेडिंग काय आहे आणि काय नाही - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../00-start-here/01-what-trading-is-and-is-not/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../00-start-here/01-what-trading-is-and-is-not/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T0.1
+title: ट्रेडिंग काय आहे आणि काय नाही
+page_type: Concept
+prerequisites: []
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="टरेडिंग-काय-आहे-आणि-काय-नाही"><a class="header" href="#टरेडिंग-काय-आहे-आणि-काय-नाही">ट्रेडिंग काय आहे आणि काय नाही</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>आशा एक काल्पनिक नवशिका आहे. तिने बाजारातून पैसे कमावण्याबद्दल काही लेख वाचले आहेत. तिची योजना एका कल्पनेवर Rs 3,000 चा धोका घेण्याची आहे. ती नियोजित करते की यश आल्यास Rs 500 कमावायचे. तिने काहीही खरेदी किंवा विक्री करण्यापूर्वी एक संख्या शोधायची आहे. ती संख्या म्हणजे फक्त तोटा टाळण्यासाठी तिला किती वेळा बरोबर ठरावे लागेल. बहुतेक नवशिके हे कधीही काढत नाहीत. हे पुस्तक हा प्रश्न पहिल्यांदा विचारते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>शेअर म्हणजे कंपनीचा एक तुकडा.</strong> शेअर खरेदी केल्याने भाव लिहिलेले तिकीट मिळत नाही. तो व्यवसायाचा एक भाग खरेदी करतो. एखाद्या कंपनीचे एकूण 1,000 शेअर्स असतील आणि तुमच्याकडे 10 असतील, तर तुमचा त्यात 1 टक्के वाटा आहे. तिच्या नफ्याचा आणि मालमत्तेचा तोच वाटा तुम्हाला मिळतो.</p>
+<p>लोक अनेकदा तीन शब्दांची गल्लत करतात. प्रत्येक शब्द सांगतो की तुम्ही पैसा कसा ठेवता आणि किती काळ ठेवण्याची योजना आखता. त्यातील कोणताही शब्द मालमत्तेचा प्रकार सांगत नाही.</p>
+<ul>
+<li><strong>गुंतवणूक</strong> म्हणजे एखादा व्यवसाय वर्षानुवर्षे ठेवणे. तुमचा परतावा त्याच्या नफ्यातून, लाभांशातून आणि त्याच्या मूल्याच्या वाढीतून येतो. अनेक कंपन्यांमध्ये पैसे पसरवून, ज्याला विविधीकरण म्हणतात, आणि थांबून तुम्ही जोखीम सांभाळता.</li>
+<li><strong>ट्रेडिंग</strong> म्हणजे दिवसांपासून महिन्यांपर्यंत खरेदी आणि विक्री करणे, आणि लिहिलेल्या नियमांचे पालन करणे. तुमचा परतावा खरेदी आणि विक्री यामधील भावाच्या हालचालीतून येतो. प्रत्येक व्यापारावरील मर्यादांनी तुम्ही जोखीम सांभाळता.</li>
+<li><strong>सट्टा</strong> म्हणजे भावाच्या छोट्या हालचालीवर पैज लावणे. त्याचा निकाल खूप अनिश्चित असतो. लोक अनेकदा यासाठी पैसे उसने घेतात.</li>
+</ul>
+<p>लेबल तुम्ही एखादी गोष्ट कशी ठेवता यावर ठरते, ती काय आहे यावर नाही. तोच शेअर एका व्यक्तीसाठी गुंतवणूक आणि दुसऱ्यासाठी सट्टा असू शकतो.</p>
+<p><strong>भाव हा एक भेटण्याचा बिंदू आहे, अंतिम निर्णय नाही.</strong> भाव म्हणजे एका क्षणी एक खरेदीदार आणि एक विक्रेता जिथे सहमत झाले ते. तो कंपनीचे मूल्य किती आहे याची हमी नाही. पुढे भाव कुठे जाईल याचे वचनही नाही.</p>
+<p><strong>ट्रेडिंग खर्चापूर्वी एका व्यक्तीकडून दुसऱ्याकडे पैसे हलवते.</strong> एका व्यापारात एकाचा नफा दुसऱ्याचा तोटा असतो. एक्सचेंज मध्ये बसून खरेदी आणि विक्री ऑर्डर जुळवते. ब्रोकरेज, कर आणि इतर शुल्कानंतर सक्रिय ट्रेडर सहसा मागे सुरुवात करतो. पुढील प्रकरणे यावर संख्या देतील. बाजार नियामक SEBI ने इक्विटी डेरिव्हेटिव्ह्ज (F&amp;O) विभागातील वैयक्तिक ट्रेडरचा अभ्यास केला. त्याचा पेपर “Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26)” असे म्हणतात आणि तो ऑगस्ट 2026 मध्ये प्रकाशित झाला. त्यात आढळले की त्या विभागातील 87.7% वैयक्तिक ट्रेडरनी FY26 मध्ये पैसे गमावले (एप्रिल 2025 ते मार्च 2026 हे वर्ष). FY25 मध्ये हा वाटा 90.9% होता. हा अभ्यास फक्त F&amp;O ट्रेडिंगवर आहे, सामान्य शेअर खरेदीवर नाही. त्यात अव्वल 15 ब्रोकर पाहिले, जे सुमारे 90% वैयक्तिक ट्रेडर व्यापतात. त्यात असेही आढळले की वैयक्तिक ट्रेडरने दरवर्षी सुमारे Rs 25,000 कोटी ट्रेडिंग खर्च दिला. हे पुस्तक त्या अभ्यासाकडे पुढे अधिक तपशीलाने पाहते. (11 नोव्हेंबर 2026 पर्यंत, SEBI आर्थिक आणि धोरण विश्लेषण विभाग. अहवाल अद्ययावत होतात, म्हणून नवीनतम अहवालासाठी SEBI संकेतस्थळ तपासा.)</p>
+<p><strong>तीन प्रकारचे निकाल कधीही मिसळू नका.</strong></p>
+<ul>
+<li>सैद्धांतिक: काहीही घडण्यापूर्वी लिहून काढलेली गणना.</li>
+<li>बॅकटेस्ट केलेले: जुन्या भाव डेटावर चालवलेली चाचणी.</li>
+<li>लाइव्ह: खरे पैसे, खऱ्या अर्थाने पूर्ण होणाऱ्या ऑर्डर आणि खऱ्या भावना.</li>
+</ul>
+<p>नफा मिळवणारा बॅकटेस्ट तरीही लाइव्ह नोंद नाही. हे पुस्तक प्रत्येक संख्येवर तिन्ही लेबल ठेवते.</p>
+<p><strong>हे पुस्तक उत्पन्नाचे वचन देत नाही.</strong> ट्रेडिंगबद्दल स्पष्ट विचार करायला शिकणे आणि त्यातून पैसे कमावणे या दोन गोष्टी एकाच नाहीत.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<div class="table-wrapper"><table><thead><tr><th></th><th>गुंतवणूक</th><th>ट्रेडिंग</th><th>सट्टा</th></tr></thead><tbody>
+<tr><td>कालावधी</td><td>वर्षे</td><td>दिवस ते महिने</td><td>अगदी कमी; पैज जवळच्या हालचालीवर</td></tr>
+<tr><td>परतावा कुठून येतो</td><td>कमाई, लाभांश, मूल्यातील वाढ</td><td>खरेदी आणि विक्रीमधील भावाच्या हालचाली</td><td>छोटी, अनिश्चित भाव हालचाल</td></tr>
+<tr><td>नेहमीचे जोखीम नियंत्रण</td><td>पैसे आणि वेळ पसरवणे</td><td>प्रत्येक व्यापारावर लिहिलेल्या मर्यादा</td><td>अनेकदा कोणतीही मर्यादा सांगितलेली नसते; उसने घेतलेले पैसे वापरू शकते</td></tr>
+<tr><td>नेहमीची चूक</td><td>भाव पडल्यावर विकणे; सर्वांना उत्साहित करणारी गोष्ट पाहून त्यामागे जाणे</td><td>खूप वेळा ट्रेड करणे; एका व्यापारात खूप जास्त पैसे घालणे; लिहिलेले नियम नसणे</td><td>जास्त खरेदीसाठी पैसे उसने घेणे; अंदाजाला योजना समजणे</td></tr>
+</tbody></table>
+</div>
+<p>सट्ट्याचा स्तंभ खाली वाचा. त्याच्या जोखीम नियंत्रणाच्या ओळीत म्हटले आहे की कोणतीही मर्यादा सांगितलेली नाही. ती पद्धत नाही. “नेहमीची चूक” ही ओळ तुमच्याकडे आधीच असलेल्या सवयीशी तुलना करा.</p>
+<!-- component: trading-reality | capital: 50000 | caption: 100 नवशिक्यांचे काल्पनिक वर्ष. बहुतेकजण जिथून सुरुवात केली त्यापेक्षा मागे राहतात. शिकत असताना कमी गमावणे हे या पुस्तकाचे ध्येय आहे. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक योजना:</strong> प्रत्येक व्यापारात Rs 500 कमावण्यासाठी Rs 3,000 चा धोका. W हा विजय दर मानू. हा जिंकणाऱ्या व्यापारांचा वाटा असतो, अपूर्णांकात लिहिलेला. तोटा टाळणे म्हणजे सरासरी नफा सरासरी तोट्याइतका असणे.</p>
+<p>प्रत्येक व्यापारातील सरासरी नफा = W x 500
+प्रत्येक व्यापारातील सरासरी तोटा = (1 - W) x 3,000</p>
+<p>दोन्ही समान ठेवा. मग W साठी सोडवा:</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>काम</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1</td><td>सरासरी नफा सरासरी तोट्याइतका ठेवा</td><td>500 x W = 3,000 x (1 - W)</td></tr>
+<tr><td>2</td><td>उजवी बाजू गुणाकाराने उघडा</td><td>500W = 3,000 - 3,000W</td></tr>
+<tr><td>3</td><td>दोन्ही बाजूंना 3,000W मिळवा</td><td>3,500W = 3,000</td></tr>
+<tr><td>4</td><td>दोन्ही बाजूंना 3,500 ने भागा</td><td>W = 3,000 / 3,500 = 6/7</td></tr>
+<tr><td>5</td><td>त्याचे टक्केवारीत रूपांतर करा</td><td>6/7 = 0.857…, म्हणजे 85.7%</td></tr>
+</tbody></table>
+</div>
+<p><strong>तपासणी:</strong> W = 6/7 असताना सरासरी नफा 6/7 x 500 = Rs 428.57 आहे. सरासरी तोटा 1/7 x 3,000 = Rs 428.57 आहे. दोन्ही समान आहेत.</p>
+<p>म्हणून ट्रेडरला तोटा टाळण्यासाठी प्रत्येक 100 पैकी सुमारे 86 व्यापार जिंकावे लागतात. हे कोणत्याही खर्चापूर्वी आहे. खर्च आवश्यक विजय दर अधिक वर ढकलतात. <em>व्यापारावरील खर्च</em> पाहा.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम:</strong> चार काल्पनिक योजना गुंतवणूक, ट्रेडिंग किंवा सट्टा यात वर्गीकृत करा.</p>
+<p>(a) एखादी कंपनी 5 वर्षे ठेवा आणि लाभांश पुन्हा गुंतवा.
+(b) निकाल जाहीर होण्यापूर्वी खरेदी करा आणि दुसऱ्या दिवशी विका.
+(c) पोझिशन दुप्पट करण्यासाठी पैसे उसने घ्या.
+(d) दर महिन्याला ठराविक खरेदी करा आणि ती 10 वर्षे ठेवा.</p>
+<p><strong>संकेत:</strong></p>
+<ol>
+<li>“किती काळ?” विचारा.</li>
+<li>“परतावा कुठून येतो?” विचारा.</li>
+<li>“तोटा कशाने मर्यादित होतो?” विचारा.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>(a) गुंतवणूक. कालावधी 5 वर्षे आहे. परतावा लाभांशातून आणि व्यवसायाच्या मूल्यातील वाढीतून येतो.</li>
+<li>(b) सट्टा. ही अनिश्चित निकालावर एक दिवसाची पैज आहे. कोणतीही लिहिलेली मर्यादा सांगितलेली नाही. योजनेत प्रत्येक व्यापाराचे लिहिलेले नियम असते तर ती ट्रेडिंग झाली असती. वर्णनात कोणतेही नियम दिलेले नाहीत.</li>
+<li>(c) सट्टा. योजना उसने घेतलेले पैसे वापरते. तोट्यावर कोणतीही सांगितलेली मर्यादा नाही.</li>
+<li>(d) गुंतवणूक. कालावधी 10 वर्षे आहे. योजना नियमित खरेदी करते आणि कालांतराने व्यवसायातून परतावा कमावते.</li>
+</ul>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम:</strong> बाजारात पैशांबद्दल तुम्ही काय करण्याची योजना आखता याबद्दल एक परिच्छेद लिहा. तो गुंतवणूक, ट्रेडिंग किंवा सट्टा असे वर्गीकृत करा. कोणतेही संकेत वापरू नका.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>एकच बरोबर उत्तर नाही. तुमच्या परिच्छेदात तीन गोष्टी तपासा. कालावधी पाहा. परताव्याचा स्रोत पाहा. तोटा कशाने मर्यादित होतो ते पाहा. यातील एखादी गोष्ट नसल्यास तुमचे लेबल अजून पुराव्याने पाठबळलेले नाही. तुमच्याकडे अजून योजना नसल्यास “अजून योजना नाही” हे प्रामाणिक उत्तर आहे.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>सहा प्रश्न तीन व्याख्या, तोटा टाळण्याची बेरीज आणि उत्पन्नाबद्दलचे दावे तपासतात.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>पद्धत:</strong> शिकण्याची टीप. ती जर्नलमध्ये किंवा कागदावर लिहा. ट्रेड नाहीत.</p>
+<ol>
+<li>तुम्हाला ट्रेडिंग का शिकायचे आहे याबद्दल एक परिच्छेद लिहा.</li>
+<li>तुम्ही केव्हा थांबाल ते लिहा. उदाहरण: “ट्रेडिंगसाठी मी सुरुवातीला बाजूला ठेवलेल्या पैशांपेक्षा मोठा तोटा झाला तर”.</li>
+<li>कोणतेही लाइव्ह खाते किंवा खरा व्यापार नोंदवू नका.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>तोटा टाळण्याच्या विजय दरात खर्च वगळले आहेत. खर्चासह खरी संख्या अधिक असते. <em>व्यापारावरील खर्च</em> पाहा.</li>
+<li>गणना म्हणजे निकाल नाही. बॅकटेस्ट म्हणजे लाइव्ह नोंद नाही.</li>
+<li>व्याख्या माहीत असणे म्हणजे तुम्ही शिकत आहात हे दिसते. त्यातून नफा होतो असे दिसत नाही.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>गुंतवणूक, ट्रेडिंग आणि सट्टा कालावधी, परताव्याचा स्रोत आणि तोटा नियंत्रण यात वेगळे आहेत. तुम्ही काय खरेदी करता यात ते वेगळे नाहीत.</li>
+<li>भाव म्हणजे खरेदीदार आणि विक्रेता एका क्षणी जिथे सहमत झाले ते. ती हमी नाही.</li>
+<li>Rs 500 कमावण्यासाठी Rs 3,000 चा धोका घेतल्यास तोटा टाळण्याचा विजय दर 6/7, किंवा 85.7% आहे. हे खर्चापूर्वी आहे.</li>
+<li>सैद्धांतिक, बॅकटेस्ट केलेले आणि लाइव्ह निकाल वेगळे ठेवा. नेहमी.</li>
+<li>हे पुस्तक उत्पन्नाचे वचन देत नाही.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p><strong>स्रोत (फक्त नावे):</strong></p>
+<ul>
+<li>SEBI गुंतवणूकदार शिक्षण पाने.</li>
+<li>SEBI अभ्यास, “Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26)”, ऑगस्ट 2026.</li>
+<li>Zerodha Varsity, फक्त संदर्भ म्हणून (फक्त लिंक, मजकूर कॉपी केलेला नाही).</li>
+</ul>
+<p><strong>11 नोव्हेंबर 2026 रोजी तपासलेली तथ्ये:</strong></p>
+<ul>
+<li>SEBI अभ्यासाचे शीर्षक, तारीख आणि आकडे (FY26 मध्ये 87.7% व्यक्तींनी पैसे गमावले, FY25 मध्ये 90.9%, आणि दरवर्षी सुमारे Rs 25,000 कोटी खर्च) SEBI च्या स्वतःच्या पेपरमधून आहेत. आकडे फक्त इक्विटी डेरिव्हेटिव्ह्जसाठी आहेत. नवीन अहवालांसाठी SEBI संकेतस्थळ तपासा.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T0.1&amp;body=Page%3A%2000-start-here%2F01-what-trading-is-and-is-not%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../00-start-here/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../00-start-here/02-capital-first-rules/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../00-start-here/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../00-start-here/02-capital-first-rules/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

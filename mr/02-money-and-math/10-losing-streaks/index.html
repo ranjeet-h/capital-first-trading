@@ -1,0 +1,359 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>सलग तोटे आणि सततचे तोटे - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../02-money-and-math/10-losing-streaks/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../02-money-and-math/10-losing-streaks/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T2.10
+title: सलग तोटे आणि सततचे तोटे
+page_type: Math/Calculator
+prerequisites: [T2.9, T2.8]
+labs: [Lab 3]
+estimated_minutes: 30
+-->
+<h1 id="सलग-तोटे-आणि-सततचे-तोटे"><a class="header" href="#सलग-तोटे-आणि-सततचे-तोटे">सलग तोटे आणि सततचे तोटे</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>समजा तुमच्या योजनेने पहिल्या दहा व्यापारांपैकी सहा जिंकले. मग पाच व्यापार सलग तोट्यात गेले. तुमच्या मनाला वाटते की आता विजय येणारच. हे प्रकरण सततच्या तोट्यांमागचे गणित दाखवते. तसेच “आता येणारच” हा विचार चुकीचा का आहे, तेही दाखवते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>सुरुवात एका व्यापारापासून करा. समजा p म्हणजे विजय दर. एका व्यापारात तोटा होण्याची शक्यता 1 - p आहे.</p>
+<p><strong>सलग तोट्यांची शक्यता.</strong> जर प्रत्येक व्यापार इतरांपासून स्वतंत्र असेल, तर एका दिलेल्या व्यापारापासून सुरू होणारे k सलग तोटे येण्याची शक्यता (1 - p) चा k वा घात असते. स्वतंत्र म्हणजे प्रत्येक व्यापाराचा निकाल इतरांवर अवलंबून नसतो. शब्दांत: तोट्याच्या शक्यतेला स्वतःने k वेळा गुणा.</p>
+<p><strong>स्वतंत्र असणे हे गृहीतक आहे.</strong> सूत्र गृहीत धरते की प्रत्येक व्यापाराचा निकाल मागच्या व्यापारावर अवलंबून नाही. खऱ्या बाजारात तोटे एकत्र येऊ शकतात. Lab 4 मध्ये व्यापारांच्या ऑर्डरच्या क्रमाची Monte Carlo चाचणी केली जाते. म्हणजे त्याच व्यापारांचे अनेक यादृच्छिक फेरबदल (shuffles) करून पाहणे. <em>Monte Carlo of trade order</em> हे स्पष्ट करते. खऱ्या योजनेसाठी सूत्र अंतिम मानू नका.</p>
+<p><strong>मोठ्या संख्येच्या व्यापारांत सततचे तोटे दिसतात.</strong> एका विशिष्ट व्यापारापासून सुरू होणाऱ्या सततच्या तोट्याची शक्यता कमी असते. पण लांब व्यापार-मालिकेत त्या लांबीचा तोटा कुठेतरी दिसण्याची शक्यता खूप जास्त असते, कारण सुरुवातीचे बिंदू अनेक असतात.</p>
+<p><strong>स्थिर जोखीम आणि कमी होत जाणारे तोटे.</strong> प्रत्येक व्यापारात चालू भांडवलाची स्थिर टक्केवारी जोखीम घेतली, तर भांडवल कमी होताना प्रत्येक तोटा रुपयांत लहान होत जातो. k तोट्यांनंतर भांडवल = भांडवल x (1 - जोखीम)^k. त्यामुळे एकूण गमावलेली रक्कम = सुरुवातीचे भांडवल वजा हा आकडा.</p>
+<p><strong>सततच्या तोट्यांचे नियम तुम्ही ठरवता.</strong> उदाहरणे: N तोट्यांनंतर थांबा, N तोट्यांनंतर जोखीम कमी करा, किंवा योजनेचा आढावा घ्या. सततचे तोटे सुरू होण्यापूर्वी नियम लिहा. सर्वात महत्त्वाचा नियम हा: तोट्यानंतर आकार कधीही वाढवू नका. तोट्यानंतर लवकर रिकव्हरी करण्यासाठी दुप्पट करणे ही martingale पद्धतीची चाल आहे. ही पद्धत प्रत्येक तोट्यानंतर रक्कम दुप्पट करते. ती धोकादायक आहे आणि <em>Why scalping, option buying and martingale are dangerous</em> मध्ये समजावली आहे.</p>
+<p>सततचे तोटे चुकीचे का वाटतात. कमी विजय दर किंवा लांब तोट्यांची मालिका गणितात सामान्य असते. पण ती एखाद्या तुटलेल्या योजनेसारखी वाटते. फक्त एक सततचा तोटा हा योजना काम करणे थांबवली याचा पुरावा नसतो.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: streak-sim | winRate: 60 | risk: 1 | startCapital: 50000 | caption: 60% विजय दरासह सिम्युलेट केलेले व्यापार. मजकुरातील सारांशात सर्वात लांब सततचे तोटे वाचा. -->
+<!-- component: streak-sim | winRate: 40 | risk: 1 | startCapital: 50000 | caption: 40% विजय दरासह सिम्युलेट केलेले व्यापार. सततच्या तोट्यांची लांबी 60% च्या ग्रिडशी तुलना करा. -->
+<p>प्रत्येक ग्रिडमधील सर्वात लांब सततचे तोटे पाहा. 3 किंवा त्याहून अधिक सततचे तोटे किती वेळा येतात ते पाहा. मग 40% ग्रिड आणि 60% ग्रिड यांची तुलना करा. जोखीम सेटिंग बदलून प्रत्येक सततच्या तोट्यात रुपयांतील तोटा कसा बदलतो ते पाहा. सततच्या तोट्यांची लांबी मात्र तीच राहते.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><em>काल्पनिक.</em></p>
+<p><strong>विजय दर 60%. तोट्याची शक्यता = 0.4.</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>सलग तोटे</th><th>गणना</th><th>शक्यता, एका दिलेल्या व्यापारापासून सुरू</th></tr></thead><tbody>
+<tr><td>3</td><td>0.4 x 0.4 x 0.4</td><td>0.064, सुमारे 6.4%</td></tr>
+<tr><td>5</td><td>0.4 x 0.4 x 0.4 x 0.4 x 0.4</td><td>0.01024, सुमारे 1.0%</td></tr>
+</tbody></table>
+</div>
+<p><strong>विजय दर 40%. तोट्याची शक्यता = 0.6. 5 तोट्यांसाठी: 0.6^5 = 0.07776, सुमारे 7.8%.</strong></p>
+<p><strong>Rs 50,000 भांडवलावर 1% जोखमीत गमावलेले भांडवल.</strong> प्रत्येक तोटा त्या वेळच्या भांडवलाच्या 1% असतो.</p>
+<div class="table-wrapper"><table><thead><tr><th>सलग तोटे</th><th>शिल्लक भांडवल (अंदाजे)</th><th>गमावलेले (अंदाजे)</th></tr></thead><tbody>
+<tr><td>5</td><td>50,000 x 0.99^5 = Rs 47,550</td><td>Rs 2,450</td></tr>
+<tr><td>10</td><td>50,000 x 0.99^10 = Rs 45,219</td><td>Rs 4,781</td></tr>
+<tr><td>15</td><td>50,000 x 0.99^15 = Rs 43,003</td><td>Rs 6,997</td></tr>
+</tbody></table>
+</div>
+<p><strong>Rs 50,000 भांडवलावर 2% जोखमीत गमावलेले भांडवल.</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>सलग तोटे</th><th>शिल्लक भांडवल (अंदाजे)</th><th>गमावलेले (अंदाजे)</th></tr></thead><tbody>
+<tr><td>5</td><td>50,000 x 0.98^5 = Rs 45,196</td><td>Rs 4,804</td></tr>
+<tr><td>10</td><td>50,000 x 0.98^10 = Rs 40,854</td><td>Rs 9,146</td></tr>
+<tr><td>15</td><td>50,000 x 0.98^15 = Rs 36,928</td><td>Rs 13,072</td></tr>
+</tbody></table>
+</div>
+<p><strong>Rs 10,000 वर 1% जोखीम.</strong> पाच तोट्यांमुळे सुमारे Rs 490 खर्च होतो. दहा तोट्यांमुळे सुमारे Rs 956. पंधरा तोट्यांमुळे सुमारे Rs 1,399.</p>
+<p>हाताने तपासणी, पहिल्या ओळीसाठी: Rs 50,000 वर 1% तोटा म्हणजे Rs 500. पुढचा तोटा Rs 49,500 च्या 1% म्हणजे Rs 495. नंतरचा प्रत्येक तोटा थोडा लहान असतो. त्यामुळे पाच तोटे मिळून Rs 2,500 पेक्षा थोडे कमी होतात.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<!-- component: streak-sim | winRate: 45 | risk: 1 | startCapital: 50000 | caption: मार्गदर्शित सरावासाठी डेमो: 45% विजय दरात तीन सलग तोट्यांची शक्यता शोधा. -->
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> विजय दर 45% (काल्पनिक). एका दिलेल्या व्यापारापासून सुरू होऊन सलग तीन तोटे येण्याची शक्यता किती?</p>
+<p>संकेत:</p>
+<ol>
+<li>तोट्याची शक्यता = 1 - 0.45.</li>
+<li>तोट्याच्या शक्यतेचा 3 वा घात काढा.</li>
+<li>निकालाचे टक्केवारीत रूपांतर करा.</li>
+</ol>
+<p><strong>उत्तर:</strong> तोट्याची शक्यता = 0.55. 0.55^3 = 0.166375, सुमारे 16.6%.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> भांडवल Rs 50,000 आहे. जोखीम प्रति व्यापार 1% आहे, आणि प्रत्येक तोटा त्या वेळच्या भांडवलाच्या 1% आहे. तुम्ही सलग सात तोटे घेता. किती भांडवल शिल्लक राहते आणि एकूण किती गमावले जाते?</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>भांडवल शिल्लक = 50,000 x 0.99^7 = 50,000 x 0.932065 = सुमारे Rs 46,603. एकूण गमावलेले = 50,000 - 46,603 = सुमारे Rs 3,397.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>या क्विझमध्ये सहा प्रश्न आहेत. ते सलग तोट्यांची शक्यता, “आता येणारच” हा गैरसमज, सततच्या तोट्याचा नियम, सततचे तोटे वाचणे आणि गमावलेल्या रकमेची गणना यावर आधारित आहेत.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>पद्धत:</strong> शिकण्याची नोंद. ती Lab 3 मध्ये नोंदवा (जर्नल अॅप तयार होईपर्यंत कागदावर).</p>
+<ol>
+<li>सुरुवातीपूर्वी तुमचा सततच्या तोट्यांचा नियम एका ओळीत लिहा. उदाहरणार्थ: N तोट्यांनंतर थांबा. सततचे तोटे सुरू असताना तो बदलू नका.</li>
+<li>Rs 50,000 भांडवलावर 1% जोखमीत सलग सात तोट्यांचा काल्पनिक प्रसंग नोंदवा. emotion_before फील्ड वापरा. प्रत्येक पायरीवरील भांडवलासाठी capital_at_plan फील्ड वापरा.</li>
+<li>सात तोट्यांनंतर प्रत्येक पायरीवरील भांडवल काढा. सातव्या तोट्यानंतर ते सुमारे Rs 46,603 असावे.</li>
+<li>सततचे तोटे संपल्यावर नियम काय सांगतो, ते एका वाक्यात लिहा. तुम्ही त्याचे पालन केले असते का, ते नोंदवा.</li>
+</ol>
+<h2 id="मरयादा-आणि-सामानय-चुका"><a class="header" href="#मरयादा-आणि-सामानय-चुका">मर्यादा आणि सामान्य चुका</a></h2>
+<ul>
+<li>सूत्र गृहीत धरते की प्रत्येक व्यापार स्वतंत्र आहे. खऱ्या योजनेत निकाल एकत्र येत असतील, तर सततच्या तोट्याची शक्यता सूत्र देते त्यापेक्षा जास्त असते.</li>
+<li>आकडे शक्यता दर्शवतात, तथ्य नव्हे. पुढचा सततचा तोटा कधी सुरू होईल, हे ते सांगत नाहीत.</li>
+<li>एक सततचा तोटा हा योजना तुटल्याचा पुरावा नसतो. तसेच तो योजना अजून काम करते याचा पुरावाही नसतो.</li>
+<li>Lab 4 मधील Monte Carlo चाचणी नंतर येते. <em>Monte Carlo of trade order</em> स्वतंत्रतेच्या चाचणीबद्दल सांगते.</li>
+<li>तोट्यांनंतर आकार दुप्पट करणे ही या पुस्तकात रिकव्हरीची पद्धत नाही. ती भांडवल-प्रथम नियम मोडते.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>k सलग तोट्यांची शक्यता, एका दिलेल्या व्यापारापासून = (1 - p)^k, जर व्यापार स्वतंत्र असतील.</li>
+<li>सततचे तोटे काही वारंवारतेने अपेक्षित असतात. त्याचा अर्थ पुढच्या व्यापारात विजय जास्त शक्य आहे असा होत नाही.</li>
+<li>ठरावीक टक्केवारी जोखमीत, भांडवल कमी होताना प्रत्येक तोटा रुपयांत लहान होतो.</li>
+<li>सततचे तोटे सुरू होण्यापूर्वी तुमचा नियम लिहा.</li>
+<li>तोट्यांनंतर आकार कधीही वाढवू नका.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p>स्रोत (फक्त नावे):</p>
+<ul>
+<li>प्रकरण <em>Monte Carlo of trade order</em> (स्वतंत्रता आणि पुनर्नमुना चाचण्या)</li>
+<li>प्रकरण <em>Living through a losing streak (streak-sim with feelings log)</em> (सततच्या तोट्यांतून जाताना)</li>
+</ul>
+<p>या प्रकरणातील सर्व आकडे सरावासाठी काल्पनिक आहेत.</p>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T2.10&amp;body=Page%3A%2002-money-and-math%2F10-losing-streaks%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/09-drawdown-and-recovery/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/11-risk-limits/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/09-drawdown-and-recovery/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/11-risk-limits/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

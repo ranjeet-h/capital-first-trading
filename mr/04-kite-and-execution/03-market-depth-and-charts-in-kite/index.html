@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Kite वर बाजार डेप्थ आणि चार्ट - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../04-kite-and-execution/03-market-depth-and-charts-in-kite/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../04-kite-and-execution/03-market-depth-and-charts-in-kite/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T4.3
+title: Kite वर बाजार डेप्थ आणि चार्ट
+page_type: Kite walkthrough
+prerequisites: [T1.5, T3.2, T4.2]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="kite-वर-बाजार-डेपथ-आणि-चारट"><a class="header" href="#kite-वर-बाजार-डेपथ-आणि-चारट">Kite वर बाजार डेप्थ आणि चार्ट</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>स्क्रीनवर एका शेअरचा भाव Rs 250 दिसतो. तुम्ही बाजार भावाने 100 शेअर्स घ्यायचे ठरवता. तुम्ही दिलेला भाव Rs 250 पेक्षा थोडा जास्त असू शकतो. कारण असतो ऑर्डर बुक. म्हणजे या क्षणी खरेदी आणि विक्रीसाठी थांबलेल्या भावांची यादी. हे प्रकरण दाखवते की Kite ती यादी कशी दाखवते. दैनिक चार्ट कसा सेट करायचा, हेही दाखवते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<ul>
+<li>
+<p><strong>बाजार डेप्थ</strong> म्हणजे ऑर्डर बुकमध्ये थांबलेल्या खरेदी आणि विक्री भावांचे दृश्य. Kite वर डीफॉल्टने सर्वोत्तम 5 बिड आणि सर्वोत्तम 5 ऑफर दिसतात. NSE च्या शेअर्ससाठी “View 20 depth” हा पर्याय प्रत्येक बाजूला 20 पर्यंत भाव दाखवतो.</p>
+</li>
+<li>
+<p><strong>बेस्ट बिड</strong> म्हणजे खरेदीदार देण्यास तयार असलेला सर्वाधिक भाव.</p>
+</li>
+<li>
+<p><strong>बेस्ट आस्क</strong> म्हणजे विक्रेता घेण्यास तयार असलेला सर्वात कमी भाव. Kite याला <strong>ऑफर</strong> म्हणते, आस्क नव्हे.</p>
+</li>
+<li>
+<p><strong>स्प्रेड</strong> म्हणजे बेस्ट बिड आणि बेस्ट आस्क यांच्यातील अंतर.</p>
+<p>स्प्रेड = बेस्ट आस्क वजा बेस्ट बिड.</p>
+</li>
+<li>
+<p><strong>मिड-प्राइस</strong> म्हणजे बेस्ट बिड आणि बेस्ट आस्क यांच्या मधला बिंदू.</p>
+<p>मिड-प्राइस = (बेस्ट बिड अधिक बेस्ट आस्क) भागिले 2.</p>
+</li>
+<li>
+<p><strong>स्प्रेड ओलांडणे</strong> म्हणजे आस्क भावाने खरेदी करणे किंवा बिड भावाने विक्री करणे. मार्केट ऑर्डर आस्क घेते. त्यामुळे मिड-प्राइसपेक्षा प्रति शेअर सुमारे अर्धा स्प्रेड जास्त पैसे द्याल.</p>
+</li>
+<li>
+<p>Kite च्या डेप्थ व्यूमध्ये प्रत्येक भावासमोर तिथे थांबलेले प्रमाण (Qty) आणि त्या भावावरील ऑर्डरची संख्या (Orders) दिसते. या व्यूमध्ये दिवसाचे Open, High, Low आणि Previous Close, व्हॉल्यूम, Avg. Price (आज आतापर्यंतचा सरासरी व्यवहार भाव), शेवटचा व्यवहार झालेले प्रमाण आणि वेळ, सर्किट मर्यादा (आज शेअर ज्या सर्वात कमी आणि सर्वाधिक भावात व्यवहार करू शकतो ते भाव) दिसतात. F&amp;O साठी ओपन इंटरेस्ट (OI) देखील दिसतो.</p>
+</li>
+<li>
+<p>वेबवर डेप्थ व्यू उघडण्यासाठी Marketwatch वर जा, एका ओळीवर माउस न्या आणि Market depth वर क्लिक करा. ओळ निवडून D दाबूनही तो उघडता येतो. डेप्थ व्यूमधील एका भावावर क्लिक केल्यास त्या भावाची ऑर्डर भरली जाते.</p>
+</li>
+<li>
+<p>डेप्थ हा एका क्षणाचा फोटो आहे. ऑर्डर कधीही लावता किंवा रद्द करता येतात, त्यामुळे डेप्थ लवकर बदलते. काही ऑर्डर लपलेल्या असतात. <strong>आइसबर्ग</strong> ऑर्डरमध्ये पूर्ण आकाराचा फक्त एक छोटा भाग दिसतो. बाकीचा भाग तुम्हाला दिसत नाही. Kite वर आइसबर्ग हा तुम्ही स्वतः लावू शकणारा ऑर्डर प्रकारही आहे. Kite तो लहान टप्प्यांमध्ये पाठवते. प्रत्येक टप्पा आधीचा पूर्ण झाल्यावरच एक्सचेंजकडे जातो.</p>
+</li>
+<li>
+<p><strong>चार्ट सेटअप</strong> म्हणजे टाइमफ्रेम, चार्टचा प्रकार आणि तुम्ही जोडलेले निर्देशक. टाइमफ्रेमबद्दल तुम्ही <em>टाइमफ्रेम आणि एकच भाव वेगळा कसा दिसतो</em> या प्रकरणात शिकलात. Kite चे दोन चार्ट इंजिन आहेत: ChartIQ (डीफॉल्ट) आणि TradingView. डीफॉल्ट बदलण्यासाठी kite.zerodha.com/profile येथे तुमच्या प्रोफाइल सेटिंग्ज उघडा. निर्देशकांना Kite मध्ये studies म्हणतात. Kite मध्ये 100 हून अधिक studies आणि 30 हून अधिक ड्रॉइंग टूल्स आहेत. चार्टवरूनही ऑर्डर देता येतात (Trade from charts (चार्टवरून व्यापार)).</p>
+</li>
+<li>
+<p>डेप्थ दिवसाच्या शेवटी घ्यायच्या निर्णयांसाठी कमी उपयोगी आहे. ती एका क्षणाचे दृश्य दाखवते. नियोजित प्रमाण विकता येईल का, हे लिक्विडिटी ठरवते. <em>ऑर्डर मॅचिंग, स्प्रेड आणि लिक्विडिटी</em> हे प्रकरण पहा.</p>
+</li>
+</ul>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: order-book-sim | caption: ऑर्डर येतात तसे बिड आणि आस्क बदलतात; स्प्रेड आणि डेप्थ दाखवले आहेत. डेटा बनवलेला आहे. -->
+<!-- component: kite-flow | flow: read-market-depth,chart-basics | platform: web | caption: बाजार डेप्थ उघडण्याचे आणि चार्ट सेट करण्याचे क्लिक मार्ग. Zerodha च्या डेमोमध्ये किंवा फक्त डमी डेटावर सराव करा. स्क्रीन आणि बटणांची नावे बदलू शकतात, म्हणून Kite ची मदत पेजेस तपासा. -->
+<p>ऑर्डर येतात तसे बिड आणि आस्क कसे बदलतात ते पाहा. प्रत्येक क्षणी स्प्रेड शोधा. मग Kite च्या चित्रातील डेप्थ पॅनल पाहा. चार्टवर कोणत्या सेटिंग्ज बदलता येतात ते लक्षात ठेवा. तुमच्या स्वतःच्या Kite मधील मांडणी तपासा.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> बेस्ट बिड Rs 249.90. बेस्ट आस्क Rs 250.10.</p>
+<div class="table-wrapper"><table><thead><tr><th>वस्तू</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>स्प्रेड</td><td>250.10 वजा 249.90</td><td>Rs 0.20</td></tr>
+<tr><td>मिड-प्राइस</td><td>(249.90 अधिक 250.10) भागिले 2</td><td>Rs 250.00</td></tr>
+<tr><td>100 शेअर्ससाठी मिडपेक्षा जास्त खर्च</td><td>(250.10 वजा 250.00) x 100</td><td>Rs 10</td></tr>
+</tbody></table>
+</div>
+<p>मिडपेक्षा जास्त खर्च दुसऱ्या मार्गाने तपासा: 100 शेअर्स Rs 250.10 ने Rs 25,010 पडतात. 100 शेअर्स Rs 250.00 ने Rs 25,000 पडतात. फरक Rs 10 आहे.</p>
+<p>ही खरेदी मिड-प्राइसपेक्षा Rs 10 जास्त खर्चिक आहे. हे ब्रोकरकडून घेतलेले शुल्क नाही. ते बिड आणि आस्कमधील अंतरातून येते.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> हा एक काल्पनिक डेप्थ तक्ता आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>बाजू</th><th>भाव</th><th>प्रमाण</th></tr></thead><tbody>
+<tr><td>बिड</td><td>Rs 180.40</td><td>400</td></tr>
+<tr><td>बिड</td><td>Rs 180.35</td><td>600</td></tr>
+<tr><td>आस्क</td><td>Rs 180.60</td><td>300</td></tr>
+<tr><td>आस्क</td><td>Rs 180.65</td><td>500</td></tr>
+</tbody></table>
+</div>
+<p>बेस्ट बिड, बेस्ट आस्क, स्प्रेड आणि मिड-प्राइस शोधा. मग 200 शेअर्सच्या मार्केट खरेदीसाठी मिडपेक्षा जास्त खर्च काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>बेस्ट बिड म्हणजे खरेदी बाजूचा सर्वाधिक भाव.</li>
+<li>मार्केट खरेदी सर्वात कमी आस्क आधी घेते. आस्कचे प्रमाण 300 हे 200 शेअर्ससाठी पुरेसे आहे.</li>
+<li>मिडपेक्षा जास्त खर्च = (आस्क वजा मिड) x प्रमाण.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>बेस्ट बिड: Rs 180.40.</li>
+<li>बेस्ट आस्क: Rs 180.60.</li>
+<li>स्प्रेड: 180.60 वजा 180.40 = Rs 0.20.</li>
+<li>मिड-प्राइस: (180.40 अधिक 180.60) भागिले 2 = Rs 180.50.</li>
+<li>200 शेअर्ससाठी मिडपेक्षा जास्त खर्च: (180.60 वजा 180.50) x 200 = Rs 20.</li>
+<li>तपासणी: 200 शेअर्स Rs 180.60 ने Rs 36,120 पडतात. 200 शेअर्स Rs 180.50 ने Rs 36,100 पडतात. फरक Rs 20 आहे.</li>
+</ul>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> एका शेअरचा भाव Rs 400 आहे आणि त्याचा स्प्रेड Rs 0.50 आहे. तुम्ही आस्क भावाने 200 शेअर्स खरेदी करता. स्प्रेड भावाच्या टक्क्यात किती आहे ते काढा. मग मिडपेक्षा जास्त खर्च काढा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>भावाच्या टक्क्यात स्प्रेड: 0.50 भागिले 400 = 0.00125. टक्क्यात काढण्यासाठी 100 ने गुणा. म्हणजे 0.125 टक्के.</li>
+<li>तपासणी: 400 x 0.125 टक्के = 400 x 0.00125 = Rs 0.50.</li>
+<li>मिडपेक्षा जास्त खर्च: अर्धा स्प्रेड प्रति शेअर Rs 0.25 आहे. 200 ने गुणा, म्हणजे Rs 50.</li>
+<li>तपासणी: 200 शेअर्स Rs 400.25 ने Rs 80,050 पडतात. 200 शेअर्स Rs 400.00 ने Rs 80,000 पडतात. फरक Rs 50 आहे.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>या क्विझमध्ये स्प्रेड, मिड-प्राइस, मिडपेक्षा जास्त खर्च, आणि डेप्थ काय दाखवू शकते आणि काय दाखवू शकत नाही, हे तपासले जाते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> Kite डेमो. फक्त स्क्रीन पाहा. कोणताही ऑर्डर देऊ नका.</p>
+<ol>
+<li>एक शेअर निवडा. एका ट्रेडिंग दिवसात तीन वेळी त्याचा स्प्रेड नोंदवा.</li>
+<li>तुम्ही वापरलेल्या चार्ट सेटिंग्ज लिहा, जसे की टाइमफ्रेम आणि कोणतेही निर्देशक.</li>
+<li>बाजार सत्रांच्या वेळा आधी NSE च्या स्वतःच्या वेबसाइटवर तपासा.</li>
+<li>ते तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल, तर कागदावर लिहा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>डेप्थ दिशाभूल करू शकते. मोठे बिड काही सेकंदात नाहीसे होऊ शकते.</li>
+<li>डेप्थ दिवसाच्या शेवटच्या निर्णयांचा आधार नाही. ती फक्त एका क्षणाचे दृश्य दाखवते.</li>
+<li>नियोजित प्रमाण विकता येईल का, हे लिक्विडिटी ठरवते. कमी स्प्रेड असला, तरी लिक्विडिटीच्या तपासणीची जागा तो घेत नाही.</li>
+<li>स्प्रेड हे ब्रोकरचे शुल्क नाही. तो बेस्ट बिड आणि बेस्ट आस्कमधील अंतर आहे. तो ओलांडताना त्याचा खर्च द्यावा लागतो.</li>
+<li>रंग बदलू शकतात. Zerodha च्या जुन्या मार्गदर्शकात बिडसाठी निळा आणि ऑफरसाठी लाल रंग वापरला होता. तुमच्या अॅपमधील रंग तपासा.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>स्प्रेड = बेस्ट आस्क वजा बेस्ट बिड.</li>
+<li>मिड-प्राइस = (बेस्ट बिड अधिक बेस्ट आस्क) भागिले 2.</li>
+<li>आस्कने खरेदी केल्यास मिड-प्राइसपेक्षा प्रति शेअर सुमारे अर्धा स्प्रेड जास्त खर्च होतो.</li>
+<li>डेप्थ बदलते. लपलेल्या ऑर्डर दिसत नाहीत.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p>स्रोत:</p>
+<ul>
+<li>NSE India, बाजार डेप्थ (market depth) आणि ऑर्डर बुक पेजेस</li>
+<li>Zerodha चे सपोर्ट पेजेस: बाजार डेप्थ, चार्ट आणि आइसबर्ग ऑर्डर. तिथले सध्याचे पर्याय तपासा.</li>
+</ul>
+<p>तपासायची तथ्ये:</p>
+<ul>
+<li>Kite किती डेप्थ लेव्हल दाखवते, आणि “View 20 depth” पर्याय. Kite च्या बाजार डेप्थ मदत पेजवर तपासा.</li>
+<li>चार्टचे कालावधी आणि Kite किती इतिहास ठेवते. Kite च्या चार्ट मदत पेजवर तपासा.</li>
+<li>उपलब्ध चार्ट सेटिंग्ज. तुमच्या स्वतःच्या Kite मधील चार्ट पाहून तपासा.</li>
+<li>कागदी कामासाठी बाजार सत्रांच्या वेळा. NSE च्या वेबसाइटवर तपासा.</li>
+</ul>
+<!-- facts-needed: depth levels displayed in Kite; chart intervals and history depth; available chart settings; NSE session times -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T4.3&amp;body=Page%3A%2004-kite-and-execution%2F03-market-depth-and-charts-in-kite%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../04-kite-and-execution/02-watchlists-search-and-alerts/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../04-kite-and-execution/04-order-types/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../04-kite-and-execution/02-watchlists-search-and-alerts/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../04-kite-and-execution/04-order-types/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

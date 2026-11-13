@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Kite web and mobile tour - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/04-kite-and-execution/01-kite-web-and-mobile-tour/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T4.1
+title: Kite web and mobile tour
+page_type: Kite walkthrough
+prerequisites: [T0.2, T1.3]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="kite-web-and-mobile-tour"><a class="header" href="#kite-web-and-mobile-tour">Kite web and mobile tour</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A trading app shows many buttons, numbers and labels. Some of them look urgent. One wrong tap in an order window can send a real order. This chapter gives you a map of the main areas. You will learn what the demo is and what it is not. You will not place any order in this chapter.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Kite is the trading platform from Zerodha. It runs on the web and on mobile. This book does not depend on either version. The labels in your own app may differ from the labels here. Check your app.</p>
+<p>The main areas are these. Look for each name in your own app.</p>
+<ul>
+<li><strong>User ID menu.</strong> Click your user ID at the top right. Look for My profile, Settings and the tour.</li>
+<li><strong>Marketwatch.</strong> Your lists of symbols you follow. On the web you can keep up to 7 lists, numbered 1 to 7.</li>
+<li><strong>Chart.</strong> A picture of past prices for one symbol.</li>
+<li><strong>Order window.</strong> Opens when you click Buy or Sell on a row. Reading it does not place an order. On the phone app you place an order by swiping a button, not by tapping it.</li>
+<li><strong>Top bar (web).</strong> Look for Dashboard, Orders, Holdings, Positions, Funds, Bids and Apps. These pages show your orders, the shares you hold, your open trades and your money. The exact order of the names may differ in your app.</li>
+<li><strong>Terminal Mode (web).</strong> A layout you can arrange yourself, with your own set of windows.</li>
+</ul>
+<p><strong>Console</strong> is a separate back-office website, at console.zerodha.com. A back office keeps records, reports and statements. Console holds items such as contract notes and ledgers. It is not where you look at live prices or enter trades.</p>
+<p><strong>The demo</strong> is a practice version of Kite that uses dummy data. Dummy data is made-up data, not real market data. Paper trading means practising with pretend money and keeping a written record of your decisions. Zerodha says it does not offer demo accounts for paper trading. It does offer a demo version of Kite with dummy data. You can reach it at kite-demo.zerodha.com/dashboard, or with the Try demo button on zerodha.com/products/kite.</p>
+<p>The demo is view-only. You can open every screen and click through them to read them. You cannot place orders, create GTTs or set alerts in it. Real orders need a funded account. This book never asks you to place a real order.</p>
+<p>If you share a screenshot of a real account, crop out names, client IDs and balances first. Private details are easy to miss.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: kite-flow | flow: find-your-way-around | platform: web | caption: A click path through the main parts of Kite. Switch between web and phone. Practice in the Zerodha demo or with dummy data only. Screens and button names can change, so check Kite's help pages. -->
+<p>Use the toggle to switch between the web and mobile versions. Find the same areas in both. Note any area that has a different label. The screens are recreations. Check your own Kite for the current layout.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical illustration.</strong> Suppose you enter a buy order for 10 shares at Rs 250 in the order window. You do not submit it. The order value is what you read on the screen before charges.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>1. Shares</td><td>given</td><td>10</td></tr>
+<tr><td>2. Price</td><td>given</td><td>Rs 250</td></tr>
+<tr><td>3. Order value before charges</td><td>10 multiplied by Rs 250</td><td>Rs 2,500</td></tr>
+<tr><td>4. Charges</td><td>shown separately</td><td>Look for them near the margin figures in the order window</td></tr>
+</tbody></table>
+</div>
+<p>Check step 3: Rs 2,500 divided by 10 shares is Rs 250 a share.</p>
+<p>Charges are not in the Rs 2,500. The demo is view-only, so you cannot open an order window there. In a live account, the order window shows the margin figures and the charges near them. Read them before you submit anything.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> In your own Kite demo, find each named area from the tour. Write down the label your app uses for each one.</p>
+<p>Hints:</p>
+<ol>
+<li>Use the app’s own search if you cannot find an area.</li>
+<li>If a label differs from this chapter, write both labels and check Zerodha support.</li>
+<li>Do not place any order in this exercise.</li>
+</ol>
+<p><strong>Answer:</strong> There is no single correct list of labels. Your answer is complete when each area has a label from your own app. Any difference from this chapter is written next to the label. No order is placed.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Draw a one-page map of your Kite layout. Use labels from your own app. Do not use screenshots of your real account.</p>
+<details><summary>Check your answer</summary>
+<p>A good map has these parts:</p>
+<ul>
+<li>The user ID menu, Marketwatch, the chart, the order window, and the orders, holdings, positions and funds pages.</li>
+<li>Console, shown as a separate website.</li>
+<li>A note that the demo uses dummy data.</li>
+<li>No names, client IDs or balances.</li>
+</ul>
+<p>If your map shows a name, a client ID or a balance, remove it before you keep or share the map.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the demo, the role of Console, the order value and the rule on sharing screenshots.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: kite demo. You will read screens only. Do not place any order.</p>
+<ol>
+<li>Complete the tour checklist: user ID menu, Marketwatch, chart, order window, orders, holdings, positions, funds and Console.</li>
+<li>Write the label your app uses for each area.</li>
+<li>Write a short reflection on what you did not understand.</li>
+<li>Write it in your journal. If the journal is not ready, use paper.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>The tour places no orders. It also does not teach you how to choose a trade.</li>
+<li>Being familiar with the demo screens is not evidence of trading skill.</li>
+<li>Labels, screens and rules change. Check your own app before you rely on this map.</li>
+<li>Never share a screenshot before you remove names, client IDs and balances.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Kite is the trading platform on web and mobile. This book does not depend on either.</li>
+<li>The demo uses dummy data. It is for practice with the screens only.</li>
+<li>Console is a back-office area for reports and records. It is not for live prices.</li>
+<li>The order value shown in the order window is before charges.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p>Sources:</p>
+<ul>
+<li>Zerodha support: “Does Zerodha offer demo accounts for paper trading?” (support.zerodha.com)</li>
+<li>The Kite user manual (kite.trade/docs/kite)</li>
+<li>Zerodha support pages on Console</li>
+</ul>
+<p>Facts to check:</p>
+<ul>
+<li>Current Kite and mobile labels. Check your own app.</li>
+<li>What Console holds. Check Zerodha’s Console help.</li>
+</ul>
+<!-- facts-needed: demo availability and whether it allows orders; current Kite and mobile labels; Console contents; location of the cost preview -->
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../04-kite-and-execution/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../04-kite-and-execution/02-watchlists-search-and-alerts/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../04-kite-and-execution/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../04-kite-and-execution/02-watchlists-search-and-alerts/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

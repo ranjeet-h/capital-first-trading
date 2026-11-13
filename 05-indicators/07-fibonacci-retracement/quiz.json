@@ -1,0 +1,96 @@
+[
+  {
+    "id": "T5.7-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Swing low Rs 200, swing high Rs 260. What is the 38.2 percent retracement level?",
+    "answer": 237.08,
+    "tolerance": 0.01,
+    "unit": "Rs",
+    "solution": "Range = 260 - 200 = 60. Ratio x range = 0.382 x 60 = 22.92. Level = 260 - 22.92 = Rs 237.08.",
+    "concepts": ["fibonacci-retracement"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.7-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Swing low Rs 300, swing high Rs 340. What is the 50 percent retracement level?",
+    "answer": 320,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Range = 340 - 300 = 40. Ratio x range = 0.50 x 40 = 20. Level = 340 - 20 = Rs 320. The 50 percent level is a convention, so the level is half the range.",
+    "concepts": ["fibonacci-retracement", "convention-vs-ratio"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.7-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. Swing low Rs 200, swing high Rs 240. What is the 23.6 percent retracement level?",
+    "answer": 230.56,
+    "tolerance": 0.01,
+    "unit": "Rs",
+    "solution": "Range = 240 - 200 = 40. Ratio x range = 0.236 x 40 = 9.44. Level = 240 - 9.44 = Rs 230.56.",
+    "concepts": ["fibonacci-retracement"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.7-q4",
+    "type": "mcq",
+    "prompt": "Hypothetical. Swing low Rs 200, swing high Rs 260. Why would a different swing low give different levels?",
+    "options": [
+      {"id": "a", "text": "Because the range is measured from the swing high to the swing low, so a different low gives a different range"},
+      {"id": "b", "text": "Because the ratios change with the calendar date"},
+      {"id": "c", "text": "Because Fibonacci levels are fixed prices that are the same on every chart"},
+      {"id": "d", "text": "Because volume changes the ratio"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "The ratios are fixed numbers. The date does not change them. The range does change when the swing low changes.",
+      "c": "The levels are not fixed prices. They come from the swing points you choose, so they change when those points change.",
+      "d": "Volume is not part of the formula. The levels come only from the swing high, the swing low and the ratio."
+    },
+    "concepts": ["fibonacci-retracement", "swing-selection"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.7-q5",
+    "type": "scenario",
+    "prompt": "Hypothetical. A reader draws levels after a fall. The price pauses at the 61.8 percent level. The reader writes, 'This level guarantees a bounce, so I will buy here.' Which response fits the book's rules?",
+    "options": [
+      {"id": "a", "text": "Agree. A Fibonacci level is a reliable sign that the price will bounce"},
+      {"id": "b", "text": "Treat the level as a zone to watch. Test any rule before using it, and set the stop and size before any order"},
+      {"id": "c", "text": "Ignore all levels, because no level can ever be useful"},
+      {"id": "d", "text": "Use the 61.8 percent price as an exact stop, because the ratio is a known number"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "No level guarantees a bounce. The evidence that these levels predict price is contested, and a pause at a level does not prove a turn.",
+      "c": "Levels can describe where price has reacted before. The mistake is treating them as certain, not treating them as useless.",
+      "d": "The ratio is a convention applied to a chosen range. The exact stop depends on the swing points, and a stop still needs a tested rule and a stated loss."
+    },
+    "concepts": ["fibonacci-retracement", "limits-of-indicators"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.7-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Read this statement. Which part is wrong? 'The 50 percent level is a true Fibonacci ratio. It is half of the swing range, so the level is useful.'",
+    "options": [
+      {"id": "a", "text": "The 50 percent level is a true Fibonacci ratio"},
+      {"id": "b", "text": "It is half of the swing range"},
+      {"id": "c", "text": "There is no mistake in the statement"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "This part is correct. Half of the range is 50 percent of the range. The mistake is in the first part of the statement.",
+      "c": "There is a mistake. The 50 percent level is included as a convention. It is not a Fibonacci ratio in the strict sense."
+    },
+    "concepts": ["convention-vs-ratio", "fibonacci-retracement"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

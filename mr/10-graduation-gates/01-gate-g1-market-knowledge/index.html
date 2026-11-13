@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>गेट G1 बाजार ज्ञान - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../10-graduation-gates/01-gate-g1-market-knowledge/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../10-graduation-gates/01-gate-g1-market-knowledge/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T10.1
+title: गेट G1 बाजार ज्ञान
+page_type: Assessment
+prerequisites: [T0.1, T0.2, T0.3, T1.1, T1.2, T1.3, T1.4, T1.5, T1.6, T1.7, T1.8, T1.9, T1.10]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="गेट-g1-बाजार-जञान"><a class="header" href="#गेट-g1-बाजार-जञान">गेट G1 बाजार ज्ञान</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>कल्पना करा की तुम्ही शेअरच्या भावांवरील प्रकरण वाचले आणि तुम्हाला खात्री वाटते की ते तुम्हाला समजले. मग एक प्रश्न विचारला जातो की जेव्हा खरेदीदार विक्रेत्यांपेक्षा जास्त असतात, तेव्हा शेअरचे काय होते. तुम्ही गोंधळता. एखादी गोष्ट समजल्यासारखे वाटणे आणि ती स्वतः सांगता येणे, यात फरक आहे. हा गेट तपासतो की भारतीय बाजाराच्या मूलभूत गोष्टी तुम्ही स्वतःच्या शब्दांत समजावू शकता का.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>हा गेट या पुस्तकाच्या सुरुवातीच्या प्रकरणांमधील बाजाराच्या मूलभूत गोष्टींवर आधारित आहे. त्यात शेअर म्हणजे काय, ऑर्डर कशा जुळतात, भाव कसे हलतात, निर्देशांक म्हणजे काय आणि कॉर्पोरेट ॲक्शन काय करते, हे येते.</p>
+<blockquote>
+<p>हे शैक्षणिक क्षमता मोजते. हा नफा मिळेल याचा पुरावा नाही. येथे खऱ्या पैशांनी ट्रेडिंग करण्याची गरज नाही आणि अशी शिफारसही नाही.</p>
+</blockquote>
+<p>या गेटचे दोन भाग आहेत. दोन्ही पार करावे लागतात.</p>
+<ol>
+<li><strong>क्विझ.</strong> तुमच्यासाठी निवडलेल्या प्रश्नांपैकी किमान 85% बरोबर हवे.</li>
+<li><strong>स्वतःच्या शब्दांतील प्रश्न.</strong> प्रत्येक प्रश्नात मुद्द्यांची छोटी यादी असते. तुम्ही समाविष्ट केलेला प्रत्येक मुद्दा टिक करा आणि एक छोटे उत्तर लिहा. प्रत्येक मुद्दा टिक झालेला असेल आणि तुमचा मजकूर रिकामा नसेल, तरच प्रश्न पूर्ण होतो.</li>
+</ol>
+<p>क्विझसाठी काही नियम:</p>
+<ul>
+<li>प्रत्येक संचात किमान 30 प्रश्न असतात. त्यामुळे 85% चे माप योग्य ठरते.</li>
+<li>आधीच्या प्रकरणांमधील प्रत्येक विषय प्रत्येक संचात किमान एकदा येतो.</li>
+<li>उत्तरांच्या पर्यायांचा क्रम प्रत्येक वेळी बदलतो.</li>
+<li>स्पष्टीकरणे वाचल्यावर लगेच पुन्हा देऊ शकता. प्रत्येक पुनर्प्रयत्नात नवीन प्रश्न येतात. वेळेचे बंधन नाही आणि दंडही नाही.</li>
+<li>प्रत्येक चुकीच्या उत्तरासाठी स्पष्टीकरण दाखवले जाते. पुन्हा देण्यापूर्वी ते वाचा.</li>
+</ul>
+<p>तुमचे प्रयत्न, तुमची लिखित उत्तरे आणि तुमचा निकाल तुमच्या उपकरणावरच राहतात. कोणताही निकाल कुठेही पाठवला जात नाही.</p>
+<p>हा गेट पार केल्याने बाजाराच्या मूलभूत गोष्टी तुम्ही समजावू शकता, हे दिसते. तो तुम्ही व्यापार करावे असे सांगत नाही. या पुस्तकातील काहीही तो अनलॉक करत नाही.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>या गेटमध्ये शोधण्यासारखे चित्र नाही. दोन भाग असे काम करतात:</p>
+<div class="table-wrapper"><table><thead><tr><th>भाग</th><th>तुम्ही काय करता</th><th>काय पूर्ण झाले असे मानले जाते</th></tr></thead><tbody>
+<tr><td>क्विझ</td><td>तुमच्यासाठी निवडलेले प्रश्न सोडवा</td><td>किमान 85% बरोबर</td></tr>
+<tr><td>स्वतःच्या शब्दांतील प्रश्न</td><td>उत्तर लिहा आणि प्रत्येक मुद्दा टिक करा</td><td>प्रत्येक मुद्दा टिक झालेला आणि मजकूर रिकामा नसलेला</td></tr>
+</tbody></table>
+</div>
+<p>फक्त क्विझ पार करणे पुरेसे नाही. दोन्ही भाग पूर्ण झाले पाहिजेत.</p>
+<!-- component: gate-check | gate: G1 | caption: प्रत्येक निकष फक्त तुमच्या बाबतीत खरा असेल तेव्हाच टिक करा. गेट तुम्ही काय शिकलात ते तपासतो. ती व्यापार करण्याची परवानगी नाही. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> 30 प्रश्नांचा एक संच. पास होण्यासाठी 85% गुण लागतात.</p>
+<p>30 चे 85% म्हणजे 25.5. अर्धा प्रश्न बरोबर येत नाही, म्हणून 26 बरोबर उत्तरे लागतील.</p>
+<div class="table-wrapper"><table><thead><tr><th>बरोबर उत्तरे</th><th>गुण</th><th>क्विझ भागाचा निकाल</th></tr></thead><tbody>
+<tr><td>25</td><td>25 / 30 = 83.3%</td><td>पास नाही. 85% पेक्षा कमी.</td></tr>
+<tr><td>26</td><td>26 / 30 = 86.7%</td><td>पास. 85% पेक्षा जास्त.</td></tr>
+</tbody></table>
+</div>
+<p>26 बरोबर असले तरी स्वतःच्या शब्दांतील प्रश्नही पूर्ण असणे आवश्यक आहे.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> काल्पनिक संच 40 प्रश्नांचा आहे. 85% गाठण्यासाठी किती बरोबर उत्तरे लागतील?</p>
+<p>संकेत:</p>
+<ol>
+<li>40 ला 0.85 ने गुणा.</li>
+<li>निकाल दशांश असेल तर पुढची पूर्ण संख्या घ्या.</li>
+<li>तपासा. निकाल 40 ने भागा. तो किमान 85% आहे का?</li>
+</ol>
+<p><strong>उत्तर:</strong> 40 x 0.85 = 34. ही पूर्ण संख्या आहे, म्हणून 34 बरोबर उत्तरे लागतील. तपासणी: 34 / 40 = 85.0%. 33 / 40 = 82.5% आहे, जे पुरेसे नाही.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> तुमच्या शब्दांत, 40 शब्दांपेक्षा जास्त न वापरता, ऑर्डर बुक काय दाखवते ते लिहा. मग बिड आणि आस्क यांच्यातील फरकाला काय म्हणतात ते सांगा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>चांगल्या उत्तरात हे मुद्दे असावेत:</p>
+<ul>
+<li>ऑर्डर बुकमध्ये वेगवेगळ्या भावांवरील खरेदी आणि विक्री ऑर्डरची यादी असते.</li>
+<li>बिड म्हणजे खरेदीदार आत्ता देण्यास तयार असलेला सर्वाधिक भाव.</li>
+<li>आस्क म्हणजे विक्रेता आत्ता स्वीकारण्यास तयार असलेला सर्वात कमी भाव.</li>
+<li>बिड आणि आस्क यांच्यातील अंतराला स्प्रेड म्हणतात.</li>
+</ul>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ पास होण्यासाठीचा किमान गुण, स्वतःच्या शब्दांतील प्रश्न पूर्ण करण्याचा नियम आणि बाजाराच्या मूलभूत कल्पना तपासतो.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> शिकण्याची नोंद. ती तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल, तर कागदावर लिहा.</p>
+<ol>
+<li>कोऱ्या कागदावर स्वतःच्या शब्दांत चार छोटी उत्तरे लिहा. शेअर म्हणजे काय, ऑर्डर बुक काय दाखवते, सर्किट मर्यादा कशासाठी असते आणि निर्देशांक कशासाठी असतो, ते लिहा.</li>
+<li>प्रत्येक उत्तराशी जुळणारे प्रकरण वाचा. तुमचे उत्तर त्याच्याशी पडताळा.</li>
+<li>तुम्ही समाविष्ट केलेला प्रत्येक मुद्दा टिक करा. ज्या उत्तरातून मुद्दा सुटला आहे ते पुन्हा लिहा.</li>
+<li>पूर्ण झालेले पान तुमच्या शिकण्याच्या नोंदींसोबत ठेवा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>पास होणे दाखवते की तुम्ही मूलभूत गोष्टी समजावू शकता. ते दाखवत नाही की तुम्ही चार्ट वाचू शकता किंवा व्यापार निवडू शकता.</li>
+<li>क्विझ प्रश्नांच्या एका पूलमधून घेतो. पास झाल्याने पुस्तकातील प्रत्येक तथ्य कव्हर होत नाही.</li>
+<li>बाजाराचे नियम आणि वेळा बदलू शकतात. कोणत्याही तपशिलावर अवलंबून राहण्यापूर्वी एक्सचेंजची स्वतःची पाने तपासा.</li>
+<li>ज्या मुद्द्याची तपासणी केली नाही, तो टिक करणे हा उद्देशच नष्ट करते. आधी प्रकरण वाचा, मग टिक करा.</li>
+<li>एक नेहमीची चूक म्हणजे एखादा ओळखीचा शब्द ऐकला की तो समजला, असे मानणे. तो शब्द स्वतःच्या वाक्यात समजावून सांगा, म्हणजे तुमची समज तपासली जाईल.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>क्विझवर किमान 85% बरोबर हवे, आणि प्रत्येक स्वतःच्या शब्दांतील प्रश्नातील प्रत्येक मुद्दा टिक हवा.</li>
+<li>प्रत्येक संचात किमान 30 प्रश्न असतात.</li>
+<li>पुन्हा देण्यापूर्वी प्रत्येक चुकीच्या उत्तराचे स्पष्टीकरण वाचा.</li>
+<li>हा गेट पार केल्याचा अर्थ व्यापार करावे असा होत नाही.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>या पुस्तकातील आधीच्या बाजार प्रकरणांमध्ये दिलेले स्रोत.</li>
+</ul>
+<!-- facts-needed: none new for this gate. Market facts come from the earlier chapters and are listed there. -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T10.1&amp;body=Page%3A%2010-graduation-gates%2F01-gate-g1-market-knowledge%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../10-graduation-gates/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../10-graduation-gates/02-gate-g2-money-math/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../10-graduation-gates/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../10-graduation-gates/02-gate-g2-money-math/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

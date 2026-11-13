@@ -1,0 +1,407 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>बाजारातील सहभागी आणि दिशाभूल करणाऱ्या टिप्स - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../01-market-foundations/10-market-participants-and-tips/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../01-market-foundations/10-market-participants-and-tips/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T1.10
+title: बाजारातील सहभागी आणि दिशाभूल करणाऱ्या टिप्स
+page_type: Concept
+prerequisites: [T1.2, T1.8]
+labs: []
+estimated_minutes: 15
+-->
+<h1 id="बाजारातील-सहभागी-आणि-दिशाभूल-करणाऱया-टिपस"><a class="header" href="#बाजारातील-सहभागी-आणि-दिशाभूल-करणाऱया-टिपस">बाजारातील सहभागी आणि दिशाभूल करणाऱ्या टिप्स</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एका बातमीत लिहिले आहे, “आज परदेशी गुंतवणूकदारांनी मोठी खरेदी केली, म्हणून भाव वाढतील.” हे एक काल्पनिक उदाहरण आहे. त्या दिवशी परदेशी गुंतवणूकदारांनी Rs 4,000 कोटींचे शेअर्स खरेदी केले. त्यांनी Rs 3,500 कोटींचे शेअर्स विकले. म्हणजे निव्वळ खरेदी Rs 500 कोटी झाली. आकडा खरा आहे. पण कोणते शेअर्स खरेदी झाले, का झाले, किंवा पुढे काय होईल, हे तो सांगत नाही. एका ग्रुपमधील संदेशात Rs 50,000 च्या खात्यावर “खात्रीशीर दर महिना Rs 10,000” देण्याचे आश्वासन आहे. हा एक दावा आहे, तो तपासायला हवा. कृती करण्यासाठी ही माहिती नाही.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>भारतीय बाजारात अनेक प्रकारचे लोक ट्रेडिंग करतात. ते कोण आहेत हे माहीत असले, तर डेटा वाचणे सोपे जाते. पण त्यामुळे भाव पुढे कसे जातील हे कळत नाही.</p>
+<ul>
+<li><strong>किरकोळ गुंतवणूकदार:</strong> व्यक्ती स्वतःच्या पैशाने ट्रेडिंग करतात.</li>
+<li><strong>संस्था:</strong> फंड, विमा कंपन्या आणि बँका. त्यांच्याकडे संशोधन टीम असते आणि त्यांचा खर्च वेगळा असतो.</li>
+<li><strong>FII / FPI:</strong> परदेशी गुंतवणूकदार. <strong>DII:</strong> देशांतर्गत संस्थात्मक गुंतवणूकदार. ही साधी वर्णने आहेत, कायदेशीर व्याख्या नाहीत. कायदेशीर संज्ञा SEBI च्या नियमांमध्ये आहेत.</li>
+<li><strong>प्रोप्रायटरी ट्रेडर आणि मार्केट मेकर:</strong> स्वतःच्या पैशाने व्यापार करणाऱ्या कंपन्या. काही कंपन्या एकाच वेळी खरेदी आणि विक्रीचे भाव देतात.</li>
+</ul>
+<p><strong>निव्वळ प्रवाह.</strong> एका गटासाठी, निव्वळ प्रवाह = खरेदी मूल्य वजा विक्री मूल्य. सकारात्मक आकडा म्हणजे निव्वळ खरेदी. नकारात्मक आकडा म्हणजे निव्वळ विक्री. NSE आपल्या वेबसाइटवर FII आणि DII ट्रेडिंगची आकडेवारी प्रकाशित करते, आणि त्या पेजवर डाउनलोडचे पर्याय आहेत. हे आकडे तात्पुरते असतात. NSE ते त्यांच्या सदस्यांनी टाकलेल्या ट्रेडिंग कोडवरून तयार करते, आणि परदेशी गुंतवणूकदारांचा अंतिम डेटा नंतर डिपॉझिटरी NSDL कडून येतो. NSE च्या पेजवर ताजा दिवसाचा डेटा असतो, पण हे प्रकरण नेमकी वेळ सांगत नाही. (11 नोव्हेंबर 2026 नुसार, NSE चे FII/DII ट्रेडिंग ॲक्टिव्हिटी पेज. NSE च्या साइटवर तपासा.)</p>
+<p><strong>निव्वळ प्रवाह काय सांगतो.</strong> एका गटाने एका दिवशी हलवलेली एकूण रक्कम.</p>
+<p><strong>निव्वळ प्रवाह काय सांगत नाही.</strong> कोणते शेअर्स खरेदी झाले. ते का झाले. खरेदीदारांची अपेक्षा काय होती. पुढे भाव काय करेल.</p>
+<p><strong>माहितीची शिडी.</strong> स्रोत तीन स्तरांवर असतात:</p>
+<ul>
+<li><strong>प्राथमिक:</strong> कंपनीची स्वतःची फायलिंग, एक्सचेंजच्या घोषणा आणि नियामकाचे आदेश. ही मूळ कागदपत्रे आहेत.</li>
+<li><strong>दुय्यम:</strong> बातम्या, विश्लेषण आणि संशोधन. ते प्राथमिक माहिती पुन्हा सांगतात किंवा स्पष्ट करतात.</li>
+<li><strong>न तपासलेले:</strong> टिप्स, पुढे पाठवलेले संदेश आणि सोशल मीडिया पोस्ट. त्यांचा तपासता येईल असा स्रोत नसतो.</li>
+</ul>
+<p>प्राथमिक स्रोतापासून सुरुवात करा. संदर्भासाठी दुय्यम स्रोत वापरा. न तपासलेल्या दाव्यांना तथ्य नव्हे, तर तपासण्याचे दावे माना.</p>
+<p><strong>दिशाभूल करणाऱ्या टिपची चिन्हे:</strong></p>
+<ul>
+<li>खात्रीशीर किंवा आश्वासित परतावा,</li>
+<li>घाई, जसे “आताच सामील व्हा, नाहीतर संधी जाईल”,</li>
+<li>ग्रुपमध्ये सामील होण्यासाठी किंवा सिग्नलसाठी पैसे देण्याचा दबाव,</li>
+<li>नोंदणीचा तपशील नसणे,</li>
+<li>आतली माहिती असल्याचा दावा.</li>
+</ul>
+<p><strong>सल्लागार आणि संशोधन विश्लेषक</strong> यांची SEBI कडे नोंदणी असणे आवश्यक आहे. SEBI आपल्या वेबसाइटवर नोंदणीकृत संशोधन विश्लेषक आणि गुंतवणूक सल्लागारांच्या सार्वजनिक याद्या ठेवते. SEBI च्या गुंतवणूकदार साइटवर कोणत्याही बाजार मध्यस्थाची नोंदणी स्थिती तपासण्याचे साधन आहे. तसेच SEBI Check नावाचे साधन आहे, जे पेमेंट ID किंवा खाते नोंदणीकृत मध्यस्थाचे आहे का ते तपासते. SEBI ने नियमन केलेल्या कंपन्यांना असे सांगितले आहे की नोंदणीशिवाय सिक्युरिटीजचा सल्ला देणाऱ्या किंवा परवानगीशिवाय परताव्याचे आश्वासन देणाऱ्या लोकांबरोबर काम करू नका. जे लोक फक्त गुंतवणूक शिकवतात ते या नियमातून वगळले आहेत. (11 नोव्हेंबर 2026 नुसार, SEBI गुंतवणूकदार सहाय्य पेज आणि 29 जानेवारी 2025 चे SEBI परिपत्रक, 8 मे 2026 रोजी अद्ययावत. नियम बदलतात, म्हणून SEBI ची साइट तपासा.) मेसेजिंग ग्रुपमध्ये असल्याने नोंदणीबद्दल काहीच सिद्ध होत नाही.</p>
+<p><strong>या पुस्तकात शेअर्सची शिफारस केलेली नाही. या प्रकरणातील कोणताही स्रोत हे समर्थन नाही.</strong></p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>ही तक्त्यात माहितीच्या शिडीचे तीन स्तर दाखवले आहेत. प्रत्येक स्तरावर लिखित इशारा आहे. इशारे शब्दांत दिले आहेत, त्यामुळे रंग समजून घ्यायची गरज नाही.</p>
+<div class="table-wrapper"><table><thead><tr><th>स्तर</th><th>उदाहरणे</th><th>कशासाठी वापरायचे</th><th>इशारा</th></tr></thead><tbody>
+<tr><td>प्राथमिक</td><td>कंपनीची फायलिंग, एक्सचेंजची घोषणा, SEBI चा आदेश</td><td>तथ्ये तपासण्यासाठी</td><td>तारीख आणि जारी करणारा तपासा</td></tr>
+<tr><td>दुय्यम</td><td>बातमीचा लेख, विश्लेषण अहवाल</td><td>संदर्भ आणि पडताळणीसाठी</td><td>लेखकाची पद्धत आणि हितसंबंधांचे संघर्ष तपासा</td></tr>
+<tr><td>न तपासलेले</td><td>टिप, पुढे पाठवलेला संदेश, सोशल मीडिया पोस्ट</td><td>प्राथमिक स्रोताशी पडताळेपर्यंत काहीही नाही</td><td>खात्रीशीर परतावा, घाई किंवा सिग्नलसाठी पैसे</td></tr>
+</tbody></table>
+</div>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p>हे एक काल्पनिक दिवस आहे, आणि आकडे बनवलेले आहेत.</p>
+<p><strong>निव्वळ प्रवाह.</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>FII खरेदी मूल्य</td><td>दिलेले</td><td>Rs 4,000 कोटी</td></tr>
+<tr><td>FII विक्री मूल्य</td><td>दिलेले</td><td>Rs 3,500 कोटी</td></tr>
+<tr><td>निव्वळ प्रवाह</td><td>4,000 - 3,500</td><td>Rs 500 कोटी निव्वळ खरेदी</td></tr>
+</tbody></table>
+</div>
+<p>आकडा एकूण प्रवाह दाखवतो. कोणते शेअर्स खरेदी झाले, किंवा का, हे तो दाखवत नाही.</p>
+<p><strong>टिपचा दावा.</strong> “माझ्या सिग्नलवरून खात्रीशीर Rs 10,000 दर महिना” Rs 50,000 च्या खात्यावर.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>मासिक रक्कम</td><td>दिलेले</td><td>Rs 10,000</td></tr>
+<tr><td>खात्याचा आकार</td><td>दिलेले</td><td>Rs 50,000</td></tr>
+<tr><td>गर्भित मासिक परतावा</td><td>10,000 / 50,000 x 100</td><td>दर महिना 20%</td></tr>
+</tbody></table>
+</div>
+<p>या पुस्तकात दर महिना 20% चे आश्वासन, हमीसह, हे धोक्याचे चिन्ह मानले जाते. ती कृती करण्यासाठी माहिती नाही.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<!-- component: tips-checker | caption: काल्पनिक संदेशांचा सराव करा. प्रत्येक संदेश प्राथमिक, दुय्यम किंवा न तपासलेला असा वर्गीकृत करा, आणि धोक्याची चिन्हे टिक करा. काहीही न करणे हा नेहमीच परवानगी असलेला निकाल आहे. -->
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>कार्य.</strong> हे पाच काल्पनिक संदेश प्राथमिक, दुय्यम किंवा न तपासलेले अशा प्रकारात लावा. प्रत्येकाचे कारण द्या.</p>
+<ol>
+<li>एका कंपनीने एक्सचेंजच्या वेबसाइटवर टाकलेली फायलिंग, ज्यात संचालक मंडळाच्या बैठकीची तारीख जाहीर केली आहे.</li>
+<li>त्या फायलिंगचा सारांश देणारा एक व्यवसायविषयक बातमी लेख.</li>
+<li>पुढे पाठवलेला संदेश: “एका महिन्यात 3 पट खात्रीशीर, आताच सामील व्हा, फक्त 10 जागा शिल्लक.”</li>
+<li>SEBI च्या वेबसाइटवर प्रकाशित झालेला SEBI चा आदेश.</li>
+<li>ब्रोकरच्या स्टेटमेंटचा स्क्रीनशॉट असलेली सोशल मीडिया पोस्ट, पण स्रोत दिलेला नाही.</li>
+</ol>
+<p>सूचना:</p>
+<ol>
+<li>कोणी प्रकाशित केले: कंपनी, एक्सचेंज, नियामक, की कोणीतरी ते पुन्हा सांगत आहे?</li>
+<li>ते मूळ कागदपत्र आहे, स्पष्टीकरण आहे, की स्रोताशिवायचा दावा आहे?</li>
+<li>ते अधिकृत पेजवर तपासता येईल का?</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ol>
+<li>प्राथमिक. ती एक्सचेंजवरील कंपनीची स्वतःची फायलिंग आहे.</li>
+<li>दुय्यम. ते प्राथमिक स्रोत पुन्हा सांगते आणि त्याचा सारांश देते.</li>
+<li>न तपासलेले. स्रोत नाही, आणि त्यात खात्रीशीर परतावा आणि घाई आहे.</li>
+<li>प्राथमिक. ते नियामकाचे स्वतःचे आदेश आहे.</li>
+<li>न तपासलेले. स्क्रीनशॉटला तपासता येणारा स्रोत नाही, म्हणून तो तपासण्याचा दावा आहे.</li>
+</ol>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>कार्य.</strong> एखाद्या टिपवर कृती करण्यापूर्वी ती तपासण्यासाठी सहा पायऱ्यांची यादी लिहा. त्यात “काहीही न करणे” हा परवानगी असलेला निकाल समाविष्ट करा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>एक नमुना यादी:</p>
+<ol>
+<li>दाव्याचा मूळ स्रोत शोधा.</li>
+<li>तो दावा समर्थन करणारे प्राथमिक कागदपत्र (फायलिंग, एक्सचेंजची घोषणा किंवा नियामकाचा आदेश) शोधा.</li>
+<li>SEBI च्या वेबसाइटवरील अधिकृत तपासणीद्वारे व्यक्ती किंवा कंपनी SEBI कडे नोंदणीकृत आहे का ते तपासा.</li>
+<li>धोक्याची चिन्हे तपासा: खात्रीशीर परतावा, घाई, सिग्नलसाठी पैसे, ग्रुपचा दबाव.</li>
+<li>दावा चुकीचा ठरवू शकेल असे काय असेल ते लिहा, आणि त्याची तपासणी करा.</li>
+<li>निर्णय घ्या. “काहीही न करणे” हा परवानगी असलेला निकाल आहे. फक्त टिपवर आधारित कृती करू नका.</li>
+</ol>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>पाच प्रश्न. ते निव्वळ प्रवाहाचे गणित, निव्वळ प्रवाह काय दाखवतो आणि काय दाखवत नाही, टिपमधील धोक्याची चिन्हे, आणि सल्लागाराची नोंदणी तपासणे यावर आधारित आहेत.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड: शिकण्याची नोंद.</strong> टिपांवर कोणतीही कृती नाही.</p>
+<ol>
+<li>“मी वापरलेले माहितीचे स्रोत” या शीर्षकाची जर्नल नोंद तयार करा.</li>
+<li>या आठवड्यात तुम्ही वाचलेल्या प्रत्येक स्रोतासाठी तारीख, स्रोताचे नाव, त्याचा प्रकार (प्राथमिक, दुय्यम किंवा न तपासलेले) आणि पडताळणीची स्थिती लिहा.</li>
+<li>कोणताही न तपासलेला दावा “तपासलेला नाही” म्हणून चिन्हांकित करा.</li>
+<li>कोणत्याही टिप, ग्रुप किंवा सिग्नल सेवेवर कृती करू नका.</li>
+<li>तुमची नोंद तुमच्या जर्नलमध्ये लिहा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>निव्वळ प्रवाहाचा आकडा एकूण पैशाचा प्रवाह दाखवतो. कोणते शेअर्स, का, किंवा पुढे काय होईल हे तो दाखवत नाही.</li>
+<li>नोंदणी तपासणे म्हणजे सल्लागाराच्या मतांना समर्थन नाही.</li>
+<li>या पुस्तकात शेअर्स, ग्रुप किंवा सिग्नल सेवांची शिफारस केलेली नाही.</li>
+<li>अधिकृत वाटणारा स्रोत म्हणजे पडताळलेला स्रोत नाही. मूळ कागदपत्र तपासा.</li>
+<li>घोटाळे अनेकदा खात्रीशीर परतावा आणि लवकर कृती करण्याचा दबाव वापरतात. दोन्ही धोक्याची चिन्हे माना, माहिती नव्हे.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>निव्वळ प्रवाह = खरेदी मूल्य वजा विक्री मूल्य. हे एका गटाचे एकूण आकडे आहेत, शेअर निवडण्याचा सल्ला नव्हे.</li>
+<li>प्राथमिक स्रोतापासून सुरुवात करा. संदर्भासाठी दुय्यम स्रोत वापरा. न तपासलेल्या दाव्यांना तथ्य मानू नका.</li>
+<li>धोक्याची चिन्हे: खात्रीशीर परतावा, घाई, सिग्नलसाठी पैसे, ग्रुपचा दबाव, आतली माहिती असल्याचा दावा, नोंदणी नसणे.</li>
+<li>ग्रुपमध्ये असणे म्हणजे सल्लागार नोंदणीकृत आहे असे नाही. SEBI ची यादी तपासा.</li>
+<li>काहीही न करणे हा परवानगी असलेला निकाल आहे. अनेकदा तोच योग्य निकाल असतो.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p>स्रोत:</p>
+<ul>
+<li>SEBI चे गुंतवणूकदार शिक्षण आणि इशाऱ्यांची पेजे.</li>
+<li>SEBI ची नोंदणीकृत मध्यस्थांची यादी.</li>
+<li>NSE चे FII/DII पेज.</li>
+<li>एक्सचेंजच्या घोषणांची पेजे.</li>
+</ul>
+<p>11 नोव्हेंबर 2026 रोजी तपासलेली तथ्ये:</p>
+<ul>
+<li>FII/DII डेटाचा स्रोत आणि त्याचे तात्पुरते स्वरूप NSE च्या FII/DII ट्रेडिंग ॲक्टिव्हिटी पेजवरून आहे. ते प्रकाशित होण्याची दिवसाची वेळ बदलू शकते, म्हणून NSE चे पेज तपासा.</li>
+<li>नोंदणी तपासण्याची साधने आणि SEBI हेल्पलाइन SEBI च्या गुंतवणूकदार सहाय्य पेजवरून आहेत. नोंदणीशिवाय सल्ल्यावरील नियम SEBI च्या 29 जानेवारी 2025 च्या परिपत्रकातून आहे.</li>
+<li>सहभागींची वर्णने सोपी मराठी सारांश आहेत आणि SEBI च्या कायदेशीर व्याख्यांशी तपासलेली नाहीत.</li>
+<li>SEBI च्या सध्याच्या गुंतवणूकदार इशाऱ्या वारंवार बदलतात. त्या SEBI च्या गुंतवणूकदार साइटवर वाचा.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T1.10&amp;body=Page%3A%2001-market-foundations%2F10-market-participants-and-tips%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../01-market-foundations/09-corporate-actions/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../01-market-foundations/09-corporate-actions/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

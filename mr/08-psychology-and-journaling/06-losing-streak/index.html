@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>सततच्या तोट्यांच्या काळातून जाणे - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../08-psychology-and-journaling/06-losing-streak/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../08-psychology-and-journaling/06-losing-streak/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T8.6
+title: सततच्या तोट्यांच्या काळातून जाणे
+page_type: Lab
+prerequisites: [T2.10, T7.9, T8.2]
+labs: [Lab 3, Lab 4]
+estimated_minutes: 30
+-->
+<h1 id="सततचया-तोटयांचया-काळातून-जाणे"><a class="header" href="#सततचया-तोटयांचया-काळातून-जाणे">सततच्या तोट्यांच्या काळातून जाणे</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>तुम्ही सलग चार व्यापारांत तोटा सहन केला आहे. प्रत्येक तोटा नियोजित 1R होता, म्हणजे Rs 500. तुम्हाला वाटू लागते की पद्धत बिघडली आहे. मनाचा दुसरा भाग म्हणतो की लवकरच विजय येणारच. दोन्ही भावना सामान्य आहेत. हे प्रकरण <strong>सततचे तोटे</strong> किती वेळा येतात आणि मालिका सुरू होण्याआधी काय लिहून ठेवायचे ते दाखवते. तसेच एकटी मालिका पद्धत तुटली आहे, हे का सिद्ध करत नाही, तेही दाखवते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>मालिका कोणत्याही विजय दरावर होतात.</strong> कमी विजय दरामुळे लांब तोट्यांच्या मालिका जास्त वेळा येतात. जास्त विजय दर त्या पूर्णपणे थांबवत नाही.</p>
+<p><strong>जुगाऱ्याची चूक</strong> ही चुकीची समजूत आहे की तोट्यांची मालिका विजयाला “येणे बाकी” करते. या प्रकरणात वापरलेल्या साध्या मॉडेलमध्ये, प्रत्येक व्यापाराला आधी काय झाले तरी समान शक्यता असते. म्हणून तोट्यांची मालिका पुढचा व्यापार जिंकण्याची शक्यता वाढवत नाही.</p>
+<p>खरे बाजार या साध्या मॉडेलशी जुळत नसतील. येथील आकडे शक्यता समजण्याचा मार्ग म्हणून वापरा, अंदाज म्हणून नाही.</p>
+<p><strong>ड्रॉडाउनचे टप्पे.</strong> मालिका सुरू होण्याआधी प्रत्येक टप्प्यासाठी एक कृती लिहा:</p>
+<ul>
+<li>सामान्य.</li>
+<li>मर्यादा जवळ येत आहे.</li>
+<li>दैनिक मर्यादा गाठली.</li>
+<li>साप्ताहिक मर्यादा गाठली.</li>
+</ul>
+<p>प्रत्येक टप्प्याची कृती आधीच ठरलेली असते. मालिकेच्या मध्यात तुम्ही ती ठरवत नाही.</p>
+<p><strong>ड्रॉडाउनमध्ये आकार स्थिर राहतो.</strong> एक्सपोजर कमी करणे लिखित नियमानुसार होते. तो नियम <em>ट्रेडिंग पूर्णपणे कधी थांबवायचे</em> मध्ये सांगितला आहे. भावना हा नियम नाही.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: streak-sim | winRate: 40 | risk: 1 | startCapital: 50000 | caption: 40% विजय दराने सिम्युलेटेड व्यापार, प्रत्येक व्यापारासाठी भावनेचा टॅग. तीन वेळा चालवा आणि मालिका व टॅगची तुलना करा. -->
+<p>सारांशातील सर्वात लांब तोट्याची मालिका पाहा. मग त्याच्या शेजारी भावनांचे टॅग पाहा. कोणते टॅग नियम बदलण्याआधी आले आणि कोणते नंतर, हे विचारा.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> विजय दर 40%. म्हणून एका व्यापारात तोटा होण्याची शक्यता 1 - 0.4 = 0.6 आहे. जोखीम 1R = Rs 500, जो Rs 50,000 च्या 1% आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>चरण</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. एका व्यापारात तोट्याची शक्यता</td><td>1 - 0.4</td><td>0.6</td></tr>
+<tr><td>2. सलग सहा तोटे, दिलेल्या एका व्यापारापासून सुरू</td><td>0.6 x 0.6 x 0.6 x 0.6 x 0.6 x 0.6 = 0.6^6</td><td>0.0467, सुमारे 4.7%</td></tr>
+<tr><td>3. सहा तोट्यांची रुपयांमधील रक्कम</td><td>6 x Rs 500</td><td>Rs 3,000</td></tr>
+<tr><td>4. भांडवलातील शेअर</td><td>3,000 / 50,000</td><td>6%</td></tr>
+<tr><td>5. सलग चार तोट्यांवरील नियोजित कृती</td><td>मालिका सुरू होण्याआधी लिहिलेली</td><td>आकारात बदल नाही. साप्ताहिक मर्यादा तपासा.</td></tr>
+</tbody></table>
+</div>
+<p>40% विजय दरावरही सलग सहा तोटे होऊ शकतात. एका दिलेल्या व्यापारापासून ही शक्यता सुमारे 4.7% आहे. चार तोट्यांवरील नियोजित कृती आधीच लिहिली आहे, म्हणून दबाव जाणवत असताना तुम्ही ती ठरवत नाही.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> 40% विजय दरावर एका व्यापारात तोट्याची शक्यता 0.6 आहे. 0.6 ची 4 घात काढा. मग 1R Rs 500 वर चार तोट्यांची रुपयांमधील रक्कम काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>0.6 ला चार वेळा स्वतःने गुणा.</li>
+<li>चार तोट्यांचा खर्च 4 x Rs 500.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>0.6 x 0.6 x 0.6 x 0.6 = 0.36 x 0.36 = <strong>0.1296</strong>, सुमारे 13.0%.</li>
+<li>4 x Rs 500 = <strong>Rs 2,000</strong>.</li>
+</ul>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> सिम्युलेटर तीन वेळा चालवा, प्रत्येक वेळी नवी यादृच्छिक चाल. प्रत्येक चालीत भावनांच्या नोंदीत काय बदलले ते लिहा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>तिथे एकच बरोबर उत्तर नसते. उपयुक्त नोंदीत हे नाव असते:</p>
+<ul>
+<li>प्रत्येक चालीत सर्वात लांब तोट्याची मालिका,</li>
+<li>मालिका सर्वात लांब असताना तुम्ही लिहिलेला भावनेचा टॅग,</li>
+<li>त्या भावनेमुळे तुम्हाला आकार बदलावासा किंवा जास्त व्यापार करावासा वाटला का.</li>
+</ul>
+<p>उदाहरण: “चाल 1 मध्ये सुरुवातीला लांब मालिका होती, आणि मी भीती टॅग केला. चाल 2 मध्ये लहान मालिका होती, आणि मी शांत टॅग केला. चाल 3 मध्ये तीन-तीनच्या दोन मालिका होत्या, आणि मी परत मिळवण्याची इच्छा टॅग केली.” प्रत्येक चाल एक सिम्युलेशन आहे, आणि त्यापैकी कोणतीही पद्धत कशी कामगिरी करते याचा पुरावा नाही.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ जुगाऱ्याची चूक, मालिकेची शक्यता, आधीच ठरवलेल्या कृती आणि ड्रॉडाउनचे टप्पे तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> शिकण्याची नोंद. तुमच्या जर्नलमध्ये नोंद करा (जर्नल अॅप तयार होईपर्यंत कागदावर).</p>
+<ol>
+<li>40% विजय दराने सिम्युलेटर तीन वेळा चालवा.</li>
+<li>प्रत्येक चालीसाठी सर्वात लांब तोट्याची मालिका आणि 1R वरील रुपयांमधील तोटा नोंदवा.</li>
+<li>प्रत्येक चालीसाठी तुमच्या जर्नलच्या शिकण्याच्या नोंदीत भावनांचे टॅग लिहा.</li>
+<li>निकाल वाचण्याआधी, सलग चार तोट्यांसाठी नियोजित कृती लिहा.</li>
+<li>जर सिम्युलेटर तयार नसेल, तर हे काम कागदावर किंवा स्प्रेडशीटवर करा, 0.6 तोट्याच्या शक्यतेचा वापर करून.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>सिम्युलेटेड मालिका एका ठरलेल्या विजय दरावर चालते. खरे व्यापार त्याच्याशी जुळणार नाहीत, म्हणून सिम्युलेटेड निकाल भविष्यातील निकालाचा पुरावा नाहीत.</li>
+<li>मालिकेची शक्यता ती किती सामान्य आहे हे सांगते. पुढची मालिका कधी सुरू किंवा संपेल, हे सांगत नाही.</li>
+<li>भावना टॅग तुम्हाला कसे वाटले ते नोंदवतात. पद्धत चालते की नाही, हे ते मोजत नाहीत.</li>
+<li>तोट्यांची मालिका पद्धत तुटली आहे, हे सिद्ध करत नाही. विजयांची मालिका ती चालते, हेही सिद्ध करत नाही.</li>
+<li>साधे मॉडेल प्रत्येक व्यापार वेगळा आहे असे गृहीत धरते. खरे बाजार तसे वागणार नाहीत.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>मालिका कोणत्याही विजय दरावर होतात, आणि कमी विजय दरावर त्या जास्त सामान्य असतात.</li>
+<li>जुगाऱ्याची चूक: तोट्यांची मालिका विजय “येणे बाकी” करत नाही.</li>
+<li>एका दिलेल्या व्यापारापासून सलग सहा तोट्यांची शक्यता, 0.6 वर, सुमारे 4.7% आहे.</li>
+<li>मालिका सुरू होण्याआधी प्रत्येक ड्रॉडाउन टप्प्याची कृती लिहा.</li>
+<li>ड्रॉडाउनमध्ये आकार स्थिर राहतो. एक्सपोजर कमी करणे लिखित नियमानुसार होते.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>लॅब 4 मधील सततच्या तोट्यांचा प्रयोग.</li>
+<li>Amos Tversky and Daniel Kahneman (1971), “Belief in the Law of Small Numbers”, Psychological Bulletin, 76(2), 105-110. ही चुकीच्या समजुतीबद्दल आहे, की संधीच्या घटनांच्या छोट्या मालिका समान होणे आवश्यक आहे.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T8.6&amp;body=Page%3A%2008-psychology-and-journaling%2F06-losing-streak%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../08-psychology-and-journaling/05-journal-as-a-tool/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../08-psychology-and-journaling/07-when-to-stop/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../08-psychology-and-journaling/05-journal-as-a-tool/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../08-psychology-and-journaling/07-when-to-stop/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>From idea to hypothesis to test plan - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/07-testing-and-validation/01-from-idea-to-hypothesis/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T7.1
+title: From idea to hypothesis to test plan
+page_type: Concept
+prerequisites: [T6.2, T6.4]
+labs: []
+estimated_minutes: 15
+-->
+<h1 id="from-idea-to-hypothesis-to-test-plan"><a class="header" href="#from-idea-to-hypothesis-to-test-plan">From idea to hypothesis to test plan</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Imagine you have this idea: stocks that make new highs keep going up. You test it on old prices. You try three stop levels and keep the one that shows the biggest gain. The gain looks good. But you picked the stop after you saw the results. That choice makes the test unfair. The result can tell you very little. This chapter shows how to write an idea so that a test can really check it.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>An <strong>idea</strong> is a feeling about the market. “Prices feel strong lately” is an idea. No one can test a feeling as it stands. No result would prove it wrong.</p>
+<p>A <strong>hypothesis</strong> is a rule that can be wrong. It has a clear entry, a clear exit and a clear size. Each part is a number or a plain condition. Then a test can show that the rule failed. A trading edge is a rule with a real, repeatable advantage (<em>What a trading edge is</em>). A hypothesis is how you check whether an edge exists.</p>
+<p><strong>Falsifiable</strong> means you can say which result would make you drop the idea. A plan that says “I drop the idea if the average result after costs is not above zero” is falsifiable. If no result could prove you wrong, the idea is not ready to test.</p>
+<p><strong>Fix the pass or fail rule before you look at the data.</strong> Changing the rule after you see results is the most common way to fool yourself. The test then becomes a fit to the past. It stops being a check of the idea.</p>
+<p>A <strong>test plan</strong> lists these fields before the run:</p>
+<ul>
+<li><strong>Universe:</strong> the stocks you will test.</li>
+<li><strong>Data source:</strong> where the prices come from. Read its terms.</li>
+<li><strong>Period:</strong> the dates the test covers.</li>
+<li><strong>Split:</strong> how the data is divided. One part is for building the rule. The other part is kept back for the final check (<em>Out-of-sample and walk-forward testing</em>).</li>
+<li><strong>Entry, stop and exit:</strong> the rules that decide when you enter, when you cut a loss and when you leave.</li>
+<li><strong>Sizing:</strong> how many shares each trade uses (<em>Position sizing step by step</em>).</li>
+<li><strong>Costs:</strong> the charges and slippage the test adds (<em>Costs on a trade</em>).</li>
+<li><strong>Metrics:</strong> the numbers you will read, such as expectancy (<em>Expectancy and profit factor</em>).</li>
+<li><strong>Pass or fail rule:</strong> the result that decides the outcome.</li>
+<li><strong>Number of variants tried:</strong> every version you test, including the ones you drop.</li>
+</ul>
+<p>A test has three possible results:</p>
+<ul>
+<li><strong>Supported:</strong> the idea passed this test under its rules.</li>
+<li><strong>Not supported:</strong> the idea failed under its rules. Drop it or write a new idea. Do not move the rules to save it.</li>
+<li><strong>Inconclusive:</strong> the test did not decide. For example, it had too few trades to say much.</li>
+</ul>
+<p>A passed test is weak evidence. It means the idea survived one test. It does not prove the idea works.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<pre><code class="language-mermaid">flowchart TD
+    A["Idea: a feeling about the market"] --&gt; B["Hypothesis: a rule that can be wrong"]
+    B --&gt; C["Test plan: data, period, costs and pass or fail rule written first"]
+    C --&gt; D["Run one test on the agreed data"]
+    D --&gt; E{"Result"}
+    E --&gt;|"Supported"| F["Idea survived this test only"]
+    E --&gt;|"Not supported"| G["Drop the idea or write a new one"]
+    E --&gt;|"Inconclusive"| H["Too little evidence to decide"]
+</code></pre>
+<p>Follow the arrows from top to bottom. The test plan must exist before the run. Each of the three results leads to a different next step. No box in this flow says trade.</p>
+<!-- component: hypothesis-builder | caption: Turn a loose idea into a rule that can be wrong, lock the pass rule first, then see what the result allows you to say. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> The idea is: stocks that make new highs keep going up. Here is one testable hypothesis written from that idea.</p>
+<div class="table-wrapper"><table><thead><tr><th>Part</th><th>Rule</th></tr></thead><tbody>
+<tr><td>Entry</td><td>Buy at the next day’s opening price, after a day closes above the highest price of the previous 55 days.</td></tr>
+<tr><td>Stop</td><td>2.5 times ATR(14) below the entry price. ATR is the average true range, a measure of how far a price usually moves in one day. The 14 is the number of days used.</td></tr>
+<tr><td>Exit</td><td>Trail the stop at 3 times ATR. A trailing stop moves up as the price rises. It does not move down.</td></tr>
+<tr><td>Size</td><td>Risk 1% of Rs 50,000 = Rs 500 per trade.</td></tr>
+<tr><td>Costs</td><td>The costs from the cost settings in Lab 2.</td></tr>
+<tr><td>Pass rule</td><td>Expectancy after costs must be above zero over the held-out period. Expectancy is the average result per trade. The held-out period is the part of the data kept back for the final check.</td></tr>
+</tbody></table>
+</div>
+<p>Now change the pass rule after a result. Say the first run gives an expectancy of minus Rs 20 per trade. You change the pass rule to “above minus Rs 50 per trade”. The idea now passes. But the new rule is a different, untested idea. The first test had already said not supported.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Turn each vague idea into a hypothesis. For each one, name the entry trigger, the exit, and the one number that defines “works”.</p>
+<ol>
+<li>Buy strong stocks.</li>
+<li>Sell when the market feels weak.</li>
+<li>Buy stocks that look cheap.</li>
+</ol>
+<p>Hints:</p>
+<ol>
+<li>Name the entry trigger in a measurable way. Words such as “strong” or “cheap” need a number.</li>
+<li>Name the exit as a condition you can check on a price chart.</li>
+<li>Pick one number that decides “works”. For example, expectancy after costs above zero.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ol>
+<li>Entry: buy at the next day’s open, after a close above the highest close of the previous 20 days. Exit: sell at the next day’s open, after a close below the lowest close of the previous 10 days. Works: expectancy after costs is above zero in the held-out period.</li>
+<li>“Feels weak” is an exit idea for shares you already hold. Exit: sell at the next day’s open when a chosen market index closes below its 50-day average close. Works: the average result per trade after costs is above zero in the held-out period.</li>
+<li>Entry: buy at the next day’s open, after a close at least 10% below the 60-day average close. Exit: sell at the next day’s open when the close returns to the 60-day average, or after 20 trading days, whichever comes first. Works: expectancy after costs is above zero in the held-out period.</li>
+</ol>
+<p>Add a stop and a size to each one, as in the worked example.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Write a complete test plan for a breakout idea of your own choosing. Include every field listed in <em>The idea</em>.</p>
+<details><summary>Check your answer</summary>
+<p>A sample plan. All numbers are examples set for this exercise.</p>
+<ul>
+<li><strong>Universe:</strong> 30 listed stocks, chosen by a written rule before the test starts.</li>
+<li><strong>Data source:</strong> a named free source, whose terms you have read. Many free sources allow personal use only. See <em>Historical data</em>.</li>
+<li><strong>Period:</strong> 2016 to 2022.</li>
+<li><strong>Split:</strong> 2016 to 2019 for building the rule. 2020 to 2022 kept back for the final check. Nothing is chosen using 2020 to 2022.</li>
+<li><strong>Entry:</strong> buy at the next day’s open, after a close above the highest close of the previous 20 days.</li>
+<li><strong>Stop:</strong> 2 times ATR(14) below the entry price.</li>
+<li><strong>Exit:</strong> the stop, or the next day’s open after a close below the lowest close of the previous 10 days, whichever comes first.</li>
+<li><strong>Sizing:</strong> risk 1% of a test capital of Rs 50,000, which is Rs 500 per trade, with the caps from <em>Position sizing step by step</em>.</li>
+<li><strong>Costs:</strong> the cost settings from Lab 2. Add slippage only if you set it.</li>
+<li><strong>Metrics:</strong> expectancy after costs, profit factor, and the largest fall from a peak in the test account (<em>Drawdown and recovery math</em>).</li>
+<li><strong>Pass or fail rule:</strong> expectancy after costs is above zero in the held-out period, with at least 30 trades. The 30 is an example number, set before the test.</li>
+<li><strong>Number of variants tried:</strong> 1, this plan. Any other version you try is logged too.</li>
+</ul>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks falsifiable rules, pass rules set after results, what a passed test shows, and how to answer a teammate’s chart.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong>. This is not a trade row.</p>
+<ol>
+<li>Write one idea of your own in one sentence.</li>
+<li>Turn it into a hypothesis with an entry, a stop, an exit and a size.</li>
+<li>Fill in every field from <em>The idea</em> list.</li>
+<li>Write the pass or fail rule and date it. Do not change it after any run.</li>
+</ol>
+<p>Log it in your journal (or on paper until the journal app is ready).</p>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>A test plan does not show that the idea will work. It only shows how the idea was checked.</li>
+<li>A test plan is not a trading plan. Nothing in this chapter allows real money to be used.</li>
+<li>Writing a rule down does not make it a system. A system needs tested rules, costs, sizing and a record of results over time.</li>
+<li>Changing the pass rule after you see results is the most common error. Treat any change as a new idea that needs a new test (<em>Overfitting and the number of things you tried</em>).</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>A hypothesis is a rule that can be wrong.</li>
+<li>Write the pass or fail rule before you see any result.</li>
+<li>A passed test is weak evidence, not proof.</li>
+<li>A changed rule is a new, untested idea.</li>
+<li>A test plan is not a trading plan.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Robert Pardo, <em>The Evaluation and Optimization of Trading Strategies</em>, 2nd edition (Wiley, 2008), on how to test a trading idea.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../07-testing-and-validation/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../07-testing-and-validation/02-historical-data/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../07-testing-and-validation/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../07-testing-and-validation/02-historical-data/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

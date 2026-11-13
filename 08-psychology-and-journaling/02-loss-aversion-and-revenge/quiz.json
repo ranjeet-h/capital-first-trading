@@ -1,0 +1,118 @@
+[
+  {
+    "id": "T8.2-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital Rs 50,000. You lose Rs 5,000. What gain, in percent of the capital left, do you need to get back to Rs 50,000? Give one decimal place.",
+    "answer": 11.1,
+    "tolerance": 0.1,
+    "unit": "%",
+    "solution": "Capital left = 50,000 - 5,000 = 45,000. Recovery = 5,000 / 45,000 = 0.1111, which is 11.1%. Check: 45,000 x 1.111 = about 50,000.",
+    "concepts": ["recovery-arithmetic", "drawdown"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.2-q2",
+    "type": "mcq",
+    "prompt": "Hypothetical. Your account is down 10%. Which statement about the gain needed is correct?",
+    "options": [
+      {"id": "a", "text": "A 10% gain gets the account back to where it started"},
+      {"id": "b", "text": "The gain needed is 11.1%, because 10 / 90 = 11.1"},
+      {"id": "c", "text": "The gain needed is 20%, because the loss doubles"},
+      {"id": "d", "text": "The gain needed is 9%, because the loss is smaller than 10 percent"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A 10% gain is measured on the smaller amount left, so it does not return the account to the start. The gain needed is larger.",
+      "c": "The loss does not double. The gain needed follows L / (100 - L), which gives 11.1% here.",
+      "d": "The gain needed is larger than the loss, not smaller, because the base is smaller after the loss."
+    },
+    "concepts": ["recovery-arithmetic"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.2-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. A 50% loss on capital needs what gain, in percent, to get back to the start?",
+    "answer": 100,
+    "tolerance": 0,
+    "unit": "%",
+    "solution": "Recovery = L / (100 - L) = 50 / 50 = 100%. After a 50% loss the account must double to return to the start.",
+    "concepts": ["recovery-arithmetic"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.2-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. Your plan sets a daily limit of Rs 2,000. By lunch you are down Rs 2,000 on a Rs 50,000 account. You feel you must trade the afternoon to get the money back. What does your plan say?",
+    "options": [
+      {"id": "a", "text": "Trade the afternoon at half size, because the loss is not yet bigger than the limit"},
+      {"id": "b", "text": "Trade the afternoon if the setup looks strong enough to recover the loss"},
+      {"id": "c", "text": "Stop for the day, because the daily limit is reached"},
+      {"id": "d", "text": "Trade the afternoon at double size, because a quick win clears the loss"}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "Half size still breaks the rule. Once the daily limit is reached, trading stops for the day.",
+      "b": "A setup that looks strong is not a reason to pass the daily limit. The limit applies even when the setup looks strong.",
+      "d": "A bigger size after a loss breaks the rule of no size increase after a loss. It also makes the hole deeper if the trade loses."
+    },
+    "concepts": ["daily-limit", "revenge-trading"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.2-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Hypothetical journal note: \"I lost Rs 2,000, so I will double my size until I am back to even.\" Which part of this note is the mistake?",
+    "options": [
+      {"id": "a", "text": "A bigger size always loses, so the note is wrong about size"},
+      {"id": "b", "text": "Doubling size after a loss breaks the no-increase rule, and a bigger size makes the hole deeper"},
+      {"id": "c", "text": "Wanting to get back to where I started is not a goal a trader should have"},
+      {"id": "d", "text": "Nothing is wrong. Quick recovery is the sign of a good trader"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Size does not always lose. The mistake is raising size after a loss, which breaks the rule and increases the loss if the trade fails.",
+      "c": "Wanting to recover is normal. The mistake is the method chosen to recover, which is a bigger size.",
+      "d": "A quick recovery from a bigger size is not a sign of skill. It is a rule break that can make the loss larger."
+    },
+    "concepts": ["revenge-trading", "sizing-rule"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.2-q6",
+    "type": "numeric",
+    "prompt": "Hypothetical. Three planned trades each lose Rs 500. You then double your size to Rs 1,000 on the next trade, and it also loses. What is the total loss in rupees?",
+    "answer": 2500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Three planned losses = 3 x 500 = 1,500. Revenge trade = 2 x 500 = 1,000 at double size. Total = 1,500 + 1,000 = Rs 2,500. Check: 2,500 / 50,000 = 5%.",
+    "concepts": ["revenge-trading", "planned-loss"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T8.2-q7",
+    "type": "mcq",
+    "prompt": "Hypothetical. Which trade shows the clearest signs of revenge trading?",
+    "options": [
+      {"id": "a", "text": "A trade I wrote in my plan before the market opened, at my usual size"},
+      {"id": "b", "text": "A trade I took two minutes after a loss, at twice my usual size, with no plan entry"},
+      {"id": "c", "text": "A trade I skipped because my daily limit was reached"},
+      {"id": "d", "text": "A trade I reviewed in my journal the next evening"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A trade written in the plan at the usual size is following the plan. It is not a sign of revenge.",
+      "c": "Skipping a trade after the limit is the rule working as intended.",
+      "d": "Reviewing a trade in the journal is a healthy habit. It is not a sign of revenge."
+    },
+    "concepts": ["revenge-trading", "signs"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

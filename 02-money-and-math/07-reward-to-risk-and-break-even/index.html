@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Reward-to-risk, win rate and break-even - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/02-money-and-math/07-reward-to-risk-and-break-even/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T2.7
+title: Reward-to-risk, win rate and break-even
+page_type: Math/Calculator
+prerequisites: [T2.1, T2.4]
+labs: [Lab 1, Lab 3]
+estimated_minutes: 20
+-->
+<h1 id="reward-to-risk-win-rate-and-break-even"><a class="header" href="#reward-to-risk-win-rate-and-break-even">Reward-to-risk, win rate and break-even</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Two hypothetical plans both enter at Rs 250 with a Rs 240 stop. Plan P targets Rs 260. Plan Q targets Rs 270. Each wins 50 of 100 hypothetical trades. Before costs, Plan P needs a 50% win rate just to break even. Plan Q needs only about 33.3%. The same win rate means very different things for the two plans.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p><strong>Reward-to-risk (R)</strong> compares what a plan could make with what it could lose, per share. For a long trade:</p>
+<ul>
+<li>Risk per share = entry - stop.</li>
+<li>Reward per share = target - entry.</li>
+<li>R = reward / risk.</li>
+</ul>
+<p><strong>Break-even win rate before costs.</strong> Take a plan with R. Let W be the win rate. The loss rate is 1 - W. The plan breaks even when the expected wins equal the expected losses. In units of the risk, a win pays R and a loss costs 1. So W x R = (1 - W) x 1. Solving gives W = 1 / (1 + R). Equivalently, W = risk / (risk + reward).</p>
+<p><strong>Costs raise the break-even.</strong> A cost paid on each share adds to the risk and takes from the reward. Both changes push the required win rate up.</p>
+<p>Other points:</p>
+<ul>
+<li>Win rate and R trade off in most approaches. A higher target is often reached less often. Neither number decides the result alone.</li>
+<li>A target is a plan, not a forecast. Many approaches do not use a fixed target at all. Those are covered in Track 6.</li>
+<li>Break-even here is before costs, before slippage and before gaps (<em>Slippage, gaps and planned versus actual risk</em>). Those are separate losses.</li>
+</ul>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Target (Rs)</th><th>Reward per share</th><th>R</th><th>Break-even win rate before costs</th></tr></thead><tbody>
+<tr><td>260</td><td>Rs 10</td><td>1</td><td>50.0%</td></tr>
+<tr><td>270</td><td>Rs 20</td><td>2</td><td>33.3%</td></tr>
+<tr><td>280</td><td>Rs 30</td><td>3</td><td>25.0%</td></tr>
+<tr><td>270, with dummy cost of Rs 2 per share</td><td>Rs 18 (after cost)</td><td>1.5 (costed)</td><td>40.0%</td></tr>
+</tbody></table>
+</div>
+<p>Read down the table. As R rises, the win rate needed to break even falls. The last row is the same Rs 270 target after a dummy cost of Rs 2 per share. The break-even rises from 33.3% to 40.0%. The cost is a dummy figure, used only for the arithmetic. The Rs 2 figure is a round number for practice, not the real charge. For a real trade, the charges depend on the product and the price. As of 11 Nov 2026, Zerodha lists zero brokerage on delivery trades, and on intraday trades 0.03% of the trade value or Rs 20 per order, whichever is lower, plus taxes and exchange fees. The full table is in <em>Costs on a trade</em>. Rules and rates change, so check the Zerodha charges page.</p>
+<!-- component: rr-breakeven | entry: 250 | stop: 240 | target: 270 | cost: 2 | caption: Entry Rs 250, stop Rs 240, target Rs 270, with a dummy cost of Rs 2 per share. Move the target and the cost and watch the break-even win rate change. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><em>Hypothetical.</em> Entry Rs 250, stop Rs 240, target Rs 270.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Working</th><th>Result</th></tr></thead><tbody>
+<tr><td>Risk per share</td><td>250 - 240</td><td>Rs 10</td></tr>
+<tr><td>Reward per share</td><td>270 - 250</td><td>Rs 20</td></tr>
+<tr><td>R</td><td>20 / 10</td><td>2</td></tr>
+<tr><td>Break-even before costs</td><td>1 / (1 + 2)</td><td>1/3 = 33.3%</td></tr>
+</tbody></table>
+</div>
+<p>Now add a <em>DUMMY</em> cost. Assume Rs 100 for the round trip (buying and selling) on 50 shares. That is Rs 2 per share. This is not a real charge.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Working</th><th>Result</th></tr></thead><tbody>
+<tr><td>Risk per share, with cost</td><td>10 + 2</td><td>Rs 12</td></tr>
+<tr><td>Reward per share, after cost</td><td>20 - 2</td><td>Rs 18</td></tr>
+<tr><td>Costed R</td><td>18 / 12</td><td>1.5</td></tr>
+<tr><td>Costed break-even</td><td>W x 18 = (1 - W) x 12, so 30W = 12</td><td>W = 0.4 = 40%</td></tr>
+</tbody></table>
+</div>
+<p>Check: 0.4 x 18 = 7.2, and 0.6 x 12 = 7.2. Both sides match.</p>
+<p>Other targets, same entry and stop, before costs: target Rs 260 gives R = 1 and break-even 50%. Target Rs 280 gives R = 3 and break-even 25%.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p>Task: Entry Rs 400, stop Rs 380, target Rs 460. Work out R and the break-even win rate before costs.</p>
+<p>Hints:</p>
+<ol>
+<li>Find risk per share (entry minus stop) and reward per share (target minus entry).</li>
+<li>R = reward / risk.</li>
+<li>Break-even = 1 / (1 + R).</li>
+</ol>
+<p><strong>Answer:</strong> Risk Rs 20. Reward Rs 60. R = 3. Break-even = 1 / 4 = 25%.</p>
+<!-- component: rr-breakeven | entry: 400 | stop: 380 | target: 460 | cost: 0 | winRate: 30 | caption: Guided exercise: entry Rs 400, stop Rs 380, target Rs 460. Check your hand sums against the table. -->
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p>Task: Entry Rs 150, stop Rs 144, target Rs 165. Work out R and the break-even win rate before costs. Then, with a DUMMY cost of Rs 0.50 per share, work out the break-even again.</p>
+<details><summary>Check your answer</summary>
+<p>Before costs: risk Rs 6, reward Rs 15, R = 2.5, break-even = 1 / 3.5 = 28.6%.</p>
+<p>With the Rs 0.50 dummy cost: risk Rs 6.5, reward Rs 14.5, break-even = 6.5 / (6.5 + 14.5) = 6.5 / 21 = 31.0%. The cost raised the break-even.</p>
+</details>
+<!-- component: rr-breakeven | entry: 150 | stop: 144 | target: 165 | cost: 0.5 | winRate: 30 | caption: Independent exercise check: entry Rs 150, stop Rs 144, target Rs 165, with a dummy cost of Rs 0.50 per share. Try it by hand first. -->
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Six questions cover break-even arithmetic, the effect of costs, the rule for a minimum R, and the trap of judging on win rate alone.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong>. Log it in Lab 3 (or on paper until the journal app is ready).</p>
+<ol>
+<li>Choose three hypothetical plans. Each one has an entry, a stop and a target.</li>
+<li>For each plan, record planned R and the break-even win rate before costs.</li>
+<li>Add a DUMMY cost of Rs 0.50 per share. Work out the break-even again for each plan.</li>
+<li>Save each plan to the journal with its planned R field (Lab 1 save-to-journal), in learning-note mode.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>R is a plan. It is not a forecast, and target prices are not reached reliably.</li>
+<li>Do not choose a target to make R look good. The rule is set before the trade.</li>
+<li>Break-even before costs ignores slippage, fills and gaps (<em>Slippage, gaps and planned versus actual risk</em>). Real break-evens are higher.</li>
+<li>A higher R is not automatically better. It can come with a lower chance of reaching the target.</li>
+<li>The costs in this chapter are DUMMY figures. They are not real rates from any broker or from the government.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>R = reward per share / risk per share, for a long trade.</li>
+<li>Break-even win rate before costs = 1 / (1 + R).</li>
+<li>Costs add to the risk and take from the reward. So they raise the break-even.</li>
+<li>A win rate only means something next to R.</li>
+<li>A plan below your minimum R fails your rule, however good its story sounds.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p>Sources (names only):</p>
+<ul>
+<li>Standard expectancy arithmetic, computed in this chapter. No external figure is used.</li>
+</ul>
+<p>The costs here are round numbers for practice. Do not quote them as real charges. The real charges, with dates and sources, are in <em>Costs on a trade</em>.</p>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/06-slippage-and-gaps/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/08-expectancy-and-profit-factor/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/06-slippage-and-gaps/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/08-expectancy-and-profit-factor/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

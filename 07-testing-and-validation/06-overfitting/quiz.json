@@ -1,0 +1,126 @@
+[
+  {
+    "id": "T7.6-q1",
+    "type": "mcq",
+    "prompt": "You tested six settings and reported only the best one. How many trials count?",
+    "options": [
+      {"id": "a", "text": "1, the setting that was reported."},
+      {"id": "b", "text": "6, because every setting tested counts."},
+      {"id": "c", "text": "5, because the discarded settings do not count."},
+      {"id": "d", "text": "0, because nothing was reported in full."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Reporting one setting hides the other five trials. The search size is part of the honest result.",
+      "c": "Discarded settings are trials too. They must be counted, even when they are not reported.",
+      "d": "The trials happened, so they count. Hiding them does not remove them."
+    },
+    "concepts": ["trial-counting", "overfitting"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.6-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. A grid has 6 lookbacks, 5 ATR multiples and 3 filters. How many combinations does the grid contain?",
+    "answer": 90,
+    "tolerance": 0,
+    "unit": "combinations",
+    "solution": "Combinations = 6 x 5 x 3 = 30 x 3 = 90.",
+    "concepts": ["grid-search", "trial-counting"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.6-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. A grid has 90 tests, and each test has a 5% chance of looking good by luck. About how many lucky results should you expect?",
+    "answer": 4.5,
+    "tolerance": 0.1,
+    "unit": "results",
+    "solution": "Expected lucky results = 90 x 0.05 = 4.5. So about 4 or 5 lucky results. Check: 5% of 90 is 90 / 20 = 4.5.",
+    "concepts": ["lucky-results", "overfitting"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.6-q4",
+    "type": "mcq",
+    "prompt": "The best setting on the in-sample data is most likely to do what on new data?",
+    "options": [
+      {"id": "a", "text": "Repeat its in-sample result exactly."},
+      {"id": "b", "text": "Do worse than it did on the data used to choose it, on average."},
+      {"id": "c", "text": "Do better on new data, because it was the best."},
+      {"id": "d", "text": "Show the same result, because the data is the same."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The in-sample best is biased upward. It was picked because it looked best on that data, so it is unlikely to repeat exactly.",
+      "c": "Being the best on one data set does not make a setting the best on new data. The result often falls.",
+      "d": "The new data is not the same as the data used to choose. It is the held-out data, and the result there is the honest test."
+    },
+    "concepts": ["in-sample-bias", "overfitting"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.6-q5",
+    "type": "scenario",
+    "prompt": "Hypothetical. You tried 30 variants and show one of them. A friend asks how many tests were run. What is the honest answer?",
+    "options": [
+      {"id": "a", "text": "One, the variant that is shown."},
+      {"id": "b", "text": "30, and the report should say so."},
+      {"id": "c", "text": "Only the variants that passed the pass rule."},
+      {"id": "d", "text": "It depends on the chart."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Showing one variant does not reduce the number of tests. All 30 were run.",
+      "c": "Counting only the passing variants hides the failed ones. The honest count includes every variant tried.",
+      "d": "The number of tests does not depend on the chart. It is the count of variants tried."
+    },
+    "concepts": ["trial-counting", "reporting"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.6-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Here is a report: Best cell: Rs 12,000 profit. Settings: 5 lookbacks by 4 multiples. Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The report hides the other cells and does not state the number of combinations as the trial count."},
+      {"id": "b", "text": "The best cell is always the one to trust."},
+      {"id": "c", "text": "Grids are never useful in a test."},
+      {"id": "d", "text": "Reporting one result is always best practice."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "The best cell was picked because it looked best. That is the reason to be careful with it.",
+      "c": "Grids are useful for seeing how the results change with settings. The problem is the report, not the grid.",
+      "d": "Reporting one result hides the search that produced it. The full grid and the count of trials should be shown."
+    },
+    "concepts": ["reporting", "in-sample-bias"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.6-q7",
+    "type": "mcq",
+    "prompt": "You changed a setting just to see what would happen, and you did not write it down. Does it count?",
+    "options": [
+      {"id": "a", "text": "No, untracked changes do not count."},
+      {"id": "b", "text": "Yes, it is a trial and belongs in the count."},
+      {"id": "c", "text": "No, only saved files count."},
+      {"id": "d", "text": "Only if the result was good."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A change tried in a test is a trial, whether or not it was recorded. Not recording it hides the search.",
+      "c": "The test ran, so the trial happened. Saved files do not decide whether a trial counts.",
+      "d": "A trial counts whatever its result. Counting only good results is the bias this chapter describes."
+    },
+    "concepts": ["informal-tweaks", "trial-counting"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

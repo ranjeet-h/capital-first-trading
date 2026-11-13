@@ -1,0 +1,104 @@
+[
+  {
+    "id": "T0.2-q1",
+    "type": "numeric",
+    "prompt": "A hypothetical household has Rs 4,00,000 in savings and sets Rs 50,000 as trading capital. What percentage of savings is the trading capital?",
+    "answer": 12.5,
+    "tolerance": 0.05,
+    "unit": "%",
+    "solution": "Trading capital / savings = 50,000 / 4,00,000 = 0.125 = 12.5%. Check: 4,00,000 x 12.5% = 4,00,000 x 0.125 = 50,000, which matches.",
+    "concepts": ["trading-capital", "capital-allocation"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T0.2-q2",
+    "type": "mcq",
+    "prompt": "'Borrowing doubles my gain, so it is safe if I am careful.' Is that statement right?",
+    "options": [
+      {"id": "a", "text": "Yes. If I am careful, borrowing is safe."},
+      {"id": "b", "text": "No. Borrowing makes gains and losses bigger together. Care does not remove the loss path."},
+      {"id": "c", "text": "Yes, because a doubled gain covers a doubled loss."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Care does not change the arithmetic. Losses double too, along with gains.",
+      "c": "A doubled gain and a doubled loss do not cancel out. Both move in the same direction as the position, not against it."
+    },
+    "concepts": ["leverage", "loss-mechanisms"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T0.2-q3",
+    "type": "mcq",
+    "prompt": "'The price fell, so buying more lowers my average cost and is a good idea.' Is that statement right?",
+    "options": [
+      {"id": "a", "text": "Yes. A lower average cost means a better position."},
+      {"id": "b", "text": "No. Buying more of a falling position puts more money into the same idea, which is now losing. A lower average cost is not a fix."},
+      {"id": "c", "text": "Yes, but only with borrowed money."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A lower average cost is only arithmetic. Your money in the failing idea also rises, and the idea has not changed. That is the averaging-down trap.",
+      "c": "Borrowing makes the trap worse. It does not make averaging down correct."
+    },
+    "concepts": ["averaging-down", "exposure"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T0.2-q4",
+    "type": "mcq",
+    "prompt": "'I earned nothing today, so I failed.' Which response applies the rules correctly?",
+    "options": [
+      {"id": "a", "text": "Yes. A day without a trade is a failure."},
+      {"id": "b", "text": "No. A no-trade day is valid when your plan showed no good trade. Not trading is a decision."},
+      {"id": "c", "text": "Yes, unless I lost money today."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The rules say the opposite. Not trading is a decision, not a failure. Judging the day by money earned pushes you toward trades with no clear reason.",
+      "c": "Losing money is not the test either. A day can be a valid no-trade day with no result at all."
+    },
+    "concepts": ["no-trade-day", "overtrading"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T0.2-q5",
+    "type": "scenario",
+    "prompt": "After two hypothetical losses, you move Rs 20,000 from your emergency fund into your trading account to 'win it back.' Which rule is broken?",
+    "options": [
+      {"id": "a", "text": "None. The money is mine to use."},
+      {"id": "b", "text": "Household money is separate. The emergency fund is never trading capital."},
+      {"id": "c", "text": "Only the no-F&O rule."},
+      {"id": "d", "text": "The no-trade-day rule."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Owning the money is not the test. Emergency funds are household money. They are never trading capital, whoever owns them.",
+      "c": "No F&O is not involved in this scenario. The problem is the source of the money.",
+      "d": "A no-trade day is a valid result. This scenario is about where the money came from, not about whether you traded."
+    },
+    "concepts": ["household-money", "trading-capital"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T0.2-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Statement: 'Trading capital is my total savings because I can earn it back.' Which part is the mistake?",
+    "options": [
+      {"id": "a", "text": "'Trading capital is my total savings'"},
+      {"id": "b", "text": "'because I can earn it back'"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The first half is the conclusion. It is wrong because of the reason in the second half. That reason is the faulty step. Total savings include money the household cannot afford to lose. Trading capital is only money you can afford to lose."
+    },
+    "concepts": ["trading-capital", "household-money"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

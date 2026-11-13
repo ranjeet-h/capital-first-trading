@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Watchlists, search and price alerts - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/04-kite-and-execution/02-watchlists-search-and-alerts/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T4.2
+title: Watchlists, search and price alerts
+page_type: Kite walkthrough
+prerequisites: [T4.1, T1.8]
+labs: [Lab 3]
+estimated_minutes: 15
+-->
+<h1 id="watchlists-search-and-price-alerts"><a class="header" href="#watchlists-search-and-price-alerts">Watchlists, search and price alerts</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A stock rises sharply during the day. You add it to a list. You then set an alert at a higher price. The list and the alert can feel like a plan. They are not a plan. This chapter shows what a watchlist and an alert do. It also shows what they do not do.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<ul>
+<li>A <strong>watchlist</strong> is a list of symbols you keep in view. Its job is to hold your attention. Write your rules before you add a symbol. Useful rules include liquidity, sector and data availability. You met liquidity in <em>Order matching, spread and liquidity</em>.</li>
+<li>A watchlist is not a list of recommendations. Being on it says nothing about whether a trade is right.</li>
+<li>On the Kite web, your watchlist is called Marketwatch. You can keep up to 7 lists, numbered 1 to 7. Each list can hold up to 50 symbols. Kite saves your lists on its own.</li>
+<li>To add a symbol on the web, press ~ (the tilde key) to open search. Type a name or code. Click Add next to the result you want. Hover over a row to see its buttons: Buy, Sell, Chart, Market depth, Delete and More. Look for the exact icons in your app. The More menu holds options such as Create GTT, Create alert and Add to basket.</li>
+<li><strong>Symbol search</strong> finds a stock by its code or name. Similar names and codes exist. Check the exchange and the symbol before you act.</li>
+<li>The same company can have separate listings on NSE and BSE. Kite shows the exchange next to each row. Check which exchange your symbol belongs to.</li>
+<li>An <strong>alert</strong> is a notification. It tells you that a price has reached a level you chose. A plain alert only notifies you. Kite also has <strong>ATO (Alert Triggers Order)</strong>. With ATO, an alert can place a basket of up to 20 orders on its own when it fires. This book does not use alerts to trade. Treat an alert as a reminder to review.</li>
+<li>To set an alert on the web, hover over the row, click More, then Create alert. Enter a name, choose the property, the operator and the value, then click Create. On the phone app, open the stock and tap Set alert. Kite limits how many alerts and ATO alerts you can have, and an alert lasts 365 days.</li>
+<li>Alerts create urgency. Use them as review prompts, not as triggers to act. Your stop and your size should be decided before any alert fires.</li>
+</ul>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: kite-flow | flow: add-to-watchlist,create-an-alert-and-ato | platform: web | caption: Click paths for adding a symbol safely and for making an alert. Practice in the Zerodha demo or with dummy data only. Screens and button names can change, so check Kite's help pages. -->
+<p>Look at the watchlist first. Then look at the search result. Find the exchange label next to each symbol. Then look at the alert dialog. Notice the words for the alert, and check whether an ATO option is switched on. Check the layout in your own Kite.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Suppose you follow 10 symbols. Each one trades at Rs 250. Buying one share of each would cost Rs 2,500 before charges.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>1. Symbols</td><td>given</td><td>10</td></tr>
+<tr><td>2. Price of each</td><td>given</td><td>Rs 250</td></tr>
+<tr><td>3. One share of each, before charges</td><td>10 multiplied by Rs 250</td><td>Rs 2,500</td></tr>
+</tbody></table>
+</div>
+<p>Check step 3: Rs 2,500 divided by 10 symbols is Rs 250 each.</p>
+<p>The watchlist itself costs nothing. Your attention is the real cost.</p>
+<p>Now suppose you set an alert at Rs 252. That alert is a prompt to review the chart. Your stop and your size must already be written down. They must not be chosen because the alert fired.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Build a five-symbol watchlist on paper. Write one rule for each symbol. In the Kite demo, find where the alert button sits. Then write one alert as a sentence on paper. Write down what you will do when it fires.</p>
+<p>Hints:</p>
+<ol>
+<li>Write the rule for each symbol before you add it.</li>
+<li>Check the exchange for each symbol.</li>
+<li>For the alert, write a review step. For example: look at the chart, check your stop and size, and do nothing more until your plan allows it.</li>
+</ol>
+<p><strong>Answer:</strong> Your answer is complete when each symbol has a written rule, each exchange has been checked, and the alert note says what you will review first. No order is placed in this exercise.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Write four selection rules for one hypothetical stock. Then write an alert plan for the same stock. The plan must say what the alert is for and what you will do before any order.</p>
+<details><summary>Check your answer</summary>
+<p>A sample answer, for a hypothetical stock:</p>
+<ul>
+<li>Rule 1: the stock trades enough shares each day that a planned size can be sold.</li>
+<li>Rule 2: the stock belongs to a sector that you have already studied.</li>
+<li>Rule 3: the data needed for your chart is available from your source.</li>
+<li>Rule 4: the stock is not on the list only because it rose sharply today.</li>
+<li>Alert plan: the alert is for a review of the chart at a set level. Before any order, you check the stop, the size, the cost and your written plan. An alert does not decide anything by itself.</li>
+</ul>
+<p>All details are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the difference between an alert and an order, what a watchlist is, and a common mistake after an alert.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: paper. The Kite demo is view-only. Use it only to find the alert button and read its labels. Write the list and each alert on paper.</p>
+<ol>
+<li>Write the rules for your watchlist on paper.</li>
+<li>Check the exchange for each symbol on the list.</li>
+<li>Write each alert as a sentence on paper, with its purpose.</li>
+<li>Write the review steps you will take before any order.</li>
+<li>Record this as a learning note in Lab 3. Write it in your journal. If the journal is not ready, use paper.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>A watchlist is not a buy list. Being on it does not make a trade right.</li>
+<li>A stock that rose most today is not a reason to act. Check your written rules first.</li>
+<li>A plain alert is not an order. Seeing it does not change your plan. But an alert with ATO switched on can place orders. Check the alert settings before you set one.</li>
+<li>Alerts and lists can drive fear of missing out. A rising price on a list can feel urgent. Slow down and check your rules.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>A watchlist controls your attention. It is not a recommendation list.</li>
+<li>Check the exchange and the symbol before you act.</li>
+<li>A plain alert is a notification. An ATO alert can also place orders. Either way, check your plan first.</li>
+<li>Write your stop and size before any alert fires.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p>Sources:</p>
+<ul>
+<li>Zerodha support pages on watchlists, alerts and ATO (Alert Triggers Order). Check the current limits there.</li>
+<li>NSE and BSE symbol directories</li>
+</ul>
+<p>Facts to check:</p>
+<ul>
+<li>Alert types, notification channels, and the ATO rules, including limits on alerts and orders. Check Zerodha’s alert pages.</li>
+<li>Symbol and series conventions on the NSE and BSE symbol pages.</li>
+</ul>
+<!-- facts-needed: alert types, notification channels and ATO rules; symbol and series conventions on NSE and BSE -->
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../04-kite-and-execution/01-kite-web-and-mobile-tour/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../04-kite-and-execution/03-market-depth-and-charts-in-kite/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../04-kite-and-execution/01-kite-web-and-mobile-tour/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../04-kite-and-execution/03-market-depth-and-charts-in-kite/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

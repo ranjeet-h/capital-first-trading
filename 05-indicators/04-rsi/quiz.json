@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T5.4-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Four changes are +4, +2, -2 and -1. Find the RSI for this four-period window, rounded to two decimals.",
+    "answer": 66.67,
+    "tolerance": 0.01,
+    "unit": "RSI points",
+    "solution": "Gains = 4 + 2 = 6. Average gain = 6 / 4 = 1.50. Losses = 2 + 1 = 3. Average loss = 3 / 4 = 0.75. RS = 1.50 / 0.75 = 2. RSI = 100 - 100 / (1 + 2) = 100 - 33.33 = 66.67. Check: RS of 2 means RSI = 2 / 3 = 66.67 percent of the way to 100.",
+    "concepts": ["rsi", "rs"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.4-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. The average gain over a window is 1.25 and the average loss is 0.75. What is RS, rounded to four decimals?",
+    "answer": 1.6667,
+    "tolerance": 0.001,
+    "unit": "ratio",
+    "solution": "RS = average gain / average loss = 1.25 / 0.75 = 1.6667. Check: 0.75 x 1.6667 = 1.25.",
+    "concepts": ["rs", "rsi"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.4-q3",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"A four-period window has two up days with a total gain of 5. The average gain is 5 / 2 = 2.5.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The total gain of 5"},
+      {"id": "b", "text": "Dividing by the number of up days, which should be dividing by all four periods"},
+      {"id": "c", "text": "The word \"up\""},
+      {"id": "d", "text": "Nothing. the average is correct"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The total gain of 5 is a correct sum for the window. The error is in the divisor.",
+      "c": "Up days are the days with gains. The word is correct.",
+      "d": "The average is not correct. Dividing by the up days only gives 2.5. Dividing by all four periods gives 1.25."
+    },
+    "concepts": ["average-gain", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T5.4-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. A stock is in a strong uptrend. Its RSI reads 75. A reader decides to sell because the reading is overbought. What is the best response?",
+    "options": [
+      {"id": "a", "text": "Correct, because any reading above 70 is a sell"},
+      {"id": "b", "text": "Not correct on its own. In a strong trend, RSI can stay above 70 for a long time. Any sell rule must be tested and must have a stop and a size rule"},
+      {"id": "c", "text": "Correct, but only if the RSI has been above 75 for a week"},
+      {"id": "d", "text": "Not correct, because RSI measures the price level, so 75 means the stock is expensive"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "70 is a conventional reference level, not a sell signal. A strong trend can keep RSI above it.",
+      "c": "A time limit does not make the reading a signal. The threshold is still a hypothesis to test.",
+      "d": "RSI measures momentum over a window, not the price level. The reading does not say the stock is expensive."
+    },
+    "concepts": ["overbought", "rsi-limits"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T5.4-q5",
+    "type": "mcq",
+    "prompt": "What are the levels 70 and 30 on an RSI chart?",
+    "options": [
+      {"id": "a", "text": "Conventional reference levels, not signals"},
+      {"id": "b", "text": "Exact prices where the stock will reverse"},
+      {"id": "c", "text": "Limits set by the exchange"},
+      {"id": "d", "text": "Two prices that show the stop for every trade"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "The levels are not prices. They are readings on a scale from 0 to 100, and they do not force a reversal.",
+      "c": "The exchange does not set RSI levels. They are a convention used on charts.",
+      "d": "The stop comes from your own plan, not from an RSI level."
+    },
+    "concepts": ["rsi-levels", "conventions"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.4-q6",
+    "type": "mcq",
+    "prompt": "What does RSI measure?",
+    "options": [
+      {"id": "a", "text": "The price level compared with the company's book value"},
+      {"id": "b", "text": "The momentum over a window, from the size of recent gains compared with recent losses"},
+      {"id": "c", "text": "The number of shares traded in a day"},
+      {"id": "d", "text": "The future direction of the price"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "RSI does not use book value. It uses the closing prices in its window.",
+      "c": "RSI uses price changes, not the number of shares traded. Volume is a separate measure.",
+      "d": "RSI describes the recent past. It is not a forecast of the future direction."
+    },
+    "concepts": ["rsi", "momentum"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

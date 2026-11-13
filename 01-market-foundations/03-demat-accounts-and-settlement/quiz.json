@@ -1,0 +1,108 @@
+[
+  {
+    "id": "T1.3-q1",
+    "type": "mcq",
+    "prompt": "Right after my buy order fills, the shares appear in my demat account, so I can sell them today. Is that right?",
+    "options": [
+      {"id": "a", "text": "Yes. An executed order is a holding."},
+      {"id": "b", "text": "No. The trade is cleared and settled first, and the holding appears after settlement."},
+      {"id": "c", "text": "Yes, but only for intraday trades."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Execution is not settlement. The trade is matched, then cleared, then settled, and the shares are credited after that.",
+      "c": "Intraday positions are not delivery holdings. Delivery holdings appear after settlement. Intraday positions are covered later in this book."
+    },
+    "concepts": ["settlement", "holding-vs-position"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.3-q2",
+    "type": "mcq",
+    "prompt": "What does T+1 mean?",
+    "options": [
+      {"id": "a", "text": "Settlement on the next calendar day"},
+      {"id": "b", "text": "Settlement one working day after the trade date"},
+      {"id": "c", "text": "Settlement two working days after the trade date"},
+      {"id": "d", "text": "Settlement on the trade date itself"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "T+1 counts working days, not calendar days. Weekends and holidays are skipped.",
+      "c": "Two working days would be a different cycle. The rule in this chapter is one working day after the trade date",
+      "d": "Settlement on the trade date would be T+0. T+1 is one working day later."
+    },
+    "concepts": ["t-plus-1", "settlement"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.3-q3",
+    "type": "numeric",
+    "prompt": "In one settlement cycle a broker has three buy trades of Rs 5,000 each and one sell trade of Rs 2,000. What is the net payable, in rupees, after netting?",
+    "answer": 13000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Total buys = 3 x 5,000 = 15,000. Sell proceeds = 2,000. Net payable = 15,000 - 2,000 = Rs 13,000. Check: 13,000 + 2,000 = 15,000, which equals the total buys. This is a concept illustration. In real settlement, netting is done for each client in each share, and not for trade-for-trade or auction trades. Common wrong answers: 17,000 (adds the sell instead of subtracting it) and 15,000 (ignores the sell).",
+    "concepts": ["netting"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.3-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Statement: 'My demat account holds my cash.' Which part of this statement is the mistake?",
+    "options": [
+      {"id": "a", "text": "'My demat account' (it does hold shares, so this part is correct)"},
+      {"id": "b", "text": "'holds my cash'"},
+      {"id": "c", "text": "'holds shares in electronic form' (this part is correct)"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The demat account holds shares in electronic form. Naming it is correct; the error is what it is said to hold.",
+      "c": "This describes the demat account correctly. The error is the claim about cash."
+    },
+    "concepts": ["accounts", "funds"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.3-q5",
+    "type": "scenario",
+    "prompt": "You bought 20 shares today in delivery and want to sell them tomorrow for delivery. Which constraint applies first?",
+    "options": [
+      {"id": "a", "text": "The shares reach your demat account only after settlement, so selling them before that (BTST) carries a short-delivery risk."},
+      {"id": "b", "text": "No constraint. You can sell any time."},
+      {"id": "c", "text": "The shares must be sold before the market closes today."},
+      {"id": "d", "text": "Only the broker can decide when the sale is allowed."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "There is a constraint. The shares are credited only after settlement. Some brokers allow a sale before that (BTST), but short delivery and an auction penalty are real risks. Check the rule first.",
+      "c": "Closing time is not the constraint. The constraint is that the shares are credited only after settlement.",
+      "d": "The broker passes on your order. Settlement timing is set by market rules, not by the broker's choice."
+    },
+    "concepts": ["delivery-sale", "settlement-constraints"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T1.3-q6",
+    "type": "mcq",
+    "prompt": "What does netting do?",
+    "options": [
+      {"id": "a", "text": "Settles every trade separately at its full value."},
+      {"id": "b", "text": "Reduces the many trades in one settlement cycle to a single net obligation for each security and each cash amount."},
+      {"id": "c", "text": "Removes the need for a bank account."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Settling every trade separately is the opposite of netting. Netting offsets trades before money or shares move, so the net figure is what changes hands.",
+      "c": "The linked bank account still moves the money. Netting reduces the number of obligations; it does not remove the need for funds."
+    },
+    "concepts": ["netting", "clearing"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

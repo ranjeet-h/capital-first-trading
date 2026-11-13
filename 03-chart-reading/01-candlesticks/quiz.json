@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T3.1-q1",
+    "type": "mcq",
+    "prompt": "Which price is the open of a candle?",
+    "options": [
+      {"id": "a", "text": "The last traded price in the period"},
+      {"id": "b", "text": "The first traded price in the period"},
+      {"id": "c", "text": "The highest traded price in the period"},
+      {"id": "d", "text": "The average of all traded prices in the period"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The last traded price is the close, not the open.",
+      "c": "The highest traded price is the high of the candle.",
+      "d": "A candle does not use an average. It uses the first, highest, lowest and last prices."
+    },
+    "concepts": ["ohlc"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.1-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical candle: open Rs 300, high Rs 308, low Rs 296, close Rs 297. What is the upper shadow in rupees?",
+    "answer": 8,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "The top of the body is the higher of open and close. Here the open is 300 and the close is 297, so the top is 300. Upper shadow = 308 minus 300 = 8. Check: a value of 11 comes from using the close (308 minus 297) as the top of the body, which is the wrong top here.",
+    "concepts": ["shadows", "body-and-shadow"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.1-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical candle: open Rs 300, high Rs 308, low Rs 296, close Rs 297. What is the body in rupees?",
+    "answer": 3,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Body = |close minus open| = |297 minus 300| = 3. Check: 300 minus 297 = 3, the same size without the sign.",
+    "concepts": ["body"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.1-q4",
+    "type": "scenario",
+    "prompt": "A trader says: 'The candle is green, so the price will rise tomorrow.' Which reply is best?",
+    "options": [
+      {"id": "a", "text": "Agreed. Green candles come before a rise."},
+      {"id": "b", "text": "A candle describes one past period. It does not say what tomorrow will do. Colour is a display setting, so check the close against the open."},
+      {"id": "c", "text": "Only true when the volume is high."},
+      {"id": "d", "text": "Green means the close was below the open."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A candle describes a past period. No single candle predicts the next day.",
+      "c": "Volume does not turn a description into a forecast. The candle still describes only one period.",
+      "d": "Colour is set by the tool. It does not define the close against the open. Read the legend."
+    },
+    "concepts": ["bullish-bearish", "colour-is-not-definition"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.1-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Hypothetical candle: open Rs 500, high Rs 512, low Rs 497, close Rs 497. Spot the mistake: 'The close is the low, so the candle is bullish.' Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The close is the low"},
+      {"id": "b", "text": "The candle is bullish"},
+      {"id": "c", "text": "The open is Rs 500"},
+      {"id": "d", "text": "There is no mistake"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This part is true in this candle. The close is Rs 497 and the low is Rs 497.",
+      "c": "This part is true. The open of this candle is Rs 500.",
+      "d": "There is a mistake. A close below the open is bearish. Rs 497 is below Rs 500, so the candle is bearish."
+    },
+    "concepts": ["bullish-bearish", "ohlc"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.1-q6",
+    "type": "multi",
+    "prompt": "Which of these does a single candle NOT show? Choose all that apply.",
+    "options": [
+      {"id": "a", "text": "The order of the trades inside the period"},
+      {"id": "b", "text": "The volume, which is the number of shares traded"},
+      {"id": "c", "text": "The open"},
+      {"id": "d", "text": "What the next candle will do"},
+      {"id": "e", "text": "The high"}
+    ],
+    "answer": ["a", "b", "d"],
+    "explanations": {
+      "c": "The open is one of the four numbers a candle shows.",
+      "e": "The high is one of the four numbers a candle shows."
+    },
+    "concepts": ["limits-of-a-candle"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

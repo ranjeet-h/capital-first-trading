@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>What a trading edge is - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/06-strategy/02-trading-edge/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T6.2
+title: What a trading edge is
+page_type: Concept
+prerequisites: [T6.1, T2.7, T2.8]
+labs: [Lab 3]
+estimated_minutes: 25
+-->
+<h1 id="what-a-trading-edge-is"><a class="header" href="#what-a-trading-edge-is">What a trading edge is</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A friend says, “My method wins eight out of ten trades, so I have an edge.” That sounds strong. Here is a hypothetical example. Each win gains Rs 100. Each loss costs Rs 900. Eight wins give Rs 800. Two losses cost Rs 1,800. Overall, the method loses Rs 1,000. Winning often does not prove that a method works. This chapter shows how to measure an edge properly.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>An edge is a reason to expect a positive result from a method. In this book, an edge means an average result per trade that stays positive after costs. Costs are the charges you pay on each trade, such as brokerage, exchange charges and taxes.</p>
+<p>An edge is only a hypothesis until you measure it. A hypothesis is a clear statement that a test could prove wrong. Write it down before you test it. Use this form:</p>
+<blockquote>
+<p>If condition X occurs, the average trade result will be positive over N trades. The result is measured in R. The test uses data that was not used to design the rule.</p>
+</blockquote>
+<p>R is the planned loss on one trade. If your plan risks Rs 500 on a trade, then 1R is Rs 500. A winner of Rs 1,000 is +2R. A loser of Rs 500 is -1R. Measuring in R lets you compare trades of different sizes.</p>
+<p>Every method must answer four decisions:</p>
+<ul>
+<li><strong>Entry:</strong> when do you open the trade?</li>
+<li><strong>Exit:</strong> when do you close it? This includes the stop, which is the price where you accept a loss.</li>
+<li><strong>Sizing:</strong> how many shares do you buy? See <em>Position sizing step by step</em>.</li>
+<li><strong>Filters:</strong> which signals do you skip, even when the entry rule is met?</li>
+</ul>
+<p>Expectancy is the average result per trade, measured in R. In words, it is the win rate times the average win, minus the loss rate times the average loss. The loss rate is one minus the win rate. In symbols, E = (W x AW) - ((1 - W) x AL). W is the win rate. AW is the average win in R. AL is the average loss in R. See <em>Expectancy and profit factor</em> for more.</p>
+<p>Costs reduce expectancy. A cost of Rs 50 on a trade with 1R of Rs 500 is 0.1R. That is small for one trade. Over many trades, costs add up.</p>
+<p>Sample size matters. A few trades can look strong by luck. Imagine a coin that lands heads six times in ten tosses. That does not prove the coin is unfair. Ten trades show very little. Many more are needed before a result says much.</p>
+<p>Testing a rule on the same data you used to build it is a common error. The result looks better than it really is. Keep some data aside and test on that. The chapter <em>Overfitting and the number of things you tried</em> explains why.</p>
+<p>This book does not assume you have an edge. Many ideas that look promising show no edge when they are measured.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: strategy-simulator | mode: step | caption: Step through entry, stop and exit rules one bar at a time to see how each rule is read -->
+<p>Press Step to move the simulator one bar at a time. At each bar, check three things. Is the entry rule met? Where is the stop? Has the exit rule triggered? The step log shows the answer for each bar in a row. Read the log from top to bottom, the same way the price moved.</p>
+<!-- component: edge-explorer | caption: Change the win rate and the size of wins and losses, then watch 100 made-up trades build an average result. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Win rate 40 percent. Average win 2R. Average loss 1R. R = Rs 500. Assumed cost Rs 50 per trade.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>1. Win part</td><td>0.40 x 2R</td><td>0.80R</td></tr>
+<tr><td>2. Loss part</td><td>0.60 x 1R</td><td>0.60R</td></tr>
+<tr><td>3. Expectancy</td><td>0.80R - 0.60R</td><td>0.20R per trade</td></tr>
+<tr><td>4. In rupees</td><td>0.20 x Rs 500</td><td>Rs 100 per trade</td></tr>
+<tr><td>5. After costs</td><td>Rs 100 - Rs 50</td><td>Rs 50 per trade</td></tr>
+</tbody></table>
+</div>
+<p>The Rs 50 cost is a round number for practice, not the real charge. As of 11 Nov 2026, Zerodha lists zero brokerage on delivery trades, and 0.03% or Rs 20 per order (whichever is lower) on intraday trades, plus taxes and exchange fees. The full table is in <em>Costs on a trade</em>. Rules change, so check the Zerodha charges page. Taxes on gains are not included here.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Win rate 30 percent. Average win 3R. Average loss 1R. Compute the expectancy in R.</p>
+<p>Hints:</p>
+<ol>
+<li>Multiply the win rate by the average win.</li>
+<li>Multiply the loss rate by the average loss. The loss rate is 1 minus 0.30.</li>
+<li>Subtract the second result from the first.</li>
+</ol>
+<p><strong>Answer:</strong> 0.30 x 3 = 0.90R. The loss rate is 0.70. 0.70 x 1 = 0.70R. 0.90R - 0.70R = <strong>0.20R</strong> per trade.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Write one hypothesis for a breakout idea. Then write four rule definitions: entry, exit (including the stop), sizing and filters. Do not write any expected profit.</p>
+<details><summary>Check your answer</summary>
+<p>A sample answer, with example numbers only:</p>
+<ul>
+<li>Hypothesis: If price closes above the highest high of the previous 20 days, the average trade result will be positive over 50 trades. The result is measured in R, on data not used to design the rule.</li>
+<li>Entry: buy at the next day’s open after the signal close.</li>
+<li>Exit: close when price falls to the trailing stop.</li>
+<li>Stop: set 2 ATR below the entry price at the time of entry.</li>
+<li>Sizing: risk 1 percent of capital, and apply the cash cap and the concentration cap.</li>
+<li>Filters: skip signals when the daily loss limit has been reached.</li>
+</ul>
+<p>Check that the answer has no profit figure. The numbers above are examples, not results.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the expectancy formula, the form of a hypothesis, and why a streak of wins is not proof.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong>. Write it in your journal. If the journal is not ready, use paper.</p>
+<ol>
+<li>Write one hypothesis in the form shown in <em>The idea</em>.</li>
+<li>Write the four decisions: entry, exit (including the stop), sizing and filters.</li>
+<li>Write the test that would show you are wrong. Name the data you will use, and say it was not used to design the rule.</li>
+<li>Do not write any profit target.</li>
+<li>Mark the page as hypothetical.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>A high win rate alone does not show a positive expectancy. The size of the wins and the losses matters too.</li>
+<li>Costs matter at any account size. A Rs 50 cost on a Rs 500 planned loss takes 0.1R from every trade.</li>
+<li>Eight wins in ten trades is a small sample. Luck can produce it.</li>
+<li>A rule built and tested on the same charts looks better than it is.</li>
+<li>Naming the test before you run it helps you. It does not prove that an edge exists.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>An edge is a hypothesis until it is measured after costs.</li>
+<li>Write the hypothesis, the rules and the test before you look at results.</li>
+<li>Expectancy = (win rate x average win in R) minus (loss rate x average loss in R).</li>
+<li>A high win rate alone does not show positive expectancy.</li>
+<li>Ten or twenty trades cannot separate skill from luck.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Zerodha Varsity, material on expectancy and trading systems (reference only).</li>
+<li>Bailey, Borwein, Lopez de Prado and Zhu (2014), “Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance”, Notices of the American Mathematical Society, 61(5), 458-471. On trying many rules on the same past data.</li>
+<li>Harvey, Liu and Zhu (2016), “… and the Cross-Section of Expected Returns”, Review of Financial Studies, 29(1), 5-68. On how many tests make a lucky result likely.</li>
+<li>Zerodha charges page, read on 11 Nov 2026, for the real charges next to the Rs 50 example.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../06-strategy/01-investing-and-trading-styles/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../06-strategy/03-trend-following/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../06-strategy/01-investing-and-trading-styles/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../06-strategy/03-trend-following/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

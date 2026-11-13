@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>गेट G4 जोखीम शिस्त - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../10-graduation-gates/04-gate-g4-risk-discipline/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../10-graduation-gates/04-gate-g4-risk-discipline/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T10.4
+title: गेट G4 जोखीम शिस्त
+page_type: Assessment
+prerequisites: [T2.11, T2.12, T8.2, T8.4, T8.6, T8.7]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="गेट-g4-जोखीम-शिसत"><a class="header" href="#गेट-g4-जोखीम-शिसत">गेट G4 जोखीम शिस्त</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>कल्पना करा की एका सिम्युलेटेड दिवसाची दैनिक तोटा मर्यादा Rs 1,000 आहे. काल्पनिक. दोन तोट्याच्या व्यापारानंतर तुम्ही Rs 1,000 ने खाली आहात. तिसरा सेटअप आकर्षक दिसतो, आणि तुम्हाला पैसे परत मिळवायचे आहेत. हा गेट एकच प्रश्न विचारतो: तुम्ही थांबता का? ही बाजार कौशल्याची चाचणी नाही. दिवस सुरू होण्यापूर्वी तुम्ही लिहिलेल्या मर्यादेचे तुम्ही पालन करता का, हे ती तपासते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>गेट सिम्युलेटेड दिवस चालवतो. प्रत्येक सिम्युलेटेड दिवस हा एक परिस्थिती असतो. दैनिक मर्यादा दिवसात यादृच्छिक बिंदूवर गाठली जाते, त्यामुळे ती कधी येईल हे तुम्हाला आधी कळत नाही.</p>
+<blockquote>
+<p>हे शैक्षणिक क्षमता मोजते. हा नफा मिळेल याचा पुरावा नाही. येथे खऱ्या पैशांनी ट्रेडिंग करण्याची गरज नाही आणि अशी शिफारसही नाही.</p>
+</blockquote>
+<p>पास होण्यासाठी प्रत्येक परिस्थितीत खालील दोन्ही गोष्टी कराव्या लागतात:</p>
+<ol>
+<li><strong>मर्यादा गाठल्यावर थांबा.</strong> “थांबणे” म्हणजे मर्यादा गाठल्यानंतर त्या दिवशी पुढील कोणतीही एन्ट्री न करणे.</li>
+<li><strong>तोट्यानंतर आकार वाढवू नका.</strong> कोणत्याही परिस्थितीत तोट्यानंतर तुम्ही तुमचा आकार वाढवू शकत नाही.</li>
+</ol>
+<p>नियमसंचावरील दोन बहुपर्यायी प्रश्नांची उत्तरेही तुम्हाला द्यावी लागतात. दोन्ही बरोबर असणे आवश्यक आहे.</p>
+<p>पास होण्यासाठी 10 पैकी 10 परिस्थिती बरोबर असाव्या लागतात.</p>
+<p>प्रत्येक प्रयत्नात दहा नवीन सिम्युलेटेड दिवस येतात. आधीचा प्रयत्न पुढे नेला जात नाही. वेळेचे बंधन नाही आणि पुन्हा देण्यासाठी दंडही नाही.</p>
+<p>तुम्ही नापास झालात, तर कोणत्या दिवसाने नियम मोडला आणि त्या दिवशी तुम्ही काय केले, ते गेट दाखवतो. मग तुम्ही पुन्हा देऊ शकता.</p>
+<p>सिम्युलेटर बाजार कौशल्याची चाचणी नाही. तो लिहिलेल्या मर्यादेचे पालन होते का, हे तपासतो.</p>
+<p>हा गेट पार केल्याचा अर्थ व्यापार करावे असा होत नाही. पास झाल्याने फक्त इतकेच दिसते की तुम्ही सिम्युलेटेड दिवसांमध्ये नियमाचे पालन केले.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>या गेटमध्ये शोधण्यासारखे चित्र नाही. प्रत्येक निकालाचा अर्थ काय ते पाहण्यासाठी हा तक्ता वापरा.</p>
+<div class="table-wrapper"><table><thead><tr><th>मर्यादा गाठल्यानंतर तुम्ही काय केले</th><th>त्या दिवसाचा निकाल</th></tr></thead><tbody>
+<tr><td>पुढे कोणतीही एन्ट्री केली नाही</td><td>थांबलात. नियम पाळला.</td></tr>
+<tr><td>आणखी एक एन्ट्री केली, अगदी छोटी असली तरी</td><td>थांबला नाहीत. नियम मोडला.</td></tr>
+<tr><td>तोट्यानंतर आकार वाढवला</td><td>आकाराचा नियम मोडला.</td></tr>
+</tbody></table>
+</div>
+<p>एका दिवशी एक नियम मोडला तरी प्रयत्न नापास होतो.</p>
+<!-- component: gate-check | gate: G4 | caption: प्रत्येक निकष फक्त तुमच्या बाबतीत खरा असेल तेव्हाच टिक करा. गेट तुम्ही काय शिकलात ते तपासतो. ती व्यापार करण्याची परवानगी नाही. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> दहा सिम्युलेटेड दिवस. प्रत्येक दिवशी दैनिक मर्यादा Rs 1,000 आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>दिवस</th><th>मर्यादा गाठली?</th><th>तुम्ही काय केले</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1</td><td>हो</td><td>थांबलात</td><td>पाळला</td></tr>
+<tr><td>2</td><td>नाही</td><td>नेहमीप्रमाणे व्यापार केला</td><td>पाळला</td></tr>
+<tr><td>3</td><td>हो</td><td>थांबलात</td><td>पाळला</td></tr>
+<tr><td>4</td><td>हो</td><td>आणखी एक व्यापार घेतला</td><td>मोडला</td></tr>
+<tr><td>5 ते 10</td><td>मिश्र</td><td>मर्यादा गाठली तेव्हा प्रत्येक वेळी थांबलात</td><td>पाळला</td></tr>
+</tbody></table>
+</div>
+<p>नऊ दिवसांनी नियम पाळला आणि एका दिवशी मोडला. म्हणजे 10 पैकी 9, जे 90% आहे. गेटला 10 पैकी 10 लागतात, म्हणून हा प्रयत्न नापास होतो. निकालात दिवस 4 हा मोडलेली परिस्थिती म्हणून दाखवला जातो.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> काल्पनिक. तुमची दैनिक मर्यादा Rs 1,500 आहे. व्यापार 1 वर तुमचा Rs 600 तोटा होतो आणि व्यापार 2 वर Rs 900 तोटा होतो. तुम्ही मर्यादा गाठली आहे का? पुढे तुम्ही काय करावे?</p>
+<p>संकेत:</p>
+<ol>
+<li>दोन तोटे एकत्र करा.</li>
+<li>एकूण रकमेची मर्यादेशी तुलना करा. ती मर्यादेपर्यंत पोहोचली आहे का?</li>
+<li>मर्यादा गाठल्यावर नियम काय सांगतो याचा विचार करा.</li>
+</ol>
+<p><strong>उत्तर:</strong> 600 + 900 = Rs 1,500. ते मर्यादेएवढे आहे, म्हणून मर्यादा गाठली आहे. त्या दिवशी तुम्ही पुढे कोणतीही एन्ट्री करत नाही.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> काल्पनिक. तुमची दैनिक मर्यादा Rs 1,000 आहे. तुमचे तोटे अनुक्रमे Rs 350, मग Rs 400, मग Rs 200, मग Rs 100 आहेत. कोणत्या व्यापारानंतर मर्यादा गाठली जाते? त्यानंतर तुम्ही काय करावे?</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>व्यापार 1 नंतर: Rs 350. गाठली नाही.</li>
+<li>व्यापार 2 नंतर: Rs 350 + Rs 400 = Rs 750. गाठली नाही.</li>
+<li>व्यापार 3 नंतर: Rs 750 + Rs 200 = Rs 950. गाठली नाही.</li>
+<li>व्यापार 4 नंतर: Rs 950 + Rs 100 = Rs 1,050. Rs 1,000 ची मर्यादा गाठली आहे.</li>
+</ul>
+<p>मर्यादा व्यापार 4 नंतर गाठली जाते. त्या दिवशी तुम्ही पुढे कोणतीही एन्ट्री करत नाही. सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ मर्यादेचे हिशोब, “थांबणे” म्हणजे काय आणि आकाराचा नियम तपासतो.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> शिकण्याची नोंद. ती तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल, तर कागदावर लिहा. सिम्युलेटर तयार नसेल, तर हे काम कागदावर किंवा स्प्रेडशीटमध्ये करा.</p>
+<ol>
+<li>कागदावर एक काल्पनिक दैनिक तोटा मर्यादा लिहा. त्यासाठी बनवलेला आकडा वापरा.</li>
+<li>त्याखाली तीन नियम लिहा. मर्यादा गाठल्यावर थांबा. त्यानंतर एन्ट्री करू नका. तोट्यानंतर आकार वाढवू नका.</li>
+<li>दहा बनवलेल्या दिवसांचा तक्ता करा. प्रत्येक दिवसासाठी तोटे क्रमाने लिहा आणि मर्यादा कुठे गाठली ते लिहा.</li>
+<li>प्रत्येक दिवसासाठी तुम्ही थांबलात का ते लिहा. ज्या दिवशी थांबला नाहीत तो दिवस चिन्हांकित करा.</li>
+<li>संपूर्ण पान काल्पनिक म्हणून चिन्हांकित करा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>सिम्युलेटर बाजार कौशल्य मोजत नाही. पास झाल्याने तुम्ही पैसे कमवू शकता, हे दिसत नाही.</li>
+<li>सिम्युलेटेड दिवसांत यादृच्छिक निकाल वापरले जातात. खरे दिवस सिम्युलेटरमध्ये न दिसणाऱ्या मार्गांनी हलू शकतात.</li>
+<li>नियम दिवस सुरू होण्यापूर्वी लिहिला तरच उपयोगी ठरतो. तोट्यानंतर लिहिणे खूप उशीर आहे.</li>
+<li>दहापैकी दहा हे शिकण्याचे मानक आहे. खऱ्या पैशांनी तुम्ही कसे वागाल याचे ते वचन देत नाही.</li>
+<li>तोटा तुम्हाला तो परत मिळवण्याची इच्छा करायला लावत असेल, तर पुन्हा व्यापार करण्यापूर्वी <em>सलग तोटे आणि सततचे तोटे</em> वाचा.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>दैनिक मर्यादा गाठली की थांबा. त्या दिवशी पुढे कोणतीही एन्ट्री करू नका.</li>
+<li>तोट्यानंतर कधीही आकार वाढवू नका.</li>
+<li>पास होण्यासाठी 10 पैकी 10 सिम्युलेटेड दिवस बरोबर हवेत.</li>
+<li>हा गेट लिहिलेल्या मर्यादेची चाचणी घेतो, बाजार कौशल्याची नाही.</li>
+<li>हा गेट पार केल्याचा अर्थ व्यापार करावे असा होत नाही.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>या पुस्तकातील जोखीम प्रकरणांमधील दैनिक मर्यादेसाठी पुस्तकाचा नियम.</li>
+<li>या पुस्तकातील आधीच्या जोखीम प्रकरणांमधील सिम्युलेटरच्या नोंदी.</li>
+</ul>
+<!-- facts-needed: none. The gate uses simulated days and the book's own rules. -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T10.4&amp;body=Page%3A%2010-graduation-gates%2F04-gate-g4-risk-discipline%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../10-graduation-gates/03-gate-g3-kite-readiness/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../10-graduation-gates/05-gate-g5-strategy-validation/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../10-graduation-gates/03-gate-g3-kite-readiness/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../10-graduation-gates/05-gate-g5-strategy-validation/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

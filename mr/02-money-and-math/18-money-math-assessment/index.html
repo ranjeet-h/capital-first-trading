@@ -1,0 +1,406 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>पैशांच्या गणिताचे मूल्यमापन - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../02-money-and-math/18-money-math-assessment/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../02-money-and-math/18-money-math-assessment/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T2.18
+title: पैशांच्या गणिताचे मूल्यमापन
+page_type: Assessment
+prerequisites: [T2.1, T2.2, T2.3, T2.4, T2.5, T2.6, T2.7, T2.8, T2.9, T2.10, T2.11, T2.12, T2.13, T2.14, T2.15, T2.16, T2.17]
+labs: [Lab 1, Lab 2, Lab 3]
+estimated_minutes: 35
+-->
+<h1 id="पैशांचया-गणिताचे-मूलयमापन"><a class="header" href="#पैशांचया-गणिताचे-मूलयमापन">पैशांच्या गणिताचे मूल्यमापन</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एक काल्पनिक ट्रेडरकडे Rs 50,000 आहेत. ती प्रति व्यापार 1% जोखीम घेते आणि Rs 400 ला एंट्री करून Rs 380 ला स्टॉप ठेवते. ती भांडवलाला एंट्री भावाने भागते आणि 125 शेअर्स खरेदी करते. स्टॉपवर तिचा नियोजित तोटा 125 x 20 = Rs 2,500 आहे. हा तोटा तिच्या भांडवलाच्या 5% आहे, म्हणजे तिने ठरवलेल्या Rs 500 मर्यादेच्या पाचपट. हे मूल्यमापन तपासते की शेअर्सची संख्या जोखीम नियमावरून ठरते, खात्यातील रोखीवरून नव्हे.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>हे मूल्यमापन या भागातील पैशांच्या गणिताची तपासणी करते. ही गेट G2 ची तपासणी आहे. पास होण्यासाठी तुम्हाला खर्च, पोझिशन साइजिंग आणि अपेक्षित परतावा या प्रश्नांची उत्तरे अचूक द्यावी लागतील, अनुमत मार्जिनच्या आत. हे नवीन प्रश्नांच्या संचावर होते. तसेच तुम्ही <em>The Rs 2,000-3,000 reality check</em> हे प्रकरणही पूर्ण केले पाहिजे.</p>
+<p><strong>या गोष्टी तपासल्या जातात</strong></p>
+<ul>
+<li><strong>खर्च:</strong> ठरावीक खर्च (प्रति ऑर्डर) विरुद्ध प्रमाणानुसार खर्च (उलाढालीची टक्केवारी). ठरावीक खर्च लहान व्यापारांवर जास्त भार टाकतो (<em>एका व्यापारावरील खर्च</em>). सरावाचे प्रश्न गोल आकड्यांवर आहेत. खऱ्या खर्चाचे दिनांक आणि स्रोत <em>एका व्यापारावरील खर्च</em> मधील तक्त्यात आहेत.</li>
+<li><strong>पोझिशन साइजिंग:</strong> तीन मर्यादा, त्यातील सर्वात कमी घ्या, सर्वात मोठी नव्हे.</li>
+<li><strong>तोटा टाळण्याचा विजय दर:</strong> तो विजय दर ज्यावर खर्चापूर्वी विजयांची रक्कम तोट्यांची भरपाई करते.</li>
+<li><strong>अपेक्षित परतावा आणि प्रॉफिट फॅक्टर:</strong> प्रति व्यापार सरासरी निकाल, आणि एकूण नफा व एकूण तोटा यांचे गुणोत्तर.</li>
+<li><strong>ड्रॉडाउन रिकव्हरी:</strong> तोट्यानंतर सुरुवातीच्या मूल्यावर परत येण्यासाठी लागणारा परतावा.</li>
+<li><strong>दैनिक लक्ष्याचे भांडवल:</strong> दैनिक लक्ष्यासाठी लागणारे भांडवल (<em>The Rs 2,000-3,000 reality check</em>).</li>
+</ul>
+<p><strong>पोझिशन साइजिंग.</strong> आधी तीन मर्यादा मोजा, मग सर्वात कमी घ्या:</p>
+<ul>
+<li>जोखीम बजेट = भांडवल x जोखीम टक्केवारी.</li>
+<li>प्रति शेअर जोखीम = एंट्री - स्टॉप.</li>
+<li>कच्चे शेअर्स = जोखीम बजेट / प्रति शेअर जोखीम, खाली गोल केलेले.</li>
+<li>रोख मर्यादा = floor(भांडवल / एंट्री).</li>
+<li>एकाग्रता मर्यादा = floor(भांडवल x कमाल पोझिशन टक्केवारी / एंट्री). Lab 1 मधील सुरुवातीचे मूल्य 25% आहे.</li>
+<li>शेअर्स = कच्चे शेअर्स, रोख मर्यादा आणि एकाग्रता मर्यादा यांतील सर्वात कमी.</li>
+</ul>
+<p><strong>तोटा टाळण्याचा विजय दर.</strong> खर्चापूर्वी, R हा रिवॉर्ड-टू-रिस्क गुणोत्तर असताना (म्हणजे परतावा आणि जोखीम यांचे गुणोत्तर), तोटा टाळण्याचा विजय दर = 1 / (1 + R). समतुल्य रूप: विजय दर x R = (1 - विजय दर) x 1.</p>
+<p><strong>अपेक्षित परतावा.</strong> प्रति व्यापार, R मध्ये: (विजय दर x सरासरी विजय R मध्ये) - (तोट्याचा दर x सरासरी तोटा R मध्ये). रुपयांत, R चा निकाल एका R चे रुपयांतील मूल्य याने गुणा. अपेक्षित परतावा अनेक व्यापारांवरील सरासरी असतो. तो पुढच्या व्यापाराचा अंदाज नाही.</p>
+<p><strong>प्रॉफिट फॅक्टर.</strong> एकूण नफा भागिले एकूण तोटा. 1 पेक्षा जास्त मूल्य म्हणजे नोंदीत नफ्याने तोट्याला मागे टाकले. तो किती व्यापारांवर आधारित आहे, हे तो सांगत नाही.</p>
+<p><strong>ड्रॉडाउन रिकव्हरी.</strong> तोट्याचे प्रमाण L (आधीच्या मूल्याच्या तुलनेत) असेल, तर लहान आधारावर L / (1 - L) इतका परतावा लागतो. 30% तोट्याला 0.3 / 0.7 = 42.9% लागतो, 30% नव्हे.</p>
+<p><strong>प्रश्नांचे प्रकार.</strong> संख्यात्मक उत्तरे (थोड्या अनुमत मार्जिनसह), बहुपर्यायी, परिस्थिती, चूक शोधा आणि पायऱ्यांचा क्रम.</p>
+<p><strong>नवीन संच.</strong> गेट प्रत्येक वेळी नवीन प्रश्नांचा संच वापरते, जो तपासण्या असलेल्या संगणकाने बनवलेला असतो. उदाहरणार्थ, लॉंग व्यापाराचा स्टॉप एंट्रीच्या खाली असला पाहिजे, भांडवल वाजवी मर्यादेत राहते, आणि शेअर्सची संख्या पूर्ण असते. प्रत्येक संख्यात्मक उत्तर तपासलेल्या गणनेने काढलेले असते. या प्रकरणातील नमुना संच निश्चित आहे.</p>
+<p><strong>टक्केवारीसाठी मार्जिन.</strong> रुपयांची उत्तरे पैशापर्यंत (रुपयाचा शंभरावा भाग) अचूक असली पाहिजेत. टक्केवारी थोड्या मार्जिनसह स्वीकारली जाते.</p>
+<p><strong>खर्चाचे प्रश्न आणि जुनी तथ्ये.</strong> खर्चाचे प्रश्न तपासलेल्या तथ्य फाइलवर अवलंबून असतात. एखादे खर्च तथ्य जुने झाले, तर मूल्यमापन इशारा दाखवते आणि ते प्रश्न मोजत नाही.</p>
+<p><strong>पुन्हा परीक्षा.</strong> तुम्ही कधीही पुन्हा मूल्यमापन देऊ शकता. प्रत्येक पुनर्परीक्षेत नवीन प्रश्न मिळतात. वेळेची मर्यादा नाही, आणि तुमचा प्रयत्नांचा इतिहास जतन केला जातो.</p>
+<p><strong>चुकीची उत्तरे ज्याकडे लक्ष द्यावे</strong></p>
+<ul>
+<li>प्रति शेअर जोखमीऐवजी भांडवलाने आकार ठरवणे.</li>
+<li>तीनपैकी सर्वात कमी मर्यादा दुर्लक्षित करणे.</li>
+<li>ठरावीक खर्चावरील तोटा विसरणे.</li>
+<li>अपेक्षित परतावा म्हणजे पुढचा व्यापार काय करेल, असे मानणे.</li>
+</ul>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: gate-check | gate: G2 | caption: G2 पास स्क्रीन; शैक्षणिक क्षमता म्हणजे नफा सिद्ध होणे नव्हे, हे दाखवते -->
+<p>गेट स्क्रीन सांगते: शैक्षणिक क्षमता म्हणजे नफा सिद्ध होणे नव्हे, आणि लाइव्ह जाण्याची कोणतीही घाई नाही. तुमचा स्कोअर वाचण्यापूर्वी ती स्क्रीन वाचा.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p>तीन प्रश्न, प्रत्येकाचे पूर्ण काम दिले आहे. सर्वत्र <strong>काल्पनिक</strong>.</p>
+<h3 id="परशन-1-दोनही-मरयादांसह-पोझिशन-साइजिंग"><a class="header" href="#परशन-1-दोनही-मरयादांसह-पोझिशन-साइजिंग">प्रश्न 1: दोन्ही मर्यादांसह पोझिशन साइजिंग</a></h3>
+<p>भांडवल Rs 50,000. जोखीम 1%. एंट्री Rs 400. स्टॉप Rs 380.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>जोखीम बजेट</td><td>50,000 x 1%</td><td>Rs 500</td></tr>
+<tr><td>प्रति शेअर जोखीम</td><td>400 - 380</td><td>Rs 20</td></tr>
+<tr><td>कच्चे शेअर्स</td><td>500 / 20, खाली गोल केलेले</td><td>25</td></tr>
+<tr><td>रोख मर्यादा</td><td>floor(50,000 / 400)</td><td>125</td></tr>
+<tr><td>एकाग्रता मर्यादा (भांडवलाच्या 25%)</td><td>floor(50,000 x 0.25 / 400) = floor(31.25)</td><td>31</td></tr>
+<tr><td>शेअर्स</td><td>25, 125 आणि 31 मधील सर्वात कमी</td><td><strong>25</strong> (जोखीम बजेट आकार ठरवते)</td></tr>
+</tbody></table>
+</div>
+<p>तपासणी: 25 x 20 = Rs 500, जे जोखीम बजेट आहे. आणि 25 x 400 = Rs 10,000, जे Rs 12,500 च्या एकाग्रता मर्यादेत आहे.</p>
+<h3 id="परशन-2-अपेकषित-परतावा"><a class="header" href="#परशन-2-अपेकषित-परतावा">प्रश्न 2: अपेक्षित परतावा</a></h3>
+<p>काल्पनिक नोंद: विजय दर 40%, सरासरी विजय 2R, सरासरी तोटा 1R, आणि R = Rs 1,000.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>विजयाचा भाग</td><td>0.40 x 2R</td><td>0.80R</td></tr>
+<tr><td>तोट्याचा भाग</td><td>0.60 x 1R</td><td>0.60R</td></tr>
+<tr><td>अपेक्षित परतावा</td><td>0.80R - 0.60R</td><td>0.20R</td></tr>
+<tr><td>रुपयांत</td><td>0.20 x Rs 1,000</td><td>प्रति व्यापार Rs 200</td></tr>
+</tbody></table>
+</div>
+<p>तपासणी: काल्पनिक नोंदीत 10 व्यापारांत 4 विजय Rs 2,000 प्रत्येकी दिले तर Rs 8,000, आणि 6 तोटे Rs 1,000 प्रत्येकी दिले तर Rs 6,000. निव्वळ Rs 2,000 आहे, आणि Rs 2,000 / 10 = प्रति व्यापार Rs 200. हे फक्त त्या नोंदीचे वर्णन आहे. तो अंदाज नाही.</p>
+<p>त्याच नोंदीवर प्रॉफिट फॅक्टर: 0.80R / 0.60R = 1.3.</p>
+<h3 id="परशन-3-दैनिक-लकषयासाठी-लागणारे-भांडवल"><a class="header" href="#परशन-3-दैनिक-लकषयासाठी-लागणारे-भांडवल">प्रश्न 3: दैनिक लक्ष्यासाठी लागणारे भांडवल</a></h3>
+<p>लक्ष्य Rs 2,000 प्रतिदिन, 250 ट्रेडिंग दिवस (सरावासाठी गोल आकडा; 2026 च्या NSE कॅलेंडरमध्ये सुमारे 245 सामान्य ट्रेडिंग दिवस आहेत), आणि वर्षाला 20% परतावा.</p>
+<ul>
+<li>वार्षिक लक्ष्य: 2,000 x 250 = Rs 5,00,000.</li>
+<li>भांडवल: 5,00,000 / 0.20 = Rs 25,00,000.</li>
+</ul>
+<p>तपासणी: 25,00,000 x 0.20 = 5,00,000.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<!-- component: position-size-viz | capital: 50000 | riskPct: 1 | entry: 400 | stop: 380 | caption: Rs 50,000 भांडवल आणि 1% जोखीम यावर स्टॉप अंतरानुसार शेअर्स; कोणती मर्यादा लागू होते ते तपासा -->
+<p>स्टॉप Rs 390 वर न्या, मग Rs 370 वर. Rs 390 वर जोखीम बजेट 50 शेअर्स देते, पण एकाग्रता मर्यादा 31 कमी आहे, त्यामुळे आकार 31 आहे. Rs 370 वर जोखीम बजेट 16 शेअर्स देते, जी सर्वात कमी आहे, त्यामुळे आकार 16 आहे. लक्षात घ्या की रोख मर्यादा आणि एकाग्रता मर्यादा एंट्री भाव आणि भांडवलावर अवलंबून असतात, स्टॉपवर नाही.</p>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम:</strong> तीन नमुना प्रश्नांची उत्तरे द्या.</p>
+<ol>
+<li>भांडवल Rs 50,000, जोखीम 1%, एंट्री Rs 400, स्टॉप Rs 380. दोन्ही मर्यादा लागू करून किती पूर्ण शेअर्स?</li>
+<li>R = 3 असताना (3R विजय, 1R तोटा), खर्चापूर्वी कोणता विजय दर तोटा टाळतो? टक्केवारी द्या.</li>
+<li>खाते 30% ने घसरते. ते सुरुवातीच्या मूल्यावर परत येण्यासाठी किती टक्के परतावा लागतो?</li>
+</ol>
+<p>संकेत:</p>
+<ol>
+<li>प्रश्न 1 साठी आधी जोखीम बजेट आणि प्रति शेअर जोखीम काढा, मग कच्चे शेअर्स. कच्च्या शेअर्सची दोन्ही मर्यादांशी तुलना करा आणि सर्वात कमी घ्या.</li>
+<li>प्रश्न 2 साठी W = 1 / (1 + R) वापरा. तपासणी: 25 विजय 3R आणि 75 तोटे 1R, म्हणजे 75R मिळवले आणि 75R गमावले.</li>
+<li>प्रश्न 3 साठी परतावा = तोटा / (1 - तोटा), लहान खात्यावर. सुरुवातीच्या मूल्याच्या 30% वापरू नका.</li>
+</ol>
+<p><strong>उत्तर:</strong> प्रश्न 1: 25 शेअर्स (जोखीम बजेट Rs 500, प्रति शेअर जोखीम Rs 20, कच्चे 25; मर्यादा 125 आणि 31). प्रश्न 2: 25%. प्रश्न 3: 42.9%.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम:</strong> दहा प्रश्नांचा संच कागदावर, संकेताशिवाय सोडवा. मग तुमची उत्तरे अॅपमध्ये भरा. तुमचा स्कोअर आणि चुकलेल्या संकल्पना शिकण्याच्या नोंदीत लिहा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>कागदावर तुम्ही लिहिलेल्या किंवा काढलेल्या संचासाठी एकच उत्तरपत्रिका नसते. प्रत्येक निकाल या चाचण्यांनी तपासा:</p>
+<ul>
+<li>शेअर्सची संख्या तीन मर्यादांपैकी सर्वात कमीपेक्षा कधीही जास्त नसते.</li>
+<li>1R तोट्यासाठी तोटा टाळण्याचा विजय दर W x R = (1 - W) x 1 हे समीकरण पूर्ण करतो.</li>
+<li>अपेक्षित परतावा R मध्ये = (विजय दर x सरासरी विजय) - (तोट्याचा दर x सरासरी तोटा).</li>
+<li>ड्रॉडाउन रिकव्हरी लहान आधारावर तोटा / (1 - तोटा) वापरते.</li>
+</ul>
+<p>चुकलेले प्रश्न ठराविक दिवसांनंतर पुनरावलोकनासाठी ठेवले जातात.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>या आठ नमुना प्रश्नांत वरील क्षेत्रे येतात. गेट वेगळ्या प्रश्नांचा संच वापरते, हा संच नव्हे.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>पद्धत:</strong> शिकण्याची नोंद. ती तुमच्या जर्नलमध्ये लिहा. जर्नल अॅप तयार नसेल तर कागदावर.</p>
+<ol>
+<li>वरील क्षेत्रांवर दहा प्रश्न घ्या. अॅपचा संच तयार असेल तर तो वापरा, नाहीतर दहा प्रश्न स्वतः लिहा.</li>
+<li>सर्व दहा कागदावर सोडवा, कोणत्याही नोंदी आणि संकेताशिवाय.</li>
+<li>प्रत्येक उत्तर या प्रकरणातील गणनेशी तपासा.</li>
+<li>अॅप तयार झाल्यावर तुमची उत्तरे त्यात भरा.</li>
+<li>तुमचा स्कोअर आणि चुकलेल्या संकल्पना तारखेसह शिकण्याच्या नोंदीत लिहा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>गेट G2 पास केल्याने कोणतेही लाइव्ह ट्रेडिंग उघडत नाही. गेट स्क्रीन हे स्पष्ट सांगते.</li>
+<li>संख्यांमध्ये यश मिळणे म्हणजे रणनीती काम करते, असे नाही. या प्रकरणातील अपेक्षित परतावा हे सोडवलेले उदाहरण आहे, अंदाज नव्हे.</li>
+<li>खर्चाची उत्तरे फक्त तपासलेल्या खर्च तथ्यांइतकीच चांगली असतात. एखादे तथ्य जुने असेल, तर ते प्रश्न मोजले जात नाहीत.</li>
+<li>लहान संचावरील पास म्हणजे लहान नमुना. गेटचा संचही एक नमुनाच आहे.</li>
+<li>पैशांच्या गणितातील कौशल्य जोखीम नियमांची जागा घेत नाही. ते नियम प्रत्येक व्यापारापूर्वी लागू होतात.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>पोझिशन साइजिंग म्हणजे जोखीम, रोख आणि एकाग्रता मर्यादांपैकी सर्वात कमी.</li>
+<li>तोटा टाळण्याचा विजय दर = 1 / (1 + R), खर्चापूर्वी.</li>
+<li>अपेक्षित परतावा = (विजय दर x सरासरी विजय) - (तोट्याचा दर x सरासरी तोटा), R मध्ये.</li>
+<li>30% तोट्यातून सावरण्यासाठी 42.9% परतावा लागतो, 30% नव्हे.</li>
+<li>शैक्षणिक क्षमता म्हणजे नफा सिद्ध होणे नव्हे.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p><strong>स्रोत, 11 Nov 2026 रोजी वाचले:</strong></p>
+<ul>
+<li><em>एका व्यापारावरील खर्च</em>, खऱ्या Zerodha शुल्कांसाठी, जे सरावाच्या आकड्यांशेजारी आहेत.</li>
+<li>NSE सुट्ट्यांची यादी आणि 2026 चे ट्रेडिंग कॅलेंडर, ट्रेडिंग दिवसांच्या संख्येसाठी (सुमारे 245 सामान्य दिवस).</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T2.18&amp;body=Page%3A%2002-money-and-math%2F18-money-math-assessment%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/17-scaling-and-withdrawal/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../03-chart-reading/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/17-scaling-and-withdrawal/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../03-chart-reading/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

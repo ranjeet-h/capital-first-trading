@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Leverage and margin - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/02-money-and-math/13-leverage-and-margin/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T2.13
+title: Leverage and margin
+page_type: Math/Calculator
+prerequisites: [T2.9, T2.4]
+labs: [Lab 1]
+estimated_minutes: 25
+-->
+<h1 id="leverage-and-margin"><a class="header" href="#leverage-and-margin">Leverage and margin</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Hypothetical: your own money is Rs 50,000. A 10% fall in a Rs 50,000 holding costs Rs 5,000. That is 10% of your own money. Now take a Rs 1,00,000 position, where half is borrowed. A 10% fall costs Rs 10,000. That is 20% of your own money. The borrowed Rs 50,000 is still owed. The price moved by the same amount in both cases. Only the size of the position changed.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p><strong>Leverage</strong> means controlling a position that is bigger than your own money. You do this with borrowed money or margin.</p>
+<ul>
+<li>
+<p><strong>Leverage ratio</strong> = position value / own capital. A Rs 1,00,000 position with Rs 50,000 of your own money has a ratio of 2 (2x).</p>
+</li>
+<li>
+<p><strong>Gains and losses are both multiplied by the ratio.</strong> Measured as a percentage of your own capital, a price move of m percent changes your capital by ratio x m percent. A fall is a loss.</p>
+</li>
+<li>
+<p><strong>Wipe-out move</strong> = 1 / ratio, for a long position (you own the asset and gain when it rises). It is the price fall that takes the position value down to the borrowed amount. That uses up all your own money. This ignores costs and financing, which make the real position worse.</p>
+</li>
+<li>
+<p><strong>Margin</strong> is money or securities you deposit or borrow to support a position. The broker and the regulator set the rules. Check the rules for each product.</p>
+<ul>
+<li>Since 1 September 2021, SEBI’s rules say a broker must collect the full margin up front for positions in the stock market. This is why the old very high intraday leverage is gone. (As of 11 Nov 2026, SEBI circulars as summarised by Zerodha and others. Rules change, so check the SEBI site.)</li>
+<li>Zerodha says its intraday leverage depends on the share. It can be cut or removed during the day. Shares you pledge as collateral are valued at less than their market price. (As of 11 Nov 2026, Zerodha support. Rules change, so check Zerodha support.)</li>
+</ul>
+</li>
+<li>
+<p><strong>Margin calls and forced sales.</strong> When the position falls far enough, the broker can sell it to cover the shortfall. A forced sale happens at the price available at that time. That price is often the worst one.</p>
+</li>
+<li>
+<p><strong>Financing costs.</strong> Borrowed money usually has a cost. For example, Zerodha’s margin trading facility (MTF) charges interest of 0.04% a day on the amount it funds. That is about Rs 40 a day for every Rs 1 lakh funded, or roughly 14.6% a year. It runs every day you hold the position. (As of 11 Nov 2026, Zerodha support page on MTF interest. Rules change, so check Zerodha support.)</p>
+</li>
+<li>
+<p><strong>Intraday leverage</strong> has auto square-off rules. The broker can close your positions at a set time. At Zerodha, open intraday share positions are closed at about 3:25 PM, and futures and options at about 3:26 PM. Each order closed this way costs Rs 50 plus 18% GST. (As of 11 Nov 2026, Zerodha support. Rules change, so check Zerodha support.)</p>
+</li>
+</ul>
+<p>This book does not practise leverage. The leverage demo is theory only. F&amp;O (futures and options) is covered as theory in <em>Futures and why they are leveraged</em>.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: leverage-demo | mode: theory | ownCapital: 50000 | leverage: 2 | priceMovePct: -10 | caption: Theory only: gain or loss on own capital, with the wipe-out line; no trading controls -->
+<p>Set the ratio to 1x, then to 4x, and keep the same 10% price fall. The loss on your own capital grows from 10% to 40%. The wipe-out line marks the price fall that uses up all your own money. The sliders change only the arithmetic. There are no trading controls.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Own capital Rs 50,000. A 10% fall in the price.</p>
+<div class="table-wrapper"><table><thead><tr><th>Ratio</th><th>Position value</th><th>Loss on a 10% fall</th><th>Loss as % of own capital</th><th>Wipe-out move (1 / ratio)</th></tr></thead><tbody>
+<tr><td>1x</td><td>50,000</td><td>5,000</td><td>10%</td><td>100%</td></tr>
+<tr><td>2x</td><td>1,00,000</td><td>10,000</td><td>20%</td><td>50%</td></tr>
+<tr><td>3x</td><td>1,50,000</td><td>15,000</td><td>30%</td><td>33.3%</td></tr>
+<tr><td>4x</td><td>2,00,000</td><td>20,000</td><td>40%</td><td>25%</td></tr>
+</tbody></table>
+</div>
+<p>Each row uses the same steps. Position value x 10% = loss. Then loss / Rs 50,000 = percent of own capital.</p>
+<p><strong>2x, step by step (hypothetical; this is only arithmetic, not an offer or a product).</strong></p>
+<ol>
+<li>Own money Rs 50,000. Borrowed Rs 50,000. Position Rs 1,00,000.</li>
+<li>Price rises 10%: gain = 1,00,000 x 10% = Rs 10,000, which is 10,000 / 50,000 = 20% of own money.</li>
+<li>Price falls 10%: loss = Rs 10,000, which is 20% of own money.</li>
+<li>Wipe-out: 1 / 2 = 50%. Price falls 50%: position value = 50,000. That equals the borrowed Rs 50,000, so your own money is gone.</li>
+</ol>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<p>Use the demo with the guided exercise inputs (theory mode):</p>
+<!-- component: leverage-demo | mode: theory | ownCapital: 20000 | leverage: 3 | priceMovePct: -15 | caption: Guided exercise inputs; check each answer by hand -->
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Own capital Rs 20,000. Position Rs 60,000 (3x). The price falls 15%. Work out the loss in rupees and as a percentage of own capital.</p>
+<p>Hints:</p>
+<ol>
+<li>Find the loss on the position first: position value x fall.</li>
+<li>Divide that loss by your own capital.</li>
+<li>Check: a 3x position with a 15% fall should give 3 x 15% = 45% of own capital.</li>
+</ol>
+<p><strong>Answer:</strong> Loss on the position = 60,000 x 15% = Rs 9,000. As a share of own capital, 9,000 / 20,000 = 45%.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Own capital Rs 25,000 at 4x leverage. Work out the price fall that wipes out the own capital, and the loss at a 10% fall.</p>
+<details><summary>Check your answer</summary>
+<p>Position = 4 x 25,000 = Rs 1,00,000.</p>
+<p>Wipe-out move = 1 / 4 = 25%. Check: a 25% fall on Rs 1,00,000 is Rs 25,000, which equals the own capital.</p>
+<p>Loss at a 10% fall = 1,00,000 x 10% = Rs 10,000. As a share of own capital, 10,000 / 25,000 = 40%.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Six questions cover the leverage ratio, the bigger loss, the wipe-out move, margin and the limits of a stop.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong>. No orders are placed, and the Kite demo is not used for this task.</p>
+<ol>
+<li>Draw a table with four rows (1x, 2x, 3x, 4x). Add columns for position value, loss on a 10% fall, and loss as a percentage of own capital.</li>
+<li>Use own capital of Rs 50,000 and a 10% fall in every row.</li>
+<li>Add a column for the wipe-out move (1 / ratio). Check each row against the worked example.</li>
+<li>Write it in your journal. If the journal app is not ready, use paper.</li>
+</ol>
+<p>The Kite demo has no practice path for leverage. Do not look for leverage features in it.</p>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>This table leaves out financing costs, charges and margin rules. Those matter in real life. Check them with the broker and the regulator.</li>
+<li>The wipe-out formula is for a long position. It ignores costs. A gap can take the price past the wipe-out line (<em>Slippage, gaps and planned versus actual risk</em>).</li>
+<li>Leverage does not improve a plan. It multiplies whatever the plan does, in both directions.</li>
+<li>A stop does not protect you from margin calls or forced sales. The quiz explains why.</li>
+<li>The 2x example is arithmetic only. It is not an offer and not a product.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Leverage ratio = position value / own capital.</li>
+<li>Gains and losses are both multiplied by the ratio.</li>
+<li>Wipe-out move = 1 / ratio, for a long position, ignoring costs.</li>
+<li>Margin can bring financing costs and forced sales at a bad price.</li>
+<li>The book does not teach leverage in practice. Leverage is not a route to a target.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p>Sources, read on 11 Nov 2026:</p>
+<ul>
+<li>SEBI circulars on peak margin and upfront margin (sebi.gov.in), as summarised in public broker guides. The 1 September 2021 date is from those summaries, so read the SEBI circular itself too.</li>
+<li>Zerodha support: margin trading facility (MTF) interest and FAQs.</li>
+<li>Zerodha support: intraday auto square-off timings and charges.</li>
+<li>Zerodha bulletin on intraday (MIS) leverage, which says leverage can be reduced during the day.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/12-overtrading/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/14-portfolio-exposure/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/12-overtrading/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/14-portfolio-exposure/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>मूव्हिंग ॲव्हरेज - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../05-indicators/02-moving-averages/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../05-indicators/02-moving-averages/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T5.2
+title: मूव्हिंग ॲव्हरेज
+page_type: Math/Calculator
+prerequisites: [T5.1]
+labs: [Lab 4]
+estimated_minutes: 25
+-->
+<h1 id="मूवहिंग-ॲवहरेज"><a class="header" href="#मूवहिंग-ॲवहरेज">मूव्हिंग ॲव्हरेज</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>अना (काल्पनिक) एका शेअरचा क्लोज भाव पाच दिवस नोंदवून ठेवते. ती ते सगळे आकडे एकत्र करते आणि पाचने भागते. मग ती पुढच्या दिवशीही तेच करते. तिचे आकडे हलतात, पण ते भावाच्या मागे राहतात. वेगळ्या प्रकारची सरासरी अधिक लवकर प्रतिसाद देईल का, असा तिला प्रश्न पडतो. हे प्रकरण दोन सामान्य सरासरी दाखवते: साधी मूव्हिंग ॲव्हरेज आणि एक्स्पोनेन्शियल मूव्हिंग ॲव्हरेज. प्रत्येकाची गणना कशी होते, ते इथे पाहू.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>मूव्हिंग ॲव्हरेज</strong> म्हणजे ठराविक दिवसांच्या कालावधीतील क्लोज भावांची सरासरी. कालावधी दररोज पुढे सरकतो, म्हणून सरासरीही हलते. तिचे दोन सामान्य प्रकार आहेत.</p>
+<p><strong>साधी मूव्हिंग ॲव्हरेज (SMA).</strong> कालावधीतील प्रत्येक दिवस सारखाच मोजला जातो.</p>
+<ul>
+<li>शेवटच्या N क्लोज भावांची बेरीज करा.</li>
+<li>बेरीज N ने भागा.</li>
+</ul>
+<p>चिन्हात: SMA = (शेवटच्या N क्लोजची बेरीज) / N.</p>
+<p>N सर्व मूल्ये पुन्हा जोडण्याची गरज न पडता SMA अपडेट करण्यासाठी हा नियम वापरा:</p>
+<ul>
+<li>नवीन SMA = जुना SMA + (आजचा क्लोज वजा N दिवसांपूर्वीचा क्लोज) / N.</li>
+</ul>
+<p>कालावधीतून बाहेर पडणारा भाव म्हणजे N दिवसांपूर्वीचा क्लोज. नवीन भाव दुसऱ्या बाजूने आत येतो.</p>
+<p><strong>घातांकी मूव्हिंग ॲव्हरेज (EMA).</strong> अलीकडच्या दिवसांना जुन्या दिवसांपेक्षा जास्त वजन असते. EMA मध्ये <strong>स्मूदिंग फॅक्टर</strong> वापरला जातो, ज्याला k असे लिहितात. तो सर्वात नवीन क्लोजला किती वजन द्यायचे ते ठरवतो.</p>
+<ul>
+<li>k = 2 / (N + 1).</li>
+<li>आजचा EMA = k x आजचा क्लोज + (1 - k) x कालचा EMA.</li>
+</ul>
+<p>शब्दांत: EMA कालच्या EMA पासून आजच्या क्लोजकडे k इतक्या भागाने सरकतो. k मोठा असेल, तर प्रतिसाद जलद असतो.</p>
+<p>लक्षात ठेवण्यासारखे तीन मुद्दे.</p>
+<ol>
+<li><strong>EMA एकाच लांबीच्या SMA पेक्षा जलद प्रतिसाद देतो.</strong> त्याचे अलीकडील वजन जास्त असते.</li>
+<li><strong>पहिल्या EMA ला सुरुवातीचे मूल्य लागते.</strong> सामान्यतः पहिला SMA घेतला जातो. ही एक प्रथा आहे, आणि ती सुरुवातीची मूल्ये बदलते. ती नंतरचे तर्कशास्त्र बदलत नाही.</li>
+<li><strong>दोन्ही सरासरी मागे राहतात.</strong> N-दिवसांचा SMA स्थिर ट्रेंडच्या सुमारे (N - 1) / 2 दिवस मागे राहतो. हा ढोबळ अंदाज आहे, अचूक नियम नाही.</li>
+</ol>
+<p>क्रॉसओव्हर हा मूव्हिंग ॲव्हरेजचा लोकप्रिय उपयोग आहे. जेव्हा लहान सरासरी मोठ्या सरासरीच्या वर किंवा खाली जाते, तेव्हा क्रॉसओव्हर होतो. काही ट्रेडर त्याला ट्रेंडचे चिन्ह मानतात. असे संकेत उपयोगी ठरतात का, हा अजून खुला प्रश्न आहे. पुस्तक हे नियम नंतर Lab 4 मध्ये तपासते.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: indicator-playground | indicator: ema | compareTo: sma | period: 5 | caption: SMA आणि EMA एकाच बनावट क्लोज भावांवर काढलेले, EMA च्या सुरुवातीच्या मूल्यासाठी एक स्विच -->
+<p>एकाच बनावट भावांवर दोन्ही रेषा पहा. भावाला वळण मिळाल्यानंतर EMA लवकर वाकतो. मग EMA चे सुरुवातीचे मूल्य बदला आणि पहिले काही दिवस कसे बदलतात ते पहा. नंतरची मूल्ये एकमेकांच्या जवळ येतात.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> पाच क्लोज: Rs 100, Rs 102, Rs 104, Rs 103 आणि Rs 105.</p>
+<p><strong>भाग 1. साधी मूव्हिंग ॲव्हरेज.</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. पाच क्लोजची बेरीज</td><td>100 + 102 + 104 + 103 + 105</td><td>Rs 514</td></tr>
+<tr><td>2. 5 ने भागा</td><td>514 / 5</td><td><strong>Rs 102.80</strong></td></tr>
+</tbody></table>
+</div>
+<p>पुढचा क्लोज Rs 107 आहे. बाहेर पडणारा क्लोज Rs 100 आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>पद्धत</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>रोलिंग अपडेट</td><td>102.80 + (107 - 100) / 5 = 102.80 + 1.40</td><td><strong>Rs 104.20</strong></td></tr>
+<tr><td>थेट तपासणी</td><td>102 + 104 + 103 + 105 + 107 = 521, मग 521 / 5</td><td><strong>Rs 104.20</strong></td></tr>
+</tbody></table>
+</div>
+<p>दोन्ही पद्धती एकच उत्तर देतात. रोलिंग अपडेट हाताने करायला जलद आहे.</p>
+<p><strong>भाग 2. एक्स्पोनेन्शियल मूव्हिंग ॲव्हरेज, N = 5 सह.</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. स्मूदिंग फॅक्टर</td><td>2 / (5 + 1)</td><td>0.3333</td></tr>
+<tr><td>2. कालचा EMA</td><td>सुरुवातीचे मूल्य, पहिल्या SMA इतके ठरवलेले</td><td>Rs 102.80</td></tr>
+<tr><td>3. आजचा क्लोज</td><td>दिलेला</td><td>Rs 110</td></tr>
+<tr><td>4. कालच्या EMA पासून बदल</td><td>110 - 102.80</td><td>Rs 7.20</td></tr>
+<tr><td>5. वजनाचा बदल</td><td>0.3333 x 7.20</td><td>Rs 2.40</td></tr>
+<tr><td>6. आजचा EMA</td><td>102.80 + 2.40</td><td><strong>Rs 105.20</strong></td></tr>
+</tbody></table>
+</div>
+<p>EMA नवीन क्लोजच्या दिशेने Rs 2.40 सरकला. त्याच Rs 110 क्लोजवर SMA Rs 2.00 सरकून Rs 104.80 झाला असता. तपासणी: 102.80 + (110 - 100) / 5 = 104.80. EMA आजच्या क्लोजला जास्त वजन देतो, म्हणून तो जास्त सरकतो.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<!-- component: indicator-playground | indicator: ema | compareTo: sma | closes: 100,102,104,103,105,110 | period: 5 | edit: on | caption: सोडवलेले उदाहरण. शेवटचा क्लोज 110 वरून 107 करा आणि नवीन SMA व EMA ची प्रकरणातील आकड्यांशी तुलना करा -->
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> तीन दिवसांचे क्लोज Rs 50, Rs 51 आणि Rs 53 आहेत. पहिला तीन-दिवसांचा SMA काढा. पुढचा क्लोज Rs 56 आहे. नवीन SMA काढण्यासाठी रोलिंग अपडेट वापरा.</p>
+<p>संकेत:</p>
+<ol>
+<li>पहिला SMA = (50 + 51 + 53) / 3.</li>
+<li>नवीन SMA = जुना SMA + (56 - 50) / 3. बाहेर पडणारा क्लोज Rs 50 आहे.</li>
+</ol>
+<p><strong>उत्तर:</strong> पहिला SMA = Rs 154 / 3 = Rs 51.33, पूर्णांकात गोल केल्यावर. अपडेट केलेला SMA = Rs 51.33 + Rs 2.00 = Rs 53.33, गोल केल्यावर. तपासणी: (51 + 53 + 56) / 3 = 160 / 3 = Rs 53.33.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> नऊ-दिवसांच्या कालावधीसाठी EMA काढा, जिथे k = 0.2 आहे. कालचा EMA Rs 500 आहे. आजचा क्लोज Rs 510 आहे. आजचा EMA काढा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>कालच्या EMA पासून बदल: 510 - 500 = Rs 10.</li>
+<li>वजनाचा बदल: 0.2 x 10 = Rs 2.</li>
+<li>आजचा EMA: 500 + 2 = <strong>Rs 502.00</strong>.</li>
+</ul>
+<p>तपासणी: 2 / (9 + 1) = 0.2, जो k शी जुळतो.</p>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ दोन सूत्रे, मागे राहणे (लॅग) आणि स्मूदिंग फॅक्टर तपासते. क्रॉसओव्हर हा खात्रीचा संकेत नसतो, हेही ती तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> <strong>kite_demo</strong>. फक्त डेमो. कोणताही ऑर्डर देऊ नका.</p>
+<ol>
+<li>एका शेअरचा दैनिक चार्ट घ्या. त्यावर 20-कालावधीचा SMA आणि 20-कालावधीचा EMA काढा. दोन्हीसाठी एकच क्लोज भाव वापरा.</li>
+<li>भावात दोन वळणबिंदू शोधा, एक उच्च आणि एक नीच.</li>
+<li>प्रत्येक वळणबिंदूवर, कोणती सरासरी आधी दिशा बदलली ते नोंदवा.</li>
+<li>निकाल एका शिकण्याच्या नोंदीत लिहा. दोन वळणबिंदूंवरून निष्कर्ष काढू नका.</li>
+</ol>
+<p>तुमच्या जर्नलमध्ये नोंदवा (जर्नल ॲप तयार होईपर्यंत कागदावर).</p>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>बाजार एकाच पातळीवर फिरत असताना, क्रॉसओव्हर अनेक वेळा दिशा बदलू शकतो. प्रत्येक बदलामुळे खर्चामुळे पैसे जाऊ शकतात आणि स्टॉप-लॉस लागू शकतो. पहा <em>व्यापारावरील खर्च</em>.</li>
+<li>क्रॉसओव्हर ही तपासायची नियमावली आहे, नफा मिळवण्याची पद्धत नाही. हे पुस्तक तिला तशी मांडत नाही.</li>
+<li>EMA लवकर प्रतिसाद देतो, पण एका असामान्य दिवसावरही तो जोरदार प्रतिसाद देऊ शकतो.</li>
+<li>EMA चे सुरुवातीचे मूल्य सुरुवातीचे आकडे बदलते. दोन चार्टची तुलना तेव्हाच करा, जेव्हा त्यांचे सुरुवातीचे मूल्य सारखे असेल.</li>
+<li>दोन्ही सरासरी मागे राहतात. त्या ट्रेंड सुरू झाल्यानंतर तो दाखवतात, आणि सुरू होण्यापूर्वी इशारा देत नाहीत.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>SMA = शेवटच्या N क्लोजची बेरीज / N. प्रत्येक दिवस सारखाच मोजला जातो.</li>
+<li>EMA मध्ये k = 2 / (N + 1). आजचा EMA = k x आजचा क्लोज + (1 - k) x कालचा EMA.</li>
+<li>एकाच लांबीच्या SMA पेक्षा EMA जलद प्रतिसाद देतो.</li>
+<li>दोन्ही सरासरी स्थिर ट्रेंडच्या मागे राहतात.</li>
+<li>क्रॉसओव्हर ही तपासायची गृहीतक आहे, खात्रीचा संकेत नाही.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Zerodha Varsity, मूव्हिंग ॲव्हरेज मॉड्यूल (केवळ संदर्भासाठी).</li>
+<li>Zerodha, Kite चार्टिंग मॅन्युअल (kite.trade/docs/kite/charting). त्यात 11 मूव्हिंग-ॲव्हरेज प्रकार दिलेले आहेत, आणि निर्देशक डीफॉल्टने क्लोज भावावर लागू होतात, असे म्हटले आहे. डीफॉल्ट सेटिंग्ज सांगितलेल्या नाहीत, म्हणून तुमच्या स्क्रीनवरची सेटिंग वाचा. (11 Nov 2026 पर्यंतची माहिती. बदलांसाठी मॅन्युअल तपासा.)</li>
+<li>StockCharts ChartSchool, मूव्हिंग ॲव्हरेजवरील मोफत संदर्भ.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T5.2&amp;body=Page%3A%2005-indicators%2F02-moving-averages%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../05-indicators/01-what-indicators-are/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../05-indicators/03-atr-and-stops/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../05-indicators/01-what-indicators-are/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../05-indicators/03-atr-and-stops/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

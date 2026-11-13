@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>पेपर ट्रेडिंग आणि फॉरवर्ड चाचणी - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../07-testing-and-validation/10-paper-and-forward-testing/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../07-testing-and-validation/10-paper-and-forward-testing/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T7.10
+title: पेपर ट्रेडिंग आणि फॉरवर्ड चाचणी
+page_type: Lab
+prerequisites: [T7.7, T7.9, T4.9, T2.2]
+labs: [Lab 5, Lab 3]
+estimated_minutes: 35
+-->
+<h1 id="पेपर-टरेडिंग-आणि-फॉरवरड-चाचणी"><a class="header" href="#पेपर-टरेडिंग-आणि-फॉरवरड-चाचणी">पेपर ट्रेडिंग आणि फॉरवर्ड चाचणी</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एका नियमाने जुन्या भावांवर नफा दाखवला. हे एक काल्पनिक उदाहरण आहे. मग तुम्ही तोच नियम काही आठवडे कागदावर वापरता, आणि निकाल वेगळा दिसतो. का? जुने भाव निश्चित असतात, आणि प्रत्येक फिल माहीत असतो. खऱ्या ट्रेडिंगमध्ये उशीर, अर्धवट फिल आणि तुमचे स्वतःचे निर्णय असतात. हे प्रकरण बॅकटेस्ट, फॉरवर्ड आणि लाइव्ह निकालांमधील फरक दाखवते. तसेच पेपर निकाल खऱ्यापेक्षा सौम्य का दिसतात, ते करणारी चार अंतरे दाखवते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>निकाल कुठून आला, हे सांगणारे चार शब्द आहेत. प्रत्येक वेळी योग्य शब्द वापरा.</p>
+<ul>
+<li><strong>बॅकटेस्ट.</strong> मागील डेटा. घडून गेलेल्या तथ्यांवर नियम नंतर लावले जातात.</li>
+<li><strong>फॉरवर्ड चाचणी.</strong> निश्चित नियम, भाव जसे येतात तसे दिवसेंदिवस लावलेले. चाचणीदरम्यान नियम बदलत नाहीत.</li>
+<li><strong>पेपर किंवा काल्पनिक.</strong> व्यापार जणू फिल झाला आहे, असा नोंदवलेला. कोणताही ऑर्डर ब्रोकरकडे पाठवला जात नाही.</li>
+<li><strong>लाइव्ह.</strong> खरे ऑर्डर, खरे पैसे.</li>
+</ul>
+<p>प्रत्येक निकालावर त्याचा प्रकार लिहा. पेपर नफा म्हणजे लाइव्ह नफा नव्हे.</p>
+<p>पेपर फिल हे एक गृहीतक आहे. खरा फिल चार प्रकारांनी वेगळा असू शकतो:</p>
+<ol>
+<li><strong>फिल भाव.</strong> तुम्हाला मिळणारा भाव, तुम्ही गृहीत धरलेल्या भावापेक्षा वेगळा असू शकतो. स्प्रेड म्हणजे सर्वोत्तम खरेदी भाव आणि सर्वोत्तम विक्री भाव यांच्यातील अंतर (<em>ऑर्डर जुळणी, स्प्रेड आणि लिक्विडिटी</em> पाहा). ओपनला भाव अचानक उडीही मारू शकतात.</li>
+<li><strong>रांगेतील पोझिशन (जागा).</strong> गर्दीच्या बाजारात एकाच भावाचे ऑर्डर रांगेत थांबतात. तुमचा ऑर्डर पहिला नसू शकतो.</li>
+<li><strong>अर्धवट फिल.</strong> तुम्हाला हवे असलेल्या शेअर्सपैकी फक्त काही मिळू शकतात.</li>
+<li><strong>तुमचे स्वतःचे वर्तन.</strong> तुम्ही एखादा सिग्नल सोडू शकता, स्टॉप हलवू शकता, किंवा योजनेत नसलेला व्यापार जोडू शकता.</li>
+</ol>
+<p>लॅब 5 मधील फॉरवर्ड-टेस्ट स्क्रिप्ट प्रामाणिक राहण्यासाठी बनवली आहे. डेटा गहाळ किंवा खराब असेल, तर ती थांबते आणि अहवाल देते. ती चिन्ह वगळून पुढे जात नाही. ती दोनदा चालवणे सुरक्षित आहे, कारण दुसऱ्या रनमध्ये तेच व्यापार पुन्हा जोडले जात नाहीत. ती कोणताही ऑर्डर देत नाही आणि कोणत्याही ब्रोकरचे लॉगिन तपशील ठेवत नाही.</p>
+<p>Kite डेमो हा डमी डेटा वापरून स्क्रीन्सचा सराव करण्यासाठी आहे. ती फॉरवर्ड चाचणी नाही. Zerodha च्या सपोर्ट पानावर लिहिले आहे: “No, Zerodha does not offer demo accounts for paper trading. However, you can access a demo version of Kite with dummy data.” (11 Nov 2026 पर्यंत, Zerodha सपोर्ट. बदलांसाठी support.zerodha.com तपासा.)</p>
+<p>स्क्रिप्ट बाजार बंद होण्याची वेळ आणि सुट्ट्यांची यादी वापरते. शेअर्सचे NSE चे नेहमीचे सत्र सकाळी 9:15 ते दुपारी 3:30 असे चालते. पण NSE ने काही शेअर्ससाठी सत्र वेळा बदलल्या आहेत आणि आणखी बदल जाहीर केले आहेत, म्हणून NSE च्या बाजार वेळांचे पान वाचा. सुट्ट्यांची यादी NSE च्या ट्रेडिंग सुट्ट्यांच्या पानावरून घ्या. भाव डेटा स्रोताच्या अटीही महत्त्वाच्या आहेत (<em>ऐतिहासिक डेटा</em> पाहा).</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: order-flow-sim | caption: ट्रेडरपासून ब्रोकरपर्यंत, मग एक्सचेंज आणि जुळणीपर्यंत एक खरा ऑर्डर अनुसरा. काल्पनिक फिल कोणते टप्पे वगळतो ते दाखवतो -->
+<p>एक ऑर्डर ट्रेडरपासून एक्सचेंजपर्यंत अनुसरा. पेपर फिल कोणते टप्पे वगळतो ते लक्षात घ्या. ते वगळलेले टप्पे म्हणजेच चार अंतरे जिथे दिसतात.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> दिवस 1 चा क्लोज Rs 800 आहे. नियम खरेदीचा सिग्नल देतो. स्क्रिप्ट 12 शेअर्स खरेदी करण्याची योजना आखते.</p>
+<p><strong>पायरी 1. गृहीत धरलेला फिल.</strong> दिवस 2 Rs 806 ला उघडतो. स्क्रिप्ट 12 शेअर्स Rs 806 ला फिल करते. मूल्य = 12 x 806 = <strong>Rs 9,672</strong>.</p>
+<p><strong>पायरी 2. खऱ्या फिलमधील वाईट भाव.</strong> समजा खरा फिल Rs 808 ला झाला असता. मूल्य = 12 x 808 = <strong>Rs 9,696</strong>.</p>
+<p><strong>पायरी 3. रुपयांमधील परिणाम.</strong> 9,696 - 9,672 = <strong>Rs 24</strong>. तपासा: 12 x (808 - 806) = 12 x 2 = 24.</p>
+<p><strong>पायरी 4. अनेक व्यापार.</strong> तेच अंतर 10 व्यापारांवर 10 x Rs 24 = <strong>Rs 240</strong> देते. हे काल्पनिक आहे. प्रत्येक व्यापारावर तेच अंतर गृहीत धरले आहे. लहान गृहीतके कशी जमा होतात, ते हे दाखवते.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> सोडवलेल्या उदाहरणातील व्यापारासाठी फॉरवर्ड लॉगची एक ओळ भरा. ट्रेड ID H-001 आणि काल्पनिक चिन्ह EXAMPLE वापरा. फील्ड्स आहेत: trade_id, mode, symbol, नियोजित एंट्री, फिल भाव आणि शेअर्स.</p>
+<p>संकेत:</p>
+<ol>
+<li>mode forward ठेवा. कधीही live ठेवू नका.</li>
+<li>या उदाहरणातील फिल भाव काल्पनिक आहे. तुमच्या नोंदीत तो काल्पनिक म्हणून चिन्हांकित करा.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>trade_id</th><th>mode</th><th>symbol</th><th>नियोजित एंट्री</th><th>फिल भाव</th><th>शेअर्स</th></tr></thead><tbody>
+<tr><td>H-001</td><td>forward</td><td>EXAMPLE</td><td>Rs 806</td><td>Rs 806 (काल्पनिक)</td><td>12</td></tr>
+</tbody></table>
+</div>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> डॅशबोर्डवर फॉरवर्ड-चाचणी निकालाच्या शेजारी असणारी प्रामाणिकपणाची टीप लिहा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>एक नमुना टीप: “काल्पनिक पेपर निकाल. कोणताही ऑर्डर पाठवलेला नाही. फिल गृहीत धरलेले आहेत, खरे नाहीत. स्प्रेड, गॅप, रांगेतील जागा, अर्धवट फिल आणि माझे स्वतःचे निर्णय यामुळे खरे फिल वाईट असू शकतात. छोटी चाचणी फार कमी सिद्ध करते. हे निकाल लाइव्ह निकालांचा अंदाज नाहीत.”</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ काल्पनिक आणि लाइव्ह निकाल, खराब डेटावर थांबणे, Kite डेमोची भूमिका आणि सुट्ट्यांची हाताळणी, हे तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> फॉरवर्ड. म्हणजे काल्पनिक पेपर डेटा. कोणताही ऑर्डर दिला जात नाही.</p>
+<ol>
+<li>रेकॉर्ड केलेल्या 10 दिवसांच्या चाचणी डेटावर फॉरवर्ड-टेस्ट स्क्रिप्ट चालवा. लॅब 5 तयार नसेल, तर 10 दिवसांची काल्पनिक भाव यादी कागदावर लिहा.</li>
+<li>प्रत्येक आउटपुट ओळीत ट्रेड ID, mode, symbol, नियोजित एंट्री, फिल भाव आणि शेअर्स आहेत का ते तपासा.</li>
+<li>आउटपुट जर्नलमध्ये mode forward म्हणून आयात करा (किंवा ओळी कागदावर कॉपी करा).</li>
+<li>चार अंतरांपैकी प्रत्येकावर एक वाक्य लिहा. प्रत्येकासाठी सांगा की या उदाहरणात ते खरा फिल वाईट करू शकते का.</li>
+<li>कोणताही ऑर्डर देऊ नका. दैनिक खऱ्या रन ऐच्छिक आहेत. त्यांना अशा डेटा स्रोताची गरज आहे, ज्याच्या अटी तुम्ही तपासल्या आहेत.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>फॉरवर्ड चाचणी कोणतेही खरे ऑर्डर पाठवत नाही. खरे फिल कसे झाले असते हे ती दाखवू शकत नाही, त्यामुळे चार अंतरे कायम राहतात.</li>
+<li>छोटी फॉरवर्ड चाचणी फार कमी सिद्ध करते. पहिल्या नजरेसाठी तीस व्यापार ही किमान मर्यादा आहे. तो नियमाचा निकाल नाही.</li>
+<li>पेपर नफा म्हणजे लाइव्ह नफा नव्हे. खरे पैसे जोखीम पणाला लागलेले असताना तुम्ही कसे वागता, हे पेपर निकाल दाखवत नाही.</li>
+<li>Kite डेमो फॉरवर्ड चाचणी नाही. तो डमी डेटा वापरतो. Zerodha म्हणते की पेपर ट्रेडिंगसाठी डेमो खाते दिले जात नाही.</li>
+<li>पेपर ट्रेडिंग खऱ्या पैशाने तुम्ही ते करू शकता, हे सिद्ध करत नाही. ते फक्त नोंदवलेल्या दिवसांवर नियम कसा चालला ते दाखवते.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>प्रत्येक निकाल बॅकटेस्ट, फॉरवर्ड (पेपर) किंवा लाइव्ह असा लेबल करा.</li>
+<li>चार अंतरे म्हणजे फिल भाव, रांगेतील जागा, अर्धवट फिल आणि तुमचे स्वतःचे वर्तन.</li>
+<li>डेटा गहाळ किंवा खराब असेल, तर स्क्रिप्टने थांबले पाहिजे. तिने अंदाज लावू नये.</li>
+<li>Kite डेमो डमी डेटासह सरावासाठी आहे. तो फॉरवर्ड चाचणी नाही.</li>
+<li>पेपर निकाल काल्पनिक आहेत. प्रत्येक वेळी तसे चिन्हांकित करा.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>डेमो आणि व्हर्च्युअल ट्रेडिंगवरील Zerodha सपोर्ट पाने.</li>
+<li>NSE बाजार वेळा आणि सुट्ट्यांची पाने.</li>
+<li>प्रामाणिकपणावरील लॅब 5 च्या नोंदी.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T7.10&amp;body=Page%3A%2007-testing-and-validation%2F10-paper-and-forward-testing%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../07-testing-and-validation/09-monte-carlo-trade-order/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../07-testing-and-validation/11-strategy-validation-assessment/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../07-testing-and-validation/09-monte-carlo-trade-order/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../07-testing-and-validation/11-strategy-validation-assessment/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

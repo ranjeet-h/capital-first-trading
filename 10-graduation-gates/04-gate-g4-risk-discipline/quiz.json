@@ -1,0 +1,112 @@
+[
+  {
+    "id": "T10.4-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Your daily limit is Rs 1,000. Your losses so far are Rs 350, Rs 400 and Rs 200. How many more rupees of loss hit the limit?",
+    "answer": 50,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Losses so far = 350 + 400 + 200 = Rs 950. Remaining room = 1,000 - 950 = Rs 50. A further loss of Rs 50 hits the limit.",
+    "concepts": ["daily-limit"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.4-q2",
+    "type": "scenario",
+    "prompt": "After a loss, you double your position size to win the money back. Does this break the gate's rules?",
+    "options": [
+      {"id": "a", "text": "No, it is allowed if you stop after one more trade."},
+      {"id": "b", "text": "Yes. Any increase in size after a loss breaks the rule, in any scenario."},
+      {"id": "c", "text": "No, it is allowed when the trade is in a trend."},
+      {"id": "d", "text": "Yes, but only when the loss is above Rs 1,000."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The rule does not depend on what you do after the increase. Raising size after a loss is the broken rule.",
+      "c": "The gate does not allow size increases in any scenario after a loss. The market story does not change the rule.",
+      "d": "The rule applies after any loss. The size of the loss does not decide it."
+    },
+    "concepts": ["size-after-loss", "revenge-trading"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.4-q3",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"I hit my limit, so I will take one small trade to see how the market moves.\" Which part of this statement is wrong?",
+    "options": [
+      {"id": "a", "text": "\"I hit my limit\". This part is correct. The limit has been reached."},
+      {"id": "b", "text": "\"take one small trade\". This is wrong. No further entry is allowed after the limit is reached."},
+      {"id": "c", "text": "\"see how the market moves\". This is correct. Watching the market is allowed."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This part is correct. The statement describes a limit that has been reached.",
+      "c": "Watching the market is not the same as entering a trade. The rule only blocks entries after the limit."
+    },
+    "concepts": ["stopped", "daily-limit"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T10.4-q4",
+    "type": "mcq",
+    "prompt": "In a simulated day, what does \"stopped\" mean?",
+    "options": [
+      {"id": "a", "text": "You closed the app."},
+      {"id": "b", "text": "You made no further entry in that day after the limit was reached."},
+      {"id": "c", "text": "You took a short break for a minute."},
+      {"id": "d", "text": "You doubled your size."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Closing the app is not the rule. The rule is about entries after the limit.",
+      "c": "A break is not the rule. The rule is no further entry in that day.",
+      "d": "Doubling size is the opposite of stopping, and it breaks the size rule."
+    },
+    "concepts": ["stopped"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.4-q5",
+    "type": "mcq",
+    "prompt": "Why does this gate test following a limit, and not profit?",
+    "options": [
+      {"id": "a", "text": "Because simulators measure market skill."},
+      {"id": "b", "text": "Because the simulator tests whether you follow a written limit, not how the market moves."},
+      {"id": "c", "text": "Because profit cannot be simulated at all."},
+      {"id": "d", "text": "Because stopping always makes money."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The simulator is not a test of market skill. That is stated in the gate.",
+      "c": "Profit can be shown in a simulator, but the gate does not use it as the test.",
+      "d": "Stopping does not always make money. The gate tests the rule, not the result."
+    },
+    "concepts": ["gate-purpose"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.4-q6",
+    "type": "scenario",
+    "prompt": "You stop correctly in 9 of 10 simulated days. Does this pass the gate?",
+    "options": [
+      {"id": "a", "text": "Yes. 90% is the pass mark."},
+      {"id": "b", "text": "No. The rule needs 10 of 10 scenarios."},
+      {"id": "c", "text": "Yes, if the broken day had only a small loss."},
+      {"id": "d", "text": "No, and retakes are not allowed."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The pass mark is 10 of 10, not 90%. Nine of ten is one scenario short.",
+      "c": "The size of the loss on the broken day does not change the result. One broken scenario fails the attempt.",
+      "d": "Retakes are allowed. A failed attempt shows which scenario broke the rule, and you can try again with ten new days."
+    },
+    "concepts": ["pass-mark", "retake"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

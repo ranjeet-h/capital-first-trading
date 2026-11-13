@@ -1,0 +1,86 @@
+[
+ {
+  "id": "T1.8-q1",
+  "type": "numeric",
+  "prompt": "An index moves from 15,000 to 15,450 (made up). What is the percent change?",
+  "answer": 3.0,
+  "tolerance": 0.05,
+  "unit": "%",
+  "solution": "Point change = 15,450 - 15,000 = 450 points. Percent change = 450 / 15,000 x 100 = 3.0%. Check: 3% of 15,000 = 450.",
+  "concepts": ["point-change", "percent-change"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.8-q2",
+  "type": "mcq",
+  "prompt": "A reader says: 'An index rising means every stock in it rose.' Which answer is correct?",
+  "options": [
+   {"id": "a", "text": "Yes. The index is the average of every stock, so all of them must rise."},
+   {"id": "b", "text": "No. An index is a weighted summary. Some stocks in it can fall while the index rises."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. An index is a weighted summary of many stocks. A stock can fall while the index rises, as the worked example shows (Stock B)."
+  },
+  "concepts": ["weights", "misconceptions"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.8-q3",
+  "type": "scenario",
+  "prompt": "Stock X has a weight of 30% and moves +1%. Stock Y has a weight of 5% and moves +10%. Which stock moves the index more, and why?",
+  "options": [
+   {"id": "a", "text": "Stock X, because it has the larger weight, so it always moves the index more."},
+   {"id": "b", "text": "Stock Y, because its contribution is 0.05 x 10 = 0.5 points, against 0.30 x 1 = 0.3 points for Stock X."},
+   {"id": "c", "text": "They move the index equally, because 1% and 10% average to about 5.5%."},
+   {"id": "d", "text": "Neither, because weights do not affect how much a stock moves the index."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. Weight is only half the story. Contribution is weight times move, and Stock X moved only 1%.",
+   "c": "Wrong. Contributions are not averaged this way. Stock Y contributes 0.5 and Stock X contributes 0.3, so they are not equal.",
+   "d": "Wrong. Weight is exactly what sets how much each stock's move counts in the index."
+  },
+  "concepts": ["weights", "contribution"],
+  "difficulty": 2,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.8-q4",
+  "type": "spot-the-mistake",
+  "prompt": "A reader says: 'Nifty is 20,000 rupees, so I can buy it.' Which statement is correct?",
+  "options": [
+   {"id": "a", "text": "The number is a level in points, not a price in rupees, and it is not something you can buy directly."},
+   {"id": "b", "text": "The whole statement is correct."},
+   {"id": "c", "text": "The only error is that 20,000 is too high a level."}
+  ],
+  "answer": "a",
+  "explanations": {
+   "b": "Wrong. The index level is not a price in rupees, and an index cannot be bought like a share. Index-linked products are covered later in the book.",
+   "c": "Wrong. The size of the level is not the problem. An index level is a number of points, not a price."
+  },
+  "concepts": ["index-level", "misconceptions"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.8-q5",
+  "type": "mcq",
+  "prompt": "The index rose today. A reader asks: 'Does a rising index mean I should buy?' Which answer fits this chapter?",
+  "options": [
+   {"id": "a", "text": "Yes. A rising index means the market is strong, so buying is the right move."},
+   {"id": "b", "text": "No. An index move is market context, not a trade signal by itself."},
+   {"id": "c", "text": "Yes, if breadth is positive as well."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. An index describes a group of stocks. It does not say what any one stock will do, and it is not permission to trade.",
+   "c": "Wrong. Breadth is also context. It does not turn an index move into a trade signal by itself."
+  },
+  "concepts": ["index-as-context", "misconceptions"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ }
+]

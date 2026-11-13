@@ -1,0 +1,98 @@
+[
+  {
+    "id": "T6.4-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital Rs 50,000, risk 1 percent. Entry Rs 257, ATR(14) Rs 4.00, initial stop 2.5 times ATR below entry. What is the number of shares the plan allows?",
+    "answer": 48,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "Stop = 257 - (2.5 x 4) = Rs 247. Risk per share = Rs 10. Risk budget = Rs 500. Raw shares = floor(500 / 10) = 50. Cash cap = floor(50,000 / 257) = 194. Concentration cap = floor(12,500 / 257) = 48. Shares = minimum of 50, 194 and 48 = 48. Checked again: 48 x 257 = Rs 12,336, which is below Rs 12,500.",
+    "concepts": ["position-sizing", "binding-constraint"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.4-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. The highest close since entry is Rs 280 and ATR(14) is Rs 5.00. What is the trailing stop in rupees?",
+    "answer": 265,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Trailing stop = highest close since entry minus 3 x ATR(14) = 280 - (3 x 5) = 280 - 15 = Rs 265. Checked again: 3 x 5 = 15 and 280 - 15 = 265.",
+    "concepts": ["trailing-stop", "atr"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.4-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. Entry Rs 300, ATR(14) Rs 6.00, capital Rs 50,000, risk 1 percent. What is the planned loss in rupees?",
+    "answer": 495,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Stop = 300 - (2.5 x 6) = Rs 285. Risk per share = Rs 15. Raw shares = floor(500 / 15) = 33. Cash cap = floor(50,000 / 300) = 166. Concentration cap = floor(12,500 / 300) = 41. Shares = 33. Planned loss = 33 x Rs 15 = Rs 495. Checked again: 33 x 15 = 495.",
+    "concepts": ["planned-loss", "position-sizing"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.4-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. During a day, price breaks above the highest high of the previous 55 bars. The day then closes below that level. Does the setup rule give a setup?",
+    "options": [
+      {"id": "a", "text": "Yes, because the high broke the level."},
+      {"id": "b", "text": "No, because the close is not above the highest high of the previous 55 bars."},
+      {"id": "c", "text": "Yes, because the stock opened strongly."},
+      {"id": "d", "text": "Yes, but only if the stop is placed at entry."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The setup rule uses the close, not the intraday high. A high above the level does not meet the rule.",
+      "c": "The opening price is not part of the setup rule. The close must be above the level.",
+      "d": "The stop does not create a setup. The setup is checked before any entry or stop is set."
+    },
+    "concepts": ["setup", "close-vs-high"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.4-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"The highest high for the setup includes today's bar, so the setup is ready.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The term highest high"},
+      {"id": "b", "text": "Including today's bar in the highest-high calculation"},
+      {"id": "c", "text": "The word setup"},
+      {"id": "d", "text": "Nothing; the statement is correct"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Highest high is the correct term for the level. The error is which bars are counted.",
+      "c": "Setup means the conditions are met. The word is used correctly here.",
+      "d": "The statement is wrong. The rule uses the previous 55 bars and does not count the current bar."
+    },
+    "concepts": ["look-ahead", "setup"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T6.4-q6",
+    "type": "mcq",
+    "prompt": "Which statement about the trailing stop in this example is correct?",
+    "options": [
+      {"id": "a", "text": "It follows the highest high and can move up or down."},
+      {"id": "b", "text": "It moves up only, and it is set as the highest close since entry minus 3 times ATR(14)."},
+      {"id": "c", "text": "It is a profit target that closes the trade at a set gain."},
+      {"id": "d", "text": "It is set at entry and never changes."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The trailing stop follows the highest close, not the highest high, and it never moves down.",
+      "c": "The trailing stop is an exit rule. It is not a profit target.",
+      "d": "The trailing stop changes as the highest close since entry changes. Only the initial stop is set at entry."
+    },
+    "concepts": ["trailing-stop", "exit-rule"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

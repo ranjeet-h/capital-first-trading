@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>एक्सचेंज, SEBI आणि ब्रोकर - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../01-market-foundations/02-exchanges-sebi-brokers-participants/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../01-market-foundations/02-exchanges-sebi-brokers-participants/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T1.2
+title: एक्सचेंज, SEBI आणि ब्रोकर
+page_type: Concept
+prerequisites: [T1.1]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="एकसचेंज-sebi-आणि-बरोकर"><a class="header" href="#एकसचेंज-sebi-आणि-बरोकर">एक्सचेंज, SEBI आणि ब्रोकर</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एका काल्पनिक नवशिक्याला वाटते की त्याचा ब्रोकरच एक्सचेंज आहे. त्याला वाटते की त्याची ऑर्डर ब्रोकरच्या ऑफिसमध्ये जुळवली जाते. एखादा व्यापार बिघडल्यावर त्याला सांगता येत नाही की कोणाला विचारायचे आणि कोणत्या क्रमाने. कोणती संस्था कोणते काम करते हे माहीत असल्यास गोंधळाची स्थिती स्टेप्सच्या यादीत बदलते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>तुमची ऑर्डर आणि तुमच्या नावावरचे शेअर यांच्या मध्ये अनेक संस्था असतात. प्रत्येक संस्थेचे एक काम असते. हे प्रकरण प्रत्येक भूमिका एकदाच स्पष्ट करते. या भूमिका वेगळ्या ठेवा.</p>
+<p><strong>SEBI</strong> हा सिक्युरिटीज नियामक आहे. ब्रोकर, एक्सचेंज आणि सूचीबद्ध कंपन्यांसाठी ते नियम बनवते. ते शेअरचे भाव ठरवत नाही.</p>
+<p><strong>एक्सचेंज (NSE आणि BSE)</strong> ती बाजारपेठ चालवतात जिथे ऑर्डर जुळवल्या जातात. भारतातील हे दोन मुख्य शेअर एक्सचेंज आहेत. SEBI आपल्या वेबसाइटवर मान्यताप्राप्त एक्सचेंजची अधिकृत यादी ठेवते. खरेदीची ऑर्डर आणि विक्रीची ऑर्डर तिथे जुळवली जाते. एक्सचेंज तुमचे पैसे स्वतःकडे ठेवत नाही.</p>
+<p><strong>क्लिअरिंग कॉर्पोरेशन</strong> व्यापारानंतर काम करते. व्यापारामुळे दोन्ही बाजूंनी कोणाचे किती देणे आहे याची नोंद ती ठेवते. सेटलमेंट कशी खात्रीशीर होते, त्याचा तो भाग आहे. सेटलमेंट म्हणजे शेअर आणि पैसे यांचे अंतिम हस्तांतरण. बाजारातील एका विश्वासू मध्यस्थाचा विचार करा, जो दोन्ही बाजूंना वचन देतो की दुसरी बाजू पैसे देईल किंवा शेअर देईल. NSE चे क्लिअरिंग कॉर्पोरेशन NSE Clearing Limited या नावाने ओळखले जाते. BSE चे नाव Indian Clearing Corporation Limited (ICCL) आहे.</p>
+<p><strong>डिपॉझिटरी</strong> शेअर इलेक्ट्रॉनिक स्वरूपात ठेवतात. भारतात दोन डिपॉझिटरी आहेत: NSDL आणि CDSL. त्या शेअरसाठी बँकेसारखे काम करतात. कोणाकडे काय आहे याची नोंद त्या ठेवतात. तुमचे शेअर कागदी प्रमाणपत्राच्या स्वरूपात कपाटात नसतात. ते डिपॉझिटरीमध्ये तुमच्या नावावर नोंदलेले असतात.</p>
+<p><strong>ब्रोकर (ट्रेडिंग सदस्य)</strong> तुमच्या ऑर्डर स्वीकारतो, तुम्हाला ट्रेडिंग प्लॅटफॉर्म देतो आणि तुमच्या ऑर्डर एक्सचेंजकडे पाठवतो. रोजच्या व्यवहारात ज्या फर्मशी तुमचा संबंध येतो ती ब्रोकर फर्म असते. ती एक्सचेंज नाही. तिथे तुमचे शेअर ठेवलेले नसतात.</p>
+<p><strong>डिपॉझिटरी पार्टिसिपंट (DP)</strong> ही फर्म डिपॉझिटरीच्या वतीने तुमचे डिमॅट खाते सांभाळते. डिपॉझिटरी होल्डिंगची नोंद ठेवते. खाते DP सांभाळते. ही दोन वेगळी कामे आहेत, जरी एकाच फर्मने दोन्ही केली तरी.</p>
+<p><strong>बँका</strong> व्यापार आणि सेटलमेंटसाठी वापरले जाणारे पैसे ठेवतात. तुमचे ट्रेडिंग खाते एका बँक खात्याशी जोडलेले असते.</p>
+<p><strong>तक्रारीचा मार्ग</strong> म्हणजे तक्रारींचा क्रम. आधी ब्रोकरकडे जा. मग एक्सचेंजकडे जा. मग SEBI चे तक्रार पोर्टल SCORES (scores.sebi.gov.in) वर जा. SEBI च्या गुंतवणूकदार पानावर सांगितले आहे की ज्या फर्मविरुद्ध तक्रार आहे तिच्याकडे आधी जा. समाधान न झाल्यासच SCORES वापरा. जुनी SCORES साइट (scores.gov.in) 28 Mar 2024 रोजी बंद झाली, म्हणून नवीन साइट वापरा. SEBI चे हेल्पलाइन क्रमांक 1800-266-7575 आणि 1800-22-7575 आहेत. (11 Nov 2026 पर्यंत, SEBI गुंतवणूकदार साइटनुसार. नवीनतम पायऱ्यांसाठी ती तपासा.)</p>
+<p><strong>एक व्यावहारिक तपासणी.</strong> कोणत्याही ब्रोकरकडे खाते उघडण्यापूर्वी त्याची नोंदणी अधिकृत यादीत तपासा. SEBI च्या गुंतवणूकदार साइटवर “Check Registration Status of Market Intermediary” नावाचे साधन आहे. SEBI आपल्या वेबसाइटवर मान्यताप्राप्त मध्यस्थांची यादीही ठेवते. (11 Nov 2026 पर्यंत, SEBI गुंतवणूकदार साइटनुसार.)</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<pre><code class="language-mermaid">flowchart LR
+  You[तुम्ही, खरेदीदार] --&gt; Broker[ब्रोकर: ऑर्डर स्वीकारतो आणि पुढे पाठवतो]
+  Broker --&gt; Exchange[एक्सचेंज: ऑर्डर जुळवतो]
+  Exchange --&gt; Clearing[क्लिअरिंग कॉर्पोरेशन: देणे याची नोंद ठेवते]
+  Clearing --&gt; Depository[डिपॉझिटरी, DP मार्फत: शेअर ठेवते]
+  Depository --&gt; You
+</code></pre>
+<p>बाणांच्या मागे जा. ऑर्डर तुमच्याकडून ब्रोकरकडे, मग एक्सचेंजकडे, मग क्लिअरिंगकडे जाते. शेअर डिपॉझिटरीमार्फत तुमच्याकडे परत येतात. ब्रोकर आणि एक्सचेंज हे दोन वेगळे चौकोन आहेत हे लक्षात घ्या.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक:</strong> Rs 250 दराने 20 शेअर खरेदी करा.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>काम</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. व्यापाराचे मूल्य</td><td>20 x Rs 250</td><td>Rs 5,000</td></tr>
+</tbody></table>
+</div>
+<p>आता ऑर्डरचा मागोवा घ्या. प्रत्येक पायरीवर पैसे कोणाकडे आहेत ते लक्षात घ्या.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>संस्था</th><th>काय घडते</th><th>या पायरीवर पैसे कोणाकडे असतात</th></tr></thead><tbody>
+<tr><td>1</td><td>तुम्ही</td><td>Rs 250 दराने 20 शेअरची खरेदी ऑर्डर देता</td><td>तुमचे जोडलेले पैसे, Rs 5,000 लागतील</td></tr>
+<tr><td>2</td><td>ब्रोकर</td><td>ऑर्डर स्वीकारतो आणि एक्सचेंजकडे पाठवतो</td><td>ब्रोकरच्या प्रक्रियेतून पैसे जातात</td></tr>
+<tr><td>3</td><td>एक्सचेंज</td><td>ऑर्डर एका विक्रेत्याशी जुळवतो</td><td>एक्सचेंज तुमचे पैसे ठेवत नाही</td></tr>
+<tr><td>4</td><td>क्लिअरिंग कॉर्पोरेशन</td><td>व्यापारामुळे येणाऱ्या देण्याची नोंद ठेवते</td><td>क्लिअरिंग यंत्रणा पैसे हलवते</td></tr>
+<tr><td>5</td><td>डिपॉझिटरी, DP मार्फत</td><td>सेटलमेंटनंतर 20 शेअर तुमच्या डिमॅट खात्यात जमा होतात</td><td>सेटलमेंट शेअर आणि पैसे हलवते, व्यापारानंतर एका कामकाजाच्या दिवसानंतर (T+1, पहा <em>डिमॅट खाते आणि सेटलमेंट</em>)</td></tr>
+</tbody></table>
+</div>
+<p>मुख्य मुद्दा: कोणतीही पायरी एक्सचेंजला तुमचे पैसे ठेवायला सांगत नाही.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<p><strong>परस्परसंवादी डेमो (संकल्पनात्मक मोड).</strong></p>
+<!-- component: order-flow-sim | mode: conceptual | side: buy | quantity: 20 | price: 250 | steps: trader, broker, exchange, clearing, depository | caption: Rs 250 दराने 20 शेअरची एक खरेदी ऑर्डर प्रत्येक संस्थेतून कशी जाते ते पाहा, आणि प्रत्येक पायरीवर कोण काय करते ते सांगा. -->
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>कार्य:</strong> Rs 250 दराने 20 शेअरच्या विक्रीसाठी आकृतीतील संस्थांना नावे द्या.</p>
+<p><strong>इशारे:</strong></p>
+<ol>
+<li>स्वतःपासून सुरुवात करा.</li>
+<li>ऑर्डरचा मागोवा घ्या: तुम्ही, ब्रोकर, एक्सचेंज.</li>
+<li>मग शेअरचा मागोवा घ्या: क्लिअरिंग, मग डिपॉझिटरी.</li>
+</ol>
+<p><strong>उत्तर:</strong> तुम्ही Rs 250 दराने 20 शेअरची विक्री ऑर्डर देता. व्यापाराचे मूल्य Rs 5,000 आहे. ब्रोकर ऑर्डर स्वीकारतो आणि एक्सचेंजकडे पाठवतो. एक्सचेंज ती एका खरेदीदाराशी जुळवतो. क्लिअरिंग कॉर्पोरेशन देण्याची नोंद ठेवते. डिपॉझिटरी, DP मार्फत, सेटलमेंट झाल्यावर तुमच्या डिमॅट खात्यातून शेअर बाहेर काढते. ते व्यापारानंतर एका कामकाजाच्या दिवसानंतर होते (पहा <em>डिमॅट खाते आणि सेटलमेंट</em>).</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>कार्य:</strong> एका मित्राला तीन वाक्यांत समजावून सांगा, की एक्सचेंज ही अशी जागा का नाही जिथे तुम्ही खाते उघडता. कोणतेही इशारे वापरू नका.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>एक उत्तर असे असू शकते: “एक्सचेंज ही बाजारपेठ आहे जिथे ऑर्डर जुळवल्या जातात. तुम्ही ब्रोकरकडे खाते उघडता. ब्रोकर तुमच्या ऑर्डर स्वीकारतो आणि त्या एक्सचेंजकडे पाठवतो. तुमचे शेअर डिपॉझिटरीमध्ये, DP मार्फत, नोंदलेले असतात, एक्सचेंजमध्ये नाहीत.”</p>
+<p>तुमच्या तीन वाक्यांनी जुळवणी (एक्सचेंज), प्रवेश (ब्रोकर) आणि ठेवणे (डिपॉझिटरी) यांत फरक केला आहे का ते तपासा.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>सहा प्रश्न ब्रोकर आणि एक्सचेंजमधील फरक, क्लिअरिंगची भूमिका, तक्रारीचा क्रम आणि शेअर कोण ठेवते हे तपासतात.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> शिकण्याची नोंद. ती तुमच्या जर्नलमध्ये किंवा कागदावर लिहा.</p>
+<ol>
+<li>या प्रकरणातील प्रत्येक संस्था यादी करा: SEBI, NSE, BSE, क्लिअरिंग कॉर्पोरेशन, NSDL, CDSL, ब्रोकर, DP आणि बँक.</li>
+<li>प्रत्येकाची भूमिका तुमच्या स्वतःच्या शब्दांत लिहा, प्रत्येकी एका ओळीत.</li>
+<li>अधिकृत पानाची लिंक जोडा जे त्या संस्थेचे वर्णन करते.</li>
+<li>त्या भूमिकेवर अवलंबून राहण्यापूर्वी SEBI, NSE आणि BSE च्या पानांवर तपासा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>हे पुस्तक कोणत्याही ब्रोकरची शिफारस करत नाही. Zerodha फक्त ब्रोकरचे उदाहरण म्हणून दिले आहे, शिफारस म्हणून नाही.</li>
+<li>नोंदणीची तपासणी तुमची जबाबदारी आहे. खाते उघडण्यापूर्वी अधिकृत यादी तपासा.</li>
+<li>ब्रोकर किंवा सल्लागार असल्याचा दावा करणाऱ्या कोणालाही तुम्ही पडताळणी करेपर्यंत पैसे पाठवू नका.</li>
+<li>येथील भूमिका सर्वसाधारण आहेत. प्रत्येक फर्मची नेमकी रचना तिच्या स्वतःच्या कागदपत्रांत असते.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>SEBI नियमन करते. ते भाव ठरवत नाही.</li>
+<li>एक्सचेंज ऑर्डर जुळवते. ते तुमचे पैसे ठेवत नाही.</li>
+<li>ब्रोकर तुमच्या ऑर्डर स्वीकारतो. तो एक्सचेंज नाही.</li>
+<li>डिपॉझिटरी शेअर इलेक्ट्रॉनिक स्वरूपात ठेवते, DP मार्फत.</li>
+<li>तक्रारीचा क्रम: ब्रोकर, मग एक्सचेंज, मग SEBI.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p><strong>स्रोत (फक्त नावे):</strong></p>
+<ul>
+<li>SEBI ची वेबसाइट: SEBI विषयी, मध्यस्थ, गुंतवणूकदार तक्रार.</li>
+<li>NSE ची वेबसाइट: क्लिअरिंग आणि सदस्यत्वाची पाने.</li>
+<li>BSE ची वेबसाइट.</li>
+<li>NSDL आणि CDSL ची वेबसाइट.</li>
+<li>खात्यांवरील Zerodha सपोर्ट पाने, ब्रोकरचे उदाहरण म्हणून, शिफारस म्हणून नाही.</li>
+</ul>
+<p><strong>तथ्ये 11 Nov 2026 रोजी तपासली:</strong></p>
+<ul>
+<li>क्लिअरिंग कॉर्पोरेशन NSE Clearing Limited आणि Indian Clearing Corporation Limited आहेत. डिपॉझिटरी NSDL आणि CDSL आहेत.</li>
+<li>तक्रारीचा क्रम आणि नवीन SCORES पत्ता SEBI च्या गुंतवणूकदार पानांवरून घेतले आहेत.</li>
+<li>नोंदणी तपासणी साधन SEBI च्या गुंतवणूकदार सहाय्य पानावरून घेतले आहे.</li>
+<li>मान्यताप्राप्त एक्सचेंजची पूर्ण यादी SEBI ठेवते. हे प्रकरण ती यादी कॉपी करत नाही, म्हणून SEBI ची साइट तपासा.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T1.2&amp;body=Page%3A%2001-market-foundations%2F02-exchanges-sebi-brokers-participants%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../01-market-foundations/01-companies-shares-and-listings/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../01-market-foundations/03-demat-accounts-and-settlement/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../01-market-foundations/01-companies-shares-and-listings/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../01-market-foundations/03-demat-accounts-and-settlement/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

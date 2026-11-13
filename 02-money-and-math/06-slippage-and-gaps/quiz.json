@@ -1,0 +1,167 @@
+[
+  {
+    "id": "T2.6-q1",
+    "type": "mcq",
+    "prompt": "Which statement about a stop-loss order is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It sets a maximum loss that cannot be exceeded."
+      },
+      {
+        "id": "b",
+        "text": "It is an instruction that triggers at the first available price, which can be well away from the stop after a gap."
+      },
+      {
+        "id": "c",
+        "text": "It is only useful for intraday trades, so a swing plan does not need one."
+      },
+      {
+        "id": "d",
+        "text": "It always fills at exactly the stop price."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A stop does not set a ceiling on the loss. After a gap the fill can be far below the stop. So the realised loss can be larger than planned.",
+      "c": "A stop works for any holding period. A swing plan that holds overnight carries gap risk, so it still needs a sizing check.",
+      "d": "The fill happens at the first price available after the trigger. In a gap, that price can be well away from the stop."
+    },
+    "concepts": [
+      "stop-loss",
+      "gap-risk"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.6-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical plan: entry Rs 250, stop Rs 240, 50 shares. The stock opens at Rs 236 and the stop fills at the open. What is the actual loss in rupees?",
+    "answer": 700,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Loss per share = 250 - 236 = Rs 14. Loss = 50 x 14 = Rs 700. Second check: buy cost 50 x 250 = Rs 12,500. Sale 50 x 236 = Rs 11,800. Difference = Rs 700. Against the planned Rs 500, that is 700 / 500 = 1.4R.",
+    "concepts": [
+      "gap-risk",
+      "stop-loss"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.6-q3",
+    "type": "numeric",
+    "prompt": "Entry Rs 250, stop Rs 240. You assume a gap to Rs 220 and want the loss at that gap within Rs 500. What is the largest whole number of shares?",
+    "answer": 16,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "Loss per share at the assumed gap = 250 - 220 = Rs 30. Raw shares = 500 / 30 = 16.67, rounded down to 16. Check: 16 x 30 = Rs 480, within Rs 500. 17 x 30 = Rs 510, above Rs 500. The gap assumption is your choice.",
+    "concepts": [
+      "gap-risk",
+      "stop-loss"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.6-q4",
+    "type": "scenario",
+    "prompt": "A stock bought at Rs 250 has a stop at Rs 240. The planned loss is Rs 500 on 50 shares. Over the weekend, news breaks. On Monday, the first available price is well below Rs 240. Which description fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The order fills at Rs 240 because that is the stop price."
+      },
+      {
+        "id": "b",
+        "text": "The stop triggers and fills at the first available price, which can be well below Rs 240, so the loss is larger than planned."
+      },
+      {
+        "id": "c",
+        "text": "The gap cancels the stop, so the loss stays at the planned Rs 500."
+      },
+      {
+        "id": "d",
+        "text": "The order fills at the Rs 250 entry, so the loss is zero."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The planned Rs 500 assumes a fill at Rs 240. A gap removes that assumption. The first available price is already below the stop.",
+      "c": "Nothing in this scenario cancels the stop. The stop triggers. The gap changes the fill price, not whether the order exists.",
+      "d": "The entry price does not set the exit fill. The first available price after the gap does."
+    },
+    "concepts": [
+      "gap-risk",
+      "fill-price"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.6-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake. Statement: 'My plan risks Rs 500 on 50 shares (a), so the most I can lose is Rs 500 (b), because Rs 500 is 1% of my Rs 50,000 (c).' Which part is wrong?",
+    "options": [
+      {
+        "id": "a",
+        "text": "My plan risks Rs 500 on 50 shares."
+      },
+      {
+        "id": "b",
+        "text": "So the most I can lose is Rs 500."
+      },
+      {
+        "id": "c",
+        "text": "Because Rs 500 is 1% of my Rs 50,000."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This is correct. The planned risk is 50 x Rs 10 = Rs 500. It is the plan. It is not the same as a maximum loss.",
+      "c": "This is correct arithmetic. 1% of Rs 50,000 is Rs 500."
+    },
+    "concepts": [
+      "planned-risk",
+      "gap-risk"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.6-q6",
+    "type": "mcq",
+    "prompt": "A sell stop-limit order has a trigger of Rs 240 and a limit of Rs 238. Which statement is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It always fills at Rs 240 once the trigger is reached."
+      },
+      {
+        "id": "b",
+        "text": "Once triggered it becomes a sell limit at Rs 238. If the market trades only below Rs 238, it may not fill at all."
+      },
+      {
+        "id": "c",
+        "text": "It fills at Rs 238 whenever the price touches Rs 240, whatever buyers are present."
+      },
+      {
+        "id": "d",
+        "text": "It cannot trigger during a gap."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "After the trigger, the order is a limit order. So the fill depends on the limit (Rs 238 here), not on the trigger price alone.",
+      "c": "Touching the trigger starts the order. A sell still needs a buyer at or above the limit.",
+      "d": "A gap can trigger a stop-limit order. The question is whether the triggered order then fills."
+    },
+    "concepts": [
+      "order-types",
+      "stop-limit"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

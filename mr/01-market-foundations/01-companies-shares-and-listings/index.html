@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>कंपन्या, शेअर आणि लिस्टिंग - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../01-market-foundations/01-companies-shares-and-listings/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../01-market-foundations/01-companies-shares-and-listings/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T1.1
+title: कंपन्या, शेअर आणि लिस्टिंग
+page_type: Concept
+prerequisites: [T0.1]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="कंपनया-शेअर-आणि-लिसटिंग"><a class="header" href="#कंपनया-शेअर-आणि-लिसटिंग">कंपन्या, शेअर आणि लिस्टिंग</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एका काल्पनिक ट्रेडरने ऐकले की एक कंपनी “लवकरच लिस्ट होणार” आहे. तो तिच्या पहिल्या सार्वजनिक ऑफरमध्ये शेअर खरेदी करतो. त्याला वाटते की या खरेदीमुळे कंपनीला पैसे मिळतात. एका आठवड्यानंतर तो एक्सचेंजवर दुसऱ्या गुंतवणूकदाराकडून आणखी शेअर घेतो. त्याला वाटते की कंपनीला पुन्हा निधी मिळतो. दोन्ही समजुती दोन वेगळ्या बाजारांची गल्लत करतात. पैसे कुठे जातात, ते हा फरक ठरवतो.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>शेअर म्हणजे मालकीचा एक भाग.</strong> कंपनीचे ठराविक संख्येने शेअर असतात, आणि ते सर्व समान भाग असतात. प्रत्येक भाग धारकाला, त्याच्याकडील संख्येच्या प्रमाणात, व्यवसायात वाटा देतो.</p>
+<p><strong>मालकीची टक्केवारी</strong> म्हणजे तुमच्याकडील शेअर, एकूण शेअरांनी भागलेले. सूत्र:</p>
+<p>Ownership % = (shares held / total shares outstanding) x 100</p>
+<p><strong>धारण केलेल्या शेअरचे मूल्य</strong> म्हणजे शेअरची संख्या गुणिले एका शेअरचा भाव. सूत्र: holding value = shares x price.</p>
+<p><strong>कंपन्या शेअर का विकतात.</strong> कंपनी कर्ज घेण्याऐवजी नवीन भागधारकांकडून पैसे उभे करू शकते. सध्याचे मालकही त्यांच्या हिश्शाचा काही भाग विकू शकतात. ही सर्वसाधारण कारणे आहेत. प्रत्येक कंपनीच्या स्वतःच्या कागदपत्रांत तिची खास कारणे लिहिलेली असतात.</p>
+<p><strong>प्राथमिक बाजार.</strong> कंपनी नवीन शेअर जारी करते. पैसे कंपनीला मिळतात.</p>
+<p><strong>दुय्यम बाजार.</strong> गुंतवणूकदार आधीपासून असलेल्या शेअरची खरेदी-विक्री करतात. पैसे विक्रेत्याला मिळतात, कंपनीला नाही. एक्सचेंजवरील खरेदी-विक्री दुय्यम बाजारात होते.</p>
+<p><strong>IPO (इनिशियल पब्लिक ऑफर).</strong> कंपनीची लोकांना दिलेली पहिली सार्वजनिक शेअर ऑफर. हे प्रकरण किंमत ठरवणे आणि वाटप (शेअर कोणाला मिळतात) एवढेच सर्वसाधारण शब्दांत सांगते. बुक-बिल्डिंग IPO मध्ये कंपनी किमतीचा पट्टा देते, आणि गुंतवणूकदार त्या पट्ट्यात बोली लावतात. खालची आणि वरची मर्यादा असलेला लिलाव असे समजा. ऑफर बंद झाल्यावर शेअरचे वाटप होते. SEBI चा डिसेंबर 2023 पासूनचा नियम असा आहे की ऑफर बंद झाल्यावर 3 कार्यदिवसांच्या आत शेअरचे ट्रेडिंग सुरू झाले पाहिजे (याला T+3 म्हणतात). (11 नोव्हेंबर 2026 नुसार, 9 ऑगस्ट 2023 चे SEBI परिपत्रक. नियम बदलतात, म्हणून SEBI संकेतस्थळ तपासा.)</p>
+<p><strong>IPO आपोआप फायदेशीर नसतो.</strong> लिस्टिंगच्या दिवशीचा भाव म्हणजे शेअरचा एक्सचेंजवरील पहिला व्यवहार ज्या भावात होतो तो. तो इश्यू किमतीच्या वर किंवा खाली असू शकतो. इश्यू किंमत म्हणजे ऑफरसाठी ठरवलेला भाव.</p>
+<p><strong>डायल्युशन (मालकी पातळ होणे).</strong> नवीन शेअर जारी झाले की एकूण शेअरांची संख्या वाढते. मग प्रत्येक सध्याचा शेअर कंपनीचा लहान भाग बनतो. म्हणून सध्याच्या धारकाची टक्केवारी घटते, जोपर्यंत त्याने नवीन शेअरमध्ये काही खरेदी केलेली नसते.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<pre><code class="language-mermaid">flowchart LR
+  subgraph Primary
+    I1["गुंतवणूकदार"] --&gt;|नवीन शेअरसाठी पैसे| C["कंपनी"]
+    C --&gt;|नवीन शेअर| I1
+  end
+  subgraph Secondary
+    B["खरेदीदार"] --&gt;|पैसे, एक्सचेंजवर जुळवलेले| S["विक्रेता"]
+    S --&gt;|आधीपासूनचे शेअर| B
+  end
+</code></pre>
+<p>कंपनीचा बॉक्स पाहा. तो फक्त प्राथमिक प्रवाहात दिसतो. दुय्यम प्रवाहात पैसे खरेदीदार आणि विक्रेता यांच्यात फिरतात. कंपनीला काहीही मिळत नाही.</p>
+<!-- component: share-slices | totalShares: 1000000 | price: 200 | held: 1000 | buyShares: 100 | caption: या प्रकरणातील काल्पनिक कंपनी: 10,00,000 शेअर, भाव Rs 200. 5,00,000 नवीन शेअर जारी करण्यासाठी Play दाबा आणि तुमची टक्केवारी कशी घटते ते पाहा. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक कंपनी:</strong> 10,00,000 शेअर बाजारात आहेत, प्रत्येकाचा भाव Rs 200.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>काम</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. कंपनीचे मूल्य</td><td>10,00,000 x Rs 200</td><td>Rs 20,00,00,000 (Rs 20 कोटी)</td></tr>
+<tr><td>2. धारकाची मालकी</td><td>1,000 / 10,00,000</td><td>0.1%</td></tr>
+<tr><td>3. धारकाचे मूल्य</td><td>1,000 x Rs 200</td><td>Rs 2,00,000</td></tr>
+<tr><td>4. दुय्यम व्यवहार, 100 शेअर</td><td>100 x Rs 200</td><td>Rs 20,000 विक्रेत्याला दिले; कंपनीला काहीच मिळत नाही</td></tr>
+<tr><td>5. डायल्युशन: कंपनी 5,00,000 नवीन शेअर जारी करते</td><td>एकूण होते 10,00,000 + 5,00,000 = 15,00,000; धारकाचे 1,000 / 15,00,000</td><td>0.0667%</td></tr>
+</tbody></table>
+</div>
+<p><strong>तपासणी, पायरी 5:</strong> 1,000 / 15,00,000 = 1 / 1,500 = 0.000667, म्हणजे 0.0667%.</p>
+<p>धारकाची मालकी 0.1% वरून 0.0667% झाली, कारण शेअरची संख्या वाढली. धारकाकडे अजूनही 1,000 शेअर आहेत. त्याचे मूल्य घटते की नाही, हे नवीन इश्यूनंतरच्या भावावर अवलंबून असते. वरील गणित ते ठरवत नाही.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम:</strong> एका धारकाकडे एका कंपनीचे 250 शेअर आहेत. कंपनीचे एकूण शेअर 20,00,000 आहेत. शेअरचा भाव Rs 150 आहे. धारकाची मालकीची टक्केवारी आणि धारण केलेल्या शेअरचे मूल्य काढा.</p>
+<p><strong>संकेत:</strong></p>
+<ol>
+<li>धारकाच्या शेअरला एकूण शेअरने भागून अपूर्णांक काढा.</li>
+<li>अपूर्णांकाला 100 ने गुणा, म्हणजे टक्केवारी मिळेल.</li>
+<li>शेअरच्या संख्येला भावाने गुणा, म्हणजे मूल्य मिळेल.</li>
+</ol>
+<p><strong>उत्तर:</strong> मालकी = 250 / 20,00,000 = 0.000125, म्हणजे 0.0125%. मूल्य = 250 x Rs 150 = Rs 37,500.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम:</strong> या प्रकरणातील उदाहरणातील कंपनी 10,00,000 नवीन शेअर जारी करते. धारकाची नवीन मालकीची टक्केवारी काढा. धारकाचे मूल्य आपोआप का कमी होत नाही, ते स्पष्ट करा. कोणतेही संकेत वापरू नका.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>नवीन एकूण = 10,00,000 + 10,00,000 = 20,00,000 शेअर. धारकाची मालकी = 1,000 / 20,00,000 = 0.005%.</p>
+<p>धारकाचे मूल्य म्हणजे शेअर x भाव. धारकाकडे अजूनही 1,000 शेअर आहेत. भाव Rs 200 च राहिला, तर धारण केलेले शेअर अजूनही Rs 2,00,000 किमतीचे असतील. भाव व्यापार ठरवतो. नवीन पैशांमुळे कंपनीच्या शक्यता बदलू शकतात, त्यामुळे भाव कोणत्याही दिशेने हलू शकतो. टक्केवारी नक्की घटते. मूल्य आपोआप घटत नाही.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>पाच प्रश्न मालकीची बेरीज, प्रत्येक बाजारातील पैशांचा प्रवाह, आणि IPO व डायल्युशनबद्दलची विधाने तपासतात.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>पद्धत:</strong> शिकण्याची नोंद. ती जर्नलमध्ये किंवा कागदावर लिहा. कोणतीही खरेदी करू नका.</p>
+<ol>
+<li>भूतकाळातील कोणत्याही IPO चा सार्वजनिक ऑफर दस्तऐवज शोधा. तो एक्सचेंज किंवा SEBI संकेतस्थळावर मिळेल.</li>
+<li>“objects of the issue” (ऑफरच्या उद्देशाचा विभाग) नावाचा विभाग शोधा. त्यात पैसे कशासाठी आहेत ते लिहिलेले असते.</li>
+<li>कंपनीने पैसे कशासाठी वापरणार असे सांगितले, ते स्वतःच्या शब्दांत लिहा.</li>
+<li>स्रोत, तुम्ही तो पाहिल्याची तारीख आणि कंपनीचे नाव नोंदवा. काहीही खरेदी करू नका.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>हे प्रकरण कोणता IPO खरेदी करावा हे सांगत नाही. IPO ला भांडवल-प्रथम नियमांतून सूट मिळत नाही.</li>
+<li>IPO विषयीची हवा, आणि शेअर मिळाल्याचा उत्साह, अनेकदा घाईच्या खरेदीकडे नेतो.</li>
+<li>लिस्टिंगच्या दिवशीचा भाव इश्यू किमतीच्या वर किंवा खाली असू शकतो. हे प्रकरण दोन्हीपैकी काहीही भाकीत करत नाही.</li>
+<li>टक्केवारी आणि मूल्याची गणिते एका क्षणाचे चित्र आहेत. भाव हलतो, म्हणून मूल्यही हलते.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>शेअर म्हणजे मालकीचा भाग. मालकी % = धारण शेअर / एकूण शेअर, गुणिले 100.</li>
+<li>प्राथमिक बाजार: पैसे कंपनीला. दुय्यम बाजार: पैसे विक्रेत्याला.</li>
+<li>IPO म्हणजे कंपनीची पहिली सार्वजनिक ऑफर. तो आपोआप फायदेशीर नसतो.</li>
+<li>डायल्युशन: नवीन शेअरमुळे प्रत्येक सध्याच्या धारकाची टक्केवारी घटते, जोपर्यंत तो इश्यूमध्ये खरेदी करत नाही.</li>
+<li>10,00,000 पैकी 1,000 शेअर असतील तर मालकी 0.1%. 5,00,000 नवीन शेअरनंतर ती 0.0667%.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p><strong>स्रोत (फक्त नावे):</strong></p>
+<ul>
+<li>SEBI ICDR नियम.</li>
+<li>IPO वरील SEBI गुंतवणूकदार शिक्षण पाने.</li>
+<li>NSE आणि BSE ची IPO शिक्षण पाने.</li>
+</ul>
+<p><strong>11 नोव्हेंबर 2026 रोजी तपासलेली तथ्ये:</strong></p>
+<ul>
+<li>IPO बंद झाल्यावर 3 कार्यदिवसांत लिस्टिंग होण्याचा वेळ 9 ऑगस्ट 2023 च्या SEBI परिपत्रकातून आला आहे. 1 डिसेंबर 2023 रोजी किंवा नंतर उघडणाऱ्या ऑफरसाठी तो बंधनकारक झाला.</li>
+<li>IPO ची तपशीलवार पायरी, किमतीच्या पट्ट्याच्या मर्यादा आणि वाटपाचे नियम SEBI च्या ICDR नियमांत आहेत. कोणत्याही IPO साठी अर्ज करण्यापूर्वी ते SEBI संकेतस्थळावर वाचा.</li>
+<li>सध्याचे IPO आकडे या प्रकरणाच्या कक्षेबाहेर आहेत.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T1.1&amp;body=Page%3A%2001-market-foundations%2F01-companies-shares-and-listings%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../01-market-foundations/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../01-market-foundations/02-exchanges-sebi-brokers-participants/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../01-market-foundations/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../01-market-foundations/02-exchanges-sebi-brokers-participants/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

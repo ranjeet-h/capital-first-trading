@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Trend and market structure - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/03-chart-reading/04-trend-and-market-structure/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T3.4
+title: Trend and market structure
+page_type: Concept
+prerequisites: [T3.3]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="trend-and-market-structure"><a class="header" href="#trend-and-market-structure">Trend and market structure</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p><strong>Hypothetical.</strong> A stock rises from Rs 200 to Rs 230. It falls to Rs 215, then rises to Rs 245 and falls to Rs 222. A trader sees one strong up day in the middle of that path. The trader says, “The trend is up, so I will buy.” Yet the trader has not set a swing definition, a stop or a rule. The chart has been drawn, but the trend has not been defined. This chapter shows how to read the path step by step.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>A <strong>trend</strong> is the direction of successive swing points. It is not the direction of one candle. One up candle does not make an uptrend.</p>
+<p>A <strong>swing high</strong> is a high with lower highs on both sides. A <strong>swing low</strong> is a low with higher lows on both sides. The number of candles on each side is your choice. Call it N. A change to N changes which points count as swings. A change to N can change the label too. Write N in your notes.</p>
+<p>Three labels describe the structure:</p>
+<ul>
+<li><strong>Uptrend:</strong> higher highs and higher lows.</li>
+<li><strong>Downtrend:</strong> lower highs and lower lows.</li>
+<li><strong>Range:</strong> neither pattern. The highs and lows move sideways.</li>
+</ul>
+<p>Compare each swing with the previous swing of the same type. Compare highs with highs and lows with lows.</p>
+<p>A <strong>structure break</strong> is the level where the current pattern fails. In an uptrend, a close below the most recent swing low means the last higher low has failed. The structure is no longer making higher lows.</p>
+<p>Structure labels are <strong>retrospective</strong>. They are updated as new candles arrive. A label that looked clear last week can change this week.</p>
+<p>A trend is a description that can end. Using a trend to decide a trade is a strategy. That strategy is covered in <em>Trend following in depth</em>.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<p>The swing points from the worked example, sorted by type:</p>
+<div class="table-wrapper"><table><thead><tr><th>Swing highs</th><th>Swing lows</th></tr></thead><tbody>
+<tr><td>Rs 230</td><td>Rs 200</td></tr>
+<tr><td>Rs 245</td><td>Rs 215</td></tr>
+<tr><td></td><td>Rs 222</td></tr>
+</tbody></table>
+</div>
+<p>Read down each column. Each highs value is above the one before it. Each lows value is above the one before it. Those two facts describe an uptrend.</p>
+<!-- component: swing-labeler | n: 2 | caption: A made-up chart with the swings of this chapter (lows at Rs 200, Rs 215 and Rs 222, highs at Rs 230 and Rs 245). Tap the chart to mark swings and read the label, then change N and see the rule's swings move. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Swing sequence in time order: low Rs 200, high Rs 230, low Rs 215, high Rs 245, low Rs 222.</p>
+<div class="table-wrapper"><table><thead><tr><th>Swing</th><th>Price</th><th>Compared with the previous swing of the same type</th></tr></thead><tbody>
+<tr><td>Low</td><td>Rs 200</td><td>none yet</td></tr>
+<tr><td>High</td><td>Rs 230</td><td>none yet</td></tr>
+<tr><td>Low</td><td>Rs 215</td><td>higher than Rs 200</td></tr>
+<tr><td>High</td><td>Rs 245</td><td>higher than Rs 230</td></tr>
+<tr><td>Low</td><td>Rs 222</td><td>higher than Rs 215</td></tr>
+</tbody></table>
+</div>
+<p>The lows 200, 215 and 222 are rising. The highs 230 and 245 are rising. The structure is an <strong>uptrend</strong>.</p>
+<p>The structure-break level is Rs 222. A close below Rs 222 means the most recent higher low has failed. That close would change the label. Check: 222 is the most recent swing low, so it is the level to watch.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> <strong>Hypothetical.</strong> Swing sequence in time order: low Rs 100, high Rs 120, low Rs 110, high Rs 125, low Rs 115. Label each swing as a higher or lower point. Classify the structure. Name the structure-break level.</p>
+<p>Hints:</p>
+<ol>
+<li>Compare each swing with the previous swing of the same type.</li>
+<li>Compare the highs with the highs. Compare the lows with the lows.</li>
+<li>Check whether both the highs and the lows are rising.</li>
+<li>The structure-break level is the most recent swing low in an uptrend.</li>
+</ol>
+<p><strong>Answer:</strong> Lows: 110 is higher than 100, and 115 is higher than 110. Highs: 125 is higher than 120. The structure is an <strong>uptrend</strong>. The structure-break level is Rs 115, the most recent swing low.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> <strong>Hypothetical.</strong> Swing sequence in time order: high Rs 260, low Rs 240, high Rs 255, low Rs 238. Label each swing. Classify the structure. For a downtrend view, state the structure-break level.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>The high of Rs 255 is lower than the high of Rs 260. It is a lower high.</li>
+<li>The low of Rs 238 is lower than the low of Rs 240. It is a lower low.</li>
+<li>The structure is a <strong>downtrend</strong>: lower highs and lower lows.</li>
+<li>For a downtrend view, the structure-break level is the most recent swing high, Rs 255. A close above Rs 255 means the last lower high has failed.</li>
+</ul>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks higher highs and higher lows, range identification, and why the swing definition must be fixed before you look.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong>. Write the result in your journal. If the journal is not ready, use paper.</p>
+<ol>
+<li>Pick one stock.</li>
+<li>Each week for 8 weeks, label the structure on the weekly chart as uptrend, downtrend or range.</li>
+<li>Write the swing definition you used, including N. Keep it the same for all 8 weeks.</li>
+<li>Note any week where your label changed after new data arrived.</li>
+<li>Write down what changed, and why, without drawing a conclusion from the change.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>The label depends on the swing definition. A different N can give different swings and a different label.</li>
+<li>Labels update as new candles arrive. A week labelled as an uptrend can become a range the next week.</li>
+<li>One up candle is not an uptrend. A new high on one day is not enough to make a trend.</li>
+<li>Writing “the trend is up, so I buy” without a rule and a stop is the mistake. A label alone is not a plan.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>A trend is the direction of successive swing points, not one candle.</li>
+<li>Uptrend: higher highs and higher lows. Downtrend: lower highs and lower lows. Range: neither.</li>
+<li>Write down your swing definition, including N, before you label the chart.</li>
+<li>The structure-break level is the most recent swing point that the trend depends on.</li>
+<li>Labels are retrospective. Expect them to change as new candles arrive.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Zerodha Varsity, trend module (reference only)</li>
+<li>Dow theory overview, from standard technical-analysis texts</li>
+</ul>
+<!-- facts-needed: none for the arithmetic. The Dow theory overview is a description of a classic framework, not a claim of predictive power. -->
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../03-chart-reading/03-support-and-resistance/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../03-chart-reading/05-breakouts/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../03-chart-reading/03-support-and-resistance/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../03-chart-reading/05-breakouts/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

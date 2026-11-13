@@ -1,0 +1,114 @@
+[
+  {
+    "id": "T5.1-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Five closes are Rs 100, Rs 102, Rs 104, Rs 103 and Rs 105. What is the five-day simple average in rupees?",
+    "answer": 102.8,
+    "tolerance": 0.005,
+    "unit": "Rs",
+    "solution": "Sum = 100 + 102 + 104 + 103 + 105 = 514. Average = 514 / 5 = Rs 102.80. Check: 5 x 102.80 = 514.",
+    "concepts": ["simple-moving-average", "indicator-basics"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.1-q2",
+    "type": "mcq",
+    "prompt": "Why does an indicator built from past closes lag a turn in the price?",
+    "options": [
+      {"id": "a", "text": "It averages past data, so it reacts only after the price has already moved"},
+      {"id": "b", "text": "It adds information from other markets that arrives late"},
+      {"id": "c", "text": "It is calculated only once a month"},
+      {"id": "d", "text": "It uses tomorrow's close as its input"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "An indicator adds no outside information. It only uses the price and volume data you already have.",
+      "c": "Indicators use daily data in this book. A monthly calculation is not the reason for lag.",
+      "d": "No indicator can use tomorrow's close. That value does not exist when the indicator is calculated."
+    },
+    "concepts": ["lagging-indicators"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.1-q3",
+    "type": "scenario",
+    "prompt": "Hypothetical. A trader sees the short line cross above the long line on a chart. He says this proves the price will rise tomorrow. What is the most accurate response?",
+    "options": [
+      {"id": "a", "text": "He is right, because a crossover always comes before a rise"},
+      {"id": "b", "text": "The crossing describes past prices. It does not prove tomorrow's move. The rule must be tested before anyone relies on it"},
+      {"id": "c", "text": "He is right only if the long line is above the price"},
+      {"id": "d", "text": "The crossing proves a rise, but only in a rising market"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A crossover does not always come before a rise. Crossovers also happen before falls and in sideways markets.",
+      "c": "The position of the long line does not turn a crossing into proof of a future move.",
+      "d": "The crossing is still only a description of the past. A rising market does not make it a forecast."
+    },
+    "concepts": ["indicator-limits", "crossovers"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T5.1-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"The 20-day average is Rs 248, so the price will close above Rs 248 tomorrow.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The average of Rs 248 itself"},
+      {"id": "b", "text": "The 20-day window"},
+      {"id": "c", "text": "The word \"will\", which turns a description of the past into a forecast"},
+      {"id": "d", "text": "Nothing. the statement is correct"}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "The average is a correct summary of the last 20 closes. The error is in what the sentence claims about tomorrow.",
+      "b": "A 20-day window is a valid setting. It does not change the claim that the average forecasts tomorrow.",
+      "d": "The statement is not correct. An average describes past closes. It does not forecast tomorrow's close."
+    },
+    "concepts": ["indicator-limits", "spot-the-mistake"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T5.1-q5",
+    "type": "mcq",
+    "prompt": "Which statement is true about two indicators that are both built only from closing prices?",
+    "options": [
+      {"id": "a", "text": "They are independent, so their agreement is strong evidence"},
+      {"id": "b", "text": "They often agree because they transform the same data, so their agreement adds little new evidence"},
+      {"id": "c", "text": "They always disagree, so one of them must be wrong"},
+      {"id": "d", "text": "They use volume, so they cannot agree with each other"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Indicators built from the same closes are related. Their agreement is expected, so it is weak evidence.",
+      "c": "Related indicators often agree. Disagreement is normal, and it does not mean one is wrong.",
+      "d": "Closing-price indicators do not use volume. Their shared input is the closing price."
+    },
+    "concepts": ["redundancy", "indicator-basics"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T5.1-q6",
+    "type": "mcq",
+    "prompt": "A reader says, \"A longer window is always more accurate.\" Which response is best?",
+    "options": [
+      {"id": "a", "text": "Correct, because a longer window uses more data"},
+      {"id": "b", "text": "Not correct. A longer window is smoother and slower. It is not more accurate, and the right length must be fixed before testing"},
+      {"id": "c", "text": "Correct, but only for daily charts"},
+      {"id": "d", "text": "Not correct, because a longer window is always less smooth"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "More data does not make a line a forecast. A longer window gives a slower line that lags more.",
+      "c": "The same reasoning applies to every chart period. A longer window is not a measure of accuracy.",
+      "d": "A longer window is smoother, not rougher. The claim is wrong because it says accuracy, not smoothness."
+    },
+    "concepts": ["parameters", "overfitting"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  }
+]

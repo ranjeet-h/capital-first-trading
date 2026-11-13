@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Kite वेब आणि मोबाइल टूर - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../04-kite-and-execution/01-kite-web-and-mobile-tour/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../04-kite-and-execution/01-kite-web-and-mobile-tour/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T4.1
+title: Kite वेब आणि मोबाइल टूर
+page_type: Kite walkthrough
+prerequisites: [T0.2, T1.3]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="kite-वेब-आणि-मोबाइल-टूर"><a class="header" href="#kite-वेब-आणि-मोबाइल-टूर">Kite वेब आणि मोबाइल टूर</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>ट्रेडिंग ॲपमध्ये अनेक बटणे, आकडे आणि लेबले दिसतात. त्यातील काही घाईचे वाटतात. ऑर्डर विंडोमधील एक चुकीचा टॅप खरा ऑर्डर पाठवू शकतो. हे प्रकरण तुम्हाला मुख्य भागांचा नकाशा देते. डेमो म्हणजे काय आणि काय नाही, हे तुम्ही शिकाल. या प्रकरणात तुम्ही कोणताही ऑर्डर देणार नाही.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>Kite हे Zerodha चे ट्रेडिंग प्लॅटफॉर्म आहे. ते वेब आणि मोबाइलवर चालते. हे पुस्तक यापैकी कोणत्याही आवृत्तीवर अवलंबून नाही. तुमच्या ॲपमधील लेबले इथल्या लेबलांपेक्षा वेगळी असू शकतात. तुमचे ॲप तपासा.</p>
+<p>मुख्य भाग असे आहेत. प्रत्येक नाव तुमच्या ॲपमध्ये शोधा.</p>
+<ul>
+<li><strong>User ID मेनू.</strong> वरच्या उजव्या कोपऱ्यात तुमच्या User ID वर क्लिक करा. My profile, Settings आणि टूर ही नावे शोधा.</li>
+<li><strong>Marketwatch</strong> (तुम्ही फॉलो करत असलेल्या सिम्बॉलच्या यादी). वेबवर तुम्ही 7 यादी ठेवू शकता, त्या 1 ते 7 क्रमांकित असतात.</li>
+<li><strong>चार्ट.</strong> एका सिम्बॉलच्या मागील भावांचे चित्र.</li>
+<li><strong>ऑर्डर विंडो.</strong> एखाद्या ओळीवरील Buy किंवा Sell वर क्लिक केल्यावर उघडते. ती वाचल्याने ऑर्डर दिला जात नाही. फोन ॲपवर तुम्ही बटण टॅप करून नव्हे, तर स्वाइप करून ऑर्डर देता.</li>
+<li><strong>टॉप बार (वेब).</strong> Dashboard, Orders, Holdings, Positions, Funds, Bids आणि Apps अशी नावे शोधा. ही पाने तुमचे ऑर्डर, तुमच्याकडील शेअर्स, उघड्या पोझिशन्स आणि पैसे दाखवतात. नावांचा अचूक क्रम तुमच्या ॲपमध्ये वेगळा असू शकतो.</li>
+<li><strong>Terminal Mode (वेब).</strong> तुम्ही स्वतः मांडू शकता असा लेआउट, ज्यात तुमचे स्वतःचे विंडो संच असतात.</li>
+</ul>
+<p><strong>Console</strong> हे वेगळे बॅक-ऑफिस वेबसाइट आहे, console.zerodha.com येथे. बॅक ऑफिस नोंदी, अहवाल आणि स्टेटमेंट ठेवते. Console मध्ये कॉन्ट्रॅक्ट नोट्स आणि लेजर यांसारख्या गोष्टी असतात. लाइव्ह भाव पाहण्याची किंवा ऑर्डर देण्याची ती जागा नाही.</p>
+<p><strong>डेमो</strong> हे डमी डेटा वापरणारे Kite चे सराव व्हर्जन आहे. डमी डेटा म्हणजे बनवलेला डेटा, खरा बाजार डेटा नव्हे. पेपर ट्रेडिंग म्हणजे खोट्या पैशांनी सराव करणे आणि तुमच्या निर्णयांची लिखित नोंद ठेवणे. Zerodha सांगते की ते पेपर ट्रेडिंगसाठी डेमो खाती देत नाही. ते डमी डेटासह Kite ची डेमो आवृत्ती देते. ती kite-demo.zerodha.com/dashboard येथे, किंवा zerodha.com/products/kite वरील Try demo बटणाद्वारे मिळते.</p>
+<p>डेमो फक्त पाहण्यासाठी आहे. तुम्ही प्रत्येक स्क्रीन उघडून वाचू शकता. त्यात तुम्ही ऑर्डर देऊ शकत नाही, GTT तयार करू शकत नाही किंवा अलर्ट लावू शकत नाही. खरे ऑर्डर देण्यासाठी निधी असलेले खाते लागते. हे पुस्तक तुम्हाला खरा ऑर्डर देण्यास कधीच सांगत नाही.</p>
+<p>खऱ्या खात्याचा स्क्रीनशॉट शेअर करणार असाल, तर आधी नावे, क्लायंट आयडी आणि बॅलन्स कापून काढा. खासगी तपशील सहज चुकतात.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: kite-flow | flow: find-your-way-around | platform: web | caption: Kite च्या मुख्य भागांमधून जाणारा क्लिक मार्ग. वेब आणि फोन यामध्ये बदल करण्यासाठी स्विच वापरा. Zerodha डेमो किंवा डमी डेटासह सराव करा. स्क्रीन आणि बटणांची नावे बदलू शकतात, म्हणून Kite च्या मदत पेजेस तपासा. -->
+<p>टॉगल वापरून वेब आणि मोबाइल आवृत्ती बदला. दोन्हीमध्ये तेच भाग शोधा. वेगळे लेबल असलेला भाग लक्षात ठेवा. ही स्क्रीन पुनर्रचना आहेत. तुमच्या Kite वरील सध्याचा लेआउट तपासा.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> समजा ऑर्डर विंडोमध्ये तुम्ही Rs 250 दराने 10 शेअर्सचा बाय ऑर्डर भरता. तुम्ही तो सबमिट करत नाही. ऑर्डर मूल्य म्हणजे खर्चाआधी स्क्रीनवर दिसणारी रक्कम.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. शेअर्स</td><td>दिलेले</td><td>10</td></tr>
+<tr><td>2. भाव</td><td>दिलेले</td><td>Rs 250</td></tr>
+<tr><td>3. खर्चाआधी ऑर्डर मूल्य</td><td>10 गुणिले Rs 250</td><td>Rs 2,500</td></tr>
+<tr><td>4. खर्च</td><td>वेगळे दाखवलेले</td><td>ऑर्डर विंडोमध्ये मार्जिन आकड्यांजवळ पाहा</td></tr>
+</tbody></table>
+</div>
+<p>पायरी 3 तपासा: Rs 2,500 भागिले 10 शेअर्स = Rs 250 प्रति शेअर.</p>
+<p>खर्च Rs 2,500 मध्ये धरलेले नाहीत. डेमो फक्त पाहण्यासाठी आहे, म्हणून तिथे ऑर्डर विंडो उघडता येत नाही. लाइव्ह खात्यात ऑर्डर विंडो त्याजवळ मार्जिनचे आकडे आणि खर्च दाखवते. काहीही सबमिट करण्यापूर्वी ते वाचा.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> तुमच्या स्वतःच्या Kite डेमोमध्ये टूरमधील प्रत्येक नावाचा भाग शोधा. तुमचे ॲप प्रत्येकासाठी कोणते लेबल वापरते ते लिहा.</p>
+<p>संकेत:</p>
+<ol>
+<li>तुम्हाला एखादा भाग सापडत नसेल, तर ॲपचे स्वतःचे सर्च वापरा.</li>
+<li>लेबल या प्रकरणाप्रमाणे नसेल, तर दोन्ही लेबले लिहा आणि Zerodha सपोर्टकडे तपासा.</li>
+<li>या सरावात कोणताही ऑर्डर देऊ नका.</li>
+</ol>
+<p><strong>उत्तर:</strong> सर्वांसाठी एकच बरोबर यादी नाही. प्रत्येक भागासाठी तुमच्या ॲपमधील लेबल लिहिले की उत्तर पूर्ण होते. या प्रकरणापेक्षा वेगळे असलेले लेबल त्याच्या शेजारी लिहा. कोणताही ऑर्डर दिला जात नाही.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> तुमच्या Kite लेआउटचा एका पानाचा नकाशा काढा. तुमच्या ॲपमधील लेबले वापरा. खऱ्या खात्याचे स्क्रीनशॉट वापरू नका.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>चांगल्या नकाशात हे भाग असतात:</p>
+<ul>
+<li>User ID मेनू, Marketwatch, चार्ट, ऑर्डर विंडो, आणि Orders, Holdings, Positions व Funds ही पाने.</li>
+<li>Console, वेगळी वेबसाइट म्हणून दाखवलेली.</li>
+<li>डेमो डमी डेटा वापरतो, ही नोंद.</li>
+<li>कोणतेही नाव, क्लायंट आयडी किंवा बॅलन्स नाही.</li>
+</ul>
+<p>तुमच्या नकाशात नाव, क्लायंट आयडी किंवा बॅलन्स दिसत असेल, तर तो ठेवण्यापूर्वी किंवा शेअर करण्यापूर्वी काढून टाका.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>या प्रकरणात डेमो, Console ची भूमिका, ऑर्डर मूल्याची गणना आणि स्क्रीनशॉट शेअर करण्याचा नियम तपासला जातो.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> Kite डेमो. तुम्ही फक्त स्क्रीन वाचाल. कोणताही ऑर्डर देऊ नका.</p>
+<ol>
+<li>टूर यादी पूर्ण करा: User ID मेनू, Marketwatch, चार्ट, ऑर्डर विंडो, Orders, Holdings, Positions, Funds आणि Console.</li>
+<li>तुमचे ॲप प्रत्येक भागासाठी जे लेबल वापरते ते लिहा.</li>
+<li>तुम्हाला काय समजले नाही, यावर एक छोटी नोंद लिहा.</li>
+<li>ती तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल, तर कागदावर लिहा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>टूरमध्ये कोणताही ऑर्डर दिला जात नाही. व्यापार कसा निवडायचा, हेही ती शिकवत नाही.</li>
+<li>डेमोची स्क्रीन ओळखीची वाटणे, हा ट्रेडिंग कौशल्याचा पुरावा नाही.</li>
+<li>लेबले, स्क्रीन आणि नियम बदलतात. या नकाशावर अवलंबून राहण्यापूर्वी तुमचे ॲप तपासा.</li>
+<li>नाव, क्लायंट आयडी आणि बॅलन्स काढल्याशिवाय स्क्रीनशॉट कधीही शेअर करू नका.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>Kite हे वेब आणि मोबाइलवरील ट्रेडिंग प्लॅटफॉर्म आहे. हे पुस्तक यापैकी कोणावरही अवलंबून नाही.</li>
+<li>डेमो डमी डेटा वापरतो. तो फक्त स्क्रीन समजून घेण्याच्या सरावासाठी आहे.</li>
+<li>Console हे अहवाल आणि नोंदींसाठी बॅक-ऑफिस क्षेत्र आहे. लाइव्ह भावांसाठी नाही.</li>
+<li>ऑर्डर विंडोमध्ये दाखवलेले ऑर्डर मूल्य खर्चाआधीचे असते.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p>स्रोत:</p>
+<ul>
+<li>Zerodha सपोर्ट: “Does Zerodha offer demo accounts for paper trading?” (support.zerodha.com)</li>
+<li>Kite वापरकर्ता पुस्तिका (kite.trade/docs/kite)</li>
+<li>Console वरील Zerodha सपोर्ट पेजेस</li>
+</ul>
+<p>तपासायची तथ्ये:</p>
+<ul>
+<li>Kite आणि मोबाइलवरील सध्याची लेबले. तुमचे ॲप तपासा.</li>
+<li>Console मध्ये काय असते. Zerodha च्या Console मदत पेजवर तपासा.</li>
+</ul>
+<!-- facts-needed: demo availability and whether it allows orders; current Kite and mobile labels; Console contents; location of the cost preview -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T4.1&amp;body=Page%3A%2004-kite-and-execution%2F01-kite-web-and-mobile-tour%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../04-kite-and-execution/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../04-kite-and-execution/02-watchlists-search-and-alerts/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../04-kite-and-execution/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../04-kite-and-execution/02-watchlists-search-and-alerts/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

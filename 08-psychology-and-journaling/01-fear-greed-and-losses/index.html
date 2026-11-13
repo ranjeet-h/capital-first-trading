@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Fear, greed and the brain on losses - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/08-psychology-and-journaling/01-fear-greed-and-losses/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T8.1
+title: Fear, greed and the brain on losses
+page_type: Concept
+prerequisites: [T0.1, T2.1]
+labs: [Lab 3]
+estimated_minutes: 20
+-->
+<h1 id="fear-greed-and-the-brain-on-losses"><a class="header" href="#fear-greed-and-the-brain-on-losses">Fear, greed and the brain on losses</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A trader loses Rs 2,000 in one day. This is a hypothetical example. His plan says to stop after a loss, and he feels a strong urge to win the money back. He places one more trade, which the plan did not include. The loss that hurts most is the one he chose to take. This chapter explains why these feelings appear, and how to see them before they cost money.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Fear and greed are useful in many parts of life. In markets they often push you the wrong way. Prices move for many reasons, and a single trader cannot see most of them. A feeling that is useful in one place can mislead you in another.</p>
+<p>A loss sets off a stress response. The urge is to act, so the feeling stops. Acting to stop a feeling is a different thing from following the plan. Many people feel a loss more strongly than the same rupee amount gained. That is why the same Rs 500 can feel worse to lose.</p>
+<p>Frame each loss in R. One R is your planned risk on one trade. A loss of 1R is the planned cost of one stopped trade. This turns a loss into a known cost of your method. It is not a personal failure.</p>
+<p>Feelings show up at decision points. There are four:</p>
+<ul>
+<li>After a loss.</li>
+<li>After a win.</li>
+<li>When price moves without you.</li>
+<li>When your plan says “no trade”.</li>
+</ul>
+<p>At each point, a feeling can override a written rule. Naming the feeling helps you pause. The pause gives the rule a chance to decide.</p>
+<p>This book does not diagnose anyone. If trading causes you real distress, see <em>When to stop trading altogether</em>.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<pre><code class="language-mermaid">flowchart LR
+  A[Signal or outcome] --&gt; B[Feeling]
+  B --&gt; C[Pause]
+  C --&gt; D{Rule allows it}
+  D -- Yes --&gt; E[Act as the plan says]
+  D -- No --&gt; F[Do not act and record it]
+</code></pre>
+<p>Follow the arrows from a signal or an outcome. Notice the pause before any action. The rule check decides what happens next, not the feeling.</p>
+<!-- component: fear-greed-curve | capital: 50000 | caption: A made-up day with six moments. Name the feeling, choose what you do, and compare with the day that follows the rule. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Capital Rs 50,000. One R is Rs 500, which is 1 percent of capital. The day ends with a loss of Rs 2,000.</p>
+<div class="table-wrapper"><table><thead><tr><th>Measure</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>Loss in R</td><td>2,000 / 500</td><td>4R</td></tr>
+<tr><td>Loss as a share of capital</td><td>2,000 / 50,000</td><td>4%</td></tr>
+</tbody></table>
+</div>
+<p>The loss is the same size whether it came from four planned stops or from one unplanned trade. The second case is a rule break. Your journal records it as one.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Classify each of these five sentences as “feeling”, “rule” or “outcome”.</p>
+<ol>
+<li>“Price fell to Rs 240 and my stop was hit.”</li>
+<li>“I want to get back the Rs 2,000 right now.”</li>
+<li>“The trade lost Rs 500, which is 1R.”</li>
+<li>“The plan says no new trade after two losses.”</li>
+<li>“I feel I must act now, or I will miss the move.”</li>
+</ol>
+<p>Hints:</p>
+<ol>
+<li>A rule says what to do when a condition is met.</li>
+<li>A feeling is about what you want to do next.</li>
+<li>An outcome is something that has already happened.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ol>
+<li>Outcome.</li>
+<li>Feeling.</li>
+<li>Outcome.</li>
+<li>Rule.</li>
+<li>Feeling.</li>
+</ol>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> List five emotion tags you expect to use. Write one sentence for each, describing when it appears. Use the tag list in your journal if it has one.</p>
+<details><summary>Check your answer</summary>
+<p>A sample list:</p>
+<ul>
+<li><strong>Calm.</strong> It appears when the plan is followed and no trade is needed.</li>
+<li><strong>Fear.</strong> It appears when a stop is near and you feel like leaving early.</li>
+<li><strong>Greed.</strong> It appears after a win, when you feel like adding size.</li>
+<li><strong>Frustration.</strong> It appears after a loss, when you want to act at once.</li>
+<li><strong>Relief.</strong> It appears when a trade ends as the plan said it would.</li>
+</ul>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks losses in R and the decision points. It also checks a loss followed by a wish to win it back, and why calm traders still need a check.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong>.</p>
+<ol>
+<li>Before each of five learning-note sessions, write one emotion tag. This is emotion_before.</li>
+<li>After the session, write one emotion tag. This is emotion_after.</li>
+<li>Note any moment when a feeling pushed you toward an action outside the rule.</li>
+<li>After five sessions, write one sentence about the pattern you see.</li>
+</ol>
+<p>Log it in your journal (or on paper until the journal app is ready). If the journal’s emotion fields are not ready, use the five tags from the independent exercise.</p>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>This chapter does not tell you what your rule should be after a loss. Your written plan does (<em>The capital-first rules</em>).</li>
+<li>Naming a feeling does not stop it. The pause and the rule check protect your capital.</li>
+<li>This book does not diagnose anyone and does not offer therapy. If trading causes real distress, talk to a trusted person or a qualified professional. See <em>When to stop trading altogether</em>.</li>
+<li>An emotion tag is a record for learning. It is not a score of how good or bad you are as a trader.</li>
+<li>Feelings after a loss are normal. They are not a reason to trade.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Feelings are signals, not instructions.</li>
+<li>Record each loss in R and as a share of capital.</li>
+<li>Four decision points: after a loss, after a win, when price moves without you, and when the plan says no trade.</li>
+<li>Pause and check the rule before any action.</li>
+<li>Trading to win back a loss is a rule break. Record it.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Daniel Kahneman, <em>Thinking, Fast and Slow</em> (Farrar, Straus and Giroux, 2011, first edition).</li>
+<li>The journal’s emotion fields in Lab 3.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../08-psychology-and-journaling/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../08-psychology-and-journaling/02-loss-aversion-and-revenge/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../08-psychology-and-journaling/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../08-psychology-and-journaling/02-loss-aversion-and-revenge/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

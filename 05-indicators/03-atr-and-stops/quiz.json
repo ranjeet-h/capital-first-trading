@@ -1,0 +1,187 @@
+[
+  {
+    "id": "T5.3-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. A bar has high Rs 320, low Rs 310 and the previous close was Rs 325. What is the true range in rupees?",
+    "answer": 15,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "High minus low = 10. High minus previous close = |320 - 325| = 5. Low minus previous close = |310 - 325| = 15. True range is the largest, which is Rs 15. The gap from the previous close sets the answer.",
+    "concepts": [
+      "true-range",
+      "gaps"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.3-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. ATR is Rs 4.00 on a stock. The stop multiple is 2. What is the stop distance in rupees per share?",
+    "answer": 8,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Stop distance = 2 x Rs 4.00 = Rs 8.00 per share. Check: 8 / 2 = 4, which is the ATR.",
+    "concepts": [
+      "atr-stop",
+      "stop-distance"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.3-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital Rs 50,000, risk 1%, entry Rs 100, stop distance Rs 8 per share, concentration setting 25%. How many whole shares does the plan allow?",
+    "answer": 62,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "Risk budget = Rs 500. Raw shares = floor(500 / 8) = floor(62.5) = 62. Cash cap = floor(50,000 / 100) = 500. Concentration cap = floor(12,500 / 100) = 125. Shares = the minimum of 62, 500 and 125 = 62. The risk limit binds.",
+    "concepts": [
+      "position-sizing",
+      "binding-constraint"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.3-q4",
+    "type": "mcq",
+    "prompt": "A trader tightens the stop from Rs 8 to Rs 4 per share, with the same risk budget and the same caps. Which statement is most accurate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The position always doubles, because the stop is half as far"
+      },
+      {
+        "id": "b",
+        "text": "The raw share count rises, but the cash and concentration caps may still limit the final size"
+      },
+      {
+        "id": "c",
+        "text": "The position always shrinks, because a tighter stop is safer"
+      },
+      {
+        "id": "d",
+        "text": "The stop has no effect on the size"
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The raw count doubles, but the final size is the smallest of three limits. The caps can stop the size from doubling.",
+      "c": "A tighter stop gives a larger raw count, not a smaller one. The caps decide the final size.",
+      "d": "The stop changes the raw count, so it does affect the size."
+    },
+    "concepts": [
+      "tight-stop",
+      "binding-constraint"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T5.3-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"An ATR of Rs 6 means the stock moves about 6 percent a day.\" Which part is wrong?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The word \"about\""
+      },
+      {
+        "id": "b",
+        "text": "The phrase \"6 percent\", because ATR is in rupees per share, not a percent"
+      },
+      {
+        "id": "c",
+        "text": "The word \"stock\""
+      },
+      {
+        "id": "d",
+        "text": "Nothing. the statement is correct"
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The word about is a fair way to describe an average. The error is the unit.",
+      "c": "The word stock is correct. ATR is measured for a share.",
+      "d": "ATR is in rupees per share. Turning it into a percent needs a separate step, dividing by the price."
+    },
+    "concepts": [
+      "atr-units",
+      "spot-the-mistake"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T5.3-q6",
+    "type": "mcq",
+    "prompt": "Does an ATR-based stop protect against a gap bigger than normal movement?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, because ATR includes every gap that can happen"
+      },
+      {
+        "id": "b",
+        "text": "No. ATR measures normal movement, so a much larger gap can still fill far from the stop"
+      },
+      {
+        "id": "c",
+        "text": "Yes, because a stop at ATR always fills at its trigger"
+      },
+      {
+        "id": "d",
+        "text": "No, but only for stocks above Rs 1,000"
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "ATR is an average of normal movement. A gap beyond that average is not fully covered.",
+      "c": "A stop does not always fill at its trigger after a gap, whatever its distance.",
+      "d": "The price level does not decide the gap risk. The same limit applies at every price."
+    },
+    "concepts": [
+      "gaps",
+      "atr-limits"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T5.3-q7",
+    "type": "scenario",
+    "prompt": "Hypothetical. A stock has an ATR of Rs 8. A reader wants to risk Rs 500 and sets a stop only Rs 2 below the entry, because a small stop means more shares. What is the main problem?",
+    "options": [
+      {
+        "id": "a",
+        "text": "There is no problem. A smaller stop always means a safer trade"
+      },
+      {
+        "id": "b",
+        "text": "The stop is far smaller than the stock's normal daily move, so normal movement is likely to hit it. The loss is then taken for no reason, and a gap can still go past the stop"
+      },
+      {
+        "id": "c",
+        "text": "ATR only matters for stocks above Rs 1,000"
+      },
+      {
+        "id": "d",
+        "text": "The stop is too wide, because it should be at least Rs 8 above the entry"
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A tiny stop does not make a trade safer. It makes the stop easy to hit by ordinary movement, and it makes the share count large.",
+      "c": "ATR works for any price. It is in rupees per share, and it can be changed to a percent of the price to compare stocks.",
+      "d": "A stop for a buy goes below the entry, not above it. The point is that a Rs 2 stop is much smaller than a Rs 8 daily move."
+    },
+    "concepts": [
+      "atr",
+      "stop-distance"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  }
+]

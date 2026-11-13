@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Expectancy and profit factor - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/02-money-and-math/08-expectancy-and-profit-factor/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T2.8
+title: Expectancy and profit factor
+page_type: Math/Calculator
+prerequisites: [T2.7]
+labs: [Lab 3, Lab 1]
+estimated_minutes: 30
+-->
+<h1 id="expectancy-and-profit-factor"><a class="header" href="#expectancy-and-profit-factor">Expectancy and profit factor</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Nine wins out of ten sounds like a strong record. In this hypothetical system, each of the nine wins is Rs 300. The one loss is Rs 4,000. Over the ten trades, the wins add up to Rs 2,700. The loss takes away Rs 4,000. The net result is minus Rs 1,300. The win rate was 90%, and the account still went down.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>A trade result has two parts. One is how often you win (the <strong>win rate</strong>). The other is how big the wins and losses are (the <strong>average win</strong> and <strong>average loss</strong>). You need both.</p>
+<ul>
+<li><strong>Expectancy per trade</strong> is what one trade is worth on average. In words: the win rate times the average win, minus the loss rate times the average loss. In symbols: E = W x avgWin - (1 - W) x avgLoss. Here W is the win rate, and 1 - W is the loss rate.</li>
+<li><strong>In R</strong>, measure wins and losses in units of R (the planned risk per trade): E_R = W x avgWinR - (1 - W) x avgLossR.</li>
+<li><strong>Gross profit</strong> is the total of the winning trades. <strong>Gross loss</strong> is the total of the losing trades, as a positive number.</li>
+<li><strong>Profit factor</strong> = gross profit / gross loss. Above 1 means gross profit is bigger than gross loss in that sample. With no losing trades it cannot be worked out, because the divisor is zero.</li>
+</ul>
+<p>Points to keep in mind:</p>
+<ul>
+<li>Expectancy is an average over many trades. It is not a prediction of the next trade.</li>
+<li>Costs must be included to get net expectancy. The examples below are before costs.</li>
+<li>A few trades can produce any average. How sure you can be is taught in <em>Metrics and their limits</em>. Lab 3 shows a “too few trades to conclude anything” note below 30 trades.</li>
+<li>Win rate is a frequency, not a result. Expectancy combines frequency and size.</li>
+</ul>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<div class="table-wrapper"><table><thead><tr><th></th><th>System X (hypothetical)</th><th>System Y (hypothetical)</th></tr></thead><tbody>
+<tr><td>Win rate</td><td>90%</td><td>40%</td></tr>
+<tr><td>Average win</td><td>Rs 300 (0.3R)</td><td>Rs 2,000 (2R)</td></tr>
+<tr><td>Average loss</td><td>Rs 4,000 (4R)</td><td>Rs 1,000 (1R)</td></tr>
+<tr><td>Expectancy per trade</td><td>minus Rs 130 (minus 0.13R)</td><td>plus Rs 200 (plus 0.2R)</td></tr>
+<tr><td>Profit factor over 10 trades</td><td>0.675</td><td>1.33</td></tr>
+</tbody></table>
+</div>
+<p>The table shows X with frequent, small wins and one large loss. Y has fewer, larger wins. Y has the higher expectancy, even though it wins less often.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><em>Hypothetical.</em> R = Rs 1,000, which is 2% of Rs 50,000.</p>
+<p><strong>System X</strong>: 9 wins of Rs 300 (0.3R) and 1 loss of Rs 4,000 (4R, a gap through the stop).</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Working</th><th>Result</th></tr></thead><tbody>
+<tr><td>Win part</td><td>0.9 x 300</td><td>Rs 270</td></tr>
+<tr><td>Loss part</td><td>0.1 x 4,000</td><td>Rs 400</td></tr>
+<tr><td>Expectancy</td><td>270 - 400</td><td>minus Rs 130 per trade (minus 0.13R)</td></tr>
+<tr><td>Gross profit (10 trades)</td><td>9 x 300</td><td>Rs 2,700</td></tr>
+<tr><td>Gross loss (10 trades)</td><td>1 x 4,000</td><td>Rs 4,000</td></tr>
+<tr><td>Profit factor</td><td>2,700 / 4,000</td><td>0.675</td></tr>
+<tr><td>Net over 10 trades</td><td>10 x minus 130</td><td>minus Rs 1,300, which is 2.6% of Rs 50,000</td></tr>
+</tbody></table>
+</div>
+<p><strong>System Y</strong>: 40% wins of 2R (Rs 2,000) and 60% losses of 1R (Rs 1,000).</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Working</th><th>Result</th></tr></thead><tbody>
+<tr><td>Win part</td><td>0.4 x 2,000</td><td>Rs 800</td></tr>
+<tr><td>Loss part</td><td>0.6 x 1,000</td><td>Rs 600</td></tr>
+<tr><td>Expectancy</td><td>800 - 600</td><td>plus Rs 200 per trade (plus 0.2R)</td></tr>
+<tr><td>Gross profit (10 trades)</td><td>4 x 2,000</td><td>Rs 8,000</td></tr>
+<tr><td>Gross loss (10 trades)</td><td>6 x 1,000</td><td>Rs 6,000</td></tr>
+<tr><td>Profit factor</td><td>8,000 / 6,000</td><td>1.33</td></tr>
+</tbody></table>
+</div>
+<p>Y has the higher expectancy despite the lower win rate. Neither example is evidence that either approach works.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<!-- component: spot-the-mistake | system: X | wins: 9 | winSize: 300 | losses: 1 | lossSize: 4000 | caption: Use the System X numbers to find the claim that does not follow from the win rate. -->
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p>Task: System Z (hypothetical): 60% wins of Rs 1,000 and 40% losses of Rs 800. Over 10 trades, work out the expectancy per trade and the profit factor.</p>
+<p>Hints:</p>
+<ol>
+<li>Work out the win part (0.6 x 1,000) and the loss part (0.4 x 800) for one trade.</li>
+<li>Over 10 trades, count 6 wins and 4 losses.</li>
+<li>Profit factor = gross profit / gross loss over those 10 trades.</li>
+</ol>
+<p><strong>Answer:</strong> Expectancy = 600 - 320 = plus Rs 280 per trade. Over 10 trades: gross profit = 6 x 1,000 = Rs 6,000. Gross loss = 4 x 800 = Rs 3,200. Profit factor = 6,000 / 3,200 = 1.875.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p>Task: System W (hypothetical): 75% wins of Rs 500 and 25% losses of Rs 2,000. Work out the expectancy per trade and the profit factor on 4 trades.</p>
+<details><summary>Check your answer</summary>
+<p>Expectancy = 0.75 x 500 - 0.25 x 2,000 = 375 - 500 = minus Rs 125 per trade.</p>
+<p>On 4 trades, the expected split is 3 wins and 1 loss. Gross profit = 3 x 500 = Rs 1,500. Gross loss = 1 x 2,000 = Rs 2,000. Profit factor = 1,500 / 2,000 = 0.75.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Six questions cover expectancy arithmetic, the profit factor with no losses, the comparison of two systems, and the trap of judging on win rate alone.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong>. Log it in Lab 3 (or on paper until the journal app is ready).</p>
+<ol>
+<li>Enter ten hypothetical rows for System X: nine rows at Rs 300 and one row at minus Rs 4,000.</li>
+<li>Open the Lab 3 statistics view.</li>
+<li>Check that the expectancy shows minus Rs 130 per trade (minus 0.13R), and that the profit factor shows 0.675.</li>
+<li>Write one sentence. Explain why a 90% win rate can still give a negative expectancy.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>Expectancy shown here is before costs. Net expectancy is lower. Check it with costs included.</li>
+<li>A handful of trades is noise. The minimum of 30 trades (gate G6, PLAN section 6) is a floor for a check. It is not a verdict on any system.</li>
+<li>One large loss can dominate a sample. Check the largest loss before you trust an average.</li>
+<li>These systems are invented for arithmetic. Neither example says anything about a real strategy.</li>
+<li>A high win rate is not proof of a good system on its own. Use expectancy and profit factor, and state the sample size.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Expectancy = win rate x average win - loss rate x average loss.</li>
+<li>Profit factor = gross profit / gross loss. It cannot be worked out with no losses.</li>
+<li>Expectancy is an average over many trades, not a prediction.</li>
+<li>Include costs before you read any result.</li>
+<li>Win rate is a frequency. Judge a system on expectancy, with its sample size.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p>Sources (names only):</p>
+<ul>
+<li>Chapter <em>Metrics and their limits</em> (metrics and their limits), for further reading</li>
+</ul>
+<p>All numbers in this chapter are made up for practice.</p>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/07-reward-to-risk-and-break-even/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/09-drawdown-and-recovery/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/07-reward-to-risk-and-break-even/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/09-drawdown-and-recovery/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

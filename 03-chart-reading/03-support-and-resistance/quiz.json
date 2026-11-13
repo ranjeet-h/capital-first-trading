@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T3.3-q1",
+    "type": "mcq",
+    "prompt": "Why does this book use a zone, not a single line, for support and resistance?",
+    "options": [
+      {"id": "a", "text": "Turns happened across a band of prices, not at one exact price"},
+      {"id": "b", "text": "A zone guarantees a bounce"},
+      {"id": "c", "text": "A line cannot be drawn on a chart"},
+      {"id": "d", "text": "A zone makes the stop smaller"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "A zone does not guarantee anything. It describes where past turns clustered.",
+      "c": "A line can be drawn. A line hides the spread of the past turns.",
+      "d": "A zone does not change the stop size by itself. The stop goes beyond the zone."
+    },
+    "concepts": ["zone-vs-line"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.3-q2",
+    "type": "mcq",
+    "prompt": "What is role reversal?",
+    "options": [
+      {"id": "a", "text": "A broken support can later act as resistance, and a broken resistance can later act as support"},
+      {"id": "b", "text": "Support always becomes support again"},
+      {"id": "c", "text": "The price moves in the opposite direction to the volume"},
+      {"id": "d", "text": "A stop is moved to the other side of the trade"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "A broken support does not always keep its job. Its job can change.",
+      "c": "Volume and price direction are separate measures. Role reversal is about a broken level.",
+      "d": "Moving a stop to the other side is not role reversal. Role reversal describes a broken level."
+    },
+    "concepts": ["role-reversal"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.3-q3",
+    "type": "scenario",
+    "prompt": "Hypothetical. A level has held three times. A trader says: 'It held three times, so it will hold a fourth time.' What is the best reply?",
+    "options": [
+      {"id": "a", "text": "Agreed. Three holds make a fourth hold likely."},
+      {"id": "b", "text": "The three holds describe the past. They do not give a chance of a fourth hold. Test the level with a rule before you rely on it."},
+      {"id": "c", "text": "Only true if the level is a round number."},
+      {"id": "d", "text": "The level will fail, because it has held too often."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Three past holds do not make a fourth hold likely. Touch count is not a probability.",
+      "c": "Round numbers do not change this. Touch count still describes the past only.",
+      "d": "Past holds do not predict failure either. Both claims go beyond the evidence."
+    },
+    "concepts": ["touch-count", "hypothesis"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.3-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: 'Support is a band of past buying. I will place my stop exactly on the line at Rs 249, because that is where buyers stepped in.' Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "Support is a band of past buying"},
+      {"id": "b", "text": "I will place my stop exactly on the line at Rs 249"},
+      {"id": "c", "text": "Because that is where buyers stepped in"},
+      {"id": "d", "text": "There is no mistake"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This part is correct. Support is a band of past buying, not a single line.",
+      "c": "This describes a past event. It is a reason for the zone, not a mistake. The error is the stop placement.",
+      "d": "There is a mistake. Stops go beyond the zone, because normal noise touches its edges."
+    },
+    "concepts": ["stop-beyond-zone", "zone-vs-line"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.3-q5",
+    "type": "numeric",
+    "prompt": "Hypothetical. A zone runs from Rs 380 to Rs 384. Entry Rs 384, stop Rs 377, capital Rs 40,000, risk 1 percent, concentration cap 25 percent. What are the final shares?",
+    "answer": 26,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "Risk budget = Rs 400. Risk per share = 384 minus 377 = Rs 7. Raw shares = floor(400 / 7) = 57. Cash cap = floor(40,000 / 384) = 104. Concentration cap = floor(10,000 / 384) = 26. Final shares = minimum of 57, 104 and 26 = 26.",
+    "concepts": ["position-sizing", "concentration-cap"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.3-q6",
+    "type": "numeric",
+    "prompt": "Hypothetical. In the worked example, the final shares are 49 with a risk per share of Rs 5. What is the planned loss at the stop, in rupees?",
+    "answer": 245,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Planned loss = shares x risk per share = 49 x 5 = 245. Check: 50 x 5 = 250, and 250 minus 5 = 245. The result is inside the Rs 500 risk budget.",
+    "concepts": ["planned-loss"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

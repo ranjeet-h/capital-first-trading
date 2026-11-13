@@ -1,0 +1,399 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>गुंतवणूक आणि ट्रेडिंग शैली - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../06-strategy/01-investing-and-trading-styles/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../06-strategy/01-investing-and-trading-styles/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T6.1
+title: गुंतवणूक आणि ट्रेडिंग शैली
+page_type: Concept
+prerequisites: [T0.1, T2.1, T2.16]
+labs: [Lab 3]
+estimated_minutes: 35
+-->
+<h1 id="गुंतवणूक-आणि-टरेडिंग-शैली"><a class="header" href="#गुंतवणूक-आणि-टरेडिंग-शैली">गुंतवणूक आणि ट्रेडिंग शैली</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>दोन लोक प्रत्येकी Rs 50,000 बाजारात गुंतवतात. एक जण एका व्यवसायाचे शेअर्स विकत घेतो आणि ते वर्षानुवर्षे धरून ठेवायचे ठरवतो. दुसरा दिवसभर भाव पाहत राहतो आणि रोज Rs 2,500 कमवण्याची आशा ठेवतो. दोघे “ट्रेडिंग” हा शब्द वापरतात, पण ते फार वेगळे काम करत असतात. हे प्रकरण शब्दांचा अर्थ लावते, मुख्य शैली तुलनेत मांडते, आणि हे पुस्तक कोणत्या शैलीवर लक्ष केंद्रित करते ते दाखवते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>तीन शब्द अनेकदा गोंधळात टाकले जातात. ते उद्देश आणि धरून ठेवण्याच्या कालावधीनुसार वेगळे आहेत.</p>
+<ul>
+<li><strong>गुंतवणूक</strong> म्हणजे एखाद्या व्यवसायाचा भाग दीर्घकाळ स्वतःकडे बाळगणे. निकाल वर्षांनुवर्षे व्यवसाय आणि व्यापक बाजार कसा चालतो यावर अवलंबून असतो.</li>
+<li><strong>ट्रेडिंग</strong> म्हणजे कमी काळ धरून ठेवणे, ज्यासाठी प्रवेश, बाहेर पडणे आणि जोखीम यांचे लिखित नियम असतात. एक व्यापार एक दिवस किंवा अनेक आठवडे टिकू शकतो.</li>
+<li><strong>सट्टा</strong> म्हणजे कोणताही तपासता येणारा नियम नसताना भावातील हालचालीवर पैज लावणे. निकाल नशिबावर किंवा अशा एखाद्या घटनेवर अवलंबून असतो जिचे नीट विश्लेषण करता येत नाही. ट्रेडिंग आणि सट्टा यांची रेषा धूसर आहे. लेबल लावल्याने योजनेत एज आहे हे सिद्ध होत नाही.</li>
+</ul>
+<p>सामान्य ट्रेडिंग शैलींमध्ये खालील गोष्टी येतात:</p>
+<ul>
+<li><strong>इंट्राडे.</strong> एकाच सत्रात उघडणे आणि बंद करणे.</li>
+<li><strong>स्विंग.</strong> काही दिवस ते काही आठवडे धरून ठेवणे.</li>
+<li><strong>पोझिशनल.</strong> काही आठवडे ते काही महिने धरून ठेवणे.</li>
+<li><strong>मोमेंटम.</strong> जो भाव वाढला आहे तो खरेदी करणे आणि तो वाढत राहील तोपर्यंत धरून ठेवणे.</li>
+<li><strong>ब्रेकआउट.</strong> भाव ठरवलेल्या मर्यादेच्या पलीकडे गेल्यावर प्रवेश करणे.</li>
+<li><strong>ट्रेंड फॉलोइंग.</strong> ट्रेंड चालू असेपर्यंत त्यात राहणे आणि तो संपल्यावर बाहेर पडणे.</li>
+<li><strong>रिव्हर्सल.</strong> घसरणारा भाव वर वळेल, किंवा वाढणारा भाव खाली वळेल यावर पैज लावणे.</li>
+<li><strong>भावाची हालचाल.</strong> निर्देशक कमी वापरून कँडल आणि रचना थेट वाचणे.</li>
+</ul>
+<p>पुस्तक नवशिक्यासाठी सात निकष ठरवते. शैलीने शक्य तितके सर्व निकष पाळले पाहिजेत:</p>
+<ol>
+<li>भांडवल आधी सुरक्षित ठेवा.</li>
+<li>ध्येय म्हणून दैनंदिन नफ्याचे लक्ष्य नको.</li>
+<li>दिवसभर भाव पाहण्याची गरज नसावी.</li>
+<li>प्रत्येक व्यापारासाठी ठराविक तोटा असावा.</li>
+<li>लीव्हरेज नाही, म्हणजे मोठी पोझिशन घेण्यासाठी उधार घेतलेले पैसे नाहीत.</li>
+<li>वेगवेगळ्या प्रकारच्या बाजारात टिकणारे निकाल.</li>
+<li>प्रवेश करण्यापूर्वी संभाव्य तोटा स्पष्ट असावा.</li>
+</ol>
+<p>काही मुद्दे लक्षात ठेवा:</p>
+<ul>
+<li>खाली दिलेले गुण या सात निकषांवर पुस्तकाने केलेले मूल्यांकन आहेत. ती कोणतीही शैली कशी कामगिरी करते याचा पुरावा नाहीत.</li>
+<li>शैली ही एक पद्धत आहे, निकाल नाही. येथे कोणतीही शैली नफा देणारी म्हणून दाखवलेली नाही.</li>
+<li>राउंड ट्रिप म्हणजे एकाच शेअर्सची एक खरेदी आणि एक विक्री. प्रत्येक राउंड ट्रिपला खर्च असतो (<em>एका व्यापारावरील खर्च</em>).</li>
+</ul>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>शैली</th><th>सहसा धरून ठेवण्याचा कालावधी</th><th>लक्ष ठेवण्याची गरज</th><th>सात निकषांशी जुळणी</th></tr></thead><tbody>
+<tr><td>इंट्राडे</td><td>एकाच सत्रात</td><td>जास्त, दिवसभर</td><td><strong>जुळणी कमी.</strong> दिवसभर लक्ष ठेवावे लागते. अनेकदा मार्जिन वापरले जाते, जे उधार घेतलेले पैसे असते, म्हणून ते निकष 5 शी विसंगत आहे.</td></tr>
+<tr><td>स्विंग (दिवस-अखेर)</td><td>काही दिवस ते काही आठवडे</td><td>बाजार बंद झाल्यावर एकदा तपासा</td><td><strong>चांगली जुळणी.</strong> निर्णय दैनिक कँडलवरून घेतले जातात, आणि प्रवेशापूर्वीच तोट्याची मर्यादा ठरवलेली असते.</td></tr>
+<tr><td>पोझिशनल</td><td>काही आठवडे ते काही महिने</td><td>कमी, नियमित आढाव्यासह</td><td><strong>चांगली जुळणी.</strong> निर्णय कमी असतात. निकाल दिसायला वेळ लागतो, म्हणून नोंदी तयार व्हायला जास्त वेळ लागतो.</td></tr>
+<tr><td>मोमेंटम</td><td>काही दिवस ते काही महिने</td><td>मध्यम ते जास्त</td><td><strong>मिश्र.</strong> लिखित नियम, ठराविक स्टॉप-लॉस आणि स्पष्ट तोटा असेल तरच जुळते.</td></tr>
+<tr><td>ब्रेकआउट</td><td>काही दिवस ते काही आठवडे</td><td>मध्यम, ब्रेकआउटच्या आसपास</td><td><strong>मिश्र.</strong> ब्रेकआउट बंद भावाने ठरवलेला असेल, जो दिवस-अखेर तपासता येतो, तर जुळते.</td></tr>
+<tr><td>ट्रेंड फॉलोइंग</td><td>काही आठवडे ते काही महिने</td><td>कमी ते मध्यम</td><td><strong>जुळते.</strong> ठराविक तोटा आणि ट्रेलिंग स्टॉप-लॉस वापरते. लहान तोट्यांचे दीर्घ काळ येतील, हे गृहीत धरावे लागते.</td></tr>
+<tr><td>रिव्हर्सल</td><td>काही दिवस ते काही आठवडे</td><td>मध्यम ते जास्त</td><td><strong>जुळणी कमी.</strong> घसरत असलेली पोझिशन वाढवण्याचा मोह अनेकदा ट्रेडरना होतो (सरासरी कमी करणे), आणि पुस्तक ते निषिद्ध मानते.</td></tr>
+<tr><td>भावाची हालचाल</td><td>बदलत राहतो</td><td>जास्त, कारण वाचन हे मूल्यांकनावर आधारित असते</td><td><strong>मिश्र.</strong> तपासणे कठीण आहे, म्हणून निकष 6 शी जुळणी तपासणे कठीण आहे.</td></tr>
+</tbody></table>
+</div>
+<p>हा तक्ता सामान्य वापर सांगतो. तो कोणत्याही शैलीचा नियम सांगत नाही. प्रत्येक खाना एका कारणासह केलेले मूल्यांकन म्हणून वाचा, तथ्य म्हणून नव्हे.</p>
+<!-- component: style-compare | caption: धरून ठेवण्याचा वेळ आणि लक्ष ठेवण्याचा वेळ सरकवा. प्रत्येक शैलीला किती राउंड ट्रिप्स, किती खर्च आणि किती स्क्रीन वेळ लागतो ते पाहा. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक आकडे. खरे शुल्क नाही.</strong> समजा एका राउंड ट्रिपला एकूण Rs 50 खर्च येतो. पोझिशन Rs 12,500 ची आहे. हे Rs 50 बनवलेले आकडे आहेत, फक्त गणित दाखवण्यासाठी. ते Zerodha चे शुल्क नाही आणि वापरण्याचा दर नाही.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>एका राउंड ट्रिपचा खर्च, पोझिशनचा वाटा म्हणून</td><td>50 / 12,500</td><td>0.4%</td></tr>
+<tr><td>दहा राउंड ट्रिप्सचा खर्च</td><td>10 x Rs 50</td><td>Rs 500</td></tr>
+<tr><td>दहा राउंड ट्रिप्स, खात्याचा वाटा म्हणून</td><td>500 / 50,000</td><td>1%</td></tr>
+</tbody></table>
+</div>
+<p>अशा दहा व्यापारांना Rs 500 खर्च येतो, जो Rs 50,000 च्या खात्याच्या 1 टक्का आहे. हे कोणत्याही नफ्या किंवा तोट्याआधीच होते. दर दोन आठवड्यांनी एक राउंड ट्रिप करणारी स्विंग शैली खूप कमी व्यापार करते. त्याच खात्यासाठी तिचा एकूण खर्च खूप कमी असतो.</p>
+<p>तपासणी: Rs 12,500 च्या 0.4% म्हणजे Rs 50, आणि Rs 12,500 च्या 10 x 0.4% म्हणजे Rs 500. आकडे जुळतात.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> खालील पाच उदाहरणांना गुंतवणूक, ट्रेडिंग किंवा सट्टा असे वर्गीकृत करा. प्रत्येकासाठी एक कारण द्या.</p>
+<ol>
+<li>एखाद्या व्यवसायात शेअर्स विकत घ्या आणि ते वर्षानुवर्षे धरून ठेवा.</li>
+<li>निकालाच्या तारखेआधी शेअर्स विकत घ्या आणि दुसऱ्या दिवशी विका.</li>
+<li>एक स्पष्ट ब्रेकआउट झाल्यानंतर सुमारे तीन आठवडे शेअर्स धरून ठेवा.</li>
+<li>दररोज अशी पैज लावा की भाव एका दैनिक लक्ष्य रकमेइतका हलेल.</li>
+<li>व्यवसायांच्या मिश्रणात बचतीचा एक ठराविक वाटा अनेक वर्षे गुंतवा.</li>
+</ol>
+<p>संकेत:</p>
+<ol>
+<li>आधी धरून ठेवण्याचा कालावधी पाहा.</li>
+<li>योजनेत तपासता येणारा नियम आहे का ते विचारा.</li>
+<li>निकाल एका घटनेवर अवलंबून आहे का, की दीर्घ व्यवसाय-निकालावर, ते विचारा.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ol>
+<li><strong>गुंतवणूक.</strong> धरून ठेवण्याचा कालावधी दीर्घ आहे आणि निकाल वर्षांनुवर्षे व्यवसायावर अवलंबून आहे.</li>
+<li><strong>सट्टा.</strong> निकाल एका घटनेवर, म्हणजे निकालावर, अवलंबून आहे, आणि कोणताही तपासता येणारा नियम सांगितलेला नाही.</li>
+<li><strong>ट्रेडिंग.</strong> धरून ठेवण्याचा कालावधी ठरलेला आहे आणि प्रवेशाचा नियम लिहिलेला आहे.</li>
+<li><strong>सट्टा.</strong> उद्दिष्ट नियम नसून दैनिक रक्कम आहे. निकाल नशिबावर अवलंबून आहे, तपासता येणाऱ्या पद्धतीवर नाही.</li>
+<li><strong>गुंतवणूक.</strong> कालावधी दीर्घ आहे आणि निकाल कालांतराने व्यवसायांवर अवलंबून आहे.</li>
+</ol>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> या प्रकरणातील सात निकषांवर तीन शैलींना गुण द्या: स्विंग, इंट्राडे आणि ट्रेंड फॉलोइंग. प्रत्येक खान्यासाठी कारणाची एक ओळ लिहा. नंतर कोणती शैली जुळत नाही आणि का ते सांगा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>एक नमुना उत्तर:</p>
+<ul>
+<li><strong>स्विंग.</strong> निकष 1, 3, 4, 5 आणि 7 शी चांगली जुळते, कारण निर्णय बाजार बंद झाल्यानंतर घेतला जातो आणि तोटा प्रवेशापूर्वीच ठरवलेला असतो. निकष 6 साठी चाचणी लागते. निकष 2 तेव्हाच पूर्ण होतो जेव्हा दैनिक लक्ष्य ठरवलेले नसते.</li>
+<li><strong>इंट्राडे.</strong> निकष 3 पूर्ण होत नाही, कारण दिवसभर लक्ष ठेवावे लागते. अनेकदा निकष 5 शी विसंगत असते, कारण मार्जिन हे उधार घेतलेले पैसे आहे. अनेक राउंड ट्रिप्समुळे खर्चही वाढतो (सोडवलेले उदाहरण पाहा).</li>
+<li><strong>ट्रेंड फॉलोइंग.</strong> निकष 4 आणि 7 शी जुळते, कारण ठराविक तोटा आणि ट्रेलिंग स्टॉप-लॉस वापरते. लहान तोट्यांचे दीर्घ काळ स्वीकारावे लागतात, आणि ते निकष 1 (आधी भांडवल) तपासते.</li>
+<li><strong>जुळत नाही:</strong> इंट्राडे. ते निकष 3 आणि निकष 5 शी थेट विसंगत आहे, आणि पुस्तक त्याला सराव म्हणून शिकवत नाही.</li>
+</ul>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ तीन शब्द, पुस्तकाचा केंद्रबिंदू आणि दैनिक ध्येय ही योजना का नाही, हे तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> <strong>शिकण्याची नोंद</strong>. ती तुमच्या जर्नलमध्ये लिहा (जर्नल ॲप तयार होईपर्यंत कागदावर).</p>
+<ol>
+<li>तुम्ही प्रथम कोणत्या शैलीचा विचार कराल आणि का, ते लिहा.</li>
+<li>तुम्हाला अपेक्षित असलेला धरून ठेवण्याचा कालावधी दिवसांत किंवा आठवड्यांत लिहा.</li>
+<li>सात निकष लिहा आणि प्रत्येकाला जुळतो, जुळत नाही किंवा अजून माहीत नाही अशी खूण करा.</li>
+<li>ती शैली नाकारण्यास भाग पाडतील अशा तीन गोष्टी लिहा.</li>
+<li>या नोंदीत लाइव्ह खाते किंवा खरा ऑर्डर नोंदवू नका.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>या प्रकरणातील गुण म्हणजे पुस्तकाचे मूल्यांकन आहे. कोणत्याही शैलीच्या निकालांबद्दल ते बाजाराचा पुरावा नाहीत.</li>
+<li>कोणतीही शैली नफा देणारी म्हणून दाखवलेली नाही. तक्त्यात पद्धती आणि जुळणी दिली आहे, निकाल नाही.</li>
+<li>ट्रेडिंग आणि सट्टा यांतील रेषा धूसर आहे. लेबल लावल्याने योजनेत एज आहे हे सिद्ध होत नाही.</li>
+<li>गुंतवणुकीत जोखीम असते. व्यवसायाचे मूल्य अनेक वर्षांत घसरू शकते.</li>
+<li>कर आणि शुल्काची हाताळणी शैलीनुसार वेगळी असू शकते. 11 Nov 2026 पर्यंत, Zerodha डिलिव्हरी व्यापारांवर शून्य ब्रोकरेज दाखवते, आणि इंट्राडे व्यापारांवर प्रति ऑर्डर 0.03% किंवा Rs 20 (जे कमी असेल ते) दाखवते. कायदा, डिलिव्हरीने सेटलमेंट न झालेला व्यापार सट्टा स्वरूपाचा मानतो, आणि त्यासाठी तोट्याचे नियम डिलिव्हरीच्या नफ्यापेक्षा वेगळे असतात. तपशील <em>एका व्यापारावरील खर्च</em> आणि <em>ट्रेडिंग नफ्यावरील कर</em> या भागांत आहेत. नियम बदलतात, म्हणून Zerodha च्या शुल्क पेजवर आणि incometax.gov.in वर तपासा, आणि पात्र कर सल्लागाराला विचारा.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>गुंतवणूक म्हणजे दीर्घकालीन मालकी. ट्रेडिंग लिखित नियम वापरते, कमी काळ राहण्यासाठी. सट्टा अशा नियमांवर आधारित नसतो जे तुम्ही तपासू शकता.</li>
+<li>शैलींची तुलना धरून ठेवण्याचा कालावधी, लक्ष ठेवण्याची गरज आणि निकषांशी जुळणी यावर करा.</li>
+<li>दैनिक नफ्याचे लक्ष्य हे ध्येय आहे, पद्धत नव्हे. हे पुस्तक त्याचा वापर करत नाही (<em>Rs 2,000-3,000 चा वास्तव तपास</em>).</li>
+<li>पुस्तक दिवस-अखेरच्या स्विंग आणि पोझिशनल ट्रेडिंगवर लक्ष केंद्रित करते. या शैली त्याच्या निकषांना सर्वात जास्त जुळतात.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>SEBI ची गुंतवणूकदार शिक्षण पेज, गुंतवणूकदार जागृतीच्या साहित्यासाठी.</li>
+<li>Zerodha Varsity, ट्रेडिंग शैली मॉड्यूल (केवळ संदर्भासाठी, मूळ शब्दरचना).</li>
+<li>Zerodha शुल्क पेज, 11 Nov 2026 रोजी वाचले, उत्पादनानुसार ब्रोकरेजसाठी.</li>
+<li><em>ट्रेडिंग नफ्यावरील कर</em>, कराच्या नियमांसाठी, त्यांच्या स्वतःच्या स्रोतांसह.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T6.1&amp;body=Page%3A%2006-strategy%2F01-investing-and-trading-styles%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../06-strategy/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../06-strategy/02-trading-edge/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../06-strategy/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../06-strategy/02-trading-edge/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

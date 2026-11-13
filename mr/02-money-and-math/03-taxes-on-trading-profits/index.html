@@ -1,0 +1,392 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ट्रेडिंग नफ्यावरील कर - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../02-money-and-math/03-taxes-on-trading-profits/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../02-money-and-math/03-taxes-on-trading-profits/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T2.3
+title: ट्रेडिंग नफ्यावरील कर
+page_type: Concept
+prerequisites: [T2.2, T1.9]
+labs: []
+estimated_minutes: 20
+-->
+<h1 id="टरेडिंग-नफयावरील-कर"><a class="header" href="#टरेडिंग-नफयावरील-कर">ट्रेडिंग नफ्यावरील कर</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एक ट्रेडर वर्षभरात एकूण Rs 10,000 नफा कमावतो. त्याला ट्रेडिंग खर्च Rs 300 लागतो. उरलेले Rs 9,700 त्याचा नफा आहे, असे तो मानतो. काही महिन्यांनी कर नोटीस येते. ती त्याच्या नियोजनात नसलेल्या रकमेची असते. चूक अंकगणितात नव्हती. चूक ही होती की कर म्हणजे ट्रेडिंग उलाढालीची फक्त टक्केवारी, असे त्याने गृहीत धरले. व्यापाराचे वर्गीकरण कसे होते, हे ट्रेडरने तपासले नव्हते. हे प्रकरण आधी कल्पना समजावते. मग अधिकृत स्रोत सांगतात त्याप्रमाणे मुख्य नियम यादी करते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>कर हा ट्रेडिंग खर्चापेक्षा वेगळा थर आहे. <em>ट्रेडवरील खर्च</em> प्रत्येक व्यापारावर ब्रोकर, एक्सचेंज आणि सरकारला दिला जातो. कर मात्र वर्षभराच्या निव्वळ नफ्यावर ठरतो. नियम क्रियाकलापाच्या प्रकारावर अवलंबून असतात.</p>
+<p>तीन कल्पना महत्त्वाच्या आहेत:</p>
+<ul>
+<li><strong>वर्गीकरण.</strong> तोच शेअर वेगवेगळ्या प्रकारे कराला पात्र ठरू शकतो. तुम्ही तो गुंतवणूक म्हणून धरता, व्यवसाय म्हणून ट्रेड करता, की इतर काही करता, यावर ते अवलंबून असते. वर्गीकरण तथ्यांवर ठरते. ती तथ्ये म्हणजे तुम्ही किती काळ धरता, किती वेळा ट्रेड करता आणि तुमचा हेतू काय आहे. डिलिव्हरी न घेता पूर्ण होणारा व्यापार (उदाहरणार्थ, एकाच दिवशी खरेदी आणि विक्री) कायदा सट्टा व्यवहार मानतो. असा व्यवहार व्यवसाय म्हणून केला, तर तो वेगळा “सट्टा व्यवसाय” ठरतो.</li>
+<li><strong>धारण कालावधी.</strong> सूचिबद्ध शेअर्ससाठी, बारा महिने किंवा त्याहून कमी काळ धरलेला नफा अल्पकालीन असतो. बारा महिन्यांपेक्षा जास्त काळ धरलेला नफा दीर्घकालीन असतो. दोन्हींचे दर वेगळे आहेत.</li>
+<li><strong>तोटा समायोजन (loss set-off).</strong> काही तोटे काही नफ्यांना रद्द करू शकतात. काही तोटे पुढच्या वर्षांत नेता येतात. खाली कोणता तोटा, कोणत्या नफ्याविरुद्ध, आणि किती काळासाठी, ते नियम दिले आहेत.</li>
+</ul>
+<h3 id="सरव-मुखय-नियम-एकाच-ठिकाणी"><a class="header" href="#सरव-मुखय-नियम-एकाच-ठिकाणी">सर्व मुख्य नियम एकाच ठिकाणी</a></h3>
+<p>हे नियम सूचिबद्ध शेअर्सना लागू होतात, जे एक्सचेंजवर खरेदी-विक्री होतात आणि ज्यावर STT भरला जातो. ते 2026-27 करवर्षापासून लागू होतात, जेव्हा नवा Income-tax Act, 2025 1 एप्रिल 2026 रोजी लागू झाला. तुमची स्थिती वेगळी असू शकते. कोणते नियम तुम्हाला लागू होतात, हे पात्र कर सल्लागाराने तपासावे.</p>
+<div class="table-wrapper"><table><thead><tr><th>विषय</th><th>अधिकृत स्रोत काय सांगतात</th></tr></thead><tbody>
+<tr><td>सूचिबद्ध शेअर्सवरील अल्पकालीन नफा (12 महिने किंवा कमी धरलेला)</td><td>20% दराने कर लागू</td></tr>
+<tr><td>सूचिबद्ध शेअर्सवरील दीर्घकालीन नफा (12 महिन्यांपेक्षा जास्त धरलेला)</td><td>एका वर्षातील दीर्घकालीन नफ्याचे पहिले Rs 1,25,000 करमुक्त आहेत. त्यावरील भाग 12.5% दराने करपात्र आहे, इंडेक्सेशनशिवाय</td></tr>
+<tr><td>STT अट</td><td>हे खास दर फक्त तेव्हा लागू होतात जेव्हा STT भरला गेला होता. दीर्घकालीन शेअर नफ्यासाठी, काही अपवाद वगळता, शेअर खरेदी आणि विक्री दोन्ही वेळी STT भरलेला असावा लागतो</td></tr>
+<tr><td>भांडवली तोटा समायोजन</td><td>अल्पकालीन तोटा कोणत्याही भांडवली नफ्याविरुद्ध वजा करता येतो. दीर्घकालीन तोटा फक्त दीर्घकालीन नफ्याविरुद्धच वजा करता येतो</td></tr>
+<tr><td>भांडवली तोटा पुढे नेणे</td><td>न वापरलेला भांडवली तोटा 8 वर्षांपर्यंत पुढे नेता येतो. तो फक्त भांडवली नफ्याविरुद्धच वापरता येतो</td></tr>
+<tr><td>सट्टा नसलेले व्यवसाय उत्पन्न</td><td>तोटा त्याच वर्षी इतर उत्पन्न प्रकारांविरुद्ध वजा करता येतो (पगार वगळून). न वापरलेला तोटा 8 वर्षांपर्यंत पुढे नेता येतो, आणि तो फक्त व्यवसाय उत्पन्नाविरुद्धच वापरता येतो</td></tr>
+<tr><td>सट्टा व्यवसाय (उदाहरणार्थ, डिलिव्हरीशिवाय इंट्राडे व्यापार)</td><td>तोटा फक्त दुसऱ्या सट्टा व्यवसायातील नफ्याविरुद्धच वजा करता येतो. न वापरलेला तोटा 4 वर्षांपर्यंत पुढे नेता येतो</td></tr>
+<tr><td>कर ऑडिट</td><td>ज्या व्यक्तीला व्यवसाय उत्पन्न आहे, तिने उलाढाल Rs 1 कोटींपेक्षा जास्त असल्यास खात्यांचे ऑडिट करून घ्यावे लागते. रोख पावत्या आणि रोख देयके प्रत्येकी एकूण रकमेच्या 5% किंवा त्याहून कमी असतील, तर मर्यादा Rs 10 कोटी आहे</td></tr>
+<tr><td>ITR फॉर्म (व्यक्ती)</td><td>फक्त भांडवली नफा असलेला परतावा ITR-2 मध्ये दाखवला जातो. व्यवसाय उत्पन्न, ट्रेडिंग व्यवसाय म्हणून केलेले ट्रेडिंग धरून, ITR-3 मध्ये दाखवले जाते</td></tr>
+<tr><td>लाभांश</td><td>लाभांश तुमच्या उत्पन्नात जोडला जातो आणि “इतर स्रोतांकडून उत्पन्न” म्हणून करपात्र होतो. कंपनी पैसे देण्यापूर्वी कर कापू शकते. ते मिळवण्यासाठी उधार घेतलेल्या पैशावरील व्याज वजा करता येते, फक्त लाभांशाच्या 20% पर्यंत</td></tr>
+<tr><td>कर पद्धत</td><td>नवी कर पद्धत ही डीफॉल्ट आहे. व्यवसाय उत्पन्न असलेल्या व्यक्तीला जुनी पद्धत हवी असल्यास, ती परतावा भरण्याच्या शेवटच्या तारखेपर्यंत निवडावी लागते. ही निवड परत बदलता येते, पण फक्त एकदाच</td></tr>
+</tbody></table>
+</div>
+<p>(11 नोव्हेंबर 2026 पर्यंत. स्रोत: आयकर विभागाने प्रकाशित केलेला Income-tax Act, 2025, आणि तोटा समायोजन व ITR फॉर्मवरील आयकर विभागाची e-filing मदत पाने. दर आणि मर्यादा दरवर्षीच्या अर्थसंकल्पानुसार बदलतात, म्हणून incometax.gov.in दरवर्षी तपासा.)</p>
+<p>जुन्या Income-tax Act, 1961 अंतर्गत 31 मार्च 2026 पर्यंतच्या उत्पन्नासाठीही हेच नियम लागू होते. कलमांचे क्रमांक बदलले, पण वरील दर बदलले नाहीत. आधीच्या वर्षांचे तोटे नव्या कायद्यातही पुढे नेले जातात, जसे जुन्या कायद्यात नेले जात होते.</p>
+<p>खर्चही महत्त्वाचे आहेत. भांडवली नफा काढताना STT ला वजावट म्हणून परवानगी नाही. व्यवसाय उत्पन्नासाठी, व्यवसायाच्या ओघात केलेल्या व्यापारांवर भरलेला STT व्यवसाय खर्च म्हणून दाखवता येतो. ब्रोकरेजसारखे इतर खर्च उत्पन्नाच्या प्रकारावर अवलंबून असतात. कोणते खर्च लागू होतात, ते व्यावसायिकाला विचारा.</p>
+<p><strong>पुस्तक काय करते आणि काय करत नाही.</strong> हे पुस्तक तुमचा कर काढत नाही. तुमचा कर तुमच्या स्वतःच्या तथ्यांवर, इतर उत्पन्नावर आणि वर्षावर अवलंबून असतो. खालील सराव गणितात फक्त बीजगणित दाखवण्यासाठी बनवलेला दर वापरला आहे.</p>
+<p><strong>सूत्र, आधी शब्दांत.</strong> निव्वळ निकाल = एकूण नफा - ट्रेडिंग खर्च - कर. कर = दर x करपात्र आधार. करपात्र आधार वर्गीकरणावर अवलंबून असतो. त्यातून खर्च वजा करता येतो का, हे उत्पन्नाच्या प्रकारावर अवलंबून असते, जसे वरील नोंदी दाखवतात.</p>
+<p>चिन्हांमध्ये, G म्हणजे एकूण नफा, C म्हणजे ट्रेडिंग खर्च, B म्हणजे करपात्र आधार, आणि t म्हणजे कर दर. सराव गणितात t ही बनवलेली संख्या आहे.</p>
+<ul>
+<li>जर खर्च वजा करता येत असेल, तर B = G - C.</li>
+<li>कर = t x B.</li>
+<li>निव्वळ = G - C - t x B.</li>
+</ul>
+<p>t ही जागा धरणारी चिन्ह आहे. खालील सरावात तिला फक्त बीजगणित दाखवण्यासाठी बनवलेली किंमत दिली आहे. खरे दर वरील तक्त्यात आहेत.</p>
+<p><strong>वर्गीकरणाबद्दलचे प्रश्न.</strong> कराच्या आकड्याला अर्थ येण्यापूर्वी तुम्हाला उत्तरे हवीत. उदाहरणार्थ: मी हे किती काळ धरले? वर्षभरात मी किती व्यापार केले? मी गुंतवणूक करत होतो, की ट्रेडिंग व्यवसाय म्हणून चालवत होतो? पात्र कर व्यावसायिकाने हे प्रश्न तुमच्याबरोबर सोडवावेत. तुमची उत्तरे जर्नलमध्ये लिहिल्याने मदत होते. जर्नल हीच ती नोंद बनते, जी तुम्हाला लागेल.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>खालील निर्णय-वृक्ष वर्गीकरण ठरवणाऱ्या प्रश्नांचे प्रकार दाखवतो. तो निकाल देत नाही. प्रत्येक शाखा व्यावसायिकासाठी एका प्रश्नावर संपते.</p>
+<pre><code class="language-mermaid">flowchart TD
+    A["क्रियाकलाप काय आहे?"] --&gt; B{"धारण कालावधी किती आहे?"}
+    A --&gt; C{"तुम्ही किती वेळा ट्रेड करता, आणि हेतू काय आहे?"}
+    B --&gt;|"12 महिने किंवा कमी"| D["अल्पकालीन भांडवली नफा लागू होऊ शकतो"]
+    B --&gt;|"12 महिन्यांपेक्षा जास्त"| E["दीर्घकालीन भांडवली नफा लागू होऊ शकतो"]
+    C --&gt;|"वारंवार, व्यवसायासारखे"| F["व्यवसाय उत्पन्न लागू होऊ शकते, आणि ऑडिट मर्यादा महत्त्वाची ठरू शकते"]
+    C --&gt;|"अधूनमधून, गुंतवणुकीसारखे"| G["भांडवली नफा लागू होऊ शकतो"]
+    D --&gt; H[पात्र कर व्यावसायिकाला विचारा]
+    E --&gt; H
+    F --&gt; H
+    G --&gt; H
+</code></pre>
+<p>वरून खाली निर्णय-वृक्ष वाचा. शाखा दाखवतात की व्यावसायिकाकडे कोणती तथ्ये न्यावी लागतील. दर वरील तक्त्यात आहेत.</p>
+<!-- component: tax-calc | trades: 6000,3000,1000 | costs: 300 | rate: 20 | caption: डमी कर दर वापरून सराव गणित. हा खरा दर नाही. अधिकृत स्रोत तपासा किंवा कर व्यावसायिकाला विचारा. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक, सांकेतिक.</strong> एकूण नफा Rs 10,000 आहे. ट्रेडिंग खर्च Rs 300 आहे. या सराव गणितासाठी, खर्च करपात्र आधारातून वजा करता येतो असे गृहीत धरा. प्रत्यक्षात हे उत्पन्नाच्या प्रकारावर अवलंबून असते, जसे वर नमूद केले आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>सूत्र</th><th>मूल्य</th></tr></thead><tbody>
+<tr><td>एकूण नफा</td><td>G</td><td>Rs 10,000</td></tr>
+<tr><td>ट्रेडिंग खर्च</td><td>C</td><td>Rs 300</td></tr>
+<tr><td>करपात्र आधार</td><td>B = G - C</td><td>10,000 - 300 = Rs 9,700</td></tr>
+<tr><td>कर</td><td>t x B</td><td>t x 9,700</td></tr>
+<tr><td>निव्वळ निकाल</td><td>G - C - t x B</td><td>10,000 - 300 - t x 9,700 = 9,700 - 9,700t</td></tr>
+</tbody></table>
+</div>
+<p><strong>डमी उदाहरण, फक्त बीजगणितासाठी (बनवलेली गोल संख्या, तुमचा कर नाही).</strong> जर t 20% असता, तर कर 0.20 x 9,700 = Rs 1,940 झाला असता. निव्वळ 9,700 - 1,940 = Rs 7,760 झाला असता. येथील 20% फक्त बीजगणित बरोबर चालते हे दाखवते. ते कोणाच्याही खऱ्या कराचे गणित नाही. त्याला कराचा आकडा म्हणून वापरू नका.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> एका बनवलेल्या वर्षात एकूण नफा Rs 4,000 आणि ट्रेडिंग खर्च Rs 200 आहे. जागा धरणारा दर t वापरून निव्वळ सूत्र लिहा. t हे चिन्हच ठेवा. त्यात संख्या टाकू नका.</p>
+<p>संकेत:</p>
+<ol>
+<li>आधी करपात्र आधार शोधा. तो एकूण नफा वजा खर्च असतो.</li>
+<li>कर म्हणजे t गुणिले करपात्र आधार.</li>
+<li>निव्वळ म्हणजे एकूण नफा वजा खर्च वजा कर.</li>
+</ol>
+<p><strong>उत्तर:</strong> करपात्र आधार = 4,000 - 200 = 3,800. कर = t x 3,800. निव्वळ = 4,000 - 200 - t x 3,800 = 3,800 - 3,800t, म्हणजे 3,800 x (1 - t).</p>
+<!-- component: tax-calc | trades: 4000 | costs: 200 | rate: 20 | caption: मार्गदर्शित सराव: एकूण नफा Rs 4,000 आणि खर्च Rs 200. कागदावर दर चिन्हाच्या रूपात ठेवा. स्लायडर कल्पना दाखवण्यासाठी फक्त डमी दर वापरतो. -->
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> तुमच्या पहिल्या ट्रेडिंग वर्षापूर्वी पात्र कर व्यावसायिकाकडे नेण्यासाठी पाच प्रश्नांची यादी करा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>एकच बरोबर यादी नाही. चांगल्या प्रश्नांची ही उदाहरणे आहेत:</p>
+<ol>
+<li>माझा धारण कालावधी माझ्या नफ्यावरील कर नियम कसा बदलतो?</li>
+<li>ट्रेडिंग क्रियाकलाप किती पातळीवर व्यवसाय मानला जातो, आणि त्यामुळे माझे कर नियम बदलतात का?</li>
+<li>माझे कोणते तोटे कोणते नफे रद्द करू शकतात? कोणते पुढे नेता येतील, आणि किती काळासाठी?</li>
+<li>माझे ट्रेडिंग खर्च माझा करपात्र आधार कमी करतात का, आणि कोणते खर्च?</li>
+<li>मला कर ऑडिटची अट पूर्ण करावी लागते का, आणि कोणत्या उलाढालीवर?</li>
+</ol>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ मुख्य कल्पना तपासतो. कर म्हणजे उलाढालीची सपाट टक्केवारी नाही. धारण कालावधी आणि वर्गीकरण महत्त्वाचे आहेत. तोटा समायोजनाचे स्वतःचे नियम आहेत.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>पद्धत:</strong> शिकण्याची नोंद. ती तुमच्या जर्नलमध्ये लिहा.</p>
+<ol>
+<li>तुम्ही नोंदवलेल्या प्रत्येक व्यापारासाठी एक वर्गीकरण नोंद स्तंभ जोडा, ज्यात तीन नोंदी असतील: धारण कालावधी, हेतू, आणि तुम्ही किती वेळा ट्रेड करता.</li>
+<li>कोणताही कर आकडा काढू नका. हा स्तंभ पुढच्या वापरासाठी नोंद आहे, आणि व्यावसायिक तो वापरू शकतो.</li>
+<li>नोंदींवर “शिकण्याची नोंद” असा शिक्का लावा, लाइव्ह नोंद नव्हे.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>तुम्ही किती कर भराल हे ते सांगत नाही. ते अधिकृत स्रोत सांगतात तसे मुख्य नियम यादी करते. तुमची स्थिती वेगळी असू शकते.</li>
+<li>हा कर सल्ला नाही. हे पुस्तक कर सल्ला देत नाही. पात्र व्यावसायिकाशी बोला.</li>
+<li>नफा आणि तोटा प्रत्येक क्रियाकलापात नेहमी सारखे हाताळले जात नाहीत. हे फरकच सल्ला घेण्याचे कारण आहेत.</li>
+<li>कोणत्याही योजनेसाठी कराचे बिल लहान आहे की मोठे, हे ते दाखवत नाही. नियमांनुसार, तोट्याच्या वर्षात कराचे बिल अपेक्षेपेक्षा मोठे असू शकते.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>कर ट्रेडिंग खर्चापेक्षा वेगळा आहे. तो क्रियाकलापावर अवलंबून असलेल्या नियमांनुसार निव्वळ नफ्यावर लागू होतो.</li>
+<li>वर्गीकरण, धारण कालावधी आणि तोटा समायोजन बहुतेक कर नियम ठरवतात. सूचिबद्ध शेअर्ससाठी सीमारेषा 12 महिने आहे. अल्पकालीन नफ्यावर 20% कर लागतो. वर्षाला Rs 1,25,000 वरील दीर्घकालीन नफ्यावर 12.5% कर लागतो.</li>
+<li>सूत्र असे आहे: निव्वळ = एकूण नफा - खर्च - कर, आणि कर = दर x करपात्र आधार.</li>
+<li>सुरुवातीपासूनच प्रत्येक व्यापाराची वर्गीकरण नोंद ठेवा.</li>
+<li>हे प्रश्न पात्र कर व्यावसायिकाकडे न्या.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Income-tax Act, 2025 (Act 30 of 2025), आयकर विभागाने प्रकाशित केलेला (incometaxindia.gov.in). त्यात सूचिबद्ध शेअर्सवरील दर, Rs 1,25,000 सूट, तोटा समायोजन आणि पुढे नेणे, सट्टा व्यवसाय, कर ऑडिट मर्यादा आणि नवी कर पद्धत आहे. 11 नोव्हेंबर 2026 रोजी वाचले.</li>
+<li>आयकर विभागाची e-filing मदत पाने (incometax.gov.in), तोट्याचे समायोजन आणि पुढे नेणे, आणि व्यवसाय उत्पन्नासाठीच्या ITR फॉर्मवर. 11 नोव्हेंबर 2026 रोजी वाचले.</li>
+<li>जुन्या Income-tax Act, 1961 अंतर्गत 23 जुलै 2024 रोजी किंवा नंतरच्या हस्तांतरणांसाठीही हेच दर आणि धारण कालावधी लागू होते.</li>
+<li>Zerodha Varsity कर विभाग, फक्त संदर्भासाठी (फक्त दुवा, मजकूर कॉपी केलेला नाही).</li>
+</ul>
+<!-- facts-needed: classification rules for trading income; short-term and long-term capital gains rates and holding-period thresholds; business and speculative income treatment; loss set-off and carry-forward rules; tax audit turnover thresholds; tax regime choice and changes; dividend taxation. -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T2.3&amp;body=Page%3A%2002-money-and-math%2F03-taxes-on-trading-profits%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/02-costs-on-a-trade/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/04-risk-per-trade/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/02-costs-on-a-trade/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/04-risk-per-trade/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

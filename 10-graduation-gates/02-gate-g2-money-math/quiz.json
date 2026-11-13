@@ -1,0 +1,108 @@
+[
+  {
+    "id": "T10.2-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital Rs 20,000, risk 1%, entry Rs 100, stop Rs 95. How many whole shares does the plan allow?",
+    "answer": 40,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "Risk budget = 20,000 x 1% = Rs 200. Risk per share = 100 - 95 = Rs 5. Raw shares = floor(200 / 5) = 40. Cash cap = floor(20,000 / 100) = 200. Concentration cap = floor(20,000 x 25% / 100) = floor(5,000 / 100) = 50. Shares = minimum of 40, 200 and 50 = 40.",
+    "concepts": ["position-sizing", "binding-constraint"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.2-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Using the plan in the previous question (40 shares, risk per share Rs 5), what is the planned loss at the stop in rupees?",
+    "answer": 200,
+    "tolerance": 1,
+    "unit": "Rs",
+    "solution": "Planned loss = shares x risk per share = 40 x Rs 5 = Rs 200. Before costs. Within Rs 1 of the worked solution.",
+    "concepts": ["planned-loss"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.2-q3",
+    "type": "scenario",
+    "prompt": "A friend says: \"The planned loss is Rs 200 before costs, but costs are small, so the real loss is also Rs 200.\" Which response is most accurate?",
+    "options": [
+      {"id": "a", "text": "Correct. Costs are always zero for a short trade."},
+      {"id": "b", "text": "Not necessarily. Costs add to the loss, so the real loss can be larger than the planned loss. The cost questions use the book's checked cost figures."},
+      {"id": "c", "text": "Correct. Costs only matter for long-term investors."},
+      {"id": "d", "text": "Incorrect. Costs reduce the loss below the planned amount."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Costs are not zero in this gate. The sums must include them when the plan asks for them.",
+      "c": "Costs apply to trades of every length. The type of investor does not change the arithmetic.",
+      "d": "Costs add to the loss. They do not reduce it."
+    },
+    "concepts": ["costs", "planned-loss"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T10.2-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"Raw shares come out at 31.25, so I round up to 32 to be safe.\" Which part of this statement is wrong?",
+    "options": [
+      {"id": "a", "text": "The figure 31.25 is the calculated raw shares. This part is correct."},
+      {"id": "b", "text": "\"I round up to 32\". This is wrong. Shares are rounded down, so the planned loss stays within the risk budget."},
+      {"id": "c", "text": "Round every limit down, every time. This is correct."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This part is correct. 31.25 is the calculated raw figure before rounding.",
+      "c": "This part is correct. Rounding down keeps the planned loss inside the budget."
+    },
+    "concepts": ["rounding-down", "risk-budget"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.2-q5",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital Rs 10,000, risk 1%, entry Rs 500, stop Rs 490. What is the raw shares figure before any cap is applied?",
+    "answer": 10,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "Risk budget = Rs 100. Risk per share = 500 - 490 = Rs 10. Raw shares = floor(100 / 10) = 10. Check: 10 x Rs 10 = Rs 100, which equals the budget.",
+    "concepts": ["position-sizing", "risk-per-share"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.2-q6",
+    "type": "mcq",
+    "prompt": "Which statement about the cost questions in this gate is correct?",
+    "options": [
+      {"id": "a", "text": "They use cost figures from the book's facts list, which show the date each figure was checked."},
+      {"id": "b", "text": "They use values you memorised from a broker's website."},
+      {"id": "c", "text": "The cost figures never change, so they never need checking."},
+      {"id": "d", "text": "They are skipped if you are a long-term investor."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "The gate uses the book's checked figures, not values you remember. Broker pages can change.",
+      "c": "Cost figures can change. This is why each one shows its check date, and why questions pause if a figure is out of date.",
+      "d": "The cost questions are part of this gate for every attempt. The investor type does not remove them."
+    },
+    "concepts": ["costs", "staleness"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.2-q7",
+    "type": "numeric",
+    "prompt": "Hypothetical. Capital Rs 20,000, risk 1%, entry Rs 100. How many rupees is the risk budget?",
+    "answer": 200,
+    "tolerance": 1,
+    "unit": "Rs",
+    "solution": "Risk budget = capital x risk % = 20,000 x 1% = Rs 200. Within Rs 1 of the worked solution.",
+    "concepts": ["risk-budget"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Why scalping and martingale are dangerous - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/06-strategy/05-dangerous-approaches/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T6.5
+title: Why scalping and martingale are dangerous
+page_type: Math/Calculator
+prerequisites: [T6.2, T2.7, T2.9, T2.12, T2.13]
+labs: [Lab 2, Lab 4]
+estimated_minutes: 30
+-->
+<h1 id="why-scalping-and-martingale-are-dangerous"><a class="header" href="#why-scalping-and-martingale-are-dangerous">Why scalping and martingale are dangerous</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A trader buys 100 shares at Rs 100. He aims to sell for Rs 0.10 more per share, a gain of Rs 10. He assumes a cost of Rs 50 for the round trip. Hypothetical example. The Rs 50 cost is larger than the Rs 10 gain, so the trade loses Rs 40 even when it works as planned. The Rs 50 is a round number for practice, not the real charge. The real charges are in <em>Costs on a trade</em>. This chapter shows the arithmetic behind five approaches that feel quick or clever, and why each one is dangerous.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>This chapter covers five approaches. The book treats them as failure modes to recognise. They are not methods to practise.</p>
+<p><strong>Scalping.</strong> A scalper makes many trades, each aiming for a small gain. Every trade pays a cost. A fixed cost takes a large share of a small gain. The break-even move is the cost divided by the number of shares. It is the price move needed just to cover the cost.</p>
+<p><strong>Intraday trading.</strong> Intraday trades open and close within the same day. Some products used for intraday trades use borrowed money, called margin. Borrowed money makes gains and losses larger. See <em>Leverage and margin</em>. Intraday positions must be closed the same day. At Zerodha, open intraday share positions are closed for you at about 3:25 PM, and futures and options at about 3:26 PM, and each order closed this way costs Rs 50 plus 18% GST. Zerodha can also cut intraday leverage during the day. (As of 11 Nov 2026, Zerodha support. Rules change, so check Zerodha support.) SEBI’s July 2024 study of individual intraday traders in the equity cash segment found that 71% of them lost money after costs in FY23. This book does not encourage intraday trading. Any later practice would be on paper only.</p>
+<p><strong>Averaging down.</strong> Averaging down means buying more of a share that has fallen. The average price falls. But the money at risk on the same idea grows. A fall in price needs a larger gain to recover. The bigger the loss, the bigger the gain needed. See <em>Drawdown and recovery math</em>.</p>
+<p><strong>Martingale.</strong> Martingale means doubling the stake after each loss. The stakes grow very fast. One long run of losses can cost more than the whole account. A high win rate does not remove this risk. A single long run is enough.</p>
+<p><strong>Options, in theory only.</strong> An option buyer pays a price called the premium. The buyer’s loss is limited to the premium paid. An option seller receives the premium. The seller’s gain is limited to the premium received. The seller’s loss can be far larger. Premiums, decay and margin are not covered here. See <em>Options basics and Greeks</em>.</p>
+<p>None of these approaches is a shortcut to a daily profit target. See <em>The Rs 2,000-3,000 reality check</em>.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: drawdown-compounding | caption: Shows how much gain is needed to recover after a fall, so the recovery math in averaging down can be seen -->
+<!-- component: position-size-viz | caption: Shows stake growth in a doubling sequence with a base risk of Rs 500 -->
+<!-- component: streak-sim | caption: Shows a martingale sequence at a given win rate, so a long losing run can be seen -->
+<p>Start with the recovery view. Watch how the gain needed grows as the fall gets deeper. Then watch the stake view. Each loss doubles the next stake. The streak view shows how often a long losing run can appear.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical. Scalping.</strong> Buy 100 shares at Rs 100 (Rs 10,000).</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>Target gross gain</td><td>100 x Rs 0.10</td><td>Rs 10</td></tr>
+<tr><td>Assumed round-trip cost</td><td>Placeholder for this example</td><td>Rs 50</td></tr>
+<tr><td>Net result</td><td>Rs 10 - Rs 50</td><td>minus Rs 40</td></tr>
+<tr><td>Break-even move per share</td><td>Rs 50 / 100 shares</td><td>Rs 0.50, which is 0.5 percent of Rs 100</td></tr>
+</tbody></table>
+</div>
+<p><strong>Hypothetical. Averaging down.</strong> Buy 100 shares at Rs 100 (Rs 10,000). The price falls to Rs 80.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>Loss at Rs 80</td><td>(80 - 100) x 100</td><td>minus Rs 2,000, which is 20 percent</td></tr>
+<tr><td>Gain needed to get back to Rs 100</td><td>100 / 80 - 1</td><td>25 percent</td></tr>
+<tr><td>Second buy</td><td>100 shares at Rs 80</td><td>Rs 8,000</td></tr>
+<tr><td>New average price</td><td>(10,000 + 8,000) / 200</td><td>Rs 90</td></tr>
+<tr><td>Loss at Rs 60 on 200 shares</td><td>(60 - 90) x 200</td><td>minus Rs 6,000</td></tr>
+<tr><td>Comparison: one lot of 100 shares at Rs 60</td><td>(60 - 100) x 100</td><td>minus Rs 4,000</td></tr>
+</tbody></table>
+</div>
+<p>The average price fell from Rs 100 to Rs 90. But the number of shares doubled, and the loss at Rs 60 is larger. Averaging down did not lower the risk. It raised it.</p>
+<p><strong>Hypothetical. Martingale.</strong> Base risk Rs 500. Each loss doubles the next stake.</p>
+<div class="table-wrapper"><table><thead><tr><th>Trade</th><th>Stake</th><th>Total lost if this trade and all before it lose</th></tr></thead><tbody>
+<tr><td>1</td><td>Rs 500</td><td>Rs 500</td></tr>
+<tr><td>2</td><td>Rs 1,000</td><td>Rs 1,500</td></tr>
+<tr><td>3</td><td>Rs 2,000</td><td>Rs 3,500</td></tr>
+<tr><td>4</td><td>Rs 4,000</td><td>Rs 7,500</td></tr>
+<tr><td>5</td><td>Rs 8,000</td><td>Rs 15,500</td></tr>
+<tr><td>6</td><td>Rs 16,000</td><td>Rs 31,500</td></tr>
+</tbody></table>
+</div>
+<p>After five losses, the stake is 500 x 2 to the power 5, which is Rs 16,000. That stake is larger than a Rs 10,000 account. It is 32 percent of a Rs 50,000 account. The total lost after five losses is 500 x (1 + 2 + 4 + 8 + 16) = Rs 15,500.</p>
+<p><strong>Recovery math.</strong> A 40 percent loss leaves 60 percent of the value. The gain needed is 1 / 0.6 - 1 = 66.7 percent.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> A position falls 40 percent. What gain is needed to recover to the starting value?</p>
+<p>Hints:</p>
+<ol>
+<li>After a 40 percent loss, 60 percent of the value remains.</li>
+<li>The gain needed is 1 divided by 0.6, minus 1.</li>
+<li>Give the answer as a percent to one decimal place.</li>
+</ol>
+<p><strong>Answer:</strong> 1 / 0.6 = 1.667. 1.667 - 1 = 0.667. The gain needed is <strong>66.7 percent</strong>.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> A scalp trade uses 200 shares at Rs 100. The assumed round-trip cost is Rs 60. Compute the break-even move per share, and the break-even move as a percent of Rs 100.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>Break-even move per share: Rs 60 / 200 shares = <strong>Rs 0.30</strong>.</li>
+<li>As a percent of Rs 100: 0.30 / 100 = <strong>0.3 percent</strong>.</li>
+<li>Check: 200 shares x Rs 0.30 = Rs 60, which equals the cost.</li>
+</ul>
+<p>The Rs 60 cost is an assumed figure for this example only. All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the break-even move, the recovery math, the stake doubling and the risk of averaging down.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong>. Write it in your journal. If the journal is not ready, use paper.</p>
+<ol>
+<li>Write one learning note for each of the five approaches in this chapter.</li>
+<li>In each note, copy the arithmetic from this chapter.</li>
+<li>Check each calculation again with a calculator.</li>
+<li>For each approach, write the single event that would cause the largest loss.</li>
+<li>Mark every note as hypothetical.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>The break-even figures use a round-number cost for practice. The real charges are in <em>Costs on a trade</em>.</li>
+<li>Averaging down does not lower risk. It increases the money at risk on the same idea.</li>
+<li>Option figures here are theory only. Premiums, decay and margin rules are not covered in this chapter. See <em>Options basics and Greeks</em>.</li>
+<li>A stake that doubles can exceed your account before the losing run ends.</li>
+<li>The prices in these examples are invented. They do not predict any real share.</li>
+<li>Intraday and option charges, margins and rules change. Check the Zerodha charges page, Zerodha support and the NSE site before you rely on any figure.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>A fixed cost per trade is a large share of a small gain.</li>
+<li>The break-even move is the cost divided by the number of shares.</li>
+<li>After a fall, the gain needed to recover grows faster than the fall.</li>
+<li>Averaging down raises the money at risk on the same idea.</li>
+<li>Martingale can lose more than the whole account, even with a high win rate.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>SEBI, “Analysis of Intraday Trading by Individuals in Equity Cash Segment” (July 2024). It reports that 71% of individual intraday traders in the equity cash segment made net losses in FY23.</li>
+<li>SEBI study of individual traders in equity derivatives for FY25 and FY26 (August 2026). It reports that 87.7% of individuals lost money in FY26.</li>
+<li>Zerodha Varsity, material on risk and position sizing (reference only).</li>
+<li>Zerodha charges page and Zerodha support on auto square-off (read on 11 Nov 2026).</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../06-strategy/04-swing-strategy/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../06-strategy/06-strategy-simulator/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../06-strategy/04-swing-strategy/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../06-strategy/06-strategy-simulator/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Overtrading and why daily profit targets encourage it - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/02-money-and-math/12-overtrading/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T2.12
+title: Overtrading and why daily profit targets encourage it
+page_type: Math/Calculator
+prerequisites: [T2.8, T2.11, T0.2]
+labs: [Lab 3]
+estimated_minutes: 25
+-->
+<h1 id="overtrading-and-why-daily-profit-targets-encourage-it"><a class="header" href="#overtrading-and-why-daily-profit-targets-encourage-it">Overtrading and why daily profit targets encourage it</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Hypothetical: a trader sets a daily profit goal of Rs 2,000. By mid-morning the day is down Rs 300. No setup from the checklist has appeared. The trader takes a trade “to get back on track”. The trade is not on the checklist, and it loses. The target did not cause the first loss. It changed the second decision. That is the pattern this chapter measures.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p><strong>Expectancy</strong> is the average result per trade over many trades. It counts wins and losses together. Measured in R (the rupee amount risked on one trade), an expectancy of 0.1R means the average trade makes one tenth of one R.</p>
+<p><strong>Costs</strong> are paid on every trade. So they lower that average:</p>
+<ul>
+<li>Net expectancy per trade = expectancy - cost per round trip. A round trip is one buy and one sell.</li>
+</ul>
+<p><strong>Trades needed</strong> to reach a target, on average:</p>
+<ul>
+<li>Trades needed = target / net expectancy per trade.</li>
+<li>Short form: N = T / E_net, where N is trades, T is the target and E_net is net expectancy.</li>
+</ul>
+<p>Three things follow:</p>
+<ol>
+<li><strong>Small expectancy means many trades.</strong> A small average needs a large number of trades to add up to a daily target.</li>
+<li><strong>Costs change the count.</strong> Each rupee of cost you remove from the average cuts the number of trades needed.</li>
+<li><strong>No positive net expectancy means no count works.</strong> If E_net is zero or below, no number of trades reaches the target on average. More trades only add more of a negative average.</li>
+</ol>
+<p>A daily target also works as pressure. It makes a no-trade day feel like a loss. That pushes a trader to take trades when no setup exists. More trades mean more exposure to random price moves (noise), more costs and more chances to break a rule. Costs are covered in <em>Costs on a trade</em>.</p>
+<p>Signs of overtrading in a journal:</p>
+<ul>
+<li>Trades placed outside the checklist.</li>
+<li>Trade count above the daily limit.</li>
+<li>Size increased on a later trade.</li>
+<li>A trade placed to recover an earlier loss.</li>
+</ul>
+<p>Your Rs 2,000-3,000 figure is tested in <em>The Rs 2,000-3,000 reality check</em>. It is not a goal for any strategy.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<p>This is a static table. The target is fixed at Rs 2,000 a day. Each row shows how the number of trades rises as net expectancy falls.</p>
+<div class="table-wrapper"><table><thead><tr><th>Net expectancy per trade (Rs)</th><th>Trades needed per day</th><th>Note</th></tr></thead><tbody>
+<tr><td>50</td><td>40</td><td>Before costs in the worked example</td></tr>
+<tr><td>25</td><td>80</td><td></td></tr>
+<tr><td>20</td><td>100</td><td></td></tr>
+<tr><td>10</td><td>200</td><td>After the dummy cost in the worked example</td></tr>
+<tr><td>0 or below</td><td>No count reaches the target on average</td><td></td></tr>
+</tbody></table>
+</div>
+<p>Read down the table. When net expectancy halves, the trade count doubles. The 200-trade row is where the worked example lands once costs are included.</p>
+<!-- component: overtrading-drain | target: 2000 | expectancy: 50 | cost: 40 | caption: Target Rs 2,000 a day, Rs 50 average per trade, dummy cost Rs 40. Watch the trades needed jump from 40 to 200. This is not a target to chase. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> For arithmetic only, not an estimate: R = Rs 500 (1% of Rs 50,000). Expectancy = 0.1 x 500 = Rs 50 per trade. Target = Rs 2,000 a day.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>1. Trades needed before costs</td><td>2,000 / 50</td><td>40 trades a day</td></tr>
+<tr><td>2. Over 250 trading days (assumed)</td><td>40 x 250</td><td>10,000 trades a year</td></tr>
+<tr><td>3. Dummy cost per round trip</td><td>Rs 40 assumed</td><td>Net expectancy = 50 - 40 = Rs 10</td></tr>
+<tr><td>4. Trades needed after costs</td><td>2,000 / 10</td><td>200 trades a day</td></tr>
+<tr><td>5. Over 250 trading days (assumed)</td><td>200 x 250</td><td>50,000 trades a year</td></tr>
+</tbody></table>
+</div>
+<p>The cost assumption turns a 40-trade day into a 200-trade day. The Rs 40 figure is a DUMMY value, used for arithmetic only. It is a round number for practice, not a real broker fee or government charge. As of 11 Nov 2026, Zerodha lists zero brokerage on delivery trades. On intraday trades it lists 0.03% of the trade value or Rs 20 per order, whichever is lower, plus taxes and exchange fees. The full table is in <em>Costs on a trade</em>. Rules change, so check the Zerodha charges page.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<p>Work each exercise by hand first. Then use the demo under it to check your answer. Change the cost and see how the number of trades moves.</p>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Target Rs 1,000 a day. Expectancy Rs 25 per trade. DUMMY cost Rs 15 per trade. Work out the trades needed before costs and after costs.</p>
+<p>Hints:</p>
+<ol>
+<li>Work out the net expectancy first: expectancy minus cost.</li>
+<li>Divide the target by the expectancy, then by the net expectancy.</li>
+<li>Check: the after-cost count should be larger than the before-cost count.</li>
+</ol>
+<p><strong>Answer:</strong> Before costs, 1,000 / 25 = 40 trades. Net expectancy 25 - 15 = Rs 10. After costs, 1,000 / 10 = 100 trades.</p>
+<!-- component: overtrading-drain | target: 1000 | expectancy: 25 | cost: 15 | caption: Guided exercise: target Rs 1,000, Rs 25 average per trade, dummy cost Rs 15. -->
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Target Rs 3,000 a day. R = Rs 400. Expectancy is 0.15R. DUMMY cost Rs 30 per trade. Work out the net expectancy, the trades per day and the trades per week over five trading days.</p>
+<details><summary>Check your answer</summary>
+<p>Expectancy = 0.15 x 400 = Rs 60 per trade.</p>
+<p>Net expectancy = 60 - 30 = Rs 30 per trade.</p>
+<p>Trades per day = 3,000 / 30 = 100.</p>
+<p>Trades per week = 100 x 5 = 500. Check: 500 / 5 = 100 per day.</p>
+</details>
+<!-- component: overtrading-drain | target: 3000 | expectancy: 60 | cost: 30 | caption: Independent exercise check: target Rs 3,000, Rs 60 average per trade, dummy cost Rs 30. Try it by hand first. -->
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Six questions cover the trades-needed math, the effect of costs, the wrong idea that more trades even out an average, the overtrading signs and the no-trade day.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong> (Lab 3). No orders are placed.</p>
+<ol>
+<li>Log the trade count for each day of one week. Use made-up or learning entries only.</li>
+<li>Add a “checklist passed (Y/N)” column for each trade.</li>
+<li>Record one no-trade day and the reason: no setup passed the checklist.</li>
+<li>Count the trades that failed the checklist. Note any trade placed to recover a loss.</li>
+</ol>
+<p>Write it in your journal. If the journal app is not ready, use paper.</p>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>Expectancy is an average of past or assumed trades. It does not predict any single day.</li>
+<li>The costs here are DUMMY values. Real costs are in <em>Costs on a trade</em> and Lab 2.</li>
+<li>A lower trade count does not promise a profit. It cuts the exposure to costs and rule breaks.</li>
+<li>The maximum trades per day is your choice. This chapter does not set one.</li>
+<li>A no-trade day is a valid result. It is not proof of skill either.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Trades needed = target / net expectancy per trade.</li>
+<li>Costs apply to every trade, so they raise the count.</li>
+<li>A daily target can make a no-trade day feel like a failure. That pushes trades with no setup.</li>
+<li>Set a maximum trades per day in advance. Count a no-trade day as a valid result.</li>
+<li>Watch four journal signs: trades outside the checklist, trade count above the limit, larger size, and trades placed to recover a loss.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p>Sources (names only):</p>
+<ul>
+<li><em>Discipline</em> (discipline) and <em>Loss aversion and revenge trading</em> (revenge trading), for the behaviour links.</li>
+</ul>
+<p>The costs in this chapter are round numbers for practice. The real charges, with dates and sources, are in <em>Costs on a trade</em>.</p>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/11-risk-limits/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/13-leverage-and-margin/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/11-risk-limits/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/13-leverage-and-margin/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

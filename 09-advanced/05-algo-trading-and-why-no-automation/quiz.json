@@ -1,0 +1,114 @@
+[
+  {
+    "id": "T9.5-q1",
+    "type": "mcq",
+    "prompt": "Which statement about alerts and orders is correct?",
+    "options": [
+      {"id": "a", "text": "An alert script is an order script with fewer lines."},
+      {"id": "b", "text": "An alert tells you something happened. An order sends an instruction to a broker, which is a separate, regulated step."},
+      {"id": "c", "text": "An alert is an order that has not been sent yet."},
+      {"id": "d", "text": "Alerts and orders are the same, since both start from a rule."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Length of code is not the difference. The step that sends an order to a broker is the difference.",
+      "c": "An alert places nothing, so it is not a waiting order.",
+      "d": "Both can start from a rule, but only an order sends an instruction to a broker."
+    },
+    "concepts": ["alert-vs-order"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.5-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical script, not a market rule. A script sends one wrong order every minute for 6 hours. How many orders does it send?",
+    "answer": 360,
+    "tolerance": 0,
+    "unit": "orders",
+    "solution": "6 hours x 60 minutes = 360 minutes. One order per minute gives 360 orders. Checked again: 360 / 60 = 6 hours.",
+    "concepts": ["automation-risk"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.5-q3",
+    "type": "mcq",
+    "prompt": "A broker's trading API is free to use. What does that tell you?",
+    "options": [
+      {"id": "a", "text": "No compliance applies, because no money is charged."},
+      {"id": "b", "text": "The rules for algo use still need checking at the source, whether the access is free or paid."},
+      {"id": "c", "text": "Market data is always included with a free API."},
+      {"id": "d", "text": "The API will place orders safely, because the broker runs it."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Price does not decide which rules apply. A free API can still fall under rules.",
+      "c": "Free plans may exclude market data. Check the plan contents.",
+      "d": "A broker's API does not make your script safe. Your own rules and checks still matter."
+    },
+    "concepts": ["api", "compliance"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.5-q4",
+    "type": "mcq",
+    "prompt": "Which statement about automation and risk is correct?",
+    "options": [
+      {"id": "a", "text": "Automation removes emotion, so it removes risk."},
+      {"id": "b", "text": "Automation can repeat a mistake faster, so it can add risk."},
+      {"id": "c", "text": "A backtest result becomes real once a script runs it."},
+      {"id": "d", "text": "Automation is the only way to be disciplined."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Removing emotion does not remove the risk in the rules or in a bug. A mistake can repeat quickly.",
+      "c": "A backtest uses past data. Running it in software does not make it proof of the future.",
+      "d": "Discipline comes from written rules and checks. It does not need automation."
+    },
+    "concepts": ["automation-risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.5-q5",
+    "type": "scenario",
+    "prompt": "A script works well in a backtest. In the morning it starts sending orders to a broker. What is the best first step?",
+    "options": [
+      {"id": "a", "text": "Let it run, since the backtest worked."},
+      {"id": "b", "text": "Stop the script, then check what it sends and whether the rules that apply to it are met."},
+      {"id": "c", "text": "Add more capital so the orders are filled faster."},
+      {"id": "d", "text": "Ignore it, since a backtest is proof that the script works."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A backtest on past data is not proof of the future. Let no script run without checks. See *Backtesting basics and the realism contract*.",
+      "c": "More capital makes a mistake bigger. It does not make the script safer.",
+      "d": "A backtest is not proof. Orders going out unchecked is a reason to stop and look."
+    },
+    "concepts": ["scenario", "automation-risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.5-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"I will automate my plan so I can stop watching.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "I will automate my plan"},
+      {"id": "b", "text": "so I can stop watching"},
+      {"id": "c", "text": "The word plan: a plan is a set of written rules, so this word is correct."},
+      {"id": "d", "text": "Nothing. The statement is correct."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A plan can be written as rules and checked. Writing it down is a sound step, so this part is not the mistake.",
+      "c": "A plan is a set of written rules. The word is correct.",
+      "d": "The statement is wrong. Automated trading still needs watching, because a bug or a change in the market can cause loss while you are away."
+    },
+    "concepts": ["automation-risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

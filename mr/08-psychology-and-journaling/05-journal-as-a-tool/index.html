@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>जर्नल एक साधन म्हणून - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../08-psychology-and-journaling/05-journal-as-a-tool/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../08-psychology-and-journaling/05-journal-as-a-tool/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T8.5
+title: जर्नल एक साधन म्हणून
+page_type: Lab
+prerequisites: [T8.4, T7.8]
+labs: [Lab 3]
+estimated_minutes: 30
+-->
+<h1 id="जरनल-एक-साधन-महणून"><a class="header" href="#जरनल-एक-साधन-महणून">जर्नल एक साधन म्हणून</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>तीन आठवड्यांपूर्वी तुम्ही एक व्यापार केला होता. आज तुम्हाला तुमचा नियोजित स्टॉप आठवत नाही. तुम्ही तो हलवला होता का, तेही आठवत नाही. स्मृती अशा गोष्टी जपते ज्या तुम्हाला शहाणे दाखवतात. बाकीच्या गोष्टी ती अनेकदा गाळून टाकते. जर्नल नोंद जशी होती तशी ठेवते, म्हणून तुम्ही तुमच्या वागणुकीचे न्याय्य मूल्यमापन करू शकता. हे प्रकरण ती नोंद कशी तयार करायची आणि कशी वाचायची ते दाखवते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>जर्नल प्रत्येक व्यापारासाठी दोन प्रकारच्या फील्ड नोंदवते.</p>
+<ul>
+<li><strong>नियोजित फील्ड</strong> एंट्रीआधी लिहिली जातात. त्यात नियोजित एंट्री, स्टॉप, लक्ष्य आणि नियोजित शेअर्स असतात.</li>
+<li><strong>प्रत्यक्ष फील्ड</strong> व्यापारानंतर लिहिली जातात. त्यात फिल भाव, वेळ आणि एक्झिट असतात.</li>
+</ul>
+<p>दोन प्रकारांमधील गॅप हीच तुम्ही अभ्यासता ती गोष्ट आहे. दोन्हींची तुलना केल्यास काय बदलले आणि का, ते दिसते.</p>
+<p><strong>लॉक केलेली फील्ड.</strong> नियोजित फील्ड एंट्रीच्या वेळी लॉक होतात. तुम्ही नंतर नोंदी जोडू शकता, पण योजना पुन्हा लिहू शकत नाही. यामुळे निकालाशी जुळवण्यासाठी योजना बदलली जात नाही.</p>
+<p><strong>मोड.</strong> प्रत्येक व्यापार एका मोडमध्ये असतो: पेपर, फॉरवर्ड, बॅकटेस्ट, लाइव्ह किंवा kite_demo. मोड वेगळे ठेवा. सराव निकाल डीफॉल्टनुसार लाइव्ह निकालांमध्ये मिसळू नका.</p>
+<p>तुलनेतून तीन संख्या मिळतात:</p>
+<ul>
+<li><strong>रुपयांमधील स्लिपेज</strong> = (फिल भाव - नियोजित भाव) x शेअर्स, लाँग एंट्रीसाठी. हे नियोजित भावापेक्षा जास्त दिलेले अतिरिक्त रुपये आहेत.</li>
+<li><strong>योजना पालन %</strong> = योजना पाळलेले व्यापार / एकूण व्यापार x 100.</li>
+<li><strong>नियम मोडणे</strong> वर्गानुसार टॅग केले जातात. तुमचा साप्ताहिक आढावा सर्वाधिक वारंवार येणारा वर्ग पाहतो.</li>
+</ul>
+<p>नोंद प्रामाणिक ठेवणारे दोन नियम:</p>
+<ul>
+<li>गेट्सच्या आधीच्या जर्नल नोंदी कधीच लाइव्ह म्हणून चिन्हांकित होत नाहीत.</li>
+<li>जर्नल तुम्ही काय केले ते नोंदवते. तोटे लहान दिसावेत यासाठी ते साधन नाही.</li>
+</ul>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: lab-journal | mode: paper | weekly: yes | form: plan-and-execution | caption: एका काल्पनिक सराव व्यापारासाठी योजना फॉर्म, प्रत्यक्ष फॉर्म आणि साप्ताहिक आढावा फॉर्म. नियोजित फील्ड एंट्रीच्या वेळी लॉक होतात. -->
+<p>आधी योजना फॉर्म भरा. मग व्यापारानंतर प्रत्यक्ष फॉर्म भरा. दोन्हींची तुलना करा. साप्ताहिक आढावा तुम्हाला एक बदल नाव देण्यास सांगतो.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> नियोजित एंट्री Rs 250. फिल भाव Rs 251. शेअर्स 40.</p>
+<div class="table-wrapper"><table><thead><tr><th>चरण</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. भावातील फरक</td><td>251 - 250</td><td>Rs 1</td></tr>
+<tr><td>2. स्लिपेज</td><td>1 x 40</td><td>Rs 40</td></tr>
+</tbody></table>
+</div>
+<p><strong>काल्पनिक.</strong> आठवड्यात दहा व्यापार. नऊ योजनेनुसार झाले.</p>
+<div class="table-wrapper"><table><thead><tr><th>चरण</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>3. योजना पालन</td><td>9 / 10 x 100</td><td>90%</td></tr>
+</tbody></table>
+</div>
+<p>एका व्यापाराने दोन नियम मोडले. एक मोड म्हणजे उशिरा एक्झिट, तिला <em>exit late</em> टॅग दिला. दुसरा जास्त आकाराचा होता, त्याला <em>size</em> टॅग दिला. साप्ताहिक आढावा टॅग पाहतो आणि एक बदल नाव देतो: एक्झिट वेळेची तपासणी सुधारा.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> नियोजित एंट्री Rs 250. फिल भाव Rs 252.50. शेअर्स 40. रुपयांमधील स्लिपेज काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>आधी फरक काढा, मग शेअर्सने गुणा.</li>
+<li>फरक Rs 2.50 आहे.</li>
+</ol>
+<p><strong>उत्तर:</strong> स्लिपेज = (252.50 - 250) x 40 = 2.50 x 40 = <strong>Rs 100</strong>.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> तीन शिकण्याच्या नोंदी व्यापारांसाठी साप्ताहिक आढावा पूर्ण करा. काय चांगले झाले, एक नियम मोडणे आणि एक बदल लिहा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>तिथे एकच बरोबर आढावा नसतो. उपयुक्त आढाव्यात:</p>
+<ul>
+<li>योजनेनुसार झालेली एक गोष्ट नाव देते, उदाहरणार्थ “एंट्रीआधी योजना लिहिली”,</li>
+<li>एक नियम मोडणे नाव देते, टॅग वापरून,</li>
+<li>पुढच्या आठवड्यात तपासता येईल इतका छोटा एक बदल नाव देते.</li>
+</ul>
+<p>उदाहरण: “चांगले झाले: एंट्रीआधी योजना लिहिली. नियम मोडणे: योजनेपेक्षा उशिरा एक्झिट. बदल: एंट्रीआधी एक्झिट वेळेची तपासणी जोडा.”</p>
+<p>या सरावातील सर्व व्यापार शिकण्याच्या नोंदी आहेत. त्यापैकी एकही लाइव्ह नाही.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ स्लिपेज, योजना पालन, लॉक केलेली फील्ड, मोड वेगळे ठेवणे आणि जर्नल नोंदींचा ऑर्डर तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> पेपर सरावाच्या नोंदींसाठी, कधीही लाइव्ह नाही. तुमच्या जर्नलमध्ये नोंद करा (जर्नल अॅप तयार होईपर्यंत कागदावर).</p>
+<ol>
+<li>तीन शिकण्याच्या नोंदी लिहा. प्रत्येकासाठी आधी नियोजित फील्ड लिहा: एंट्री, स्टॉप, लक्ष्य आणि शेअर्स.</li>
+<li>प्रत्येक व्यापारानंतर प्रत्यक्ष फील्ड लिहा: फिल भाव, वेळ आणि एक्झिट.</li>
+<li>प्रत्येक नोंदीसाठी रुपयांमधील स्लिपेज आणि त्या संचासाठी योजना पालन काढा.</li>
+<li>साप्ताहिक आढाव्यासाठी एक ओळ लिहा. एक बदल नाव द्या.</li>
+<li>प्रत्येक नोंद पेपर म्हणून चिन्हांकित करा. जर लॅब तयार नसेल, तर हे स्प्रेडशीटमध्ये करा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>जर्नल तुम्ही काय केले ते दाखवते. एखादा व्यापार का नफ्यात किंवा तोट्यात गेला, हे ते सांगू शकत नाही.</li>
+<li>एका फिलवरील स्लिपेज हा एकच आकडा आहे. तो तुमच्या सरासरी व्यापार दर्जाचे चित्र दाखवत नाही.</li>
+<li>योजना पालन म्हणजे पाळलेले नियम मोजते, नफा नाही. व्यापार योजनेनुसार होऊनही तोट्यात जाऊ शकतो.</li>
+<li>जर्नल तेव्हाच उपयोगी आहे, जेव्हा ती वेळेवर भरली जाते. स्मृतीतून लिहिलेल्या नोंदी कमी अचूक असतात.</li>
+<li>जर्नल नोंदी वागणूक तपासण्यासाठी आहेत. तोटे लहान दिसावेत यासाठी त्या नाहीत.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>नियोजित फील्ड एंट्रीआधी लिहिली जातात. प्रत्यक्ष फील्ड व्यापारानंतर लिहिली जातात.</li>
+<li>नियोजित फील्ड एंट्रीच्या वेळी लॉक होतात.</li>
+<li>स्लिपेज (Rs) = (फिल भाव - नियोजित भाव) x शेअर्स, लाँग एंट्रीसाठी.</li>
+<li>योजना पालन % = योजना पाळलेले व्यापार / एकूण व्यापार x 100.</li>
+<li>पेपर, फॉरवर्ड, बॅकटेस्ट, लाइव्ह आणि kite_demo नोंदी वेगळ्या ठेवा.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>लॅब 3, नोंदीची व्याख्या आणि जर्नलची वैशिष्ट्ये.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T8.5&amp;body=Page%3A%2008-psychology-and-journaling%2F05-journal-as-a-tool%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../08-psychology-and-journaling/04-discipline/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../08-psychology-and-journaling/06-losing-streak/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../08-psychology-and-journaling/04-discipline/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../08-psychology-and-journaling/06-losing-streak/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

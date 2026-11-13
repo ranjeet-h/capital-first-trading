@@ -1,0 +1,112 @@
+[
+  {
+    "id": "T10.3-q1",
+    "type": "mcq",
+    "prompt": "Which statement best describes why a wrong product type matters?",
+    "options": [
+      {"id": "a", "text": "The product type only changes the colour of the order screen."},
+      {"id": "b", "text": "The product type changes how the position is held, so you must check it before you place an order."},
+      {"id": "c", "text": "The product type is fixed by Kite and never needs checking."},
+      {"id": "d", "text": "The product type only matters after the order is filled, never before."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The product type is not a visual setting. It affects how the position is held.",
+      "c": "You choose the product type. Kite does not fix it for you.",
+      "d": "The product type matters before you place the order. Check it in the order screen."
+    },
+    "concepts": ["product-types"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.3-q2",
+    "type": "scenario",
+    "prompt": "You hold shares and set a stop-loss sell with a trigger of Rs 480. The price later falls only to Rs 485. Does the stop trigger?",
+    "options": [
+      {"id": "a", "text": "Yes. Any fall in price triggers a stop-loss."},
+      {"id": "b", "text": "No. The price must reach or go below the trigger of Rs 480."},
+      {"id": "c", "text": "Yes, because a stop-loss always triggers at the day's low."},
+      {"id": "d", "text": "No. A stop-loss only triggers after the market closes."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A stop-loss needs the price to reach its trigger. A fall to Rs 485 is above Rs 480, so it does not trigger.",
+      "c": "The trigger is the price you set. The day's low is not the rule.",
+      "d": "A stop-loss can trigger at any time while the market is open. This one does not trigger because the price has not reached Rs 480."
+    },
+    "concepts": ["stop-loss", "trigger"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.3-q3",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"The product type does not matter, so I can pick any one I like.\" Which option names the wrong part?",
+    "options": [
+      {"id": "a", "text": "\"The product type does not matter\". The product type does matter, because it changes how the position is held."},
+      {"id": "b", "text": "\"Read each product type before you choose\". This is correct advice."},
+      {"id": "c", "text": "\"The order type sets the trigger\". This is correct for a stop-loss."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "This line is correct. Reading the rules of each product type before you choose is the right habit.",
+      "c": "This line is correct. For a stop-loss order, the trigger is part of the order type setting."
+    },
+    "concepts": ["product-types", "execution-mistakes"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T10.3-q4",
+    "type": "numeric",
+    "prompt": "Hypothetical. The execution quiz draws 10 questions. How many correct answers are needed to reach 90%?",
+    "answer": 9,
+    "tolerance": 0,
+    "unit": "questions",
+    "solution": "90% of 10 = 0.90 x 10 = 9. Check: 9 / 10 = 90%, which passes. 8 / 10 = 80%, which does not.",
+    "concepts": ["quiz-threshold"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.3-q5",
+    "type": "mcq",
+    "prompt": "Which statement about the demo checklist is correct?",
+    "options": [
+      {"id": "a", "text": "The book checks your demo results and reports them to Zerodha."},
+      {"id": "b", "text": "The checklist is self-attested. You tick only what you did."},
+      {"id": "c", "text": "Each tick sends a report to Zerodha."},
+      {"id": "d", "text": "Reflections are optional and can stay empty."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The book cannot check your demo. The checklist is self-attested.",
+      "c": "No report is sent anywhere. Your results stay on your device.",
+      "d": "An empty reflection fails that checklist item."
+    },
+    "concepts": ["self-attested", "reflection"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T10.3-q6",
+    "type": "scenario",
+    "prompt": "One checklist item is ticked, but its reflection box is empty. What happens to that item?",
+    "options": [
+      {"id": "a", "text": "It passes, because the tick is enough."},
+      {"id": "b", "text": "It fails, because an empty reflection fails the item."},
+      {"id": "c", "text": "Only the quiz is checked, so the item is ignored."},
+      {"id": "d", "text": "It passes after one retake of the quiz."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The tick alone is not enough. The reflection must have words in it.",
+      "c": "Every checklist item is checked, and the quiz does not replace an item.",
+      "d": "A quiz retake does not change an empty reflection. Write the reflection to pass that item."
+    },
+    "concepts": ["reflection", "checklist-rules"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

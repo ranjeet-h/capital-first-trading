@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>GTT ऑर्डर आणि त्यांच्या मर्यादा - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../04-kite-and-execution/06-gtt-orders/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../04-kite-and-execution/06-gtt-orders/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T4.6
+title: GTT ऑर्डर आणि त्यांच्या मर्यादा
+page_type: Kite walkthrough
+prerequisites: [T4.4, T4.5]
+labs: [Lab 1]
+estimated_minutes: 20
+-->
+<h1 id="gtt-ऑरडर-आणि-तयांचया-मरयादा"><a class="header" href="#gtt-ऑरडर-आणि-तयांचया-मरयादा">GTT ऑर्डर आणि त्यांच्या मर्यादा</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>तुम्ही Rs 250 ला 100 शेअर्स खरेदी करता. तुम्ही Rs 240 ला विकण्यासाठी GTT लावता, आणि नंतर तो विसरता. काही महिन्यांनी तुम्ही शेअर्स दुसऱ्या मार्गाने विकता. जुना GTT अजूनही वाट पाहत असतो. विसरलेला GTT हा लपलेला जोखीम आहे. तो वाट पाहत राहतो, आणि भाव त्याच्या ट्रिगरपर्यंत पोहोचला की तो कृती करू शकतो.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>GTT म्हणजे good till triggered, म्हणजे ट्रिगर होईपर्यंत चांगला. GTT मध्ये एक ऑर्डर साठवलेली असते, जी ट्रिगर भावाची वाट पाहते. भाव ट्रिगरपर्यंत पोहोचला की Kite साठवलेली ऑर्डर एक्सचेंजवर लावते. साठवलेली ऑर्डर लिमिट ऑर्डर किंवा मार्केट (बाजार) ऑर्डर असू शकते. मार्केट ऑर्डरला भावाचे संरक्षण असते (पाहा <em>ऑर्डरचे प्रकार</em>).</p>
+<p>GTT जास्तीत जास्त एक वर्ष टिकतो. फॉर्ममध्ये समाप्तीची तारीख निवडण्याचे कोणतेही फील्ड नसते. कालावधी Zerodha ठरवते. एका वेळी फक्त मर्यादित सक्रिय GTT असू शकतात. ही मर्यादा Zerodha बदलू शकते, म्हणून Zerodha च्या सपोर्ट पेजवर तपासा. GTT फक्त एकदाच चालतो. तो तयार करताना पैसे किंवा शेअर्स हातात असणे गरजेचे नाही. ट्रिगर गाठला जातो तेव्हा Kite तुमचे फंड आणि होल्डिंग तपासते.</p>
+<p>GTT CNC, NRML आणि MTF ऑर्डरसाठी उपलब्ध आहे.</p>
+<p>GTT ऑर्डर नक्की पूर्ण होईलच, अशी खात्री नसते. ट्रिगर गाठल्यानंतर साठवलेली ऑर्डर तिच्या प्रकाराच्या नियमांनुसार चालते. <em>ऑर्डरचे प्रकार</em> मधील गॅप आणि लिमिटचे नियम तरीही लागू होतात.</p>
+<p>GTT मधील संख्या तुमच्या होल्डिंगइतकीच असली पाहिजे. तुमच्याकडे आहेत त्यापेक्षा जास्त शेअर्स विकण्यास सांगणारा GTT ही चूक आहे. प्रत्येक वेळी संख्या तपासा.</p>
+<p>प्रत्येक व्यापारानंतर प्रत्येक GTT तपासा. प्रत्येक <em>कॉर्पोरेट ॲक्शन</em> घटनेनंतरही तपासा, जसे बोनस शेअर्स किंवा स्प्लिट, कारण यामुळे शेअर्सची संख्या आणि भाव बदलतात. तुमच्या होल्डिंगमध्ये कोणताही बदल झाल्यावर पुन्हा तपासा. काही कॉर्पोरेट ॲक्शनमुळे GTT बंद (disable) होऊ शकतो, आणि मोठ्या ॲक्शनमुळे तो रद्दही होऊ शकतो. असे झाल्यास तुम्हाला नवीन GTT लावावा लागेल.</p>
+<p><strong>GTT कुठे पाहायचे.</strong> Orders मध्ये जा, मग GTT टॅब उघडा. तिथे तुम्ही GTT पाहू, बदलू किंवा रद्द करू शकता.</p>
+<p><strong>GTT कसा तयार करायचा (वेब).</strong> Marketwatch, Holdings किंवा Positions मध्ये जा. इन्स्ट्रुमेंटवर माउस फिरवा आणि More (तीन ठिपके) क्लिक करा. Create GTT (GTT तयार करा) निवडा. फोन ॲपवर, इन्स्ट्रुमेंटवर टॅप करा, Create GTT टॅप करा, तपशील भरा आणि Create GTT बटण स्लाइड करा.</p>
+<p><strong>फॉर्म (वेब).</strong> तुमच्या ॲपमध्ये हे फील्ड शोधा:</p>
+<ul>
+<li>वरच्या डावीकडे Buy किंवा Sell.</li>
+<li>वरच्या उजवीकडे Single किंवा OCO.</li>
+<li>ट्रिगर भाव. Single साठी एक ट्रिगर भाव. OCO साठी दोन: स्टॉप-लॉस ट्रिगर आणि टार्गेट ट्रिगर.</li>
+<li>संख्या (Quantity).</li>
+<li>Limit किंवा Market. Limit निवडला तर लिमिट भाव टाका. विक्रीच्या GTT साठी लिमिट ट्रिगरच्या खाली ठेवा, किंवा ऑर्डर पूर्ण होण्यासाठी Market वापरा.</li>
+<li>Trailing (Stoploss भागात). एक टिक बॉक्स आणि ट्रेलिंग पॉइंटचे मूल्य. ही सुविधा फक्त वेबवर आहे, जून 2026 पासून.</li>
+<li>Place.</li>
+</ul>
+<p>फॉर्ममध्ये समाप्तीचे (expiry) फील्ड नसते.</p>
+<p><strong>प्रकार.</strong></p>
+<ul>
+<li><strong>Single:</strong> एक ट्रिगर. तो खरेदी सुरू करू शकतो किंवा होल्डिंग संपवू शकतो.</li>
+<li><strong>OCO (one cancels the other):</strong> एक स्टॉप-लॉस आणि एक टार्गेट. एक ट्रिगर झाला की त्याची ऑर्डर लागते आणि दुसरी रद्द होते. Sell OCO शेअर्स आणि F&amp;O दोन्हीसाठी चालतो. Buy OCO फक्त F&amp;O साठी आहे.</li>
+<li><strong>Trailing stoploss:</strong> तुम्ही ठरवलेल्या रकमेने ट्रिगर भावासोबत वर सरकतो. शेअर्ससाठी तो फक्त विक्रीच्या ऑर्डरवर चालतो.</li>
+</ul>
+<p><strong>स्टेटस.</strong> Kite मध्ये सात स्टेटस वापरले जातात: Active, Triggered, Disabled, Expired, Cancelled, Rejected आणि Deleted. तुमच्या ॲपमध्ये ते वेगळ्या अक्षरांत किंवा रंगात दिसू शकतात. ते तुमच्या स्वतःच्या स्क्रीनवर शोधा.</p>
+<ul>
+<li><strong>Disabled:</strong> तुमची कृती आवश्यक आहे. उदाहरणार्थ, बोनस किंवा स्प्लिटमुळे तो बंद (disable) होऊ शकतो. ट्रिगर सध्याच्या भावाच्या अगदी जवळ लावलेला असेल तरीही (लावताना 0.25 टक्क्यांच्या आत) तो बंद होऊ शकतो.</li>
+<li><strong>Cancelled किंवा Rejected:</strong> Kite ने तो थांबवला. उदाहरणार्थ, शेअर यादीतून काढला (delist) गेला किंवा त्याचा व्यवहार थांबवला (suspend) गेला, किंवा मोठी कॉर्पोरेट ॲक्शन झाली.</li>
+<li><strong>Expired:</strong> ट्रिगर न होता एक वर्ष गेले, किंवा फ्यूचर्स किंवा ऑप्शन्स कॉन्ट्रॅक्ट संपले.</li>
+<li><strong>Deleted:</strong> तुम्ही तो हटवला.</li>
+</ul>
+<p>GTT बंद (disabled) किंवा कालबाह्य (expired) झाला असेल, तर नवीन GTT लावावा लागेल.</p>
+<p><strong>ट्रिगरची वेळ.</strong> GTT फक्त ट्रेडिंग सुरू असतानाच ट्रिगर होऊ शकतो. शेवटच्या वेळा वेगळ्या आहेत: F&amp;O शेअर्स 3:15 PM पर्यंत, इतर शेअर्स 3:30 PM पर्यंत, आणि F&amp;O कॉन्ट्रॅक्ट्स 3:40 PM पर्यंत. या वेळा Zerodha बदलू शकते. त्यावर अवलंबून राहण्यापूर्वी Zerodha च्या सपोर्ट पेजवर तपासा.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> तुम्ही 100 शेअर्स Rs 250 ला खरेदी केले (CNC). तुमच्या GTT चा ट्रिगर Rs 240 आहे आणि तो 100 शेअर्स विकतो.</p>
+<div class="table-wrapper"><table><thead><tr><th>भाग</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>होल्डिंग</td><td>दिलेले</td><td>100 शेअर्स</td></tr>
+<tr><td>प्रति शेअर तोटा</td><td>250 वजा 240</td><td>Rs 10</td></tr>
+<tr><td>ट्रिगरवर भरल्यास नियोजित तोटा</td><td>100 x 10</td><td><strong>Rs 1,000</strong></td></tr>
+</tbody></table>
+</div>
+<p>ट्रिगरवर ऑर्डर पूर्ण होण्याची खात्री नसते. ट्रिगरच्या खाली भरलेली ऑर्डर नियोजित Rs 1,000 पेक्षा जास्त खर्च येऊ शकतो.</p>
+<p>तुमच्या आढाव्याच्या तारखेआधी GTT बंद, रद्द किंवा कालबाह्य झाला, तर त्या तारखेनंतर पोझिशनला स्टॉप राहत नाही. हे फक्त उदाहरण आहे.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: kite-flow | flow: create-a-gtt | platform: web | caption: GTT साठी क्लिक मार्ग, ट्रिगरपासून स्टेटसच्या यादीपर्यंत. सराव फक्त Zerodha डेमो किंवा डमी डेटावरच करा. स्क्रीन आणि बटणांची नावे बदलू शकतात, म्हणून Kite च्या मदत पेजवर तपासा. -->
+<p>फॉर्मवरील ट्रिगर भाव, संख्या आणि Buy किंवा Sell निवड पाहा. फॉर्ममध्ये समाप्तीचे फील्ड नाही, हे लक्षात घ्या. मग Orders, नंतर GTT उघडा आणि यादी पाहा. तिथल्या कोणत्याही GTT ची संख्या तुमच्या होल्डिंगशी तुलना करा. फरक असेल तर तो इशारा आहे.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> तुमच्याकडे Rs 250 ला खरेदी केलेले 100 शेअर्स आहेत. Rs 240 ट्रिगरचा GTT आखा. मग Rs 245 ट्रिगरने होणाऱ्या नियोजित तोट्याशी तुलना करा.</p>
+<p>संकेत:</p>
+<ol>
+<li>तोटा = (खरेदी भाव - ट्रिगर) x संख्या.</li>
+<li>संख्या तुमच्या होल्डिंगशी तपासा.</li>
+<li>तुमची आढावा तारीख लिहा.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>ट्रिगर Rs 240: 100 x (250 - 240) = 100 x 10 = <strong>Rs 1,000</strong>.</li>
+<li>ट्रिगर Rs 245: 100 x (250 - 245) = 100 x 5 = <strong>Rs 500</strong>.</li>
+<li>संख्या: 100, तुमच्या होल्डिंगइतकीच.</li>
+<li>आढावा तारीख: तुमच्या जर्नलमध्ये एक तारीख लिहा.</li>
+</ul>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> काल्पनिक. तुमच्याकडे Rs 400 ला खरेदी केलेले 200 शेअर्स आहेत. ट्रिगर, संख्या, नियोजित तोटा, समाप्ती तपासण्याची तारीख आणि साप्ताहिक आढावा पायरी असलेला GTT आराखडा लिहा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>नमुना उत्तर:</p>
+<ul>
+<li>ट्रिगर: Rs 380 (एक उदाहरण).</li>
+<li>संख्या: 200, तुमच्या होल्डिंगइतकीच.</li>
+<li>नियोजित तोटा: 200 x (400 - 380) = 200 x 20 = <strong>Rs 4,000</strong>.</li>
+<li>समाप्ती तपासण्याची तारीख: GTT तयार केल्यानंतर एक वर्षाने येणारी तारीख.</li>
+<li>साप्ताहिक आढावा पायरी: GTT चा स्टेटस आणि त्याची संख्या तुमच्या होल्डिंगशी तपासा.</li>
+</ul>
+<p>GTT सेव्ह करण्यापूर्वी नियोजित तोटा तुमच्या जोखीम मर्यादेशी तपासा. सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>या प्रकरणात GTT च्या नियोजित तोट्याची गणना, संख्येचा नियम आणि GTT च्या मर्यादा तपासल्या जातात.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> लिखित कामासाठी <strong>paper</strong> (कागदी काम). फक्त GTT फॉर्म वाचण्यासाठी <code>kite_demo</code> वापरा. ते तुमच्या जर्नलमध्ये नोंदवा (जर्नल ॲप तयार नसेल, तर कागदावर).</p>
+<ol>
+<li>GTT चा ट्रिगर आणि लिमिट फक्त कागदावर लिहा.</li>
+<li>Kite डेमोमध्ये GTT फॉर्म शोधा आणि फील्ड नोंदवा. स्क्रीनने दिलेला कोणताही इशारा नोंदवा. फॉर्ममध्ये समाप्तीचे फील्ड नाही, हे तपासा.</li>
+<li>संख्या तपासणीबद्दल एक वाक्य लिहा: ती होल्डिंगशी जुळते हे तुम्ही कसे तपासले?</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>GTT हा जोखीम मर्यादा नाही. तो तुमच्या योजनेची जागा घेत नाही.</li>
+<li>GTT नक्की बाहेर पडण्याची खात्री नाही. गॅपमुळे ऑर्डर ट्रिगरपासून दूर भरली जाऊ शकते (पाहा <em>गॅप आणि स्टॉपसाठी त्यांचा अर्थ</em>).</li>
+<li>GTT विसरला जाऊ शकतो. तुम्ही तयार केलेल्या प्रत्येक GTT साठी जर्नलमध्ये आढावा तारीख लिहा.</li>
+<li>होल्डिंगपेक्षा मोठा GTT ही चूक आहे. त्यावर अवलंबून राहण्यापूर्वी संख्या दुरुस्त करा.</li>
+<li>शेअर्स दुसऱ्या मार्गाने विकल्यानंतर, त्याच शेअरवरील कोणताही GTT तपासा. तो आता योजनेचा भाग नसेल तर रद्द करा.</li>
+<li>डिलिव्हरी शेअर्स विकण्यासाठी CDSL TPIN अधिकृतता लागते, किंवा DDPI किंवा POA. ती नसेल तर GTT विक्री ट्रिगर झाल्यावर अयशस्वी होऊ शकते (पाहा <em>ऑर्डर बुक</em>).</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>GTT ट्रिगर भावाची वाट पाहतो, मग साठवलेली ऑर्डर लावतो.</li>
+<li>GTT जास्तीत जास्त एक वर्ष टिकतो, आणि सक्रिय GTT ची संख्या मर्यादित असते.</li>
+<li>GTT ऑर्डर नक्की पूर्ण होईलच अशी खात्री नसते. गॅप आणि लिमिटचे नियम तरीही लागू होतात.</li>
+<li>संख्या तुमच्या होल्डिंगइतकीच असली पाहिजे.</li>
+<li>प्रत्येक व्यापारानंतर आणि प्रत्येक कॉर्पोरेट ॲक्शननंतर प्रत्येक GTT तपासा.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Zerodha सपोर्ट लेख GTT बद्दल: तो काय आहे, बंद (disabled), रद्द (cancelled) आणि कालबाह्य (expired) GTT, आणि GTT का पूर्ण झाला नाही. Zerodha या मर्यादा बदलते, म्हणून त्या तिथेच खात्री करा.</li>
+<li>NSE India कॉर्पोरेट ॲक्शन सूचना, त्या शेअरसाठी</li>
+</ul>
+<!-- facts-needed: GTT validity period; number of GTTs allowed; products allowed for a GTT; trigger-range rules; how Kite handles GTTs on corporate actions; field labels on the GTT form. -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T4.6&amp;body=Page%3A%2004-kite-and-execution%2F06-gtt-orders%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../04-kite-and-execution/05-product-types/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../04-kite-and-execution/07-order-book/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../04-kite-and-execution/05-product-types/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../04-kite-and-execution/07-order-book/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

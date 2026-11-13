@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The capital-first rules - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/00-start-here/02-capital-first-rules/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T0.2
+title: The capital-first rules
+page_type: Concept
+prerequisites: [T0.1]
+labs: [Lab 3]
+estimated_minutes: 25
+-->
+<h1 id="the-capital-first-rules"><a class="header" href="#the-capital-first-rules">The capital-first rules</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A hypothetical household has Rs 4,00,000 in savings. After two bad weeks of trading, the trader thinks, “I can earn it back.” Within a month, the trading money is gone. The trader then moves money from the emergency fund to win it back. Each step broke a rule. Every one of those rules could have been written down in advance.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Capital-first means one thing. Protect the money you can least afford to lose. Do this before you think about what you might gain. The rules below are short. Each one blocks one specific way of losing money. This book calls that a loss path.</p>
+<p><strong>Household money is separate.</strong> Emergency funds and bills you must pay are never trading money. Do not use them to cover trading losses. Do not use them to top up a losing account.</p>
+<p><strong>Trading capital is money you can afford to lose entirely.</strong> You set the amount before your first trade. The number is your choice. This book shows example amounts, but it does not set one for you.</p>
+<p><strong>No leverage or borrowed money</strong> in the learning stage or the early live stage. Leverage means controlling a bigger position than your own money pays for. It makes losses bigger, just as it makes gains bigger (<em>Leverage and margin</em>).</p>
+<p><strong>No F&amp;O as a starting activity.</strong> F&amp;O means futures and options. In this book, F&amp;O is covered as theory only, in Track 9. It is not a starting path for a beginner.</p>
+<p><strong>Never average down.</strong> Averaging down means buying more of something that has fallen, so your average cost goes down. It puts more money into an idea that is already failing (<em>Portfolio exposure and concentration</em>).</p>
+<p><strong>Never increase size after losses.</strong> Putting more money in after a loss makes the fall from your peak deeper and faster (<em>Drawdown, recovery and compounding</em>).</p>
+<p><strong>No-trade days are a valid result.</strong> Not trading is a decision. It is not a failure.</p>
+<p><strong>No daily income target drives trades.</strong> A goal like “I must earn this much today” pushes you to trade when there is no clear reason to trade. That is overtrading (<em>Overtrading and why daily profit targets encourage it</em>).</p>
+<p>Read the list as a map of ways to lose money. For each rule, ask which loss path it blocks. If you cannot name the path, you do not understand the rule yet.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Rule</th><th>Loss mechanism it prevents</th></tr></thead><tbody>
+<tr><td>Household money is separate</td><td>Emergency money used to pay for losses</td></tr>
+<tr><td>Trading capital is set before any trade and is money you can afford to lose</td><td>A number picked after a loss; trading with money you cannot afford to lose</td></tr>
+<tr><td>No leverage or borrowed money</td><td>Losses bigger than the money you put in (<em>Leverage and margin</em>)</td></tr>
+<tr><td>No F&amp;O as a starting activity</td><td>Bets with leverage before the basics are learned</td></tr>
+<tr><td>Never average down</td><td>Adding money to a failing idea (<em>Portfolio exposure and concentration</em>)</td></tr>
+<tr><td>Never increase size after losses</td><td>A faster fall after losses (<em>Drawdown, recovery and compounding</em>)</td></tr>
+<tr><td>No-trade days are valid</td><td>Pressure to trade without a clear reason</td></tr>
+<tr><td>No daily income target driving trades</td><td>Overtrading (<em>Overtrading and why daily profit targets encourage it</em>)</td></tr>
+</tbody></table>
+</div>
+<p>Scan the right-hand column first. Each entry is a way an account can shrink. Then check each rule on the left against it.</p>
+<!-- component: capital-first-rules | capital: 50000 | savings: 400000 | caption: Switch each rule on or off and play a made-up run. The luck is the same each time. Only the rules change. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical household savings:</strong> Rs 4,00,000.</p>
+<p><strong>Trading capital set by you:</strong> Rs 50,000.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Working</th><th>Result</th></tr></thead><tbody>
+<tr><td>1</td><td>Trading capital as a share of savings</td><td>50,000 / 4,00,000 = 0.125</td></tr>
+<tr><td>2</td><td>As a percentage</td><td>12.5%</td></tr>
+<tr><td>3</td><td>Savings left untouched</td><td>4,00,000 - 50,000 = Rs 3,50,000</td></tr>
+<tr><td>4</td><td>The trading account falls 30%</td><td>30% of 50,000 = 0.30 x 50,000 = Rs 15,000</td></tr>
+<tr><td>5</td><td>Trading account after the fall</td><td>50,000 - 15,000 = Rs 35,000</td></tr>
+<tr><td>6</td><td>Total savings after the loss</td><td>35,000 + 3,50,000 = Rs 3,85,000</td></tr>
+<tr><td>7</td><td>Loss as a share of total savings</td><td>15,000 / 4,00,000 = 3.75%</td></tr>
+</tbody></table>
+</div>
+<p><strong>Check:</strong> 4,00,000 - 15,000 = 3,85,000, which matches step 6.</p>
+<p>The loss of Rs 15,000 hurts. But it is 3.75% of total savings. The Rs 3,50,000 you did not use is still there. Before you start, ask this question: <strong>could the household absorb this loss without harm?</strong> If the honest answer is no, the trading capital is too large. This is true whatever the amount is.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task:</strong> A friend asks to borrow Rs 2 lakh for “a sure intraday trade” (a trade bought and sold on the same day). Using the rules above, list the rules that are broken. Then say what you would reply.</p>
+<p><strong>Hints:</strong></p>
+<ol>
+<li>Check the source of the money.</li>
+<li>Check for leverage.</li>
+<li>Look at the word “sure.”</li>
+<li>Ask what happens if the trade loses.</li>
+</ol>
+<p><strong>Answer:</strong> Rules broken:</p>
+<ul>
+<li>Borrowed money. The trade would be paid for with a loan. The rules do not allow that at this stage.</li>
+<li>Leverage. The borrowed money would buy a bigger position than your own capital.</li>
+<li>A claim of certainty. No trade is sure. The word “sure” is a warning sign.</li>
+<li>Intraday trading. In this book it is paper-only, and it is an optional later module. It is not a starting activity with real money.</li>
+<li>If the trade loses, you still owe Rs 2 lakh. The loss is added to that debt.</li>
+</ul>
+<p>Reply: “No. I do not borrow to trade, and no trade is sure. If I ever start, it will be with money I set aside from my own savings, and I will write the rule down first.”</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task:</strong> Write three capital-first rules of your own. Give each one a number. Use no hints.</p>
+<details><summary>Check your answer</summary>
+<p>Check that each rule has a number. Check that it names the loss path it blocks. Here is one format that works: “Trading capital is at most [your number] of my savings, set before my first trade.” This book does not give you the number. You choose it. A rule with no number cannot be checked. A rule that cannot be checked will be bent after a loss.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Six questions check the rules on leverage, averaging down, no-trade days and household money. They also check the capital sums.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p><strong>Mode:</strong> learning note, in Lab 3. Write it in your journal, or on paper if the journal app is not ready yet.</p>
+<ol>
+<li>Write your capital statement in three lines. Include total savings, the trading capital you set, and the amount left untouched.</li>
+<li>Use made-up or blank figures. Do not use your real savings.</li>
+<li>Do not record a live account.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>This book does not set a trading-capital number for you. That choice is yours. You make it before your first trade.</li>
+<li>The rules block some loss paths. They do not promise that any trade will work.</li>
+<li>A rule written after a loss is made in the worst moment. Write your rules in advance.</li>
+<li>The worked example is hypothetical. Real households differ. The test is always the same: can the loss be absorbed?</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Household money and emergency funds are never trading capital.</li>
+<li>Set trading capital before any trade. It must be money you can afford to lose.</li>
+<li>Leverage, borrowed money, averaging down and adding size after losses each open a loss path.</li>
+<li>A no-trade day is a valid result.</li>
+<li>Rs 50,000 of trading capital out of Rs 4,00,000 is 12.5% (hypothetical). A 30% fall costs Rs 15,000, or 3.75% of savings.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p><strong>Sources (names only):</strong></p>
+<ul>
+<li>SEBI investor education pages on leverage and margin.</li>
+<li>Zerodha support on margin.</li>
+</ul>
+<p><strong>Facts checked on 11 Nov 2026:</strong></p>
+<ul>
+<li>This chapter quotes no margin or leverage figures. Margin rules differ by product and change over time, and each broker sets its own policy within SEBI’s rules. Before you rely on any margin number, read the current margin pages on the Zerodha support site and SEBI’s circulars on margin. <em>Leverage and margin</em> explains the idea in more detail.</li>
+<li>The capital sums in this chapter are round numbers for practice. The book does not suggest how much money you should put into trading.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../00-start-here/01-what-trading-is-and-is-not/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../00-start-here/03-how-to-use-this-book/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../00-start-here/01-what-trading-is-and-is-not/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../00-start-here/03-how-to-use-this-book/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

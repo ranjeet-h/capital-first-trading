@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Bollinger Bands - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/05-indicators/06-bollinger-bands/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T5.6
+title: Bollinger Bands
+page_type: Math/Calculator
+prerequisites: [T5.2, T5.3]
+labs: [Lab 4]
+estimated_minutes: 25
+-->
+<h1 id="bollinger-bands"><a class="header" href="#bollinger-bands">Bollinger Bands</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A reader sees a close above the upper line on a chart. The reader thinks, “The price is too high, so it must fall.” The reader sells the next morning. The price keeps rising for two more weeks. This chapter shows what the bands measure, how to calculate them by hand, and why touching a band is not a signal on its own.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Bollinger Bands are three lines drawn around the price. Each line has a job.</p>
+<ul>
+<li><strong>Middle band.</strong> The average of the last N closes. A common choice is N = 20.</li>
+<li><strong>Standard deviation (SD).</strong> A number that shows how spread out those same closes are. Small SD means the closes sit close together. Large SD means they are spread wide.</li>
+<li><strong>Upper band.</strong> The middle band plus k times the SD.</li>
+<li><strong>Lower band.</strong> The middle band minus k times the SD. A common choice is k = 2.</li>
+</ul>
+<p>In words first: upper band = average + (k times SD). In symbols: upper = average + k x SD.</p>
+<p>There are two ways to calculate SD:</p>
+<ul>
+<li><strong>Population SD</strong> divides the total of the squared differences by N.</li>
+<li><strong>Sample SD</strong> divides the same total by N minus 1.</li>
+</ul>
+<p>Tools can use either one. John Bollinger’s own site says it uses the population calculation. Zerodha’s charting manual does not say which one Kite uses, so check before you compare numbers from two tools. (As of 11 Nov 2026, bollingerbands.com. This is a common convention, not an exchange rule.)</p>
+<p>Some points to keep in mind:</p>
+<ul>
+<li>The bands measure spread around an average. They do not measure what the price will do next.</li>
+<li>When the price moves more, the SD rises and the bands get wider. When the price calms down, the bands narrow.</li>
+<li>A close above the upper band tells you where the price sits compared with recent closes. It does not say the price will turn.</li>
+</ul>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: indicator-playground | indicator: bollinger | closes: 100,102,104,103,105 | period: 5 | k: 2 | sdMode: population | caption: Three lines drawn around the closes; a switch changes between population and sample SD and the bands redraw -->
+<p>Watch the middle line first. Then look at how far the upper and lower lines sit from it. Switch from population to sample SD and see how the bands move a little. Change k from 2 to 1 and see how much narrower the bands become.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Five closes: Rs 100, Rs 102, Rs 104, Rs 103 and Rs 105. We use N = 5 so the sum is easy to check by hand. We use k = 2 and population SD.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>1. Middle band (average)</td><td>(100 + 102 + 104 + 103 + 105) / 5</td><td>Rs 102.80</td></tr>
+<tr><td>2. Differences from the average</td><td>100 - 102.80, and so on</td><td>-2.80, -0.80, +1.20, +0.20, +2.20</td></tr>
+<tr><td>3. Squared differences</td><td>each difference times itself</td><td>7.84, 0.64, 1.44, 0.04, 4.84</td></tr>
+<tr><td>4. Total of squares</td><td>7.84 + 0.64 + 1.44 + 0.04 + 4.84</td><td>14.80</td></tr>
+<tr><td>5. Population variance</td><td>14.80 / 5</td><td>2.96</td></tr>
+<tr><td>6. Population SD</td><td>square root of 2.96</td><td>Rs 1.72</td></tr>
+<tr><td>7. Band distance</td><td>2 x 1.72, using the unrounded SD</td><td>Rs 3.44</td></tr>
+<tr><td>8. Upper band</td><td>102.80 + 3.44</td><td><strong>Rs 106.24</strong></td></tr>
+<tr><td>9. Lower band</td><td>102.80 - 3.44</td><td><strong>Rs 99.36</strong></td></tr>
+</tbody></table>
+</div>
+<p>Keep the extra decimals while you work. Round only at the end.</p>
+<p><strong>Hypothetical. Same closes, sample SD.</strong> Total of squares is still 14.80. Divide by N minus 1 = 4. Sample variance = 14.80 / 4 = 3.70. Sample SD = square root of 3.70 = Rs 1.92 (rounded). Band distance = 2 x 1.9235 = Rs 3.85 (rounded). Upper band = Rs 106.65. Lower band = Rs 98.95.</p>
+<p>The sample version gives slightly wider bands here. The difference comes only from the divisor.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<!-- component: indicator-playground | indicator: bollinger | closes: 10,12,14 | period: 3 | k: 2 | sdMode: population | edit: on | caption: The closes of the guided exercise. Change them, the window or k, and see the bands -->
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Closes Rs 10, Rs 12 and Rs 14. N = 3, population SD, k = 2. Find the middle band, the SD and the upper and lower bands.</p>
+<p>Hints:</p>
+<ol>
+<li>The average of 10, 12 and 14 is the middle band.</li>
+<li>Square each difference from the average. Add the squares.</li>
+<li>Divide the total by 3 to get the variance. Then take the square root.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>Middle band: (10 + 12 + 14) / 3 = <strong>Rs 12</strong>.</li>
+<li>Differences: -2, 0, +2. Squares: 4, 0, 4. Total: 8.</li>
+<li>Variance: 8 / 3 = 2.667.</li>
+<li>SD: square root of 2.667 = 1.633, which rounds to Rs 1.63.</li>
+<li>Band distance: 2 x 1.633 = 3.266.</li>
+<li>Upper band: 12 + 3.266 = <strong>Rs 15.27</strong>.</li>
+<li>Lower band: 12 - 3.266 = <strong>Rs 8.73</strong>.</li>
+</ul>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Closes Rs 200, Rs 204, Rs 196 and Rs 200. N = 4, population SD, k = 2. Find the upper and lower bands.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>Middle band: (200 + 204 + 196 + 200) / 4 = Rs 200.</li>
+<li>Differences: 0, +4, -4, 0. Squares: 0, 16, 16, 0. Total: 32.</li>
+<li>Population variance: 32 / 4 = 8.</li>
+<li>SD: square root of 8 = 2.828, which rounds to Rs 2.83.</li>
+<li>Band distance: 2 x 2.828 = 5.657, which rounds to Rs 5.66.</li>
+<li>Upper band: 200 + 5.66 = <strong>Rs 205.66</strong>.</li>
+<li>Lower band: 200 - 5.66 = <strong>Rs 194.34</strong>.</li>
+</ul>
+<p>All prices are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the arithmetic of the bands, the difference between the two SD methods, and why a band touch is not a signal alone.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong>. This is a learning log, not a record of trades. Log it in your journal (or on paper until the journal app is ready).</p>
+<ol>
+<li>Choose five stocks from any chart you are allowed to view.</li>
+<li>Each week, write the close and whether it was outside the upper or lower band.</li>
+<li>Each week, write the band width. Band width = upper band minus lower band.</li>
+<li>Read the log at the end of the month. Write what surprised you.</li>
+<li>Do not use the log as proof that any band rule works.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>The bands use only past closes. They say nothing certain about the next close.</li>
+<li>In a strong trend, price can stay near one band for a long time. A touch can be the start of a trend, not a turn.</li>
+<li>The result depends on the window and the SD method. Two tools can draw different bands from the same closes.</li>
+<li>A band touch is not a signal alone. A rule needs a stated entry, a stop and a test before anyone uses it (<em>Backtesting basics and the realism contract</em> explains how a test is set up).</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>The middle band is an average. The upper and lower bands add and subtract k times the SD.</li>
+<li>SD measures spread. A narrow band means the closes were close together.</li>
+<li>Population SD divides by N. Sample SD divides by N minus 1. Check which one your tool uses.</li>
+<li>A close outside a band is an observation. It is not a forecast.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>John Bollinger, <em>Bollinger on Bollinger Bands</em> (the originator’s book).</li>
+<li>Zerodha Varsity, Bollinger Bands module (reference only, original wording).</li>
+<li>Zerodha, Kite charting manual (kite.trade/docs/kite/charting). It gives no default Bollinger setting, so read it on your own screen.</li>
+<li>StockCharts ChartSchool, Bollinger Bands page. It gives a 20-period simple average, with bands 2 standard deviations away. (As of 11 Nov 2026. This is a common convention, not an exchange rule.)</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../05-indicators/05-macd/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../05-indicators/07-fibonacci-retracement/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../05-indicators/05-macd/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../05-indicators/07-fibonacci-retracement/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

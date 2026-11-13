@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Breakouts - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/03-chart-reading/05-breakouts/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T3.5
+title: Breakouts
+page_type: Concept
+prerequisites: [T3.3, T3.4]
+labs: [Lab 1, Lab 4]
+estimated_minutes: 25
+-->
+<h1 id="breakouts"><a class="header" href="#breakouts">Breakouts</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p><strong>Hypothetical.</strong> A stock stays between Rs 300 and Rs 310 for 10 days. One morning it trades at Rs 311 for a minute. It then closes at Rs 308, inside the range. A trader says, “It broke out, so I bought.” The price did trade above the top. The close did not. This chapter explains why the close matters and how to test a breakout rule.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>A <strong>range</strong> has a top and a bottom. A <strong>breakout</strong> is a move above the top of the range. A <strong>breakdown</strong> is a move below the bottom of the range.</p>
+<p>Define the breakout before you look at the chart:</p>
+<ul>
+<li><strong>Close-based:</strong> the candle closes beyond the level.</li>
+<li><strong>Touch-based:</strong> price trades beyond the level, even for a moment.</li>
+</ul>
+<p>Close-based is easier to test. A close is one fixed number for the period. A touch can happen and reverse within seconds. A plan that uses touches needs more rules to say what counts.</p>
+<p>A <strong>false breakout</strong> is a move beyond the level that fails to hold. Price closes back inside the range. The move was real, but it did not last.</p>
+<p>Volume is supporting context. A high-volume breakout is more active, but it is not proof. Volume is covered in <em>Volume and what it adds</em>.</p>
+<p>A breakout rule has an edge only if the rule, the costs and the number of trades all work together. That idea is covered in <em>What a trading edge is</em>. The book gives no failure rate for breakouts. Test your own rules in Lab 4 before you trust them.</p>
+<p>Breakouts attract fear of missing out. That is the urge to buy because others seem to be buying. Define the rule before the candle closes. Do not chase a move that has already gone far beyond the level.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<p>Use the candle builder with the range drawn as a band. The band shows the top and the bottom of the range. Watch whether the close lands above the top edge or inside the band.</p>
+<p>Then use predict-next. Guess the candle after a close beyond the range. The point is to see how little one close tells you about the next candle.</p>
+<!-- component: candle-builder | range: 300-310 | caption: Candles with the range drawn as a band; the top edge is the breakout level; watch whether the close lands above or inside the band -->
+<!-- component: predict-next | context: close beyond range top | caption: Guess the candle after a close beyond the range; one close gives little information about the next candle -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> A 10-day range runs from Rs 300 to Rs 310.</p>
+<div class="table-wrapper"><table><thead><tr><th>Day</th><th>Close</th><th>Volume</th><th>Result</th></tr></thead><tbody>
+<tr><td>11</td><td>Rs 312</td><td>1,80,000 shares (20-day average 1,00,000)</td><td>Close above Rs 310: close-based breakout</td></tr>
+<tr><td>12</td><td>Rs 307</td><td>Not used here</td><td>Back inside the range: false breakout</td></tr>
+</tbody></table>
+</div>
+<p>Relative volume on day 11 = 1,80,000 divided by 1,00,000 = 1.8. Check: 1.8 times the average is 1,80,000.</p>
+<p>A hypothetical entry is at Rs 312. A hypothetical stop is at Rs 308. Risk per share = 312 minus 308 = Rs 4.</p>
+<p>On day 12 the close is Rs 307. That is below the stop of Rs 308. Under the next-open fill rule used in Lab 4, the exit would happen at the open of day 13. The exit price is not known until that open is known. Check: 307 is below 308, so the close is through the stop.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> <strong>Hypothetical.</strong> A range runs from Rs 500 to Rs 520. A day closes at Rs 522. The planned stop is Rs 516. The planned size is 40 shares. Work out the distance of the close beyond the range top, the stop distance from the entry, and the planned loss.</p>
+<p>Hints:</p>
+<ol>
+<li>The breakout distance is measured from the range top. Compute 522 minus 520.</li>
+<li>The stop distance is the entry minus the stop. Compute 522 minus 516.</li>
+<li>The planned loss is the shares times the stop distance. Compute 40 times that distance.</li>
+</ol>
+<p><strong>Answer:</strong> The close is Rs 2 above the range top (522 minus 520). The stop is Rs 6 below the entry (522 minus 516). The planned loss is 40 x 6 = Rs 240. Check: 40 x (522 minus 516) = 40 x 6 = 240.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> <strong>Hypothetical.</strong> A range runs from Rs 150 to Rs 158. A day closes at Rs 160 on 1.5 times the average volume. Entry Rs 160. Stop Rs 154. Size 30 shares. Compute the planned loss. State whether the close-based breakout rule was met.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>Risk per share: 160 minus 154 = Rs 6.</li>
+<li>Planned loss: 30 x 6 = Rs 180. Check: 30 x 6 = 180.</li>
+<li>Close-based rule: the close of Rs 160 is above the range top of Rs 158. The rule is met.</li>
+<li>The volume of 1.5 times average is context only. It does not prove the breakout.</li>
+</ul>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks close versus touch, false breakouts, and the planned loss on a breakout trade.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong>. Log it in your journal, or on paper if the journal is not ready.</p>
+<ol>
+<li>Choose 5 breakouts from chart history on any chart you are allowed to view.</li>
+<li>For each one, write the breakout definition you used before you look at what happened next.</li>
+<li>Record the close-based result after 5 days.</li>
+<li>Mark whether each breakout was a false breakout.</li>
+<li>Label the whole log “hindsight study, not evidence”.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>A touch is not a breakout under a close-based rule. A trade above the top that closes inside the range has not broken out.</li>
+<li>Volume is context, not proof. A high-volume false breakout is still a false breakout.</li>
+<li>Chasing a move that has already moved far past the level adds risk. Your planned loss may grow far beyond the plan.</li>
+<li>Circuit limits can stop trading beyond a price band, and that can affect a breakout (<em>Circuit limits and halts</em>). NSE sets daily bands of 2%, 5%, 10% or 20% for most stocks. Stocks with futures and options use a flexible 10% range instead. (As of 11 Nov 2026, NSE FAQs and SEBI’s master circular. Check the NSE site for changes.)</li>
+<li>Work out the planned loss before you enter. Share count multiplies the risk per share (<em>Position sizing step by step</em>).</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>A breakout is a move beyond the range top. A breakdown is a move beyond the range bottom.</li>
+<li>Define close-based or touch-based before the candle closes.</li>
+<li>A false breakout closes back inside the range.</li>
+<li>Volume supports the context. It does not prove the breakout.</li>
+<li>Breakout rules must be tested, not assumed.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Zerodha Varsity, breakout material (reference only)</li>
+<li>NSE India, circuit-limit pages</li>
+<li>SEBI circulars on price bands</li>
+</ul>
+<p>Facts checked on 11 Nov 2026:</p>
+<ul>
+<li>Band percentages come from NSE’s Basic FAQs on the Secondary Market. The flexible range for stocks with futures and options comes from SEBI’s master circular on trading. The full detail is in <em>Circuit limits and halts</em>.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../03-chart-reading/04-trend-and-market-structure/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../03-chart-reading/06-gaps-and-stops/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../03-chart-reading/04-trend-and-market-structure/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../03-chart-reading/06-gaps-and-stops/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

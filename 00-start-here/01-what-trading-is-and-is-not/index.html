@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>What trading is and is not - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/00-start-here/01-what-trading-is-and-is-not/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T0.1
+title: What trading is and is not
+page_type: Concept
+prerequisites: []
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="what-trading-is-and-is-not"><a class="header" href="#what-trading-is-and-is-not">What trading is and is not</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Asha is a hypothetical beginner. She has read a few articles about making money from the market. Her plan is to risk Rs 3,000 on one idea. She aims to make Rs 500 when it works. Before she buys or sells anything, she needs one number. That number is how often she must be right just to break even. Most beginners never work this out. This book asks this question first.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p><strong>A share is a piece of a company.</strong> Buying a share does not buy a ticket with a price on it. It buys a part of the business. If a company has 1,000 shares in total and you hold 10, you own 1 percent of it. You get that same share of its profits and assets.</p>
+<p>People often mix up three words. Each one describes how you hold money and how long you plan to hold it. None of them names a type of asset.</p>
+<ul>
+<li><strong>Investing</strong> means holding a business for years. Your return comes from its profits, its dividends and the growth in its value. You manage risk by spreading money across many companies, which is called diversification, and by waiting.</li>
+<li><strong>Trading</strong> means buying and selling over days to months, and following written rules. Your return comes from price moves between when you buy and when you sell. You manage risk with limits on each trade.</li>
+<li><strong>Speculation</strong> means betting on a short price move. The result is highly uncertain. People often borrow money to do it.</li>
+</ul>
+<p>The label depends on how you hold something, not on what it is. The same share can be an investment for one person and a speculation for another.</p>
+<p><strong>A price is a meeting point, not a final judgement.</strong> A price is where one buyer and one seller agreed, at one moment. It is not a guarantee of what the company is worth. It is not a promise of where the price goes next.</p>
+<p><strong>Trading moves money from one person to another, before costs.</strong> In one trade, one person’s gain is another person’s loss. The exchange sits in the middle and matches the buy and sell orders. After brokerage, taxes and other charges, an active trader usually starts behind. Later chapters put numbers on this. SEBI, the market regulator, studied individual traders in the equity derivatives (F&amp;O) segment. Its paper is called “Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26)” and was published in August 2026. It found that 87.7% of individual traders in that segment lost money in FY26 (the year from April 2025 to March 2026). In FY25 the share was 90.9%. The study covers F&amp;O trading only, not ordinary share buying. It looked at the top 15 brokers, which cover about 90% of individual traders. It also found that individual traders paid about Rs 25,000 crore a year in trading costs. This book looks at the study in more detail later. (As of 11 Nov 2026, SEBI Department of Economic and Policy Analysis. Reports get updated, so check the SEBI site for the latest.)</p>
+<p><strong>Never mix three kinds of result.</strong></p>
+<ul>
+<li>Theoretical: a calculation written down before anything happens.</li>
+<li>Backtested: a test run on old price data.</li>
+<li>Live: real money, with orders that really get done, and real feelings.</li>
+</ul>
+<p>A backtest that made money is still not a live record. This book keeps all three labels on every number.</p>
+<p><strong>This book promises no income.</strong> Learning to think clearly about trading is not the same as making money from it.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<div class="table-wrapper"><table><thead><tr><th></th><th>Investing</th><th>Trading</th><th>Speculation</th></tr></thead><tbody>
+<tr><td>Time horizon</td><td>Years</td><td>Days to months</td><td>Very short; the bet is on a near move</td></tr>
+<tr><td>Where the return comes from</td><td>Earnings, dividends, growth in value</td><td>Price moves between buying and selling</td><td>A short, uncertain price move</td></tr>
+<tr><td>Typical risk control</td><td>Spreading money and time</td><td>Written limits on each trade</td><td>Often none stated; may use borrowed money</td></tr>
+<tr><td>Typical mistake</td><td>Selling when prices fall; following a story everyone is excited about</td><td>Trading too often; putting too much into one trade; having no written rules</td><td>Borrowing to buy more; treating a guess as a plan</td></tr>
+</tbody></table>
+</div>
+<p>Read down the Speculation column. Its risk-control row says that no limit is stated. That is not a method. Compare the “typical mistake” row with any habit you already have.</p>
+<!-- component: trading-reality | capital: 50000 | caption: A made-up year of 100 beginners. Most end behind where they started. The aim of this book is to lose little while you learn. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical plan:</strong> risk Rs 3,000 to make Rs 500 per trade. Let W be the win rate. This is the share of trades that win, written as a fraction. Break-even means the average gain equals the average loss.</p>
+<p>Average gain per trade = W x 500
+Average loss per trade = (1 - W) x 3,000</p>
+<p>Set them equal. Then solve for W:</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Working</th><th>Result</th></tr></thead><tbody>
+<tr><td>1</td><td>Set average gain equal to average loss</td><td>500 x W = 3,000 x (1 - W)</td></tr>
+<tr><td>2</td><td>Multiply out the right side</td><td>500W = 3,000 - 3,000W</td></tr>
+<tr><td>3</td><td>Add 3,000W to both sides</td><td>3,500W = 3,000</td></tr>
+<tr><td>4</td><td>Divide both sides by 3,500</td><td>W = 3,000 / 3,500 = 6/7</td></tr>
+<tr><td>5</td><td>Turn it into a percentage</td><td>6/7 = 0.857…, so 85.7%</td></tr>
+</tbody></table>
+</div>
+<p><strong>Check:</strong> when W = 6/7, the average gain is 6/7 x 500 = Rs 428.57. The average loss is 1/7 x 3,000 = Rs 428.57. The two are equal.</p>
+<p>So the trader must win about 86 of every 100 trades to break even. This is before any costs. Costs push the needed win rate higher. See <em>Costs on a trade</em>.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task:</strong> Sort four hypothetical plans into investing, trading or speculation.</p>
+<p>(a) Hold a company for 5 years and reinvest the dividends.
+(b) Buy before results are announced and sell the next day.
+(c) Borrow money to double a position.
+(d) Make fixed monthly purchases and hold them for 10 years.</p>
+<p><strong>Hints:</strong></p>
+<ol>
+<li>Ask “how long?”</li>
+<li>Ask “where does the return come from?”</li>
+<li>Ask “what limits the loss?”</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>(a) Investing. The horizon is 5 years. The return comes from dividends and growth in the business’s value.</li>
+<li>(b) Speculation. It is a one-day bet on an uncertain result. No written limit is described. If the plan had written per-trade rules, it would be trading. The description gives no rules.</li>
+<li>(c) Speculation. The plan uses borrowed money. It has no stated limit on the loss.</li>
+<li>(d) Investing. The horizon is 10 years. The plan buys regularly and earns the return from the business over time.</li>
+</ul>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task:</strong> Write one paragraph about something you plan to do with money in the markets. Sort it as investing, trading or speculation. Use no hints.</p>
+<details><summary>Check your answer</summary>
+<p>There is no single correct answer. Check your paragraph for three things. Look for the time horizon. Look for the source of the return. Look for what limits the loss. If one is missing, your label is not yet backed up. If you have no plan yet, writing “no plan yet” is an honest answer.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Six questions check the three definitions, the break-even sum and the claims about income.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p><strong>Mode:</strong> learning note. Write it in a journal, or on paper. No trades.</p>
+<ol>
+<li>Write one paragraph about why you want to learn trading.</li>
+<li>Write what would make you stop. For example: “a loss bigger than the money I set aside for trading before I started”.</li>
+<li>Do not record any live account or real trade.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>The break-even win rate leaves out costs. With costs, the real figure is higher. See <em>Costs on a trade</em>.</li>
+<li>A calculation is not a result. A backtest is not a live record.</li>
+<li>Knowing the definitions shows you are learning. It does not show you make a profit.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Investing, trading and speculation differ by time frame, source of return and loss control. They do not differ by what you buy.</li>
+<li>A price is where buyers and sellers agreed at one moment. It is not a guarantee.</li>
+<li>If you risk Rs 3,000 to make Rs 500, the break-even win rate is 6/7, or 85.7%. This is before costs.</li>
+<li>Keep theoretical, backtested and live results apart. Always.</li>
+<li>This book promises no income.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p><strong>Sources (names only):</strong></p>
+<ul>
+<li>SEBI investor education pages.</li>
+<li>SEBI study, “Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26)”, August 2026.</li>
+<li>Zerodha Varsity, as a reference only (link only, no text copied).</li>
+</ul>
+<p><strong>Facts checked on 11 Nov 2026:</strong></p>
+<ul>
+<li>The SEBI study’s title, date and figures (87.7% of individuals lost money in FY26, 90.9% in FY25, and about Rs 25,000 crore a year in costs) come from SEBI’s own paper. The figures are for equity derivatives only. Check the SEBI site for newer reports.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../00-start-here/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../00-start-here/02-capital-first-rules/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../00-start-here/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../00-start-here/02-capital-first-rules/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>बॅकटेस्टिंगची मूलतत्त्वे आणि वास्तववादाचा करार - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../07-testing-and-validation/03-backtesting-basics-and-realism/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../07-testing-and-validation/03-backtesting-basics-and-realism/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T7.3
+title: बॅकटेस्टिंगची मूलतत्त्वे आणि वास्तववादाचा करार
+page_type: Lab
+prerequisites: [T7.2, T2.4, T2.5, T6.2]
+labs: [Lab 4, Lab 1, Lab 2]
+estimated_minutes: 35
+-->
+<h1 id="बॅकटेसटिंगची-मूलतततवे-आणि-वासतववादाचा-करार"><a class="header" href="#बॅकटेसटिंगची-मूलतततवे-आणि-वासतववादाचा-करार">बॅकटेस्टिंगची मूलतत्त्वे आणि वास्तववादाचा करार</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>समजा एक चाचणी असा व्यापार दाखवते, जो Rs 490 च्या स्टॉप भावावर बाहेर पडतो. खऱ्या आयुष्यात त्या दिवशी बाजार Rs 480 ला उघडला. चाचणी सांगते की तोटा Rs 336 आहे. खऱ्या ओपनवरून तोटा Rs 576 आहे. चाचणी Rs 240 ने जास्त सौम्य होती. वेळ आणि फिल नियमांचा एक संच अशा चुकीला रोखतो. हे प्रकरण ते नियम सांगते. पुस्तक त्यांना वास्तववादाचा करार म्हणते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>बॅकटेस्ट</strong> म्हणजे जुने भाव पुन्हा चालवून त्यावर एक निश्चित नियमांचा संच लावणे. जुन्या डेटावर नियमांनी काय केले असते, ते ती दाखवते. बॅकटेस्टचा प्रत्येक निकाल काल्पनिक असतो. प्रत्येक निकालावरचे लेबल असे असते: <strong>काल्पनिक बॅकटेस्ट. लाइव्ह निकाल नाही.</strong></p>
+<p>वास्तववादाचा करार हा असा नियमांचा संच आहे, जो बॅकटेस्टला खऱ्या व्यापारासारखे वागायला लावतो. हे मुख्य नियम आहेत:</p>
+<ul>
+<li><strong>वेळ.</strong> सिग्नल दिवस t च्या बंदसह त्या बंदपर्यंतच्या डेटावर आधारित असतो. ऑर्डर दिवस t+1 च्या ओपनला पूर्ण होते. दिवस t हा दिवस असतो, ज्यात बंद झाल्यानंतर तुम्हाला सिग्नल दिसतो. तुम्ही सर्वात लवकर पुढच्या दिवसाच्या ओपनलाच कृती करू शकता.</li>
+<li><strong>एकाच बारवर फिल नाही.</strong> ज्या क्लोजमुळे सिग्नल झाला, त्याच क्लोजला फिल होणे खऱ्या ट्रेडिंगमध्ये शक्य नाही. बाजार बंद झाल्यानंतरच तुम्हाला क्लोज दिसतो.</li>
+<li><strong>स्टॉप, लाँग व्यापार.</strong> स्टॉप दिवसाच्या लो शी तपासला जातो. ओपनच आधीच स्टॉपच्या खाली असेल, तर फिल ओपनला होतो. नसेल, आणि लो स्टॉपपर्यंत पोहोचला, तर फिल स्टॉप भावाला होतो.</li>
+<li><strong>ट्रेलिंग स्टॉप.</strong> भाव वाढतो तसा ट्रेलिंग स्टॉप वर सरकतो. या करारात तो क्लोजला अपडेट होतो. नवी पातळी पुढच्या दिवसापासून लागू होते.</li>
+<li><strong>खर्च.</strong> प्रत्येक फिल लॅब 2 मधील खर्च सेटिंग्जमधून जातो. डिफॉल्ट CNC आहे, म्हणजे डिलिव्हरी प्रकार, जिथे तुम्ही शेअर्स विकत घेऊन धरता (<em>उत्पादन प्रकार</em>). खर्चाबद्दल <em>एका व्यापारावरील खर्च</em> मध्ये सांगितले आहे.</li>
+<li><strong>स्लिपेज.</strong> स्लिपेज म्हणजे नियोजित भावापेक्षा वाईट फिल. ते ऐच्छिक आहे. व्यापाराच्या प्रत्येक बाजूसाठी तुम्ही ते ठरवता (<em>स्लिपेज</em>).</li>
+<li><strong>साइजिंग.</strong> व्यापाराचा आकार <em>पोझिशन साइजिंग, टप्प्याटप्प्याने</em> मधील नियमांनुसार ठरतो. लीव्हरेज वापरला जात नाही. लीव्हरेज म्हणजे उधार घेतलेले पैसे, आणि हा मार्ग कोणतेही वापरत नाही (<em>लीव्हरेज आणि मार्जिन</em>).</li>
+<li><strong>समान इनपुट, समान निकाल.</strong> समान डेटा, समान सेटिंग्ज आणि समान सीड दिल्यास समान निकाल मिळतो. सीड म्हणजे कोणत्याही यादृच्छिक पायरीसाठी सुरुवातीची संख्या. प्रत्येक रन त्याच्या सेटिंग्ज आणि डेटाची नोंद जतन करतो. या नोंदीला मॅनिफेस्ट म्हणतात.</li>
+</ul>
+<p><strong>नफा-तोटा (P&amp;L)</strong> म्हणजे व्यापाराने मिळवलेला किंवा गमावलेला पैसा. निव्वळ P&amp;L म्हणजे खर्च आणि स्लिपेज वजा केल्यानंतरचा निकाल. खर्च वगळणारी बॅकटेस्ट ट्रेडरला प्रत्यक्ष मिळणाऱ्यापेक्षा जास्त P&amp;L दाखवते.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: sl-trigger-sim | stop: 490 | open: 480 | caption: लाँग व्यापारासाठी स्टॉप ओलांडणारी गॅपची केस. ओपन स्टॉपच्या खाली आहे, म्हणून फिल ओपनला होतो. संदर्भासाठी स्टॉप-लॉस आणि स्टॉप-लॉस मार्केट तर्कही दाखवला आहे. -->
+<p>हे चित्र एका दिवसाचे आहे. स्टॉप Rs 490 वर आहे. दिवस Rs 480 ला उघडतो, जो स्टॉपच्या खाली आहे. ओपन स्टॉपच्या वर न्या आणि फिल कुठे सरकतो ते पाहा. मग ओपन पुन्हा स्टॉपच्या खाली न्या आणि तुलना करा.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> भांडवल Rs 50,000. प्रति व्यापार 1% जोखीम, म्हणजे Rs 500. सिग्नल बंदला येतो. पुढचा ओपन Rs 504 आहे. स्टॉप Rs 490 आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. जोखीम मर्यादा</td><td>50,000 x 1%</td><td>Rs 500</td></tr>
+<tr><td>2. प्रति शेअर जोखीम</td><td>504 - 490</td><td>Rs 14</td></tr>
+<tr><td>3. कच्चे शेअर्स</td><td>floor(500 / 14) = floor(35.7)</td><td>35</td></tr>
+<tr><td>4. रोख मर्यादा</td><td>floor(50,000 / 504) = floor(99.2)</td><td>99</td></tr>
+<tr><td>5. 25% एकाग्रता मर्यादा</td><td>floor(12,500 / 504) = floor(24.8)</td><td>24</td></tr>
+<tr><td><strong>शेअर्स</strong></td><td>35, 99 आणि 24 यांपैकी किमान</td><td><strong>24</strong></td></tr>
+</tbody></table>
+</div>
+<p>एकाग्रता मर्यादा ही बंधनकारक मर्यादा आहे. ती सर्वात लहान मर्यादा आहे, म्हणून तीच आकार ठरवते.</p>
+<p><strong>नियोजित तोटा.</strong> 24 x 14 = Rs 336.</p>
+<p><strong>स्टॉप ओलांडणारी गॅप.</strong> पुढचा दिवस Rs 480 ला उघडतो, जो Rs 490 च्या स्टॉपच्या खाली आहे. स्टॉप ओपनला, म्हणजे Rs 480 ला फिल होतो. तोटा असा आहे:</p>
+<p>24 x (504 - 480) = 24 x 24 = <strong>Rs 576</strong>, खर्चाआधी.</p>
+<p>हे नियोजित तोट्यापेक्षा Rs 240 जास्त आहे: 576 - 336 = 240.</p>
+<p>स्टॉप भावाने गॅपपासून व्यापाराचे रक्षण केले नाही. फिल ओपनच्या मागे गेला. या उदाहरणात खर्च धरलेले नाहीत. ते लॅब 2 मधील खर्च सेटिंग्जमधून येतात.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> स्टॉप Rs 492 धरून सोडवलेले उदाहरण पुन्हा सोडवा. शेअर्स, बंधनकारक मर्यादा, नियोजित तोटा आणि पोझिशनचे मूल्य शोधा.</p>
+<p>संकेत:</p>
+<ol>
+<li>प्रति शेअर जोखीम बदलते. ती आधी पुन्हा काढा.</li>
+<li>मग कच्चे, रोख आणि एकाग्रता मर्यादा त्या क्रमाने पुन्हा काढा.</li>
+<li>कोणती मर्यादा बंधनकारक आहे आणि का ते सांगा.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>प्रति शेअर जोखीम: 504 - 492 = Rs 12.</li>
+<li>कच्चे शेअर्स: floor(500 / 12) = floor(41.7) = 41.</li>
+<li>रोख मर्यादा: floor(50,000 / 504) = 99. यात बदल होत नाही.</li>
+<li>एकाग्रता मर्यादा: floor(12,500 / 504) = floor(24.8) = 24. यात बदल होत नाही.</li>
+<li>शेअर्स: 41, 99 आणि 24 यांपैकी किमान = <strong>24</strong>.</li>
+<li>बंधनकारक मर्यादा: <strong>एकाग्रता मर्यादा</strong>. ती सर्वात लहान मर्यादा आहे.</li>
+<li>नियोजित तोटा: 24 x 12 = Rs 288.</li>
+<li>पोझिशनचे मूल्य: 24 x 504 = Rs 12,096, जे भांडवलाच्या 24.2% आहे.</li>
+</ul>
+<p>जवळचा स्टॉप मोठा कच्चा आकडा देतो. तरीही एकाग्रता मर्यादा आकार 24 शेअर्सवर ठेवते.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> ओपन Rs 495 आहे. दिवसाचा लो Rs 488 आहे. स्टॉप Rs 490 आहे. स्टॉप कोणत्या भावाला फिल होतो, आणि का?</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>स्टॉप Rs 490 ला फिल होतो.</p>
+<p>ओपन Rs 495 आहे, जो स्टॉपच्या वर आहे. ओपनला स्टॉप ओलांडून गॅप नाही. दिवसाचा लो Rs 488 आहे, जो स्टॉपच्या खाली आहे. म्हणजे दिवसात लो स्टॉप ओलांडतो. या मॉडेलमध्ये फिल स्टॉप भावाला, म्हणजे Rs 490 ला होतो.</p>
+<p>खरे फिल या मॉडेलपेक्षा वाईट असू शकतात. खाली दिलेल्या मर्यादा पाहा. स्टॉप ऑर्डर त्या दिवशीच्या बाजारावर आणि तुम्ही वापरलेल्या ऑर्डर प्रकारावर अवलंबून फिल होते. कोणताही फिल भाव गृहीत धरण्याआधी Zerodha च्या ऑर्डर प्रकारांवरील सपोर्ट पेज आणि NSE च्या प्राईस बँड पानांवर वाचा.</p>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ एकाच बारवरील फिल, गॅप फिल, खर्चाची जागा, पुनरावृत्ती होणारे निकाल आणि एंट्रीच्या वेळेवरील चूक शोधणे, हे तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> कागदी काम (पेपर). सरावासाठी लॅब 4 वापरा. लॅब तयार नसेल, तर हे काम कागदावर किंवा स्प्रेडशीटमध्ये करा.</p>
+<ol>
+<li>काल्पनिक 20 दिवसांची भाव मालिका तयार करा. त्यात एक दिवस असा ठेवा, जो तुमच्या स्टॉपच्या खाली उघडतो.</li>
+<li>तीच मालिका वर जाऊ द्या, म्हणजे ट्रेलिंग स्टॉप वर सरकेल आणि नंतरच्या दिवशी बाहेर पडेल.</li>
+<li>काहीही चालवण्याआधी अपेक्षित नियोजित तोटा, गॅपच्या दिवशीचा अपेक्षित फिल आणि खर्चाआधीचा अपेक्षित P&amp;L लिहा.</li>
+<li>लॅब 4 मध्ये मालिका चालवा, किंवा कागदावर किंवा स्प्रेडशीटमध्ये काढा.</li>
+<li>निकालाची तुमच्या अपेक्षित आकड्यांशी तुलना करा. प्रत्येक फरक आणि त्याचे कारण लिहा.</li>
+<li>नोंद तुमच्या जर्नलमध्ये लिहा (किंवा जर्नल ॲप तयार होईपर्यंत कागदावर).</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>वास्तववादाचा करार हा किमान दर्जा आहे. प्रत्यक्ष फिल बॅकटेस्टशी जुळतील, अशी ही हमी नाही.</li>
+<li>गॅपचा नियम ओपनला फिल करतो. लो फक्त स्टॉप ओलांडत असला तरी खरे फिल ओपनपेक्षा वाईट असू शकतात.</li>
+<li>या प्रकरणातील खर्च इथे मोजलेले नाहीत. खर्च वगळणारी बॅकटेस्ट खऱ्या व्यापाऱ्यासाठी खूप जास्त निकाल दाखवते.</li>
+<li>प्रत्येक नियम पाळणारी बॅकटेस्ट भविष्याबद्दल तरीही चुकीची असू शकते. लूक-अहेड, सर्व्हायव्हरशिप आणि ओव्हरफिटिंग पुढच्या प्रकरणांत आहेत (<em>लूक-अहेड बायस</em>, <em>सर्व्हायव्हरशिप बायस</em>, <em>ओव्हरफिटिंग आणि तुम्ही किती गोष्टी आजमावल्या</em>).</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>सिग्नल दिवस t च्या क्लोजचा वापर करतो. ऑर्डर दिवस t+1 च्या ओपनला फिल होते.</li>
+<li>सिग्नलच्या स्वतःच्या क्लोजला फिल होणे वास्तववादी नाही.</li>
+<li>ओपन स्टॉपच्या खाली गॅप झाला, तर स्टॉप ओपनला फिल होतो, स्टॉप भावाला नाही.</li>
+<li>प्रत्येक फिलमधून खर्च जातो. निव्वळ P&amp;L म्हणजे खर्चानंतरचा निकाल.</li>
+<li>बॅकटेस्टचा प्रत्येक निकाल काल्पनिक आहे, प्रत्यक्ष निकाल नाही.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>NSE प्राईस बँड पाने. प्राईस बँड एका दिवसात शेअरला ठरावीक हालचालीपलीकडे व्यापार करण्यापासून रोखू शकतात, ज्यामुळे फिल बदलू शकते. हे पुस्तक कोणताही बँड सांगत नाही.</li>
+<li>Zerodha चार्जेस पान (zerodha.com/charges), खर्च सेटिंग्जसाठी. दर बदलतात म्हणून ते या प्रकरणात पुन्हा दिलेले नाहीत.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T7.3&amp;body=Page%3A%2007-testing-and-validation%2F03-backtesting-basics-and-realism%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../07-testing-and-validation/02-historical-data/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../07-testing-and-validation/04-look-ahead-bias/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../07-testing-and-validation/02-historical-data/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../07-testing-and-validation/04-look-ahead-bias/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

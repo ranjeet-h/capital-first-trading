@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>आधार आणि प्रतिरोध - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../03-chart-reading/03-support-and-resistance/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../03-chart-reading/03-support-and-resistance/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T3.3
+title: आधार आणि प्रतिरोध
+page_type: Concept
+prerequisites: [T3.1, T3.2]
+labs: [Lab 1, Lab 3]
+estimated_minutes: 25
+-->
+<h1 id="आधार-आणि-परतिरोध"><a class="header" href="#आधार-आणि-परतिरोध">आधार आणि प्रतिरोध</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p><strong>काल्पनिक.</strong> एक शेअर तीन वेळा सुमारे Rs 251 वर पोहोचला. प्रत्येक वेळी भाव पुन्हा खाली आला. एक ट्रेडर म्हणतो, “Rs 251 ही भिंत आहे. चौथ्यांदाही ती टिकेल.” मग तो स्टॉप-लॉस अगदी Rs 251 वर लावतो. पुढची छोटी घसरण शेअरला Rs 250.5 वर नेते आणि स्टॉप-लॉस लागतो. ट्रेडरचा तोटा झाला, कारण ती पातळी कधी भिंत नव्हतीच. भाव तिथे आधी वळला होता, एवढेच.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>आधार</strong> म्हणजे असे क्षेत्र जिथे भाव अनेकदा पडायचे थांबून वर वळला आहे. <strong>प्रतिरोध</strong> म्हणजे असे क्षेत्र जिथे भाव अनेकदा वाढायचे थांबून खाली वळला आहे. दोन्ही भूतकाळातून येतात. खरेदीदार किंवा विक्रेते आधी कुठे दिसले होते, ते ते सांगतात. पुढे काय होईल याची ते खात्री देत नाहीत.</p>
+<p>एकच रेषा नाही, तर <strong>क्षेत्र</strong> वापरा. क्षेत्र म्हणजे भावांची अशी पट्टी जिथे वळणे एकवटली होती. एकच रेषा पसरलेपणा लपवते. एकाच चार्टवर दोन लोक वेगवेगळी क्षेत्रे काढू शकतात. तुमचे क्षेत्र हा तुमचा निर्णय आहे, आणि तो तुम्ही लिहून ठेवला पाहिजे.</p>
+<p>भाव एखाद्या क्षेत्राला अनेकदा स्पर्श करतो, म्हणजे ते पुन्हा पुन्हा जिथे पोहोचते, तरी ते सिद्ध होत नाही. भाव अनेक वेळा तिथे पोहोचला म्हणून तो पुन्हा वर वळण्याची शक्यता वाढते, असे नाही. स्पर्श संख्या हे भूतकाळाचे वर्णन आहे.</p>
+<p><strong>भूमिका बदल</strong> म्हणजे तुटलेल्या पातळीचे काम बदलू शकते. तुटलेला आधार पुढे प्रतिरोधासारखे काम करू शकतो. तुटलेला प्रतिरोध पुढे आधारासारखे काम करू शकतो. भाव जुन्या पातळीवर परत येऊन तिथे वळू शकतो. हेही भूतकाळाचे वर्णन आहे, खात्री नाही.</p>
+<p>Rs 250 किंवा Rs 500 सारखे <strong>गोल आकडे</strong> अनेक ट्रेडर्स पाहतात. काही लोक त्यांना पातळी मानतात. अंदाज बांधण्यासाठी त्यांचे मूल्य सिद्ध झालेले नाही. त्यांना एक गृहीतक समजा, जे तुम्ही तपासू शकता.</p>
+<p>स्टॉप-लॉस क्षेत्राच्या <strong>पलीकडे</strong> ठेवा, क्षेत्रावर नाही. नेहमीची हालचाल अनेकदा क्षेत्राच्या कडांना स्पर्श करते. कडेवर ठेवलेला स्टॉप त्या नेहमीच्या हालचालीने लागू शकतो. क्षेत्राच्या पलीकडचा स्टॉप तरीही ठरवलेला तोटा आहे. तो ठरवलेला तोटा तुमच्या जोखीम बजेटमध्ये बसला पाहिजे (<em>पोझिशन साइजिंग टप्प्याटप्प्याने</em>).</p>
+<p>आधार हे गृहीतक आहे. भाव “आधारावर” आहे म्हणून पडणारा शेअर आणखी खरेदी करू नका. त्याला <strong>सरासरी कमी करणे</strong> म्हणतात. म्हणजे सरासरी खर्च कमी करण्यासाठी पडणाऱ्या शेअरची आणखी खरेदी करणे. हे <em>स्कॅल्पिंग, ऑप्शन खरेदी आणि मार्टिंगेल का धोकादायक आहेत</em> या प्रकरणात सांगितले आहे.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>तीन स्विंग हाय, प्रत्येक नाकारलेला, एकमेकांजवळ एकवटलेले:</p>
+<div class="table-wrapper"><table><thead><tr><th>स्विंग हाय</th><th>भाव</th><th>पुढे काय झाले</th></tr></thead><tbody>
+<tr><td>हाय 1</td><td>Rs 251</td><td>नाकारला गेला</td></tr>
+<tr><td>हाय 2</td><td>Rs 252</td><td>नाकारला गेला</td></tr>
+<tr><td>हाय 3</td><td>Rs 250.5</td><td>नाकारला गेला</td></tr>
+</tbody></table>
+</div>
+<p>तीन उच्च बिंदू Rs 250.5 आणि Rs 252 यांच्या दरम्यान आहेत. ती पट्टी म्हणजे क्षेत्र. एका भावाकडे पाहू नका, एकवटलेल्या बिंदूंचा पसरलेपणा पाहा.</p>
+<!-- component: sr-zones | caption: या प्रकरणातील तीन स्विंग हाय (Rs 251, Rs 252 आणि Rs 250.5) असलेला काल्पनिक चार्ट. चार्टवर दोनदा टॅप करून तुमचे स्वतःचे क्षेत्र चिन्हांकित करा, मग तपासा दाबा. या प्रकरणाचे क्षेत्र पाहण्यासाठी त्याचे क्षेत्र बटण दाबा: Rs 249 ते Rs 252 क्षेत्र, Rs 247 चा स्टॉप-लॉस, 49 शेअर्स आणि Rs 245 चा ठरवलेला तोटा. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> Rs 251, Rs 252 आणि Rs 250.5 येथील स्विंग हाय प्रत्येक वेळी नाकारले गेले. नंतर भाव त्यांच्या वर बंद झाला. समजा जुना प्रतिरोध आता आधारासारखे काम करतो (भूमिका बदल). आधार क्षेत्र Rs 249 ते Rs 252 आहे. समजा प्रवेश Rs 252 वर आहे, म्हणजे क्षेत्राच्या वरच्या टोकावर. समजा स्टॉप-लॉस Rs 247 वर आहे, जो क्षेत्राच्या खालच्या टोकापेक्षा Rs 2 खाली आहे. भांडवल Rs 50,000 आहे. प्रत्येक व्यापारावर जोखीम 1 टक्के आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>टप्पा</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. जोखीम बजेट</td><td>50,000 x 1%</td><td>Rs 500</td></tr>
+<tr><td>2. प्रति शेअर जोखीम</td><td>252 वजा 247</td><td>Rs 5</td></tr>
+<tr><td>3. कच्चे शेअर्स</td><td>floor(500 / 5)</td><td>100</td></tr>
+<tr><td>4. रोख मर्यादा</td><td>floor(50,000 / 252) = floor(198.4)</td><td>198</td></tr>
+<tr><td>5. एकाग्रता मर्यादा (25%)</td><td>floor(12,500 / 252) = floor(49.6)</td><td>49</td></tr>
+<tr><td><strong>शेअर्स</strong></td><td>100, 198 आणि 49 यांपैकी सर्वात लहान</td><td><strong>49</strong></td></tr>
+</tbody></table>
+</div>
+<p>बंधनकारक मर्यादा: <strong>एकाग्रता मर्यादा</strong>. ठरवलेला तोटा 49 x Rs 5 = Rs 245 आहे. तो Rs 500 च्या जोखीम बजेटमध्ये आहे. एकाग्रता मर्यादा सर्वात लहान मर्यादा आहे, म्हणून तीच आकार ठरवते.</p>
+<p>हे टप्पे <em>पोझिशन साइजिंग टप्प्याटप्प्याने</em> या प्रकरणातील टप्प्यांसारखेच आहेत.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> <em>हे पाहा</em> तक्त्यातील तीन स्विंग हाय वापरा. त्या तिघांना समाविष्ट करणारे एक क्षेत्र काढा. तुमच्या क्षेत्राची वरची कड आणि खालची कड लिहा.</p>
+<p>संकेत:</p>
+<ol>
+<li>आधी स्विंग हाय शोधा. इथे त्या आधीच दिल्या आहेत.</li>
+<li>एका बिंदूऐवजी एकवटलेला गट शोधा.</li>
+<li>एकवटलेले सर्व हाय समाविष्ट होतील असे क्षेत्र काढा.</li>
+<li>तुम्ही लावलेला कोणताही स्टॉप-लॉस क्षेत्राच्या कडेवर नाही, तर त्याच्या पलीकडे असतो.</li>
+</ol>
+<p><strong>उत्तर:</strong> तिन्ही हाय समाविष्ट करणारे क्षेत्र Rs 250.5 (खालची कड) ते Rs 252 (वरची कड) असे आहे. उदाहरणात Rs 249 ते Rs 252 असे रुंद क्षेत्र वापरले आहे. दोन्ही निर्णय आहेत. तुमचे क्षेत्र बरोबर आहे, जर त्यात तिन्ही हाय आहेत आणि ते तिथे का काढले ते तुम्ही सांगू शकता.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> <strong>काल्पनिक.</strong> आधार क्षेत्र Rs 380 ते Rs 384 आहे. प्रवेश Rs 384. स्टॉप-लॉस Rs 377. भांडवल Rs 40,000. जोखीम 1 टक्के. एकाग्रता मर्यादा 25 टक्के. प्रति शेअर जोखीम, कच्चे शेअर्स, रोख मर्यादा, एकाग्रता मर्यादा आणि अंतिम शेअर्स काढा. बंधनकारक मर्यादा कोणती ते सांगा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>जोखीम बजेट: 40,000 x 1% = Rs 400.</li>
+<li>प्रति शेअर जोखीम: 384 वजा 377 = Rs 7.</li>
+<li>कच्चे शेअर्स: floor(400 / 7) = floor(57.1) = 57.</li>
+<li>रोख मर्यादा: floor(40,000 / 384) = floor(104.2) = 104.</li>
+<li>एकाग्रता मर्यादा: floor(40,000 x 25% / 384) = floor(10,000 / 384) = floor(26.04) = 26.</li>
+<li>अंतिम शेअर्स: 57, 104 आणि 26 यांपैकी सर्वात लहान = <strong>26</strong>.</li>
+<li>बंधनकारक मर्यादा: <strong>एकाग्रता मर्यादा</strong>.</li>
+<li>ठरवलेला तोटा: 26 x 7 = Rs 182.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ क्षेत्र आणि रेषा यातील फरक, भूमिका बदल, आणि स्टॉप क्षेत्राच्या पलीकडे का ठेवायचा हे तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> शिकण्याची नोंद (व्यापाराची नोंद नाही). ती तुमच्या जर्नलमध्ये लिहा. जर्नल ॲप तयार होईपर्यंत कागदावर लिहा. या नोंदींसाठी लॅब 3 ही जागा आहे.</p>
+<ol>
+<li>कोणत्याही परवानगी असलेल्या चार्टमधून 10 चार्ट निवडा.</li>
+<li>प्रत्येक चार्टवर एक आधार क्षेत्र किंवा एक प्रतिरोध क्षेत्र काढा.</li>
+<li>पुढे काय झाले ते पाहण्यापूर्वी क्षेत्र लिहून ठेवा.</li>
+<li>नंतर प्रत्येक क्षेत्राला टिकले, तुटले, किंवा तपासले गेले नाही असे चिन्हांकित करा.</li>
+<li>नोंदी शिकण्याच्या नोंदी म्हणून ठेवा. त्यांना पुरावा मानू नका.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>आधार आणि प्रतिरोध भूतकाळातील वळणांचे वर्णन करतात. पूर्वी टिकलेली पातळी पुन्हा टिकेलच असे नाही.</li>
+<li>तुमचे क्षेत्र हा तुमचा निर्णय आहे. दुसरा ट्रेडर एकाच चार्टवर वेगळे क्षेत्र काढू शकतो.</li>
+<li>स्पर्श संख्या ही संभाव्यता नाही. तीन स्पर्शांमुळे चौथा स्पर्श टिकण्याची शक्यता वाढत नाही.</li>
+<li>क्षेत्राच्या पलीकडचा स्टॉप-लॉस तरीही ठरवलेला तोटा आहे. तो <em>पोझिशन साइजिंग टप्प्याटप्प्याने</em> मधील टप्प्यांनी तुमच्या जोखीम बजेटशी तपासा.</li>
+<li>भाव आधारावर आहे म्हणून कधीही सरासरी कमी करू नका. सरासरी कमी केल्याने तोट्यातील पोझिशनमध्ये भर पडते, आणि योजनेने ते होऊ देऊ नये.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>क्षेत्र म्हणजे भावांची पट्टी. रेषा म्हणजे एक भाव.</li>
+<li>आधार आणि प्रतिरोध भूतकाळातील वळणांचे वर्णन करतात. ते भविष्यातील वळणांची खात्री देत नाहीत.</li>
+<li>तुटलेली पातळी आपले काम बदलू शकते. याला भूमिका बदल म्हणतात.</li>
+<li>स्टॉप-लॉस क्षेत्राच्या पलीकडे ठेवा, कधीही त्याच्या अगदी कडेवर नाही.</li>
+<li>स्टॉप-लॉस तेव्हाच सुरक्षित असतो, जेव्हा त्याचा ठरवलेला तोटा जोखीम बजेटमध्ये बसतो.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Zerodha Varsity, आधार आणि प्रतिरोध मॉड्यूल (केवळ संदर्भासाठी)</li>
+<li>तांत्रिक ट्रेडिंग नियमांवरील समीक्षित (peer-reviewed) पुनरावलोकने</li>
+<li>डाऊ थिअरीचा आढावा, प्रमाणित तांत्रिक-विश्लेषण पुस्तकांमधून</li>
+</ul>
+<!-- facts-needed: none for the arithmetic. The round-number claim is a contested hypothesis and is labelled as untested in the text. -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T3.3&amp;body=Page%3A%2003-chart-reading%2F03-support-and-resistance%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../03-chart-reading/02-timeframes/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../03-chart-reading/04-trend-and-market-structure/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../03-chart-reading/02-timeframes/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../03-chart-reading/04-trend-and-market-structure/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

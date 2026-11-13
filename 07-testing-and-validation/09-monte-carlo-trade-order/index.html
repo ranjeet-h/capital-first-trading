@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Monte Carlo of trade order - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/07-testing-and-validation/09-monte-carlo-trade-order/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T7.9
+title: Monte Carlo of trade order
+page_type: Lab
+prerequisites: [T7.8, T2.9, T2.10]
+labs: [Lab 4, Lab 3]
+estimated_minutes: 30
+-->
+<h1 id="monte-carlo-of-trade-order"><a class="header" href="#monte-carlo-of-trade-order">Monte Carlo of trade order</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Two traders use the same ten trades. This is a hypothetical example. Trader A meets the winning trades first, and the account climbs. Trader B meets the same losses in a bunch, and the account falls by Rs 4,000 before it recovers. Both traders end with the same total. Only the path differs. A single backtest shows one path only. This chapter shows how to test many paths for the same trades.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Reordering trades does not change the expectancy. The total and the average stay the same. But the path changes. The maximum drawdown and the longest losing streak can change a lot.</p>
+<p>A <strong>Monte Carlo</strong> test works like this:</p>
+<ol>
+<li>Take the list of trade results.</li>
+<li>Shuffle the order, or resample the list, to make a new path.</li>
+<li>Record the maximum drawdown and the longest losing streak for that path.</li>
+<li>Repeat 1,000 times or more.</li>
+</ol>
+<p>Read the results as percentiles. The 5th percentile is a low value. The 50th is the middle. The 95th is a high value. For drawdown, the 95th percentile means that 95 runs in every 100 had a drawdown no bigger than that figure. Five runs in every 100 had a bigger drawdown. Do not read only the average.</p>
+<p>The test has one big assumption. It treats each trade as independent. That means one trade does not depend on the one before it. Real losses often cluster in hard periods of the market. So this test can understate the streaks you may meet.</p>
+<p><strong>Probability of ruin</strong> is the chance that your account falls to a level you chose before the run. For example, a hypothetical level of Rs 25,000 on Rs 50,000 of capital. The level must be written down before the run. Choosing it after you see the results is a form of hindsight.</p>
+<p>The output is a range of possible paths for the same trades. It is not a forecast of your next drawdown.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<p>Use this table after a run. Fill it in from your own results. Read the 50th row first, then the 95th row.</p>
+<div class="table-wrapper"><table><thead><tr><th>Percentile</th><th>Max drawdown (Rs)</th><th>Longest losing streak (trades)</th></tr></thead><tbody>
+<tr><td>5th</td><td></td><td></td></tr>
+<tr><td>50th</td><td></td><td></td></tr>
+<tr><td>95th</td><td></td><td></td></tr>
+</tbody></table>
+</div><!-- component: monte-carlo-shuffle | caption: Shuffle the order of the same trades many times and read the range of drawdowns and losing streaks. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical system.</strong> Win rate 35 percent. Average win 2R. Average loss 1R. Capital Rs 50,000. Risk 1 percent of capital, which is Rs 500 per trade.</p>
+<p><strong>Step 1. Expectancy in R.</strong> (0.35 x 2) - (0.65 x 1) = 0.70 - 0.65 = <strong>+0.05R per trade</strong>.</p>
+<p><strong>Step 2. Expectancy in rupees.</strong> 0.05 x Rs 500 = <strong>Rs 25 per trade</strong>, before costs. This is a thin edge.</p>
+<p><strong>Step 3. A specific run of 5 losses.</strong> The chance of five losses in a row, starting at a given trade, is 0.65 to the power of 5. That means 0.65 x 0.65 x 0.65 x 0.65 x 0.65. The result is about <strong>0.116, or 11.6 percent</strong>.</p>
+<p><strong>Step 4. Rupee cost of that run.</strong> 5 x Rs 500 = <strong>Rs 2,500</strong>. That is 2,500 / 50,000 = <strong>5 percent of capital</strong>.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Work out 0.65 to the power of 3. Then work out the rupee loss of a 3-trade losing run at 1R = Rs 500.</p>
+<p>Hints:</p>
+<ol>
+<li>Multiply 0.65 by itself three times.</li>
+<li>A 3-trade losing run costs 3 x Rs 500.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>0.65 x 0.65 = 0.4225. Then 0.4225 x 0.65 = <strong>0.274625</strong>, which is about <strong>27.5 percent</strong>.</li>
+<li>Rupee loss: 3 x Rs 500 = <strong>Rs 1,500</strong>.</li>
+</ul>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Your Monte Carlo 95th-percentile maximum drawdown is Rs 9,000 on capital of Rs 50,000. Explain what this number does and does not tell you. Then say what you would check before you trust it.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>The figure is 9,000 / 50,000 = 18 percent of capital.</li>
+<li>What it tells you: in 95 runs out of every 100, the drawdown was Rs 9,000 or less. This is for the same trades, shuffled, under the test’s assumptions.</li>
+<li>What it does not tell you: it is not the worst case. About 1 run in 20 had a bigger drawdown. It is not a forecast of your next drawdown.</li>
+<li>What to check first:
+<ul>
+<li>The trade list is complete and includes costs and realistic fills.</li>
+<li>The run used 1,000 or more shuffles.</li>
+<li>The risk per trade is the one you would really use.</li>
+<li>The assumption that trades are independent is noted as a limit.</li>
+<li>Any probability of ruin uses a level written down before the run.</li>
+</ul>
+</li>
+</ul>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks why reordering changes the path but not the expectancy. It also checks percentiles and the independence assumption.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>backtest</strong>, which means the trades come from past data.</p>
+<ol>
+<li>Take your own trade list from a backtest run. Use Lab 4, experiment 7, if the lab is ready.</li>
+<li>If the lab is not ready, copy your trade list into a spreadsheet and shuffle the order. Run as many shuffles as you can. Write down how many you ran. Fewer than 1,000 runs is a small sample.</li>
+<li>For each run, record the maximum drawdown and the longest losing streak. Then record the 5th, 50th and 95th percentile of each.</li>
+<li>Write the figures in the table in your journal (or on paper until the journal app is ready). Write the number of runs beside it.</li>
+<li>Write one sentence: what the range does and does not tell you.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>The output is a range of possible orders for the same trades. It is not a forecast of your next drawdown.</li>
+<li>The trades are treated as independent. Real losses can cluster in hard market periods, so the streaks can be understated.</li>
+<li>The 95th percentile is not the worst case. Some runs can be worse than it.</li>
+<li>The result depends on the trade list. A short or lucky list gives a range that looks safer than it is.</li>
+<li>Costs, slippage and gaps only count if they are already in the trade list (<em>Slippage</em>).</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Reordering trades keeps the expectancy the same. It can change the drawdown and the streaks.</li>
+<li>Read the 5th, 50th and 95th percentiles, not only the average.</li>
+<li>Each trade is treated as independent in this test. That is a limit.</li>
+<li>A probability of ruin needs a level you write down before the run.</li>
+<li>The result is a range of paths for the same trades. It is not a forecast.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>This book names no single reference on risk of ruin. Treat any figure from a simulation as one possible range, not a promise.</li>
+<li>The backtest lab’s notes on the Monte Carlo experiment.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../07-testing-and-validation/08-metrics-and-their-limits/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../07-testing-and-validation/10-paper-and-forward-testing/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../07-testing-and-validation/08-metrics-and-their-limits/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../07-testing-and-validation/10-paper-and-forward-testing/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,167 @@
+[
+  {
+    "id": "T2.10-q1",
+    "type": "numeric",
+    "prompt": "Win rate 45% (hypothetical). What is the probability of three losses in a row, starting at a given trade, in percent? Assume independent trades.",
+    "answer": 16.6,
+    "tolerance": 0.1,
+    "unit": "%",
+    "solution": "Loss chance = 1 - 0.45 = 0.55. Probability = 0.55^3 = 0.55 x 0.55 x 0.55 = 0.166375, about 16.6%. Check: 0.55 x 0.55 = 0.3025, and 0.3025 x 0.55 = 0.166375.",
+    "concepts": [
+      "independence",
+      "gamblers-fallacy"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.10-q2",
+    "type": "mcq",
+    "prompt": "After five losses in a row, a trader says: 'I am due a win.' Which response is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes. The average must be restored, so the next trade is more likely to win."
+      },
+      {
+        "id": "b",
+        "text": "No. If trades are independent, each trade has the same chance of a win whatever happened before."
+      },
+      {
+        "id": "c",
+        "text": "Yes, because the market always corrects a long run of losses."
+      },
+      {
+        "id": "d",
+        "text": "No, because after losses the chance of a win falls."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This is the gambler's fallacy. Past losses do not change the chance of the next trade under the independence assumption.",
+      "c": "Markets have no obligation to correct a run. A long run of losses is an outcome, not a debt.",
+      "d": "Under the independence assumption, the chance does not fall after losses. Saying it falls is also a mistake, though a different one."
+    },
+    "concepts": [
+      "independence",
+      "gamblers-fallacy"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.10-q3",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake. Statement: 'My win rate is 60% (a). So I will win at least one of the next five trades (b). The chance of five losses in a row is 0.4^5, about 1%, so the chance of at least one win is about 99% (c).' Which part is wrong?",
+    "options": [
+      {
+        "id": "a",
+        "text": "My win rate is 60%."
+      },
+      {
+        "id": "b",
+        "text": "So I will win at least one of the next five trades."
+      },
+      {
+        "id": "c",
+        "text": "The chance of five losses in a row is about 1%, so the chance of at least one win is about 99%."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This is the stated win rate of the hypothetical plan. It is a frequency, not a promise for the next trades.",
+      "c": "This is correct under the independence assumption. 1 - 0.01024 = 0.98976, which is about 99.0%. It is a probability, not a certainty."
+    },
+    "concepts": [
+      "probability",
+      "independence"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.10-q4",
+    "type": "scenario",
+    "prompt": "Your written rule: pause trading after five losses in a row. You have lost four in a row at 1% risk. The next trade is taken and loses. What does the rule say?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Double the size on the next trade to recover faster."
+      },
+      {
+        "id": "b",
+        "text": "Pause, because the fifth loss in a row is the trigger the rule sets."
+      },
+      {
+        "id": "c",
+        "text": "Keep trading at 1%, because the rule only applies after ten losses."
+      },
+      {
+        "id": "d",
+        "text": "Drop the rule, because losses are random and the rule does not apply."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Increasing size after losses is not allowed. It breaks the capital-first rules. It is a martingale-style method, which is covered in *Why scalping, option buying and martingale are dangerous*.",
+      "c": "The rule says five. Changing the number after the fact is a judgement made during a loss. The rule was written to prevent that.",
+      "d": "A rule written before a streak is there for the streak. Dropping it during a loss is the failure the rule is meant to stop."
+    },
+    "concepts": [
+      "streak-rules",
+      "discipline"
+    ],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.10-q5",
+    "type": "mcq",
+    "prompt": "Five losses in a row prove my system is broken. Which statement is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes. Five losses in a row is conclusive."
+      },
+      {
+        "id": "b",
+        "text": "No. Streaks happen at some frequency, and one streak on its own is not evidence that the system has stopped working."
+      },
+      {
+        "id": "c",
+        "text": "Yes, if the same streak happens twice in a month."
+      },
+      {
+        "id": "d",
+        "text": "No, because a broken system never has a losing streak."
+      }
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A streak is one short run of outcomes. It is not conclusive on its own, and the number of trades behind it matters.",
+      "c": "Repeat streaks are still streaks. Judge the system on expectancy with a sample size, not on how often bad runs appear.",
+      "d": "A broken system can have losing streaks, and a working system can have them too. Streaks do not separate the two on their own."
+    },
+    "concepts": [
+      "streaks",
+      "sample-size"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.10-q6",
+    "type": "numeric",
+    "prompt": "Capital is Rs 50,000 and each loss is 1% of the capital at that time. How much is lost in total after ten losses in a row, to the nearest rupee?",
+    "answer": 4781,
+    "tolerance": 1,
+    "unit": "Rs",
+    "solution": "Capital after ten losses = 50,000 x 0.99^10 = 50,000 x 0.904382 = Rs 45,219.1. Total lost = 50,000 - 45,219 = Rs 4,781. Check: 0.99^10 = (0.99^5)^2 = 0.950990^2 = 0.904382.",
+    "concepts": [
+      "independence",
+      "gamblers-fallacy"
+    ],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>What indicators are and are not - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/05-indicators/01-what-indicators-are/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T5.1
+title: What indicators are and are not
+page_type: Concept
+prerequisites: [T3.1, T3.4]
+labs: []
+estimated_minutes: 15
+-->
+<h1 id="what-indicators-are-and-are-not"><a class="header" href="#what-indicators-are-and-are-not">What indicators are and are not</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A trader named Meena (hypothetical) sees a line on her chart cross above another line. She is confident the price will rise tomorrow. She has not checked what the lines are made from. Both lines are only averages of past prices. Neither line knows tomorrow. This chapter explains what an indicator is, and what it cannot do.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>An <strong>indicator</strong> is a formula. It takes past prices, and sometimes volume, over a fixed window of days. Then it gives one number, or a line, for each day.</p>
+<p>An indicator adds no outside information. It only rearranges the price data you already have. Its output describes the past and the present. It is not a forecast.</p>
+<p>Three words matter here:</p>
+<ul>
+<li><strong>Window.</strong> The number of days the formula looks back over. A five-day window uses the last five days.</li>
+<li><strong>Parameter.</strong> A setting you choose for the formula, such as the window length. A five-day average and a twenty-day average use different parameters.</li>
+<li><strong>Lagging.</strong> An indicator that averages past data reacts after the price has already moved. It is late by design.</li>
+</ul>
+<p>Three points follow from this.</p>
+<ol>
+<li><strong>Indicators lag.</strong> Most trend indicators average past data, so they react after a turn in price. They cannot react to a turn before it happens.</li>
+<li><strong>Many indicators are related.</strong> Most indicators are built from the same closing prices. Two of them often agree because they use the same data. Using several of them does not give you several independent opinions.</li>
+<li><strong>Changing a parameter changes the answer.</strong> A five-day line and a twenty-day line can give opposite readings on the same day. You must fix the parameters before you test them. You will see this in <em>Indicator playground and when indicators disagree</em>.</li>
+</ol>
+<p>Indicators do not replace the other rules in this book. A trade still needs a stop and a size. The stop and size come from rules you set first, such as those in <em>Position sizing step by step</em>.</p>
+<p>Here are three things an indicator cannot tell you:</p>
+<ul>
+<li>It cannot tell you tomorrow’s close.</li>
+<li>It cannot tell you whether a crossover will work this time.</li>
+<li>It cannot tell you how much you can lose on a trade.</li>
+</ul>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: indicator-playground | indicator: sma | period: 10 | lag: on | caption: Change the window length of an average and watch the line lag behind the price. Press Play to watch the bars arrive one at a time -->
+<p>Change the window length and watch the line. A longer window makes the line smoother and slower. A shorter window makes it follow the price more closely. Notice that the line always trails the price after a turn. Try the first turn in the chart, then the second.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Closes for five days: Rs 100, Rs 102, Rs 104, Rs 103 and Rs 105.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>1. Add the five closes</td><td>100 + 102 + 104 + 103 + 105</td><td>Rs 514</td></tr>
+<tr><td>2. Divide by 5</td><td>514 / 5</td><td>Rs 102.80</td></tr>
+<tr><td>3. Compare with the latest close</td><td>105 - 102.80</td><td>Rs 2.20 above the average</td></tr>
+</tbody></table>
+</div>
+<p>The average of Rs 102.80 summarises the last five days. It does not predict day six. The latest close is above the average because the price rose. That is all the number tells you.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<!-- component: indicator-playground | indicator: sma | closes: 100,102,104,103,105 | period: 5 | edit: on | caption: The five closes of the worked example. Change the closes or the window and see the average -->
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Closes on three days are Rs 100, Rs 102 and Rs 104. Work out the three-day average.</p>
+<p>Hints:</p>
+<ol>
+<li>Add the three closes.</li>
+<li>Divide the total by 3.</li>
+</ol>
+<p><strong>Answer:</strong> Rs 102.00. The total is Rs 306, and 306 / 3 = Rs 102.00.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Explain in three sentences why an indicator built only from closing prices cannot know tomorrow’s close.</p>
+<details><summary>Check your answer</summary>
+<p>A good answer has three points. The indicator uses only data up to today. Tomorrow’s close is not in that data. A formula cannot create information that the data does not hold.</p>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the arithmetic of a simple average. It also checks that you know indicators lag and cannot forecast.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>kite_demo</strong>. Demo only. Do not place any order.</p>
+<ol>
+<li>Open the demo chart for one stock.</li>
+<li>List every indicator on the chart. Write its name and its parameter, such as the window length.</li>
+<li>Record the default parameter for each indicator. Note the setting exactly as the demo shows it. Zerodha’s charting manual does not list default settings, so read them on your own screen in the indicator settings.</li>
+<li>For each indicator, write one sentence on what it describes about the past.</li>
+</ol>
+<p>Log it in your journal (or on paper until the journal app is ready).</p>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>An indicator does not tell you that a trade is good. It only summarises past prices.</li>
+<li>A crossover of two lines is an observation. It is not a signal you can rely on until you have tested it.</li>
+<li>Stacking several indicators adds more lines, not more evidence. Many of them use the same closing prices.</li>
+<li>A longer window is not always more accurate. It is only smoother and slower.</li>
+<li>An indicator does not reduce the need for a stop and a size rule.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>An indicator is a formula applied to past prices or volume over a window.</li>
+<li>Most trend indicators lag, because they average past data.</li>
+<li>Indicators describe the past and the present. They are not forecasts.</li>
+<li>Related indicators agree often, so agreement is not separate proof.</li>
+<li>Fix the parameters before you test. Changing them after you see results is a common self-deception.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Zerodha Varsity, technical indicators overview (reference only).</li>
+<li>Zerodha, Kite charting manual (kite.trade/docs/kite/charting). It says Kite has over 100 indicators, and that indicators apply to the closing price by default. (As of 11 Nov 2026. Check the manual for changes.)</li>
+<li>J. Welles Wilder, <em>New Concepts in Technical Trading Systems</em> (1978), the original source of RSI and ATR.</li>
+<li>StockCharts ChartSchool, a free reference on the standard indicator settings.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../05-indicators/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../05-indicators/02-moving-averages/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../05-indicators/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../05-indicators/02-moving-averages/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

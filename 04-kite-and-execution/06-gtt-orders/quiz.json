@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T4.6-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. You hold 100 shares bought at Rs 250. A GTT sells all 100 shares when the price reaches Rs 240. If it fills at the trigger, what is the planned loss in rupees?",
+    "answer": 1000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Loss per share = 250 - 240 = Rs 10. Planned loss = 100 x 10 = Rs 1,000. Check: 100 x 250 = 25,000 and 100 x 240 = 24,000. The difference is 1,000.",
+    "concepts": ["gtt", "planned-loss"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.6-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. The same 100 shares were bought at Rs 250, but the GTT trigger is Rs 245. What is the planned loss in rupees?",
+    "answer": 500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Loss per share = 250 - 245 = Rs 5. Planned loss = 100 x 5 = Rs 500. Check: 100 x 245 = 24,500. The difference from 25,000 is 500.",
+    "concepts": ["gtt", "planned-loss"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.6-q3",
+    "type": "scenario",
+    "prompt": "Hypothetical. A GTT is set to sell 150 shares. The holding is 100 shares. What is the main problem?",
+    "options": [
+      {"id": "a", "text": "Nothing. A GTT can be larger than the holding."},
+      {"id": "b", "text": "The GTT asks to sell more shares than you hold. Fix the quantity to 100 before you rely on it."},
+      {"id": "c", "text": "The GTT becomes a stop of 150 shares at the trigger."},
+      {"id": "d", "text": "The GTT adds 50 shares to the holding when it triggers."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A GTT must match the holding. A larger GTT is a mistake, because it asks to sell shares you do not hold.",
+      "c": "The quantity of a GTT must match the holding. A GTT of 150 shares on 100 held is a mistake to fix, not a stop of 150 shares.",
+      "d": "A GTT sells shares. It does not add shares to a holding."
+    },
+    "concepts": ["gtt", "quantity-check"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.6-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Statement: 'Once my GTT is triggered, it is a guaranteed exit at exactly the trigger price.' What is wrong with this statement?",
+    "options": [
+      {"id": "a", "text": "Nothing. A GTT is a guaranteed exit."},
+      {"id": "b", "text": "A GTT is not a guaranteed fill. Once triggered, the stored order follows the rules of its type, so the fill can differ from the trigger."},
+      {"id": "c", "text": "A GTT cannot be triggered at all."},
+      {"id": "d", "text": "A GTT never needs a quantity check."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A GTT is not a guaranteed exit. A gap or a limit can stop the fill from happening at the trigger.",
+      "c": "A GTT is designed to be triggered by price. The problem is the claim about the fill, not the trigger.",
+      "d": "The quantity must match the holding, so a quantity check is always needed."
+    },
+    "concepts": ["gtt", "fill-risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.6-q5",
+    "type": "mcq",
+    "prompt": "After you make a trade, what should you check on any GTT for the same stock?",
+    "options": [
+      {"id": "a", "text": "Nothing. A GTT updates itself and needs no check."},
+      {"id": "b", "text": "Its quantity and status, against your current holdings."},
+      {"id": "c", "text": "Only the chart price."},
+      {"id": "d", "text": "Nothing, until the GTT expires."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A GTT can be forgotten, and a changed holding can leave it mismatched. Check it after each trade.",
+      "c": "The chart price does not show whether the GTT still matches your holding.",
+      "d": "Waiting for expiry leaves a stale GTT active for a long time. Check it after each trade."
+    },
+    "concepts": ["gtt", "review"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.6-q6",
+    "type": "mcq",
+    "prompt": "Which statement describes limits of a GTT?",
+    "options": [
+      {"id": "a", "text": "A GTT never expires."},
+      {"id": "b", "text": "A GTT fills at the trigger price exactly."},
+      {"id": "c", "text": "A GTT has a validity period, and it does not guarantee a fill."},
+      {"id": "d", "text": "A GTT needs no check after a corporate action."}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "A GTT does not last forever. It stays active for up to one year. Confirm the current period on Zerodha's support pages.",
+      "b": "A GTT places its stored order after the trigger. The fill can differ from the trigger, especially in a gap.",
+      "d": "Corporate actions can change share counts and prices. Check every GTT after one."
+    },
+    "concepts": ["gtt", "validity"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

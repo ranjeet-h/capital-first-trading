@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ट्रेंड फॉलोइंग सविस्तर - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../06-strategy/03-trend-following/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../06-strategy/03-trend-following/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T6.3
+title: ट्रेंड फॉलोइंग सविस्तर
+page_type: Strategy
+prerequisites: [T6.2, T3.4, T5.3]
+labs: [Lab 4]
+estimated_minutes: 30
+-->
+<h1 id="टरेंड-फॉलोइंग-सविसतर"><a class="header" href="#टरेंड-फॉलोइंग-सविसतर">ट्रेंड फॉलोइंग सविस्तर</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एक ट्रेडर असा शेअर विकत घेते जो वाढत होता. तिच्या योजनेत प्रत्येक व्यापारात Rs 500 इतका ठराविक तोटा मान्य आहे. सलग आठ तोटे झाल्यावर ती योजना सोडते आणि मनाला वाटेल तसे व्यापार करते. <strong>काल्पनिक उदाहरण:</strong> योजनेने पुढचा जो संकेत घेतला असता, तो मोठा विजय देणारा होता. ती तो चुकवते, कारण तिने नियम सोडले होते. हे प्रकरण सांगते की सततचे तोटे हा या पद्धतीचा भाग आहे. ते योजना सोडण्याचे चिन्ह नाही.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>ट्रेंड फॉलोइंग</strong> म्हणजे भाव जोरात वर जातो आणि मजबूत राहतो, तेव्हा प्रवेश करणे. हालचाल चालू आहे तोपर्यंत धरून ठेवणे. हालचाल संपली की बाहेर पडणे. <em>ट्रेंड आणि बाजाराची रचना</em> पाहा.</p>
+<p>ही पद्धत अनेक लहान तोटे स्वीकारते. तिचे उद्दिष्ट कमी पण मोठे विजय मिळवणे आहे. या शैलीत नफा वाढवण्यावर निश्चित मर्यादा नसते. तुम्ही आधीच नफ्याचे लक्ष्य ठरवत नाही. तरीही प्रत्येक व्यापारावर तोट्याची मर्यादा असते.</p>
+<p><strong>प्रत्येक व्यापारातील ठराविक तोटा.</strong> प्रत्येक व्यापारात जोखीम सारखीच रक्कम असते. तिला 1R म्हणतात. उदाहरणार्थ 1R Rs 500 असू शकतो. तोट्याचा व्यापार नंतर सुमारे 1R इतका खर्च होतो. प्रत्येक तोट्याचा आकार सारखा असतो, म्हणून निकाल R मध्ये मोजता येतात.</p>
+<p><strong>ट्रेलिंग स्टॉप.</strong> भाव वाढतो तसा ट्रेलिंग स्टॉप वर सरकतो. तो कधीही खाली सरकत नाही. भाव मागे येऊन स्टॉपला लागला, की व्यापार बंद होतो. हा बाहेर पडण्याचा नियम आहे, नफा मिळवण्याचे लक्ष्य नाही. स्टॉपचे अंतर ATR वापरून ठरवता येते. <em>ATR आणि अस्थिरता, स्टॉपसाठी वापर</em> पाहा.</p>
+<p><strong>कमी विजय दर.</strong> एखादी पद्धत फक्त 35 टक्के व्यापार जिंकू शकते, तरीही तिचा अपेक्षित परतावा सकारात्मक असू शकतो. हे तेव्हा होते जेव्हा सरासरी विजय सरासरी तोट्यापेक्षा खूप मोठा असतो. अपेक्षित परतावा <em>ट्रेडिंग एज म्हणजे काय</em> या भागात सांगितला आहे. कमी विजय दर ही तपासायची गृहीतक आहे. ते तथ्य नाही.</p>
+<p><strong>कोरडे काळ.</strong> कोरडा काळ म्हणजे विजय नसलेला दीर्घ काळ, किंवा सलग अनेक लहान तोटे. या पद्धतीत कोरडे काळ सामान्य आहेत. तेच नियम बदलण्याचा किंवा पैसे वाढवण्याचा सर्वात धोकादायक काळ असतो. कोरड्या काळासाठीचा नियम तो सुरू होण्यापूर्वी लिहा. <em>सततचे तोटे यातून जाताना</em> पाहा.</p>
+<p>ही पद्धत तोट्यानंतर पैसे वाढवत नाही.</p>
+<p><strong>नमुना आकार.</strong> काही डझन व्यापार पद्धत काम करते की नाही हे दाखवू शकत नाहीत. लहान नमुन्यातील निकाल नशिबामुळे येऊ शकतात.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: strategy-simulator | mode: trailing-stop | caption: ट्रेलिंग-स्टॉप मोड दाखवतो की भाव वाढतो तसा स्टॉप वर सरकतो आणि कधीही खाली सरकत नाही -->
+<!-- component: streak-sim | winRate: 35 | R: 500 | caption: 35 टक्के विजय दरावर सततचे तोटे दाखवतो, प्रत्येक तोटा 1R, म्हणजे Rs 500 चा -->
+<p>प्रथम ट्रेलिंग-स्टॉप दृश्य वापरा. प्रत्येक नवीन उच्च क्लोजसोबत स्टॉप कसा वर जातो ते पाहा. भाव खाली आल्यावर स्टॉप तिथेच कसा राहतो ते पाहा. मग सततचे तोटे दृश्य वापरा. स्थिर विजय दरावरही दीर्घ सततचे तोटे किती वेळा येतात ते पाहा.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> वीस व्यापार. 1R = Rs 500. सात व्यापार विजयी आहेत, आणि प्रत्येक विजय +3R आहे, म्हणजे Rs 1,500. तेरा व्यापार तोट्याचे आहेत, आणि प्रत्येक तोटा -1R आहे, म्हणजे Rs 500.</p>
+<div class="table-wrapper"><table><thead><tr><th>बाब</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>विजयांमधून एकूण</td><td>7 x 3R = 21R, मग 21 x Rs 500</td><td>Rs 10,500</td></tr>
+<tr><td>तोट्यांमधून एकूण</td><td>13 x 1R = 13R, मग 13 x Rs 500</td><td>वजा Rs 6,500</td></tr>
+<tr><td>निव्वळ एकूण</td><td>21R - 13R = 8R, मग 8 x Rs 500</td><td>Rs 4,000</td></tr>
+<tr><td>विजय दर</td><td>7 / 20</td><td>35 टक्के</td></tr>
+<tr><td>R मध्ये अपेक्षित परतावा</td><td>0.35 x 3 - 0.65 x 1 = 1.05 - 0.65</td><td>प्रति व्यापार 0.40R</td></tr>
+<tr><td>रुपयांमध्ये अपेक्षित परतावा</td><td>0.40 x Rs 500</td><td>प्रति व्यापार Rs 200</td></tr>
+<tr><td>10 तोट्यांचा सलग काळ</td><td>10 x Rs 500</td><td>वजा Rs 5,000</td></tr>
+</tbody></table>
+</div>
+<p>ही आकडेवारी खर्च आणि कर यांच्याआधीची आहे. खरे शुल्क आणि कराचे नियम <em>एका व्यापारावरील खर्च</em> आणि <em>ट्रेडिंग नफ्यावरील कर</em> या भागात आहेत. (11 Nov 2026 पर्यंत, Zerodha डिलिव्हरी व्यापारांवर शून्य ब्रोकरेज दाखवते. नियम बदलतात, म्हणून Zerodha चार्जेस पेज तपासा.)</p>
+<p>सततचे तोटे हा कठीण भाग आहे. 10 तोट्यांचा काळ मध्ये एकही विजय न येता Rs 5,000 इतका तोटा करतो. योजनेने तो काळ सुरू होण्यापूर्वीच धरला पाहिजे.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> पाच व्यापार +2R ने विजयी आहेत. दहा व्यापार -1R ने तोट्याचे आहेत. R = Rs 500. एकूण निव्वळ निकाल R मध्ये आणि रुपयांमध्ये काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>पाच विजयांची बेरीज 10R.</li>
+<li>दहा तोट्यांची बेरीज 10R.</li>
+<li>विजयांमधून तोटे वजा करा.</li>
+</ol>
+<p><strong>उत्तर:</strong> विजय: 5 x 2R = 10R. तोटे: 10 x 1R = 10R. निव्वळ: 10R - 10R = <strong>0R</strong>, म्हणजे खर्चाआधी <strong>Rs 0</strong>.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> चाळीस व्यापार. विजय दर 30 टक्के. सरासरी विजय 3R. सरासरी तोटा 1R. R = Rs 500. R मध्ये अपेक्षित परतावा, प्रति व्यापार रुपयांमध्ये अपेक्षित परतावा आणि एकूण सकल निकाल काढा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>अपेक्षित परतावा: 0.30 x 3 - 0.70 x 1 = 0.90 - 0.70 = <strong>0.20R</strong>.</li>
+<li>रुपयांमध्ये: 0.20 x Rs 500 = <strong>प्रति व्यापार Rs 100</strong>.</li>
+<li>एकूण सकल निकाल: 40 x Rs 100 = <strong>Rs 4,000</strong>.</li>
+<li>संख्येने तपासणी: 12 विजय x 3R = 36R. 28 तोटे x 1R = 28R. 36R - 28R = 8R. 8 x Rs 500 = Rs 4,000.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ कमी विजय दर, ट्रेलिंग स्टॉप आणि सततच्या तोट्यांचे नियम तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> कागदी काम (पेपर). तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल, तर कागदावर लिहा.</p>
+<ol>
+<li>कोणताही चार्ट पाहण्यापूर्वी प्रवेश, सुरुवातीचा स्टॉप, ट्रेलिंग स्टॉप आणि कोरड्या काळाचा नियम लिहा.</li>
+<li>भूतकाळातील चार्ट इतिहासातून, नियमांनी घेतले असते असे दहा व्यापार निवडा. फक्त काल्पनिक व्यापार वापरा.</li>
+<li>प्रत्येक व्यापाराचा निकाल R मध्ये नोंदवा.</li>
+<li>निव्वळ R एकत्र करा. अपेक्षित परतावा R मध्ये काढा.</li>
+<li>संपूर्ण संचाला काल्पनिक म्हणून चिन्हांकित करा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>ट्रेलिंग स्टॉप प्रत्येक तोटा थांबवत नाही. भावातील गॅप स्टॉपच्या पुढे उडी मारू शकतो. <em>गॅप आणि स्टॉपसाठी त्यांचा अर्थ</em> पाहा.</li>
+<li>नफ्याला मर्यादा नसणे म्हणजे तोट्यालाही मर्यादा नसणे, असे नाही. प्रत्येक व्यापारात तरीही नियोजित तोटा असतो.</li>
+<li>कमी विजय दर जगणे कठीण असते. कोरडे काळ सुरू होण्यापूर्वीच त्यासाठी तयारी करा.</li>
+<li>दहा व्यापार जवळजवळ काहीच दाखवत नाहीत. काही डझन व्यापारसुद्धा पद्धत काम करते की नाही हे दाखवू शकत नाहीत.</li>
+<li>इथले आकडे खर्च आणि कर यांच्याआधीचे आहेत. <em>एका व्यापारावरील खर्च</em> आणि <em>ट्रेडिंग नफ्यावरील कर</em> पाहा.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>प्रत्येक व्यापारात सारखीच योजलेली रक्कम जोखीम असते. तिला 1R म्हणतात.</li>
+<li>ट्रेलिंग स्टॉप फक्त वर सरकतो. तो बाहेर पडण्याचा नियम आहे, नफा मिळवण्याचे लक्ष्य नाही.</li>
+<li>35 टक्के विजय दर असूनही, सरासरी विजय पुरेसा मोठा असेल तर अपेक्षित परतावा सकारात्मक असू शकतो. ही तपासायची गृहीतक आहे.</li>
+<li>कोरडे काळ या पद्धतीत सामान्य आहेत. ते येत असताना नियम बदलू नका.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Zerodha Varsity, ट्रेंड फॉलोइंगवरील साहित्य (केवळ संदर्भासाठी).</li>
+<li><em>एका व्यापारावरील खर्च</em> आणि <em>ट्रेडिंग नफ्यावरील कर</em>, प्रत्येकाचे स्वतःचे तारखेचे स्रोत (11 Nov 2026 रोजी वाचले).</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T6.3&amp;body=Page%3A%2006-strategy%2F03-trend-following%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../06-strategy/02-trading-edge/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../06-strategy/04-swing-strategy/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../06-strategy/02-trading-edge/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../06-strategy/04-swing-strategy/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

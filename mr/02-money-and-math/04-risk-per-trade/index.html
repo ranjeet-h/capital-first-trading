@@ -1,0 +1,405 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>प्रति व्यापार जोखीम आणि स्टॉप-लॉस अंतर - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../02-money-and-math/04-risk-per-trade/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../02-money-and-math/04-risk-per-trade/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T2.4
+title: प्रति व्यापार जोखीम आणि स्टॉप-लॉस अंतर
+page_type: Math/Calculator
+prerequisites: [T2.1, T1.4]
+labs: [Lab 1]
+estimated_minutes: 30
+-->
+<h1 id="परति-वयापार-जोखीम-आणि-सटॉप-लॉस-अंतर"><a class="header" href="#परति-वयापार-जोखीम-आणि-सटॉप-लॉस-अंतर">प्रति व्यापार जोखीम आणि स्टॉप-लॉस अंतर</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>समजा तुमच्याकडे Rs 50,000 आहेत. एका व्यापारात Rs 500 ची जोखीम घ्यायची असे तुम्ही आधीच ठरवता. दोन योजना मिळून एकूण Rs 500 ची जोखीम घेतात. एक योजना 50 शेअर्स खरेदी करते. दुसरी 25 शेअर्स. फरक बजेटचा नाही. फरक हा आहे की प्रत्येक योजना आपला स्टॉप कुठे ठेवते. स्टॉप म्हणजे तो भाव जिथे कल्पना चुकीची ठरते. एंट्रीपासून दूर असलेला स्टॉप त्याच रुपयांच्या जोखीमेसाठी कमी शेअर्स देतो. हे प्रकरण गणित पायरीपायरीने दाखवते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>सर्वात आधी येणारा नियम हा आहे. <strong>व्यापार करण्यापूर्वी प्रति व्यापार जोखीम ठरवा. ती तुमच्या भांडवलावर आधारित रुपयांच्या रकमेत बदला.</strong></p>
+<ul>
+<li><strong>भांडवल</strong> म्हणजे ट्रेडिंगसाठी बाजूला ठेवलेले पैसे (<em>भांडवल-प्रथम नियम</em>).</li>
+<li><strong>जोखीम टक्केवारी</strong> म्हणजे एका व्यापारात गमावण्यास तयार असलेला त्या भांडवलाचा वाटा. नियोजनासाठी सामान्यपणे वापरला जाणारा आकडा 1% आहे. या पुस्तकात हे फक्त एक नियोजनाचे सेटिंग आहे, तथ्य नाही.</li>
+<li><strong>जोखीम बजेट</strong> म्हणजे भांडवल x जोखीम टक्केवारी, रुपयांत.</li>
+</ul>
+<p>स्टॉप म्हणजे तो भाव जिथे व्यापाराची कल्पना चुकीची ठरते. तो कल्पनेवरून निवडला जातो, बजेटमध्ये बसवण्यासाठी नाही. हा क्रम महत्त्वाचा आहे. स्टॉप बजेटमध्ये बसवण्यासाठी निवडला, तर तो व्यापाराबद्दल काहीच सांगत नाही.</p>
+<p>स्टॉप ठरल्यावर बाकी फक्त गणित आहे. <strong>लॉंग</strong> व्यापारासाठी (आधी खरेदी करता आणि नंतर विकता). हा ट्रॅक फक्त लॉंग व्यापारांबद्दल आहे:</p>
+<ul>
+<li><strong>प्रति शेअर जोखीम</strong> = एंट्री भाव - स्टॉप भाव. स्टॉप गाठला गेला तर प्रत्येक शेअरवरील रुपयांतील तोटा.</li>
+<li><strong>शेअर्स</strong> = जोखीम बजेट / प्रति शेअर जोखीम, जवळच्या पूर्ण संख्येपर्यंत <strong>खाली</strong> पूर्णांकात घेतलेले.</li>
+<li><strong>एंट्री भावाच्या तुलनेत स्टॉप अंतर</strong> = प्रति शेअर जोखीम / एंट्री भाव.</li>
+<li><strong>पोझिशन मूल्य</strong> = शेअर्स x एंट्री भाव.</li>
+<li><strong>स्टॉपवर नियोजित तोटा</strong> = शेअर्स x प्रति शेअर जोखीम.</li>
+</ul>
+<p>खाली गोल करणे महत्त्वाचे आहे. सूत्राने 31.25 शेअर्स आले, तर तुम्ही 31 खरेदी करता, 32 नाही. वर गोल केला तर बजेटपेक्षा जास्त जोखीम होईल.</p>
+<p>गणितातून दोन नियम येतात:</p>
+<ul>
+<li><strong>घट्ट स्टॉप</strong> (एंट्रीच्या जवळ) प्रति शेअर कमी जोखीम देतो. त्यामुळे तेच बजेट <strong>जास्त शेअर्स</strong> विकत घेते.</li>
+<li><strong>रुंद स्टॉप</strong> (एंट्रीपासून दूर) प्रति शेअर जास्त जोखीम देतो. त्यामुळे तेच बजेट <strong>कमी शेअर्स</strong> विकत घेते.</li>
+</ul>
+<p>दोन संख्या सहज गोंधळात पडतात:</p>
+<ul>
+<li><strong>जोखीम टक्केवारी</strong> (भांडवलाचा 1%) म्हणजे भांडवलाच्या तुलनेत नियोजित तोटा.</li>
+<li><strong>पोझिशन टक्केवारी</strong> म्हणजे भांडवलाच्या तुलनेत पोझिशन मूल्य.</li>
+</ul>
+<p>1% जोखीम म्हणजे 1% पोझिशन नव्हे. खालील उदाहरणात 1% जोखीमेमुळे भांडवलाच्या 25% इतकी पोझिशन मिळते.</p>
+<p>स्टॉपबद्दलचे नियम:</p>
+<ul>
+<li>लॉंग व्यापारासाठी एंट्री भावाच्या वर असलेला स्टॉप चुकीचा आहे. स्टॉप एंट्रीच्या खाली असला पाहिजे. योजनेत स्टॉप एंट्रीच्या वर असेल, तर कोणतेही गणित करण्यापूर्वी योजना नाकारा किंवा दुरुस्त करा.</li>
+<li>एंट्रीनंतर तोटा टाळण्यासाठी स्टॉप दूर सरकवू नका. त्यामुळे नियोजित तोटा अनियोजित तोटा बनतो.</li>
+<li>स्टॉप कसे ठेवायचे, हे किंमत सहसा किती हलते त्यावर आधारित असते. त्याबद्दल ट्रॅक 5 मध्ये शिकवले जाते. हे प्रकरण फक्त गणिताबद्दल आहे.</li>
+</ul>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: position-size-viz | capital: 50000 | riskPct: 1 | entry: 250 | stop: 240 | caption: Rs 250 एंट्रीवर तीन स्टॉप (240, 245, 230) साठी शेअर्स आणि पोझिशन मूल्य, Rs 500 जोखीम बजेटसह; स्टॉप हलवताना शेअर्सची संख्या कशी बदलते ते पाहा -->
+<p>स्टॉप एंट्रीच्या जवळ न्या आणि शेअर्सची संख्या वाढताना पाहा. तो दूर न्या आणि संख्या कमी होताना पाहा. प्रत्येक वेळी रुपयांतील जोखीम सुमारे Rs 500 च्या आसपास राहते. पोझिशन मूल्यही पाहा. ते बदलते ते शेअर्सच्या संख्येबरोबर, जोखीम बजेटबरोबर नाही.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> भांडवल Rs 50,000. जोखीम 1% = Rs 500. एंट्री Rs 250.</p>
+<p><strong>योजना 1: स्टॉप Rs 240 वर</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>जोखीम बजेट</td><td>50,000 x 1%</td><td>Rs 500</td></tr>
+<tr><td>प्रति शेअर जोखीम</td><td>250 - 240</td><td>Rs 10</td></tr>
+<tr><td>स्टॉप अंतर</td><td>10 / 250</td><td>4%</td></tr>
+<tr><td>सुरुवातीचे शेअर्स</td><td>500 / 10</td><td>50</td></tr>
+<tr><td>पोझिशन मूल्य</td><td>50 x 250</td><td>Rs 12,500</td></tr>
+<tr><td>भांडवलाच्या तुलनेत पोझिशन</td><td>12,500 / 50,000</td><td>25%</td></tr>
+<tr><td>नियोजित तोटा</td><td>50 x 10</td><td>Rs 500</td></tr>
+</tbody></table>
+</div>
+<p><strong>योजना 2: स्टॉप Rs 245 वर (घट्ट)</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>प्रति शेअर जोखीम</td><td>250 - 245</td><td>Rs 5</td></tr>
+<tr><td>सुरुवातीचे शेअर्स</td><td>500 / 5</td><td>100</td></tr>
+<tr><td>मर्यादेपूर्वी पोझिशन मूल्य</td><td>100 x 250</td><td>Rs 25,000</td></tr>
+<tr><td>भांडवलाच्या तुलनेत पोझिशन</td><td>25,000 / 50,000</td><td>50%</td></tr>
+</tbody></table>
+</div>
+<p>50% पोझिशन ही एका पोझिशनसाठीच्या 25% या डीफॉल्ट मर्यादेपेक्षा जास्त आहे. ही मर्यादा Lab 1 मध्ये वापरली जाते. मर्यादेसह सर्वात मोठी परवानगी असलेली पोझिशन 12,500 / 250 = 50 शेअर्स आहे. नियोजित तोटा 50 x 5 = Rs 250 होतो, Rs 500 नाही. इथे आकार जोखीम बजेट नव्हे, तर मर्यादा ठरवते. <em>पोझिशन साइजिंग, टप्प्याटप्प्याने</em> मध्ये हे पूर्ण समजावले आहे.</p>
+<p><strong>योजना 3: स्टॉप Rs 230 वर (रुंद)</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>प्रति शेअर जोखीम</td><td>250 - 230</td><td>Rs 20</td></tr>
+<tr><td>शेअर्स</td><td>500 / 20</td><td>25</td></tr>
+<tr><td>पोझिशन मूल्य</td><td>25 x 250</td><td>Rs 6,250</td></tr>
+<tr><td>भांडवलाच्या तुलनेत पोझिशन</td><td>6,250 / 50,000</td><td>12.5%</td></tr>
+<tr><td>नियोजित तोटा</td><td>25 x 20</td><td>Rs 500</td></tr>
+</tbody></table>
+</div>
+<p><strong>धडा.</strong> योजना 1 आणि 3 प्रत्येकी Rs 500 चा नियोजित तोटा दाखवतात, अनुक्रमे 50 आणि 25 शेअर्ससह. योजना 2 दाखवते की घट्ट स्टॉपचा अर्थ नेहमी मोठा नियोजित तोटा असा होत नाही. मर्यादेने आकार 50 शेअर्सवर आणला आणि नियोजित तोटा Rs 250 केला. मर्यादा लागू करण्यापूर्वी स्टॉप अंतर शेअर्सची संख्या ठरवते. त्यानंतर मर्यादा आणि जोखीम बजेट अंतिम आकार ठरवतात.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<!-- component: position-size-viz | capital: 50000 | riskPct: 1 | entry: 400 | stop: 384 | caption: मार्गदर्शित सरावासाठी इनपुट: भांडवल Rs 50,000, जोखीम 1%, एंट्री Rs 400, स्टॉप Rs 384 -->
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> भांडवल Rs 50,000, जोखीम 1%, एंट्री Rs 400, स्टॉप Rs 384. जोखीम बजेट, प्रति शेअर जोखीम, शेअर्स (खाली गोल करून), पोझिशन मूल्य, भांडवलाच्या तुलनेत पोझिशनची टक्केवारी आणि नियोजित तोटा काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>आधी जोखीम बजेट काढा. ते Rs 50,000 च्या 1% आहे.</li>
+<li>सुरुवातीची शेअर्स संख्या काढा. मग ती खाली गोल करा, आणि त्यानंतरच तिचा वापर करा.</li>
+<li>नियोजित तोटा गोल केलेल्या शेअर्स संख्येवरून काढा, गोल न केलेल्या संख्येवरून नव्हे.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>जोखीम बजेट: Rs 500.</li>
+<li>प्रति शेअर जोखीम: 400 - 384 = Rs 16.</li>
+<li>सुरुवातीचे शेअर्स: 500 / 16 = 31.25, म्हणून <strong>31 शेअर्स</strong>.</li>
+<li>पोझिशन मूल्य: 31 x 400 = Rs 12,400.</li>
+<li>भांडवलाच्या तुलनेत पोझिशन: 12,400 / 50,000 = 24.8%.</li>
+<li>नियोजित तोटा: 31 x 16 = Rs 496. जोखीम बजेटचा न वापरलेला भाग Rs 4 आहे.</li>
+</ul>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> भांडवल Rs 30,000, जोखीम 0.5%, एंट्री Rs 120, स्टॉप Rs 111. जोखीम बजेट, प्रति शेअर जोखीम, शेअर्स, पोझिशन मूल्य, पोझिशनची टक्केवारी आणि नियोजित तोटा काढा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>जोखीम बजेट: 30,000 x 0.5% = Rs 150.</li>
+<li>प्रति शेअर जोखीम: 120 - 111 = Rs 9.</li>
+<li>सुरुवातीचे शेअर्स: 150 / 9 = 16.67, म्हणून <strong>16 शेअर्स</strong>.</li>
+<li>पोझिशन मूल्य: 16 x 120 = Rs 1,920.</li>
+<li>भांडवलाच्या तुलनेत पोझिशन: 1,920 / 30,000 = 6.4%.</li>
+<li>नियोजित तोटा: 16 x 9 = Rs 144.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>या क्विझमध्ये स्टॉपचे नियम, खाली गोल करणे, आणि जोखीम टक्केवारी व पोझिशन टक्केवारी यातील फरक तपासला जातो.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>पद्धत:</strong> शिकण्याची नोंद. ती तुमच्या जर्नलमध्ये नोंदवा (जर्नल अॅप तयार होईपर्यंत कागदावर).</p>
+<ol>
+<li>Lab 1 उपलब्ध असेल तर ते वापरा. त्याची सेन्सिटिव्हिटी स्ट्रिप चालवा. एका काल्पनिक एंट्री भावासाठी Rs 2, Rs 5, Rs 10 आणि Rs 20 च्या स्टॉप अंतरांचे निकाल ती दाखवते.</li>
+<li>Lab 1 अजून उपलब्ध नसेल, तर तीच गणिते हाताने करा: भांडवल Rs 50,000, जोखीम 1% आणि एंट्री Rs 250.</li>
+<li>प्रत्येक स्टॉप अंतरासाठी शेअर्स आणि नियोजित तोटा शिकण्याच्या नोंदीत लिहा.</li>
+<li>नोंद काल्पनिक म्हणून चिन्हांकित करा. कोणतीही ऑर्डर दिली जात नाही.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>योग्य स्टॉप कुठे असावा हे ते सांगत नाही. स्टॉप व्यापाराच्या कारणावरून ठरला पाहिजे. हे प्रकरण फक्त गणित करते.</li>
+<li>1% नियोजित जोखीम म्हणजे कमाल 1% तोटा, असे ते दाखवत नाही. गॅप (दोन व्यवहारांच्या मध्ये किंमत अचानक उडी मारणे) किंवा सर्किट (एक्सचेंजने ठरवलेली व्यापार थांबवणे) यामुळे तोटा नियोजित पेक्षा मोठा होऊ शकतो. <em>स्लिपेज, गॅप आणि नियोजित विरुद्ध प्रत्यक्ष जोखीम</em> पाहा.</li>
+<li>घट्ट स्टॉप म्हणजे सुरक्षित, असे ते दाखवत नाही. खूप घट्ट स्टॉप साध्या लहान भाव हालचालींनीही गाठला जाऊ शकतो. मग तुम्हाला अनेक लहान तोटे सहन करावे लागू शकतात.</li>
+<li>ते नियम बदलत नाही. तोट्यांनंतर जोखीम टक्केवारी कधीही वाढवू नका.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>आधी जोखीम बजेट ठरवा. ते भांडवल x जोखीम टक्केवारी, रुपयांत असते.</li>
+<li>लॉंग व्यापारासाठी प्रति शेअर जोखीम = एंट्री - स्टॉप. एंट्रीच्या बरोबरीचा किंवा वर असलेला स्टॉप चुकीचा आहे.</li>
+<li>शेअर्स = जोखीम बजेट / प्रति शेअर जोखीम, खाली गोल केलेले.</li>
+<li>घट्ट स्टॉप त्याच रुपयांच्या जोखीमेसाठी जास्त शेअर्स देतो. रुंद स्टॉप कमी देतो.</li>
+<li>जोखीम टक्केवारी म्हणजे पोझिशन टक्केवारी नव्हे. उदाहरणात 1% जोखीम 25% पोझिशन देते.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Zerodha Varsity वरील पोझिशन साइजिंगच्या संकल्पना, फक्त संदर्भासाठी (दुवा, मजकूर कॉपी केलेला नाही).</li>
+<li>1% जोखीम आणि 25% पोझिशन मर्यादा ही या पुस्तकासाठी निवडलेली सेटिंग्ज आहेत. ती तथ्ये नाहीत.</li>
+</ul>
+<!-- facts-needed: none for this chapter (the 1% and 25% defaults are design settings; no market rule is stated). -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T2.4&amp;body=Page%3A%2002-money-and-math%2F04-risk-per-trade%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/03-taxes-on-trading-profits/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/05-position-sizing/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/03-taxes-on-trading-profits/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/05-position-sizing/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

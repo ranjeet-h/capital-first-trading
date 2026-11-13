@@ -1,0 +1,389 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>फ्यूचर्स आणि ते लीव्हरेजवर का चालतात - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../09-advanced/01-futures-and-leverage/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../09-advanced/01-futures-and-leverage/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T9.1
+title: फ्यूचर्स आणि ते लीव्हरेजवर का चालतात
+page_type: Concept
+prerequisites: [T2.13, T1.3, T2.6]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="फयूचरस-आणि-ते-लीवहरेजवर-का-चालतात"><a class="header" href="#फयूचरस-आणि-ते-लीवहरेजवर-का-चालतात">फ्यूचर्स आणि ते लीव्हरेजवर का चालतात</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p><strong>काल्पनिक.</strong> तुमच्याकडे Rs 1,00,000 रोख आहेत. एक मित्र म्हणतो, Rs 10,00,000 किमतीच्या फ्यूचर्स करारासाठी फक्त Rs 1,00,000 डिपॉझिट लागते. तुम्हाला वाटते, भावात थोडी हालचाल झाली तर जोखीमही थोडीच असेल. ही कल्पना एका महत्त्वाच्या बाबतीत चुकीची आहे. हे प्रकरण दाखवते की डिपॉझिट हे संपूर्ण चित्र का नाही.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>फ्यूचर्स करार</strong> म्हणजे ठरलेल्या भावाने, ठरलेल्या भविष्यातील तारखेला एखादी गोष्ट विकत घेण्याचा किंवा विकण्याचा करार. हा करार एक्सचेंजवर होतो. करार करताना भाव ठरतो. पण तारीख येईपर्यंत बाजारभाव खूप हलू शकतो.</p>
+<p>एखादे घर राखून ठेवण्यासाठी बयाणा रक्कम देण्यासारखे हे आहे. तुम्ही आधी काही भाग देता. पूर्ण किंमत तरीही त्या व्यवहाराची खरी किंमत असते. बयाणा ही फक्त आधी दिलेली रक्कम असते.</p>
+<p>इथे या शब्दांना अर्थ आहे:</p>
+<ul>
+<li><strong>मार्जिन</strong> म्हणजे करार धरून ठेवण्यासाठी भरावे लागणारे डिपॉझिट. ते कराराच्या किमतीपेक्षा लहान असते.</li>
+<li><strong>लीव्हरेज</strong> म्हणजे थोड्या पैशांत मोठ्या किमतीवर नियंत्रण ठेवणे. फ्यूचर्सना लीव्हरेज असते, कारण मार्जिन कराराच्या किमतीपेक्षा लहान असते.</li>
+<li><strong>एक्सपायरी</strong> म्हणजे कराराची शेवटची तारीख.</li>
+<li><strong>डेली सेटलमेंट</strong> म्हणजे भाव बदलतात तसे नफा आणि तोटा दररोज तुमच्या खात्यात येतात आणि जातात. ते एक्सपायरीपर्यंत थांबत नाहीत. NSE क्लिअरिंग, म्हणजे व्यवहारांची जबाबदारी घेणारी आणि सेटलमेंट करणारी संस्था, प्रत्येक फ्यूचर्स पोझिशनचे दररोजच्या सेटलमेंट भावानुसार मूल्यांकन करते. हा भाव दिवसाच्या शेवटच्या 30 मिनिटांतील कराराच्या व्हॉल्यूम वेटेड सरासरी भावावर आधारित असतो. नफा किंवा तोटा ब्रोकरच्या खात्यात जमा किंवा वजा होतो, आणि पोझिशन त्या भावावर पुन्हा सुरू होते. (11 Nov 2026 नुसार, NSE क्लिअरिंग सेटलमेंट यंत्रणेचे पान. नियम बदलतात, म्हणून NSE क्लिअरिंग साइट तपासा.)</li>
+<li><strong>अपेक्षित परतावा</strong> म्हणजे अशा अनेक सारख्या पैजांवर तुम्हाला मिळणारा सरासरी निकाल.</li>
+</ul>
+<p>या शब्दांमुळे तीन गोष्टी समजतात.</p>
+<ol>
+<li><strong>लीव्हरेजमुळे नफा आणि तोटा तितक्याच प्रमाणात मोठे होतात.</strong> त्यामुळे पैजेचा अपेक्षित परतावा बदलत नाही. लीव्हरेजमुळे प्रत्येक हालचाल मोठी होते. एक रुपया एक्सपोजरमागील सरासरी निकाल तोच राहतो.</li>
+<li><strong>लहान डिपॉझिट म्हणजे लहान जोखीम नाही.</strong> जोखीम पूर्ण कराराच्या किमतीतून येते. डिपॉझिट फक्त सांगते की तुम्ही आधी किती भरले.</li>
+<li><strong>भरलेल्या मार्जिनपेक्षा तोटा मोठा असू शकतो.</strong> भाव तुमच्या विरोधात गेले, तर खात्यात आणखी पैसे भरावे लागू शकतात. मार्जिनचे नियम आणि अतिरिक्त रक्कम एक्सचेंज आणि तुमचा ब्रोकर ठरवतात. NSE क्लिअरिंग जोखीम मॉडेलवरून सुरुवातीचे मार्जिन ठरवते. निर्देशांक आणि शेअर फ्यूचर्ससाठी ते दोन दिवसांच्या भावातील हालचालीवर, 99 टक्के विश्वासाच्या पातळीवर काढले जाते. पोझिशन घेण्याआधी ब्रोकरने तुमच्याकडून मार्जिन घेतलेच पाहिजे, आणि तोटा वाढला तर आणखी मागू शकतो. (11 Nov 2026 नुसार, NSE क्लिअरिंग मार्जिनचे पान. नियम बदलतात, म्हणून NSE क्लिअरिंग साइट तपासा.)</li>
+</ol>
+<p>करारांचा आकार, मार्जिन आणि एक्सपायरी एक्सचेंज ठरवते. ते वेळेनुसार बदलतात. कोणत्याही आकड्यावर अवलंबून राहण्याआधी स्रोतावर तपासा.</p>
+<p><strong>खरे आकडे, संदर्भासाठी.</strong> या प्रकरणातील Rs 10,00,000 चा करार आणि 10 टक्के मार्जिन सरावासाठी घेतलेले गोल आकडे आहेत. ते खरे नाहीत. खालील तक्त्यात काही खरे नियम दिले आहेत. खरे करार कसे ठरवले जातात हे दिसावे, इतकेच हेतू आहे. हा व्यापारासाठीचा प्रस्ताव किंवा सल्ला नाही.</p>
+<div class="table-wrapper"><table><thead><tr><th>बाब</th><th>अधिकृत स्रोत काय सांगतो</th><th>स्रोत आणि तारीख</th></tr></thead><tbody>
+<tr><td>निर्देशांक कराराची किंमत</td><td>SEBI सांगते की नवा निर्देशांक डेरिव्हेटिव्ह्ज करार सुरू करताना किमान Rs 15 लाख किमतीचा असला पाहिजे. प्रत्येक आढाव्यात लॉट साइज असा ठरवला जातो की किंमत Rs 15 लाख ते Rs 20 लाखांच्या दरम्यान राहील.</td><td>SEBI परिपत्रक, 1 Oct 2024</td></tr>
+<tr><td>Nifty 50 लॉट साइज</td><td>65 युनिट्स, 75 वरून बदलले. हे जानेवारी 2026 च्या करारांपासून लागू आहे. NSE वेळोवेळी लॉट साइजचा आढावा घेते.</td><td>NSE परिपत्रक, 3 Oct 2025</td></tr>
+<tr><td>एक्सपायरीचा दिवस</td><td>Nifty 50 चे करार मंगळवारी एक्सपायर होतात. तो मंगळवार सुट्टीचा असेल तर आधीच्या ट्रेडिंग दिवशी एक्सपायर होतात.</td><td>NSE कराराच्या तपशीलांचे पान, 11 Aug 2026 रोजी अद्ययावत, आणि NSE परिपत्रक, 25 Jun 2025</td></tr>
+</tbody></table>
+</div>
+<p>(11 Nov 2026 नुसार. नियम बदलतात, म्हणून NSE आणि SEBI साइट तपासा.)</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>तक्त्यात एकाच भाव-हालचालीची रोख आणि फ्यूचर्स पोझिशनशी तुलना केली आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th>रोख गुंतवणूक</th><th>फ्यूचर्स पोझिशन</th></tr></thead><tbody>
+<tr><td>तुम्ही भरलेली रक्कम</td><td>Rs 1,00,000</td><td>Rs 1,00,000 मार्जिन म्हणून</td></tr>
+<tr><td>तुमच्या नियंत्रणातील किंमत</td><td>Rs 1,00,000</td><td>Rs 10,00,000</td></tr>
+<tr><td>2% भाव हालचालीवरील रुपयांतील बदल</td><td>Rs 2,000</td><td>Rs 20,000</td></tr>
+<tr><td>भरलेल्या रकमेच्या तुलनेत हालचाल</td><td>2%</td><td>20%</td></tr>
+</tbody></table>
+</div>
+<p>शेवटची ओळ पाहा. तीच 2% हालचाल तुम्ही भरलेल्या रकमेच्या तुलनेत दहापट मोठी आहे. याच आकड्यांसह 5% हालचाल पाहा. फ्यूचर्समधील हालचाल Rs 50,000 होते, जी मार्जिनच्या अर्धी आहे. हालचाल कराराच्या किमतीसोबत वाढते, डिपॉझिटसोबत नाही.</p>
+<!-- component: futures-payoff | contract: 1000000 | marginPct: 10 | move: -2 | caption: या प्रकरणातील आकडे: 2% भाव हालचाल म्हणजे करारावर Rs 20,000, जे Rs 1,00,000 डिपॉझिटच्या 20% आहे, पण रोखीवर फक्त 2%. फक्त सिद्धांत. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> कराराची किंमत Rs 10,00,000. मार्जिन Rs 1,00,000. भाव तुमच्या विरोधात 2% गेला.</p>
+<div class="table-wrapper"><table><thead><tr><th>चरण</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. करारावरील रुपयांतील हालचाल</td><td>2% x Rs 10,00,000</td><td>Rs 20,000</td></tr>
+<tr><td>2. मार्जिनच्या तुलनेत हालचाल</td><td>Rs 20,000 / Rs 1,00,000</td><td>20%</td></tr>
+<tr><td>3. Rs 1,00,000 रोखीवर तीच 2% हालचाल</td><td>2% x Rs 1,00,000</td><td>Rs 2,000</td></tr>
+<tr><td>4. रोखीच्या तुलनेत हालचाल</td><td>Rs 2,000 / Rs 1,00,000</td><td>2%</td></tr>
+</tbody></table>
+</div>
+<p>फ्यूचर्सच्या बाबतीत तीच भाव हालचाल मार्जिनच्या 20% खर्च करते. रोखीच्या बाबतीत ती रोखीच्या 2% खर्च करते. फ्यूचर्समधील हालचाल दहापट मोठी आहे, कारण करार मार्जिनच्या दहापट आहे. सर्व आकडे काल्पनिक आहेत. या उदाहरणातील मार्जिन दर आणि कराराचे आकार खरे तथ्य नाहीत.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> सोडवलेले उदाहरण वाचा. एका वाक्यात सांगा की तीच टक्केवारीची हालचाल डिपॉझिटच्या तुलनेत मोठी का दिसते.</p>
+<p>संकेत:</p>
+<ol>
+<li>रुपयांतील हालचाल कराराच्या किमतीशी नाही, तर डिपॉझिटशी तुलना करा.</li>
+<li>तुमच्या भांडवलासाठी डिपॉझिट हा महत्त्वाचा आकडा आहे.</li>
+<li><em>हे पाहा</em> मधील तक्त्याची शेवटची ओळ पाहा.</li>
+</ol>
+<p><strong>उत्तर:</strong> मार्जिन करार किमतीच्या एक दशांश आहे. त्यामुळे कराराच्या किमतीवर 2% हालचाल म्हणजे मार्जिनच्या 20%. रोखीवर तीच 2% फक्त रोखीच्या 2% आहे.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> “लीव्हरेजमुळे अपेक्षित परतावा वाढतो” ही गैरसमजूत का आहे, ते लिहून सांगा. लीव्हरेज त्याऐवजी काय बदलते, तेही सांगा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>चांगल्या उत्तरात हे मुद्दे असतील.</p>
+<ul>
+<li>अपेक्षित परतावा म्हणजे अनेक सारख्या पैजांवरील सरासरी निकाल. लीव्हरेज एक्सपोजरच्या प्रति रुपयामागील ती सरासरी बदलत नाही.</li>
+<li>लीव्हरेज नफा आणि तोटा एकाच प्रमाणात वाढवते. ज्या पैजेची सरासरी ऋण आहे, ती प्रमाणात ऋणच राहते.</li>
+<li>लीव्हरेज प्रत्येक हालचालीचा आकार बदलते. तसेच स्वतःच्या पैशांच्या तुलनेत मोठा तोटा आणखी मोठा दिसतो.</li>
+<li>त्याच भाव हालचालीसाठी लीव्हरेजमुळे धोक्यात असलेली रुपयांतील रक्कम वाढते. पण त्यामुळे व्यापार यशस्वी होण्याची शक्यता वाढत नाही.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ लीव्हरेज, डेली सेटलमेंट, डिपॉझिटच्या तुलनेतील तोटा आणि एक परिस्थिती तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> शिकण्याची नोंद. या प्रकरणात सराव नाही. फक्त विचार करायचा आहे.</p>
+<ol>
+<li>लीव्हरेज काय बदलते, हे एका वाक्यात लिहा.</li>
+<li>लहान डिपॉझिट म्हणजे लहान जोखीम का नाही, हे एका वाक्यात लिहा.</li>
+<li>ही दोन्ही वाक्ये तुमच्या जर्नलमध्ये सेव्ह करा, किंवा जर्नल ॲप तयार होईपर्यंत कागदावर लिहा.</li>
+<li>व्यापारासाठी करार शोधू नका. हे पुस्तक फ्यूचर्सचा सराव शिकवत नाही.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>हे प्रकरण फ्यूचर्स सिद्धांतात कसे चालतात ते समजावते. ते फ्यूचर्सचा व्यापार कसा करायचा ते शिकवत नाही.</li>
+<li>मार्जिन, कराराचा आकार आणि एक्सपायरीचे नियम वेळेनुसार बदलतात. कोणत्याही आकड्यावर अवलंबून राहण्याआधी एक्सचेंजवर तपासा.</li>
+<li>Rs 10,00,000 चा करार आणि Rs 1,00,000 चे मार्जिन काल्पनिक आहेत. खरे करार वेगळे असतात.</li>
+<li>फ्यूचर्स पोझिशन हा रोजच्या लक्ष्याचा शॉर्टकट नाही. <em>Rs 2,000-3,000 चा वास्तव तपास</em> पाहा.</li>
+<li>लीव्हरेज कसे चालते हे माहीत असणे, कोणताही व्यापार नफा देईल की नाही, हे सांगत नाही.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>फ्यूचर्स करार म्हणजे ठरलेल्या तारखेला ठरलेल्या भावाचा करार.</li>
+<li>मार्जिन हे डिपॉझिट आहे. ते कराराच्या किमतीपेक्षा लहान असते.</li>
+<li>लीव्हरेजमुळे नफा आणि तोटा मोठे होतात. ते अपेक्षित निकाल वाढवत नाही.</li>
+<li>नफा आणि तोटा दररोज हलतात. भरलेल्या मार्जिनपेक्षा तोटा मोठा असू शकतो.</li>
+<li>सध्याचे करार नियम स्रोतावर तपासा.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>
+<p>NSE डेरिव्हेटिव्ह्ज कराराचे तपशील आणि मार्जिनची पाने</p>
+</li>
+<li>
+<p>डेरिव्हेटिव्ह्ज मार्जिनवरील SEBI परिपत्रके</p>
+</li>
+<li>
+<p>Zerodha Varsity, फ्यूचर्स साहित्य (फक्त संदर्भासाठी)</p>
+</li>
+<li>
+<p>SEBI परिपत्रक, 1 Oct 2024, इक्विटी निर्देशांक डेरिव्हेटिव्ह्ज व्यवस्था मजबूत करण्याच्या उपायांबद्दल</p>
+</li>
+<li>
+<p>NSE परिपत्रक, 3 Oct 2025, निर्देशांक डेरिव्हेटिव्ह्जच्या बाजार लॉटमधील बदलाबद्दल</p>
+</li>
+<li>
+<p>NSE क्लिअरिंग पाने, सेटलमेंट यंत्रणा आणि मार्जिनबद्दल</p>
+</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T9.1&amp;body=Page%3A%2009-advanced%2F01-futures-and-leverage%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../09-advanced/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../09-advanced/02-options-basics-and-greeks/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../09-advanced/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../09-advanced/02-options-basics-and-greeks/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

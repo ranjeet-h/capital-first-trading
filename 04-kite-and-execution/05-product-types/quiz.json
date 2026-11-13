@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T4.5-q1",
+    "type": "scenario",
+    "prompt": "Hypothetical. A trader plans to hold 10 shares overnight, but the order screen shows MIS because she picked it by mistake. What is the most likely consequence?",
+    "options": [
+      {"id": "a", "text": "Nothing changes. MIS and CNC are the same product."},
+      {"id": "b", "text": "The position is meant to close within the same session, and the broker's auto square-off rules may close it."},
+      {"id": "c", "text": "The shares go into her demat account the same afternoon."},
+      {"id": "d", "text": "The product type only changes the name shown on the screen."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "MIS and CNC are different products. MIS is meant to close within the same session.",
+      "c": "This describes a delivery holding under CNC. It does not describe a same-day MIS position.",
+      "d": "The product type changes how long the trade is meant to last and how it is handled by the broker."
+    },
+    "concepts": ["product-types", "mis"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.5-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. You buy 10 shares at Rs 250. What is the order value before charges, in rupees?",
+    "answer": 2500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Order value = 10 x 250 = Rs 2,500. Check: 250 x 10 = 250 x 10 = 2,500.",
+    "concepts": ["order-value"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.5-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. The order value is Rs 2,500. The price moves 1% against you. What is the loss in rupees, before charges?",
+    "answer": 25,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "1% of Rs 2,500 = 2,500 x 0.01 = Rs 25. Check: 10% of Rs 2,500 is Rs 250, and one tenth of that is Rs 25.",
+    "concepts": ["adverse-move", "percentage"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.5-q4",
+    "type": "spot-the-mistake",
+    "prompt": "A trader writes: 'MIS is cheaper, so I will use it for my three-week plan.' Which part of this reasoning is wrong?",
+    "options": [
+      {"id": "a", "text": "My plan lasts three weeks."},
+      {"id": "b", "text": "MIS is cheaper, so it is the right product for my plan."},
+      {"id": "c", "text": "The product should follow the holding period."},
+      {"id": "d", "text": "Whether MIS is cheaper for me is a fact to check in the cost preview."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This is correct. The plan does last three weeks, and that is the fact the product choice must follow.",
+      "c": "This is correct. The holding period decides the product, not the cost.",
+      "d": "This is correct. Cost is a fact to check in the preview, but it is not the reason to pick a product."
+    },
+    "concepts": ["product-types", "charges"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.5-q5",
+    "type": "mcq",
+    "prompt": "Why does this book keep beginners with CNC?",
+    "options": [
+      {"id": "a", "text": "CNC has no risk, so beginners are safe with it."},
+      {"id": "b", "text": "The book's method holds trades for days or weeks, and that style uses CNC. Intraday trading is a higher-risk style."},
+      {"id": "c", "text": "CNC lets you sell at any time, whatever the settlement status."},
+      {"id": "d", "text": "MIS has no risk because it closes the same day."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "CNC still carries market risk. A holding for weeks can fall in price.",
+      "c": "Holdings still follow settlement timing. See the chapter on demat accounts and settlement.",
+      "d": "MIS carries risk. It uses margin, which is leverage, and a same-day position can still lose money quickly."
+    },
+    "concepts": ["cnc", "mis", "style"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.5-q6",
+    "type": "mcq",
+    "prompt": "What does the product type mainly tell the broker?",
+    "options": [
+      {"id": "a", "text": "Which stock to buy."},
+      {"id": "b", "text": "How long the trade is meant to last and how it is settled."},
+      {"id": "c", "text": "The stop price for the trade."},
+      {"id": "d", "text": "The profit target for the trade."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The stock is chosen by your plan and the symbol you pick. The product type does not choose the stock.",
+      "c": "The stop price is set in the order itself, not by the product type.",
+      "d": "A profit target is part of your plan. The product type does not set it."
+    },
+    "concepts": ["product-types"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T3.6-q1",
+    "type": "mcq",
+    "prompt": "What is a gap?",
+    "options": [
+      {"id": "a", "text": "A price move during the trading day"},
+      {"id": "b", "text": "An open that differs from the previous close, with no trading between the two prices"},
+      {"id": "c", "text": "A stop order that has been triggered"},
+      {"id": "d", "text": "A price band set by the exchange"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A move during the day is normal trading. A gap is the difference between the previous close and the next open.",
+      "c": "A triggered stop is an order event. A gap is a change in price between two sessions.",
+      "d": "A price band is a limit on movement. It is not a gap."
+    },
+    "concepts": ["gap-definition"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.6-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Previous close Rs 400. Open Rs 385. What is the gap percent? Give the sign.",
+    "answer": -3.75,
+    "tolerance": 0.01,
+    "unit": "%",
+    "solution": "Gap percent = (open minus previous close) divided by previous close = (385 minus 400) divided by 400 = minus 15 divided by 400 = minus 0.0375, which is minus 3.75 percent. Check: 400 x 3.75 percent = 15, so 385 is 15 below 400.",
+    "concepts": ["gap-percent"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.6-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. Previous close Rs 250. Entry Rs 250. Stop Rs 240. Size 50 shares. The open is Rs 228 and the fill is near the open. What is the actual loss, in rupees?",
+    "answer": 1100,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Actual loss = shares x (entry minus fill) = 50 x (250 minus 228) = 50 x 22 = 1,100. Check: planned loss is 50 x 10 = 500, and 1,100 is 2.2 times that.",
+    "concepts": ["actual-loss", "gap-through-stop"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.6-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. A stop is set at Rs 240 on a stock that was bought at Rs 250. The stock opens at Rs 228 after a gap. Which description of the loss is best?",
+    "options": [
+      {"id": "a", "text": "Exactly Rs 500, because the stop limits the loss to the planned amount"},
+      {"id": "b", "text": "About Rs 1,100 on 50 shares, because the fill is near the open at Rs 228"},
+      {"id": "c", "text": "Rs 228, because the loss equals the open price"},
+      {"id": "d", "text": "Zero, because the stop protected the position"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The stop is a trigger. When the open is below the stop, the fill is near the open, not at the stop.",
+      "c": "The open price is not the loss. The loss is the entry minus the fill, times the shares.",
+      "d": "The stop did not prevent the loss. It triggered at a price that the market did not give."
+    },
+    "concepts": ["gap-through-stop", "scenario"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.6-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: 'I set a stop at Rs 240 on 50 shares, so my loss can never be more than Rs 500.' Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "I set a stop at Rs 240"},
+      {"id": "b", "text": "My loss can never be more than Rs 500"},
+      {"id": "c", "text": "50 shares"},
+      {"id": "d", "text": "There is no mistake"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This part is a fact about the plan. Setting a stop is correct as an action.",
+      "c": "This part is a fact about the size. The share count is correct as a number.",
+      "d": "There is a mistake. A gap can fill far below the stop, so the loss can exceed the planned Rs 500."
+    },
+    "concepts": ["planned-vs-actual", "stop-is-trigger"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T3.6-q6",
+    "type": "mcq",
+    "prompt": "Which is the best way to size a position against gap risk?",
+    "options": [
+      {"id": "a", "text": "Use only the stop distance"},
+      {"id": "b", "text": "Compare the planned loss with the largest gap you consider plausible, and keep the actual loss inside your risk budget"},
+      {"id": "c", "text": "Ignore gaps, because circuit limits prevent them"},
+      {"id": "d", "text": "Size the trade from the previous day's high"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The stop distance is only the planned loss. A gap can make the actual loss larger.",
+      "c": "Circuit limits do not prevent every gap. They can also stop an exit from happening. Gaps must be planned for.",
+      "d": "The previous day's high does not measure gap risk. It is not a sizing rule."
+    },
+    "concepts": ["gap-sizing"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

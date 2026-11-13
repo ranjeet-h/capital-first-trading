@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T4.7-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. A buy order for 10 shares has two fills: 6 shares at Rs 249.80 and 4 shares at Rs 250.00. What is the total value of the fills, in rupees?",
+    "answer": 2498.8,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Fill 1 = 6 x 249.80 = Rs 1,498.80. Fill 2 = 4 x 250.00 = Rs 1,000.00. Total = 1,498.80 + 1,000.00 = Rs 2,498.80. Check: 10 shares at about Rs 250 is about Rs 2,500, and Rs 2,498.80 is close to that.",
+    "concepts": ["fills", "reconciliation"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.7-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Using the same two fills (6 shares at Rs 249.80 and 4 shares at Rs 250.00), what is the average price per share, in rupees?",
+    "answer": 249.88,
+    "tolerance": 0.01,
+    "unit": "Rs",
+    "solution": "Total value = Rs 2,498.80. Total quantity = 10 shares. Average = 2,498.80 / 10 = Rs 249.88. Check: 249.88 x 10 = 2,498.80.",
+    "concepts": ["average-price", "fills"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.7-q3",
+    "type": "scenario",
+    "prompt": "Hypothetical. A trader sees 6 of 10 shares filled on her buy order. She treats the order as finished and places the same order again. What is the main error?",
+    "options": [
+      {"id": "a", "text": "Nothing. Partly filled means done."},
+      {"id": "b", "text": "She did not reconcile the views, so she may end up with more shares than planned."},
+      {"id": "c", "text": "She should average down on the order."},
+      {"id": "d", "text": "The cost preview shows that the order is finished."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A partly filled order still has pending shares. It is not finished.",
+      "c": "Averaging down adds to a losing position. It does not fix a partly filled order, and this book forbids it.",
+      "d": "The cost preview is an estimate of charges. It does not show whether the order is complete."
+    },
+    "concepts": ["partly-filled", "reconciliation"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.7-q4",
+    "type": "spot-the-mistake",
+    "prompt": "Statement: 'The cost preview on the order screen is the final charge, so I never need to check anything else.' What is wrong with this statement?",
+    "options": [
+      {"id": "a", "text": "Nothing. The preview is the final charge."},
+      {"id": "b", "text": "The preview is an estimate before you submit. The final charge is shown somewhere else, so it needs checking."},
+      {"id": "c", "text": "A cost preview cannot show charges at all."},
+      {"id": "d", "text": "Charges do not matter for a planned trade."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The preview is an estimate. The final charge appears elsewhere.",
+      "c": "The preview does show estimated charges before you submit. The mistake is treating it as the final figure.",
+      "d": "Charges reduce the result of a trade, so they matter in every plan."
+    },
+    "concepts": ["cost-preview", "charges"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.7-q5",
+    "type": "mcq",
+    "prompt": "Which statement about the trade book is correct?",
+    "options": [
+      {"id": "a", "text": "It shows pending orders that have not filled."},
+      {"id": "b", "text": "It lists each execution with its quantity and price."},
+      {"id": "c", "text": "It shows intraday positions."},
+      {"id": "d", "text": "It is the same as holdings."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Pending orders appear in the order book. The trade book lists executions that have happened.",
+      "c": "Positions show trades that are still open. The trade book lists each fill.",
+      "d": "Holdings are shares in your demat account after settlement. The trade book is a list of fills."
+    },
+    "concepts": ["trade-book"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T4.7-q6",
+    "type": "mcq",
+    "prompt": "Which statement about holdings and positions is correct?",
+    "options": [
+      {"id": "a", "text": "Holdings show intraday positions."},
+      {"id": "b", "text": "Holdings are shares in your demat account after settlement. Positions depend on the product type."},
+      {"id": "c", "text": "Positions are shares in your demat account after settlement."},
+      {"id": "d", "text": "Holdings and positions are always the same."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Intraday positions are shown under positions, not holdings.",
+      "c": "Shares after settlement are holdings. Positions depend on the product type and the trades that are still open.",
+      "d": "They can differ. Holdings and positions show different things, so compare them with the trade book."
+    },
+    "concepts": ["holdings", "positions"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

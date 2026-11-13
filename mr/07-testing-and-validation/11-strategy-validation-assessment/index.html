@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>रणनीती प्रमाणीकरण मूल्यांकन - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../07-testing-and-validation/11-strategy-validation-assessment/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../07-testing-and-validation/11-strategy-validation-assessment/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T7.11
+title: रणनीती प्रमाणीकरण मूल्यांकन
+page_type: Assessment
+prerequisites: [T7.1, T7.2, T7.3, T7.4, T7.5, T7.6, T7.7, T7.8, T7.9, T7.10]
+labs: [Lab 4, Lab 2, Lab 3]
+estimated_minutes: 35
+-->
+<h1 id="रणनीती-परमाणीकरण-मूलयांकन"><a class="header" href="#रणनीती-परमाणीकरण-मूलयांकन">रणनीती प्रमाणीकरण मूल्यांकन</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>दोन लोक एकच बॅकटेस्ट वाचतात. हे एक काल्पनिक उदाहरण आहे. एकजण लिहितो: “हे धोरण नफा देणारे आहे आणि तयार आहे.” दुसरा लिहितो: “इन-सॅम्पल सकारात्मक दिसते. आउट-ऑफ-सॅम्पल 18 व्यापारांवर आधारित आहे, त्यामुळे निकाल अनिर्णित आहे.” या दोनपैकी फक्त एक पुराव्याशी जुळतो. हे मूल्यांकन तपासते की तुम्ही पुराव्याला धरून निष्कर्ष लिहू शकता का. निष्कर्ष लिहिणे हेच तपासले जाणारे कौशल्य आहे.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>प्रमाणीकरणाचा अहवाल तीनपैकी एका निष्कर्षावर संपतो:</p>
+<ul>
+<li><strong>अनिर्णित.</strong> नमुना वाचण्यासाठी खूप लहान आहे, त्यामुळे लिखित निकषांवर निर्णय देता येत नाही. त्यातून कोणताही निर्णय येत नाही.</li>
+<li><strong>प्रमाणित नाही.</strong> नमुना पुरेसा मोठा आहे, आणि निकाल लिखित निकषांमध्ये नापास होतो. चाचणीच्या दुसऱ्या भागात चांगला निकाल असला तरी हे बदलत नाही.</li>
+<li><strong>पुढील फॉरवर्ड चाचणीसाठी प्रमाणित.</strong> निकाल लिखित निकष पार करतो. याचा अर्थ नियम फॉरवर्ड चाचणीसाठी योग्य आहे. याचा अर्थ नियम नफा देणारा आहे असा नाही. याचा अर्थ नियम खऱ्या पैशासाठी तयार आहे असाही नाही.</li>
+</ul>
+<p>निष्कर्ष लिहिण्याआधी खालील सात मुद्दे तपासा. प्रत्येक मुद्द्यासाठी पुरावा कुठल्या फाईलमध्ये किंवा स्क्रीनवर आहे ते लिहा. पुरावा दाखवता आला नाही, तर तो मुद्दा <strong>झालेले नाही</strong> असा चिन्हांकित करा. पास झाला असे चिन्हांकित करू नका.</p>
+<ol>
+<li>रनमध्ये खर्च चालू आहेत.</li>
+<li>राखून ठेवलेला कालावधी एकदाच वापरला गेला.</li>
+<li>लूक-अहेड डेमो चालवला गेला.</li>
+<li>सर्व्हायव्हरशिप डेमो चालवला गेला.</li>
+<li>तुम्ही आजमावलेल्या चाचण्यांची संख्या नोंदवली आहे.</li>
+<li>मॉन्टे कार्लो रन झाला आहे.</li>
+<li>नमुन्याचा आकार नमूद केला आहे.</li>
+</ol>
+<p>तरीही पुढील पाच कारणांमुळे निकाल प्रत्यक्ष लाइव्हमध्ये अपयशी ठरू शकतो. हे प्रमाणीकरण तपासणी पार केल्यानंतरही खरे आहे:</p>
+<ul>
+<li><strong>फिल.</strong> खरे फिल चाचणीने गृहीत धरलेल्यापेक्षा वाईट असू शकतात (<em>पेपर ट्रेडिंग आणि फॉरवर्ड चाचणी</em>).</li>
+<li><strong>खर्च.</strong> खरे खर्च रनमधील खर्चांपेक्षा वेगळे असू शकतात.</li>
+<li><strong>रेजीम बदल.</strong> रेजीम म्हणजे स्वतःची बाजार वागणूक असलेला कालावधी. बाजार बदलू शकतो, आणि नियम काम करणे थांबवू शकतो.</li>
+<li><strong>छोटा नमुना.</strong> छोट्या चाचणीत संभाव्य निकालांची श्रेणी मोठी असते.</li>
+<li><strong>लिक्विडिटी.</strong> नंतर एखादा शेअर कमी सहजपणे व्यापारात येऊ शकतो, ज्यामुळे फिल बदलतात.</li>
+</ul>
+<p>निष्कर्ष लिहिणे हेच कौशल्य आहे. निष्कर्ष चेकलिस्ट आणि निकषांमधून यायला हवा. तो चांगल्या निकालाच्या इच्छेतून येऊ शकत नाही.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>निष्कर्ष साधन, क्विझ आणि खालील चेकलिस्ट वापरा. चेकलिस्ट म्हणजे भरायची रचना आहे.</p>
+<!-- component: validation-verdict | caption: काल्पनिक निकाल निवडा आणि चेकलिस्ट टिक करा, मग लिखित नियम कोणता निष्कर्ष देतात आणि का ते पाहा. -->
+<div class="table-wrapper"><table><thead><tr><th>#</th><th>चेकलिस्ट मुद्दा</th><th>पुरावा (फाईल किंवा स्क्रीन)</th><th>स्थिती</th></tr></thead><tbody>
+<tr><td>1</td><td>रनमध्ये खर्च चालू</td><td></td><td></td></tr>
+<tr><td>2</td><td>राखून ठेवलेला कालावधी एकदाच वापरला</td><td></td><td></td></tr>
+<tr><td>3</td><td>लूक-अहेड डेमो चालवला</td><td></td><td></td></tr>
+<tr><td>4</td><td>सर्व्हायव्हरशिप डेमो चालवला</td><td></td><td></td></tr>
+<tr><td>5</td><td>चाचण्यांची संख्या नोंदवली</td><td></td><td></td></tr>
+<tr><td>6</td><td>मॉन्टे कार्लो रन</td><td></td><td></td></tr>
+<tr><td>7</td><td>नमुन्याचा आकार नमूद</td><td></td><td></td></tr>
+</tbody></table>
+</div>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> Rs 50,000 भांडवलावर लॅब 4 चा एक आउटपुट दाखवतो:</p>
+<ul>
+<li>इन-सॅम्पल अपेक्षित परतावा: +0.40R.</li>
+<li>आउट-ऑफ-सॅम्पल अपेक्षित परतावा, खर्चानंतर: +0.05R.</li>
+<li>आउट-ऑफ-सॅम्पल व्यापार: 18.</li>
+</ul>
+<p><strong>निष्कर्ष: अनिर्णित.</strong></p>
+<p>कारणे:</p>
+<ol>
+<li>18 व्यापार हे लॅबच्या 30-व्यापार आत्मविश्वास मर्यादेपेक्षा कमी आहेत.</li>
+<li>आउट-ऑफ-सॅम्पल एज लहान आहे, +0.05R. खर्च बदलले तर ती खूप हलते.</li>
+</ol>
+<p>लिखाणात दोन्ही कारणे नमूद करा. कारणांशिवाय निष्कर्ष हा निष्कर्ष नसतो.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> वरील सोडवलेल्या उदाहरणासाठी सात मुद्द्यांची चेकलिस्ट पूर्ण करा.</p>
+<p>संकेत:</p>
+<ol>
+<li>प्रत्येक मुद्द्यासाठी पुरावा कुठे साठवला असेल ती फाईल किंवा स्क्रीन लिहा.</li>
+<li>पुरावा दाखवता आला नाही, तर मुद्दा झालेले नाही असा चिन्हांकित करा, पास झाला असा नाही.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ol>
+<li>खर्च चालू: <strong>झाले</strong>. आउट-ऑफ-सॅम्पल आकडा खर्चानंतरचा दिला आहे, म्हणून रनमध्ये खर्च चालू होते.</li>
+<li>राखून ठेवलेला कालावधी एकदाच वापरला: <strong>झालेले नाही</strong>. उदाहरण दाखवत नाही की कालावधी एकदाच वापरला गेला.</li>
+<li>लूक-अहेड डेमो चालवला: <strong>झालेले नाही</strong>. कोणताही पुरावा दिलेला नाही.</li>
+<li>सर्व्हायव्हरशिप डेमो चालवला: <strong>झालेले नाही</strong>. कोणताही पुरावा दिलेला नाही.</li>
+<li>चाचण्यांची संख्या नोंदवली: <strong>झालेले नाही</strong>. कोणतीही संख्या दिलेली नाही.</li>
+<li>मॉन्टे कार्लो रन: <strong>झालेले नाही</strong>. कोणताही पुरावा दिलेला नाही.</li>
+<li>नमुन्याचा आकार नमूद: <strong>झाले</strong>. 18 आउट-ऑफ-सॅम्पल व्यापार.</li>
+</ol>
+<p>सात पैकी दोन मुद्द्यांना पुरावा आहे. बाकीचे पाच अजून झालेले नाहीत. हे पाच मुद्दे लिखाणाला धोरण प्रमाणित आहे असे म्हणण्यापासून थांबवतात.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> दुसऱ्या काल्पनिक निकालासाठी दोन परिच्छेदांचे प्रमाणीकरण मेमो लिहा. या निकालात इन-सॅम्पल अपेक्षित परतावा सकारात्मक आहे आणि आउट-ऑफ-सॅम्पल अपेक्षित परतावा नकारात्मक आहे.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p><strong>परिच्छेद 1.</strong> Rs 50,000 भांडवलावरील काल्पनिक निकाल. इन-सॅम्पल अपेक्षित परतावा +0.30R होता. खर्चानंतर आउट-ऑफ-सॅम्पल अपेक्षित परतावा -0.10R होता, 35 व्यापारांवर. नमुना 30-व्यापार मर्यादेपेक्षा जास्त आहे, त्यामुळे निकाल वाचता येतो. आउट-ऑफ-सॅम्पल निकाल लिखित निकषांमध्ये नापास होतो. निष्कर्ष: प्रमाणित नाही. सकारात्मक इन-सॅम्पल निकाल नापास झालेल्या आउट-ऑफ-सॅम्पल चाचणीला बदलू शकत नाही.</p>
+<p><strong>परिच्छेद 2.</strong> चेकलिस्ट: खर्च चालू आहेत, आणि नमुन्याचा आकार नमूद आहे. राखून ठेवलेला कालावधी एकदाच वापरला गेला, हे फक्त जर्नलमध्ये नोंद असेल तरच म्हणता येते. लूक-अहेड डेमो, सर्व्हायव्हरशिप डेमो, चाचण्यांची संख्या आणि मॉन्टे कार्लो रन अजून झालेले नाहीत. पुढची पायरी: हा निकाल अपयशी चाचणी म्हणून नोंदवा. राखून ठेवलेल्या निकालाचा पाठलाग करण्यासाठी नियम बदलू नका. कोणत्याही नव्या कल्पनेसाठी नवा राखून ठेवलेला कालावधी लागतो. यातून खऱ्या पैशाचा वापर करण्याला कोणताही आधार मिळत नाही.</p>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ तीन निष्कर्ष, राखून ठेवलेला कालावधी, खर्च आणि अतिशयोक्तीपूर्ण निष्कर्ष कसा ओळखायचा, हे तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> बॅकटेस्ट. म्हणजे व्यापार मागील डेटावरून आलेले आहेत.</p>
+<ol>
+<li>सात मुद्द्यांची चेकलिस्ट तुमच्या जर्नलच्या शिकण्याच्या नोंदीत लिहा. पुरावा हवा असेल तर लॅब 4 वापरा. लॅब तयार नसेल, तर कागदावर लिहा.</li>
+<li>प्रत्येक मुद्द्यासाठी पुरावा कुठे साठवला आहे ते लिहा. ज्या मुद्द्यासाठी पुरावा नाही, तिथे झालेले नाही असे चिन्हांकित करा.</li>
+<li>तीन श्रेणींपैकी एक निष्कर्ष लिहा. कारणासाठी एक वाक्य लिहा.</li>
+<li>लॅब 4 चा रन सेटिंग्जचा नोंद जोडा. लॅब अजून ती तयार करत नसेल, तर ती गहाळ आहे असे लिहा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>निष्कर्ष त्याच्या पुराव्याइतकाच चांगला असतो. ज्या मुद्द्याला पुरावा नाही, तो झालेला नाही.</li>
+<li>निकष पार करणे म्हणजे धोरण नफा देणारे आहे असे नव्हे. म्हणजे नियमाची आणखी चाचणी करणे फायदेशीर आहे.</li>
+<li>एका बाजार कालावधीतील निकाल दुसऱ्या कालावधीत टिकेलच असे नाही.</li>
+<li>रनमधील खर्च आणि फिल खऱ्या खर्चांशी आणि फिलशी जुळतीलच असे नाही.</li>
+<li>“प्रमाणित” असे लिहिलेला अहवाल ट्रेड करण्याची परवानगी वाटू शकतो. ती परवानगी नाही.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>तीन निष्कर्ष: अनिर्णित, प्रमाणित नाही, आणि पुढील फॉरवर्ड चाचणीसाठी प्रमाणित.</li>
+<li>पुढील चाचणीसाठी प्रमाणित म्हणजे आणखी चाचणीसाठी तयार. ते खऱ्या पैशासाठी तयार असणे नव्हे.</li>
+<li>कोणताही निष्कर्ष लिहिण्याआधी रनमध्ये खर्च चालू असले पाहिजेत.</li>
+<li>बदलानंतर वापरलेला राखून ठेवलेला कालावधी आता राखून ठेवलेला राहत नाही.</li>
+<li>पुरावा नसलेला प्रत्येक चेकलिस्ट मुद्दा झालेले नाही असा चिन्हांकित करा.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Robert Pardo, <em>The Evaluation and Optimization of Trading Strategies</em>, 2nd edition (Wiley, 2008).</li>
+<li>Bailey, Borwein, Lopez de Prado and Zhu (2014), “Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance”, Notices of the American Mathematical Society, 61(5), 458-471.</li>
+<li>बॅकटेस्ट लॅबचे स्वीकृती निकष.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T7.11&amp;body=Page%3A%2007-testing-and-validation%2F11-strategy-validation-assessment%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../07-testing-and-validation/10-paper-and-forward-testing/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../08-psychology-and-journaling/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../07-testing-and-validation/10-paper-and-forward-testing/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../08-psychology-and-journaling/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ऑर्डर देताना होणाऱ्या सामान्य चुका - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../04-kite-and-execution/08-execution-mistakes/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../04-kite-and-execution/08-execution-mistakes/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T4.8
+title: ऑर्डर देताना होणाऱ्या सामान्य चुका
+page_type: Kite walkthrough
+prerequisites: [T4.4, T4.5, T4.6, T4.7]
+labs: [Lab 1, Lab 3]
+estimated_minutes: 20
+-->
+<h1 id="ऑरडर-देताना-होणाऱया-सामानय-चुका"><a class="header" href="#ऑरडर-देताना-होणाऱया-सामानय-चुका">ऑर्डर देताना होणाऱ्या सामान्य चुका</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>तुमची योजना 10 शेअर्स Rs 250 ला खरेदी करण्याची आहे. एकूण Rs 2,500 होतात. तुम्ही त्याऐवजी 100 टाइप करता. ऑर्डरचे मूल्य Rs 25,000 होते. Rs 50,000 च्या खात्यावर, ही एका व्यापारातील तुमच्या भांडवलाचा अर्धा भाग आहे. ही चूक फक्त एका जास्तीच्या शून्याने झाली. हे प्रकरण ऑर्डरमधील सामान्य चुका दाखवते, आणि सबमिट करण्यापूर्वी त्या कशा पकडायच्या ते सांगते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>ऑर्डरमधील बहुतेक चुका काही गटांत मोडतात.</p>
+<ol>
+<li><strong>चुकीचा प्रॉडक्ट.</strong> प्रॉडक्ट प्रकार तुमच्या योजनेशी जुळत नाही. <em>प्रॉडक्ट प्रकार</em> हा भाग पाहा.</li>
+<li><strong>कधीच ट्रिगर न होणारा स्टॉप.</strong> स्टॉप लावलेला असतो, पण तो काम करू शकत नाही.</li>
+<li><strong>भावातील टायपिंगची चूक.</strong> तिला फॅट-फिंगर एरर असेही म्हणतात. ही टायपिंगची चूक असते, जसे एक जास्तीचा शून्य किंवा चुकीच्या ठिकाणी दशांश बिंदू.</li>
+<li><strong>चुकीचे प्रमाण.</strong> शेअर्सची संख्या तुमच्या योजनेशी जुळत नाही.</li>
+<li><strong>चुकीचा ऑर्डर प्रकार किंवा वैधता.</strong> उदाहरणार्थ, BSE च्या शेअर्सवर SL-M बंद आहे. Day वैधता असलेला स्टॉप सत्राच्या शेवटी संपतो, म्हणून दुसऱ्या सकाळी तो नसतो. बाजार बंद झाल्यानंतर दिलेला AMO एक्सचेंजपर्यंत पोहोचेपर्यंत AMO REQ RECEIVED असा दिसतो. म्हणजे तो अजून लाइव्ह ऑर्डर नाही.</li>
+<li><strong>तुम्ही पाहिलेल्या भावापासून दूर भरलेला व्यवहार.</strong> मार्केट ऑर्डर, विशेषतः वेगवान हालचालीत, शेवटच्या भावापासून खूप दूर भरू शकते.</li>
+</ol>
+<p>स्टॉप चार सामान्य कारणांमुळे काम करू शकत नाही:</p>
+<ul>
+<li><strong>चुकीची बाजू.</strong> सेल स्टॉप बाय स्टॉप म्हणून लावला, किंवा उलट.</li>
+<li><strong>ट्रिगर कधीच गाठला जात नाही.</strong> ट्रिगर अशा भावावर लावला आहे, जिथे भाव जात नाही.</li>
+<li><strong>ऑर्डर निष्क्रिय किंवा रद्द.</strong> स्टॉप आता लाइव्ह नाही.</li>
+<li><strong>GTT सक्रिय नाही किंवा कालबाह्य झाले.</strong> GTT म्हणून ठेवलेला स्टॉप आता काम करत नाही. <em>GTT ऑर्डर आणि त्यांच्या मर्यादा</em> हा भाग पाहा.</li>
+</ul>
+<p>वेबवर, तुम्ही Buy किंवा Sell वर क्लिक केल्यावर किंवा Enter दाबल्यावर Kite ऑर्डर पाठवते. Zerodha च्या मॅन्युअलमध्ये “तुम्हाला खात्री आहे का?” असा अतिरिक्त टप्पा सांगितलेला नाही. Kite काही ऑर्डर नाकारते आणि संदेश दाखवते. उदाहरणे:</p>
+<ul>
+<li>फ्रीज मर्यादेपेक्षा जास्त प्रमाण असल्यास इशारा मिळतो. मग Kite ऑर्डर स्लाइसमध्ये विभागते. इशारा प्रमाण तपासण्यास सांगतो. तो इशारा आहे, अडथळा नाही.</li>
+<li>त्या दिवशीच्या सर्किट बँडबाहेरची ऑर्डर Kite च्या स्वतःच्या जोखीम तपासणीत नाकारली जाते.</li>
+<li>पुरेसे मार्जिन नसलेली ऑर्डर नाकारली जाते. संदेश असा दिसतो: “Insufficient funds. Required margin is Rs X but available margin is Rs Y”.</li>
+</ul>
+<p>हे संदेश वाचा. तुमच्या स्वतःच्या टायपिंगच्या चुका पकडण्यासाठी त्यांच्यावर अवलंबून राहू नका.</p>
+<p>सत्रापूर्वी लिहिलेली चेकलिस्ट, सत्रादरम्यान केलेल्या दुरुस्तीपेक्षा चांगली असते. शांत असताना चेकलिस्ट लिहा, आणि प्रत्येक वेळी तिचा वापर करा.</p>
+<p>चूक झाल्यानंतर, तुमच्या नियमांनुसार एक्सपोजर कमी करा. ती सुधारण्यासाठी शेअर्स वाढवू नका. तोट्यात असलेल्या पोझिशनमध्ये भर घालण्याबद्दल <em>स्कॅल्पिंग, ऑप्शन खरेदी आणि मार्टिंगेल का धोकादायक आहेत</em> या भागात सांगितले आहे.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> तुमची योजना Rs 250 ला 10 शेअर्सची आहे. चुकून तुम्ही 100 टाइप करता. स्टॉप एंट्रीच्या Rs 10 खाली, Rs 240 वर आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>बाब</th><th>योजनेप्रमाणे</th><th>टाइप केलेले</th></tr></thead><tbody>
+<tr><td>शेअर्स</td><td>10</td><td>100</td></tr>
+<tr><td>भाव</td><td>Rs 250</td><td>Rs 250</td></tr>
+<tr><td>ऑर्डर मूल्य</td><td>10 x 250 = Rs 2,500</td><td>100 x 250 = Rs 25,000</td></tr>
+<tr><td>Rs 240 वर नियोजित तोटा</td><td>10 x 10 = Rs 100</td><td>100 x 10 = Rs 1,000</td></tr>
+</tbody></table>
+</div>
+<ul>
+<li>टाइप केलेली ऑर्डर नियोजित आकाराच्या दहा पट आहे.</li>
+<li>Rs 50,000 च्या खात्यावर, Rs 25,000 हे एका व्यापारातील तुमच्या भांडवलाचे अर्धे आहे.</li>
+<li>100 शेअर्सवर नियोजित तोटा Rs 1,000 आहे. हा Rs 50,000 च्या 2% आहे (1,000 / 50,000 = 2%).</li>
+<li>तुमची जोखीम मर्यादा Rs 50,000 च्या 1% म्हणजे Rs 500 आहे. टाइप केलेला तोटा त्या मर्यादेच्या दुप्पट आहे.</li>
+</ul>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: order-preview-check | set: order-previews | caption: तीन ऑर्डर पूर्वावलोकने, प्रत्येकात एक चूक; चूक शोधा आणि दुरुस्ती सांगा; हे चित्रण आहे, सध्याच्या मांडणीसाठी तुमचे Kite तपासा -->
+<p>प्रत्येक पूर्वावलोकनाची योजनेशी तुलना करा. प्रत्येकात एक चूक शोधा. उत्तर उघडण्यापूर्वी दुरुस्ती लिहा.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> तीन ऑर्डरचे वर्णन खाली दिले आहे. प्रत्येकात एक चूक आहे. चूक शोधा आणि दुरुस्ती सांगा. बाजू, प्रॉडक्ट, प्रमाण आणि भाव योजनेशी तपासा.</p>
+<ol>
+<li><strong>योजना:</strong> तुम्ही धरून ठेवलेल्या 100 शेअर्ससाठी सेल स्टॉप, ट्रिगर Rs 240 वर. <strong>केलेली नोंद:</strong> त्याच 100 शेअर्ससाठी बाय स्टॉप, ट्रिगर Rs 240 वर.</li>
+<li><strong>योजना:</strong> 25 शेअर्स Rs 300 ला खरेदी करा. <strong>केलेली नोंद:</strong> 250 शेअर्स Rs 300 ला खरेदी.</li>
+<li><strong>योजना:</strong> CNC, कारण तुम्ही तीन आठवडे धरून ठेवणार आहात. <strong>केलेली नोंद:</strong> MIS.</li>
+</ol>
+<p>संकेत:</p>
+<ol>
+<li>धरून ठेवलेल्या शेअर्सवरील स्टॉप हा सेल ऑर्डर असतो.</li>
+<li>प्रमाणातील अंकांची संख्या योजनेशी मोजा.</li>
+<li>प्रॉडक्ट धरून ठेवण्याच्या कालावधीवर ठरतो.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ol>
+<li><strong>चुकीची बाजू.</strong> स्टॉप सेल स्टॉप असला पाहिजे. दुरुस्ती: बाजू सेल करा.</li>
+<li><strong>चुकीचे प्रमाण.</strong> ऑर्डर योजनेच्या दहा पट आहे. दुरुस्ती: 25 शेअर्स.</li>
+<li><strong>चुकीचा प्रॉडक्ट.</strong> धरून ठेवण्याचा कालावधी तीन आठवडे आहे, म्हणून प्रॉडक्ट CNC आहे. दुरुस्ती: प्रॉडक्ट CNC करा.</li>
+</ol>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> तुमची स्वतःची आठ मुद्द्यांची सबमिट करण्यापूर्वीची चेकलिस्ट लिहा. मग ती तुम्हाला न दाखवलेल्या तीन चुकांवर तपासा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>एक नमुना चेकलिस्ट:</p>
+<ol>
+<li>बाजू (खरेदी किंवा विक्री) योजनेशी जुळते.</li>
+<li>प्रॉडक्ट योजनेतील धरून ठेवण्याच्या कालावधीशी जुळतो.</li>
+<li>प्रमाण योजनेशी जुळते, आणि अंकांची संख्या बरोबर आहे.</li>
+<li>भाव योजनेशी जुळतो, त्यात टायपिंगची चूक नाही.</li>
+<li>ऑर्डर प्रकार (लिमिट, मार्केट, SL किंवा SL-M) योजनेशी जुळतो, आणि वैधता बरोबर आहे.</li>
+<li>स्टॉप ट्रिगर धरून ठेवण्यासाठी एंट्री भावाच्या योग्य बाजूला आहे.</li>
+<li>स्टॉपचे प्रमाण तुमच्याकडील शेअर्सच्या संख्येइतके आहे.</li>
+<li>त्याच शेअरवरील कोणताही GTT तपासला आहे, आणि त्याची पुनरावलोकन तारीख आहे.</li>
+</ol>
+<p>सर्व उदाहरणे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>या प्रकरणात टायपिंगच्या चुकीचा खर्च, कधीच ट्रिगर न होणाऱ्या स्टॉपचे नियम, आणि सबमिट करण्यापूर्वीची तपासणी, हे तपासले जाते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> paper. ही नोंद तुमच्या जर्नलमध्ये करा (जर्नल ॲप तयार होईपर्यंत कागदावर).</p>
+<ol>
+<li>कागदावर एक काल्पनिक योजना लिहा, त्यात प्रमाण आणि भाव असावा.</li>
+<li>चुकीचे प्रमाण असलेली चुकीची ऑर्डर कागदावर लिहा. ती देऊ नका.</li>
+<li>तुम्ही चूक कुठे पकडाल ते लिहा: Buy किंवा Sell वर क्लिक करण्यापूर्वी, की अजिबात नाही.</li>
+<li>तुमच्या जर्नलमध्ये चूक नोंदवा, नियम मोडल्याचा टॅग लावा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>पुस्तक तुमचा सराव तपासू शकत नाही. तुमचा विचार ही तुमची स्वतःची नोंद आहे.</li>
+<li>चेकलिस्टमुळे चुका कमी होतात, पण त्या संपत नाहीत. ती अद्ययावत ठेवा.</li>
+<li>Kite चे संदेश ही सुरक्षा जाळी नाही. चुकीचे प्रमाण किंवा चुकीची बाजू ते कदाचित पकडणार नाहीत. Buy किंवा Sell वर क्लिक करण्यापूर्वी ऑर्डर स्वतः तपासा.</li>
+<li>स्टॉपवरील चुकीच्या प्रमाणामुळे नियोजित तोटाही बदलतो. एंट्री ऑर्डरसोबत स्टॉपही तपासा.</li>
+<li>Day वैधता असलेली ऑर्डर सत्राच्या शेवटी संपते. अनेक दिवस एखाद्या ऑर्डरवर अवलंबून राहण्याआधी वैधता तपासा.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>बहुतेक ऑर्डर चुका म्हणजे: चुकीचा प्रॉडक्ट, कधीच ट्रिगर न होणारा स्टॉप, टायपिंगची चूक, चुकीचे प्रमाण, किंवा चुकीचा ऑर्डर प्रकार किंवा वैधता.</li>
+<li>चुकीच्या बाजूचा किंवा रद्द झालेला स्टॉप काम करत नाही. ज्याचा ट्रिगर गाठला जात नाही, तोही काम करत नाही.</li>
+<li>दहा पट मोठा आकार एका लहान योजनेला तुमच्या भांडवलाच्या अर्ध्यावर नेऊ शकतो.</li>
+<li>सबमिट करण्यापूर्वी बाजू, प्रॉडक्ट, प्रमाण, भाव आणि वैधता लिखित योजनेशी तपासा.</li>
+<li>चूक झाल्यानंतर तुमच्या नियमांनुसार एक्सपोजर कमी करा. पोझिशनमध्ये भर घालू नका.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Zerodha सपोर्ट पेजेस, ऑर्डर नाकारणे आणि Kite एरर संदेशांवर. सध्याचा मजकूर तिथे तपासा.</li>
+<li>NSE India, ट्रेडिंग नियम आणि सर्किट बँड सूचना. सध्याच्या सर्कुलरसाठी NSE साइटवर शोधा.</li>
+</ul>
+<!-- facts-needed: Kite order confirmation and price-range messages; exchange price-band and order rejection rules; the exact wording of Kite error messages. -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T4.8&amp;body=Page%3A%2004-kite-and-execution%2F08-execution-mistakes%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../04-kite-and-execution/07-order-book/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../04-kite-and-execution/09-demo-walkthrough/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../04-kite-and-execution/07-order-book/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../04-kite-and-execution/09-demo-walkthrough/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

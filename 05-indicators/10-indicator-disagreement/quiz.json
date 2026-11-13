@@ -1,0 +1,124 @@
+[
+  {
+    "id": "T5.10-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. Closes for the last five days were Rs 100, Rs 102, Rs 104, Rs 106 and Rs 108. What is the simple average of the five closes?",
+    "answer": 104,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Sum = 100 + 102 + 104 + 106 + 108 = 520. Average = 520 / 5 = Rs 104.",
+    "concepts": ["moving-average", "arithmetic"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.10-q2",
+    "type": "mcq",
+    "prompt": "Hypothetical. Three indicators on one chart all use the same daily closes. They all say the price is rising. Which statement is correct?",
+    "options": [
+      {"id": "a", "text": "The three indicators are three independent proofs that the price will keep rising"},
+      {"id": "b", "text": "The three indicators may be counting the same input in three ways, so they are not three separate pieces of evidence"},
+      {"id": "c", "text": "Three agreeing indicators prove the data is correct"},
+      {"id": "d", "text": "Three agreeing indicators make the stop unnecessary"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Indicators built from the same closes often share one input. Agreement may reflect that shared input, not three separate tests.",
+      "c": "Agreement says nothing about whether the data is correct. It only says the readings match.",
+      "d": "Stops and position size still apply even when indicators agree. Agreement is not a risk limit."
+    },
+    "concepts": ["redundancy", "limits-of-indicators"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.10-q3",
+    "type": "scenario",
+    "prompt": "Hypothetical. A reader has a trade that lost money. The reader changes the average period from 20 days to 14 days, then to 9 days, until the old trade looks profitable on the chart. The reader says, 'Now I know the right setting.' Which response fits the book's rules?",
+    "options": [
+      {"id": "a", "text": "Agree. A setting that makes the old trade look profitable is the right setting"},
+      {"id": "b", "text": "Stop. Changing the period after seeing the result is overfitting. Record every setting tried, and fix the periods before any new test"},
+      {"id": "c", "text": "Keep the 9-day setting, because shorter averages are always better"},
+      {"id": "d", "text": "Ignore the chart, because one trade cannot show anything"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A setting picked because it makes one past trade look good has been fitted to the past. It has not been tested on new data.",
+      "c": "No period is always better. A shorter average reacts faster but does not prove a better result.",
+      "d": "One trade shows little. The mistake here is the changing setting, which can fit almost any past trade."
+    },
+    "concepts": ["overfitting", "parameter-tuning"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.10-q4",
+    "type": "numeric",
+    "prompt": "Hypothetical. Closes Rs 100 and Rs 110 on day 1 and day 2, with a 2-day average of Rs 105. Using only these numbers, how far above the average is the day 2 close, in rupees?",
+    "answer": 5,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "The 2-day average on day 2 is (100 + 110) / 2 = Rs 105, as given. The day 2 close is Rs 110. Difference = 110 - 105 = Rs 5.",
+    "concepts": ["moving-average", "arithmetic"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.10-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Read this statement. Which part holds the root mistake? 'The 20-day average, the MACD and the RSI all say up, so I have three independent confirmations. Three confirmations make the trade much safer.'",
+    "options": [
+      {"id": "a", "text": "The 20-day average, the MACD and the RSI all say up"},
+      {"id": "b", "text": "So I have three independent confirmations"},
+      {"id": "c", "text": "Three confirmations make the trade much safer"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This part reads the indicators as stated. The mistake is in calling them independent, which needs their inputs to be different.",
+      "c": "This part is also wrong, but only because it rests on the claim of three independent confirmations. The root mistake is in the second part. Agreement is not a safety measure, and a stop and size are still needed."
+    },
+    "concepts": ["redundancy", "limits-of-indicators"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.10-q6",
+    "type": "mcq",
+    "prompt": "A tie-break rule is written before a test. Which rule is the best fit for this book?",
+    "options": [
+      {"id": "a", "text": "Trade whichever indicator gave the best result last week"},
+      {"id": "b", "text": "Use two named indicators with fixed periods. If they disagree, allow no trade that day"},
+      {"id": "c", "text": "Use every indicator on the chart and follow the majority"},
+      {"id": "d", "text": "Change the periods each day until the two indicators agree"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Choosing the indicator that did best last week fits the past. It is a setting picked after seeing results.",
+      "c": "A majority count treats redundant indicators as separate votes. It also uses more settings, which makes fitting easier.",
+      "d": "Changing periods until two indicators agree is the self-deception this chapter warns about."
+    },
+    "concepts": ["tie-break-rule", "overfitting"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.10-q7",
+    "type": "scenario",
+    "prompt": "Hypothetical. A reader says: 'When indicators disagree, the data must be wrong. I will check the data until the indicators match.' Which response fits the book's rules?",
+    "options": [
+      {"id": "a", "text": "Agree. Disagreement is a sign of bad data"},
+      {"id": "b", "text": "Disagreement is normal. Check the data for errors, but decide in advance what the rule does when indicators disagree"},
+      {"id": "c", "text": "Pick the indicator that agrees with the trader's view"},
+      {"id": "d", "text": "Stop using indicators completely"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Indicators often disagree for real reasons, such as different periods or different inputs. Disagreement alone does not show bad data.",
+      "c": "Picking the indicator that agrees with the view is hindsight. The rule must be written before the data is read.",
+      "d": "Indicators can describe the past. The point is to use them with a fixed rule and to avoid treating them as forecasts."
+    },
+    "concepts": ["disagreement", "tie-break-rule"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

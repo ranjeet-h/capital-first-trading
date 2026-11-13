@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ट्रेंड आणि बाजाराची रचना - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../03-chart-reading/04-trend-and-market-structure/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../03-chart-reading/04-trend-and-market-structure/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T3.4
+title: ट्रेंड आणि बाजाराची रचना
+page_type: Concept
+prerequisites: [T3.3]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="टरेंड-आणि-बाजाराची-रचना"><a class="header" href="#टरेंड-आणि-बाजाराची-रचना">ट्रेंड आणि बाजाराची रचना</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p><strong>काल्पनिक.</strong> एक शेअर Rs 200 वरून Rs 230 पर्यंत वाढतो. तो Rs 215 पर्यंत खाली येतो, मग Rs 245 पर्यंत वर जातो आणि Rs 222 पर्यंत खाली येतो. एक ट्रेडर त्या मधल्या एका जोरदार वरच्या दिवसाकडे पाहतो. तो म्हणतो, “ट्रेंड वर आहे, म्हणून मी खरेदी करीन.” पण त्याने स्विंगची व्याख्या, स्टॉप-लॉस किंवा कोणताही नियम ठरवलेला नाही. चार्ट काढला गेला आहे, पण ट्रेंड अजून ठरलेला नाही. हे प्रकरण तो मार्ग एक एक पाऊल करून कसा वाचायचा ते दाखवते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>ट्रेंड</strong> म्हणजे सलग स्विंग पॉइंट्सची दिशा. ती एका कँडलची दिशा नसते. एक वरचा कँडल म्हणजे अपट्रेंड नाही.</p>
+<p><strong>स्विंग उच्चांक</strong> म्हणजे असा उच्चांक, ज्याच्या दोन्ही बाजूला त्यापेक्षा कमी उच्चांक आहेत. <strong>स्विंग नीचांक</strong> म्हणजे असा नीचांक, ज्याच्या दोन्ही बाजूला त्यापेक्षा जास्त नीचांक आहेत. प्रत्येक बाजूला किती कँडल मोजायचे ते तुम्ही ठरवता. त्याला N म्हणू. N बदलला की कोणते पॉइंट स्विंग मानले जातात ते बदलते. त्यामुळे लेबलही बदलू शकते. N तुमच्या नोंदीत लिहा.</p>
+<p>रचना सांगणारी तीन लेबल्स आहेत:</p>
+<ul>
+<li><strong>अपट्रेंड:</strong> वाढते उच्चांक आणि वाढते नीचांक.</li>
+<li><strong>डाउनट्रेंड:</strong> कमी होणारे उच्चांक आणि कमी होणारे नीचांक.</li>
+<li><strong>रेंज:</strong> यापैकी काहीही नाही. उच्चांक आणि नीचांक बाजूला सरकतात.</li>
+</ul>
+<p>प्रत्येक स्विंगची तुलना त्याच प्रकारच्या आधीच्या स्विंगशी करा. उच्चांकांची उच्चांकांशी आणि नीचांकांची नीचांकांशी तुलना करा.</p>
+<p><strong>स्ट्रक्चर ब्रेक</strong> ही ती पातळी आहे जिथे सध्याचा पॅटर्न तुटतो. अपट्रेंडमध्ये, सर्वात अलीकडच्या स्विंग नीचांकाखाली बंद भाव आला, तर शेवटचा वाढता नीचांक अयशस्वी झाला असे म्हणतात. मग रचना वाढते नीचांक बनवत नाही.</p>
+<p><strong>स्ट्रक्चर लेबल्स मागे पाहून ठरतात.</strong> नवीन कँडल येतात तसे ती अद्ययावत होतात. गेल्या आठवड्यात स्पष्ट दिसणारे लेबल या आठवड्यात बदलू शकते.</p>
+<p>ट्रेंड हे एक वर्णन आहे, आणि ते संपू शकते. ट्रेंडचा वापर करून व्यापाराचा निर्णय घेणे ही एक रणनीती आहे. ती रणनीती <em>Trend following in depth</em> मध्ये सांगितली आहे.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<p>स्विंग पॉइंट्स, सोडवलेल्या उदाहरणातून, प्रकारानुसार वेगळे केलेले:</p>
+<div class="table-wrapper"><table><thead><tr><th>स्विंग उच्चांक</th><th>स्विंग नीचांक</th></tr></thead><tbody>
+<tr><td>Rs 230</td><td>Rs 200</td></tr>
+<tr><td>Rs 245</td><td>Rs 215</td></tr>
+<tr><td></td><td>Rs 222</td></tr>
+</tbody></table>
+</div>
+<p>खाली वाचा. प्रत्येक उच्चांकाचे मूल्य त्याआधीच्यापेक्षा जास्त आहे. प्रत्येक नीचांकाचे मूल्य त्याआधीच्यापेक्षा जास्त आहे. ही दोन तथ्ये अपट्रेंड दर्शवतात.</p>
+<!-- component: swing-labeler | n: 2 | caption: या प्रकरणातील स्विंगसह एक काल्पनिक चार्ट (नीचांक Rs 200, Rs 215 आणि Rs 222, उच्चांक Rs 230 आणि Rs 245). स्विंग चिन्हांकित करण्यासाठी चार्टवर टॅप करा आणि लेबल वाचा. मग N बदलून नियमातील स्विंग कसे हलतात ते पाहा. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> स्विंगचा क्रम वेळेनुसार: नीचांक Rs 200, उच्चांक Rs 230, नीचांक Rs 215, उच्चांक Rs 245, नीचांक Rs 222.</p>
+<div class="table-wrapper"><table><thead><tr><th>स्विंग</th><th>भाव</th><th>त्याच प्रकारच्या आधीच्या स्विंगशी तुलना</th></tr></thead><tbody>
+<tr><td>नीचांक</td><td>Rs 200</td><td>अजून तुलना नाही</td></tr>
+<tr><td>उच्चांक</td><td>Rs 230</td><td>अजून तुलना नाही</td></tr>
+<tr><td>नीचांक</td><td>Rs 215</td><td>Rs 200 पेक्षा जास्त</td></tr>
+<tr><td>उच्चांक</td><td>Rs 245</td><td>Rs 230 पेक्षा जास्त</td></tr>
+<tr><td>नीचांक</td><td>Rs 222</td><td>Rs 215 पेक्षा जास्त</td></tr>
+</tbody></table>
+</div>
+<p>नीचांक 200, 215 आणि 222 वाढत आहेत. उच्चांक 230 आणि 245 वाढत आहेत. रचना <strong>अपट्रेंड</strong> आहे.</p>
+<p>स्ट्रक्चर-ब्रेक पातळी Rs 222 आहे. Rs 222 च्या खाली बंद भाव आला, तर सर्वात अलीकडचा वाढता नीचांक अयशस्वी होतो. तो बंद भाव लेबल बदलेल. तपासा: 222 हा सर्वात अलीकडचा स्विंग नीचांक आहे, म्हणून हीच पातळी पाहायची आहे.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> <strong>काल्पनिक.</strong> स्विंगचा क्रम वेळेनुसार: नीचांक Rs 100, उच्चांक Rs 120, नीचांक Rs 110, उच्चांक Rs 125, नीचांक Rs 115. प्रत्येक स्विंगला वाढता किंवा कमी बिंदू म्हणून लेबल करा. रचनेचे वर्गीकरण करा. स्ट्रक्चर-ब्रेक पातळी सांगा.</p>
+<p>संकेत:</p>
+<ol>
+<li>प्रत्येक स्विंगची तुलना त्याच प्रकारच्या आधीच्या स्विंगशी करा.</li>
+<li>उच्चांकांची उच्चांकांशी आणि नीचांकांची नीचांकांशी तुलना करा.</li>
+<li>उच्चांक आणि नीचांक दोन्ही वाढत आहेत का ते तपासा.</li>
+<li>अपट्रेंडमध्ये स्ट्रक्चर-ब्रेक पातळी म्हणजे सर्वात अलीकडचा स्विंग नीचांक.</li>
+</ol>
+<p><strong>उत्तर:</strong> नीचांक: 110 हा 100 पेक्षा जास्त आहे, आणि 115 हा 110 पेक्षा जास्त आहे. उच्चांक: 125 हा 120 पेक्षा जास्त आहे. रचना <strong>अपट्रेंड</strong> आहे. स्ट्रक्चर-ब्रेक पातळी Rs 115 आहे, म्हणजे सर्वात अलीकडचा स्विंग नीचांक.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> <strong>काल्पनिक.</strong> स्विंगचा क्रम वेळेनुसार: उच्चांक Rs 260, नीचांक Rs 240, उच्चांक Rs 255, नीचांक Rs 238. प्रत्येक स्विंगला लेबल करा. रचनेचे वर्गीकरण करा. डाउनट्रेंडच्या दृष्टीने स्ट्रक्चर-ब्रेक पातळी सांगा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>Rs 255 चा उच्चांक हा Rs 260 च्या उच्चांकापेक्षा कमी आहे. तो कमी उच्चांक आहे.</li>
+<li>Rs 238 चा नीचांक हा Rs 240 च्या नीचांकापेक्षा कमी आहे. तो कमी नीचांक आहे.</li>
+<li>रचना <strong>डाउनट्रेंड</strong> आहे: कमी होणारे उच्चांक आणि कमी होणारे नीचांक.</li>
+<li>डाउनट्रेंडच्या दृष्टीने स्ट्रक्चर-ब्रेक पातळी म्हणजे सर्वात अलीकडचा स्विंग उच्चांक, Rs 255. Rs 255 च्या वर बंद झाला, तर शेवटचा कमी उच्चांक अयशस्वी होतो.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>हे प्रकरण वाढते उच्चांक आणि वाढते नीचांक, रेंज ओळखणे, आणि स्विंगची व्याख्या पाहण्यापूर्वी ती का निश्चित करावी, हे तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> paper. निकाल तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल, तर कागदावर लिहा.</p>
+<ol>
+<li>एक शेअर निवडा.</li>
+<li>8 आठवडे, प्रत्येक आठवड्याला साप्ताहिक चार्टवर रचना लेबल करा: अपट्रेंड, डाउनट्रेंड किंवा रेंज.</li>
+<li>तुम्ही वापरलेली स्विंगची व्याख्या लिहा, N सह. ती 8 आठवड्यांसाठी सारखीच ठेवा.</li>
+<li>नवीन डेटा आल्यानंतर तुमचे लेबल बदललेला कोणताही आठवडा नोंदवा.</li>
+<li>काय बदलले आणि का, ते लिहा. बदलावरून कोणताही निष्कर्ष काढू नका.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>लेबल स्विंगच्या व्याख्येवर अवलंबून असते. वेगळा N वेगळे स्विंग आणि वेगळे लेबल देऊ शकतो.</li>
+<li>नवीन कँडल येतात तसे लेबल अद्ययावत होते. एका आठवड्यात अपट्रेंड म्हणून लेबल केलेला चार्ट पुढच्या आठवड्यात रेंज होऊ शकतो.</li>
+<li>एक वरचा कँडल म्हणजे अपट्रेंड नाही. एका दिवशी नवीन उच्चांक गाठणे ट्रेंड ठरवायला पुरेसे नाही.</li>
+<li>नियम आणि स्टॉपशिवाय “ट्रेंड वर आहे, म्हणून मी खरेदी करतो” असे लिहिणे ही चूक आहे. फक्त लेबल ही योजना नाही.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>ट्रेंड म्हणजे सलग स्विंग पॉइंट्सची दिशा, एका कँडलची नाही.</li>
+<li>अपट्रेंड: वाढते उच्चांक आणि वाढते नीचांक. डाउनट्रेंड: कमी होणारे उच्चांक आणि कमी होणारे नीचांक. रेंज: यापैकी काहीही नाही.</li>
+<li>चार्टला लेबल करण्यापूर्वी तुमची स्विंगची व्याख्या लिहा, N सह.</li>
+<li>स्ट्रक्चर-ब्रेक पातळी म्हणजे ज्या सर्वात अलीकडच्या स्विंग पॉइंटवर ट्रेंड अवलंबून असतो तो पॉइंट.</li>
+<li>लेबल मागे पाहून ठरतात. नवीन कँडल आल्यावर ते बदलू शकतात, हे अपेक्षित धरा.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Zerodha Varsity, ट्रेंड मॉड्यूल (केवळ संदर्भासाठी)</li>
+<li>डाओ थिअरी ओव्हरव्ह्यू, प्रमाणित तांत्रिक-विश्लेषण पुस्तकांमधून</li>
+</ul>
+<!-- facts-needed: none for the arithmetic. The Dow theory overview is a description of a classic framework, not a claim of predictive power. -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T3.4&amp;body=Page%3A%2003-chart-reading%2F04-trend-and-market-structure%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../03-chart-reading/03-support-and-resistance/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../03-chart-reading/05-breakouts/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../03-chart-reading/03-support-and-resistance/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../03-chart-reading/05-breakouts/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

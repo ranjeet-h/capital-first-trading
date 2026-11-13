@@ -1,0 +1,126 @@
+[
+  {
+    "id": "T9.1-q1",
+    "type": "mcq",
+    "prompt": "Which statement about leverage is correct?",
+    "options": [
+      {"id": "a", "text": "Leverage increases the expected profit of the same trades."},
+      {"id": "b", "text": "Leverage makes gains and losses bigger by the same factor. It does not change the expected result of the bet."},
+      {"id": "c", "text": "Leverage removes the risk of a bad trade once the margin is paid."},
+      {"id": "d", "text": "Leverage only affects losses, not gains."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Leverage scales the rupee gains and losses. It does not raise the average result of the same bets.",
+      "c": "The full contract value is still exposed to price moves. The margin does not remove that risk.",
+      "d": "Leverage works in both directions. Gains grow by the same factor as losses."
+    },
+    "concepts": ["leverage", "expected-result"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.1-q2",
+    "type": "mcq",
+    "prompt": "When do gains and losses on a futures position move in your account?",
+    "options": [
+      {"id": "a", "text": "Only at expiry, on the last day of the contract."},
+      {"id": "b", "text": "Only when you close the position yourself."},
+      {"id": "c", "text": "As prices move, day by day, not only at expiry."},
+      {"id": "d", "text": "Only when the exchange pays out the profit in one sum."}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "This is the wrong idea. Daily settlement moves money as prices change, before expiry.",
+      "b": "Closing the position does not decide when money moves. Daily settlement has already moved it.",
+      "d": "Money does not wait for one payout at the end. It moves as prices change."
+    },
+    "concepts": ["daily-settlement"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.1-q3",
+    "type": "mcq",
+    "prompt": "A trader puts Rs 1,00,000 in margin on a futures position. Which statement about the most the trader can lose is correct?",
+    "options": [
+      {"id": "a", "text": "The most I can lose is the margin deposited."},
+      {"id": "b", "text": "Losses can be larger than the margin deposited, so the deposit is not a limit on loss."},
+      {"id": "c", "text": "The loss can never be more than the profit I hoped to make."},
+      {"id": "d", "text": "Losses only count at expiry, so the deposit is safe until then."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The margin is not a cap. Prices can move against the position by more than the deposit.",
+      "c": "A hoped-for profit does not limit a loss. The loss follows the price move.",
+      "d": "Daily settlement moves losses in and out as prices change. They are not held until expiry."
+    },
+    "concepts": ["loss-vs-deposit", "margin"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.1-q4",
+    "type": "numeric",
+    "prompt": "Hypothetical. Contract value Rs 10,00,000 and margin Rs 1,00,000. The price moves 2% against the position. What is the rupee loss on the contract?",
+    "answer": 20000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "2% of Rs 10,00,000 = 0.02 x 10,00,000 = Rs 20,000. Checked again: Rs 20,000 / Rs 10,00,000 = 2%.",
+    "concepts": ["leverage", "margin"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.1-q5",
+    "type": "numeric",
+    "prompt": "Hypothetical. Same case as the previous question. The loss is what percent of the margin deposited? Give one decimal place.",
+    "answer": 20.0,
+    "tolerance": 0.1,
+    "unit": "%",
+    "solution": "Rs 20,000 / Rs 1,00,000 = 0.20 = 20.0%. Checked again: 20% of Rs 1,00,000 = Rs 20,000.",
+    "concepts": ["leverage", "margin"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.1-q6",
+    "type": "scenario",
+    "prompt": "Hypothetical. Your cash in the account is Rs 50,000. A futures position moves Rs 60,000 against you in one day. Which statement is correct?",
+    "options": [
+      {"id": "a", "text": "The loss is smaller than the cash, so nothing more can happen."},
+      {"id": "b", "text": "The loss is bigger than your cash, and you may have to pay more money into the account."},
+      {"id": "c", "text": "The loss is capped at Rs 50,000, the cash you hold."},
+      {"id": "d", "text": "Nothing happens until expiry, so the account is fine today."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Rs 60,000 is larger than Rs 50,000. The loss is bigger than the cash, not smaller.",
+      "c": "The cash in the account is not a cap on the loss. The move can be larger than the cash held.",
+      "d": "Losses move through the account as prices change, not only at expiry."
+    },
+    "concepts": ["scenario", "loss-vs-deposit"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.1-q7",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"Futures are a cheaper way to hold the same stock.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The word futures: a futures contract is an agreement for a set price on a set date."},
+      {"id": "b", "text": "The word cheaper: the small deposit is not a lower cost or a lower risk."},
+      {"id": "c", "text": "The word stock: a stock and a futures contract are the same kind of asset."},
+      {"id": "d", "text": "Nothing. The statement is correct."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A futures contract is an agreement for a set price on a set date. This word is correct.",
+      "c": "A share is ownership of part of a company. A futures contract is an agreement with an expiry date. They are not the same kind of asset.",
+      "d": "The statement is wrong. A small deposit does not lower the risk, and the contract ends on a set date."
+    },
+    "concepts": ["leverage", "margin"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

@@ -1,0 +1,405 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ऐतिहासिक डेटा - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../07-testing-and-validation/02-historical-data/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../07-testing-and-validation/02-historical-data/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T7.2
+title: ऐतिहासिक डेटा
+page_type: Concept
+prerequisites: [T7.1, T1.9]
+labs: [Lab 4, Lab 3]
+estimated_minutes: 25
+-->
+<h1 id="ऐतिहासिक-डेटा"><a class="header" href="#ऐतिहासिक-डेटा">ऐतिहासिक डेटा</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>समजा तुम्ही जुन्या भावांच्या फाईलवर एखादी कल्पना तपासता. फाईल दाखवते की एक शेअर एका दिवसात 50% पडला. शेअर खरंच इतका पडला का, की फाईल चुकीची आहे? शेअर स्प्लिटमुळे असा बदल होऊ शकतो. एखादी खराब ओळ यामुळेही होऊ शकतो. तुम्ही फाईल आधी तपासली नाही, तर चाचणी चुकीचे उत्तर देऊ शकते. हे प्रकरण सांगते की भाव डेटामध्ये काय असते, काय वगळलेले असते आणि चाचणीआधी ते कसे तपासायचे.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>ऐतिहासिक डेटा</strong> म्हणजे जुन्या भावांची फाईल. बहुतेक मोफत फाईल्समध्ये प्रत्येक ट्रेडिंग दिवसासाठी एक ओळ असते. प्रत्येक ओळीत पाच संख्या असतात. या पाच संख्यांना OHLCV म्हणतात:</p>
+<ul>
+<li><strong>ओपन:</strong> दिवसाच्या सुरुवातीचा भाव.</li>
+<li><strong>हाय:</strong> दिवसभरात गाठलेला सर्वाधिक भाव.</li>
+<li><strong>लो:</strong> दिवसभरात गाठलेला सर्वात कमी भाव.</li>
+<li><strong>क्लोज:</strong> दिवसाच्या शेवटचा भाव.</li>
+<li><strong>व्हॉल्यूम:</strong> दिवसभरात हात बदललेल्या शेअर्सची संख्या.</li>
+</ul>
+<p>OHLCV मध्ये काही गोष्टी वगळलेल्या असतात. त्यात बिड आणि आस्क दिसत नाहीत. ही ती किंमत आहे जी खरेदीदार आणि विक्रेते एका क्षणी देऊ करतात (<em>ऑर्डर जुळणी, स्प्रेड आणि लिक्विडिटी</em>). दिवसात झालेल्या प्रत्येक ऑर्डरचा क्रमही त्यात दिसत नाही. म्हणून दैनिक ओळींवरील चाचणीला दिवसातील घटनांचा क्रम माहीत नसतो.</p>
+<p><strong>कॉर्पोरेट ॲक्शन</strong> म्हणजे कंपनीच्या अशा घटना, ज्या शेअरचा भाव किंवा शेअर्सची संख्या बदलतात. <strong>स्प्लिट</strong> हे त्याचे एक उदाहरण आहे. स्प्लिटनंतर तुमच्याकडे जास्त शेअर्स असतात, पण प्रत्येकाचा भाव कमी असतो. एकूण मूल्य तेच राहते. बोनस इश्यू आणि लाभांश ही इतर उदाहरणे आहेत (<em>कॉर्पोरेट ॲक्शन</em>).</p>
+<p>कॉर्पोरेट ॲक्शनमुळे भावाच्या दोन प्रकारच्या मालिका तयार होतात:</p>
+<ul>
+<li><strong>समायोजित न केलेली:</strong> प्रत्येक दिवशी प्रत्यक्ष झालेले भाव. भूतकाळ जसा होता तसाच राहतो.</li>
+<li><strong>समायोजित केलेली:</strong> भूतकाळातील भाव नव्या शेअर्सच्या संख्येनुसार पुन्हा लिहिलेले. फाईलमधील जुने भाव बदलतात.</li>
+</ul>
+<p>समायोजित मालिकेत अशी माहिती असू शकते, जी फक्त नंतर कळली. समायोजन घटनेनंतर काढले जाते. चाचणी हा आकडा दिवशीच माहीत असल्याप्रमाणे वापरली, तर ती भविष्यात डोकावते. हा एक प्रकारचा लूक-अहेड बायस आहे (<em>लूक-अहेड बायस</em>).</p>
+<p>चाचणीआधी फाईल तपासा. लॅब 4 मधील आयात तपासण्या या आहेत:</p>
+<div class="table-wrapper"><table><thead><tr><th>तपासणी</th><th>ती काय शोधते</th><th>काय करायचे</th></tr></thead><tbody>
+<tr><td>क्रमवारीतील तारखा</td><td>प्रत्येक तारीख आधीच्या तारखेनंतर येते</td><td>स्रोताशी जुळवून क्रम दुरुस्त करा. अंदाज लावू नका.</td></tr>
+<tr><td>एकसारख्या तारखा</td><td>एकाच दिवसाच्या दोन ओळी</td><td>कोणतीही ओळ ठेवण्याआधी कारण शोधा.</td></tr>
+<tr><td>गॅप</td><td>तारखांमधून एखादा ट्रेडिंग दिवस गहाळ</td><td>NSE च्या ट्रेडिंग सुट्ट्यांच्या पानाशी तुलना करा. काही गॅप सुट्ट्या असतात.</td></tr>
+<tr><td>शून्य किंवा ऋण भाव</td><td>शून्य किंवा त्याहून कमी भाव</td><td>तपासायची चूक म्हणून हाताळा.</td></tr>
+<tr><td>OHLC सुसंगती</td><td>हाय ओपन आणि क्लोजपेक्षा कमी नसावा. लो ओपन आणि क्लोजपेक्षा जास्त नसावा.</td><td>ओळ स्रोताशी तपासा.</td></tr>
+<tr><td>20% पेक्षा जास्त उडी</td><td>स्प्लिटचा ध्वज नसलेली मोठी हालचाल</td><td>प्रश्न विचारा: नोंदवलेला स्प्लिट आहे का? दिसताच ओळ पुसू नका.</td></tr>
+<tr><td>शून्य व्हॉल्यूम</td><td>त्या दिवशी एकही शेअर व्यवहारात नाही</td><td>वापरण्याआधी त्या दिवसाची स्रोताशी पडताळणी करा.</td></tr>
+</tbody></table>
+</div>
+<p>मोफत डेटा नेहमी पूर्ण किंवा बरोबर असतोच असे नाही. या तपासण्या काही समस्या शोधतात, सगळ्या नाही.</p>
+<p><strong>परवाना.</strong> प्रत्येक डेटा स्रोत स्वतःच्या अटी ठरवतो. अनेक मोफत स्रोत फक्त वैयक्तिक वापराला परवानगी देतात. अटी स्रोतावर वाचा. फाईल शेअर करणे, विकणे किंवा प्रकाशित करणे चालेल असे गृहीत धरू नका. अटी का वाचायच्या, ते दोन खरी उदाहरणे दाखवतात.</p>
+<ul>
+<li><strong>Yahoo Finance.</strong> Yahoo च्या सेवा अटी सांगतात की परवानगीशिवाय रोबोट किंवा स्क्रेपरसारख्या स्वयंचलित साधनांनी त्याचा डेटा गोळा करता येत नाही. तसेच ती सेवा कोणत्याही व्यावसायिक हेतूसाठी वापरता येत नाही, आणि लेखी परवानगीशिवाय त्यातील मजकूर कॉपी, विकणे किंवा वाटणे मनाई आहे. अटी फाईलच्या स्तंभांचे किंवा समायोजन पद्धतीचे वर्णन करत नाहीत. त्यामुळे तुमची फाईल उघडा आणि तिचे शीर्षक वाचा. फाईलमध्ये अनेकदा समायोजित क्लोजचा स्तंभ असतो, पण तुमच्या फाईलमध्ये तपासा. (11 Nov 2026 पर्यंत, Yahoo सेवा अटी. अटी बदलतात, त्यामुळे स्रोतावर वाचा.)</li>
+<li><strong>NSE.</strong> NSE च्या डेटा वापर आणि शेअरिंग धोरणानुसार दैनिक आणि ऐतिहासिक डेटा बाजार डेटा मानला जातो. NSE तो करार आणि परवान्यांद्वारे देते. त्यामुळे NSE चा डेटा दुसऱ्यांना देण्यासाठी NSE ची परवानगी लागते. NSE ने जुनी दैनिक “bhavcopy” फाईल 8 जुलै 2024 रोजी बंद केली आणि तिच्या जागी नवे सामान्य bhavcopy स्वरूप आणले (12 जून 2024 चे NSE परिपत्रक). प्रत्येक फाईलचा मांडणी आणि अटी NSE च्या संकेतस्थळावर तपासा. (11 Nov 2026 पर्यंत, NSE डेटा वापर आणि शेअरिंग धोरण. अटी बदलतात, त्यामुळे स्रोतावर वाचा.)</li>
+</ul>
+<p>या पुस्तकातील सरावाचा डेटा काल्पनिक आहे. तुम्ही खरा डेटा आयात केला, तर तो तुमच्या स्वतःच्या उपकरणावरच राहतो. तरीही त्या डेटावर स्रोताच्या अटी लागू होतात.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>काय होते</th></tr></thead><tbody>
+<tr><td>1. वाचा</td><td>फाईल उघडली जाते.</td></tr>
+<tr><td>2. शीर्षक शोधा</td><td>स्तंभांची नावे असलेली ओळ सापडते.</td></tr>
+<tr><td>3. स्तंभ जुळवा</td><td>प्रत्येक स्तंभ तारीख, ओपन, हाय, लो, क्लोज आणि व्हॉल्यूम यांच्याशी जुळवला जातो.</td></tr>
+<tr><td>4. पडताळा</td><td>प्रत्येक ओळ <em>कल्पना</em> मधील नियमांनी तपासली जाते.</td></tr>
+<tr><td>5. पूर्वावलोकन</td><td>कोणत्या ओळी पास झाल्या आणि कोणत्या नापास झाल्या ते दिसते.</td></tr>
+<tr><td>6. स्वीकारा किंवा वगळा</td><td>कोणत्या ओळी ठेवायच्या ते तुम्ही ठरवता.</td></tr>
+</tbody></table>
+</div>
+<p>लॅब 4 मधील आयात या सहा पायऱ्यांनुसार चालते. त्या क्रमाने वाचा. चाचणीपर्यंत पोहोचण्याआधी प्रत्येक ओळीने तपासण्या पार केल्या पाहिजेत.</p>
+<!-- component: data-quality-check | caption: काल्पनिक भाव फाईल पाहा, ज्या ओळी चुकीच्या वाटतात त्या खूण करा, मग सात तपासण्यांशी तुलना करा. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक. स्प्लिट.</strong> एका शेअरचा भाव Rs 1,000 आहे. कंपनी 1 चे 2 असे स्प्लिट करते. प्रत्येक जुना शेअर 2 शेअर्स होतो. भाव Rs 500 होतो.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th>स्प्लिटआधी</th><th>स्प्लिटनंतर</th></tr></thead><tbody>
+<tr><td>तुमची होल्डिंग</td><td>10 शेअर्स, Rs 1,000 दराने</td><td>20 शेअर्स, Rs 500 दराने</td></tr>
+<tr><td>मूल्य</td><td>10 x 1,000 = Rs 10,000</td><td>20 x 500 = Rs 10,000</td></tr>
+</tbody></table>
+</div>
+<p>तुमचे मूल्य बदलले नाही. पण समायोजित न केलेली भाव मालिका Rs 1,000 वरून Rs 500 पर्यंत खाली जाते. हे 50% पडल्यासारखे दिसते: (500 - 1,000) / 1,000 = -50%. स्प्लिटमुळे कोणाचेही मूल्य गेले नाही. समायोजित न केलेली मालिका वापरणारी चाचणी तरीही तोटा दाखवेल.</p>
+<p><strong>काल्पनिक. खराब ओळ.</strong> दुसऱ्या फाईलमध्ये सहा ओळी आहेत. प्रत्येक ओळ एक ट्रेडिंग दिवस आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>ओळ</th><th>तारीख</th><th>ओपन (Rs)</th><th>हाय (Rs)</th><th>लो (Rs)</th><th>क्लोज (Rs)</th><th>व्हॉल्यूम</th></tr></thead><tbody>
+<tr><td>1</td><td>2026-03-02</td><td>250</td><td>254</td><td>248</td><td>252</td><td>1,20,000</td></tr>
+<tr><td>2</td><td>2026-03-03</td><td>252</td><td>256</td><td>250</td><td>255</td><td>98,000</td></tr>
+<tr><td>3</td><td>2026-03-04</td><td>255</td><td>257</td><td>253</td><td>254</td><td>1,10,000</td></tr>
+<tr><td>4</td><td>2026-03-05</td><td>255</td><td>258</td><td>252</td><td>251</td><td>1,05,000</td></tr>
+<tr><td>5</td><td>2026-03-06</td><td>251</td><td>253</td><td>249</td><td>252</td><td>1,01,000</td></tr>
+<tr><td>6</td><td>2026-03-09</td><td>252</td><td>255</td><td>251</td><td>254</td><td>99,000</td></tr>
+</tbody></table>
+</div>
+<p>ओळ 4 मध्ये लो Rs 252 आणि क्लोज Rs 251 आहे. लो क्लोजपेक्षा जास्त आहे. एका दिवसाचा लो त्याच्या क्लोजपेक्षा जास्त असू शकत नाही. म्हणून ओळ 4 OHLC नियम मोडते. इतर पाच ओळी प्रत्येक तपासणी पार करतात.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> या सहा ओळींच्या काल्पनिक फाईलची तपासणी करा. प्रत्येक समस्येचे नाव सांगा, ती कोणत्या ओळीत आहे ते सांगा आणि पुढे काय कराल ते सांगा.</p>
+<div class="table-wrapper"><table><thead><tr><th>ओळ</th><th>तारीख</th><th>ओपन (Rs)</th><th>हाय (Rs)</th><th>लो (Rs)</th><th>क्लोज (Rs)</th><th>व्हॉल्यूम</th></tr></thead><tbody>
+<tr><td>1</td><td>2026-03-02</td><td>100</td><td>102</td><td>99</td><td>101</td><td>50,000</td></tr>
+<tr><td>2</td><td>2026-03-03</td><td>101</td><td>103</td><td>100</td><td>102</td><td>60,000</td></tr>
+<tr><td>3</td><td>2026-03-03</td><td>102</td><td>104</td><td>101</td><td>103</td><td>55,000</td></tr>
+<tr><td>4</td><td>2026-03-04</td><td>103</td><td>104</td><td>101</td><td>102</td><td>0</td></tr>
+<tr><td>5</td><td>2026-03-05</td><td>130</td><td>132</td><td>128</td><td>131</td><td>90,000</td></tr>
+<tr><td>6</td><td>2026-03-06</td><td>131</td><td>130</td><td>129</td><td>132</td><td>85,000</td></tr>
+</tbody></table>
+</div>
+<p>संकेत:</p>
+<ol>
+<li>आधी तारखांचा क्रम तपासा, ओळ 1 ते ओळ 6.</li>
+<li>मग एकसारख्या तारखा तपासा.</li>
+<li>मग प्रत्येक ओळीचा OHLC नियम एक-एक करून तपासा.</li>
+<li>20% पेक्षा जास्त उडी हा प्रश्न आहे, आपोआप पुसला जाणारा भाग नाही.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li><strong>तारखांचा क्रम:</strong> पास. तारखा 2 मार्च ते 6 मार्च अशा जातात.</li>
+<li><strong>एकसारखी तारीख:</strong> ओळ 2 आणि 3 दोन्हींत 3 मार्च आहे. कोणतीही ओळ ठेवण्याआधी कारण शोधा. दोन्ही ठेवू नका.</li>
+<li><strong>शून्य व्हॉल्यूम:</strong> ओळ 4 मध्ये एकही शेअर व्यवहारात नाही. त्या दिवशी वापरण्याआधी स्रोत तपासा.</li>
+<li><strong>20% पेक्षा जास्त उडी:</strong> ओळ 5 मध्ये क्लोज Rs 131 आहे. ओळ 4 मध्ये क्लोज Rs 102 होता. वाढ 131 - 102 = Rs 29 आहे. 29 / 102 = 28.4%. फाईलमध्ये स्प्लिटचा ध्वज नाही. स्रोताला विचारा. कारणाशिवाय ओळ पुसू नका.</li>
+<li><strong>OHLC नियम:</strong> ओळ 6 नापास होते. तिचा हाय Rs 130 आहे. तिचा ओपन Rs 131 आणि क्लोज Rs 132, दोन्ही हायपेक्षा जास्त आहेत. ओळ स्रोताशी तपासा, किंवा वगळा.</li>
+<li><strong>स्वच्छ ओळी:</strong> ओळ 1 प्रत्येक तपासणी पार करते. ओळ 5 OHLC नियम पार करते, पण तिच्या उडीला उत्तर हवे.</li>
+</ul>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> लिहून स्पष्ट करा की एका बॅकटेस्टमध्ये समायोजित आणि समायोजित न केलेल्या भाव मालिका मिसळल्या तर काय चुकते.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>जी बॅकटेस्ट दोन्ही मालिका मिसळते, ती एकाच शेअरला दोन वेगवेगळ्या भावांवर पाहू शकते. उदाहरणाच्या स्प्लिटचा विचार करा. स्प्लिटआधी मालिका Rs 1,000 दाखवते. स्प्लिटनंतर समायोजित मालिका त्याच जुन्या भावासाठी Rs 500 दाखवते, किंवा समायोजित न केलेली मालिका नव्या भावासाठी Rs 500 दाखवते. दोन्ही प्रकारे, चाचणी 50% घसरण पाहते, जी धारकाच्या बाबतीत घडलेलीच नाही. मग स्टॉप किंवा सिग्नल त्या खोट्या घसरणीवर चालू शकतो. चाचणी असे व्यापार आणि निकाल दाखवते, जे कधी झालेच नाहीत. निकाल चुकीचा दिसतो, आणि त्याचे कारण कल्पना नसून मिसळलेला डेटा आहे.</p>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ समायोजित आणि समायोजित न केलेले भाव, OHLC नियम आणि उडीची तपासणी तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> कागदी काम (पेपर). लॅब 4 वापरून सोबतची सरावाची फाईल आयात करा आणि पडताळणीचा सारांश लिहा. लॅब तयार नसेल, तर हे काम कागदावर किंवा स्प्रेडशीटमध्ये करा, वर दिलेल्या उदाहरणातील सहा ओळी वापरून.</p>
+<ol>
+<li>फाईलमधील ओळींची संख्या लिहा.</li>
+<li>प्रत्येक नापास ओळ कारणासह यादी करा.</li>
+<li>प्रत्येक नापास ओळीबाबत तुम्ही काय निवडले आणि का ते लिहा.</li>
+<li>सारांश शिकण्याच्या नोंदीत लिहा. तो तुमच्या जर्नलमध्ये नोंदवा (किंवा जर्नल ॲप तयार होईपर्यंत कागदावर).</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>मोफत डेटा अपूर्ण किंवा चुकीचा असू शकतो. तपासण्या पार करणाऱ्या फाईलमध्येही तपासण्यांना न सापडणाऱ्या चुका असू शकतात.</li>
+<li>जास्त इतिहास नेहमी चाचणी चांगली करत नाही. जुने भाव वेगळ्या बाजार नियमांच्या काळातील असू शकतात. तुम्ही वापरत असलेल्या वर्षांबद्दल स्रोताच्या नोंदी वाचा.</li>
+<li>स्वच्छ भाव फाईल म्हणजे पूर्ण बाजार डेटा नव्हे. त्यात बिड आणि आस्क भाव नसतात आणि ऑर्डरनुसार तपशील नसतो.</li>
+<li>डेटा फक्त स्रोताच्या अटी परवानगी देतात तितकाच वापरा. फाईल शेअर करू नका, विकू नका किंवा प्रकाशित करू नका.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>OHLCV म्हणजे दिवसाला एक ओळ: ओपन, हाय, लो, क्लोज आणि व्हॉल्यूम.</li>
+<li>स्प्लिट भाव आणि शेअर्सची संख्या बदलतो. एकूण मूल्य तेच राहते.</li>
+<li>समायोजित आणि समायोजित न केलेल्या मालिका एका चाचणीत मिसळू नका.</li>
+<li>20% पेक्षा जास्त उडी हा प्रश्न आहे. स्रोताशी तपासा.</li>
+<li>OHLC नियम मोडणारी ओळ ही तपासायची ओळ आहे, दुर्लक्ष करायची टायपिंगची चूक नाही.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Yahoo सेवा अटी (legal.yahoo.com).</li>
+<li>NSE डेटा वापर आणि डेटा शेअरिंग धोरण (nseindia.com).</li>
+<li>12 जून 2024 चे NSE परिपत्रक, नव्या सामान्य bhavcopy बद्दल.</li>
+<li>NSE ट्रेडिंग सुट्ट्यांचे पान.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T7.2&amp;body=Page%3A%2007-testing-and-validation%2F02-historical-data%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../07-testing-and-validation/01-from-idea-to-hypothesis/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../07-testing-and-validation/03-backtesting-basics-and-realism/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../07-testing-and-validation/01-from-idea-to-hypothesis/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../07-testing-and-validation/03-backtesting-basics-and-realism/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

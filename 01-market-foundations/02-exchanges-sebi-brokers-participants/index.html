@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Exchanges, SEBI and brokers - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/01-market-foundations/02-exchanges-sebi-brokers-participants/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T1.2
+title: Exchanges, SEBI and brokers
+page_type: Concept
+prerequisites: [T1.1]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="exchanges-sebi-and-brokers"><a class="header" href="#exchanges-sebi-and-brokers">Exchanges, SEBI and brokers</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A hypothetical beginner believes their broker is the exchange. They think their order is matched inside the broker’s office. When a trade goes wrong, they cannot say who to ask, or in what order. Knowing which institution does which job turns a confusing situation into a list of steps.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Many institutions sit between your order and the shares in your name. Each one has one job. This chapter defines each role once. Keep the roles separate in your mind.</p>
+<p><strong>SEBI</strong> is the securities regulator. It makes the rules for brokers, exchanges and listed companies. It does not set stock prices.</p>
+<p><strong>Exchanges (NSE and BSE)</strong> run the marketplace where orders are matched. They are the two main stock exchanges in India. SEBI keeps the official list of recognised exchanges on its website. A buy order is matched with a sell order there. The exchange does not hold your money.</p>
+<p><strong>The clearing corporation</strong> works after a trade. It records what each side owes because of the trade. It is part of how settlement is assured. Settlement is the final transfer of shares and money. Think of a trusted middle person at a market who promises each side that the other will pay or deliver. NSE’s clearing corporation is called NSE Clearing Limited. BSE’s is called Indian Clearing Corporation Limited (ICCL).</p>
+<p><strong>Depositories</strong> hold shares electronically. India has two: NSDL and CDSL. They work like a bank for shares, keeping a record of who owns what. Your shares are recorded in your name at a depository, not in a paper certificate kept in a drawer.</p>
+<p><strong>The broker (trading member)</strong> accepts your orders, gives you the trading platform, and passes your orders to the exchange. The broker is the firm you deal with day to day. It is not the exchange. It is not where your shares are held.</p>
+<p><strong>The depository participant (DP)</strong> is the firm that keeps your demat account for you, on the depository’s behalf. The depository records the holding. The DP keeps the account. These are two different roles, even when one firm does both.</p>
+<p><strong>Banks</strong> hold the funds used for trading and settlement. Your trading account is linked to a bank account.</p>
+<p><strong>The grievance route</strong> is the order for complaints. Start with the broker. Then go to the exchange. Then go to SEBI’s complaint portal, which is called SCORES (scores.sebi.gov.in). SEBI’s investor page says to approach the firm you have a complaint against first, and to use SCORES only if you are still not satisfied. The old SCORES site (scores.gov.in) was closed on 28 Mar 2024, so use the new one. SEBI’s helpline numbers are 1800-266-7575 and 1800-22-7575. (As of 11 Nov 2026, SEBI investor site. Check it for the latest steps.)</p>
+<p><strong>One practical check.</strong> Before you open an account with any broker, check its registration on the official lists. SEBI’s investor site has a tool called “Check Registration Status of Market Intermediary”, and SEBI also keeps a list of recognised intermediaries on its website. (As of 11 Nov 2026, SEBI investor site.)</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<pre><code class="language-mermaid">flowchart LR
+  You[You, the buyer] --&gt; Broker[Broker: accepts and passes on the order]
+  Broker --&gt; Exchange[Exchange: matches the order]
+  Exchange --&gt; Clearing[Clearing corporation: records the obligation]
+  Clearing --&gt; Depository[Depository, through a DP: holds the shares]
+  Depository --&gt; You
+</code></pre>
+<p>Follow the arrows. The order goes from you to the broker, then to the exchange, then to clearing. The shares come back to you through the depository. Notice that the broker and the exchange are two separate boxes.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical:</strong> buy 20 shares at Rs 250.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Working</th><th>Result</th></tr></thead><tbody>
+<tr><td>1. Trade value</td><td>20 x Rs 250</td><td>Rs 5,000</td></tr>
+</tbody></table>
+</div>
+<p>Now follow the order. Note who holds the money at each step.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Institution</th><th>What happens</th><th>Who holds the money at this step</th></tr></thead><tbody>
+<tr><td>1</td><td>You</td><td>Place the buy order for 20 shares at Rs 250</td><td>Your linked funds, Rs 5,000 needed</td></tr>
+<tr><td>2</td><td>Broker</td><td>Accepts the order and passes it to the exchange</td><td>Moved through the broker’s process</td></tr>
+<tr><td>3</td><td>Exchange</td><td>Matches the order with a seller</td><td>The exchange does not hold your money</td></tr>
+<tr><td>4</td><td>Clearing corporation</td><td>Records the obligation from the trade</td><td>The clearing system moves funds</td></tr>
+<tr><td>5</td><td>Depository, through the DP</td><td>After settlement, the 20 shares are credited to your demat account</td><td>Settlement moves the shares and the money, one working day after the trade (T+1, see <em>Demat accounts and settlement</em>)</td></tr>
+</tbody></table>
+</div>
+<p>The main point: no step asks the exchange to hold your money.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<p><strong>Interactive demo (conceptual mode).</strong></p>
+<!-- component: order-flow-sim | mode: conceptual | side: buy | quantity: 20 | price: 250 | steps: trader, broker, exchange, clearing, depository | caption: Follow one buy order of 20 shares at Rs 250 through each institution, and say who does what at each step. -->
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task:</strong> Label the institutions on a diagram for a sale of 20 shares at Rs 250.</p>
+<p><strong>Hints:</strong></p>
+<ol>
+<li>Start with yourself.</li>
+<li>Follow the order: you, broker, exchange.</li>
+<li>Then follow the shares: clearing, then the depository.</li>
+</ol>
+<p><strong>Answer:</strong> You place the sell order for 20 shares at Rs 250. The trade value is Rs 5,000. The broker accepts the order and passes it to the exchange. The exchange matches it with a buyer. The clearing corporation records the obligation. The depository, through the DP, moves the shares out of your demat account when the trade settles, one working day after the trade (see <em>Demat accounts and settlement</em>).</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task:</strong> Explain to a friend, in three sentences, why the exchange is not the place where you open an account. Use no hints.</p>
+<details><summary>Check your answer</summary>
+<p>One answer: “The exchange is the marketplace where orders are matched. You open an account with a broker, who takes your orders and passes them to the exchange. Your shares are recorded at a depository, through a DP, not at the exchange itself.”</p>
+<p>Check that your three sentences separate matching (exchange), access (broker) and holding (depository).</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Six questions check the broker-exchange difference, the clearing role, the grievance order, and who holds shares.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p><strong>Mode:</strong> learning note. Write it in your journal, or on paper.</p>
+<ol>
+<li>List each institution in this chapter: SEBI, NSE, BSE, the clearing corporation, NSDL, CDSL, the broker, the DP and the bank.</li>
+<li>Write its role in your own words, one line each.</li>
+<li>Add a link to the official page that describes it.</li>
+<li>Check each role against the SEBI, NSE and BSE pages before you rely on it.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>It does not recommend any broker. Zerodha appears as a broker example only, not as a recommendation.</li>
+<li>Registration checks are your responsibility. Check the official list before you open an account.</li>
+<li>Never send money to anyone who claims to be a broker or adviser until you have verified them.</li>
+<li>The roles described here are general. Each firm’s exact structure is in its own documents.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>SEBI regulates. It does not set prices.</li>
+<li>The exchange matches orders. It does not hold your money.</li>
+<li>The broker takes your orders. It is not the exchange.</li>
+<li>The depository holds shares electronically, through a DP.</li>
+<li>The grievance route is broker, then exchange, then SEBI.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p><strong>Sources (names only):</strong></p>
+<ul>
+<li>SEBI website: about SEBI, intermediaries, investor grievance.</li>
+<li>NSE website: clearing and membership pages.</li>
+<li>BSE website.</li>
+<li>NSDL and CDSL websites.</li>
+<li>Zerodha support pages on accounts, as a broker example and not as a recommendation.</li>
+</ul>
+<p><strong>Facts checked on 11 Nov 2026:</strong></p>
+<ul>
+<li>The clearing corporations are NSE Clearing Limited and Indian Clearing Corporation Limited. The depositories are NSDL and CDSL.</li>
+<li>The complaint route and the new SCORES address come from SEBI’s investor pages.</li>
+<li>The registration check tool comes from SEBI’s investor support page.</li>
+<li>The full list of recognised exchanges is kept by SEBI. This chapter does not copy it, so check the SEBI site.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../01-market-foundations/01-companies-shares-and-listings/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../01-market-foundations/03-demat-accounts-and-settlement/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../01-market-foundations/01-companies-shares-and-listings/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../01-market-foundations/03-demat-accounts-and-settlement/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

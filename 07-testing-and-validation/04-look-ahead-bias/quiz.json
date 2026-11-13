@@ -1,0 +1,114 @@
+[
+  {
+    "id": "T7.4-q1",
+    "type": "mcq",
+    "prompt": "Which statement about look-ahead bias is correct?",
+    "options": [
+      {"id": "a", "text": "Look-ahead only affects fundamental data such as company accounts."},
+      {"id": "b", "text": "A decision uses information that did not exist at the time of the decision."},
+      {"id": "c", "text": "Statistics computed once on all the data are harmless."},
+      {"id": "d", "text": "A same-close fill is fine if the entry is at the same close."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Look-ahead can enter through price data, such as a same-close fill or a full-sample statistic, not only through company accounts.",
+      "c": "A statistic computed once on all the data can use years after the signal. That is a leak.",
+      "d": "The close was not known until the day ended. A fill at that close is not realistic."
+    },
+    "concepts": ["look-ahead", "definition"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.4-q2",
+    "type": "mcq",
+    "prompt": "A rule sees a signal at today's close of Rs 300. Which fill is realistic?",
+    "options": [
+      {"id": "a", "text": "Rs 300 at the same close, since the signal came from that close."},
+      {"id": "b", "text": "Rs 303 at the next open, since the close was only known after the market shut."},
+      {"id": "c", "text": "The low of the signal day, since that is the best price."},
+      {"id": "d", "text": "Any price from the signal day, as long as it is in the data."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "This is a same-close fill. The close was not known until the day ended, so the fill is not realistic.",
+      "c": "The low of the signal day was reached before the decision could be made. It is not a realistic fill either.",
+      "d": "Being in the data does not make a price tradable at the time of the decision. The fill must come after the signal."
+    },
+    "concepts": ["same-close-fill", "timing-rule"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.4-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. The peek run fills at Rs 300 and the honest run fills at Rs 303. On 10 shares, how many rupees more does the honest run cost per trade?",
+    "answer": 30,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Honest cost = 10 x 303 = Rs 3,030. Peek cost = 10 x 300 = Rs 3,000. Difference = 3,030 - 3,000 = Rs 30. Check: 3 rupees a share x 10 shares = Rs 30.",
+    "concepts": ["same-close-fill", "look-ahead-size"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.4-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. The peek run shows a profit of Rs 12,000 and the honest run shows Rs 8,000 on the same rules. What does the gap suggest?",
+    "options": [
+      {"id": "a", "text": "The honest run is wrong, because it is lower."},
+      {"id": "b", "text": "The rules may leak information, so the peek result overstates what the rules could have made."},
+      {"id": "c", "text": "Look-ahead makes results lower, so the peek run is the pessimistic one."},
+      {"id": "d", "text": "Both runs are equally honest, and the gap is just noise."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The honest run is the one you could have traded. A lower result is not a sign of error.",
+      "c": "Look-ahead makes results look better, not worse. The peek run is the optimistic one.",
+      "d": "A gap of this size on the same rules points to a leak. It should be found and explained, not called noise."
+    },
+    "concepts": ["peek-vs-honest", "look-ahead"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.4-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Here is a rule: Enter today if tomorrow's high is above Rs 310. Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "Entering today, which is always allowed."},
+      {"id": "b", "text": "Using tomorrow's high to decide today, because tomorrow's high is not known when today's decision is made."},
+      {"id": "c", "text": "The threshold of Rs 310, which is too low."},
+      {"id": "d", "text": "Nothing is wrong, because the high is part of the data."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Entering today is not the problem. The decision uses a value from tomorrow, which is the leak.",
+      "c": "The size of the threshold does not matter here. Any threshold on tomorrow's high leaks information.",
+      "d": "Being in the data does not make a value known at the time of the decision."
+    },
+    "concepts": ["look-ahead", "timing-rule"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T7.4-q6",
+    "type": "spot-the-mistake",
+    "prompt": "A rule ranks today's close against the median close of all years in the data. Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "Nothing is wrong, because a median is always harmless."},
+      {"id": "b", "text": "The median includes years after the signal, so it uses future information."},
+      {"id": "c", "text": "The median is too slow to calculate."},
+      {"id": "d", "text": "It is only a problem for adjusted data."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A median over all years is a full-sample statistic. It is a common source of look-ahead.",
+      "c": "Speed is not the issue. The issue is which data the number can see on the day.",
+      "d": "This is a leak in any price data, adjusted or not, when the statistic uses future years."
+    },
+    "concepts": ["full-sample-statistic", "look-ahead"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

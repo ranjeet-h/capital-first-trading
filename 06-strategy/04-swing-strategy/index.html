@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The fully specified swing strategy - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/06-strategy/04-swing-strategy/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T6.4
+title: The fully specified swing strategy
+page_type: Strategy
+prerequisites: [T6.2, T6.3, T5.2, T5.3, T2.5, T2.11, T3.5]
+labs: [Lab 1, Lab 3, Lab 4, Lab 5]
+estimated_minutes: 35
+-->
+<h1 id="the-fully-specified-swing-strategy"><a class="header" href="#the-fully-specified-swing-strategy">The fully specified swing strategy</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A trader buys a share after a breakout. He has no written stop. The price falls, so he sets a stop after the fall, at a lower level. The loss grows far beyond what he planned. Hypothetical example. A complete rule set prevents this. Every rule is written before the trade, and every number is fixed in advance. This chapter goes through one example rule set, line by line. It is an illustration, not a recommendation.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>This is a rule set to test. It is not advice. It is an example of how a strategy can be written in full. It carries no evidence of results. The book never recommends it, or any stock.</p>
+<p>A complete rule set answers every question a trade can raise. When to look. When to buy. Where to stop. When to sell. How many shares. Each rule has a name and a number. The table below shows the rules of this example.</p>
+<div class="table-wrapper"><table><thead><tr><th>Rule</th><th>What it says</th><th>Numbers used</th></tr></thead><tbody>
+<tr><td>Setup</td><td>Today’s close is above the highest high of the previous 55 bars, not counting today. Today’s close is also above the 50-day simple moving average.</td><td>55 bars, 50 days</td></tr>
+<tr><td>Entry</td><td>Buy at the next day’s open after the setup close.</td><td>Next open</td></tr>
+<tr><td>Initial stop</td><td>Entry price minus 2.5 times ATR(14).</td><td>2.5, 14</td></tr>
+<tr><td>Exit</td><td>Highest close since entry minus 3 times ATR(14). The trailing stop only moves up.</td><td>3, 14</td></tr>
+<tr><td>Sizing</td><td>Risk 1 percent of capital per trade. Apply the cash cap and the 25 percent concentration cap.</td><td>1 percent, 25 percent</td></tr>
+<tr><td>Filters</td><td>Minimum price Rs 50. Minimum 20-day average traded value Rs 5 crore. At most 4 open positions.</td><td>Rs 50, Rs 5 crore, 4</td></tr>
+<tr><td>Loss limits</td><td>No new entries after the daily or weekly loss limit is reached.</td><td>Set in the plan</td></tr>
+<tr><td>Leverage and averaging</td><td>No leverage. No averaging down.</td><td>None</td></tr>
+</tbody></table>
+</div>
+<p>Some points about these rules:</p>
+<ul>
+<li><strong>The setup uses the close, not the high.</strong> The highest high is only the level to beat. The close must beat it. See <em>Moving averages</em> for the 50-day average.</li>
+<li><strong>Entry is the next open.</strong> The signal is known only after the close. A trade cannot be filled at a price that has already passed. This is the realism rule. It also avoids <em>Look-ahead bias</em>.</li>
+<li><strong>ATR measures typical daily movement.</strong> The stop is set as a multiple of ATR, so it is wider when price moves more. See <em>ATR and volatility, used for stops</em>.</li>
+<li><strong>The exit trails.</strong> The trailing stop follows the highest close since entry. It never moves down. A bar that opens below the stop exits at the open. A bar that trades below the stop, but opens above it, exits at the stop price.</li>
+<li><strong>Sizing uses three limits.</strong> The risk budget, the cash cap and the concentration cap are all checked. The smallest one decides the size. See <em>Position sizing step by step</em>.</li>
+<li><strong>The filter values are choices.</strong> The price, traded value and position count are design choices for this example. They are not market facts.</li>
+<li><strong>Costs and taxes are included in any result.</strong> A result without them is not complete.</li>
+</ul>
+<p>Changing a number after you see the results is a common trap. It fits the rule to the past. See <em>Overfitting and the number of things you tried</em>.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: strategy-simulator | mode: rules | spec: swing-example | caption: The example rule set loaded on synthetic data, with the rule check shown for each bar -->
+<p>Load the example rule set. Step through the bars. For each bar, read the setup check, the entry check, the stop and the exit check. The rule results show why the simulator acted, or did not act, on each bar.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Capital Rs 50,000. Signal close Rs 255. The setup is assumed to be met. Next day’s open is Rs 257, so the entry is Rs 257. ATR(14) is Rs 4.00.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>1. Initial stop</td><td>257 - (2.5 x 4.00) = 257 - 10.00</td><td>Rs 247</td></tr>
+<tr><td>2. Risk per share</td><td>257 - 247</td><td>Rs 10</td></tr>
+<tr><td>3. Risk budget</td><td>50,000 x 1%</td><td>Rs 500</td></tr>
+<tr><td>4. Raw shares</td><td>floor(500 / 10)</td><td>50</td></tr>
+<tr><td>5. Cash cap</td><td>floor(50,000 / 257)</td><td>194</td></tr>
+<tr><td>6. Concentration cap</td><td>floor(50,000 x 25% / 257) = floor(12,500 / 257)</td><td>48</td></tr>
+<tr><td>7. Shares</td><td>minimum of 50, 194 and 48</td><td><strong>48</strong></td></tr>
+<tr><td>8. Planned loss</td><td>48 x Rs 10</td><td>Rs 480, which is 0.96 percent of capital</td></tr>
+</tbody></table>
+</div>
+<p>The binding constraint is the concentration cap, at 48 shares.</p>
+<p>Later, the highest close since entry is Rs 280. ATR(14) is Rs 5.00.</p>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>9. Trailing stop</td><td>280 - (3 x 5.00) = 280 - 15</td><td>Rs 265</td></tr>
+<tr><td>10. Exit at the stop</td><td>Price falls to Rs 265</td><td>Exit at Rs 265</td></tr>
+<tr><td>11. Gross gain</td><td>(265 - 257) x 48 = 8 x 48</td><td>Rs 384</td></tr>
+<tr><td>12. Gain in R</td><td>384 / 480</td><td>0.8R</td></tr>
+</tbody></table>
+</div>
+<p>The gain is Rs 384, before costs and taxes. The result is hypothetical. The real charges, such as Zerodha’s zero brokerage on delivery trades as of 11 Nov 2026, are in <em>Costs on a trade</em>, and the tax rules are in <em>Taxes on trading profits</em>. Rules change, so check the Zerodha charges page.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Entry Rs 300. ATR(14) Rs 6.00. Capital Rs 50,000. Compute the initial stop, the risk per share, the shares and the planned loss.</p>
+<p>Hints:</p>
+<ol>
+<li>The stop is 2.5 times ATR below entry. That is 2.5 x Rs 6.00 = Rs 15.</li>
+<li>The raw shares are floor(Rs 500 / risk per share).</li>
+<li>Check the cash cap and the concentration cap. Then take the smallest.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>Initial stop: 300 - 15 = <strong>Rs 285</strong>.</li>
+<li>Risk per share: Rs 15.</li>
+<li>Raw shares: floor(500 / 15) = floor(33.3) = 33.</li>
+<li>Cash cap: floor(50,000 / 300) = 166.</li>
+<li>Concentration cap: floor(12,500 / 300) = floor(41.7) = 41.</li>
+<li>Shares: minimum of 33, 166 and 41 = <strong>33</strong>. The binding constraint is the risk budget.</li>
+<li>Planned loss: 33 x Rs 15 = <strong>Rs 495</strong>.</li>
+</ul>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> The highest close since entry is Rs 320. ATR(14) is Rs 4.00. Compute the trailing stop. Then state whether the trailing stop can move down on a later bar.</p>
+<details><summary>Check your answer</summary>
+<ul>
+<li>Trailing stop: 320 - (3 x 4.00) = 320 - 12 = <strong>Rs 308</strong>.</li>
+<li>It cannot move down. The trailing stop only moves up, so it stays at Rs 308 or rises on a later bar.</li>
+</ul>
+<p>All figures are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks how to read the rules, the trailing stop, and the setup check that uses the bar before today.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>paper</strong>. Write it in your journal. If the journal is not ready, use paper.</p>
+<ol>
+<li>Pick one week of daily bars from your chart history.</li>
+<li>Apply the rules in the table above, one bar at a time. Write the decision for each bar.</li>
+<li>For each planned trade, record the planned fields: entry, initial stop, shares, planned loss and the reason.</li>
+<li>Mark every entry hypothetical.</li>
+<li>Do not write any profit figure.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>This specification is not evidence of profit. A rule set that passes a backtest has not shown that it works live.</li>
+<li>Forward testing and live trading are different. Prices, fills and emotions change when real money is at risk.</li>
+<li>The filter values and the 55-bar and 50-day settings are choices. Changing them after you see results fits the past.</li>
+<li>A gap can move the exit far from the stop. See <em>Gaps and what they mean for stops</em>. NSE puts a daily price band of 2%, 5%, 10% or 20% on most shares, measured from the previous close. If a share is locked at its lower band, there may be no buyers, and you may not be able to exit at all. Shares with futures and options use a flexible 10% range instead. (As of 11 Nov 2026, NSE Basic FAQs on the Secondary Market and SEBI’s master circular on trading. Rules change, so check the NSE site.)</li>
+<li>Costs, taxes and holidays are not in the arithmetic above. The exchange holiday list for 2026 is on the NSE site (16 weekday holidays, as shown on Zerodha’s market holiday calendar on 11 Nov 2026, which includes 15 Jan, added after NSE’s first list of 12 Dec 2025). Bars are only for days the market is open, so check the list before you count days.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>A complete rule set states setup, entry, stop, exit, sizing and filters, with numbers.</li>
+<li>Entry is the next open after the setup close. The setup uses the close.</li>
+<li>The initial stop is entry minus 2.5 times ATR(14). The trailing stop is highest close minus 3 times ATR(14), and only moves up.</li>
+<li>Shares are the smallest of the risk limit, the cash cap and the concentration cap.</li>
+<li>A written example is not a recommendation and carries no record of results.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Book chapters: <em>ATR and volatility, used for stops</em>, and <em>Position sizing step by step</em>.</li>
+<li>The testing rules for realism, in <em>Backtesting basics and the realism contract</em>.</li>
+<li><em>Costs on a trade</em> and <em>Taxes on trading profits</em>, each with its own dated sources (read on 11 Nov 2026).</li>
+<li>NSE Basic FAQs on the Secondary Market (price bands) and NSE holiday list for 2026, read on 11 Nov 2026.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../06-strategy/03-trend-following/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../06-strategy/05-dangerous-approaches/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../06-strategy/03-trend-following/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../06-strategy/05-dangerous-approaches/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

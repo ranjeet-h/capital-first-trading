@@ -1,0 +1,98 @@
+[
+  {
+    "id": "T6.3-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. R = Rs 500. A run of 10 losing trades, each at -1R. What is the total loss in rupees?",
+    "answer": 5000,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Each loss is 1R = Rs 500. Ten losses = 10 x Rs 500 = Rs 5,000. Checked again: 10 x 500 = 5,000.",
+    "concepts": ["losing-run", "fixed-r"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.3-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Five trades are wins at +2R. Ten trades are losses at -1R. What is the net result in R?",
+    "answer": 0,
+    "tolerance": 0,
+    "unit": "R",
+    "solution": "Wins: 5 x 2R = 10R. Losses: 10 x 1R = 10R. Net = 10R - 10R = 0R. Checked again: 5 x 2 = 10 and 10 x 1 = 10, so the net is 0.",
+    "concepts": ["net-r", "win-loss-totals"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.3-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. Forty trades, win rate 30 percent, average win 3R, average loss 1R, R = Rs 500. What is the expectancy in rupees per trade?",
+    "answer": 100,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Expectancy = 0.30 x 3 - 0.70 x 1 = 0.20R. In rupees: 0.20 x Rs 500 = Rs 100 per trade. Checked again: 40 trades x Rs 100 = Rs 4,000 gross.",
+    "concepts": ["expectancy", "low-win-rate"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T6.3-q4",
+    "type": "scenario",
+    "prompt": "Hypothetical. A plan has a 35 percent win rate. After eight losses in a row, a trader drops the rules and trades by feel. Which statement is most accurate?",
+    "options": [
+      {"id": "a", "text": "The losing run proves the rules were wrong."},
+      {"id": "b", "text": "Long losing runs can happen with a low win rate. The rule for dry spells was written before the run started, so the trader should follow it."},
+      {"id": "c", "text": "The trader should double the trade size to recover faster."},
+      {"id": "d", "text": "The market is to blame, so the rules do not need any review."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A losing run does not prove a rule is wrong. A small number of trades cannot show whether the method works.",
+      "c": "This method does not add money after losses. Doubling the size raises the risk of the next loss.",
+      "d": "The rules were written to handle losing runs. Dropping them is a choice, not a reaction to the market."
+    },
+    "concepts": ["dry-spell", "discipline"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T6.3-q5",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"My trailing stop protects me, so this trade cannot lose money.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "The words trailing stop"},
+      {"id": "b", "text": "The phrase protects me"},
+      {"id": "c", "text": "The claim that the trade cannot lose money"},
+      {"id": "d", "text": "Nothing; the statement is correct"}
+    ],
+    "answer": "c",
+    "explanations": {
+      "a": "A trailing stop is a real exit rule. The error is the claim that it stops every loss.",
+      "b": "A stop limits the loss in many cases. The phrase is not the main error, but the claim goes too far.",
+      "d": "The statement is wrong. A price gap can jump past the stop, and a loss can be larger than planned."
+    },
+    "concepts": ["trailing-stop", "gap-risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  },
+  {
+    "id": "T6.3-q6",
+    "type": "mcq",
+    "prompt": "Which statement about trend following is correct?",
+    "options": [
+      {"id": "a", "text": "Trend following has no profit cap, but each trade still has a loss cap."},
+      {"id": "b", "text": "No profit cap means there is no loss cap."},
+      {"id": "c", "text": "A high win rate is needed for the method to work."},
+      {"id": "d", "text": "A trailing stop removes all risk from a trade."}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "A profit cap and a loss cap are separate rules. Removing one does not remove the other.",
+      "c": "A low win rate can still give positive expectancy, if the average win is large enough. A high win rate is not needed.",
+      "d": "A trailing stop is an exit rule. It does not remove gap risk or the risk of the trade."
+    },
+    "concepts": ["profit-cap", "loss-cap"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  }
+]

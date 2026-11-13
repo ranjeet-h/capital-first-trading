@@ -1,0 +1,392 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>कल्पनेपासून गृहीतक आणि चाचणी योजनेपर्यंत - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../07-testing-and-validation/01-from-idea-to-hypothesis/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../07-testing-and-validation/01-from-idea-to-hypothesis/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T7.1
+title: कल्पनेपासून गृहीतक आणि चाचणी योजनेपर्यंत
+page_type: Concept
+prerequisites: [T6.2, T6.4]
+labs: []
+estimated_minutes: 15
+-->
+<h1 id="कलपनेपासून-गृहीतक-आणि-चाचणी-योजनेपरयंत"><a class="header" href="#कलपनेपासून-गृहीतक-आणि-चाचणी-योजनेपरयंत">कल्पनेपासून गृहीतक आणि चाचणी योजनेपर्यंत</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>समजा तुमच्या मनात कल्पना आहे: जे शेअर्स नवा उच्चांक गाठतात, ते वर जात राहतात. तुम्ही ही कल्पना जुन्या भावांवर तपासता. तीन वेगवेगळे स्टॉप पातळी वापरता आणि सर्वाधिक नफा दाखवणारी पातळी ठेवता. नफा चांगला दिसतो. पण स्टॉप तुम्ही निकाल पाहिल्यानंतर निवडला. त्या निवडीमुळे चाचणी अन्याय्य होते. निकाल तुम्हाला फार थोडे सांगू शकतो. हे प्रकरण दाखवते की कल्पना अशी कशी लिहायची, की चाचणी तिची खरी तपासणी करू शकेल.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p><strong>कल्पना</strong> म्हणजे बाजाराबद्दलची एक भावना. “अलीकडे भाव मजबूत वाटतात” ही कल्पना आहे. भावना जशी आहे तशी कोणी तपासू शकत नाही. कोणताही निकाल तिला चुकीचे ठरवणार नाही.</p>
+<p><strong>गृहीतक</strong> म्हणजे असा नियम, जो चुकीचा ठरू शकतो. त्याला स्पष्ट एंट्री, स्पष्ट एक्झिट आणि स्पष्ट साइज असतो. प्रत्येक भाग एक संख्या किंवा साधी अट असतो. मग चाचणी दाखवू शकते की नियम अपयशी ठरला. ट्रेडिंग एज म्हणजे खरा, पुन्हा मिळणारा फायदा असलेला नियम (<em>ट्रेडिंग एज म्हणजे काय</em>). गृहीतक हे तपासण्याचे साधन आहे की एज खरंच आहे का.</p>
+<p><strong>चुकीचे ठरवता येणे</strong> म्हणजे कोणता निकाल तुम्हाला कल्पना सोडायला लावेल, हे सांगता येणे. “खर्च वजा केल्यानंतर सरासरी निकाल शून्यापेक्षा वर नसेल, तर मी कल्पना सोडीन” अशी योजना चुकीचे ठरवता येण्यासारखी आहे. कोणताही निकाल तिला चुकीचे ठरवू शकत नसेल, तर कल्पना चाचणीसाठी तयार नाही.</p>
+<p><strong>पास किंवा नापास होण्याचा नियम आधी ठरवा, मग डेटा पाहा.</strong> निकाल पाहिल्यानंतर नियम बदलणे ही स्वतःची फसवणूक करण्याची सर्वात सामान्य पद्धत आहे. मग चाचणी भूतकाळाला बसवलेली तडजोड बनते. ती कल्पनेची तपासणी राहत नाही.</p>
+<p><strong>चाचणी योजना</strong> म्हणजे चाचणीपूर्वी लिहिलेली ही माहिती:</p>
+<ul>
+<li><strong>विश्व:</strong> ज्या शेअर्सची चाचणी घ्यायची ते शेअर्स.</li>
+<li><strong>डेटा स्रोत:</strong> भाव कुठून येतात. त्याच्या अटी वाचा.</li>
+<li><strong>कालावधी:</strong> चाचणी ज्या तारखांचा समावेश करते त्या तारखा.</li>
+<li><strong>विभागणी:</strong> डेटा कसा विभागला आहे. एक भाग नियम बनवण्यासाठी. दुसरा भाग शेवटच्या तपासणीसाठी राखून ठेवलेला (<em>नमुन्याबाहेरील आणि वॉक-फॉरवर्ड चाचणी</em>).</li>
+<li><strong>एंट्री, स्टॉप आणि एक्झिट:</strong> कधी व्यापार उघडायचा, कधी तोटा कापायचा आणि कधी बाहेर पडायचे, हे ठरवणारे नियम.</li>
+<li><strong>साइजिंग:</strong> प्रत्येक व्यापारात किती शेअर्स वापरायचे (<em>पोझिशन साइजिंग, टप्प्याटप्प्याने</em>).</li>
+<li><strong>खर्च:</strong> चाचणीत धरलेले शुल्क आणि स्लिपेज (<em>एका व्यापारावरील खर्च</em>).</li>
+<li><strong>मेट्रिक्स:</strong> तुम्ही वाचणारे आकडे, जसे की अपेक्षित परतावा (<em>अपेक्षित परतावा आणि नफा घटक</em>).</li>
+<li><strong>पास किंवा नापास नियम:</strong> कोणता निकाल परिणाम ठरवतो, तो नियम.</li>
+<li><strong>आजमावलेल्या आवृत्त्यांची संख्या:</strong> प्रत्येक आवृत्ती, जी तुम्ही आजमावली, त्या सोडून दिलेल्यांसह.</li>
+</ul>
+<p>चाचणीचे तीन संभाव्य निकाल असतात:</p>
+<ul>
+<li><strong>समर्थित:</strong> या नियमांखाली कल्पना ही चाचणी पार झाली.</li>
+<li><strong>समर्थित नाही:</strong> या नियमांखाली कल्पना अपयशी ठरली. ती सोडा किंवा नवी कल्पना लिहा. नियम बदलून ती वाचवू नका.</li>
+<li><strong>अनिर्णित:</strong> चाचणीने निर्णय दिला नाही. उदाहरणार्थ, व्यापार फार कमी झाले, त्यामुळे काही सांगता येत नाही.</li>
+</ul>
+<p>पास झालेली चाचणी हा कमकुवत पुरावा आहे. याचा अर्थ कल्पना एक चाचणी टिकली. यावरून कल्पना काम करते, हे सिद्ध होत नाही.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<pre><code class="language-mermaid">flowchart TD
+    A["कल्पना: बाजाराबद्दलची एक भावना"] --&gt; B["गृहीतक: असा नियम जो चुकीचा ठरू शकतो"]
+    B --&gt; C["चाचणी योजना: डेटा, कालावधी, खर्च आणि पास किंवा नापास नियम आधी लिहिलेले"]
+    C --&gt; D["मान्य डेटावर एक चाचणी चालवा"]
+    D --&gt; E{"निकाल"}
+    E --&gt;|"समर्थित"| F["कल्पना फक्त ही चाचणी टिकली"]
+    E --&gt;|"समर्थित नाही"| G["कल्पना सोडा किंवा नवी लिहा"]
+    E --&gt;|"अनिर्णित"| H["निर्णय घेण्यासाठी पुरावा कमी"]
+</code></pre>
+<p>वरपासून खालपर्यंत बाण अनुसरा. चाचणी योजना चाचणी चालवण्याआधी असली पाहिजे. तीनही निकालांपैकी प्रत्येक वेगळ्या पुढच्या पायरीकडे नेतो. या आकृतीत कोणतीही पेटी व्यापार म्हणत नाही.</p>
+<!-- component: hypothesis-builder | caption: सैल कल्पनेचे चाचणी करता येणारे नियम बनवा, आधी पास नियम लॉक करा, मग निकालावरून काय सांगता येते ते पाहा. -->
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> कल्पना आहे: जे शेअर्स नवा उच्चांक गाठतात, ते वर जात राहतात. या कल्पनेवरून लिहिलेले एक चाचणी करता येणारे गृहीतक येथे आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>भाग</th><th>नियम</th></tr></thead><tbody>
+<tr><td>एंट्री</td><td>मागील 55 दिवसांतील सर्वाधिक भावापेक्षा दिवसाचा बंद वर गेल्यावर, पुढच्या दिवसाच्या ओपनिंग भावाला खरेदी करा.</td></tr>
+<tr><td>स्टॉप</td><td>एंट्री भावाच्या 2.5 पट ATR(14) खाली. ATR म्हणजे सरासरी खरा रेंज, म्हणजे एका दिवसात भाव साधारणपणे किती हलतो याचे मोजमाप. 14 म्हणजे वापरलेल्या दिवसांची संख्या.</td></tr>
+<tr><td>एक्झिट</td><td>स्टॉप 3 पट ATR वर ट्रेल करा. ट्रेलिंग स्टॉप भाव वाढल्यावर वर सरकतो. तो खाली सरकत नाही.</td></tr>
+<tr><td>साइज</td><td>प्रति व्यापार Rs 50,000 च्या 1% = Rs 500 जोखीम.</td></tr>
+<tr><td>खर्च</td><td>लॅब 2 मधील खर्च सेटिंग्जमधील खर्च.</td></tr>
+<tr><td>पास नियम</td><td>नमुना राखून ठेवलेल्या कालावधीत खर्च वजा केल्यानंतर अपेक्षित परतावा शून्यापेक्षा वर असला पाहिजे. अपेक्षित परतावा म्हणजे प्रति व्यापार सरासरी निकाल. राखून ठेवलेला कालावधी म्हणजे अंतिम तपासणीसाठी बाजूला ठेवलेला डेटाचा भाग.</td></tr>
+</tbody></table>
+</div>
+<p>आता एका निकालानंतर पास नियम बदला. समजा पहिल्या चाचणीत प्रति व्यापार अपेक्षित परतावा Rs 20 वजा आला. तुम्ही पास नियम “प्रति व्यापार वजा Rs 50 पेक्षा वर” असा बदलता. आता कल्पना पास होते. पण नवा नियम वेगळी, न तपासलेली कल्पना आहे. पहिल्या चाचणीने आधीच ती समर्थित नाही, असे सांगितले होते.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> प्रत्येक अस्पष्ट कल्पनेचे गृहीतक बनवा. प्रत्येकासाठी एंट्रीची अट, एक्झिट आणि “काम करते” हे ठरवणारी एक संख्या लिहा.</p>
+<ol>
+<li>मजबूत शेअर्स विकत घ्या.</li>
+<li>बाजार कमजोर वाटतो तेव्हा विक्री करा.</li>
+<li>स्वस्त वाटणारे शेअर्स विकत घ्या.</li>
+</ol>
+<p>संकेत:</p>
+<ol>
+<li>एंट्रीची अट मोजता येईल अशा पद्धतीने लिहा. “मजबूत” किंवा “स्वस्त” सारख्या शब्दांना संख्या लागते.</li>
+<li>एक्झिट अशी अट म्हणून लिहा, जी तुम्ही भावाच्या चार्टवर तपासू शकता.</li>
+<li>“काम करते” हे ठरवणारी एक संख्या निवडा. उदाहरणार्थ, खर्च वजा केल्यानंतर अपेक्षित परतावा शून्यापेक्षा वर.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ol>
+<li>एंट्री: मागील 20 दिवसांतील सर्वाधिक बंद भावापेक्षा बंद वर गेल्यावर, पुढच्या दिवसाच्या ओपनला खरेदी करा. एक्झिट: मागील 10 दिवसांतील सर्वात कमी बंद भावापेक्षा बंद खाली गेल्यावर, पुढच्या दिवसाच्या ओपनला विक्री करा. काम करते: राखून ठेवलेल्या कालावधीत खर्चानंतर अपेक्षित परतावा शून्यापेक्षा वर.</li>
+<li>“कमजोर वाटतो” ही कल्पना तुमच्याकडे आधीच असलेल्या शेअर्सच्या एक्झिटसाठी आहे. एक्झिट: निवडलेला बाजार निर्देशांक 50 दिवसांच्या सरासरी बंद भावाच्या खाली बंद झाल्यावर, पुढच्या दिवसाच्या ओपनला विक्री करा. काम करते: राखून ठेवलेल्या कालावधीत प्रति व्यापार खर्चानंतरचा सरासरी निकाल शून्यापेक्षा वर.</li>
+<li>एंट्री: बंद भाव 60 दिवसांच्या सरासरी बंद भावापेक्षा किमान 10% खाली गेल्यावर, पुढच्या दिवसाच्या ओपनला खरेदी करा. एक्झिट: बंद भाव 60 दिवसांच्या सरासरीपर्यंत परत आल्यावर किंवा 20 ट्रेडिंग दिवसांनंतर, जे आधी येईल तेव्हा, पुढच्या दिवसाच्या ओपनला विक्री करा. काम करते: राखून ठेवलेल्या कालावधीत खर्चानंतर अपेक्षित परतावा शून्यापेक्षा वर.</li>
+</ol>
+<p>प्रत्येकाला सोप्या उदाहरणासारखा स्टॉप आणि साइज जोडा.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> तुमच्या स्वतःच्या निवडीच्या ब्रेकआउट कल्पनेसाठी पूर्ण चाचणी योजना लिहा. <em>कल्पना</em> या भागात दिलेले प्रत्येक क्षेत्र समाविष्ट करा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<p>एक नमुना योजना. सर्व आकडे या सरावासाठी ठरवलेली उदाहरणे आहेत.</p>
+<ul>
+<li><strong>विश्व:</strong> 30 सूचीबद्ध शेअर्स, सुरुवातीपूर्वी लिखित नियमाने निवडलेले.</li>
+<li><strong>डेटा स्रोत:</strong> एक नावाजलेला मोफत स्रोत, ज्याच्या अटी तुम्ही वाचल्या आहेत. अनेक मोफत स्रोत फक्त वैयक्तिक वापरास परवानगी देतात. <em>ऐतिहासिक डेटा</em> पाहा.</li>
+<li><strong>कालावधी:</strong> 2016 ते 2022.</li>
+<li><strong>विभागणी:</strong> 2016 ते 2019 नियम बनवण्यासाठी. 2020 ते 2022 अंतिम तपासणीसाठी राखून ठेवलेले. 2020 ते 2022 च्या डेटावरून काहीही निवडलेले नाही.</li>
+<li><strong>एंट्री:</strong> मागील 20 दिवसांतील सर्वाधिक बंद भावापेक्षा बंद वर गेल्यावर, पुढच्या दिवसाच्या ओपनला खरेदी करा.</li>
+<li><strong>स्टॉप:</strong> एंट्री भावाच्या 2 पट ATR(14) खाली.</li>
+<li><strong>एक्झिट:</strong> स्टॉप, किंवा मागील 10 दिवसांतील सर्वात कमी बंद भावापेक्षा बंद खाली गेल्यावर पुढच्या दिवसाचा ओपन, जे आधी येईल ते.</li>
+<li><strong>साइजिंग:</strong> Rs 50,000 च्या चाचणी भांडवलाच्या 1% जोखीम, म्हणजे प्रति व्यापार Rs 500. <em>पोझिशन साइजिंग, टप्प्याटप्प्याने</em> मधील मर्यादा लागू.</li>
+<li><strong>खर्च:</strong> लॅब 2 मधील खर्च सेटिंग्ज. स्लिपेज फक्त तुम्ही ठरवले असेल तरच जोडा.</li>
+<li><strong>मेट्रिक्स:</strong> खर्चानंतर अपेक्षित परतावा, प्रॉफिट फॅक्टर, आणि चाचणी खात्यातील शिखरापासूनची सर्वात मोठी घसरण (<em>ड्रॉडाउन आणि रिकव्हरीचे गणित</em>).</li>
+<li><strong>पास किंवा नापास नियम:</strong> राखून ठेवलेल्या कालावधीत किमान 30 व्यापारांसह, खर्चानंतर अपेक्षित परतावा शून्यापेक्षा वर. 30 ही उदाहरणाची संख्या आहे, चाचणीआधी ठरवलेली.</li>
+<li><strong>आजमावलेल्या आवृत्त्यांची संख्या:</strong> 1, ही योजना. तुम्ही आजमावलेली कोणतीही इतर आवृत्ती नोंदवली जाते.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझ चुकीचे ठरवता येणारे नियम, निकालानंतर ठरवलेले पास नियम, पास झालेली चाचणी काय दाखवते आणि सहकाऱ्याच्या चार्टला कसे उत्तर द्यायचे, हे तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> कागदी काम (पेपर). हे तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल, तर कागदावर लिहा.</p>
+<ol>
+<li><em>कल्पना</em> या भागातील साच्यात एक गृहीतक लिहा.</li>
+<li>प्रत्येक भाग लिहा: एंट्री, स्टॉप, एक्झिट आणि साइज.</li>
+<li><em>कल्पना</em> यादीतील प्रत्येक क्षेत्र भरा.</li>
+<li>पास किंवा नापास नियम लिहा आणि त्यावर तारीख घाला. कोणत्याही चाचणीनंतर तो बदलू नका.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>चाचणी योजना कल्पना काम करेल, हे दाखवत नाही. ती फक्त दाखवते की कल्पना कशी तपासली गेली.</li>
+<li>चाचणी योजना म्हणजे ट्रेडिंग योजना नव्हे. या प्रकरणात खऱ्या पैशाचा वापर करण्याची परवानगी नाही.</li>
+<li>नियम लिहिल्याने ती प्रणाली होत नाही. प्रणालीला चाचणी झालेले नियम, खर्च, साइजिंग आणि कालांतराने निकालांची नोंद लागते.</li>
+<li>निकाल पाहिल्यानंतर पास नियम बदलणे ही सर्वात सामान्य चूक आहे. असा कोणताही बदल नवी कल्पना मानून तिची नवी चाचणी करा (<em>ओव्हरफिटिंग आणि तुम्ही किती गोष्टी आजमावल्या</em>).</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>गृहीतक म्हणजे असा नियम, जो चुकीचा ठरू शकतो.</li>
+<li>कोणताही निकाल पाहण्याआधी पास किंवा नापास नियम लिहा.</li>
+<li>पास झालेली चाचणी कमकुवत पुरावा आहे, सिद्धता नाही.</li>
+<li>बदललेला नियम ही नवी, न तपासलेली कल्पना आहे.</li>
+<li>चाचणी योजना म्हणजे ट्रेडिंग योजना नव्हे.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>Robert Pardo, <em>The Evaluation and Optimization of Trading Strategies</em>, 2nd edition (Wiley, 2008), ट्रेडिंग कल्पना कशी तपासायची याबद्दल.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T7.1&amp;body=Page%3A%2007-testing-and-validation%2F01-from-idea-to-hypothesis%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../07-testing-and-validation/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../07-testing-and-validation/02-historical-data/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../07-testing-and-validation/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../07-testing-and-validation/02-historical-data/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>SEBI&#x27;s F&amp;O studies as a case study - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/09-advanced/04-sebi-fo-studies-case-study/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T9.4
+title: SEBI's F&O studies as a case study
+page_type: Concept
+prerequisites: [T9.1, T9.2, T7.8, T0.1]
+labs: []
+estimated_minutes: 25
+-->
+<h1 id="sebis-fo-studies-as-a-case-study"><a class="header" href="#sebis-fo-studies-as-a-case-study">SEBI’s F&amp;O studies as a case study</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A headline says, “Most F&amp;O traders lose money.” You read it and think, “So I will lose too.” One headline percentage does not tell you what will happen to you. This chapter shows what a study of traders can say, and what it cannot say.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>F&amp;O means futures and options. A <strong>study</strong> of traders counts what happened to a group of people over a period. It describes the past. It does not forecast what will happen to one person.</p>
+<p>Before you quote any study, ask these five method questions.</p>
+<ol>
+<li>Which people were in the sample, and how were they chosen?</li>
+<li>Which period did the study cover?</li>
+<li>Were costs included in the gains and losses?</li>
+<li>How were gains and losses measured?</li>
+<li>Did people leave the study, and were the same people followed over time?</li>
+</ol>
+<p><strong>Expected value</strong> is the average result you would get over many similar tries. A percentage of losers does not give that average by itself. You also need the size of the wins and the size of the losses, together.</p>
+<p><strong>Survivorship</strong> is a bias that counts only people who stayed in the sample. People who left are missing from the totals. A study can then look better than the full group. See <em>Survivorship bias</em>.</p>
+<p><strong>Quoting figures.</strong> Quote a figure only from its source, with the study name, the date and the period. Never quote a figure from memory.</p>
+<p><strong>What SEBI’s own studies say.</strong> SEBI, India’s market regulator, has published three studies on individual traders in equity futures and options. Each is described below with its name, date, period and sample. The figures come from SEBI’s own documents.</p>
+<div class="table-wrapper"><table><thead><tr><th>Study</th><th>Period and sample</th><th>What it reports</th></tr></thead><tbody>
+<tr><td>“Analysis of Profit and Loss of Individual Traders dealing in Equity F&amp;O Segment”, SEBI, January 2023</td><td>Financial years 2019 and 2022, data from the top 10 brokers</td><td>In FY22, 89 percent of individual F&amp;O traders had losses. The average loss was about Rs 1.1 lakh.</td></tr>
+<tr><td>“Analysis of Profits &amp; Losses in the Equity Derivatives Segment (FY22-FY24)”, SEBI, 23 September 2024</td><td>Financial years 2022 to 2024, data from the top 15 brokers</td><td>In FY24, 91.1 percent of individual traders (about 73 lakh people) lost money, with an average net loss of Rs 1.20 lakh. Over the three years, 1.13 crore unique traders had a combined net loss of Rs 1.81 lakh crore, including costs. About 93 percent were loss-makers. Only 1 percent earned more than Rs 1 lakh after costs.</td></tr>
+<tr><td>“Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26)”, SEBI, August 2026</td><td>Financial years 2025 and 2026, data from the top 15 brokers, about 90 percent of the traders</td><td>The share of loss-makers was 90.9 percent in FY25 and 87.7 percent in FY26. Total net losses were Rs 91,685 crore in FY26. The average loss per person was Rs 1.17 lakh. Options made up 92 percent of the losses.</td></tr>
+</tbody></table>
+</div>
+<p>Read the table with the five method questions. The three studies use different brokers and different years, so do not join their numbers into one line. The studies describe groups. They do not say what will happen to you. (As of 11 Nov 2026, SEBI studies on its website. Check the SEBI site for newer studies.)</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<p>Use this checklist before you read any headline. Read the method section of the report first, then the headline.</p>
+<div class="table-wrapper"><table><thead><tr><th>Question</th><th>Why it matters</th></tr></thead><tbody>
+<tr><td>Who was in the sample?</td><td>A small or chosen group may not represent others.</td></tr>
+<tr><td>Which period?</td><td>A short or unusual period can mislead.</td></tr>
+<tr><td>Are costs included?</td><td>Costs change the net result.</td></tr>
+<tr><td>How are gains and losses measured?</td><td>Different measures give different totals.</td></tr>
+<tr><td>Did people leave, and were the same people tracked?</td><td>People who left can be missing, which changes the picture.</td></tr>
+</tbody></table>
+</div><!-- component: sebi-study-bars | traders: 1000 | winnersPct: 40 | avgGain: 1000 | avgLoss: 2000 | caption: The chapter's made-up group: 400 winners and 600 losers. Look at the totals and the spread, not one percentage. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical group.</strong> 1,000 traders. 600 had net losses. 400 had net gains.</p>
+<div class="table-wrapper"><table><thead><tr><th>Group</th><th>Number</th><th>Total result</th><th>Average per trader</th></tr></thead><tbody>
+<tr><td>Winners</td><td>400</td><td>Rs 4,00,000 gain</td><td>Rs 1,000 gain</td></tr>
+<tr><td>Losers</td><td>600</td><td>Rs 12,00,000 loss</td><td>Rs 2,000 loss</td></tr>
+<tr><td>Whole group</td><td>1,000</td><td>Rs 8,00,000 net loss</td><td>Rs 800 net loss</td></tr>
+</tbody></table>
+</div>
+<p>Check the whole group: Rs 4,00,000 - Rs 12,00,000 = minus Rs 8,00,000. Divide by 1,000 traders to get minus Rs 800 each.</p>
+<p>A percentage alone seems to show a poor result. A different hypothetical group with 400 losers and larger average wins could show a positive net result. The lesson is to read the totals and the method, not one percentage.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Using the worked example, compute the average gain per winner and the average loss per loser. State which average is larger.</p>
+<p>Hints:</p>
+<ol>
+<li>The average gain per winner is Rs 4,00,000 divided by 400.</li>
+<li>The average loss per loser is Rs 12,00,000 divided by 600.</li>
+<li>Compare the two averages.</li>
+</ol>
+<p><strong>Answer:</strong> Average gain per winner = Rs 4,00,000 / 400 = <strong>Rs 1,000</strong>. Average loss per loser = Rs 12,00,000 / 600 = <strong>Rs 2,000</strong>. The average loss is larger. That is why the whole group nets a loss, even though 400 traders gained.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Write the five method questions you would ask of a SEBI study before you quote it.</p>
+<details><summary>Check your answer</summary>
+<ol>
+<li>Which people were in the sample, and how were they chosen?</li>
+<li>Which period did the study cover?</li>
+<li>Were costs included in the gains and losses?</li>
+<li>How were gains and losses measured?</li>
+<li>Did people leave the study, and were the same people followed over time?</li>
+</ol>
+<p>A good answer also says why each question matters. The checklist in <em>See it</em> gives the reasons.</p>
+<p>All figures in the worked example are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks percentage against expected value, the study method, quoting figures, and one scenario.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong>. This chapter has no practice. It asks for reflection only.</p>
+<ol>
+<li>Write the five method questions in your learning note.</li>
+<li>Write one sentence on why a percentage of losers is not an expected value by itself.</li>
+<li>Write one sentence on how you would quote a figure from a study.</li>
+<li>Save these in your journal, or on paper until the journal app is ready.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>The figures here are only a short summary. Read the SEBI documents themselves for the method and the full tables. A summary can leave out important details.</li>
+<li>A study describes a group over a period. It does not forecast any one trader.</li>
+<li>Even a sound study does not show that your own trades will match the group.</li>
+<li>Headlines often drop the period, the sample or the costs. Check the method first.</li>
+<li>Do not quote a figure from memory, even when you remember it well.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>A study describes a group over a period. It does not forecast you.</li>
+<li>A percentage of losers does not give an expected value by itself.</li>
+<li>Check the sample, period, costs and measures before you quote a study.</li>
+<li>Quote figures from the source, with the date and period.</li>
+<li>Survivorship can make a study look better than the full group.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>SEBI, “Analysis of Profit and Loss of Individual Traders dealing in Equity F&amp;O Segment”, January 2023 (sebi.gov.in)</li>
+<li>SEBI, “Analysis of Profits &amp; Losses in the Equity Derivatives Segment (FY22-FY24)”, 23 September 2024 (sebi.gov.in)</li>
+<li>SEBI, “Profitability of Individual Traders in the Equity Derivatives Segment (FY25-FY26)”, August 2026 (sebi.gov.in)</li>
+<li>The methodology section of each report</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../09-advanced/03-hedging/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../09-advanced/05-algo-trading-and-why-no-automation/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../09-advanced/03-hedging/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../09-advanced/05-algo-trading-and-why-no-automation/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

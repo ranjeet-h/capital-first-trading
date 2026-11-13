@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>स्कॅल्पिंग आणि मार्टिंगेल का धोकादायक आहेत - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../06-strategy/05-dangerous-approaches/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../06-strategy/05-dangerous-approaches/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T6.5
+title: स्कॅल्पिंग आणि मार्टिंगेल का धोकादायक आहेत
+page_type: Math/Calculator
+prerequisites: [T6.2, T2.7, T2.9, T2.12, T2.13]
+labs: [Lab 2, Lab 4]
+estimated_minutes: 30
+-->
+<h1 id="सकॅलपिंग-आणि-मारटिंगेल-का-धोकादायक-आहेत"><a class="header" href="#सकॅलपिंग-आणि-मारटिंगेल-का-धोकादायक-आहेत">स्कॅल्पिंग आणि मार्टिंगेल का धोकादायक आहेत</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>एक ट्रेडर Rs 100 ला 100 शेअर्स खरेदी करतो. प्रत्येक शेअरमागे Rs 0.10 जास्त भावाला विकण्याचे त्याचे ध्येय आहे, म्हणजे Rs 10 चा नफा. तो खरेदी आणि विक्री मिळून Rs 50 खर्च गृहीत धरतो. <strong>काल्पनिक.</strong> Rs 50 चा खर्च Rs 10 च्या नफ्यापेक्षा मोठा आहे, त्यामुळे व्यापार योजनेप्रमाणे चालला तरीही Rs 40 चा तोटा होतो. Rs 50 ही सरावासाठी ठरवलेली गोल संख्या आहे, खरा शुल्क नाही. खरे शुल्क <em>एका व्यापारावरील खर्च</em> या भागात आहेत. हे प्रकरण पाच अशा पद्धतींमागील गणित दाखवते ज्या जलद किंवा हुशार वाटतात, आणि प्रत्येक का धोकादायक आहे ते सांगते.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>हे प्रकरण पाच पद्धती सांगते. पुस्तक त्यांना धोक्याची चिन्हे म्हणून ओळखायला शिकवते. त्या सरावासाठी वापरायच्या पद्धती नाहीत.</p>
+<p><strong>स्कॅल्पिंग.</strong> स्कॅल्पर अनेक व्यापार करतो, प्रत्येकात थोडा नफा मिळवण्याचा प्रयत्न असतो. प्रत्येक व्यापारावर खर्च होतो. ठराविक खर्च छोट्या नफ्याचा मोठा वाटा खाऊन टाकतो. तोटा टाळण्याचा भाव-बदल म्हणजे खर्च भागिले शेअर्सची संख्या. खर्च फक्त भरून निघण्यासाठी लागणारी भावातील हालचाल ती आहे.</p>
+<p><strong>इंट्राडे ट्रेडिंग.</strong> इंट्राडे व्यापार एकाच दिवसात उघडले जातात आणि बंद होतात. इंट्राडेसाठी वापरली जाणारी काही उत्पादने उसनी रक्कम वापरतात, तिला मार्जिन म्हणतात. उसनी रक्कम नफा आणि तोटा दोन्ही मोठे करते. <em>लीव्हरेज आणि मार्जिन</em> पहा. इंट्राडे पोझिशन त्याच दिवशी बंद कराव्या लागतात. Zerodha मध्ये उघड्या इंट्राडे शेअर पोझिशन्स सुमारे 3:25 PM ला, आणि फ्युचर्स व ऑप्शन्स सुमारे 3:26 PM ला आपोआप बंद होतात. अशा प्रकारे बंद झालेल्या प्रत्येक ऑर्डरसाठी Rs 50 अधिक 18% GST खर्च येतो. Zerodha दिवसभरात इंट्राडे लीव्हरेज कमीही करू शकते. (11 Nov 2026 पर्यंतची माहिती, Zerodha सपोर्ट. नियम बदलतात, म्हणून Zerodha सपोर्टवर तपासा.) SEBI च्या जुलै 2024 च्या अभ्यासात, इक्विटी कॅश सेगमेंटमधील वैयक्तिक इंट्राडे ट्रेडर्सपैकी 71% जणांना FY23 मध्ये खर्चानंतर तोटा झाला असे आढळले. हे पुस्तक इंट्राडे ट्रेडिंगला प्रोत्साहन देत नाही. कोणताही पुढील सराव फक्त कागदावर असेल.</p>
+<p><strong>सरासरी कमी करणे.</strong> सरासरी कमी करणे म्हणजे ज्या शेअरचा भाव पडला आहे त्याचे आणखी शेअर्स खरेदी करणे. सरासरी भाव खाली येतो. पण त्याच कल्पनेत जोखमीत असलेली रक्कम वाढते. भाव पडल्यावर तोटा भरून काढण्यासाठी मोठा नफा लागतो. तोटा जितका मोठा, तितका जास्त नफा लागतो. <em>ड्रॉडाउन आणि रिकव्हरीचे गणित</em> पहा.</p>
+<p><strong>मार्टिंगेल.</strong> मार्टिंगेल म्हणजे प्रत्येक तोट्यानंतर स्टेक दुप्पट करणे. स्टेक खूप वेगाने वाढतात. तोट्यांची एक लांब मालिका संपूर्ण खात्यापेक्षा जास्त तोटा करू शकते. जास्त विजय दर असला तरी हा जोखीम नाहीसा होत नाही. एकच लांब मालिका पुरेशी आहे.</p>
+<p><strong>ऑप्शन्स, फक्त सिद्धांतात.</strong> ऑप्शन खरेदी करणारा प्रीमियम नावाचा भाव देतो. खरेदीदाराचा तोटा दिलेल्या प्रीमियमपुरता मर्यादित असतो. ऑप्शन विकणारा प्रीमियम मिळवतो. विक्रेत्याचा नफा मिळालेल्या प्रीमियमपुरता मर्यादित असतो. विक्रेत्याचा तोटा खूप मोठा असू शकतो. प्रीमियम, कालांतराने होणारी घट आणि मार्जिन येथे सांगितलेले नाहीत. <em>ऑप्शनची मूलतत्त्वे आणि ग्रीक्स</em> पहा.</p>
+<p>यापैकी कोणतीही पद्धत दैनंदिन नफ्याच्या ध्येयाचा शॉर्टकट नाही. <em>Rs 2,000-3,000 ची वास्तव तपासणी</em> पहा.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: drawdown-compounding | caption: दाखवते की पडझडीनंतर किती नफा लागतो, म्हणजे सरासरी कमी करण्यातील रिकव्हरीचे गणित दिसते -->
+<!-- component: position-size-viz | caption: Rs 500 च्या मूळ जोखमीसह दुप्पट होत जाणाऱ्या क्रमात स्टेकची वाढ दाखवते -->
+<!-- component: streak-sim | caption: दिलेल्या विजय दरावर मार्टिंगेलचा क्रम दाखवते, म्हणजे तोट्यांची लांब मालिका कशी दिसते ते कळते -->
+<p>रिकव्हरी दृश्यापासून सुरुवात करा. पडझड जितकी खोल होईल तितका लागणारा नफा कसा वाढतो ते पाहा. मग स्टेक दृश्य पाहा. प्रत्येक तोट्यामुळे पुढचा स्टेक दुप्पट होतो. सलग तोट्यांचे दृश्य दाखवते की तोट्यांची लांब मालिका किती वेळा येऊ शकते.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक. स्कॅल्पिंग.</strong> Rs 100 ला 100 शेअर्स खरेदी करा (Rs 10,000).</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>अपेक्षित एकूण नफा</td><td>100 x Rs 0.10</td><td>Rs 10</td></tr>
+<tr><td>गृहीत धरलेला एकूण खर्च</td><td>या उदाहरणासाठी ठरवलेली रक्कम</td><td>Rs 50</td></tr>
+<tr><td>निव्वळ निकाल</td><td>Rs 10 - Rs 50</td><td>वजा Rs 40</td></tr>
+<tr><td>प्रति शेअर तोटा टाळण्याचा भाव-बदल</td><td>Rs 50 / 100 शेअर्स</td><td>Rs 0.50, म्हणजे Rs 100 च्या 0.5 टक्के</td></tr>
+</tbody></table>
+</div>
+<p><strong>काल्पनिक. सरासरी कमी करणे.</strong> Rs 100 ला 100 शेअर्स खरेदी करा (Rs 10,000). भाव Rs 80 पर्यंत पडतो.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>Rs 80 वर तोटा</td><td>(80 - 100) x 100</td><td>वजा Rs 2,000, म्हणजे 20 टक्के</td></tr>
+<tr><td>Rs 100 वर परत येण्यासाठी लागणारा नफा</td><td>100 / 80 - 1</td><td>25 टक्के</td></tr>
+<tr><td>दुसरी खरेदी</td><td>Rs 80 ला 100 शेअर्स</td><td>Rs 8,000</td></tr>
+<tr><td>नवीन सरासरी भाव</td><td>(10,000 + 8,000) / 200</td><td>Rs 90</td></tr>
+<tr><td>200 शेअर्सवर Rs 60 ला तोटा</td><td>(60 - 90) x 200</td><td>वजा Rs 6,000</td></tr>
+<tr><td>तुलना: Rs 60 ला 100 शेअर्सचा एक लॉट</td><td>(60 - 100) x 100</td><td>वजा Rs 4,000</td></tr>
+</tbody></table>
+</div>
+<p>सरासरी भाव Rs 100 वरून Rs 90 वर आला. पण शेअर्सची संख्या दुप्पट झाली, आणि Rs 60 ला तोटा मोठा झाला. सरासरी कमी केल्याने धोका कमी झाला नाही. तो वाढला.</p>
+<p><strong>काल्पनिक. मार्टिंगेल.</strong> मूळ जोखीम Rs 500. प्रत्येक तोट्यानंतर पुढचा स्टेक दुप्पट होतो.</p>
+<div class="table-wrapper"><table><thead><tr><th>व्यापार</th><th>स्टेक</th><th>हा व्यापार आणि त्याआधीचे सर्व व्यापार तोट्यात गेले तर एकूण तोटा</th></tr></thead><tbody>
+<tr><td>1</td><td>Rs 500</td><td>Rs 500</td></tr>
+<tr><td>2</td><td>Rs 1,000</td><td>Rs 1,500</td></tr>
+<tr><td>3</td><td>Rs 2,000</td><td>Rs 3,500</td></tr>
+<tr><td>4</td><td>Rs 4,000</td><td>Rs 7,500</td></tr>
+<tr><td>5</td><td>Rs 8,000</td><td>Rs 15,500</td></tr>
+<tr><td>6</td><td>Rs 16,000</td><td>Rs 31,500</td></tr>
+</tbody></table>
+</div>
+<p>पाच तोट्यांनंतर स्टेक 500 x 2 च्या 5 व्या घाताने, म्हणजे Rs 16,000 होतो. हा स्टेक Rs 10,000 च्या खात्यापेक्षा मोठा आहे. तो Rs 50,000 च्या खात्याच्या 32 टक्के आहे. पाच तोट्यांनंतर एकूण गेलेली रक्कम 500 x (1 + 2 + 4 + 8 + 16) = Rs 15,500 आहे.</p>
+<p><strong>रिकव्हरीचे गणित.</strong> 40 टक्के तोट्यानंतर 60 टक्के मूल्य उरते. लागणारा नफा 1 / 0.6 - 1 = 66.7 टक्के आहे.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> एखादी पोझिशन 40 टक्क्यांनी पडते. सुरुवातीच्या मूल्यावर परत येण्यासाठी किती नफा लागेल?</p>
+<p>संकेत:</p>
+<ol>
+<li>40 टक्के तोट्यानंतर 60 टक्के मूल्य उरते.</li>
+<li>लागणारा नफा म्हणजे 1 ला 0.6 ने भागा, आणि त्यातून 1 वजा करा.</li>
+<li>उत्तर एक दशांश स्थानापर्यंत टक्क्यांमध्ये द्या.</li>
+</ol>
+<p><strong>उत्तर:</strong> 1 / 0.6 = 1.667. 1.667 - 1 = 0.667. लागणारा नफा <strong>66.7 टक्के</strong> आहे.</p>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> एका स्कॅल्प व्यापारात Rs 100 ला 200 शेअर्स वापरले जातात. गृहीत धरलेला एकूण खर्च Rs 60 आहे. प्रति शेअर तोटा टाळण्याचा भाव-बदल काढा, आणि तोटा टाळण्याचा भाव-बदल Rs 100 च्या टक्क्यांमध्ये किती आहे तेही काढा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>प्रति शेअर तोटा टाळण्याचा भाव-बदल: Rs 60 / 200 शेअर्स = <strong>Rs 0.30</strong>.</li>
+<li>Rs 100 च्या टक्क्यांमध्ये: 0.30 / 100 = <strong>0.3 टक्के</strong>.</li>
+<li>तपासणी: 200 शेअर्स x Rs 0.30 = Rs 60, जो खर्चाएवढा आहे.</li>
+</ul>
+<p>Rs 60 चा खर्च फक्त या उदाहरणासाठी गृहीत धरला आहे. सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>हे प्रकरण तोटा टाळण्याचा भाव-बदल, रिकव्हरीचे गणित, स्टेक दुप्पट होणे आणि सरासरी कमी करण्याचा धोका तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> कागदी काम (पेपर). तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल, तर कागदावर लिहा.</p>
+<ol>
+<li>या प्रकरणातील पाच पद्धतींपैकी प्रत्येकासाठी एक शिकण्याची नोंद लिहा.</li>
+<li>प्रत्येक नोंदीत या प्रकरणातील गणित उतरवा.</li>
+<li>कॅल्क्युलेटरवर प्रत्येक गणना पुन्हा तपासा.</li>
+<li>प्रत्येक पद्धतीसाठी सर्वात मोठा तोटा कोणती एक घटना करेल ते लिहा.</li>
+<li>प्रत्येक नोंद काल्पनिक म्हणून चिन्हांकित करा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>तोटा टाळण्याच्या आकड्यांमध्ये सरावासाठी ठरवलेला गोल खर्च वापरला आहे. खरे शुल्क <em>एका व्यापारावरील खर्च</em> या भागात आहेत.</li>
+<li>सरासरी कमी करणे धोका कमी करत नाही. त्याच कल्पनेत जोखमीत असलेली रक्कम वाढवते.</li>
+<li>येथील ऑप्शन्सचे आकडे फक्त सिद्धांत आहेत. प्रीमियम, घट आणि मार्जिनचे नियम या प्रकरणात सांगितलेले नाहीत. <em>ऑप्शनची मूलतत्त्वे आणि ग्रीक्स</em> पहा.</li>
+<li>दुप्पट होणारा स्टेक तोट्यांची मालिका संपण्यापूर्वीच तुमच्या खात्यापेक्षा मोठा होऊ शकतो.</li>
+<li>या उदाहरणांमधील भाव बनवलेले आहेत. ते कोणत्याही खऱ्या शेअरचा अंदाज देत नाहीत.</li>
+<li>इंट्राडे आणि ऑप्शन्सचे शुल्क, मार्जिन आणि नियम बदलतात. कोणत्याही आकड्यावर अवलंबून राहण्यापूर्वी Zerodha चे शुल्क पेज, Zerodha सपोर्ट आणि NSE साइट तपासा.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>प्रति व्यापार ठराविक खर्च हा छोट्या नफ्याचा मोठा वाटा असतो.</li>
+<li>तोटा टाळण्याचा भाव-बदल म्हणजे खर्च भागिले शेअर्सची संख्या.</li>
+<li>पडझडीनंतर परत येण्यासाठी लागणारा नफा पडझडीपेक्षा वेगाने वाढतो.</li>
+<li>सरासरी कमी करणे त्याच कल्पनेत जोखमीत असलेली रक्कम वाढवते.</li>
+<li>जास्त विजय दर असला तरी मार्टिंगेल संपूर्ण खात्यापेक्षा जास्त तोटा करू शकते.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>SEBI, “व्यक्तींचा इक्विटी कॅश सेगमेंटमधील इंट्राडे ट्रेडिंग अभ्यास” (“Analysis of Intraday Trading by Individuals in Equity Cash Segment”, July 2024). यात नोंदवले आहे की इक्विटी कॅश सेगमेंटमधील वैयक्तिक इंट्राडे ट्रेडर्सपैकी 71% जणांनी FY23 मध्ये निव्वळ तोटा केला.</li>
+<li>SEBI चा व्यक्तिगत ट्रेडर्सचा इक्विटी डेरिव्हेटिव्ह्जमधील FY25 आणि FY26 साठीचा अभ्यास (August 2026). यात नोंदवले आहे की FY26 मध्ये 87.7% व्यक्तींचा तोटा झाला.</li>
+<li>Zerodha Varsity, जोखीम आणि पोझिशन साइजिंगवरील साहित्य (केवळ संदर्भासाठी).</li>
+<li>Zerodha चे शुल्क पेज आणि आपोआप बंद करण्याविषयी (auto square-off) Zerodha सपोर्ट (11 Nov 2026 रोजी वाचले).</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T6.5&amp;body=Page%3A%2006-strategy%2F05-dangerous-approaches%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../06-strategy/04-swing-strategy/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../06-strategy/06-strategy-simulator/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../06-strategy/04-swing-strategy/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../06-strategy/06-strategy-simulator/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

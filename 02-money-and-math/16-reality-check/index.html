@@ -1,0 +1,396 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The Rs 2,000-3,000 reality check - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/02-money-and-math/16-reality-check/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T2.16
+title: The Rs 2,000-3,000 reality check
+page_type: Math/Calculator
+prerequisites: [T2.2, T2.4, T2.5, T2.9, T2.10, T2.11, T2.12, T2.15]
+labs: [Lab 1, Lab 2]
+estimated_minutes: 30
+-->
+<h1 id="the-rs-2000-3000-reality-check"><a class="header" href="#the-rs-2000-3000-reality-check">The Rs 2,000-3,000 reality check</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A hypothetical trader with Rs 50,000 writes one number into her plan: Rs 2,000 a day. Over 250 trading days that is Rs 5,00,000. That is ten times her capital. Her plan does not explain how any strategy would make that every day. This chapter does the arithmetic she skipped. The result is not a strategy problem to solve. It is a number that shows the target does not fit this capital.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Start with the target in rupees. Then ask what capital and what return it would need.</p>
+<p><strong>Terms</strong></p>
+<ul>
+<li><strong>Daily target:</strong> the profit you want in one trading day, in rupees.</li>
+<li><strong>Trading days per year:</strong> the number of market sessions in a year. This chapter uses 250 as a round number for the arithmetic. The real count is a little lower. In 2026 the NSE calendar has about 245 normal trading days, after weekends and market holidays. Using 245 instead of 250 changes the totals by about 2%, and the point of the chapter stays the same. (As of 11 Nov 2026, NSE holiday list for 2026. The count changes each year, so check the NSE site.)</li>
+<li><strong>Annual return:</strong> the yearly profit as a percentage of your capital.</li>
+<li><strong>Required daily return:</strong> the daily target as a percentage of your capital.</li>
+</ul>
+<p><strong>Capital needed.</strong> Daily target times trading days per year, divided by the annual return.</p>
+<p>In symbols: C = (T x D) / r, where T is the daily target, D is the number of trading days, r is the annual return as a decimal, and C is the capital.</p>
+<p><strong>Required daily return.</strong> Daily target divided by capital.</p>
+<p>In symbols: g = T / C.</p>
+<p><strong>Sensitivity.</strong> You cannot control the annual return. So the table shows three values: 10%, 20% and 50%. You can treat 20% a year as a very good result. That is a reference point, not a forecast. The 50% row shows only the scale of the problem. It is not an expectation.</p>
+<p><strong>Risk and the number of trades.</strong> At Rs 50,000 with 1% risk per trade, one R is Rs 500. A Rs 2,000 day is 4R before costs. That is four wins of 1R each, with no losing trade. Every losing trade takes away from that figure. The more trades a target needs, the more chances costs and mistakes have to add up (<em>Overtrading and why daily profit targets encourage it</em>).</p>
+<p><strong>Costs.</strong> Every trade pays costs (<em>Costs on a trade</em>). This chapter uses the dummy cost model from <em>Costs on a trade</em>: a Rs 190 round trip on Rs 50,000. Dummy figures are for arithmetic only. They are round numbers for practice, not the real charges. As of 11 Nov 2026, Zerodha lists intraday brokerage as 0.03% of the trade value or Rs 20 per order, whichever is lower, plus STT, exchange fees, SEBI fee, stamp duty and GST. The table in <em>Costs on a trade</em> has every line. Rules change, so check the Zerodha charges page. Gross profit must cover costs before any of it counts toward the target.</p>
+<p><strong>Streaks.</strong> Losing days come in runs (<em>Consecutive losses and losing streaks</em>). The worked example shows the capital lost over 5, 10 and 15 losing days. It assumes each losing day loses the risk percentage of the capital at that moment. So each loss is a smaller rupee amount than the one before.</p>
+<p><strong>Consistency.</strong> A daily target assumes a steady daily return. Real results vary from one day to the next. A few good days say nothing about the next day. Consistent daily returns cannot be guaranteed.</p>
+<p><strong>Compounding check.</strong> 1.04 raised to the power 250 is about 18,000. Put another way, Rs 1 would grow to about Rs 18,000 if it earned 4% on each of 250 days. No responsible plan can assume that. The 4% a day figure is shown here only to make the scale visible.</p>
+<p><strong>Conclusion.</strong> At Rs 10,000 to Rs 50,000, a target of Rs 2,000 to Rs 3,000 a day is unrealistic. This book does not work backwards from a target to invent a strategy that makes it look possible. The target must never drive a trade decision.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: streak-sim | capital: 10000 | riskPct: 1 | losingDays: 5 | caption: Losing-day streak at Rs 10,000 and 1% risk; read the capital lost after 5, 10 and 15 losing days -->
+<p>Look at the capital lost after five losing days. Then change the streak to 10 and 15. The loss grows a little more slowly than a straight line, because each loss is 1% of a smaller balance. Then change the risk to 2% and compare the same streak lengths.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p>All figures are <strong>hypothetical</strong> and use the arithmetic of this chapter. The 250-day count is a round number for practice. The 2026 NSE calendar has about 245 normal trading days.</p>
+<h3 id="step-1-capital-needed-for-rs-2000-a-day-at-20-a-year"><a class="header" href="#step-1-capital-needed-for-rs-2000-a-day-at-20-a-year">Step 1: capital needed for Rs 2,000 a day at 20% a year</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead><tbody>
+<tr><td>Yearly target</td><td>2,000 x 250</td><td>Rs 5,00,000</td></tr>
+<tr><td>Capital needed</td><td>5,00,000 / 0.20</td><td>Rs 25,00,000 (Rs 25 lakh)</td></tr>
+</tbody></table>
+</div>
+<p>Check: 25,00,000 x 0.20 = 5,00,000.</p>
+<p>For Rs 3,000 a day: 3,000 x 250 = Rs 7,50,000, and 7,50,000 / 0.20 = Rs 37,50,000 (Rs 37.5 lakh).</p>
+<h3 id="step-2-the-effect-of-the-annual-return"><a class="header" href="#step-2-the-effect-of-the-annual-return">Step 2: the effect of the annual return</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Daily target</th><th>10% a year</th><th>20% a year</th><th>50% a year (scale only)</th></tr></thead><tbody>
+<tr><td>Rs 2,000</td><td>Rs 50,00,000</td><td>Rs 25,00,000</td><td>Rs 10,00,000</td></tr>
+<tr><td>Rs 3,000</td><td>Rs 75,00,000</td><td>Rs 37,50,000</td><td>Rs 15,00,000</td></tr>
+</tbody></table>
+</div>
+<p>Each cell is the yearly target divided by the return. Example: 5,00,000 / 0.10 = 50,00,000, and 7,50,000 / 0.50 = 15,00,000.</p>
+<h3 id="step-3-required-daily-return"><a class="header" href="#step-3-required-daily-return">Step 3: required daily return</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Capital</th><th>Rs 2,000 a day</th><th>Rs 3,000 a day</th></tr></thead><tbody>
+<tr><td>Rs 10,000</td><td>20% a day</td><td>30% a day</td></tr>
+<tr><td>Rs 50,000</td><td>4% a day</td><td>6% a day</td></tr>
+<tr><td>Rs 10,00,000</td><td>0.2% a day</td><td>0.3% a day</td></tr>
+</tbody></table>
+</div>
+<p>Example: 2,000 / 10,000 = 0.20, which is 20%. And 3,000 / 50,000 = 0.06, which is 6%.</p>
+<h3 id="step-4-losing-streaks-at-fixed-risk"><a class="header" href="#step-4-losing-streaks-at-fixed-risk">Step 4: losing streaks at fixed risk</a></h3>
+<p>Each loss is the risk percentage of the capital at that moment. Example at 1% on Rs 10,000:</p>
+<div class="table-wrapper"><table><thead><tr><th>Day</th><th>Capital before the loss</th><th>Loss (1%)</th><th>Capital after</th></tr></thead><tbody>
+<tr><td>1</td><td>Rs 10,000</td><td>Rs 100</td><td>Rs 9,900</td></tr>
+<tr><td>2</td><td>Rs 9,900</td><td>Rs 99</td><td>Rs 9,801</td></tr>
+<tr><td>3</td><td>Rs 9,801</td><td>Rs 98.01</td><td>Rs 9,702.99</td></tr>
+<tr><td>4</td><td>Rs 9,702.99</td><td>Rs 97.03</td><td>Rs 9,605.96</td></tr>
+<tr><td>5</td><td>Rs 9,605.96</td><td>Rs 96.06</td><td>Rs 9,509.90</td></tr>
+</tbody></table>
+</div>
+<p>After five losses the account is about Rs 9,510, so about Rs 490 has been lost.</p>
+<p>Capital lost, rounded:</p>
+<div class="table-wrapper"><table><thead><tr><th>Capital</th><th>Risk per day</th><th>5 losing days</th><th>10 losing days</th><th>15 losing days</th></tr></thead><tbody>
+<tr><td>Rs 10,000</td><td>1%</td><td>Rs 490</td><td>Rs 956</td><td>Rs 1,399</td></tr>
+<tr><td>Rs 50,000</td><td>1%</td><td>Rs 2,450</td><td>Rs 4,781</td><td>Rs 6,997</td></tr>
+<tr><td>Rs 10,000</td><td>2%</td><td>Rs 961</td><td>Rs 1,829</td><td>Rs 2,614</td></tr>
+<tr><td>Rs 50,000</td><td>2%</td><td>Rs 4,804</td><td>Rs 9,146</td><td>Rs 13,072</td></tr>
+</tbody></table>
+</div>
+<h3 id="step-5-cost-drag-on-the-target"><a class="header" href="#step-5-cost-drag-on-the-target">Step 5: cost drag on the target</a></h3>
+<p>Dummy round trip: Rs 190 on Rs 50,000 (from the dummy model in <em>Costs on a trade</em>).</p>
+<ul>
+<li>Four round trips a day: 4 x Rs 190 = Rs 760 (dummy).</li>
+<li>To keep Rs 2,000 after these dummy costs, gross profit must be Rs 2,760 (2,000 + 760).</li>
+</ul>
+<h3 id="step-6-the-compounding-check"><a class="header" href="#step-6-the-compounding-check">Step 6: the compounding check</a></h3>
+<p>1.04 raised to the power 250 is about 18,000. Rs 1 at 4% a day becomes about Rs 18,000 after 250 days. That is the scale the target implies, and it is why it is not a sustainable path.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<!-- component: streak-sim | capital: 50000 | riskPct: 2 | losingDays: 15 | caption: Losing-day streak at Rs 50,000 and 2% risk; check the readings against the table in the worked example -->
+<p>Change the capital and the risk. Check that your readings match the table in Step 4.</p>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task:</strong> Work out the capital needed for a daily target of Rs 1,500 at 20% a year over 250 trading days.</p>
+<p>Hints:</p>
+<ol>
+<li>Multiply the daily target by 250 to get the yearly target.</li>
+<li>Divide the yearly target by 0.20, the 20% return written as a decimal.</li>
+<li>Check your answer: multiply it by 0.20 and you should get the yearly target back.</li>
+</ol>
+<p><strong>Answer:</strong> 1,500 x 250 = Rs 3,75,000. Then 3,75,000 / 0.20 = Rs 18,75,000 (Rs 18.75 lakh). Check: 18,75,000 x 0.20 = 3,75,000.</p>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task:</strong> Your capital is Rs 50,000. Work out (a) the required daily return for a target of Rs 2,500 a day, and (b) the capital needed for Rs 2,500 a day at 15% a year over 250 trading days.</p>
+<details><summary>Check your answer</summary>
+<p>(a) 2,500 / 50,000 = 0.05, which is 5% a day.</p>
+<p>(b) 2,500 x 250 = Rs 6,25,000. Then 6,25,000 / 0.15 = Rs 41,66,667, about Rs 41.7 lakh.</p>
+<p>Check: 41,66,667 x 0.15 is about 6,25,000.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>Seven questions cover capital needed, required daily return, cost drag, streaks and the reality check.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p><strong>Mode:</strong> learning note. No trades and no live account. Write it in your journal. If the journal app is not ready, use paper.</p>
+<ol>
+<li>Write your daily target in rupees. Use a made-up or blank figure for your capital.</li>
+<li>Work out the capital needed at a 20% annual return over 250 days, or over your own checked trading-day count.</li>
+<li>Work out the required daily return: target divided by capital.</li>
+<li>Using your own cut rule from <em>Capital allocation</em>, count how many losing days at your chosen risk you could take before the cut applies.</li>
+<li>Record the three results in one note, with today’s date.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>It does not predict any day’s result. The arithmetic assumes a steady return, and real trading does not give one.</li>
+<li>The 250-day count and the dummy costs are round numbers for practice. The 2026 NSE calendar has about 245 normal trading days, and the real charges are in <em>Costs on a trade</em>. Check both before you rely on any figure.</li>
+<li>It does not show that any strategy can reach the target. It shows only what the target would need.</li>
+<li>20% a year is a yardstick for a very good year. It is not an expectation. The 50% row is for scale only.</li>
+<li>The streak figures assume one fixed risk percentage and losses that do not cluster unusually. Real streaks can be longer or shorter.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Capital needed = daily target x trading days / annual return.</li>
+<li>At Rs 10,000, Rs 2,000 a day needs a 20% return each day. At Rs 50,000, it needs 4% a day.</li>
+<li>Costs are added on top of the target. Losing streaks take capital away from the base that must work.</li>
+<li>A few good days say nothing about the next one. Consistent daily returns cannot be guaranteed.</li>
+<li>The target must never drive a trade. At this capital it is unrealistic.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<p><strong>Sources, read on 11 Nov 2026:</strong></p>
+<ul>
+<li>NSE holiday list and trading calendar for 2026, for the trading-day count (about 245 normal days).</li>
+<li>Zerodha charges page, cross-referenced from <em>Costs on a trade</em>. The Rs 190 round trip cost in this chapter is a round number for practice, not Zerodha’s real charge. The real charges are in the table in <em>Costs on a trade</em>.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../02-money-and-math/15-capital-allocation/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../02-money-and-math/17-scaling-and-withdrawal/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../02-money-and-math/15-capital-allocation/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../02-money-and-math/17-scaling-and-withdrawal/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

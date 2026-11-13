@@ -1,0 +1,88 @@
+[
+ {
+  "id": "T1.7-q1",
+  "type": "numeric",
+  "prompt": "The previous close is Rs 300 and the made-up band is 15%. What is the upper band in rupees?",
+  "answer": 345,
+  "tolerance": 0,
+  "unit": "Rs",
+  "solution": "Band amount = 300 x 0.15 = Rs 45. Upper band = 300 + 45 = Rs 345. Check: 300 x 1.15 = 345.",
+  "concepts": ["price-band", "band-arithmetic"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.7-q2",
+  "type": "mcq",
+  "prompt": "A reader says: 'Circuits prevent losses, so my position is protected once the stock hits the lower band.' Which statement is correct?",
+  "options": [
+   {"id": "a", "text": "Yes. The price cannot fall below the lower band, so the loss is capped at the band."},
+   {"id": "b", "text": "No. A band limits the price move in one day, not the loss. A locked position may be unable to exit until trading resumes."},
+   {"id": "c", "text": "Yes, but only if a stop-loss is also set."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. The band limits how far the price can move in one day. It does not cap what you lose. A locked stock can keep you from exiting at any price beyond the band.",
+   "c": "Wrong. A stop-loss is a trigger that depends on trading being possible. If the circuit is locked, the stop may not fill."
+  },
+  "concepts": ["locked-circuit", "risk"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.7-q3",
+  "type": "scenario",
+  "prompt": "You hold 100 shares bought at Rs 400, with a stop-loss at Rs 380. The previous close was Rs 400 and the made-up band is 10%. The stock opens at the lower band of Rs 360 with only sellers. Which statement is correct?",
+  "options": [
+   {"id": "a", "text": "The stop fills at Rs 380, because the trigger was reached."},
+   {"id": "b", "text": "The stop may not fill at Rs 380, because there are no buyers at the locked price. The loss can be larger than planned."},
+   {"id": "c", "text": "The stop fills at Rs 360, which is exactly the planned loss."},
+   {"id": "d", "text": "The exchange closes the position automatically at the band."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. A trigger is not a fill. No trade happens at Rs 380 while the circuit is locked with no buyers.",
+   "c": "Wrong. A fill at Rs 360 would be a loss of Rs 4,000 on 100 shares. That is 2 times the planned Rs 2,000.",
+   "d": "Wrong. Nothing in this chapter says the exchange closes a position. A locked position stays open until it can trade."
+  },
+  "concepts": ["stop-loss", "locked-circuit", "gap-risk"],
+  "difficulty": 2,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.7-q4",
+  "type": "spot-the-mistake",
+  "prompt": "A reader says: 'I bought at the upper circuit, so I am guaranteed a profit next day.' Which part of this statement is wrong?",
+  "options": [
+   {"id": "a", "text": "'I bought at the upper circuit' is wrong. Buying at the upper band is possible."},
+   {"id": "b", "text": "'So I am guaranteed a profit next day' is wrong. A band describes one day's allowed range. It says nothing about next day's price, and a stock at the upper band can open lower."},
+   {"id": "c", "text": "'Next day' is wrong. A band applies only on the day it is set."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. A stock can trade at the upper band, so the purchase itself is possible. The error is the claim about profit.",
+   "c": "Wrong. The band is set each day from the previous close. The timing is not the mistake. The mistake is the guarantee."
+  },
+  "concepts": ["price-band", "misconceptions"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ },
+ {
+  "id": "T1.7-q5",
+  "type": "mcq",
+  "prompt": "What is the reference point from which a daily price band is measured?",
+  "options": [
+   {"id": "a", "text": "Today's opening price."},
+   {"id": "b", "text": "The previous close, as described in this chapter."},
+   {"id": "c", "text": "The highest price of the previous week."}
+  ],
+  "answer": "b",
+  "explanations": {
+   "a": "Wrong. The band is measured from the previous close. Today's open is not the reference point in this chapter.",
+   "c": "Wrong. Last week's high is not the reference point. The band uses the previous close."
+  },
+  "concepts": ["price-band"],
+  "difficulty": 1,
+  "reviewAfterDays": 3
+ }
+]

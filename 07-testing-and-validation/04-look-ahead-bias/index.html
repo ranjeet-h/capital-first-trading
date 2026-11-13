@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Look-ahead bias - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/07-testing-and-validation/04-look-ahead-bias/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T7.4
+title: Look-ahead bias
+page_type: Concept
+prerequisites: [T7.3]
+labs: [Lab 4]
+estimated_minutes: 15
+-->
+<h1 id="look-ahead-bias"><a class="header" href="#look-ahead-bias">Look-ahead bias</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>Imagine a rule buys when today’s close is the highest close of the last 20 days. A test fills the trade at that same close, Rs 300. But you only know the close after the market shuts. At Rs 300 you could never have bought that trade. The test gave you the price you wanted, not the price you could get. This mistake is called look-ahead bias. It makes a result look better than it could have been.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p><strong>Look-ahead bias</strong> means a decision uses information that did not exist at the time of the decision. The test sees the future, even by a little.</p>
+<p>It has three common forms:</p>
+<ol>
+<li><strong>Same-close fill.</strong> The trade fills at the same close that produced the signal. The close was not known until the day ended.</li>
+<li><strong>Full-sample statistic.</strong> A rule uses a number calculated over all the data, including years after the signal. For example, a percentile or a median across all years.</li>
+<li><strong>Later data used as if known.</strong> Data that was adjusted or revised later is used as if it were known at the time. The adjustment factor is worked out after the event (<em>Historical data</em>).</li>
+</ol>
+<p>Each form makes a result look better than it could have been traded. The effect usually points the same way. The test looks more profitable than the real trade would have been.</p>
+<p>The lab’s peek switch shows the same rules twice. The peek run uses the leaking method. The honest run does not. Putting the two results side by side shows how much the leak helped.</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Result on the same rules (hypothetical)</th><th>Peek run</th><th>Honest run</th></tr></thead><tbody>
+<tr><td>Fill price</td><td>Rs 300, the same close</td><td>Rs 303, the next open</td></tr>
+<tr><td>Cost of 10 shares</td><td>10 x 300 = Rs 3,000</td><td>10 x 303 = Rs 3,030</td></tr>
+<tr><td>Shown result</td><td>Looks better</td><td>Lower, and realistic</td></tr>
+</tbody></table>
+</div>
+<p>Read the two rows that matter. The peek run is cheaper by Rs 30 for each trade. That small gap is the leak. The honest run is the result you could have traded.</p>
+<!-- component: lookahead-peek | caption: Turn the peek on and off and watch two made-up result lines pull apart, then find the line that leaks the future. -->
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> The rule: buy when the close is the highest close of the last 20 days.</p>
+<ul>
+<li>Peek fill: at the same close, Rs 300.</li>
+<li>Honest fill: at the next open, Rs 303.</li>
+<li>Shares: 10 in each trade.</li>
+</ul>
+<p>Per trade:</p>
+<ul>
+<li>Peek cost: 10 x 300 = Rs 3,000.</li>
+<li>Honest cost: 10 x 303 = Rs 3,030.</li>
+<li>Difference: 3,030 - 3,000 = <strong>Rs 30</strong> per trade.</li>
+</ul>
+<p>Over 40 hypothetical trades:</p>
+<ul>
+<li>40 x 30 = <strong>Rs 1,200</strong>.</li>
+<li>Check: Rs 1,200 / 40 = Rs 30 per trade.</li>
+</ul>
+<p>The size of the gap depends on the rule and the market. The lesson is the direction. In this example, the peek run looks better.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> The four lines below form a rule set. One line leaks. Find it, and say which form of look-ahead it uses.</p>
+<ol>
+<li>Calculate the 20-day average close, using closes up to and including today.</li>
+<li>Calculate the median close across all years in the data, and use it as the level to beat.</li>
+<li>Buy at the next day’s open when today’s close is above the 20-day average close.</li>
+<li>Sell at the next day’s open when today’s close is below the 20-day average close.</li>
+</ol>
+<p>Hints:</p>
+<ol>
+<li>For each line, ask whether the number was known at the close of the day it is used.</li>
+<li>Check any line that uses the words percentile, median, average over the whole dataset or adjusted.</li>
+<li>Compare the data each line can see on the day of the decision.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>Line 2 leaks. It uses a median across all years, including years after the signal. This is form 2, a full-sample statistic.</li>
+<li>Lines 1, 3 and 4 do not leak. Line 1 uses closes up to today. Lines 3 and 4 fill at the next open.</li>
+<li>A fix for line 2: use the median of all closes up to and including today, recalculated each day.</li>
+</ul>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Write a rule that leaks through a full-sample median. Then write the fix.</p>
+<details><summary>Check your answer</summary>
+<p><strong>Leaking rule:</strong> Buy when today’s close is above the median close of the whole data set. The median uses years after the signal, so the rule uses future information.</p>
+<p><strong>Fixed rule:</strong> Buy at the next day’s open when today’s close is above the median of all closes up to and including today. Recalculate the median each day, using only the data available that day.</p>
+<p>All figures in this example are hypothetical.</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks the three forms of look-ahead, same-close fills, full-sample statistics and what a peek result means.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>learning note</strong>. Use the peek switch in Lab 4 to run both versions of one rule. If the lab is not ready, do the task on paper or in a spreadsheet.</p>
+<ol>
+<li>Choose one simple rule, such as a 20-day high breakout.</li>
+<li>Run the honest version and record its result.</li>
+<li>Run the peek version and record its result.</li>
+<li>Write the difference in a learning note, and the form of look-ahead that caused it.</li>
+<li>Log the note in your journal (or on paper until the journal app is ready).</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>Removing look-ahead does not prove an edge. The honest run can still lose money.</li>
+<li>The Rs 30 gap in the worked example is one made-up case. The size of the leak depends on the rule. The direction is the lesson.</li>
+<li>Adjusted data can leak in ways a simple check cannot find. A rule that uses adjusted prices needs a check of when each adjustment was known. Read your data source’s notes on how and when it changes past prices.</li>
+<li>A peek run shows where the leak is. Do not record a peek result as the result of the rule.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Look-ahead bias uses information that did not exist when the decision was made.</li>
+<li>The three forms are a same-close fill, a full-sample statistic and later-revised data.</li>
+<li>A fill at the signal’s own close is not realistic.</li>
+<li>A peek run that looks better is a warning, not a success.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Bailey, Borwein, Lopez de Prado and Zhu (2014), “Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance”, Notices of the American Mathematical Society, 61(5), 458-471.</li>
+<li>Robert Pardo, <em>The Evaluation and Optimization of Trading Strategies</em>, 2nd edition (Wiley, 2008).</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../07-testing-and-validation/03-backtesting-basics-and-realism/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../07-testing-and-validation/05-survivorship-bias/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../07-testing-and-validation/03-backtesting-basics-and-realism/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../07-testing-and-validation/05-survivorship-bias/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

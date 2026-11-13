@@ -1,0 +1,50 @@
+/* Shared styles for interactive and animated demos. Works in light and dark book themes. */
+.cft-demo { --cft-up: #2e9d55; --cft-down: #d6453d; --cft-blue: #4a90d9; --cft-orange: #e0883a; --cft-grey: rgba(127,127,127,.55); }
+.cft-svg { width: 100%; height: auto; display: block; margin: 6px 0; max-height: 420px; }
+.cft-svg text, .cft-tx { fill: currentColor; font-size: 11px; font-family: inherit; }
+.cft-tx-s { font-size: 9px; opacity: .75; }
+.cft-tx-b { font-weight: 700; }
+.cft-ln { stroke: var(--cft-grey); stroke-width: 1; }
+.cft-ln-d { stroke: var(--cft-grey); stroke-width: 1; stroke-dasharray: 4 3; }
+.cft-ln-hi { stroke: var(--cft-orange); stroke-width: 1.5; stroke-dasharray: 5 3; }
+.cft-rc { fill: var(--cft-blue); opacity: .85; }
+.cft-rc-band { fill: var(--cft-orange); opacity: .22; }
+.cft-rc-up { fill: var(--cft-up); opacity: .85; }
+.cft-rc-down { fill: var(--cft-down); opacity: .85; }
+.cft-rc-grey { fill: var(--cft-grey); opacity: .5; }
+.cft-dot { fill: var(--cft-orange); }
+.cft-dot-b { fill: var(--cft-blue); }
+.cft-pl { stroke: var(--cft-blue); stroke-width: 2; stroke-linejoin: round; }
+.cft-pl-o { stroke: var(--cft-orange); stroke-width: 2; stroke-linejoin: round; }
+.cft-pl-g { stroke: var(--cft-up); stroke-width: 2; stroke-linejoin: round; }
+.cft-pl-r { stroke: var(--cft-down); stroke-width: 2; stroke-linejoin: round; }
+.cft-pl-d { stroke: var(--cft-grey); stroke-width: 1.5; stroke-dasharray: 4 3; fill: none; }
+.cft-cup.cft-body { fill: var(--cft-up); }
+.cft-cdn.cft-body { fill: var(--cft-down); }
+.cft-cup.cft-wick { stroke: var(--cft-up); stroke-width: 1.5; }
+.cft-cdn.cft-wick { stroke: var(--cft-down); stroke-width: 1.5; }
+.cft-fade { opacity: .35; }
+.cft-hl { stroke: var(--cft-orange); stroke-width: 2; }
+.cft-slider input[type=range] { width: 100%; }
+.cft-slider-val { font-weight: 600; margin-left: 6px; }
+.cft-field-label { display: flex; justify-content: space-between; }
+.cft-toggle { display: inline-flex; align-items: center; gap: 4px; margin: 4px 14px 4px 0; font-size: .9em; cursor: pointer; }
+.cft-animbar { align-items: center; margin: 6px 0; }
+.cft-speed { width: auto; padding: 4px 6px; }
+.cft-animlab { margin-left: 4px; }
+.cft-demo-body { margin-top: 4px; }
+.cft-big { font-size: 1.4em; font-weight: 700; }
+.cft-pos { color: var(--cft-up); }
+.cft-neg { color: var(--cft-down); }
+.cft-chip { display: inline-block; padding: 1px 8px; margin: 2px 4px 2px 0; border-radius: 10px; font-size: .8em; background: rgba(127,127,127,.2); }
+.cft-chip-on { background: var(--cft-orange); color: #fff; }
+.cft-screen { border: 1px solid var(--cft-grey); border-radius: 8px; padding: 10px 12px; margin: 8px 0; background: rgba(127,127,127,.06); font-size: .9em; }
+.cft-screen-bar { display: flex; gap: 10px; border-bottom: 1px solid var(--cft-grey); padding-bottom: 6px; margin-bottom: 8px; font-weight: 600; }
+.cft-tag { font-size: .75em; padding: 1px 6px; border-radius: 3px; background: var(--cft-blue); color: #fff; margin-left: 6px; }
+.cft-tag-o { background: var(--cft-orange); }
+.cft-pulse { animation: cft-pulse 1.1s ease-in-out infinite; }
+@keyframes cft-pulse { 0%,100% { opacity: 1; } 50% { opacity: .45; } }
+@media (prefers-reduced-motion: reduce) { .cft-pulse { animation: none; } }
+.cft-checklist label { display: block; margin: 6px 0; cursor: pointer; }
+.cft-progress { height: 14px; background: rgba(127,127,127,.2); border-radius: 7px; overflow: hidden; margin: 8px 0; }
+.cft-progress > span { display: block; height: 100%; background: var(--cft-up); transition: width .3s; }

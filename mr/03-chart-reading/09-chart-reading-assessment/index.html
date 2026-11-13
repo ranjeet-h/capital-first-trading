@@ -1,0 +1,381 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>चार्ट-वाचन मूल्यांकन - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../03-chart-reading/09-chart-reading-assessment/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../03-chart-reading/09-chart-reading-assessment/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T3.9
+title: चार्ट-वाचन मूल्यांकन
+page_type: Assessment
+prerequisites: [T3.1, T3.2, T3.3, T3.4, T3.5, T3.6, T3.7, T3.8]
+labs: [Lab 3]
+estimated_minutes: 25
+-->
+<h1 id="चारट-वाचन-मूलयांकन"><a class="header" href="#चारट-वाचन-मूलयांकन">चार्ट-वाचन मूल्यांकन</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>चार्टवर एक झोन आहे, जो Rs 249 ते Rs 252 पर्यंत जातो. तुम्ही Rs 252 ला खरेदी करण्याचे ठरवता आणि Rs 247 ला स्टॉप लावता. तुमच्याकडे Rs 50,000 आहेत आणि तुम्ही 1 टक्का जोखीम घेता. तुमचा नियोजित तोटा कमी वाटतो. मग बाजार Rs 240 ला उघडतो, जो तुमच्या स्टॉपच्या खाली आहे. तोटा नियोजनापेक्षा मोठा होतो. हे मूल्यांकन तपासते की तुम्ही अशा आकड्यांवर काम करू शकता का. ते हेही तपासते की तुम्ही आधी न पाहिलेला चार्ट वाचू शकता का.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>हे मूल्यांकन तीन भागांचे आहे.</p>
+<ol>
+<li><strong>गणना.</strong> तुम्ही ओपन, हाय, लो आणि क्लोज ही भाव-मूल्ये वाचता. बॉडी, शॅडो आणि रेंज काढता. स्टॉपचे रूपांतर शेअर्सच्या संख्येत आणि नियोजित तोट्यात करता.</li>
+<li><strong>ओळख.</strong> तुम्ही न पाहिलेला चार्ट पाहता. त्याची रचना, कोणताही ब्रेकआउट आणि कोणताही गॅप ओळखता.</li>
+<li><strong>परिस्थिती.</strong> स्टॉप आणि गॅप असलेल्या एका व्यापाराचा हिशोब करता.</li>
+</ol>
+<p>प्रश्नांमध्ये वापरलेल्या काही संज्ञा:</p>
+<ul>
+<li><strong>रेंज</strong> म्हणजे हाय वजा लो.</li>
+<li><strong>बॉडी</strong> म्हणजे ओपन आणि क्लोज यांमधील अंतर.</li>
+<li><strong>शॅडो</strong> म्हणजे बॉडीच्या वर किंवा खाली दिसणारी पातळ रेषा.</li>
+<li><strong>गॅप</strong> म्हणजे एका व्यवहारापासून पुढच्या व्यवहारापर्यंत भावात झालेली उडी. भाव शेवटच्या क्लोजपासून दूर उघडतो.</li>
+<li><strong>प्रति शेअर जोखीम</strong> म्हणजे खरेदीसाठी एंट्री भाव वजा स्टॉप भाव.</li>
+</ul>
+<p>प्रत्येक उत्तरानंतर अभिप्राय मिळतो. प्रत्येक चुकीच्या उत्तरासोबत लागू होणारा नियम दाखवला जातो.</p>
+<p>या प्रकरणासाठी उत्तीर्ण होण्याचा गुण 80 टक्के आहे. 6 प्रश्नांसाठी याचा अर्थ किमान 5 बरोबर. तुम्हाला हवे तितक्या वेळा मूल्यांकन पुन्हा देऊ शकता. वेळेचे बंधन नाही.</p>
+<p>निकाल पडद्यावर प्रत्येक वेळी तेच सांगितले जाते. हे प्रकरण उत्तीर्ण होणे म्हणजे कोणतीही चार्ट पद्धत काम करते, असे नाही. त्यावरून फक्त इतके दिसते की तुम्ही चार्टवरील प्रश्न बरोबर वाचता.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: pattern-quiz | pairs: 1 | caption: ओळखीच्या प्रश्नांसाठी न पाहिलेला काल्पनिक चार्ट; रचना, ब्रेकआउट आणि गॅप ओळखा -->
+<p>ओळखीच्या प्रश्नांसाठी आधी चार्ट पाहा. उच्च आणि निम्न बिंदू चिन्हांकित करा. मग रचनेचे नाव सांगा. गॅप असल्यास उत्तर देण्यापूर्वी तो तपासा. तुमचे उत्तर लिहून होईपर्यंत उत्तर पाहू नका.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक. झोन प्रश्न.</strong> भांडवल Rs 50,000. जोखीम 1 टक्का. झोन Rs 249 ते Rs 252. एंट्री Rs 252. स्टॉप Rs 247. स्टॉप झोनच्या खाली आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>परिणाम</th></tr></thead><tbody>
+<tr><td>1. जोखीम बजेट</td><td>50,000 गुणिले 1%</td><td>Rs 500</td></tr>
+<tr><td>2. प्रति शेअर जोखीम</td><td>252 वजा 247</td><td>Rs 5</td></tr>
+<tr><td>3. जोखीम बजेटनुसार शेअर्स</td><td>500 भागिले 5</td><td>100</td></tr>
+<tr><td>4. रोख रकमेनुसार शेअर्स</td><td>50,000 भागिले 252, खाली पूर्णांक</td><td>198</td></tr>
+<tr><td>5. 25 टक्के मर्यादेनुसार शेअर्स</td><td>12,500 भागिले 252, खाली पूर्णांक</td><td>49</td></tr>
+<tr><td>6. शेअर्स</td><td>100, 198 आणि 49 यांपैकी सर्वात लहान</td><td>49</td></tr>
+<tr><td>7. नियोजित तोटा</td><td>49 गुणिले Rs 5</td><td>Rs 245</td></tr>
+</tbody></table>
+</div>
+<p>25 टक्के मर्यादा <em>पोझिशन साइजिंग टप्प्याटप्प्याने</em> या प्रकरणातून आली आहे. येथे एकाग्रता मर्यादा हीच अडथळा ठरते.</p>
+<p><strong>गॅप प्रकरण.</strong> बाजार Rs 240 ला उघडतो. तुम्ही उघडण्याच्या भावाला, म्हणजे Rs 240 ला बाहेर पडता. प्रति शेअर तोटा 252 वजा 240, म्हणजे Rs 12. प्रत्यक्ष तोटा = 49 गुणिले Rs 12 = Rs 588.</p>
+<p>दुसऱ्या पद्धतीने तपासा: 50 गुणिले 12 म्हणजे 600. त्यातून 1 शेअर, Rs 12 चा, वजा केल्यास Rs 588 मिळतात.</p>
+<p><strong>धडा.</strong> नियोजित तोटा Rs 245 होता. गॅपमुळे तोटा Rs 588 झाला. तो Rs 500 च्या जोखीम बजेटपेक्षा जास्त आहे. स्टॉप हा फक्त एक ट्रिगर आहे. तुम्हाला मिळणाऱ्या भावाची खात्री तो देत नाही.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> भांडवल Rs 50,000. जोखीम 1 टक्का. झोन Rs 500 ते Rs 506. एंट्री Rs 506. स्टॉप Rs 497. नियोजित शेअर्स आणि नियोजित तोटा काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>झोन ओळखा. स्टॉप झोनच्या बाहेर आहे का ते तपासा आणि स्टॉपचे कारण लिहा.</li>
+<li>प्रति शेअर जोखीम = एंट्री वजा स्टॉप.</li>
+<li>तीन शेअर-मर्यादांपैकी सर्वात लहान घ्या. प्रत्येक खाली पूर्णांक करा.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>झोन: Rs 500 ते Rs 506. Rs 497 चा स्टॉप झोनच्या खाली आहे.</li>
+<li>प्रति शेअर जोखीम: 506 वजा 497 = Rs 9.</li>
+<li>जोखीम बजेट: Rs 500. अनुमत शेअर्स: 500 भागिले 9, खाली पूर्णांक, 55.</li>
+<li>रोख: 50,000 भागिले 506, खाली पूर्णांक, 98.</li>
+<li>25 टक्के मर्यादा: 12,500 भागिले 506, खाली पूर्णांक, 24.</li>
+<li>शेअर्स: सर्वात लहान <strong>24</strong>.</li>
+<li>नियोजित तोटा: 24 गुणिले Rs 9 = <strong>Rs 216</strong>.</li>
+<li>तपासा: 20 गुणिले 9 = 180. 4 गुणिले 9 = 36. 180 अधिक 36 = 216.</li>
+</ul>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> संकेताशिवाय हे उदाहरण सोडवा. भांडवल Rs 50,000. जोखीम 1 टक्का. झोन Rs 600 ते Rs 604. एंट्री Rs 604. स्टॉप Rs 597. नियोजित शेअर्स, नियोजित तोटा आणि बाजार Rs 590 ला उघडल्यास तोटा काढा.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>प्रति शेअर जोखीम: 604 वजा 597 = Rs 7.</li>
+<li>जोखीम बजेट: Rs 500. अनुमत शेअर्स: 500 भागिले 7, खाली पूर्णांक, 71.</li>
+<li>रोख: 50,000 भागिले 604, खाली पूर्णांक, 82.</li>
+<li>25 टक्के मर्यादा: 12,500 भागिले 604, खाली पूर्णांक, 20.</li>
+<li>शेअर्स: सर्वात लहान <strong>20</strong>.</li>
+<li>नियोजित तोटा: 20 गुणिले Rs 7 = <strong>Rs 140</strong>.</li>
+<li>गॅपनंतर तोटा: उघडण्याच्या भावावर प्रति शेअर जोखीम 604 वजा 590 = Rs 14. तोटा = 20 गुणिले Rs 14 = <strong>Rs 280</strong>.</li>
+<li>तपासा: 20 गुणिले 14 = 280. Rs 280 हा Rs 500 च्या जोखीम बजेटपेक्षा कमी आहे.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>हे क्विझ गणना, गॅप परिस्थिती, स्टॉपचे कारण आणि उत्तीर्ण गुणाच्या मर्यादा तपासते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> paper. तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल, तर paper वापरा.</p>
+<ol>
+<li>तुम्हाला सापडू शकतील असे 20 चार्ट निवडा. उत्तर-किल्ली वाचण्यापूर्वी प्रत्येकासाठी तुमच्या खुणा लिहा. खुणा म्हणजे रचना, ब्रेकआउट आणि गॅप.</li>
+<li>तुमच्या खुणांची उत्तर-किल्लीशी तुलना करा.</li>
+<li>प्रत्येक फरक नोंदवा. तो फरक स्पष्ट करणारा नियम लिहा.</li>
+<li>निकाल Lab 3 मध्ये शिकण्याच्या नोंदी म्हणून नोंदवा.</li>
+<li>तुमच्या निकालांवरून चार्ट वाचनाविषयी काय दिसते आणि काय दिसत नाही, यावर एक परिच्छेद लिहा.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>उत्तीर्ण गुण हे दाखवत नाही की कोणतीही चार्ट पद्धत काम करते. तो फक्त दाखवतो की तुम्ही प्रश्न बरोबर वाचले.</li>
+<li>स्टॉप हा फक्त ट्रिगर आहे. गॅप भाव स्टॉपच्या पुढे उघडू शकतो, त्यामुळे तोटा नियोजनापेक्षा मोठा होऊ शकतो.</li>
+<li>प्रति शेअर जोखमीसाठी स्टॉप भावाऐवजी एंट्री भाव वापरल्यास तोटा चुकीचा येतो. स्टॉप प्रति शेअर जोखीम ठरवतो.</li>
+<li>झोनच्या आत लावलेल्या स्टॉपसाठी सांगितलेले कारण हवे. कारण नसेल तर स्टॉप म्हणजे अंदाज.</li>
+<li>नमुना प्रश्नांची जलद उत्तरे कौशल्यासारखी वाटू शकतात. फक्त गुण नाही, तर तुमची कारणे तपासा.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>खरेदीसाठी: प्रति शेअर जोखीम = एंट्री वजा स्टॉप.</li>
+<li>शेअर्स = जोखीम मर्यादा, रोख मर्यादा आणि कॅप यांपैकी सर्वात लहान. प्रत्येक खाली पूर्णांक करा.</li>
+<li>गॅपमुळे प्रत्यक्ष तोटा नियोजित तोट्यापेक्षा मोठा होऊ शकतो.</li>
+<li>उत्तीर्ण गुण हा पुरावा नाही की कोणतीही चार्ट पद्धत काम करते.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<p>स्रोत:</p>
+<ul>
+<li>आधीच्या चार्ट-वाचन प्रकरणांसाठी दिलेले स्रोत: कॅण्डल, टाइमफ्रेम, सपोर्ट आणि रेझिस्टन्स, ट्रेंड, ब्रेकआउट, गॅप, व्हॉल्यूम आणि फॉर्मेशन.</li>
+</ul>
+<p>तपासायची तथ्ये:</p>
+<ul>
+<li>या मूल्यांकनाला वेळेनुसार बदलणाऱ्या कोणत्याही तथ्याचा लागू होत नाही.</li>
+</ul>
+<!-- facts-needed: none for time-sensitive facts in this chapter -->
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T3.9&amp;body=Page%3A%2003-chart-reading%2F09-chart-reading-assessment%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../03-chart-reading/08-candlestick-formations-and-price-action/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../04-kite-and-execution/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../03-chart-reading/08-candlestick-formations-and-price-action/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../04-kite-and-execution/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

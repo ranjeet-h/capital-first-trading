@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Paper trading and forward testing - Capital-First Trading</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="An offline, interactive study book for learning Indian-market trading with capital protection first.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <link rel="alternate" hreflang="mr" href="../../mr/07-testing-and-validation/10-paper-and-forward-testing/index.html">
+            <link rel="alternate" hreflang="en" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Capital-First Trading</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="en" data-quiz-lang="en">
+                        <!-- meta
+id: T7.10
+title: Paper trading and forward testing
+page_type: Lab
+prerequisites: [T7.7, T7.9, T4.9, T2.2]
+labs: [Lab 5, Lab 3]
+estimated_minutes: 35
+-->
+<h1 id="paper-trading-and-forward-testing"><a class="header" href="#paper-trading-and-forward-testing">Paper trading and forward testing</a></h1>
+<h2 id="hook"><a class="header" href="#hook">Hook</a></h2>
+<p>A rule shows a profit on past prices. This is a hypothetical example. You then try the same rule on paper for a few weeks, and the result looks different. Why? Past prices are fixed, and every fill is known. Real trading has delays, partial fills and your own choices. This chapter shows the difference between backtest, forward and live results. It also shows the four gaps that make paper results look kinder than real ones.</p>
+<h2 id="the-idea"><a class="header" href="#the-idea">The idea</a></h2>
+<p>Four words describe where a result comes from. Use the right one every time.</p>
+<ul>
+<li><strong>Backtest.</strong> Past data. The rules are applied after the fact, to prices that already happened.</li>
+<li><strong>Forward test.</strong> Fixed rules, applied to prices as they arrive, day by day. The rules do not change during the test.</li>
+<li><strong>Paper or hypothetical.</strong> A trade recorded as if it were filled. Nothing is sent to a broker.</li>
+<li><strong>Live.</strong> Real orders, with real money.</li>
+</ul>
+<p>Label every result with its type. A paper profit is not a live profit.</p>
+<p>A paper fill is an assumption. A real fill can differ in four ways:</p>
+<ol>
+<li><strong>Fill price.</strong> The price you get can differ from the price you assumed. The spread is the gap between the best buy price and the best sell price (see <em>Order matching, spread and liquidity</em>). Prices can also jump at the open.</li>
+<li><strong>Queue position.</strong> In a busy market, orders at the same price wait in line. Your order may not be first.</li>
+<li><strong>Partial fills.</strong> You may get only part of the shares you wanted.</li>
+<li><strong>Your own behaviour.</strong> You may skip a signal, move a stop, or add a trade that the plan did not include.</li>
+</ol>
+<p>The forward-test script in Lab 5 is built to be honest. When data is missing or bad, it stops and reports. It does not skip the symbol and carry on. It is safe to run twice, because a second run does not add the same trades again. It places no orders and holds no login details for any broker.</p>
+<p>The Kite demo is for practice with the screens, using dummy data. It is not a forward test. Zerodha’s support page says: “No, Zerodha does not offer demo accounts for paper trading. However, you can access a demo version of Kite with dummy data.” (As of 11 Nov 2026, Zerodha support. Check support.zerodha.com for changes.)</p>
+<p>The script uses a market close time and a holiday list. NSE’s normal session for shares runs from 9:15 am to 3:30 pm, but NSE has changed session times for some shares and has announced more changes, so read the NSE market timings page. Take the holiday list from the NSE trading holidays page. The terms of the price data source also matter (see <em>Historical data</em>).</p>
+<h2 id="see-it"><a class="header" href="#see-it">See it</a></h2>
+<!-- component: order-flow-sim | caption: Follow a real order from the trader to the broker, then to the exchange and matching. Shows which steps a hypothetical fill skips -->
+<p>Follow one order from the trader to the exchange. Notice the steps that a paper fill skips. Those skipped steps are where the four gaps appear.</p>
+<h2 id="worked-example"><a class="header" href="#worked-example">Worked example</a></h2>
+<p><strong>Hypothetical.</strong> Day 1 close is Rs 800. The rule gives a buy signal. The script plans to buy 12 shares.</p>
+<p><strong>Step 1. The assumed fill.</strong> Day 2 opens at Rs 806. The script fills 12 shares at Rs 806. Value = 12 x 806 = <strong>Rs 9,672</strong>.</p>
+<p><strong>Step 2. A worse real fill.</strong> Suppose a real fill would have been Rs 808. Value = 12 x 808 = <strong>Rs 9,696</strong>.</p>
+<p><strong>Step 3. The rupee effect.</strong> 9,696 - 9,672 = <strong>Rs 24</strong>. Check: 12 x (808 - 806) = 12 x 2 = 24.</p>
+<p><strong>Step 4. Many trades.</strong> The same gap on 10 trades gives 10 x Rs 24 = <strong>Rs 240</strong>. This is hypothetical. It assumes the same gap on each trade. It shows how small assumptions add up.</p>
+<h2 id="try-it"><a class="header" href="#try-it">Try it</a></h2>
+<h3 id="guided-exercise"><a class="header" href="#guided-exercise">Guided exercise</a></h3>
+<p><strong>Task.</strong> Fill one row of a forward log for the worked-example trade. Use trade ID H-001 and the made-up symbol EXAMPLE. The fields are trade_id, mode, symbol, planned entry, fill price and shares.</p>
+<p>Hints:</p>
+<ol>
+<li>Set mode to forward. Never set it to live.</li>
+<li>The fill price in this example is hypothetical. Mark it as hypothetical in your note.</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>trade_id</th><th>mode</th><th>symbol</th><th>planned entry</th><th>fill price</th><th>shares</th></tr></thead><tbody>
+<tr><td>H-001</td><td>forward</td><td>EXAMPLE</td><td>Rs 806</td><td>Rs 806 (hypothetical)</td><td>12</td></tr>
+</tbody></table>
+</div>
+<h3 id="independent-exercise"><a class="header" href="#independent-exercise">Independent exercise</a></h3>
+<p><strong>Task.</strong> Write the honesty note that must appear beside a forward-test result on the dashboard.</p>
+<details><summary>Check your answer</summary>
+<p>A sample note: “Hypothetical paper results. No orders were sent. Fills are assumed, not real. Real fills may be worse because of the spread, gaps, queue position, partial fills and my own choices. A short test proves little. These results are not a forecast of live results.”</p>
+</details>
+<h2 id="quiz"><a class="header" href="#quiz">Quiz</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>The quiz checks hypothetical and live results, failing closed on bad data, the role of the Kite demo, and holiday handling.</p>
+<h2 id="paper-task"><a class="header" href="#paper-task">Paper task</a></h2>
+<p>Mode: <strong>forward</strong>, which means hypothetical paper data. No orders are placed.</p>
+<ol>
+<li>Run the forward-test script on the recorded 10-day test data. If Lab 5 is not ready, write a made-up 10-day price list on paper.</li>
+<li>Check that each output row has a trade ID, mode, symbol, planned entry, fill price and shares.</li>
+<li>Import the output into the journal as mode forward (or copy the rows onto paper).</li>
+<li>Write one sentence on each of the four gaps. For each one, say whether it could make a real fill worse in this example.</li>
+<li>Do not place any orders. Real daily runs are optional. They need a data source whose terms you have checked.</li>
+</ol>
+<h2 id="limits-and-common-mistakes"><a class="header" href="#limits-and-common-mistakes">Limits and common mistakes</a></h2>
+<ul>
+<li>A forward test sends no real orders. It cannot show how real fills would have gone, so the four gaps remain.</li>
+<li>A short forward test proves little. Thirty trades is a floor for a first look. It is not a verdict on the rule.</li>
+<li>Paper profit is not live profit. A paper result does not show how you act when real money is at risk.</li>
+<li>The Kite demo is not a forward test. It uses dummy data. Zerodha says it offers no demo account for paper trading.</li>
+<li>Paper trading does not prove you can do it with real money. It only shows how the rule ran on the days recorded.</li>
+</ul>
+<h2 id="remember"><a class="header" href="#remember">Remember</a></h2>
+<ul>
+<li>Label every result as backtest, forward (paper) or live.</li>
+<li>The four gaps are fill price, queue position, partial fills and your own behaviour.</li>
+<li>When data is missing or bad, the script should stop. It should not guess.</li>
+<li>The Kite demo is for practice with dummy data. It is not a forward test.</li>
+<li>Paper results are hypothetical. Mark them that way every time.</li>
+</ul>
+<h2 id="sources-and-verification"><a class="header" href="#sources-and-verification">Sources and verification</a></h2>
+<ul>
+<li>Zerodha support pages on the demo and virtual trading.</li>
+<li>NSE market timings and holiday pages.</li>
+<li>The Lab 5 notes on honesty.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../07-testing-and-validation/09-monte-carlo-trade-order/index.html" class="mobile-nav-chapters previous" data-label="Previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../07-testing-and-validation/11-strategy-validation-assessment/index.html" class="mobile-nav-chapters next" data-label="Next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../07-testing-and-validation/09-monte-carlo-trade-order/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../07-testing-and-validation/11-strategy-validation-assessment/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>

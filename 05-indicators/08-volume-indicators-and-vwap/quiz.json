@@ -1,0 +1,116 @@
+[
+  {
+    "id": "T5.8-q1",
+    "type": "numeric",
+    "prompt": "Hypothetical. OBV starts at 0. Closes Rs 100 (volume 10,000), Rs 103 (volume 20,000) and Rs 101 (volume 5,000). What is the OBV after the third close?",
+    "answer": 15000,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "Day 2 close is higher, so add 20,000. Day 3 close is lower, so subtract 5,000. OBV = 0 + 20,000 - 5,000 = 15,000.",
+    "concepts": ["obv", "volume"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.8-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. Bar 1: typical price Rs 200, volume 1,000 shares. Bar 2: typical price Rs 206, volume 3,000 shares. What is the VWAP?",
+    "answer": 204.5,
+    "tolerance": 0.01,
+    "unit": "Rs",
+    "solution": "Products: 200 x 1,000 = 2,00,000 and 206 x 3,000 = 6,18,000. Total = 8,18,000. Total volume = 4,000. VWAP = 8,18,000 / 4,000 = Rs 204.50.",
+    "concepts": ["vwap"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.8-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. OBV starts at 0. Day 1: higher close, volume 12,000. Day 2: lower close, volume 7,000. Day 3: lower close, volume 3,000. What is the OBV after day 3?",
+    "answer": 2000,
+    "tolerance": 0,
+    "unit": "shares",
+    "solution": "Day 1 adds 12,000, so OBV = 12,000. Day 2 subtracts 7,000, so OBV = 5,000. Day 3 subtracts 3,000, so OBV = 2,000.",
+    "concepts": ["obv"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.8-q4",
+    "type": "mcq",
+    "prompt": "Hypothetical. A stock closes lower than the day before on a volume of 40,000 shares. What happens to OBV?",
+    "options": [
+      {"id": "a", "text": "It adds 40,000"},
+      {"id": "b", "text": "It subtracts 40,000"},
+      {"id": "c", "text": "It does not change"},
+      {"id": "d", "text": "It doubles"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "OBV adds volume only when the close is higher than the day before. This close is lower.",
+      "c": "OBV stays the same only when the close is equal to the day before. This close is lower.",
+      "d": "OBV does not double. It adds or subtracts the day's volume, and this day's close is lower."
+    },
+    "concepts": ["obv"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.8-q5",
+    "type": "scenario",
+    "prompt": "Hypothetical. A stock falls 2 percent on a day with very high volume. A reader writes, 'High volume on a down day means the price will keep falling tomorrow.' Which response fits the book's rules?",
+    "options": [
+      {"id": "a", "text": "Agree. Heavy selling always leads to more falls"},
+      {"id": "b", "text": "Volume shows how many shares traded, not which way the price will go. The forecast is not supported by the volume alone"},
+      {"id": "c", "text": "Volume on a down day is never recorded, so the reader is wrong for a different reason"},
+      {"id": "d", "text": "Ignore the volume, because it has no meaning for any day"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Volume does not show direction or what comes next. Heavy trading on a down day can be followed by a rise, a fall or a flat period.",
+      "c": "Volume is recorded on down days, just as on up days. This option is factually wrong.",
+      "d": "Volume is useful for describing how much traded. It is only wrong to treat it as a forecast."
+    },
+    "concepts": ["volume", "limits-of-indicators"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.8-q6",
+    "type": "spot-the-mistake",
+    "prompt": "Read this statement. Which part is wrong? 'VWAP is a moving average of closes that adds up each day. It resets at the start of each session. Its weight at each price is the volume traded there.'",
+    "options": [
+      {"id": "a", "text": "VWAP is a moving average of closes that adds up each day"},
+      {"id": "b", "text": "It resets at the start of each session"},
+      {"id": "c", "text": "Its weight at each price is the volume traded there"}
+    ],
+    "answer": "a",
+    "explanations": {
+      "b": "This part is correct. VWAP restarts at the start of each session in the book's definition.",
+      "c": "This part is correct. Each typical price is weighted by the volume at that bar, so more volume means more weight."
+    },
+    "concepts": ["vwap"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T5.8-q7",
+    "type": "mcq",
+    "prompt": "Which statement about VWAP fits this book?",
+    "options": [
+      {"id": "a", "text": "It predicts the price of the next session"},
+      {"id": "b", "text": "It restarts each session and is used only in an optional intraday module, on paper"},
+      {"id": "c", "text": "It is the same measure as a daily-bar average of closes"},
+      {"id": "d", "text": "It measures the price change over one month"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "VWAP does not predict. Its predictive value is not established, and the book does not treat it as a forecast.",
+      "c": "A daily-bar VWAP is a different measure, and it is not the same as an average of closes. Check the definition in Kite.",
+      "d": "VWAP is a session measure. It is not a one-month price change."
+    },
+    "concepts": ["vwap", "limits-of-indicators"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

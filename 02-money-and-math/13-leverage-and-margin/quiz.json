@@ -1,0 +1,106 @@
+[
+  {
+    "id": "T2.13-q1",
+    "type": "numeric",
+    "prompt": "Your own capital is Rs 40,000 and the leverage ratio is 5x. What price fall wipes out your own capital? Answer in percent.",
+    "answer": 20,
+    "tolerance": 0,
+    "unit": "%",
+    "solution": "Step 1: position = 5 x 40,000 = Rs 2,00,000. Step 2: wipe-out move = 1 / 5 = 0.20 = 20%. Check: a 20% fall on Rs 2,00,000 is Rs 40,000, which equals the own capital.",
+    "concepts": ["leverage-ratio", "wipe-out-move"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.13-q2",
+    "type": "numeric",
+    "prompt": "Your own capital is Rs 30,000 and the position is Rs 90,000 (3x). The price rises 5%. What is the gain on the position in rupees, ignoring financing costs and charges?",
+    "answer": 4500,
+    "tolerance": 0,
+    "unit": "Rs",
+    "solution": "Step 1: gain = 90,000 x 5% = Rs 4,500. Check: 4,500 / 30,000 = 15%, which is 3 x 5%.",
+    "concepts": ["leverage-gain", "leverage-ratio"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.13-q3",
+    "type": "mcq",
+    "prompt": "A trader says: 'Leverage increases only my gains. My losses stay the same size.' Which reply is correct?",
+    "options": [
+      {"id": "a", "text": "Correct. The borrowed money only adds to the upside."},
+      {"id": "b", "text": "Wrong. Gains and losses are both multiplied by the same ratio, so a 10% fall at 2x costs 20% of own capital."},
+      {"id": "c", "text": "Correct, as long as the stock falls slowly."},
+      {"id": "d", "text": "Wrong, but only for intraday positions."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The borrowed amount does not change with the price. The position does, in both directions, so the loss is magnified too.",
+      "c": "How fast a price falls does not change the multiplication. A fast gap can make the loss bigger than the plan assumed (see *Slippage, gaps and planned versus actual risk*).",
+      "d": "Leverage magnifies in the same way for any holding period. Intraday rules add their own limits, but they do not remove the magnification."
+    },
+    "concepts": ["leverage-misconception", "magnification"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.13-q4",
+    "type": "scenario",
+    "prompt": "A trader with Rs 50,000 of own capital uses 2x leverage, so the position is Rs 1,00,000. The stock falls 10%. What is the loss as a percentage of own capital?",
+    "options": [
+      {"id": "a", "text": "10%"},
+      {"id": "b", "text": "20%"},
+      {"id": "c", "text": "5%"},
+      {"id": "d", "text": "50%"}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "10% is the fall in the stock. The loss on own capital is that fall multiplied by the 2x ratio.",
+      "c": "This is half the move. It ignores the 2x multiplication.",
+      "d": "50% is the wipe-out move at 2x (1 / 2). It is not the loss at a 10% fall."
+    },
+    "concepts": ["leverage-scenario", "percentage-of-own-capital"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.13-q5",
+    "type": "mcq",
+    "prompt": "Which statement about margin is correct?",
+    "options": [
+      {"id": "a", "text": "Margin is free money. Borrowed funds cost nothing, so a position funded by margin has no extra cost."},
+      {"id": "b", "text": "Margin is funds deposited or borrowed to support a position. It can carry financing costs, and it can lead to forced sales at a poor price."},
+      {"id": "c", "text": "Margin is a discount that reduces the loss if the price falls."},
+      {"id": "d", "text": "Margin is a fixed fee, so it changes nothing about the risk of the position."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "Borrowed funds usually carry a financing cost, and they must be repaid whatever the price does. The rates are not stated in this book.",
+      "c": "Margin adds exposure. It does not reduce loss, and the loss on a larger position is multiplied by the ratio.",
+      "d": "Any fee is a cost, but the main issue is that the position is larger than own capital, so each price move is magnified."
+    },
+    "concepts": ["margin", "forced-sale"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T2.13-q6",
+    "type": "spot-the-mistake",
+    "prompt": "A trader writes: 'I use a stop 5% below my entry, so a margin call cannot happen to me.' Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "5% below entry is too wide to be a stop."},
+      {"id": "b", "text": "'Cannot happen.' A stop is an instruction, not a promise. A gap can open below the stop. So the loss can be bigger than planned, and the stop does not rule out a margin call."},
+      {"id": "c", "text": "'Entry.' Stops should be measured from the current market price, not from entry."},
+      {"id": "d", "text": "Nothing is wrong. A stop removes margin risk."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The width is your choice and is not the mistake here. The claim that a stop removes margin risk is wrong at any width.",
+      "c": "In this book, stops are measured from the planned entry price. The mistake is the claim about margin calls.",
+      "d": "A stop is an instruction that fills at the first available price. It is not protection against a gap (see *Slippage, gaps and planned versus actual risk*)."
+    },
+    "concepts": ["stop-limits", "margin-call", "gap-risk"],
+    "difficulty": 2,
+    "reviewAfterDays": 5
+  }
+]

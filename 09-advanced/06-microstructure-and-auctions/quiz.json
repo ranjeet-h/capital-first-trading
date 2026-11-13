@@ -1,0 +1,126 @@
+[
+  {
+    "id": "T9.6-q1",
+    "type": "mcq",
+    "prompt": "Which statement about a market order is correct?",
+    "options": [
+      {"id": "a", "text": "A market order always fills at the best price."},
+      {"id": "b", "text": "A market order can fill at several prices, so its average fill can be worse than the best price shown."},
+      {"id": "c", "text": "A market order waits until the price reaches the best price."},
+      {"id": "d", "text": "A market order fills only at the closing price."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A large market order takes shares at more than one price when the best level is thin.",
+      "c": "A market order does not wait. It takes what is offered now.",
+      "d": "A market order is not tied to the close. It fills at the prices available when it is placed."
+    },
+    "concepts": ["market-order", "average-fill"],
+    "difficulty": 1,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.6-q2",
+    "type": "numeric",
+    "prompt": "Hypothetical. The best ask is Rs 250.00 for 100 shares and the next ask is Rs 250.50 for 100 shares. What is the average fill for a market buy of 200 shares, in rupees per share?",
+    "answer": 250.25,
+    "tolerance": 0.005,
+    "unit": "Rs",
+    "solution": "Total paid = 100 x 250.00 + 100 x 250.50 = 25,000 + 25,050 = Rs 50,050. Average fill = 50,050 / 200 = Rs 250.25. Checked again: 200 x 250.25 = 50,050.",
+    "concepts": ["average-fill"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.6-q3",
+    "type": "numeric",
+    "prompt": "Hypothetical. With the same book, a market buy of 150 shares is filled. What is the slippage against the best ask, in rupees?",
+    "answer": 25,
+    "tolerance": 0.5,
+    "unit": "Rs",
+    "solution": "First 100 shares at Rs 250.00 = Rs 25,000. Next 50 shares at Rs 250.50 = Rs 12,525. Total = Rs 37,525. Shares at the best ask = 150 x Rs 250.00 = Rs 37,500. Slippage = 37,525 - 37,500 = Rs 25. Checked again: 50 shares x Rs 0.50 above the best ask = Rs 25.",
+    "concepts": ["slippage", "average-fill"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.6-q4",
+    "type": "mcq",
+    "prompt": "Which statement about the opening auction is correct?",
+    "options": [
+      {"id": "a", "text": "The opening price is the first trade of the day, with no orders collected first."},
+      {"id": "b", "text": "The opening auction collects orders first, then sets one price from them."},
+      {"id": "c", "text": "The opening auction sets a different price for each order."},
+      {"id": "d", "text": "An auction works the same as continuous trading, with a new price on each trade."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The opening auction collects orders before it sets a price. The first trade is not simply the first order.",
+      "c": "An auction sets one price for the auction. It does not set a price for each order.",
+      "d": "In an auction, orders are collected before a single price is set. Continuous trading works differently."
+    },
+    "concepts": ["auction", "pre-open"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.6-q5",
+    "type": "mcq",
+    "prompt": "A limit buy order is at Rs 250.00. The price touches Rs 250.00. Which statement is correct?",
+    "options": [
+      {"id": "a", "text": "The order fills at once, because the price reached it."},
+      {"id": "b", "text": "The order may not fill, because orders ahead of it in the queue may take the shares first."},
+      {"id": "c", "text": "The order fills at Rs 249.00, which is the lower price."},
+      {"id": "d", "text": "The order is cancelled automatically when the price touches it."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A touch does not guarantee a fill. Orders ahead of yours may take the shares.",
+      "c": "A limit buy fills at its limit or better, not at a lower price that was never offered.",
+      "d": "A touch does not cancel the order. It waits in the queue."
+    },
+    "concepts": ["queue-position", "limit-order"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.6-q6",
+    "type": "scenario",
+    "prompt": "Hypothetical. A thin stock has a wide spread at the open. A paper log records every market order at the best ask. What is the main risk to the log's accuracy?",
+    "options": [
+      {"id": "a", "text": "The log is accurate, since the best ask is the price."},
+      {"id": "b", "text": "The log hides slippage and queue effects, so paper results can look better than real ones."},
+      {"id": "c", "text": "The log will show too many shares."},
+      {"id": "d", "text": "Only the closing price matters for the log."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "The best ask is only the first price. A thin book can fill the rest at higher prices.",
+      "c": "The share count is not the problem. The price used for each fill is.",
+      "d": "The open and the trading during the day also produce fills. The closing price does not fix this."
+    },
+    "concepts": ["scenario", "paper-logs", "thin-book"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  },
+  {
+    "id": "T9.6-q7",
+    "type": "spot-the-mistake",
+    "prompt": "Spot the mistake: \"My paper log records each market buy at the best ask shown, so my paper results match what I would get.\" Which part is wrong?",
+    "options": [
+      {"id": "a", "text": "My paper log: a paper log is a useful habit when its method is honest."},
+      {"id": "b", "text": "records each market buy at the best ask shown"},
+      {"id": "c", "text": "The word paper: paper logs are never useful."},
+      {"id": "d", "text": "Nothing. The statement is correct."}
+    ],
+    "answer": "b",
+    "explanations": {
+      "a": "A paper log is useful. The problem is the price method it uses.",
+      "c": "Paper logs are useful when they are honest about fills. This word is not the mistake.",
+      "d": "The statement is wrong. Recording only the best ask ignores fills at higher prices in a thin book."
+    },
+    "concepts": ["paper-logs", "slippage"],
+    "difficulty": 2,
+    "reviewAfterDays": 3
+  }
+]

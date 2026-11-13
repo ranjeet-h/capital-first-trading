@@ -1,0 +1,386 @@
+<!DOCTYPE HTML>
+<html lang="mr" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>पूर्णपणे ठरवलेली स्विंग रणनीती - भांडवल-प्रथम ट्रेडिंग</title>
+
+
+        <!-- Custom HTML head -->
+        <link rel="manifest" href="../../manifest.webmanifest">
+        <meta name="theme-color" content="#1f4e79">
+        <link rel="apple-touch-icon" href="../../icons/icon-192.png">
+
+        <meta name="description" content="भांडवलाचे संरक्षण प्रथम ठेवून भारतीय बाजारात ट्रेडिंग शिकण्यासाठी ऑफलाइन, संवादी अभ्यास पुस्तक.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/components.css">
+        <link rel="stylesheet" href="../../theme/cft-anim.css">
+        <link rel="stylesheet" href="../../theme/labs.css">
+        <link rel="stylesheet" href="../../theme/lang-switch.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+            <meta name="robots" content="noindex">
+            <link rel="alternate" hreflang="en" href="../../../06-strategy/04-swing-strategy/index.html">
+            <link rel="alternate" hreflang="mr" href="index.html">
+            <link rel="alternate" hreflang="x-default" href="../../../06-strategy/04-swing-strategy/index.html">
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">भांडवल-प्रथम ट्रेडिंग</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main data-page-lang="mr" data-quiz-lang="mr">
+<div class="cft-lang-notice cft-lang-notice-draft" role="note">मसुदा भाषांतर, अजून तपासले नाही. इंग्रजी हे संदर्भ आहे.</div>
+                        <!-- meta
+id: T6.4
+title: पूर्णपणे ठरवलेली स्विंग रणनीती
+page_type: Strategy
+prerequisites: [T6.2, T6.3, T5.2, T5.3, T2.5, T2.11, T3.5]
+labs: [Lab 1, Lab 3, Lab 4, Lab 5]
+estimated_minutes: 35
+-->
+<h1 id="पूरणपणे-ठरवलेली-सविंग-रणनीती"><a class="header" href="#पूरणपणे-ठरवलेली-सविंग-रणनीती">पूर्णपणे ठरवलेली स्विंग रणनीती</a></h1>
+<h2 id="परसतावना"><a class="header" href="#परसतावना">प्रस्तावना</a></h2>
+<p>ट्रेडर ब्रेकआउटनंतर शेअर खरेदी करतो. त्याच्याकडे लिखित स्टॉप नाही. भाव खाली येतो, म्हणून तो पडल्यानंतर खालच्या पातळीवर स्टॉप लावतो. तोटा त्याने नियोजित केला होता त्यापेक्षा खूप मोठा होतो. काल्पनिक उदाहरण. पूर्ण नियमसंच हे टाळतो. प्रत्येक नियम व्यापारापूर्वी लिहिलेला असतो, आणि प्रत्येक आकडा आधीच ठरलेला असतो. हे प्रकरण एक उदाहरण नियमसंच ओळ-ओळीने पाहते. हे एक उदाहरण आहे, शिफारस नाही.</p>
+<h2 id="कलपना"><a class="header" href="#कलपना">कल्पना</a></h2>
+<p>हा तपासायचा नियमसंच आहे. हा सल्ला नाही. ही एक उदाहरण आहे की रणनीती पूर्णपणे कशी लिहिता येते. यात निकालांचा कोणताही पुरावा नाही. पुस्तक हा नियमसंच किंवा कोणताही शेअर कधीच सुचवत नाही.</p>
+<p>पूर्ण नियमसंच व्यापारात येऊ शकणाऱ्या प्रत्येक प्रश्नाचे उत्तर देतो. कधी पाहायचे. कधी खरेदी करायची. स्टॉप कुठे ठेवायचा. कधी विकायचे. किती शेअर्स. प्रत्येक नियमाला नाव आणि क्रमांक असतो. खालचा तक्ता या उदाहरणाचे नियम दाखवतो.</p>
+<div class="table-wrapper"><table><thead><tr><th>नियम</th><th>काय सांगतो</th><th>वापरलेले आकडे</th></tr></thead><tbody>
+<tr><td>सेटअप</td><td>आजचा क्लोज मागील 55 बारमधील सर्वाधिक हायच्या वर आहे. आजचा बार यात धरलेला नाही. आजचा क्लोज 50 दिवसांच्या साध्या मूव्हिंग ॲव्हरेजच्या वरही आहे.</td><td>55 बार, 50 दिवस</td></tr>
+<tr><td>एंट्री</td><td>सेटअप क्लोजनंतरच्या पुढच्या दिवसाच्या ओपनला खरेदी करा.</td><td>पुढचा ओपन</td></tr>
+<tr><td>सुरुवातीचा स्टॉप</td><td>एंट्री भाव वजा ATR(14) चे 2.5 पट.</td><td>2.5, 14</td></tr>
+<tr><td>एक्झिट</td><td>एंट्रीपासूनचा सर्वाधिक क्लोज वजा ATR(14) चे 3 पट. ट्रेलिंग स्टॉप फक्त वर सरकतो.</td><td>3, 14</td></tr>
+<tr><td>साइजिंग</td><td>प्रत्येक व्यापारात भांडवलाच्या 1 टक्का इतकी जोखीम घ्या. रोख मर्यादा आणि 25 टक्के एकाग्रता मर्यादा लागू करा.</td><td>1 टक्का, 25 टक्के</td></tr>
+<tr><td>फिल्टर</td><td>किमान भाव Rs 50. किमान 20 दिवसांचे सरासरी व्यापार मूल्य Rs 5 कोटी. जास्तीत जास्त 4 खुल्या पोझिशन.</td><td>Rs 50, Rs 5 कोटी, 4</td></tr>
+<tr><td>तोटा मर्यादा</td><td>दैनिक किंवा साप्ताहिक तोटा मर्यादा गाठल्यानंतर नवीन एंट्री नाही.</td><td>योजनेत ठरवलेली</td></tr>
+<tr><td>लीव्हरेज आणि सरासरी कमी करणे</td><td>लीव्हरेज नाही. सरासरी कमी करणे नाही.</td><td>काहीही नाही</td></tr>
+</tbody></table>
+</div>
+<p>या नियमांबद्दल काही मुद्दे:</p>
+<ul>
+<li><strong>सेटअप क्लोज वापरतो, हाय नव्हे.</strong> सर्वाधिक हाय ही फक्त ओलांडायची पातळी आहे. क्लोजने ती ओलांडली पाहिजे. 50 दिवसांच्या सरासरीसाठी <em>मूव्हिंग ॲव्हरेज</em> पाहा.</li>
+<li><strong>एंट्री पुढच्या ओपनला होते.</strong> सिग्नल क्लोजनंतरच कळतो. व्यापार अशा भावावर पूर्ण होऊ शकत नाही, जो आधीच निघून गेला आहे. हा वास्तववादाचा नियम आहे. तो <em>लुक-अहेड बायस</em> टाळतो.</li>
+<li><strong>ATR दैनंदिन सामान्य हालचाल मोजतो.</strong> स्टॉप ATR च्या गुणाकारात ठरवला जातो, म्हणून भाव जास्त हलतो तेव्हा तो रुंद असतो. <em>ATR आणि अस्थिरता, स्टॉपसाठी वापर</em> पाहा.</li>
+<li><strong>एक्झिट मागे राहतो.</strong> ट्रेलिंग स्टॉप एंट्रीपासूनच्या सर्वाधिक क्लोजच्या मागे चालतो. तो कधीही खाली येत नाही. जो बार स्टॉपच्या खाली उघडतो, तो ओपनलाच एक्झिट होतो. जो बार स्टॉपच्या खाली व्यापार करतो, पण वर उघडतो, तो स्टॉप भावावर एक्झिट होतो.</li>
+<li><strong>साइजिंगसाठी तीन मर्यादा वापरल्या जातात.</strong> जोखीम बजेट, रोख मर्यादा आणि एकाग्रता मर्यादा, या तिन्ही तपासल्या जातात. सर्वात लहान मर्यादा आकार ठरवते. <em>पोझिशन साइजिंग टप्प्याटप्प्याने</em> पाहा.</li>
+<li><strong>फिल्टरची मूल्ये ही निवड आहेत.</strong> या उदाहरणासाठी भाव, व्यापार मूल्य आणि पोझिशनची संख्या ही रचनेतली निवड आहे. ती बाजारातील तथ्ये नाहीत.</li>
+<li><strong>खर्च आणि कर यांचा निकालात समावेश करा.</strong> ते न धरलेला निकाल पूर्ण नसतो.</li>
+</ul>
+<p>निकाल पाहिल्यानंतर एखादा आकडा बदलणे हा सामान्य सापळा आहे. तो नियम भूतकाळाला बसवतो. <em>ओव्हरफिटिंग आणि तुम्ही किती गोष्टी तपासल्या</em> पाहा.</p>
+<h2 id="हे-पाहा"><a class="header" href="#हे-पाहा">हे पाहा</a></h2>
+<!-- component: strategy-simulator | mode: rules | spec: swing-example | caption: सिंथेटिक डेटावर लोड केलेला उदाहरण नियमसंच, प्रत्येक बारसाठी नियम तपासणी दाखवली आहे -->
+<p>उदाहरण नियमसंच लोड करा. बार एक-एक करून पुढे न्या. प्रत्येक बारसाठी सेटअप तपासणी, एंट्री तपासणी, स्टॉप आणि एक्झिट तपासणी वाचा. नियमांचे निकाल दाखवतात की सिम्युलेटरने प्रत्येक बारवर का कृती केली, किंवा का केली नाही.</p>
+<h2 id="सोडवलेले-उदाहरण"><a class="header" href="#सोडवलेले-उदाहरण">सोडवलेले उदाहरण</a></h2>
+<p><strong>काल्पनिक.</strong> भांडवल Rs 50,000. सिग्नल क्लोज Rs 255. सेटअप पूर्ण झाला आहे असे गृहीत धरले आहे. पुढच्या दिवसाचा ओपन Rs 257 आहे, म्हणून एंट्री Rs 257 आहे. ATR(14) Rs 4.00 आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>1. सुरुवातीचा स्टॉप</td><td>257 - (2.5 x 4.00) = 257 - 10.00</td><td>Rs 247</td></tr>
+<tr><td>2. प्रति शेअर जोखीम</td><td>257 - 247</td><td>Rs 10</td></tr>
+<tr><td>3. जोखीम बजेट</td><td>50,000 x 1%</td><td>Rs 500</td></tr>
+<tr><td>4. मूळ शेअर संख्या</td><td>floor(500 / 10)</td><td>50</td></tr>
+<tr><td>5. रोख मर्यादा</td><td>floor(50,000 / 257)</td><td>194</td></tr>
+<tr><td>6. एकाग्रता मर्यादा</td><td>floor(50,000 x 25% / 257) = floor(12,500 / 257)</td><td>48</td></tr>
+<tr><td>7. शेअर</td><td>50, 194 आणि 48 पैकी किमान</td><td><strong>48</strong></td></tr>
+<tr><td>8. नियोजित तोटा</td><td>48 x Rs 10</td><td>Rs 480, जे भांडवलाच्या 0.96 टक्के आहे</td></tr>
+</tbody></table>
+</div>
+<p>बांधील मर्यादा एकाग्रता मर्यादा आहे, 48 शेअर्सवर.</p>
+<p>नंतर, एंट्रीपासूनचा सर्वाधिक क्लोज Rs 280 आहे. ATR(14) Rs 5.00 आहे.</p>
+<div class="table-wrapper"><table><thead><tr><th>पायरी</th><th>गणना</th><th>निकाल</th></tr></thead><tbody>
+<tr><td>9. ट्रेलिंग स्टॉप</td><td>280 - (3 x 5.00) = 280 - 15</td><td>Rs 265</td></tr>
+<tr><td>10. स्टॉपवर एक्झिट</td><td>भाव Rs 265 पर्यंत खाली येतो</td><td>Rs 265 वर एक्झिट</td></tr>
+<tr><td>11. एकूण लाभ</td><td>(265 - 257) x 48 = 8 x 48</td><td>Rs 384</td></tr>
+<tr><td>12. R मधील लाभ</td><td>384 / 480</td><td>0.8R</td></tr>
+</tbody></table>
+</div>
+<p>खर्च आणि कर वगळून लाभ Rs 384 आहे. हा निकाल काल्पनिक आहे. प्रत्यक्ष शुल्क, जसे की 11 Nov 2026 पर्यंत डिलिव्हरी व्यापारांवर Zerodha चे शून्य ब्रोकरेज, हे <em>एका व्यापारावरील खर्च</em> मध्ये आहेत. कर नियम <em>ट्रेडिंग नफ्यावरील कर</em> मध्ये आहेत. नियम बदलतात, म्हणून Zerodha च्या शुल्क पानावर तपासा.</p>
+<h2 id="हे-करून-पाहा"><a class="header" href="#हे-करून-पाहा">हे करून पाहा</a></h2>
+<h3 id="मारगदरशित-सराव"><a class="header" href="#मारगदरशित-सराव">मार्गदर्शित सराव</a></h3>
+<p><strong>काम.</strong> एंट्री Rs 300. ATR(14) Rs 6.00. भांडवल Rs 50,000. सुरुवातीचा स्टॉप, प्रति शेअर जोखीम, शेअर आणि नियोजित तोटा काढा.</p>
+<p>संकेत:</p>
+<ol>
+<li>स्टॉप एंट्रीच्या खाली 2.5 पट ATR असतो. म्हणजे 2.5 x Rs 6.00 = Rs 15.</li>
+<li>मूळ शेअर संख्या म्हणजे floor(Rs 500 / प्रति शेअर जोखीम).</li>
+<li>रोख मर्यादा आणि एकाग्रता मर्यादा तपासा. मग सर्वात लहान घ्या.</li>
+</ol>
+<p><strong>उत्तर:</strong></p>
+<ul>
+<li>सुरुवातीचा स्टॉप: 300 - 15 = <strong>Rs 285</strong>.</li>
+<li>प्रति शेअर जोखीम: Rs 15.</li>
+<li>मूळ शेअर संख्या: floor(500 / 15) = floor(33.3) = 33.</li>
+<li>रोख मर्यादा: floor(50,000 / 300) = 166.</li>
+<li>एकाग्रता मर्यादा: floor(12,500 / 300) = floor(41.7) = 41.</li>
+<li>शेअर: 33, 166 आणि 41 पैकी किमान = <strong>33</strong>. बांधील मर्यादा जोखीम बजेट आहे.</li>
+<li>नियोजित तोटा: 33 x Rs 15 = <strong>Rs 495</strong>.</li>
+</ul>
+<h3 id="सवतंतर-सराव"><a class="header" href="#सवतंतर-सराव">स्वतंत्र सराव</a></h3>
+<p><strong>काम.</strong> एंट्रीपासूनचा सर्वाधिक क्लोज Rs 320 आहे. ATR(14) Rs 4.00 आहे. ट्रेलिंग स्टॉप काढा. मग सांगा की पुढच्या बारवर ट्रेलिंग स्टॉप खाली जाऊ शकतो का.</p>
+<details><summary>तुमचे उत्तर तपासा</summary>
+<ul>
+<li>ट्रेलिंग स्टॉप: 320 - (3 x 4.00) = 320 - 12 = <strong>Rs 308</strong>.</li>
+<li>तो खाली जाऊ शकत नाही. ट्रेलिंग स्टॉप फक्त वर सरकतो, म्हणून तो Rs 308 वर राहतो किंवा नंतरच्या बारवर वर जातो.</li>
+</ul>
+<p>सर्व आकडे काल्पनिक आहेत.</p>
+</details>
+<h2 id="कविझ"><a class="header" href="#कविझ">क्विझ</a></h2>
+<!-- component: quiz-block | src: quiz.json -->
+<p>क्विझमध्ये नियम कसे वाचायचे, ट्रेलिंग स्टॉप, आणि आजच्या आधीच्या बारचा वापर करणारी सेटअप तपासणी हे तपासले जाते.</p>
+<h2 id="कागदी-काम"><a class="header" href="#कागदी-काम">कागदी काम</a></h2>
+<p><strong>मोड:</strong> कागदी काम (पेपर). तुमच्या जर्नलमध्ये लिहा. जर्नल तयार नसेल, तर कागदी काम करा.</p>
+<ol>
+<li>तुमच्या चार्ट इतिहासातून दैनिक बारचा एक आठवडा निवडा.</li>
+<li>वरच्या तक्त्यातील नियम लागू करा, एका वेळी एक बार. प्रत्येक बारसाठी निर्णय लिहा.</li>
+<li>प्रत्येक नियोजित व्यापारासाठी नियोजित तपशील लिहा: एंट्री, सुरुवातीचा स्टॉप, शेअर, नियोजित तोटा आणि कारण.</li>
+<li>प्रत्येक एंट्री काल्पनिक म्हणून चिन्हांकित करा.</li>
+<li>नफा दाखवणारा कोणताही आकडा लिहू नका.</li>
+</ol>
+<h2 id="मरयादा-आणि-नेहमीचया-चुका"><a class="header" href="#मरयादा-आणि-नेहमीचया-चुका">मर्यादा आणि नेहमीच्या चुका</a></h2>
+<ul>
+<li>हे पूर्ण नियम नफ्याचा पुरावा नाहीत. एखादा नियमसंच बॅकटेस्टमध्ये पास झाला, म्हणजे तो लाइव्ह काम करेल असे सिद्ध होत नाही.</li>
+<li>फॉरवर्ड टेस्टिंग आणि लाइव्ह ट्रेडिंग वेगळे आहेत. जेव्हा खऱ्या पैशाला जोखीम असते, तेव्हा भाव, फिल आणि भावना बदलतात.</li>
+<li>फिल्टरची मूल्ये, तसेच 55 बार आणि 50 दिवसांची सेटिंग्ज ही निवड आहेत. निकाल पाहिल्यावर त्या बदलणे भूतकाळाला बसवते.</li>
+<li>गॅपमुळे एक्झिट स्टॉपपासून दूर जाऊ शकतो. पाहा <em>गॅप आणि स्टॉपसाठी त्याचा अर्थ</em>. NSE बहुतेक शेअर्सवर दैनिक भाव बँड लावते: 2%, 5%, 10% किंवा 20%, मागील क्लोजपासून मोजून. शेअर लोअर बँडवर लॉक असेल, तर खरेदीदार नसू शकतात आणि एक्झिट होऊ शकत नाही. फ्युचर्स आणि ऑप्शन्स असलेल्या शेअर्सवर त्याऐवजी लवचिक 10% मर्यादा असते. (11 Nov 2026 पर्यंत माहिती: बाजारावरील NSE Basic FAQs (Secondary Market), आणि SEBI चे ट्रेडिंगवरील मास्टर सर्क्युलर. नियम बदलतात, म्हणून NSE साइट तपासा.)</li>
+<li>खर्च, कर आणि सुट्ट्या वरील गणितात धरलेले नाहीत. 2026 ची एक्सचेंजची सुट्ट्यांची यादी NSE साइटवर आहे (16 आठवड्याच्या दिवसांच्या सुट्ट्या, Zerodha च्या बाजार सुट्ट्यांच्या कॅलेंडरनुसार 11 Nov 2026 रोजी, ज्यात 15 Jan समाविष्ट आहे. ती NSE च्या 12 Dec 2025 च्या पहिल्या यादीनंतर जोडली गेली.) बार फक्त बाजार खुला असलेल्या दिवसांसाठी असतात, म्हणून दिवस मोजण्यापूर्वी यादी तपासा.</li>
+</ul>
+<h2 id="लकषात-ठेवा"><a class="header" href="#लकषात-ठेवा">लक्षात ठेवा</a></h2>
+<ul>
+<li>पूर्ण नियमसंचात सेटअप, एंट्री, स्टॉप, एक्झिट, साइजिंग आणि फिल्टर आकड्यांसह लिहिलेले असतात.</li>
+<li>एंट्री म्हणजे सेटअप क्लोजनंतरचा पुढचा ओपन. सेटअप क्लोज वापरतो.</li>
+<li>सुरुवातीचा स्टॉप म्हणजे एंट्री वजा ATR(14) चे 2.5 पट. ट्रेलिंग स्टॉप म्हणजे सर्वाधिक क्लोज वजा ATR(14) चे 3 पट, आणि तो फक्त वर सरकतो.</li>
+<li>शेअर्स हे जोखीम मर्यादा, रोख मर्यादा आणि एकाग्रता मर्यादा यांपैकी सर्वात लहान असतात.</li>
+<li>लिखित उदाहरण शिफारस नाही आणि त्यात निकालांचा रेकॉर्ड नाही.</li>
+</ul>
+<h2 id="सरोत-आणि-पडताळणी"><a class="header" href="#सरोत-आणि-पडताळणी">स्रोत आणि पडताळणी</a></h2>
+<ul>
+<li>पुस्तकातील प्रकरणे: <em>ATR आणि अस्थिरता, स्टॉपसाठी वापर</em> आणि <em>पोझिशन साइजिंग टप्प्याटप्प्याने</em>.</li>
+<li>वास्तववादासाठीचे चाचणी नियम, <em>बॅकटेस्टिंगची मूलतत्त्वे आणि वास्तववादाचा करार</em> मध्ये.</li>
+<li><em>एका व्यापारावरील खर्च</em> आणि <em>ट्रेडिंग नफ्यावरील कर</em>, प्रत्येकाचे स्वतःचे तारखेसह स्रोत (11 Nov 2026 रोजी वाचले).</li>
+<li>बाजारावरील NSE Basic FAQs (Secondary Market) (भाव बँड) आणि 2026 ची NSE सुट्ट्यांची यादी, 11 Nov 2026 रोजी वाचली.</li>
+</ul>
+<!-- standing-disclaimer -->
+
+                    
+<footer class="cft-correction"><a href="https://github.com/ranjeet-h/capital-first-trading/issues/new?template=translation-mr.yml&amp;title=%5Bmr%5D%20T6.4&amp;body=Page%3A%2006-strategy%2F04-swing-strategy%2Findex.html%0A%0AWhat%20is%20wrong%20(sentence%20and%20better%20wording)%3A%0A" rel="noopener">दुरुस्ती सुचवा</a> <span>ही लिंक इंटरनेटने उघडते. पुस्तक मात्र ऑफलाइन चालते.</span></footer>
+</main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../06-strategy/03-trend-following/index.html" class="mobile-nav-chapters previous" data-label="मागील" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../06-strategy/05-dangerous-approaches/index.html" class="mobile-nav-chapters next" data-label="पुढील" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../06-strategy/03-trend-following/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../06-strategy/05-dangerous-approaches/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../theme/i18n.js"></script>
+        <script src="../../theme/mermaid.min.js"></script>
+        <script src="../../theme/mermaid-init.js"></script>
+        <script src="../../theme/cft-lib.js"></script>
+        <script src="../../theme/demos.js"></script>
+        <script src="../../theme/demos-charts.js"></script>
+        <script src="../../theme/demos-indicators.js"></script>
+        <script src="../../theme/demos-kite.js"></script>
+        <script src="../../theme/demos-testing.js"></script>
+        <script src="../../theme/demos-fo-market.js"></script>
+        <script src="../../theme/demos-money-psych.js"></script>
+        <script src="../../theme/components.js"></script>
+        <script src="../../theme/dist/labs.js"></script>
+        <script src="../../theme/sidebar.js"></script>
+        <script src="../../theme/lang-switch.js"></script>
+        <script src="../../theme/register-sw.js"></script>
+
+
+
+    </div>
+    </body>
+</html>
